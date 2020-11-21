@@ -9340,7 +9340,7 @@ endif
 if GetUnitTypeId(u)=='n00K' or GetUnitTypeId(u)=='n00Z' or GetUnitTypeId(u)=='n017' then
 return Nd*.01*500
 else
-if GetUnitTypeId(u)=='n00J' or GetUnitTypeId(u)=='n02Q' or GetUnitTypeId(u)=='n03G' or GetUnitTypeId(u)=='n00G' or GetUnitTypeId(u)=='n02P' or GetUnitTypeId(u)=='n00F' or GetUnitTypeId(u)=='n00E' or GetUnitTypeId(u)=='n02O' or GetUnitTypeId(u)=='n00D' or GetUnitTypeId(u)=='n008' or GetUnitTypeId(u)=='n02J' or GetUnitTypeId(u)=='n009' then
+if GetUnitTypeId(u)=='n00J' or GetUnitTypeId(u)=='n02Q' or GetUnitTypeId(u)=='n00I' or GetUnitTypeId(u)=='n00G' or GetUnitTypeId(u)=='n02P' or GetUnitTypeId(u)=='n00F' or GetUnitTypeId(u)=='n00E' or GetUnitTypeId(u)=='n02O' or GetUnitTypeId(u)=='n00D' or GetUnitTypeId(u)=='n008' or GetUnitTypeId(u)=='n02J' or GetUnitTypeId(u)=='n009' then
 return Nd*.01*25.5
 else
 if GetUnitTypeId(u)=='n00V' or GetUnitTypeId(u)=='n02U' or GetUnitTypeId(u)=='n00R' or GetUnitTypeId(u)=='n00Q' or GetUnitTypeId(u)=='n02T' or GetUnitTypeId(u)=='n00P' or GetUnitTypeId(u)=='n00O' or GetUnitTypeId(u)=='n02S' or GetUnitTypeId(u)=='n00N' or GetUnitTypeId(u)=='n00M' or GetUnitTypeId(u)=='n02R' or GetUnitTypeId(u)=='n00L' then
@@ -10077,12 +10077,14 @@ local integer In=1
 local unit ND
 local item it
 local item UB
-set KI[1]='ATtr'
+// Trees
+set KI[1]='NTtw'
 set KI[2]='OTtw'
 set KI[3]='YTst'
 set KI[4]='ITtw'
 set KI[5]='DTsh'
-set lI=1
+set lI=4
+
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
 call RD()
 call Preload("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl")
@@ -10322,7 +10324,7 @@ set wave_small_descriptions[19]="Адский сатир"
 set creep_ids[1]='n008'
 set creep_ids[2]='n00D'
 set creep_ids[3]='n00F'
-set creep_ids[4]='n03G'
+set creep_ids[4]='n00I'
 set creep_ids[5]='n00K'
 set creep_ids[6]='n00L'
 set creep_ids[7]='n00N'
@@ -10394,7 +10396,7 @@ call DestroyGroup(g)
 set creep_ids[1]='n008'
 set creep_ids[2]='n00D'
 set creep_ids[3]='n00F'
-set creep_ids[4]='n03G'
+set creep_ids[4]='n00I'
 set creep_ids[5]='n00L'
 set creep_ids[6]='n00N'
 set creep_ids[7]='n00P'
