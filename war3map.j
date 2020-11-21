@@ -6748,27 +6748,27 @@ set GI=true
 endfunction
 // init Creeps data
 function zb takes nothing returns nothing
-set M[1]='n02J'
-set M[2]='n02O'
-set M[3]='n02P'
-set M[4]='n02Q'
-set M[6]='n02R'
-set M[7]='n02S'
-set M[8]='n02T'
-set M[9]='n02U'
-set M[11]='n02V'
-set K[11]='n02W'
-set M[12]='n030'
-set M[13]='n031'
-set M[14]='n032'
-set M[16]='n033'
-set K[16]='n034'
-set M[17]='n035'
-set K[17]='n036'
-set M[18]='n037'
-set K[18]='n038'
-set M[19]='n039'
-set K[19]='n03A'
+set boss_ids[1]='n02J'
+set boss_ids[2]='n02O'
+set boss_ids[3]='n02P'
+set boss_ids[4]='n02Q'
+set boss_ids[6]='n02R'
+set boss_ids[7]='n02S'
+set boss_ids[8]='n02T'
+set boss_ids[9]='n02U'
+set boss_ids[11]='n02V'
+set creep_ids[11]='n02W'
+set boss_ids[12]='n030'
+set boss_ids[13]='n031'
+set boss_ids[14]='n032'
+set boss_ids[16]='n033'
+set creep_ids[16]='n034'
+set boss_ids[17]='n035'
+set creep_ids[17]='n036'
+set boss_ids[18]='n037'
+set creep_ids[18]='n038'
+set boss_ids[19]='n039'
+set creep_ids[19]='n03A'
 endfunction
 function GoldMod takes nothing returns nothing
 call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,false,Player(11))
@@ -9622,7 +9622,7 @@ else
 if ModuloInteger(Gb,5)==0 then
 call MultiboardSetItemValueBJ(Q,4,(wN+2),("|cffffcc00Мегабосс"))
 else
-call MultiboardSetItemValueBJ(Q,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(me[Gb]+" ]")))))
+call MultiboardSetItemValueBJ(Q,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
 endif
 endif
 call TimerStart(t,2,false,function fd)
@@ -10300,63 +10300,63 @@ call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,wo)
 set In=In+1
 endloop
 set hv='O006'
-set me[1]="Хрустальный арахнид"
-set me[2]="Кентавр-воин"
-set me[3]="Молодой драконид"
-set me[4]="Темный тролль"
-set me[5]="Мегабосс"
-set me[6]="Дреней-убийца"
-set me[7]="Чумной энт"
-set me[8]="Властитель"
-set me[9]="Дух Океана"
-set me[10]="Мегабосс"
-set me[11]="Опустошитель"
-set me[12]="Беорн"
-set me[13]="Каменный голем"
-set me[14]="Громовая ящерица"
-set me[15]="Мегабосс"
-set me[16]="Призрак"
-set me[17]="Хвататель"
-set me[18]="Морской дракон"
-set me[19]="Адский сатир"
-set K[1]='n008'
-set K[2]='n00D'
-set K[3]='n00F'
-set K[4]='n03G'
-set K[5]='n00K'
-set K[6]='n00L'
-set K[7]='n00N'
-set K[8]='n00P'
-set K[9]='n00R'
-set K[10]='n00Z'
-set K[11]='n015'
-set K[12]='n019'
-set K[13]='n01B'
-set K[14]='n01D'
-set K[15]='n017'
-set K[16]='n027'
-set K[17]='n029'
-set K[18]='n02B'
-set K[19]='n02D'
-set M[1]='n009'
-set M[2]='n00E'
-set M[3]='n00G'
-set M[4]='n00J'
-set M[6]='n00M'
-set M[5]='n00K'
-set M[7]='n00O'
-set M[8]='n00Q'
-set M[9]='n00V'
-set M[10]='n00Z'
-set M[11]='n016'
-set M[12]='n01A'
-set M[13]='n01C'
-set M[14]='n01E'
-set M[15]='n017'
-set M[16]='n028'
-set M[17]='n02A'
-set M[18]='n02C'
-set M[19]='n01U'
+set wave_small_descriptions[1]="Хрустальный арахнид"
+set wave_small_descriptions[2]="Кентавр-воин"
+set wave_small_descriptions[3]="Молодой драконид"
+set wave_small_descriptions[4]="Темный тролль"
+set wave_small_descriptions[5]="Мегабосс"
+set wave_small_descriptions[6]="Дреней-убийца"
+set wave_small_descriptions[7]="Чумной энт"
+set wave_small_descriptions[8]="Властитель"
+set wave_small_descriptions[9]="Дух Океана"
+set wave_small_descriptions[10]="Мегабосс"
+set wave_small_descriptions[11]="Опустошитель"
+set wave_small_descriptions[12]="Беорн"
+set wave_small_descriptions[13]="Каменный голем"
+set wave_small_descriptions[14]="Громовая ящерица"
+set wave_small_descriptions[15]="Мегабосс"
+set wave_small_descriptions[16]="Призрак"
+set wave_small_descriptions[17]="Хвататель"
+set wave_small_descriptions[18]="Морской дракон"
+set wave_small_descriptions[19]="Адский сатир"
+set creep_ids[1]='n008'
+set creep_ids[2]='n00D'
+set creep_ids[3]='n00F'
+set creep_ids[4]='n03G'
+set creep_ids[5]='n00K'
+set creep_ids[6]='n00L'
+set creep_ids[7]='n00N'
+set creep_ids[8]='n00P'
+set creep_ids[9]='n00R'
+set creep_ids[10]='n00Z'
+set creep_ids[11]='n015'
+set creep_ids[12]='n019'
+set creep_ids[13]='n01B'
+set creep_ids[14]='n01D'
+set creep_ids[15]='n017'
+set creep_ids[16]='n027'
+set creep_ids[17]='n029'
+set creep_ids[18]='n02B'
+set creep_ids[19]='n02D'
+set boss_ids[1]='n009'
+set boss_ids[2]='n00E'
+set boss_ids[3]='n00G'
+set boss_ids[4]='n00J'
+set boss_ids[6]='n00M'
+set boss_ids[5]='n00K'
+set boss_ids[7]='n00O'
+set boss_ids[8]='n00Q'
+set boss_ids[9]='n00V'
+set boss_ids[10]='n00Z'
+set boss_ids[11]='n016'
+set boss_ids[12]='n01A'
+set boss_ids[13]='n01C'
+set boss_ids[14]='n01E'
+set boss_ids[15]='n017'
+set boss_ids[16]='n028'
+set boss_ids[17]='n02A'
+set boss_ids[18]='n02C'
+set boss_ids[19]='n01U'
 endfunction
 function gD takes nothing returns nothing
 call PauseUnit(GetEnumUnit(),true)
@@ -10391,30 +10391,30 @@ set Xe[9]=mr
 set g=pA(Player(12))
 call ForGroup(g,function gD)
 call DestroyGroup(g)
-set K[1]='n008'
-set K[2]='n00D'
-set K[3]='n00F'
-set K[4]='n03G'
-set K[5]='n00L'
-set K[6]='n00N'
-set K[7]='n00P'
-set K[8]='n00R'
-set K[9]='n015'
-set K[10]='n019'
-set K[11]='n01B'
-set K[12]='n01D'
-set M[1]='n009'
-set M[2]='n00E'
-set M[3]='n00G'
-set M[4]='n00J'
-set M[5]='n00M'
-set M[6]='n00O'
-set M[7]='n00Q'
-set M[8]='n00V'
-set M[9]='n016'
-set M[10]='n01A'
-set M[11]='n01C'
-set M[12]='n01E'
+set creep_ids[1]='n008'
+set creep_ids[2]='n00D'
+set creep_ids[3]='n00F'
+set creep_ids[4]='n03G'
+set creep_ids[5]='n00L'
+set creep_ids[6]='n00N'
+set creep_ids[7]='n00P'
+set creep_ids[8]='n00R'
+set creep_ids[9]='n015'
+set creep_ids[10]='n019'
+set creep_ids[11]='n01B'
+set creep_ids[12]='n01D'
+set boss_ids[1]='n009'
+set boss_ids[2]='n00E'
+set boss_ids[3]='n00G'
+set boss_ids[4]='n00J'
+set boss_ids[5]='n00M'
+set boss_ids[6]='n00O'
+set boss_ids[7]='n00Q'
+set boss_ids[8]='n00V'
+set boss_ids[9]='n016'
+set boss_ids[10]='n01A'
+set boss_ids[11]='n01C'
+set boss_ids[12]='n01E'
 set g=null
 set u1=null
 set u2=null
@@ -18895,7 +18895,7 @@ call SaveInteger(HashData,GetHandleId((Le)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Le,true)
 else
 call EnableTrigger(CO)
-set Me=CreateUnitAtLoc(Player(11),K[J],GetRectCenter(Vr),270)
+set Me=CreateUnitAtLoc(Player(11),creep_ids[J],GetRectCenter(Vr),270)
 call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Me,true)
 call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
@@ -18935,7 +18935,7 @@ set Co=true
 call FlushChildHashtable(Ax,Jd)
 call DestroyTimer(tt)
 else
-call iC(M[In])
+call iC(boss_ids[In])
 call SaveInteger(Ax,1,Jd,In+1)
 endif
 set tt=null
@@ -19108,7 +19108,7 @@ if DM==8 then
 set nC=62
 endif
 set Tx=nC
-set u=CreateUnit(Player(11),M[MB],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
+set u=CreateUnit(Player(11),boss_ids[MB],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
 call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
 call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
 if MB==9 then
@@ -19117,11 +19117,11 @@ endif
 set In=1
 loop
 exitwhen In>nC
-call CreateUnit(Player(11),K[MB],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
-call CreateUnit(Player(11),K[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
+call CreateUnit(Player(11),creep_ids[MB],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
+call CreateUnit(Player(11),creep_ids[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
 set In=In+1
 endloop
-set u=CreateUnit(Player(11),M[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
+set u=CreateUnit(Player(11),boss_ids[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
 call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
 call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
 if MB==9 then
@@ -19300,7 +19300,7 @@ local timer tt
 local boolean b=Ro
 loop
 exitwhen In>7
-call DisplayTimedTextToPlayer(Player(In),0,0,14,"|cffffcc00Волна - "+I2S(J)+": "+me[J]+"|R")
+call DisplayTimedTextToPlayer(Player(In),0,0,14,"|cffffcc00Волна - "+I2S(J)+": "+wave_small_descriptions[J]+"|R")
 set In=In+1
 endloop
 if MB==1 then
@@ -19906,7 +19906,7 @@ call MultiboardSetItemValueBJ(Q,0,(A+3),"")
 call MultiboardSetItemValueBJ(Q,0,(A+2),"")
 call MultiboardSetItemValueBJ(Q,0,(A+4),"")
 call MultiboardSetItemValueBJ(Q,3,(A+2),"|cffffcc00Вoлнa:")
-call MultiboardSetItemValueBJ(Q,4,(A+2),("|cffffcc00"+("1"+(" [ "+(me[1]+" ]")))))
+call MultiboardSetItemValueBJ(Q,4,(A+2),("|cffffcc00"+("1"+(" [ "+(wave_small_descriptions[1]+" ]")))))
 call MultiboardSetItemValueBJ(Q,3,(A+3),"|cffffcc00Вpeмя игpы:")
 call MultiboardSetItemValueBJ(Q,3,(A+4),"|Cffff0000Мoд: |R")
 call MultiboardSetItemWidthBJ(Q,4,(A+2),25.)
@@ -21009,7 +21009,7 @@ local integer In=1
 local location l
 // call BJDebugMsg("This is -b mode")
 set l=Rq(jr)
-set f=CreateUnitAtLoc(Player(11),M[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
 endif
@@ -21017,7 +21017,7 @@ call RemoveLocation(l)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
 call GroupAddUnit(Ee[3],f)
 set l=Rq(lr)
-set f=CreateUnitAtLoc(Player(11),M[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
 endif
@@ -21025,7 +21025,7 @@ call RemoveLocation(l)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
 call GroupAddUnit(Ee[7],f)
 set l=Rq(Lr)
-set f=CreateUnitAtLoc(Player(11),M[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
 endif
@@ -21036,42 +21036,42 @@ loop
 exitwhen In>4
 if In<=2 then
 set l=Rq(jr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[3],f)
 set l=Rq(lr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[7],f)
 set l=Rq(Hr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[2],f)
 endif
 if In<=3 then
 set l=Rq(hr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[1],f)
 set l=Rq(kr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[5],f)
 set l=Rq(Jr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[4],f)
 set l=Rq(Kr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[6],f)
 set l=Rq(Lr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[8],f)
 endif
 set l=Rq(mr)
-set f=CreateUnitAtLoc(Player(11),K[MB],l,GetRandomReal(0,360))
+set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[9],f)
 set In=In+1
@@ -25154,7 +25154,7 @@ set he=CreateTimer()
 set i=0
 loop
 exitwhen(i>16)
-set me[i]=""
+set wave_small_descriptions[i]=""
 set i=i+1
 endloop
 set Qe=1
