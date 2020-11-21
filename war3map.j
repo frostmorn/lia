@@ -15074,11 +15074,11 @@ local integer dN=GetHandleId(t)
 local unit u=LoadUnitHandle(Ax,1,dN)
 local integer golem_explode_level=GetUnitAbilityLevel(u,'A056')
 local real DC=0
-if golem_explode_level == 1
+if golem_explode_level == 1 then
     set DC = 100
-elseif golem_explode_level ==2
+elseif golem_explode_level == 2 then
     set DC = 200
-elseif golem_explode_level == 3
+elseif golem_explode_level == 3 then
     set DC = 450
 endif
 set DamageTypeAttack=false
@@ -15110,14 +15110,14 @@ return IsUnitEnemy(GetAttacker(),GetOwningPlayer(GetTriggerUnit()))
 endfunction
 function mJ takes nothing returns boolean
 local unit u=GetFilterUnit()
-local integer golem_fire_rage_level =GetUnitAbilityLevel(Fv,'A02Z')
+local integer golem_fire_rage_level = GetUnitAbilityLevel(Fv,'A02Z')
 local real golem_fire_rage_damage = 0
-if golem_fire_rage_level == 1
+if golem_fire_rage_level == 1 then
     set golem_fire_rage_damage = 40
-elseif golem_fire_rage_level == 2
+elseif golem_fire_rage_level == 2 then
     set golem_fire_rage_damage = 80
-elseif golem_fire_rage_level == 3 
-    set golem_fire_rage_damage == 160
+elseif golem_fire_rage_level == 3 then
+    set golem_fire_rage_damage = 160
 endif
 if IsUnitEnemy(u,GetOwningPlayer(GetTriggerUnit()))and GetWidgetLife(u)>.405 then
 set DamageTypeAttack=false
