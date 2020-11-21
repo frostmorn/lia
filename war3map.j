@@ -997,8 +997,8 @@ integer array D
 unit array F
 timer H=null
 integer J=0
-integer array K
-integer array M
+integer array creep_ids
+integer array boss_ids
 multiboard Q=null
 integer array U
 integer array W
@@ -1085,7 +1085,7 @@ boolean Je=false
 unit ke=null
 unit Ke=null
 unit Le=null
-string array me
+string array wave_small_descriptions
 unit Me=null
 boolean array pe
 boolean Pe=false
