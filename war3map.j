@@ -1687,7 +1687,7 @@ string array HI
 unit jI
 group JI
 boolean kI=false
-integer arrayTreeTypes
+integer array arrayTreeTypes
 integer treeTypeIndex
 itempool LI
 player mI=Player(0)
