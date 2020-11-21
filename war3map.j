@@ -10517,7 +10517,7 @@ call EnableTrigger(wR)
 set sb=null
 endfunction
 function vf takes nothing returns nothing
-local string s=dI
+local string s=gMapMode
 local string ef
 local string xf=""
 local string of=""
