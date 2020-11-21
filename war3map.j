@@ -7426,9 +7426,10 @@ endif
 if xc(rc)then
 set ic=true
 endif
-if rc==10 then
-set ic=false
-endif
+// 10 means golem, so
+// if rc==10 then
+// set ic=false
+// endif
 if Wx or no then
 if rc==2 or rc==32 or rc==36 then
 set ic=false
@@ -7527,6 +7528,7 @@ loop
 exitwhen In>6
 set b=IssueImmediateOrderById(se[In],un)
 if b then
+// picked random hero
 set ut=GroupPickRandomUnit(lA(un))
 call vc(ut,p)
 set ut=null
