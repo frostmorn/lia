@@ -1676,7 +1676,7 @@ destructable bI=null
 destructable BI=null
 destructable cI=null
 destructable CI=null
-string dI=""
+string gMapMode=""
 unit DI
 real fI=0
 real FI=0
@@ -5624,32 +5624,34 @@ endfunction
 function cj_group_copy_75hJKJ3745gf takes nothing returns nothing
 call GroupAddUnit(o,GetEnumUnit())
 endfunction
-function eN takes nothing returns nothing
-local string xN=""
-local integer oN=StringLength(V)
+
+function SelectMapModeFromHCLString takes nothing returns nothing
+local string lcharhcl=""
+local integer lhcllength=StringLength(V)
 local integer i=0
 loop
-exitwhen i>=oN
-set xN=SubString(V,i,i+1)
-if xN=="v" then
-set dI=dI+"-в"
-elseif xN=="e" then
-set dI=dI+"-в-л"
-elseif xN=="x" then
-set dI=dI+"-в-э"
-elseif xN=="b" then
-set dI=dI+"-б"
-elseif xN=="t" then
-set dI="-тк"
-set i=999
-elseif xN=="c" then
-set dI=dI+"-с"
-elseif xN=="z" then
-set dI=dI+"-з"
+exitwhen i>=lhcllength
+set lcharhcl=SubString(V,i,i+1)
+if lcharhcl=="v" then
+set gMapMode=gMapMode"-в"
+elseif lcharhcl=="e" then
+set gMapMode=gMapMode"-в-л"
+elseif lcharhcl=="x" then
+set gMapMode=gMapMode"-в-э"
+elseif lcharhcl=="b" then
+set gMapMode=gMapMode"-б"
+elseif lcharhcl=="t" then
+set gMapMode="-тк"
+set i=lhcllength+1
+elseif lcharhcl=="c" then
+set gMapMode=gMapMode"-с"
+elseif lcharhcl=="z" then
+set gMapMode=gMapMode"-з"
 endif
 set i=i+1
 endloop
 endfunction
+
 function rN takes nothing returns nothing
 local integer i
 local integer j
@@ -5717,7 +5719,7 @@ if E==null or VN(E)==false then
 call EN()
 endif
 call StoreInteger(O,"STATS",AN,NN)
-if dI!="" and GetLocalPlayer()==E then
+if gMapMode!="" and GetLocalPlayer()==E then
 call SyncStoredInteger(O,"STATS",AN)
 endif
 endfunction
@@ -10480,9 +10482,9 @@ return false
 endfunction
 function yD takes nothing returns nothing
 local integer i=0
-set dI=""
-call eN()
-if dI=="" then
+set gMapMode=""
+call SelectMapModeFromHCLString()
+if gMapMode=="" then
 if WD()then
 set mI=Player(MI)
 else
@@ -10546,7 +10548,7 @@ local boolean d
 local boolean d2
 local integer wN=A
 local location sb
-if dI=="" then
+if gMapMode=="" then
 set s=GetEventPlayerChatString()
 endif
 set l=StringLength(s)
@@ -10582,7 +10584,7 @@ set Wx=true
 call hB()
 call tb()
 call Jc()
-if dI=="" then
+if gMapMode=="" then
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000"+GetPlayerName(Player(0))+" |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
 else
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
@@ -10766,7 +10768,7 @@ call DisableTrigger(vn)
 call DisableTrigger(Za)
 call EnableTrigger(UR)
 call EnableTrigger(wR)
-if dI=="" then
+if gMapMode=="" then
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,HI[GetPlayerId(mI)]+GetPlayerName(mI)+" |Rвыбрал режим игры |cffffcc00"+xf+"|R")
 else
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00"+xf+"|R")
