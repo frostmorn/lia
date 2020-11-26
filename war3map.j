@@ -6833,7 +6833,7 @@ call IN(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call IN("EOG",0)
+call IN("EОG",0)
 set g=null
 set f=null
 set pb=null
@@ -7835,7 +7835,7 @@ call IN(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call IN("EOG",1)
+call IN("EОG",1)
 call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
 call BA(2)
 set g=HA(bj_mapInitialPlayableArea)
@@ -20162,7 +20162,7 @@ call TriggerExecute(SO)
 else
 set Hv=false
 if J>0 then
-call IN("WAVE",J)
+call IN("WАVЕ",J)
 if av==1 then
 call bN()
 endif
