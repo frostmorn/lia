@@ -5718,9 +5718,9 @@ function IN takes string AN,integer NN returns nothing
 if E==null or VN(E)==false then
 call EN()
 endif
-call StoreInteger(O,"STATS",AN,NN)
+call StoreInteger(O,"SТАТS",AN,NN)
 if gMapMode!="" and GetLocalPlayer()==E then
-call SyncStoredInteger(O,"STATS",AN)
+call SyncStoredInteger(O,"SТАТS",AN)
 endif
 endfunction
 function bN takes nothing returns nothing
