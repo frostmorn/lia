@@ -5718,9 +5718,9 @@ function SendStatsToBot takes string AN,integer NN returns nothing
 if E==null or VN(E)==false then
 call EN()
 endif
-call StoreInteger(O,"SТАТS",AN,NN)
+call StoreInteger(O,"STATS",AN,NN)
 if gMapMode!="" and GetLocalPlayer()==E then
-call SyncStoredInteger(O,"SТАТS",AN)
+call SyncStoredInteger(O,"STATS",AN)
 endif
 endfunction
 function bN takes nothing returns nothing
@@ -6833,7 +6833,7 @@ call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call SendStatsToBot("EОG",0)
+call SendStatsToBot("EOG",0)
 set g=null
 set f=null
 set pb=null
@@ -7835,7 +7835,7 @@ call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call SendStatsToBot("EОG",1)
+call SendStatsToBot("EOG",1)
 call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
 call BA(2)
 set g=HA(bj_mapInitialPlayableArea)
