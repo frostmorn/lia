@@ -5714,7 +5714,7 @@ set RN=GetRandomInt(0,ON-1)
 set E=XN[RN]
 endif
 endfunction
-function IN takes string AN,integer NN returns nothing
+function SendStatsToBot takes string AN,integer NN returns nothing
 if E==null or VN(E)==false then
 call EN()
 endif
@@ -5728,7 +5728,7 @@ local integer i=0
 loop
 exitwhen i>7
 if VN(Player(i))then
-call IN(I2S(i),U[ee[i+1]])
+call SendStatsToBot(I2S(i),U[ee[i+1]])
 endif
 set i=i+1
 endloop
@@ -6829,11 +6829,11 @@ loop
 exitwhen In>7
 if GetPlayerSlotState(Player(In))!=PLAYER_SLOT_STATE_LEFT then
 call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00ВЫ ПРОИГРАЛИ!!! ВСЕ ГЛАДИАТОРЫ УБИТЫ!!!")
-call IN(I2S(In),U[ee[In+1]])
+call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call IN("EОG",0)
+call SendStatsToBot("EОG",0)
 set g=null
 set f=null
 set pb=null
@@ -7831,11 +7831,11 @@ loop
 exitwhen In>7
 if GetPlayerSlotState(Player(In))!=PLAYER_SLOT_STATE_LEFT then
 call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00ВЫ ПОБЕДИЛИ!!!")
-call IN(I2S(In),U[ee[In+1]])
+call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call IN("EОG",1)
+call SendStatsToBot("EОG",1)
 call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
 call BA(2)
 set g=HA(bj_mapInitialPlayableArea)
@@ -20162,7 +20162,7 @@ call TriggerExecute(SO)
 else
 set Hv=false
 if J>0 then
-call IN("WАVЕ",J)
+call SendStatsToBot("WАVЕ",J)
 if av==1 then
 call bN()
 endif
@@ -23441,7 +23441,7 @@ local integer ec=ee[GetPlayerId(p)+1]
 local integer In=1
 local integer RN=GetPlayerId(p)
 set I[RN]=true
-call IN(I2S(RN),U[ee[RN+1]])
+call SendStatsToBot(I2S(RN),U[ee[RN+1]])
 if av==2 then
 call bN()
 endif
