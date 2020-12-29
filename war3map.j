@@ -23863,6 +23863,7 @@ endfunction
 function ItsReady___Init takes nothing returns nothing
 local integer index=0
 loop
+call StoreInteger(O,"DEBUG", "Registered trigger IsReadyTrig for player " , index)
 call TriggerRegisterPlayerChatEvent(IsReadyTrig,Player(index),"+",true)
 set index=index+1
 exitwhen index==16
@@ -25751,13 +25752,21 @@ call TriggerAddAction(mO,function Tp)
 set MO=CreateTrigger()
 call DisableTrigger(MO)
 call TriggerRegisterPlayerChatEvent(MO,Player(0),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 0)
 call TriggerRegisterPlayerChatEvent(MO,Player(1),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 1)
 call TriggerRegisterPlayerChatEvent(MO,Player(2),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 2)
 call TriggerRegisterPlayerChatEvent(MO,Player(3),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 3)
 call TriggerRegisterPlayerChatEvent(MO,Player(4),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 4)
 call TriggerRegisterPlayerChatEvent(MO,Player(5),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 5)
 call TriggerRegisterPlayerChatEvent(MO,Player(6),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 6)
 call TriggerRegisterPlayerChatEvent(MO,Player(7),"+",true)
+call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 7)
 set pO=CreateTrigger()
 call TriggerAddAction(pO,function xP)
 set qO=CreateTrigger()
