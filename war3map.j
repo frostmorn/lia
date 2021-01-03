@@ -5718,9 +5718,9 @@ function SendStatsToBot takes string AN,integer NN returns nothing
 if E==null or VN(E)==false then
 call EN()
 endif
-call StoreInteger(O,"STATS",AN,NN)
+call StoreInteger(O,"SТАТS",AN,NN)
 if gMapMode!="" and GetLocalPlayer()==E then
-call SyncStoredInteger(O,"STATS",AN)
+call SyncStoredInteger(O,"SТАТS",AN)
 endif
 endfunction
 function bN takes nothing returns nothing
@@ -6833,7 +6833,7 @@ call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call SendStatsToBot("EOG",0)
+call SendStatsToBot("EОG",0)
 set g=null
 set f=null
 set pb=null
@@ -7835,7 +7835,7 @@ call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call SendStatsToBot("EOG",1)
+call SendStatsToBot("EОG",1)
 call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
 call BA(2)
 set g=HA(bj_mapInitialPlayableArea)
@@ -23863,7 +23863,6 @@ endfunction
 function ItsReady___Init takes nothing returns nothing
 local integer index=0
 loop
-call StoreInteger(O,"DEBUG", "Registered trigger IsReadyTrig for player " , index)
 call TriggerRegisterPlayerChatEvent(IsReadyTrig,Player(index),"+",true)
 set index=index+1
 exitwhen index==16
@@ -25752,21 +25751,13 @@ call TriggerAddAction(mO,function Tp)
 set MO=CreateTrigger()
 call DisableTrigger(MO)
 call TriggerRegisterPlayerChatEvent(MO,Player(0),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 0)
 call TriggerRegisterPlayerChatEvent(MO,Player(1),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 1)
 call TriggerRegisterPlayerChatEvent(MO,Player(2),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 2)
 call TriggerRegisterPlayerChatEvent(MO,Player(3),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 3)
 call TriggerRegisterPlayerChatEvent(MO,Player(4),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 4)
 call TriggerRegisterPlayerChatEvent(MO,Player(5),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 5)
 call TriggerRegisterPlayerChatEvent(MO,Player(6),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 6)
 call TriggerRegisterPlayerChatEvent(MO,Player(7),"+",true)
-call StoreInteger(O,"DEBUG", "Registered trigger MO for player " , 7)
 set pO=CreateTrigger()
 call TriggerAddAction(pO,function xP)
 set qO=CreateTrigger()
