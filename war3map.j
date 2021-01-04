@@ -133,14 +133,11 @@ constant boolean LIBRARY_MagicLump=true
 real MagicLump___X
 real MagicLump___Y
 constant boolean LIBRARY_Void=true
-group udg_group01=null
-string udg_string01
 player udg_player01=null
 gamecache udg_gamecache01=null
 boolean array udg_booleans01
 integer udg_integer01=0
 integer array udg_integers01
-unit array udg_units01
 timer udg_timer01=null
 integer udg_integer02=0
 integer array udg_integers02
@@ -165,10 +162,7 @@ unit udg_unit04=null
 unit udg_unit05=null
 unit udg_unit06=null
 unit udg_unit07=null
-real array udg_reals01
 integer udg_integer09=0
-real array udg_reals02
-location array udg_locations01
 integer udg_integer10=0
 unit udg_unit08=null
 unit udg_unit09=null
@@ -179,7 +173,6 @@ boolean udg_boolean04=false
 integer array udg_integers09
 integer udg_integer12=0
 integer udg_integer13=0
-real udg_real01=0
 weathereffect udg_weathereffect01=null
 integer udg_integer14=0
 integer udg_integer15=0
@@ -198,7 +191,6 @@ boolean udg_boolean06=false
 integer udg_integer19=0
 integer array udg_integers11
 boolean array udg_booleans03
-string array udg_strings01
 integer udg_integer20=0
 integer array udg_integers12
 boolean udg_boolean07=false
@@ -208,7 +200,6 @@ player array udg_players01
 unit udg_unit12=null
 boolean udg_boolean08=false
 group array udg_groups01
-rect array udg_rects01
 timerdialog udg_timerdialog01=null
 integer array udg_integers14
 boolean udg_boolean09=false
@@ -224,31 +215,25 @@ boolean udg_boolean10=false
 boolean udg_boolean11=false
 boolean array udg_booleans07
 integer udg_integer24=0
-timer udg_timer02=null
 boolean udg_boolean12=false
 boolean udg_boolean13=false
 boolean udg_boolean14=false
 unit udg_unit13=null
 unit udg_unit14=null
 unit udg_unit15=null
-string array udg_strings02
 unit udg_unit16=null
 boolean array udg_booleans08
 boolean udg_boolean15=false
 unit udg_unit17=null
 integer udg_integer25=0
-unit array udg_units02
 unit udg_unit18=null
 unit udg_unit19=null
 unit udg_unit20=null
-group udg_group02=null
 boolean udg_boolean16=false
 boolean udg_boolean17=false
 location udg_location01=null
 boolean udg_boolean18=false
-group udg_group03=null
 unit udg_unit21=null
-group udg_group04=null
 unit udg_unit22=null
 unit udg_unit23=null
 integer udg_integer26=0
@@ -256,66 +241,48 @@ unit udg_unit24=null
 integer udg_integer27=0
 integer udg_integer28=0
 boolean udg_boolean19=false
-string array udg_strings03
 integer udg_integer29=0
 integer udg_integer30=0
 player array udg_players03
 hashtable udg_hashtable01=null
-real array udg_reals03
 boolean udg_boolean20=false
 integer array udg_integers15
 integer udg_integer31=0
 force udg_force03=null
-unit array udg_units03
-group udg_group05=null
 unit udg_unit25=null
 unit udg_unit26=null
-timer udg_timer03=null
 integer udg_integer32=0
-effect udg_effect01=null
 boolean udg_boolean21=false
-unit array udg_units04
 fogmodifier array udg_fogmodifiers01
-group udg_group06=null
 boolean udg_boolean22=false
 boolean udg_boolean23=false
 integer array udg_integers16
-real udg_real02=0
 integer udg_integer33=0
-timer udg_timer04=null
 timerdialog udg_timerdialog02=null
 integer udg_integer34=0
 boolean udg_boolean24=false
 integer udg_integer35=0
 integer udg_integer36=0
 texttag udg_texttag01=null
-group udg_group07=null
 integer array udg_integers17
 boolean array udg_booleans09
 integer udg_integer37=0
 integer udg_integer38=0
 integer udg_integer39=0
 boolean udg_boolean25=false
-timer udg_timer05=null
 boolean udg_boolean26=false
 integer udg_integer40=0
-unit array udg_units05
 integer udg_integer41=0
 boolean array udg_booleans10
 boolean udg_boolean27=false
 integer array udg_integers18
-unit array udg_units06
 integer array udg_integers19
 boolean array udg_booleans11
-group udg_group08=null
 boolean udg_boolean28=false
 integer udg_integer42=0
 boolean udg_boolean29=false
-group udg_group09=null
-timer udg_timer06=null
 integer udg_integer43=0
 destructable udg_destructable01=null
-timer udg_timer07=null
 unit udg_unit27=null
 boolean udg_boolean30=false
 integer udg_integer44=0
@@ -323,156 +290,6 @@ unit udg_unit28=null
 unit udg_unit29=null
 boolean udg_boolean31=false
 unit udg_unit30=null
-effect array udg_effects01
-rect udg_rect01=null
-rect udg_rect02=null
-rect udg_rect03=null
-rect udg_rect04=null
-rect udg_rect05=null
-rect udg_rect06=null
-rect udg_rect07=null
-rect udg_rect08=null
-rect udg_rect09=null
-rect udg_rect10=null
-rect udg_rect11=null
-rect udg_rect12=null
-rect udg_rect13=null
-rect udg_rect14=null
-rect udg_rect15=null
-rect udg_rect16=null
-rect udg_rect17=null
-rect udg_rect18=null
-rect udg_rect19=null
-rect udg_rect20=null
-rect udg_rect21=null
-rect udg_rect22=null
-rect udg_rect23=null
-rect udg_rect24=null
-rect udg_rect25=null
-rect udg_rect26=null
-rect udg_rect27=null
-rect udg_rect28=null
-rect udg_rect29=null
-rect udg_rect30=null
-rect udg_rect31=null
-rect udg_rect32=null
-rect udg_rect33=null
-rect udg_rect34=null
-rect udg_rect35=null
-rect udg_rect36=null
-rect udg_rect37=null
-rect udg_rect38=null
-rect udg_rect39=null
-rect udg_rect40=null
-rect udg_rect41=null
-rect udg_rect42=null
-rect udg_rect43=null
-rect udg_rect44=null
-rect udg_rect45=null
-rect udg_rect46=null
-rect udg_rect47=null
-rect udg_rect48=null
-rect udg_rect49=null
-rect udg_rect50=null
-rect udg_rect51=null
-rect udg_rect52=null
-rect udg_rect53=null
-rect udg_rect54=null
-rect udg_rect55=null
-rect udg_rect56=null
-rect udg_rect57=null
-rect udg_rect58=null
-rect udg_rect59=null
-rect udg_rect60=null
-rect udg_rect61=null
-rect udg_rect62=null
-rect udg_rect63=null
-rect udg_rect64=null
-rect udg_rect65=null
-rect udg_rect66=null
-rect udg_rect67=null
-rect udg_rect68=null
-rect udg_rect69=null
-rect udg_rect70=null
-rect udg_rect71=null
-rect udg_rect72=null
-rect udg_rect73=null
-rect udg_rect74=null
-rect udg_rect75=null
-rect udg_rect76=null
-rect udg_rect77=null
-rect udg_rect78=null
-rect udg_rect79=null
-rect udg_rect80=null
-rect udg_rect81=null
-rect udg_rect82=null
-rect udg_rect83=null
-rect udg_rect84=null
-rect udg_rect85=null
-rect udg_rect86=null
-rect udg_rect87=null
-rect udg_rect88=null
-rect udg_rect89=null
-rect udg_rect90=null
-rect udg_rect91=null
-rect udg_rect92=null
-rect udg_rect93=null
-rect udg_rect94=null
-rect udg_rect95=null
-rect udg_rect96=null
-rect udg_rect97=null
-rect udg_rect98=null
-rect udg_rect99=null
-rect udg_rect100=null
-rect udg_rect101=null
-rect udg_rect102=null
-rect udg_rect103=null
-rect udg_rect104=null
-rect udg_rect105=null
-rect udg_rect106=null
-rect udg_rect107=null
-rect udg_rect108=null
-rect udg_rect109=null
-rect udg_rect110=null
-rect udg_rect111=null
-rect udg_rect112=null
-rect udg_rect113=null
-rect udg_rect114=null
-rect udg_rect115=null
-rect udg_rect116=null
-rect udg_rect117=null
-rect udg_rect118=null
-rect udg_rect119=null
-rect udg_rect120=null
-rect udg_rect121=null
-rect udg_rect122=null
-rect udg_rect123=null
-rect udg_rect124=null
-rect udg_rect125=null
-rect udg_rect126=null
-rect udg_rect127=null
-rect udg_rect128=null
-rect udg_rect129=null
-rect udg_rect130=null
-rect udg_rect131=null
-rect udg_rect132=null
-rect udg_rect133=null
-rect udg_rect134=null
-rect udg_rect135=null
-rect udg_rect136=null
-rect udg_rect137=null
-rect udg_rect138=null
-rect udg_rect139=null
-rect udg_rect140=null
-rect udg_rect141=null
-rect udg_rect142=null
-rect udg_rect143=null
-rect udg_rect144=null
-rect udg_rect145=null
-rect udg_rect146=null
-rect udg_rect147=null
-rect udg_rect148=null
-rect udg_rect149=null
 camerasetup udg_camerasetup01=null
 camerasetup udg_camerasetup02=null
 destructable udg_destructable02=null
@@ -486,15 +303,10 @@ destructable udg_destructable09=null
 destructable udg_destructable10=null
 destructable udg_destructable11=null
 destructable udg_destructable12=null
-string udg_string02
 unit udg_unit31=null
-real udg_real03=0
-real udg_real04=0
 hashtable udg_hashtable02=null
 boolean udg_boolean32=false
-string array udg_strings04
 unit udg_unit32=null
-group udg_group10=null
 boolean udg_boolean33=false
 integer array udg_integers20
 integer udg_integer45=0
@@ -504,29 +316,14 @@ integer udg_integer46=0
 unit udg_unit33=null
 player udg_player04=null
 integer udg_integer47=0
-real udg_real05=0
-group udg_group11=null
-timer udg_timer08=null
 unit udg_unit34=null
 player udg_player05=null
 unit udg_unit35=null
-real udg_real06=0
-real udg_real07=0
 unit udg_unit36=null
 player udg_player06=null
-group udg_group12=null
 unit udg_unit37=null
 unit udg_unit38=null
 integer udg_integer48=0
-rect array udg_rects02
-effect udg_effect02=null
-string array udg_strings05
-real array udg_reals04
-real array udg_reals05
-timer udg_timer09=null
-real udg_real08=0
-real udg_real09=0
-group udg_group13=null
 force udg_force04=null
 boolexpr udg_boolexpr01=null
 boolean udg_Bool=false
@@ -3827,8 +3624,6 @@ call RegisterSpellEffectResponse('A0JF',(3))
 endfunction
 function InitGlobals takes nothing returns nothing
 local integer i=0
-set udg_group01=CreateGroup()
-set udg_string01=""
 set i=0
 loop
 exitwhen(i>1)
@@ -3889,19 +3684,7 @@ set udg_integer06=0
 set udg_integer07=0
 set udg_integer08=0
 set udg_boolean02=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_reals01[i]=0
-set i=i+1
-endloop
 set udg_integer09=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_reals02[i]=0
-set i=i+1
-endloop
 set udg_integer10=0
 set i=0
 loop
@@ -3920,7 +3703,6 @@ set i=i+1
 endloop
 set udg_integer12=0
 set udg_integer13=0
-set udg_real01=0
 set udg_integer14=0
 set udg_integer15=0
 set i=0
@@ -3959,12 +3741,6 @@ set i=0
 loop
 exitwhen(i>1)
 set udg_booleans03[i]=false
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_strings01[i]=""
 set i=i+1
 endloop
 set udg_integer20=0
@@ -4025,16 +3801,9 @@ set udg_booleans07[i]=false
 set i=i+1
 endloop
 set udg_integer24=0
-set udg_timer02=CreateTimer()
 set udg_boolean12=false
 set udg_boolean13=false
 set udg_boolean14=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_strings02[i]=""
-set i=i+1
-endloop
 set i=0
 loop
 exitwhen(i>1)
@@ -4043,30 +3812,15 @@ set i=i+1
 endloop
 set udg_boolean15=false
 set udg_integer25=0
-set udg_group02=CreateGroup()
 set udg_boolean16=false
 set udg_boolean17=false
 set udg_boolean18=false
-set udg_group03=CreateGroup()
-set udg_group04=CreateGroup()
 set udg_integer26=0
 set udg_integer27=0
 set udg_integer28=0
 set udg_boolean19=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_strings03[i]=""
-set i=i+1
-endloop
 set udg_integer29=0
 set udg_integer30=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_reals03[i]=0
-set i=i+1
-endloop
 set udg_boolean20=false
 set i=0
 loop
@@ -4076,11 +3830,8 @@ set i=i+1
 endloop
 set udg_integer31=0
 set udg_force03=CreateForce()
-set udg_group05=CreateGroup()
-set udg_timer03=CreateTimer()
 set udg_integer32=0
 set udg_boolean21=false
-set udg_group06=CreateGroup()
 set udg_boolean22=false
 set udg_boolean23=false
 set i=0
@@ -4089,14 +3840,11 @@ exitwhen(i>1)
 set udg_integers16[i]=0
 set i=i+1
 endloop
-set udg_real02=0
 set udg_integer33=0
-set udg_timer04=CreateTimer()
 set udg_integer34=0
 set udg_boolean24=false
 set udg_integer35=0
 set udg_integer36=0
-set udg_group07=CreateGroup()
 set i=0
 loop
 exitwhen(i>1)
@@ -4113,7 +3861,6 @@ set udg_integer37=0
 set udg_integer38=0
 set udg_integer39=0
 set udg_boolean25=false
-set udg_timer05=CreateTimer()
 set udg_boolean26=false
 set udg_integer40=0
 set udg_integer41=0
@@ -4142,28 +3889,14 @@ exitwhen(i>1)
 set udg_booleans11[i]=false
 set i=i+1
 endloop
-set udg_group08=CreateGroup()
 set udg_boolean28=false
 set udg_integer42=0
 set udg_boolean29=false
-set udg_group09=CreateGroup()
-set udg_timer06=CreateTimer()
 set udg_integer43=0
-set udg_timer07=CreateTimer()
 set udg_boolean30=false
 set udg_integer44=0
 set udg_boolean31=false
-set udg_string02=""
-set udg_real03=0
-set udg_real04=0
 set udg_boolean32=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_strings04[i]=""
-set i=i+1
-endloop
-set udg_group10=CreateGroup()
 set udg_boolean33=false
 set i=0
 loop
@@ -4174,35 +3907,7 @@ endloop
 set udg_integer45=0
 set udg_integer46=0
 set udg_integer47=0
-set udg_real05=0
-set udg_group11=CreateGroup()
-set udg_timer08=CreateTimer()
-set udg_real06=0
-set udg_real07=0
-set udg_group12=CreateGroup()
 set udg_integer48=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_strings05[i]=""
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_reals04[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_reals05[i]=0
-set i=i+1
-endloop
-set udg_timer09=CreateTimer()
-set udg_real08=.0
-set udg_real09=.0
-set udg_group13=CreateGroup()
 set udg_force04=CreateForce()
 set udg_Bool=false
 set udg_UDex=0
