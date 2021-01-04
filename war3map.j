@@ -156,7 +156,6 @@ constant boolean LIBRARY_Void=true
 
 
 
-weathereffect udg_weathereffect01=null
 
 
 
@@ -169,7 +168,6 @@ weathereffect udg_weathereffect01=null
 
 
 
-group array udg_groups01
 
 
 
@@ -190,7 +188,6 @@ group array udg_groups01
 
 
 
-location udg_location01=null
 
 
 
@@ -202,14 +199,12 @@ location udg_location01=null
 
 
 
-hashtable udg_hashtable01=null
 
 
 
 
 
 
-fogmodifier array udg_fogmodifiers01
 
 
 
@@ -225,43 +220,6 @@ fogmodifier array udg_fogmodifiers01
 
 
 
-destructable udg_destructable01=null
-
-
-
-
-
-
-
-camerasetup udg_camerasetup01=null
-camerasetup udg_camerasetup02=null
-destructable udg_destructable02=null
-destructable udg_destructable03=null
-destructable udg_destructable04=null
-destructable udg_destructable05=null
-destructable udg_destructable06=null
-destructable udg_destructable07=null
-destructable udg_destructable08=null
-destructable udg_destructable09=null
-destructable udg_destructable10=null
-destructable udg_destructable11=null
-destructable udg_destructable12=null
-
-hashtable udg_hashtable02=null
-
-
-
-
-itempool udg_itempool01=null
-
-
-
-
-
-
-
-
-boolexpr udg_boolexpr01=null
 boolean udg_Bool=false
 integer udg_UDex=0
 integer array udg_UnitIndexLock
@@ -3588,13 +3546,6 @@ local integer i=0
 
 
 
-
-set i=0
-loop
-exitwhen(i>1)
-set udg_groups01[i]=CreateGroup()
-set i=i+1
-endloop
 
 
 
