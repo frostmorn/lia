@@ -133,163 +133,106 @@ constant boolean LIBRARY_MagicLump=true
 real MagicLump___X
 real MagicLump___Y
 constant boolean LIBRARY_Void=true
-player udg_player01=null
-gamecache udg_gamecache01=null
-boolean array udg_booleans01
-integer udg_integer01=0
-integer array udg_integers01
-timer udg_timer01=null
-integer udg_integer02=0
-integer array udg_integers02
-integer array udg_integers03
-multiboard udg_multiboard01=null
-integer array udg_integers04
-integer array udg_integers05
-integer array udg_integers06
-integer array udg_integers07
-integer udg_integer03=0
-integer udg_integer04=0
-integer udg_integer05=0
-boolean udg_boolean01=false
-integer udg_integer06=0
-integer udg_integer07=0
-integer udg_integer08=0
-unit udg_unit01=null
-boolean udg_boolean02=false
-unit udg_unit02=null
-unit udg_unit03=null
-unit udg_unit04=null
-unit udg_unit05=null
-unit udg_unit06=null
-unit udg_unit07=null
-integer udg_integer09=0
-integer udg_integer10=0
-unit udg_unit08=null
-unit udg_unit09=null
-integer array udg_integers08
-integer udg_integer11=0
-boolean udg_boolean03=false
-boolean udg_boolean04=false
-integer array udg_integers09
-integer udg_integer12=0
-integer udg_integer13=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 weathereffect udg_weathereffect01=null
-integer udg_integer14=0
-integer udg_integer15=0
-timer array udg_timers01
-timerdialog array udg_timerdialogs01
-boolean udg_boolean05=false
-integer array udg_integers10
-integer udg_integer16=0
-integer udg_integer17=0
-force udg_force01=null
-force udg_force02=null
-boolean array udg_booleans02
-unit udg_unit10=null
-integer udg_integer18=0
-boolean udg_boolean06=false
-integer udg_integer19=0
-integer array udg_integers11
-boolean array udg_booleans03
-integer udg_integer20=0
-integer array udg_integers12
-boolean udg_boolean07=false
-integer array udg_integers13
-unit udg_unit11=null
-player array udg_players01
-unit udg_unit12=null
-boolean udg_boolean08=false
+
+
+
+
+
+
+
+
+
+
+
+
 group array udg_groups01
-timerdialog udg_timerdialog01=null
-integer array udg_integers14
-boolean udg_boolean09=false
-integer udg_integer21=0
-integer udg_integer22=0
-boolean array udg_booleans04
-boolean array udg_booleans05
-boolean array udg_booleans06
-player udg_player02=null
-player array udg_players02
-integer udg_integer23=0
-boolean udg_boolean10=false
-boolean udg_boolean11=false
-boolean array udg_booleans07
-integer udg_integer24=0
-boolean udg_boolean12=false
-boolean udg_boolean13=false
-boolean udg_boolean14=false
-unit udg_unit13=null
-unit udg_unit14=null
-unit udg_unit15=null
-unit udg_unit16=null
-boolean array udg_booleans08
-boolean udg_boolean15=false
-unit udg_unit17=null
-integer udg_integer25=0
-unit udg_unit18=null
-unit udg_unit19=null
-unit udg_unit20=null
-boolean udg_boolean16=false
-boolean udg_boolean17=false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 location udg_location01=null
-boolean udg_boolean18=false
-unit udg_unit21=null
-unit udg_unit22=null
-unit udg_unit23=null
-integer udg_integer26=0
-unit udg_unit24=null
-integer udg_integer27=0
-integer udg_integer28=0
-boolean udg_boolean19=false
-integer udg_integer29=0
-integer udg_integer30=0
-player array udg_players03
+
+
+
+
+
+
+
+
+
+
+
 hashtable udg_hashtable01=null
-boolean udg_boolean20=false
-integer array udg_integers15
-integer udg_integer31=0
-force udg_force03=null
-unit udg_unit25=null
-unit udg_unit26=null
-integer udg_integer32=0
-boolean udg_boolean21=false
+
+
+
+
+
+
 fogmodifier array udg_fogmodifiers01
-boolean udg_boolean22=false
-boolean udg_boolean23=false
-integer array udg_integers16
-integer udg_integer33=0
-timerdialog udg_timerdialog02=null
-integer udg_integer34=0
-boolean udg_boolean24=false
-integer udg_integer35=0
-integer udg_integer36=0
-texttag udg_texttag01=null
-integer array udg_integers17
-boolean array udg_booleans09
-integer udg_integer37=0
-integer udg_integer38=0
-integer udg_integer39=0
-boolean udg_boolean25=false
-boolean udg_boolean26=false
-integer udg_integer40=0
-integer udg_integer41=0
-boolean array udg_booleans10
-boolean udg_boolean27=false
-integer array udg_integers18
-integer array udg_integers19
-boolean array udg_booleans11
-boolean udg_boolean28=false
-integer udg_integer42=0
-boolean udg_boolean29=false
-integer udg_integer43=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 destructable udg_destructable01=null
-unit udg_unit27=null
-boolean udg_boolean30=false
-integer udg_integer44=0
-unit udg_unit28=null
-unit udg_unit29=null
-boolean udg_boolean31=false
-unit udg_unit30=null
+
+
+
+
+
+
+
 camerasetup udg_camerasetup01=null
 camerasetup udg_camerasetup02=null
 destructable udg_destructable02=null
@@ -303,28 +246,21 @@ destructable udg_destructable09=null
 destructable udg_destructable10=null
 destructable udg_destructable11=null
 destructable udg_destructable12=null
-unit udg_unit31=null
+
 hashtable udg_hashtable02=null
-boolean udg_boolean32=false
-unit udg_unit32=null
-boolean udg_boolean33=false
-integer array udg_integers20
-integer udg_integer45=0
+
+
+
+
 itempool udg_itempool01=null
-player udg_player03=null
-integer udg_integer46=0
-unit udg_unit33=null
-player udg_player04=null
-integer udg_integer47=0
-unit udg_unit34=null
-player udg_player05=null
-unit udg_unit35=null
-unit udg_unit36=null
-player udg_player06=null
-unit udg_unit37=null
-unit udg_unit38=null
-integer udg_integer48=0
-force udg_force04=null
+
+
+
+
+
+
+
+
 boolexpr udg_boolexpr01=null
 boolean udg_Bool=false
 integer udg_UDex=0
@@ -3624,291 +3560,95 @@ call RegisterSpellEffectResponse('A0JF',(3))
 endfunction
 function InitGlobals takes nothing returns nothing
 local integer i=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans01[i]=false
-set i=i+1
-endloop
-set udg_integer01=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers01[i]=0
-set i=i+1
-endloop
-set udg_timer01=CreateTimer()
-set udg_integer02=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers02[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers03[i]=0
-set i=i+1
-endloop
-set udg_multiboard01=CreateMultiboard()
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers04[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers05[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers06[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers07[i]=0
-set i=i+1
-endloop
-set udg_integer03=0
-set udg_integer04=0
-set udg_integer05=0
-set udg_boolean01=false
-set udg_integer06=0
-set udg_integer07=0
-set udg_integer08=0
-set udg_boolean02=false
-set udg_integer09=0
-set udg_integer10=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers08[i]=0
-set i=i+1
-endloop
-set udg_integer11=0
-set udg_boolean03=false
-set udg_boolean04=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers09[i]=0
-set i=i+1
-endloop
-set udg_integer12=0
-set udg_integer13=0
-set udg_integer14=0
-set udg_integer15=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_timers01[i]=CreateTimer()
-set i=i+1
-endloop
-set udg_boolean05=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers10[i]=0
-set i=i+1
-endloop
-set udg_integer16=0
-set udg_integer17=0
-set udg_force01=CreateForce()
-set udg_force02=CreateForce()
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans02[i]=false
-set i=i+1
-endloop
-set udg_integer18=0
-set udg_boolean06=false
-set udg_integer19=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers11[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans03[i]=false
-set i=i+1
-endloop
-set udg_integer20=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers12[i]=0
-set i=i+1
-endloop
-set udg_boolean07=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers13[i]=0
-set i=i+1
-endloop
-set udg_boolean08=false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 set i=0
 loop
 exitwhen(i>1)
 set udg_groups01[i]=CreateGroup()
 set i=i+1
 endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers14[i]=0
-set i=i+1
-endloop
-set udg_boolean09=false
-set udg_integer21=0
-set udg_integer22=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans04[i]=false
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans05[i]=false
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans06[i]=false
-set i=i+1
-endloop
-set udg_integer23=0
-set udg_boolean10=false
-set udg_boolean11=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans07[i]=false
-set i=i+1
-endloop
-set udg_integer24=0
-set udg_boolean12=false
-set udg_boolean13=false
-set udg_boolean14=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans08[i]=false
-set i=i+1
-endloop
-set udg_boolean15=false
-set udg_integer25=0
-set udg_boolean16=false
-set udg_boolean17=false
-set udg_boolean18=false
-set udg_integer26=0
-set udg_integer27=0
-set udg_integer28=0
-set udg_boolean19=false
-set udg_integer29=0
-set udg_integer30=0
-set udg_boolean20=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers15[i]=0
-set i=i+1
-endloop
-set udg_integer31=0
-set udg_force03=CreateForce()
-set udg_integer32=0
-set udg_boolean21=false
-set udg_boolean22=false
-set udg_boolean23=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers16[i]=0
-set i=i+1
-endloop
-set udg_integer33=0
-set udg_integer34=0
-set udg_boolean24=false
-set udg_integer35=0
-set udg_integer36=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers17[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans09[i]=false
-set i=i+1
-endloop
-set udg_integer37=0
-set udg_integer38=0
-set udg_integer39=0
-set udg_boolean25=false
-set udg_boolean26=false
-set udg_integer40=0
-set udg_integer41=0
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans10[i]=false
-set i=i+1
-endloop
-set udg_boolean27=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers18[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers19[i]=0
-set i=i+1
-endloop
-set i=0
-loop
-exitwhen(i>1)
-set udg_booleans11[i]=false
-set i=i+1
-endloop
-set udg_boolean28=false
-set udg_integer42=0
-set udg_boolean29=false
-set udg_integer43=0
-set udg_boolean30=false
-set udg_integer44=0
-set udg_boolean31=false
-set udg_boolean32=false
-set udg_boolean33=false
-set i=0
-loop
-exitwhen(i>1)
-set udg_integers20[i]=0
-set i=i+1
-endloop
-set udg_integer45=0
-set udg_integer46=0
-set udg_integer47=0
-set udg_integer48=0
-set udg_force04=CreateForce()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 set udg_Bool=false
 set udg_UDex=0
 set i=0
