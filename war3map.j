@@ -4060,7 +4060,8 @@ set udg_strings03[i]=""
 set i=i+1
 endloop
 set udg_integer29=0
-set udg_integer30=0set i=0
+set udg_integer30=0
+set i=0
 loop
 exitwhen(i>1)
 set udg_reals03[i]=0
