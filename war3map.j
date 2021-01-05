@@ -220,6 +220,8 @@ constant boolean LIBRARY_Void=true
 
 
 
+
+boolexpr udg_boolexpr01=null
 boolean udg_Bool=false
 integer udg_UDex=0
 integer array udg_UnitIndexLock
@@ -1188,6 +1190,42 @@ integer f__arg_this
 integer f__result_integer
 boolean f__result_boolean
 endglobals
+
+function IsPlayerOnline takes player p returns boolean
+return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
+endfunction
+
+function EN takes nothing returns nothing
+local player array XN
+local integer ON=0
+local integer RN=0
+loop
+if IsPlayerOnline(Player(RN))then
+set XN[ON]=Player(RN)
+set ON=ON+1
+endif
+set RN=RN+1
+exitwhen RN>7
+endloop
+if ON==0 then
+set E=null
+else
+set RN=GetRandomInt(0,ON-1)
+set E=XN[RN]
+endif
+endfunction
+
+
+function SendStatsToBot takes string AN,integer NN returns nothing
+if E==null or IsPlayerOnline(E)==false then
+call EN()
+endif
+call StoreInteger(O,"SТАТS",AN,NN)
+if gMapMode!="" and GetLocalPlayer()==E then
+call SyncStoredInteger(O,"SТАТS",AN)
+endif
+endfunction
+
 function sc__Table__GTable_onDestroy takes integer this returns nothing
 set f__arg_this=this
 call TriggerEvaluate(st__Table__GTable_onDestroy[1])
@@ -4408,42 +4446,13 @@ endif
 set i=i+1
 endloop
 endfunction
-function VN takes player p returns boolean
-return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
-endfunction
-function EN takes nothing returns nothing
-local player array XN
-local integer ON=0
-local integer RN=0
-loop
-if VN(Player(RN))then
-set XN[ON]=Player(RN)
-set ON=ON+1
-endif
-set RN=RN+1
-exitwhen RN>7
-endloop
-if ON==0 then
-set E=null
-else
-set RN=GetRandomInt(0,ON-1)
-set E=XN[RN]
-endif
-endfunction
-function SendStatsToBot takes string AN,integer NN returns nothing
-if E==null or VN(E)==false then
-call EN()
-endif
-call StoreInteger(O,"SТАТS",AN,NN)
-if gMapMode!="" and GetLocalPlayer()==E then
-call SyncStoredInteger(O,"SТАТS",AN)
-endif
-endfunction
+
+
 function bN takes nothing returns nothing
 local integer i=0
 loop
 exitwhen i>7
-if VN(Player(i))then
+if IsPlayerOnline(Player(i))then
 call SendStatsToBot(I2S(i),U[ee[i+1]])
 endif
 set i=i+1
