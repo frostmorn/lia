@@ -1,11 +1,7 @@
 globals
-constant boolean LIBRARY_BurningArmor=true
-constant boolean LIBRARY_CatchTheShadow=true
 hashtable HashData=InitHashtable()
 group array CatchTheShadowGroup
-constant boolean LIBRARY_CausticFinale=true
 group array BugFixGroup
-constant boolean LIBRARY_DinamiteShot=true
 boolean notAffect=false
 constant hashtable DinamiteShot___HASH_TABLE=InitHashtable()
 constant integer DinamiteShot___SPELL_ID='A0IW'
@@ -133,96 +129,6 @@ constant boolean LIBRARY_MagicLump=true
 real MagicLump___X
 real MagicLump___Y
 constant boolean LIBRARY_Void=true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-boolexpr udg_boolexpr01=null
-boolean udg_Bool=false
 integer udg_UDex=0
 integer array udg_UnitIndexLock
 integer array udg_UDexPrev
@@ -279,7 +185,7 @@ boolean array udg_UnitDamageRegistered
 unit udg_EnhancedDamageTarget=null
 group udg_DamageEventAOEGroup=null
 rect gg_rct_ArenaBoundary=null
-sound gg_snd_audio_2020_01_11_07_16_27_1=null
+// sound gg_snd_audio_2020_01_11_07_16_27_1=null
 trigger gg_trg_Unit_Indexer=null
 trigger gg_trg_Damage_Engine_Config=null
 trigger gg_trg_Damage_Engine=null
@@ -1190,31 +1096,37 @@ integer f__arg_this
 integer f__result_integer
 boolean f__result_boolean
 endglobals
-
 function IsPlayerOnline takes player p returns boolean
 return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
 endfunction
 
-function EN takes nothing returns nothing
-local player array XN
-local integer ON=0
-local integer RN=0
-loop
-if IsPlayerOnline(Player(RN))then
-set XN[ON]=Player(RN)
-set ON=ON+1
-endif
-set RN=RN+1
-exitwhen RN>7
-endloop
-if ON==0 then
-set E=null
-else
-set RN=GetRandomInt(0,ON-1)
-set E=XN[RN]
-endif
-endfunction
 
+// set bj_forLoopAIndex=1
+// set bj_forLoopAIndexEnd=A
+// loop
+// exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
+// call MultiboardSetItemValueBJ(Q,3,(bj_forLoopAIndex+1),GetPlayerName(Player(-1+(D[bj_forLoopAIndex]))))
+// set bj_forLoopAIndex=bj_forLoopAIndex+1
+// endloop
+function EN takes nothing returns nothing
+    local player array XN
+    local integer ON=0
+    local integer RN=0
+    loop
+        if IsPlayerOnline(Player(RN))then
+        set XN[ON]=Player(RN)
+        set ON=ON+1
+        endif
+        set RN=RN+1
+        exitwhen RN>7
+    endloop
+    if ON==0 then
+        set E=null
+    else
+        set RN=GetRandomInt(0,ON-1)
+        set E=XN[RN]
+    endif
+endfunction
 
 function SendStatsToBot takes string AN,integer NN returns nothing
 if E==null or IsPlayerOnline(E)==false then
@@ -1225,7 +1137,6 @@ if gMapMode!="" and GetLocalPlayer()==E then
 call SyncStoredInteger(O,"SТАТS",AN)
 endif
 endfunction
-
 function sc__Table__GTable_onDestroy takes integer this returns nothing
 set f__arg_this=this
 call TriggerEvaluate(st__Table__GTable_onDestroy[1])
@@ -3556,89 +3467,6 @@ call RegisterSpellEffectResponse('A0JF',(3))
 endfunction
 function InitGlobals takes nothing returns nothing
 local integer i=0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-set udg_Bool=false
 set udg_UDex=0
 set i=0
 loop
@@ -4012,7 +3840,6 @@ set udg_LastDmgWasSpell[i]=udg_IsDamageSpell
 set udg_LastDmgPrevType[i]=udg_DamageEventType
 else
 set s="WARNING: Recursion error when dealing damage! Make sure when you deal damage from within a DamageEvent trigger, do it like this:
-
 "
 set s=s+"Trigger - Turn off (This Trigger)
 "
@@ -4378,7 +4205,6 @@ endfunction
 function cj_group_copy_75hJKJ3745gf takes nothing returns nothing
 call GroupAddUnit(o,GetEnumUnit())
 endfunction
-
 function SelectMapModeFromHCLString takes nothing returns nothing
     local string lcharhcl=""
     local integer lhcllength=StringLength(V)
@@ -4405,7 +4231,6 @@ function SelectMapModeFromHCLString takes nothing returns nothing
         set i=i+1
     endloop
 endfunction
-
 function rN takes nothing returns nothing
 local integer i
 local integer j
@@ -4446,8 +4271,6 @@ endif
 set i=i+1
 endloop
 endfunction
-
-
 function bN takes nothing returns nothing
 local integer i=0
 loop
@@ -5970,8 +5793,10 @@ function QB takes nothing returns nothing
 local integer In=1
 call yb()
 call DisableTrigger(MO)
-// call BJDebugMsg("DEBUG: Disabling trigger + 7247")
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function QB",0)
 call DisableTrigger(IsReadyTrig)
+
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = IsReadyTrig,  called_from = function QB",0)
 call DestroyTimer(H)
 call DestroyTimerDialog(Oe)
 set H=null
@@ -8016,8 +7841,11 @@ set Ho=CreateTimer()
 call TimerStart(Ho,'x',false,function Xd)
 call yb()
 call DisableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function Od",0)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9291")
 call DisableTrigger(IsReadyTrig)
+
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = IsReadyTrig,  called_from = function Od",0)
 call DestroyTimer(H)
 call DestroyTimer(LoadTimerHandle(Ax,1,StringHash("timers")))
 call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
@@ -8181,8 +8009,10 @@ call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
 call DestroyTimerDialog(Oe)
 call yb()
 call DisableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function dd",0)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9456")
 call DisableTrigger(IsReadyTrig)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = IsReadyTrig,  called_from = function dd",0)
 call ModifyGateBJ(0,ho)
 set H=null
 set Oe=null
@@ -8206,7 +8036,6 @@ function Dd takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local integer Gb=LoadInteger(Ax,1,dN)
-
 if Gb!=20 then
 call TriggerExecute(DO)
 endif
@@ -8216,7 +8045,10 @@ endfunction
 function fd takes nothing returns nothing
 local timer t=GetExpiredTimer()
 call EnableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_ENABLED]name = MO,  called_from = function fd",0)
 call EnableTrigger(IsReadyTrig)
+
+call SendStatsToBot("DEBUG [TRIGGER_ENABLED]name = IsReadyTrig,  called_from = function fd",0)
 call EnableTrigger(gR)
 call DestroyTimer(t)
 set t=null
@@ -8225,14 +8057,13 @@ function Fd takes nothing returns nothing
 local integer index=0
 local timer t=GetExpiredTimer()
 call DisableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function Fd",0)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
 loop
 set IsReady[index]=false
 set index=index+1
 exitwhen index==16
 endloop
-
-
 call DisableTrigger(IsReadyTrig)
 call DisableTrigger(gR)
 call DestroyTimer(t)
@@ -8296,13 +8127,12 @@ if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
 call ModifyGateBJ(0,ho)
 set Hv=true
 call DisableTrigger(MO)
-// call BJDebugMsg("DEBUG: Disabling trigger + 9561")
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function QB",0)
 loop
 set IsReady[index]=false
 set index=index+1
 exitwhen index==16
 endloop
-
 call DisableTrigger(IsReadyTrig)
 set Pe=true
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
@@ -8811,7 +8641,6 @@ set arrayTreeTypes[3]='YTst'
 set arrayTreeTypes[4]='ITtw'
 set arrayTreeTypes[5]='DTsh'
 set treeTypeIndex=4
-
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
 call RD()
 call Preload("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl")
@@ -8886,7 +8715,6 @@ local timer t=GetExpiredTimer()
 if He==false and Wx==false then
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Вводите |cffffcc00-с|R если хотите получить случайного героя. 
 Получив случайного героя, вы получите бонус в |cffffcc00100 мер золота.|R
-
 Вводите |cffffcc00-ре (-re)|R если хотите перевыбрать героя случайным образом.
 Получив другого героя, вы потеряете |cffffcc0050 мер золота.|R")
 endif
@@ -18814,11 +18642,13 @@ if rv>=av then
 call DestroyTimer(Fo)
 if Ex then
 call DisableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function zp",0)
 call Od()
 // call DisplayTimedTextToForce(GetPlayersAll(),10.00,"Loop (stage 2) - Status is ready")
 endif
 if no or Wx then
 call DisableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function zp#2",0)
 call QB()
 endif
 endif
@@ -18835,7 +18665,7 @@ endfunction
 function eP takes nothing returns nothing
 local timer t=GetExpiredTimer()
 call EnableTrigger(MO)
-// call BJDebugMsg("DEBUG: Disabling trigger + 20075")
+call SendStatsToBot("DEBUG [TRIGGER_ENABLED]name = MO,  called_from = function eP",0)
 call DisableTrigger(IsReadyTrig)
 call EnableTrigger(kO)
 call DestroyTimer(t)
@@ -19066,6 +18896,7 @@ local integer dN=GetHandleId(t)
 local timerdialog d
 local integer i=0
 call DisableTrigger(MO)
+call SendStatsToBot("DEBUG [TRIGGER_DISABLED]name = MO,  called_from = function bP",0)
 // call BJDebugMsg("DEBUG: Disabling trigger + 20306")
 call DisableTrigger(IsReadyTrig)
 loop
@@ -20222,7 +20053,6 @@ local unit u=GetSpellAbilityUnit()
 call IssueImmediateOrderById(u,$D0004)
 set u=null
 endfunction
-
 function SetCamera_Trigger_Function takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local real fA=S2R(SubString(GetEventPlayerChatString(),6,StringLength(GetEventPlayerChatString())))
@@ -20234,7 +20064,6 @@ call DisplayTextToPlayer(p,0,0,"|Cffff0000Enter a zoom % between 100 and 200. (D
 endif
 set p=null
 endfunction
-
 function nQ takes nothing returns nothing
 call Kd(GetHandleId(GetDyingUnit()))
 endfunction
@@ -22254,13 +22083,9 @@ endif
 set dy=null
 set p=null
 endfunction
-
-
 function InitCustomTeams takes nothing returns nothing
-
 set bj_forLoopAIndexEnd = 8
 set bj_forLoopBIndexEnd = 8
-
 loop
 exitwhen bj_forLoopAIndex == bj_forLoopAIndexEnd
     call SetPlayerTeam(Player(bj_forLoopAIndex),0)
@@ -22282,7 +22107,6 @@ set bj_forLoopBIndexEnd = 0
 call SetPlayerTeam(Player(11),1)
 call SetPlayerState(Player(11),PLAYER_STATE_ALLIED_VICTORY,1)
 endfunction
-
 function Rage___Update takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer i1=(GetHandleId((t)))
@@ -22584,11 +22408,12 @@ endif
 endif
 set p=null
 endfunction
-
 function ItsReady___Init takes nothing returns nothing
 local integer index=0
 loop
 call TriggerRegisterPlayerChatEvent(IsReadyTrig,Player(index),"+",true)
+
+call SendStatsToBot("DEBUG [TRIGGER_REGISTRATION] name = MO, target = player["+I2S(index)+"] called_from = function ItsReady___Init",0)
 set index=index+1
 exitwhen index==16
 endloop
@@ -22597,7 +22422,6 @@ call TriggerAddAction(IsReadyTrig,function ItsReady___OnActions)
 // call BJDebugMsg("DEBUG: Disabling trigger + 23832")
 call DisableTrigger(IsReadyTrig)
 endfunction
-
 function HeroLimit___OnConditions takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())!=Player(11)and IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO)==true
 endfunction
@@ -23515,7 +23339,6 @@ call SetPlayerRacePreference(Player(11),RACE_PREF_UNDEAD)
 call SetPlayerRaceSelectable(Player(11),false)
 call SetPlayerController(Player(11),MAP_CONTROL_COMPUTER)
 endfunction
-
 function main takes nothing returns nothing
 local weathereffect we
 local destructable d
@@ -23575,14 +23398,12 @@ call DemonicRage___DemonicRageSpell()
 call RegisterSpellEffectResponse('A0JK',(13))
 call BorningOfDeath___Init()
 call InitGlobals()
-
 // Main Map trigers registration. Without that nbothing will work, even zoom
 // CUSTOM TRIGERS EPTA
 call InitTrig_Unit_Indexer()
 call InitTrig_Damage_Engine_Config()
 call InitTrig_Damage_Engine()
 // Here must be call to main2, but Kira don't respect that way
-
 set Po=Rect(864.,-3168.,1056.,-2976.)
 set qo=Rect(672.,-3168.,864.,-2976.)
 set Qo=Rect(480.,-3168.,672.,-2976.)
@@ -24011,7 +23832,6 @@ endloop
 call TriggerAddAction(xn,function hf)
 set on=CreateTrigger()
 call DisableTrigger(on)
-
 // Random hero trigger 
 set bj_forLoopAIndexEnd = 8
 loop
@@ -24020,10 +23840,8 @@ exitwhen bj_forLoopAIndex == bj_forLoopAIndexEnd
     call TriggerRegisterPlayerChatEvent(on,Player(bj_forLoopAIndex),"-c",true)
     set bj_forLoopAIndex = bj_forLoopAIndex + 1
 endloop
-
 set bj_forLoopAIndexEnd = 0
 set bj_forLoopAIndex = 0
-
 call TriggerAddAction(on,function jf)
 set ED=0
 set wN=16
@@ -24474,7 +24292,11 @@ call TriggerAddAction(LO,function Sp)
 set mO=CreateTrigger()
 call TriggerAddAction(mO,function Tp)
 set MO=CreateTrigger()
+call SendStatsToBot("DEBUG [TRIGGER_CREATION] name = MO, target = players[0..7] called_from = function main",0)
+
 call DisableTrigger(MO)
+
+call SendStatsToBot("DEBUG [TRIGGER_REGISTRATION] name = MO, target = players[0..7] called_from = function main",0)
 call TriggerRegisterPlayerChatEvent(MO,Player(0),"+",true)
 call TriggerRegisterPlayerChatEvent(MO,Player(1),"+",true)
 call TriggerRegisterPlayerChatEvent(MO,Player(2),"+",true)
@@ -25058,7 +24880,6 @@ endloop
 call TriggerAddAction(VI,function ot)
 call ConditionalTriggerExecute(qa)
 // end of main2
-
 call InitTrig_SettingsTrueCast()
 set gg_trg_TestPickWave=CreateTrigger()
 call InitTrig_TestDebug()
@@ -25066,7 +24887,6 @@ call InitTrig_TestDebug()
 // hz 4o eto
 call RunInitializationTriggers()    
 endfunction
-
 function config takes nothing returns nothing
 call SetMapName("TRIGSTR_015")
 call SetMapDescription("TRIGSTR_017")
@@ -25086,7 +24906,6 @@ call InitCustomPlayerSlots()
 call InitCustomTeams()
 // call InitAllyPriorities()
 endfunction
-
 function sa__Table__GTable_onDestroy takes nothing returns boolean
 local integer this=f__arg_this
 call FlushChildHashtable(Table__ht,((this)))
