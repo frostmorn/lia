@@ -399,7 +399,7 @@ integer Sv=0
 force tv=null
 force Tv=null
 boolean array uv
-unit Uv=null
+unit GeneralUnit=null
 integer wv=0
 boolean Wv=false
 integer yv=0
@@ -444,7 +444,7 @@ boolean array pe
 boolean Pe=false
 unit qe=null
 integer Qe=0
-unit array se
+unit array HeroStocksArray
 unit Se=null
 unit Te=null
 unit ue=null
@@ -461,15 +461,14 @@ unit ox=null
 integer ix=0
 unit ax=null
 integer nx=0
-integer Vx=0
+integer HeroesCount=0
 boolean Ex=false
 string array Xx
 integer Ox=0
 integer Rx=0
 player array Ix
 hashtable Ax=null
-trigger Nx=null
-trigger bx=null
+trigger GeneralAttackedTrigger=null
 trigger Bx=null
 trigger cx=null
 trigger Cx=null
@@ -492,7 +491,7 @@ fogmodifier array Px
 group qx=null
 boolean Qx=false
 boolean sx=false
-integer array Sx
+integer array HeroIdsArray
 real tx=0
 integer Tx=0
 timer ux=null
@@ -5360,22 +5359,22 @@ set pb=null
 set P=null
 set uT=null
 endfunction
-function Sb takes nothing returns nothing
-set Sx[21]='H00S'
-call RemoveUnitFromStock(se[6],'H002')
-call AddUnitToStock(se[6],'H00S',1,1)
-set Sx[7]='H00T'
-call RemoveUnitFromStock(se[6],'H001')
-call AddUnitToStock(se[6],'H00T',1,1)
-set Sx[41]='E00M'
-call RemoveUnitFromStock(se[4],'E00L')
-call AddUnitToStock(se[4],'E00M',1,1)
-set Sx[5]='H00W'
-call RemoveUnitFromStock(se[3],'H000')
-call AddUnitToStock(se[3],'H00W',1,1)
-set Sx[8]='H00Y'
-call RemoveUnitFromStock(se[6],'H007')
-call AddUnitToStock(se[6],'H00Y',1,1)
+function ReplaceHeroesForBModeFunction takes nothing returns nothing
+set HeroIdsArray[21]='H00S'
+call RemoveUnitFromStock(HeroStocksArray[6],'H002')
+call AddUnitToStock(HeroStocksArray[6],'H00S',1,1)
+set HeroIdsArray[7]='H00T'
+call RemoveUnitFromStock(HeroStocksArray[6],'H001')
+call AddUnitToStock(HeroStocksArray[6],'H00T',1,1)
+set HeroIdsArray[41]='E00M'
+call RemoveUnitFromStock(HeroStocksArray[4],'E00L')
+call AddUnitToStock(HeroStocksArray[4],'E00M',1,1)
+set HeroIdsArray[5]='H00W'
+call RemoveUnitFromStock(HeroStocksArray[3],'H000')
+call AddUnitToStock(HeroStocksArray[3],'H00W',1,1)
+set HeroIdsArray[8]='H00Y'
+call RemoveUnitFromStock(HeroStocksArray[6],'H007')
+call AddUnitToStock(HeroStocksArray[6],'H00Y',1,1)
 endfunction
 function tb takes nothing returns nothing
 local integer In=0
@@ -5384,8 +5383,8 @@ exitwhen In>7
 call SetPlayerTechMaxAllowed(Player(In),'R007',0)
 set In=In+1
 endloop
-call RemoveUnitFromStock(se[2],'H00M')
-call RemoveUnitFromStock(se[4],'U005')
+call RemoveUnitFromStock(HeroStocksArray[2],'H00M')
+call RemoveUnitFromStock(HeroStocksArray[4],'U005')
 call RemoveUnit(px[7])
 set px[7]=CreateUnitAtLoc(Player(15),'n01T',GetRectCenter(ri),bj_UNIT_FACING)
 call DisableTrigger(mR)
@@ -5619,7 +5618,7 @@ local integer In
 set In=1
 loop
 exitwhen In>6
-call PauseUnit(se[In],true)
+call PauseUnit(HeroStocksArray[In],true)
 set In=In+1
 endloop
 endfunction
@@ -5628,7 +5627,7 @@ local integer In
 set In=1
 loop
 exitwhen In>6
-call PauseUnit(se[In],false)
+call PauseUnit(HeroStocksArray[In],false)
 set In=In+1
 endloop
 endfunction
@@ -6086,11 +6085,11 @@ set u=null
 endfunction
 function ZB takes unit s returns integer
 local integer id=GetUnitTypeId(s)
-local integer wN=Vx
+local integer wN=HeroesCount
 local integer In=1
 loop
 exitwhen In>wN
-if id==Sx[In]then
+if id==HeroIdsArray[In]then
 return In
 endif
 set In=In+1
@@ -6136,7 +6135,7 @@ endfunction
 function oc takes nothing returns integer
 local integer rc
 local boolean ic
-local integer ac=Vx
+local integer ac=HeroesCount
 loop
 set ic=false
 set rc=GetRandomInt(1,ac)
@@ -6177,11 +6176,11 @@ set rc=oc()
 exitwhen rc!=-1 and xc(rc)
 endloop
 set vo[ec]=rc
-set Vc=Sx[rc]
+set Vc=HeroIdsArray[rc]
 set u=CreateUnitAtLoc(p,Vc,GetRectCenter(Ri),0)
 loop
 exitwhen In>6
-call RemoveUnitFromStock(se[In],GetUnitTypeId(u))
+call RemoveUnitFromStock(HeroStocksArray[In],GetUnitTypeId(u))
 set In=In+1
 endloop
 call SaveUnitHandle(Ax,StringHash("HeroInit"),0,u)
@@ -6245,10 +6244,10 @@ set r=oc()
 exitwhen r!=-1 and xc(r)
 endloop
 set Yv[GetPlayerId(p)+1]=r
-set un=Sx[r]
+set un=HeroIdsArray[r]
 loop
 exitwhen In>6
-set b=IssueImmediateOrderById(se[In],un)
+set b=IssueImmediateOrderById(HeroStocksArray[In],un)
 if b then
 // picked random hero
 set ut=GroupPickRandomUnit(lA(un))
@@ -7258,8 +7257,8 @@ function jC takes nothing returns nothing
 local player p=Player(15)
 local real Ec=bj_UNIT_FACING
 local unit u
-set se[1]=CreateUnitAtLoc(p,'n02L',GetRectCenter(Ur),Ec)
-set u=se[1]
+set HeroStocksArray[1]=CreateUnitAtLoc(p,'n02L',GetRectCenter(Ur),Ec)
+set u=HeroStocksArray[1]
 call AddUnitToStock(u,'N00U',0,1)
 call AddUnitToStock(u,'H00F',0,1)
 call AddUnitToStock(u,'N00T',0,1)
@@ -7269,8 +7268,8 @@ call AddUnitToStock(u,'H008',0,1)
 call AddUnitToStock(u,'H00Z',0,1)
 call AddUnitToStock(u,'O004',0,1)
 call AddUnitToStock(u,'Hpal',0,1)
-set se[2]=CreateUnitAtLoc(p,'n000',GetRectCenter(yr),Ec)
-set u=se[2]
+set HeroStocksArray[2]=CreateUnitAtLoc(p,'n000',GetRectCenter(yr),Ec)
+set u=HeroStocksArray[2]
 call AddUnitToStock(u,'H00M',0,1)
 call AddUnitToStock(u,'O003',0,1)
 call AddUnitToStock(u,'O005',0,1)
@@ -7278,8 +7277,8 @@ call AddUnitToStock(u,'E007',0,1)
 call AddUnitToStock(u,'E00C',0,1)
 call AddUnitToStock(u,'U000',0,1)
 call AddUnitToStock(u,'U00B',0,1)
-set se[3]=CreateUnitAtLoc(p,'n02M',GetRectCenter(wr),Ec)
-set u=se[3]
+set HeroStocksArray[3]=CreateUnitAtLoc(p,'n02M',GetRectCenter(wr),Ec)
+set u=HeroStocksArray[3]
 call AddUnitToStock(u,'O001',0,1)
 call AddUnitToStock(u,'O00B',0,1)
 call AddUnitToStock(u,'E003',0,1)
@@ -7287,8 +7286,8 @@ call AddUnitToStock(u,'H000',0,1)
 call AddUnitToStock(u,'E000',0,1)
 call AddUnitToStock(u,'N01I',0,1)
 call AddUnitToStock(u,'H003',0,1)
-set se[4]=CreateUnitAtLoc(p,'n003',GetRectCenter(Yr),Ec)
-set u=se[4]
+set HeroStocksArray[4]=CreateUnitAtLoc(p,'n003',GetRectCenter(Yr),Ec)
+set u=HeroStocksArray[4]
 call AddUnitToStock(u,'E00D',0,1)
 call AddUnitToStock(u,'E004',0,1)
 call AddUnitToStock(u,'U005',0,1)
@@ -7297,8 +7296,8 @@ call AddUnitToStock(u,'E006',0,1)
 call AddUnitToStock(u,'N02G',0,1)
 call AddUnitToStock(u,'E00L',0,1)
 call AddUnitToStock(u,'H00U',0,1)
-set se[5]=CreateUnitAtLoc(p,'n00S',GetRectCenter(Wr),Ec)
-set u=se[5]
+set HeroStocksArray[5]=CreateUnitAtLoc(p,'n00S',GetRectCenter(Wr),Ec)
+set u=HeroStocksArray[5]
 call AddUnitToStock(u,'E005',0,1)
 call AddUnitToStock(u,'E00B',0,1)
 call AddUnitToStock(u,'N00H',0,1)
@@ -7308,8 +7307,8 @@ call AddUnitToStock(u,'U002',0,1)
 call AddUnitToStock(u,'H00A',0,1)
 call AddUnitToStock(u,'U00A',0,1)
 call AddUnitToStock(u,'Hblm',0,1)
-set se[6]=CreateUnitAtLoc(p,'n007',GetRectCenter(zr),Ec)
-set u=se[6]
+set HeroStocksArray[6]=CreateUnitAtLoc(p,'n007',GetRectCenter(zr),Ec)
+set u=HeroStocksArray[6]
 call AddUnitToStock(u,'H001',0,1)
 call AddUnitToStock(u,'E002',0,1)
 call AddUnitToStock(u,'H002',0,1)
@@ -7382,7 +7381,7 @@ call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,ir)
 call SetPlayerStateBJ(Player(-1+(In)),PLAYER_STATE_RESOURCE_GOLD,50)
 call SetPlayerMaxHeroesAllowed(1,Player(-1+(In)))
 call ClearSelectionForPlayer(Player(-1+(In)))
-call SelectUnitForPlayerSingle(se[1],Player(-1+(In)))
+call SelectUnitForPlayerSingle(HeroStocksArray[1],Player(-1+(In)))
 endif
 set In=In+1
 endloop
@@ -7757,54 +7756,54 @@ set Xx[46]="ReplaceableTextures\\CommandButtons\\BTNThrall.blp"
 set Xx[47]="ReplaceableTextures\\CommandButtons\\BTNFelGuard.blp"
 set Xx[48]="ReplaceableTextures\\CommandButtons\\BTNNecromancer.blp"
 set kv=63
-set Vx=47
-set Sx[1]='E002'
-set Sx[2]='E004'
-set Sx[3]='E000'
-set Sx[4]='E005'
-set Sx[5]='H000'
-set Sx[6]='H00A'
-set Sx[7]='H001'
-set Sx[8]='H007'
-set Sx[9]='O003'
-set Sx[10]='O004'
-set Sx[11]='O000'
-set Sx[12]='O005'
-set Sx[13]='O002'
-set Sx[14]='U002'
-set Sx[15]='U000'
-set Sx[16]='E003'
-set Sx[17]='O001'
-set Sx[18]='H005'
-set Sx[19]='H003'
-set Sx[20]='N00H'
-set Sx[21]='H002'
-set Sx[22]='N00T'
-set Sx[23]='N00U'
-set Sx[24]='H008'
-set Sx[25]='N018'
-set Sx[26]='H006'
-set Sx[27]='E006'
-set Sx[28]='E007'
-set Sx[29]='H00B'
-set Sx[30]='N01I'
-set Sx[31]='H00F'
-set Sx[32]='U005'
-set Sx[33]='E00B'
-set Sx[34]='E00C'
-set Sx[35]='O00B'
-set Sx[36]='H00M'
-set Sx[37]='E00D'
-set Sx[38]='N02G'
-set Sx[39]='U00A'
-set Sx[40]='E00F'
-set Sx[41]='E00L'
-set Sx[42]='H00U'
-set Sx[43]='H00Z'
-set Sx[44]='U00B'
-set Sx[45]='O00G'
-set Sx[46]='Hpal'
-set Sx[47]='Hblm'
+set HeroesCount=47
+set HeroIdsArray[1]='E002'
+set HeroIdsArray[2]='E004'
+set HeroIdsArray[3]='E000'
+set HeroIdsArray[4]='E005'
+set HeroIdsArray[5]='H000'
+set HeroIdsArray[6]='H00A'
+set HeroIdsArray[7]='H001'
+set HeroIdsArray[8]='H007'
+set HeroIdsArray[9]='O003'
+set HeroIdsArray[10]='O004'
+set HeroIdsArray[11]='O000'
+set HeroIdsArray[12]='O005'
+set HeroIdsArray[13]='O002'
+set HeroIdsArray[14]='U002'
+set HeroIdsArray[15]='U000'
+set HeroIdsArray[16]='E003'
+set HeroIdsArray[17]='O001'
+set HeroIdsArray[18]='H005'
+set HeroIdsArray[19]='H003'
+set HeroIdsArray[20]='N00H'
+set HeroIdsArray[21]='H002'
+set HeroIdsArray[22]='N00T'
+set HeroIdsArray[23]='N00U'
+set HeroIdsArray[24]='H008'
+set HeroIdsArray[25]='N018'
+set HeroIdsArray[26]='H006'
+set HeroIdsArray[27]='E006'
+set HeroIdsArray[28]='E007'
+set HeroIdsArray[29]='H00B'
+set HeroIdsArray[30]='N01I'
+set HeroIdsArray[31]='H00F'
+set HeroIdsArray[32]='U005'
+set HeroIdsArray[33]='E00B'
+set HeroIdsArray[34]='E00C'
+set HeroIdsArray[35]='O00B'
+set HeroIdsArray[36]='H00M'
+set HeroIdsArray[37]='E00D'
+set HeroIdsArray[38]='N02G'
+set HeroIdsArray[39]='U00A'
+set HeroIdsArray[40]='E00F'
+set HeroIdsArray[41]='E00L'
+set HeroIdsArray[42]='H00U'
+set HeroIdsArray[43]='H00Z'
+set HeroIdsArray[44]='U00B'
+set HeroIdsArray[45]='O00G'
+set HeroIdsArray[46]='Hpal'
+set HeroIdsArray[47]='Hblm'
 endfunction
 function pC takes integer n returns integer
 local integer array id
@@ -8623,7 +8622,7 @@ function OD takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local timer t2=CreateTimer()
 if no or Wx then
-call Sb()
+call ReplaceHeroesForBModeFunction()
 endif
 call EnableTrigger(ya)
 call EnableTrigger(Ya)
@@ -9522,13 +9521,13 @@ local integer In=1
 local integer wN=A
 local integer ss=ZB(TB)
 call RemoveUnitFromStock(gf,GetUnitTypeId(TB))
-if gf==se[6]then
+if gf==HeroStocksArray[6]then
 call SetUnitPositionLoc(TB,GetRectCenter(ur))
 endif
-if gf==se[4]then
+if gf==HeroStocksArray[4]then
 call SetUnitPositionLoc(TB,GetRectCenter(tr))
 endif
-if gf==se[2]then
+if gf==HeroStocksArray[2]then
 call SetUnitPositionLoc(TB,GetRectCenter(Tr))
 endif
 call SaveUnitHandle(Ax,StringHash("HeroInit"),0,TB)
@@ -12955,7 +12954,7 @@ call EnableTrigger(WV)
 call DestroyTrigger(wV)
 endif
 endfunction
-function Bj takes nothing returns nothing
+function SkeletonWarriorUltimateDamageDealerFunction takes nothing returns nothing
 local integer WF
 local unit qH
 local unit QH
@@ -13022,13 +13021,13 @@ set QH=null
 endfunction
 function Dj takes nothing returns nothing
 if(GetLearnedSkill()=='A04O')then
-set Uv=GetLearningUnit()
+set GeneralUnit=GetLearningUnit()
 call UnitAddAbility(GetLearningUnit(),'A0CQ')
 call EnableTrigger(ZV)
 call DestroyTrigger(zV)
 endif
 endfunction
-function fj takes nothing returns nothing
+function GeneralPassiveSkillDamageDealerFunction takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
 local player p
@@ -13036,7 +13035,7 @@ local integer JN
 local group g
 local unit f
 local real DC
-if VF==Uv and GetUnitAbilityLevel(ed,'B024')>0 then
+if VF==GeneralUnit and GetUnitAbilityLevel(ed,'B024')>0 then
 call TriggerSleepAction(.01)
 set p=GetOwningPlayer(VF)
 set JN=GetUnitAbilityLevel(VF,'A04O')
@@ -13062,13 +13061,13 @@ set g=null
 set f=null
 endfunction
 function Fj takes nothing returns boolean
-return GetAttacker()==Uv and IsUnitEnemy(GetTriggerUnit(),GetOwningPlayer(GetAttacker()))
+return GetAttacker()==GeneralUnit and IsUnitEnemy(GetTriggerUnit(),GetOwningPlayer(GetAttacker()))
 endfunction
 function gj takes nothing returns nothing
-call DestroyTrigger(bx)
-set bx=CreateTrigger()
-call TriggerRegisterUnitEvent(bx,GetTriggerUnit(),EVENT_UNIT_DAMAGED)
-call TriggerAddAction(bx,function fj)
+call DestroyTrigger(GeneralAttackedTrigger)
+set GeneralAttackedTrigger=CreateTrigger()
+call TriggerRegisterUnitEvent(GeneralAttackedTrigger,GetTriggerUnit(),EVENT_UNIT_DAMAGED)
+call TriggerAddAction(GeneralAttackedTrigger,function GeneralPassiveSkillDamageDealerFunction)
 endfunction
 function Gj takes nothing returns nothing
 local unit wF
@@ -15001,7 +15000,6 @@ endif
 endif
 call UnitRemoveAbility(u,'A0CP')
 call DisableTrigger(EX)
-call DestroyTrigger(Nx)
 set u=null
 endfunction
 function pK takes nothing returns nothing
@@ -16980,7 +16978,7 @@ call TriggerAddAction(wV,function bj)
 set WV=CreateTrigger()
 call DisableTrigger(WV)
 call TriggerRegisterAnyUnitEventBJ(WV,EVENT_PLAYER_UNIT_ATTACKED)
-call TriggerAddAction(WV,function Bj)
+call TriggerAddAction(WV,function SkeletonWarriorUltimateDamageDealerFunction)
 set yV=CreateTrigger()
 call TriggerRegisterUnitEvent(yV,u,EVENT_UNIT_HERO_SKILL)
 call TriggerAddAction(yV,function cj)
@@ -18753,7 +18751,7 @@ local integer wp=1
 local integer GB
 local integer Wp
 local integer wN
-local integer yp=Vx+1
+local integer yp=HeroesCount+1
 set up[0]=false
 loop
 exitwhen wp>Up
@@ -19519,7 +19517,7 @@ local integer wp=1
 local integer GB
 local integer Wp
 local integer wN
-local integer yp=Vx+1
+local integer yp=HeroesCount+1
 set up[0]=false
 loop
 exitwhen wp>Up
@@ -19571,7 +19569,7 @@ local integer wp=1
 local integer GB
 local integer Wp
 local integer wN
-local integer yp=Vx+1
+local integer yp=HeroesCount+1
 set up[0]=false
 loop
 exitwhen wp>Up
@@ -23914,7 +23912,7 @@ set qx=CreateGroup()
 set i=0
 loop
 exitwhen(i>40)
-set Sx[i]=0
+set HeroIdsArray[i]=0
 set i=i+1
 endloop
 set tx=1.
