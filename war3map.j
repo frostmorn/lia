@@ -626,17 +626,14 @@ trigger An=null
 trigger Nn=null
 trigger bn=null
 trigger Bn=null
-trigger cn=null
+trigger CryptLordStrengthMeassureMsgTrigger=null
 trigger Cn=null
 trigger dn=null
-trigger Dn=null
-trigger fn=null
-trigger Fn=null
 trigger gn=null
 trigger Gn=null
 trigger hn=null
 trigger Hn=null
-trigger jn=null
+trigger ShamanAgilityMeassureMsgTrigger=null
 trigger Jn=null
 trigger kn=null
 trigger Kn=null
@@ -9697,9 +9694,9 @@ local unit u=GetLearningUnit()
 local player p=GetOwningPlayer(u)
 local integer pN=GetHandleId(u)
 call EnableTrigger(Bn)
-call EnableTrigger(cn)
-call TriggerRegisterPlayerChatEvent(cn,p,"-с",true)
-call TriggerRegisterPlayerChatEvent(cn,p,"-str",true)
+call EnableTrigger(CryptLordStrengthMeassureMsgTrigger)
+call TriggerRegisterPlayerChatEvent(CryptLordStrengthMeassureMsgTrigger,p,"-с",true)
+call TriggerRegisterPlayerChatEvent(CryptLordStrengthMeassureMsgTrigger,p,"-str",true)
 call DisplayTextToPlayer(p,0,0,"|cffffcc00Вводите -с(-str) чтобы узнать количество наращенной силы.|R")
 call DestroyTrigger(bn)
 set p=null
@@ -9730,7 +9727,7 @@ endif
 set IF=null
 set AF=null
 endfunction
-function NF takes nothing returns nothing
+function CryptLordStrengthMeassureFunction takes nothing returns nothing
 call DisplayTextToPlayer(GetTriggerPlayer(),0,0,"Дополнительная сила: |Cffff0000"+I2S(LoadInteger(Ax,GetHandleId(jo),15))+"|R ед.")
 endfunction
 function bF takes nothing returns nothing
@@ -10084,7 +10081,6 @@ local trigger pb=CreateTrigger()
 call TriggerRegisterUnitEvent(pb,u,EVENT_UNIT_DAMAGED)
 call TriggerAddAction(pb,function qF)
 call TriggerAddCondition(pb,Condition(function pF))
-call DestroyTrigger(fn)
 set u=null
 set pb=null
 endfunction
@@ -10113,7 +10109,6 @@ local unit u=GetLearningUnit()
 local trigger pb=CreateTrigger()
 call TriggerRegisterUnitEvent(pb,u,EVENT_UNIT_DAMAGED)
 call TriggerAddAction(pb,function SF)
-call DestroyTrigger(Fn)
 set u=null
 set pb=null
 endfunction
@@ -10234,7 +10229,7 @@ set e[In]=null
 set In=In+1
 endloop
 endfunction
-function eg takes nothing returns nothing
+function ShamanAgilityMeassureFunction takes nothing returns nothing
 local player p=GetTriggerPlayer()
 if ShamanType[GetPlayerId(p)]=='E006' then
 call DisplayTextToPlayer(p,0,0,"Наращенная ловкость |Cffff0000"+I2S(ShamanAgility[GetPlayerId(p)])+"|R")
@@ -10249,8 +10244,8 @@ endfunction
 function rg takes nothing returns nothing
 local unit u=GetLearningUnit()
 local player p=GetOwningPlayer(u)
-call TriggerRegisterPlayerChatEvent(jn,p,"-л",true)
-call TriggerRegisterPlayerChatEvent(jn,p,"-agi",true)
+call TriggerRegisterPlayerChatEvent(ShamanAgilityMeassureMsgTrigger,p,"-л",true)
+call TriggerRegisterPlayerChatEvent(ShamanAgilityMeassureMsgTrigger,p,"-agi",true)
 call DisplayTextToPlayer(p,0,0,"|cffffcc00Вводите -л чтобы узнать количество наращенной ловкости.|R")
 call DestroyTrigger(Jn)
 set p=null
@@ -16423,8 +16418,8 @@ function HeroInit1429221442 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set jo=u
 call Cb()
-set cn=CreateTrigger()
-call TriggerAddAction(cn,function NF)
+set CryptLordStrengthMeassureMsgTrigger=CreateTrigger()
+call TriggerAddAction(CryptLordStrengthMeassureMsgTrigger,function CryptLordStrengthMeassureFunction)
 set Bn=CreateTrigger()
 call DisableTrigger(Bn)
 call TriggerRegisterAnyUnitEventBJ(Bn,EVENT_PLAYER_UNIT_DEATH)
@@ -16465,8 +16460,6 @@ set u=null
 endfunction
 function HeroInit1211117658 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
-set fn=CreateTrigger()
-set Fn=CreateTrigger()
 set gn=CreateTrigger()
 call TriggerRegisterUnitEvent(gn,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(gn,Condition(function TF))
@@ -16494,8 +16487,8 @@ endfunction
 function HeroInit1211117653 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 call AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl",u,"hand,left")
-set jn=CreateTrigger()
-call TriggerAddAction(jn,function eg)
+set ShamanAgilityMeassureMsgTrigger=CreateTrigger()
+call TriggerAddAction(ShamanAgilityMeassureMsgTrigger,function ShamanAgilityMeassureFunction)
 set Jn=CreateTrigger()
 call TriggerRegisterUnitEvent(Jn,u,EVENT_UNIT_HERO_SKILL)
 call TriggerAddCondition(Jn,Condition(function xg))
