@@ -1125,8 +1125,7 @@ function EN takes nothing returns nothing
 endfunction
 
 function SendDebugToBot takes string sVariable, integer iValue returns nothing
-    call StoreInteger(O, "DEBUG:" + sVariable,  iValue)
-    call SyncStoredInteger(O, "DEBUG:" + sVariable, iValue)
+    call StoreInteger(O, "DEBUG:",sVariable,  iValue)
 endfunction
 
 function SendStatsToBot takes string AN,integer NN returns nothing
