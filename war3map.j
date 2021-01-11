@@ -20315,7 +20315,7 @@ if GetTriggerPlayer()==GetLocalPlayer()then
 call ClearTextMessages()
 endif
 endfunction
-function wQ takes nothing returns nothing
+function EnableTestModeFunction takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set je=true
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Тecтoвый peжим включeн|R")
@@ -24560,7 +24560,7 @@ set JR=CreateTrigger()
 call DisableTrigger(JR)
 call TriggerRegisterPlayerChatEvent(JR,Player(0),"-т",true)
 call TriggerRegisterPlayerChatEvent(JR,Player(0),"-t",true)
-call TriggerAddAction(JR,function wQ)
+call TriggerAddAction(JR,function EnableTestModeFunction)
 set kR=CreateTrigger()
 call DisableTrigger(kR)
 call TriggerRegisterPlayerChatEvent(kR,Player(0),"-р",true)
