@@ -7836,38 +7836,6 @@ endfunction
 function Xd takes nothing returns nothing
 call DisableTrigger(Wa)
 endfunction
-function Od takes nothing returns nothing
-call DestroyTimer(Ho)
-set Ho=CreateTimer()
-call TimerStart(Ho,'x',false,function Xd)
-call yb()
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 8020)
-// call BJDebugMsg("DEBUG: Disabling trigger + 9291")
-call DisableTrigger(IsReadyTrig)
-call DestroyTimer(RoundStartTimer)
-call DestroyTimer(LoadTimerHandle(Ax,1,StringHash("timers")))
-call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
-call DestroyTimerDialog(Oe)
-call ModifyGateBJ(0,ho)
-set RoundStartTimer=null
-set Oe=null
-if J==1 then
-call DisableTrigger(UR)
-call DisableTrigger(wR)
-call DisableTrigger(yR)
-endif
-set rv=0
-if Tb()then
-call xB()
-return
-endif
-if ModuloInteger(J,5)==0 then
-call TriggerExecute(EO)
-else
-call TriggerExecute(VO)
-endif
-endfunction
 function Rd takes unit u returns boolean
 local real hc=GetWidgetLife(u)
 local boolean ch
@@ -18633,7 +18601,7 @@ call DestroyTimer(Fo)
 if Ex then
 call DisableTrigger(MO)
 call SendDebugToBot("trigger MO disabled", 18817)
-call Od()
+call RoundStartFunction()
 // call DisplayTimedTextToForce(GetPlayersAll(),10.00,"Loop (stage 2) - Status is ready")
 endif
 if no or Wx then
@@ -22386,7 +22354,7 @@ if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
 if Ex then
 // call BJDebugMsg("DEBUG: Disabling trigger + 23809")
 call DisableTrigger(IsReadyTrig)
-call Od()
+call RoundStartFunction()
 endif
 if no or Wx then
 // call BJDebugMsg("DEBUG: Disabling trigger + 23814")
