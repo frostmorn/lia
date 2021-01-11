@@ -8007,10 +8007,6 @@ function RoundStartFunction takes nothing returns nothing
     call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
     call DestroyTimerDialog(Oe)
     call yb()
-    call DisableTrigger(MO)
-    call SendDebugToBot("trigger MO disabled", 8186)
-    // call BJDebugMsg("DEBUG: Disabling trigger + 9456")
-    call DisableTrigger(IsReadyTrig)
     call ModifyGateBJ(0,ho)
     set RoundStartTimer=null
     set Oe=null
