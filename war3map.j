@@ -254,7 +254,7 @@ boolean array I
 integer A=0
 integer array D
 unit array F
-timer H=null
+timer RoundStartTimer=null
 integer J=0
 integer array creep_ids
 integer array boss_ids
@@ -5798,9 +5798,9 @@ call SendDebugToBot("trigger MO disabled", 5973)
 // call BJDebugMsg("DEBUG: Disabling trigger + 7247")
 call DisableTrigger(IsReadyTrig)
 
-call DestroyTimer(H)
+call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
-set H=null
+set RoundStartTimer=null
 set Oe=null
 if J==1 then
 call DisableTrigger(UR)
@@ -7845,12 +7845,12 @@ call DisableTrigger(MO)
 call SendDebugToBot("trigger MO disabled", 8020)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9291")
 call DisableTrigger(IsReadyTrig)
-call DestroyTimer(H)
+call DestroyTimer(RoundStartTimer)
 call DestroyTimer(LoadTimerHandle(Ax,1,StringHash("timers")))
 call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
 call DestroyTimerDialog(Oe)
 call ModifyGateBJ(0,ho)
-set H=null
+set RoundStartTimer=null
 set Oe=null
 if J==1 then
 call DisableTrigger(UR)
@@ -7997,39 +7997,40 @@ set g=null
 set f=null
 set t=null
 endfunction
-function dd takes nothing returns nothing
-call DestroyTimer(Ho)
-set Ho=null
-set Ho=CreateTimer()
-call TimerStart(Ho,'x',false,function Xd)
-call DestroyTimer(H)
-call DestroyTimer(LoadTimerHandle(Ax,1,StringHash("timers")))
-call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
-call DestroyTimerDialog(Oe)
-call yb()
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 8186)
-// call BJDebugMsg("DEBUG: Disabling trigger + 9456")
-call DisableTrigger(IsReadyTrig)
-call ModifyGateBJ(0,ho)
-set H=null
-set Oe=null
-if J==1 then
-call DisableTrigger(UR)
-call DisableTrigger(wR)
-call DisableTrigger(yR)
-endif
-set rv=0
-if Tb()then
-call xB()
-return
-endif
-if ModuloInteger(J,5)==0 then
-call TriggerExecute(EO)
-else
-call TriggerExecute(VO)
-endif
+function RoundStartFunction takes nothing returns nothing
+    call DestroyTimer(Ho)
+    set Ho=null
+    set Ho=CreateTimer()
+    call TimerStart(Ho,'x',false,function Xd)
+    call DestroyTimer(RoundStartTimer)
+    call DestroyTimer(LoadTimerHandle(Ax,1,StringHash("timers")))
+    call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
+    call DestroyTimerDialog(Oe)
+    call yb()
+    call DisableTrigger(MO)
+    call SendDebugToBot("trigger MO disabled", 8186)
+    // call BJDebugMsg("DEBUG: Disabling trigger + 9456")
+    call DisableTrigger(IsReadyTrig)
+    call ModifyGateBJ(0,ho)
+    set RoundStartTimer=null
+    set Oe=null
+    if J==1 then
+    call DisableTrigger(UR)
+    call DisableTrigger(wR)
+    call DisableTrigger(yR)
+    endif
+    set rv=0
+    if Tb()then
+    call xB()
+    return
+    endif
+    if ModuloInteger(J,5)==0 then
+    call TriggerExecute(EO)
+    else
+    call TriggerExecute(VO)
+    endif
 endfunction
+
 function Dd takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -8048,22 +8049,24 @@ call EnableTrigger(gR)
 call DestroyTimer(t)
 set t=null
 endfunction
-function Fd takes nothing returns nothing
-local integer index=0
-local timer t=GetExpiredTimer()
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 8231)
-// call BJDebugMsg("DEBUG: Disabling trigger + 9498")
-loop
-set IsReady[index]=false
-set index=index+1
-exitwhen index==16
-endloop
-call DisableTrigger(IsReadyTrig)
-call DisableTrigger(gR)
-call DestroyTimer(t)
-set t=null
+
+function PrepareBeforeRoundFunction takes nothing returns nothing
+    local integer index=0
+    local timer t=GetExpiredTimer()
+    call DisableTrigger(MO)
+    call SendDebugToBot("trigger MO disabled", 8231)
+    // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
+    loop
+    set IsReady[index]=false
+    set index=index+1
+    exitwhen index==16
+    endloop
+    call DisableTrigger(IsReadyTrig)
+    call DisableTrigger(gR)
+    call DestroyTimer(t)
+    set t=null
 endfunction
+
 function gd takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -8076,16 +8079,16 @@ local integer NB=Tx
 local timer t=CreateTimer()
 local timer tt=CreateTimer()
 local timer Gd=CreateTimer()
-local timer hd=CreateTimer()
+local timer PrepareBeforeRoundTimer=CreateTimer()
 local timer Hd=CreateTimer()
 local integer jd=GetHandleId(Hd)
 local integer Jd=GetHandleId(tt)
 local timerdialog fN
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
-call SaveTimerHandle(Ax,2,StringHash("timers"),hd)
+call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
 if Xv then
 set Hd=null
-set hd=null
+set PrepareBeforeRoundTimer=null
 set Gd=null
 set tt=null
 set t=null
@@ -8143,7 +8146,7 @@ set Fo=CreateTimer()
 call TimerStart(Fo,27,false,function hN)
 set fN=null
 set Hd=null
-set hd=null
+set PrepareBeforeRoundTimer=null
 set Gd=null
 set tt=null
 set t=null
@@ -8198,10 +8201,10 @@ else
 set w=60
 endif
 endif
-call TimerStart(hd,w-.5,false,function Fd)
-set H=CreateTimer()
-call TimerStart(H,w,false,function dd)
-set Oe=CreateTimerDialog(H)
+call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeRoundFunction)
+set RoundStartTimer=CreateTimer()
+call TimerStart(RoundStartTimer,w,false,function RoundStartFunction)
+set Oe=CreateTimerDialog(RoundStartTimer)
 set CURRENT_PLAYERS=0
 call TimerDialogSetTitle(Oe,"Осталось")
 call TimerDialogDisplay(Oe,true)
@@ -8211,7 +8214,7 @@ call TimerStart(Fo,w-3,false,function hN)
 set t=null
 set tt=null
 set Gd=null
-set hd=null
+set PrepareBeforeRoundTimer=null
 set Hd=null
 endfunction
 function kd takes nothing returns nothing
@@ -18737,7 +18740,7 @@ set w=60
 endif
 call FB()
 set tL=CreateTimer()
-set H=tL
+set RoundStartTimer=tL
 call TimerStart(tL,w,false,function vP)
 set Oe=CreateTimerDialog(tL)
 set CURRENT_PLAYERS=0
@@ -18875,7 +18878,7 @@ local timerdialog d=LoadTimerDialogHandle(Ax,1,dN)
 call DestroyTimerDialog(d)
 call DestroyTimer(t)
 call TriggerExecute(tO)
-set H=null
+set RoundStartTimer=null
 set Oe=null
 set t=null
 set d=null
@@ -18895,7 +18898,7 @@ call DisplayTextToPlayer(Player(i),0,0,"|cff706638Следующий раунд 
 set i=i+1
 endloop
 call MultiboardSetItemValueBJ(Q,4,mv+Mv+4,"|cffffcc00Дуэль")
-call DestroyTimer(H)
+call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
 call TimerStart(t,30,false,function NP)
 set d=CreateTimerDialog(t)
@@ -23683,7 +23686,7 @@ set bo[i]=0
 set Bo[i]=false
 set i=i+1
 endloop
-set H=CreateTimer()
+set RoundStartTimer=CreateTimer()
 set i=0
 loop
 exitwhen(i>5)
