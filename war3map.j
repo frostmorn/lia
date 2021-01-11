@@ -1211,6 +1211,10 @@ set E=XN[RN]
 endif
 endfunction
 
+function SendDebugToBot takes string sVariable, integer iValue returns nothing
+    call StoreInteger(O, "DEBUG:" + sVariable,  iValue)
+    call SyncStoredInteger(O, "DEBUG:" + sVariable, iValue)
+endfunction
 
 function SendStatsToBot takes string AN,integer NN returns nothing
 if E==null or IsPlayerOnline(E)==false then
@@ -5966,6 +5970,7 @@ function QB takes nothing returns nothing
 local integer In=1
 call yb()
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 5973)
 // call BJDebugMsg("DEBUG: Disabling trigger + 7247")
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(H)
@@ -8012,6 +8017,7 @@ set Ho=CreateTimer()
 call TimerStart(Ho,'x',false,function Xd)
 call yb()
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 8020)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9291")
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(H)
@@ -8177,6 +8183,7 @@ call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
 call DestroyTimerDialog(Oe)
 call yb()
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 8186)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9456")
 call DisableTrigger(IsReadyTrig)
 call ModifyGateBJ(0,ho)
@@ -8221,6 +8228,7 @@ function Fd takes nothing returns nothing
 local integer index=0
 local timer t=GetExpiredTimer()
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 8231)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
 loop
 set IsReady[index]=false
@@ -8292,6 +8300,7 @@ if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
 call ModifyGateBJ(0,ho)
 set Hv=true
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 8303)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
 loop
 set IsReady[index]=false
@@ -18805,11 +18814,13 @@ if rv>=av then
 call DestroyTimer(Fo)
 if Ex then
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 18817)
 call Od()
 // call DisplayTimedTextToForce(GetPlayersAll(),10.00,"Loop (stage 2) - Status is ready")
 endif
 if no or Wx then
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 18823)
 call QB()
 endif
 endif
@@ -19057,6 +19068,7 @@ local integer dN=GetHandleId(t)
 local timerdialog d
 local integer i=0
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 19071)
 // call BJDebugMsg("DEBUG: Disabling trigger + 20306")
 call DisableTrigger(IsReadyTrig)
 loop
@@ -24466,6 +24478,7 @@ set mO=CreateTrigger()
 call TriggerAddAction(mO,function Tp)
 set MO=CreateTrigger()
 call DisableTrigger(MO)
+SendDebugToBot("trigger MO disabled", 24481)
 call TriggerRegisterPlayerChatEvent(MO,Player(0),"+",true)
 call TriggerRegisterPlayerChatEvent(MO,Player(1),"+",true)
 call TriggerRegisterPlayerChatEvent(MO,Player(2),"+",true)
