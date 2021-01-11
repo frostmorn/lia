@@ -255,7 +255,7 @@ integer A=0
 integer array D
 unit array F
 timer RoundStartTimer=null
-integer J=0
+integer CurrentWave=0
 integer array creep_ids
 integer array boss_ids
 multiboard Q=null
@@ -4967,7 +4967,7 @@ endfunction
 function Kb takes real x,real y returns boolean
 local rect array r
 local integer wN
-local boolean Gb=(J==11)
+local boolean Gb=(CurrentWave==11)
 local integer In=1
 local boolean b=true
 if Gb then
@@ -5728,7 +5728,7 @@ call TriggerExecute(YO)
 endfunction
 function mB takes nothing returns nothing
 local group g=CreateGroup()
-local integer MB=J
+local integer MB=CurrentWave
 local integer pB=0
 local integer PB=0
 local unit f
@@ -5802,7 +5802,7 @@ call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
 set RoundStartTimer=null
 set Oe=null
-if J==1 then
+if CurrentWave==1 then
 call DisableTrigger(UR)
 call DisableTrigger(wR)
 endif
@@ -7978,7 +7978,7 @@ function RoundStartFunction takes nothing returns nothing
     call ModifyGateBJ(0,ho)
     set RoundStartTimer=null
     set Oe=null
-    if J==1 then
+    if CurrentWave==1 then
     call DisableTrigger(UR)
     call DisableTrigger(wR)
     call DisableTrigger(yR)
@@ -7988,7 +7988,7 @@ function RoundStartFunction takes nothing returns nothing
     call xB()
     return
     endif
-    if ModuloInteger(J,5)==0 then
+    if ModuloInteger(CurrentWave,5)==0 then
     call TriggerExecute(EO)
     else
     call TriggerExecute(VO)
@@ -8036,7 +8036,7 @@ local integer In=1
 local integer wN=A
 local integer index = 0
 local real w
-local integer Gb=J
+local integer Gb=CurrentWave
 local integer BB
 local integer bB=av
 local integer NB=Tx
@@ -8119,12 +8119,12 @@ else
 call ModifyGateBJ(1,ho)
 set Hv=false
 endif
-if J>0 then
+if CurrentWave>0 then
 if av==1 then
 call bN()
 endif
 endif
-set J=J+1
+set CurrentWave=CurrentWave+1
 set Gb=Gb+1
 if Gb==2 then
 call DisableTrigger(yR)
@@ -17305,16 +17305,16 @@ set qv=true
 call TriggerExecute(bO)
 call EB()
 call EC()
-if J>=16 then
+if CurrentWave>=16 then
 call EnableTrigger(fO)
 endif
-if J>=17 then
+if CurrentWave>=17 then
 call EnableTrigger(FO)
 endif
-if J>=18 then
+if CurrentWave>=18 then
 call EnableTrigger(gO)
 endif
-if J>=19 then
+if CurrentWave>=19 then
 call EnableTrigger(GO)
 endif
 call GroupEnumUnitsInRect(g,Uo,null)
@@ -17397,7 +17397,7 @@ local timer t5=CreateTimer()
 local integer dN=GetHandleId(t5)
 local integer In=1
 local integer wN=A
-local boolean b=(J==20)
+local boolean b=(CurrentWave==20)
 local real x
 local real y
 set iv=true
@@ -17427,11 +17427,11 @@ call SaveInteger(HashData,GetHandleId((Le)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Le,true)
 else
 call EnableTrigger(CO)
-set Me=CreateUnitAtLoc(Player(11),creep_ids[J],GetRectCenter(Vr),270)
+set Me=CreateUnitAtLoc(Player(11),creep_ids[CurrentWave],GetRectCenter(Vr),270)
 call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Me,true)
 call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
-if J==5 then
+if CurrentWave==5 then
 call qm()
 endif
 call EnableTrigger(eA)
@@ -17604,7 +17604,7 @@ function dM takes nothing returns nothing
 local integer nC=0
 local integer DM=av
 local unit u
-local integer MB=J
+local integer MB=CurrentWave
 local integer In=1
 local real fM=GetRectMaxX(Wo)
 local real FM=GetRectMaxY(Wo)
@@ -17767,7 +17767,7 @@ call DisableTrigger(XO)
 call DisableTrigger(nO)
 loop
 exitwhen In>wN
-call AdjustPlayerStateBJ(40*J,ae[In],PLAYER_STATE_RESOURCE_GOLD)
+call AdjustPlayerStateBJ(40*CurrentWave,ae[In],PLAYER_STATE_RESOURCE_GOLD)
 call AdjustPlayerStateBJ(5,ae[In],PLAYER_STATE_RESOURCE_LUMBER)
 set In=In+1
 endloop
@@ -17806,7 +17806,7 @@ set t=null
 endfunction
 function yM takes nothing returns nothing
 local string bC
-local integer MB=J
+local integer MB=CurrentWave
 if MB==16 then
 set bC="|cffff0000Начиная с этого раунда каждую секунду проведенную на арене герой будет терять по 50 ед. здоровья|R"
 endif
@@ -17825,14 +17825,14 @@ set bC=null
 endfunction
 function YM takes nothing returns nothing
 local integer In=0
-local integer MB=J
+local integer MB=CurrentWave
 local string bC
 local timer t
 local timer tt
 local boolean b=Ro
 loop
 exitwhen In>7
-call DisplayTimedTextToPlayer(Player(In),0,0,14,"|cffffcc00Волна - "+I2S(J)+": "+wave_small_descriptions[J]+"|R")
+call DisplayTimedTextToPlayer(Player(In),0,0,14,"|cffffcc00Волна - "+I2S(CurrentWave)+": "+wave_small_descriptions[CurrentWave]+"|R")
 set In=In+1
 endloop
 if MB==1 then
@@ -18629,7 +18629,7 @@ call DestroyTimer(t)
 set t=null
 endfunction
 function xP takes nothing returns nothing
-local integer MB=J
+local integer MB=CurrentWave
 local integer wN=A
 local integer bB=av
 local integer NB=$F
@@ -18673,13 +18673,13 @@ set Hv=true
 call TriggerExecute(SO)
 else
 set Hv=false
-if J>0 then
-call SendStatsToBot("WАVЕ",J)
+if CurrentWave>0 then
+call SendStatsToBot("WАVЕ",CurrentWave)
 if av==1 then
 call bN()
 endif
 endif
-set J=J+1
+set CurrentWave=CurrentWave+1
 set MB=MB+1
 if MB==2 then
 call DisableTrigger(yR)
@@ -19139,7 +19139,7 @@ set t=null
 endfunction
 function kP takes nothing returns nothing
 local real w=150.
-local integer MB=J
+local integer MB=CurrentWave
 set ux=CreateTimer()
 call TimerStart(ux,w,false,function JP)
 set Ux=CreateTimerDialog(ux)
@@ -19538,7 +19538,7 @@ return Location(GetRandomReal(GetRectMinX(r),GetRectMaxX(r)),GetRandomReal(GetRe
 endfunction
 function Iq takes nothing returns nothing
 local unit f
-local integer MB=J
+local integer MB=CurrentWave
 local integer In=1
 local location l
 // call BJDebugMsg("This is -b mode")
@@ -19622,7 +19622,7 @@ local integer id=LoadInteger(Ax,3,dN)
 local integer MB=LoadInteger(Ax,4,dN)
 local location l
 local unit f
-if qv and MB==J then
+if qv and MB==CurrentWave then
 set l=GetRandomLocInRect(Xe[k])
 set f=CreateUnitAtLoc(Player(11),id,l,GetRandomReal(0,360))
 if id=='n00V' then
@@ -19648,7 +19648,7 @@ local integer id
 local integer ch=0
 local real zf
 local unit u
-local integer MB=J
+local integer MB=CurrentWave
 if u1!=null then
 if GetOwningPlayer(u1)!=Player(11)then
 set u2=null
@@ -21941,7 +21941,7 @@ set it=null
 set u=null
 endfunction
 function US takes nothing returns boolean
-return(J<=7)
+return(CurrentWave<=7)
 endfunction
 function wS takes nothing returns nothing
 call CustomDefeatBJ(GetTriggerPlayer(),"")
@@ -22407,12 +22407,12 @@ if i<0 then
 return
 endif
 if i>20 then
-set J=20
+set CurrentWave=20
 endif
 if i==5 or i==10 or i==15 then
 call qm()
 endif
-set J=i
+set CurrentWave=i
 endfunction
 function InitTrig_TestPickWave takes nothing returns nothing
 set gg_trg_TestPickWave=CreateTrigger()
