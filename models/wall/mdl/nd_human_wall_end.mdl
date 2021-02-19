@@ -19,32 +19,32 @@ Sequences 1 {
 }
 Textures 6 {
 	Bitmap {
-		Image "models/wall/textures/NR_HU_BARRACKS_WALL.BLP",
+		Image "models\wall\textures\NR_HU_BARRACKS_WALL.BLP",
 		WrapWidth,
 		WrapHeight,
 	}
 	Bitmap {
-		Image "models/wall/textures/NR_HU_BARRACKS_TRIMWALL.BLP",
+		Image "models\wall\textures\NR_HU_BARRACKS_TRIMWALL.BLP",
 		WrapWidth,
 		WrapHeight,
 	}
 	Bitmap {
-		Image "models/wall/textures/MM_STRMWND_INT_TRIM_01.BLP",
+		Image "models\wall\textures\MM_STRMWND_INT_TRIM_01.BLP",
 		WrapWidth,
 		WrapHeight,
 	}
 	Bitmap {
-		Image "models/wall/textures/NR_HU_WALLS2.BLP",
+		Image "models\wall\textures\NR_HU_WALLS2.BLP",
 		WrapWidth,
 		WrapHeight,
 	}
 	Bitmap {
-		Image "models/wall/textures/NR_HU_BARRACKS_TRIMWALL.BLP",
+		Image "models\wall\textures\NR_HU_BARRACKS_TRIMWALL.BLP",
 		WrapWidth,
 		WrapHeight,
 	}
 	Bitmap {
-		Image "models/wall/textures/NR_HU_BARRACKS_WALL.BLP",
+		Image "models\wall\textures\NR_HU_BARRACKS_WALL.BLP",
 		WrapWidth,
 		WrapHeight,
 	}

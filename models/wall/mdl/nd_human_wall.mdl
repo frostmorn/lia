@@ -19,12 +19,12 @@ Sequences 1 {
 }
 Textures 2 {
 	Bitmap {
-		Image "models/wall/textures/NR_HU_BARRACKS_WALL.BLP",
+		Image "models\wall\textures\NR_HU_BARRACKS_WALL.BLP",
 		WrapWidth,
 		WrapHeight,
 	}
 	Bitmap {
-		Image "models/wall/textures/NR_HU_BARRACKS_TRIMWALL.BLP",
+		Image "models\wall\textures\NR_HU_BARRACKS_TRIMWALL.BLP",
 		WrapWidth,
 		WrapHeight,
 	}

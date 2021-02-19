@@ -19,7 +19,7 @@ Sequences 1 {
 }
 Textures 1 {
 	Bitmap {
-		Image "models/wall/textures/Mm_Strmwnd_Int_Trim_01.blp",
+		Image "models\wall\textures\Mm_Strmwnd_Int_Trim_01.blp",
 		WrapWidth,
 		WrapHeight,
 	}
