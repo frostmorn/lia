@@ -5794,8 +5794,6 @@ function QB takes nothing returns nothing
 local integer In=1
 call yb()
 call DisableTrigger(IsReadyTrigDefault)
-call SendDebugToBot("trigger IsReadyTrigDefault disabled", 5973)
-// call BJDebugMsg("DEBUG: Disabling trigger + 7247")
 call DisableTrigger(IsReadyTrig)
 
 call DestroyTimer(RoundStartTimer)
@@ -8073,7 +8071,6 @@ if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
 call ModifyGateBJ(0,ho)
 set Hv=true
 call DisableTrigger(IsReadyTrigDefault)
-call SendDebugToBot("trigger IsReadyTrigDefault disabled", 8303)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
 loop
 set IsReady[index]=false
@@ -18584,13 +18581,10 @@ if rv>=av then
 call DestroyTimer(Fo)
 if Ex then
 call DisableTrigger(IsReadyTrigDefault)
-call SendDebugToBot("trigger IsReadyTrigDefault disabled", 18817)
 call RoundStartFunction()
-// call DisplayTimedTextToForce(GetPlayersAll(),10.00,"Loop (stage 2) - Status is ready")
 endif
 if no or Wx then
 call DisableTrigger(IsReadyTrigDefault)
-call SendDebugToBot("trigger IsReadyTrigDefault disabled", 18823)
 call QB()
 endif
 endif
@@ -18626,9 +18620,8 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local timer Gd=CreateTimer()
     local integer index=0
     local timer t1=GetExpiredTimer()
+    call SendDebugToBot("Enrtering PrepareBeforeRoundFunction", 18629)
     call DisableTrigger(IsReadyTrigDefault)
-    call SendDebugToBot("trigger IsReadyTrigDefault disabled", 8231)
-    // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
     loop
     set IsReady[index]=false
     set index=index+1
@@ -18856,7 +18849,6 @@ local integer dN=GetHandleId(t)
 local timerdialog d
 local integer i=0
 call DisableTrigger(IsReadyTrigDefault)
-call SendDebugToBot("trigger IsReadyTrigDefault disabled", 19071)
 // call BJDebugMsg("DEBUG: Disabling trigger + 20306")
 call DisableTrigger(IsReadyTrig)
 loop
@@ -24256,7 +24248,6 @@ set mO=CreateTrigger()
 call TriggerAddAction(mO,function Tp)
 set IsReadyTrigDefault=CreateTrigger()
 call DisableTrigger(IsReadyTrigDefault)
-call SendDebugToBot("trigger IsReadyTrigDefault disabled", 24481)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(0),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(1),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(2),"+",true)
