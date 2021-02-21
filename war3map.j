@@ -6645,8 +6645,8 @@ set In=In+1
 endloop
 call SetUnitInvulnerable(u1,true)
 call SetUnitInvulnerable(u2,true)
-set T1=Location(GetRectCenterX(MinimalArenaBottomUnitRect),GetRectCenterY(MinimalArenaBottomUnitRect))
-set T2=Location(GetRectCenterX(MinimalArenaTopUnitRect),GetRectCenterY(MinimalArenaTopUnitRect))
+set T1=GetRectCenter(MinimalArenaBottomUnitRect)
+set T2=GetRectCenter(MinimalArenaTopUnitRect)
 call ReviveHeroLoc(u1,T1,false)
 call ReviveHeroLoc(u2,T2,false)
 call SetUnitPositionLoc(u1,T1)
@@ -6834,7 +6834,7 @@ call PauseUnit(Le,true)
 endfunction
 function iC takes integer id returns nothing
 local location L=GetRandomLocInRect(Sr)
-local location aC=Location(GetRectCenterX(Sr),GetRectCenterY(Sr))
+local location aC=GetRectCenter(Sr)
 local unit f=CreateUnitAtLoc(Player(11),id,L,bj_RADTODEG*Atan2(GetLocationY(aC)-GetLocationY(L),GetLocationX(aC)-GetLocationX(L)))
 call RemoveLocation(L)
 call RemoveLocation(aC)
@@ -18032,7 +18032,7 @@ local integer i1=LoadInteger(Ax,2,dN)
 local integer i2=LoadInteger(Ax,3,dN)
 local integer In=1
 local integer wN=A
-local location L=Location(GetRectCenterX(cr),GetRectCenterY(cr))
+local location L=GetRectCenter(cr)
 local string bC
 loop
 exitwhen In>wN
@@ -18994,7 +18994,7 @@ set In=1
 set vB=A
 loop
 exitwhen In>vB
-set L=Location(GetRectCenterX(cr),GetRectCenterY(cr))
+set L=GetRectCenter(cr)
 if GetLocalPlayer()==GetOwningPlayer(F[In])then
 call PanCameraToTimed(GetLocationX(L),GetLocationY(L),0)
 endif
@@ -20087,21 +20087,21 @@ local real y=GetUnitY(u)
 local location L
 if iv or jv then
 if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))then
-set L=Location(GetRectCenterX(MinimalArenaAreaRect),GetRectCenterY(MinimalArenaAreaRect))
+set L=GetRectCenter(MinimalArenaAreaRect)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if((no or Wx)and(qv==false))then
 if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
-set L=Location(GetRectCenterX(ar),GetRectCenterY(ar))
+set L=GetRectCenter(ar)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if qv then
 if((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
-set L=Location(GetRectCenterX(wo),GetRectCenterY(wo))
+set L=GetRectCenter(wo)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
