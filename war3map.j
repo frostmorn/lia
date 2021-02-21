@@ -816,8 +816,8 @@ trigger rO=null
 trigger iO=null
 trigger aO=null
 trigger nO=null
-trigger VO=null
-trigger EO=null
+trigger WaveFightTrigger=null
+trigger BossFightTrigger=null
 trigger XO=null
 trigger OO=null
 trigger RO=null
@@ -7443,7 +7443,7 @@ set mC[57]='I04V'
 set mC[58]='I04W'
 set mC[59]='I04X'
 set mC[60]='I04Y'
-set mC[61]='I04Z'
+set mC[61]='I04Z'   // Ацкая Маска
 set mC[62]='I050'
 set mC[63]='I051'
 set mC[64]='I052'
@@ -7989,9 +7989,9 @@ function RoundStartFunction takes nothing returns nothing
     return
     endif
     if ModuloInteger(CurrentWave,5)==0 then
-    call TriggerExecute(EO)
+    call TriggerExecute(BossFightTrigger)
     else
-    call TriggerExecute(VO)
+    call TriggerExecute(WaveFightTrigger)
     endif
 endfunction
 
@@ -17291,7 +17291,7 @@ set Wv=false
 call DestroyTimer(t)
 set t=null
 endfunction
-function Um takes nothing returns nothing
+function WaveFightTriggerFunction takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
 local timer t=CreateTimer()
@@ -17388,7 +17388,7 @@ call XB()
 call DestroyTimer(t)
 set t=null
 endfunction
-function vM takes nothing returns nothing
+function BossFightTriggerFunction takes nothing returns nothing
 local timer t=CreateTimer()
 local timer t2=CreateTimer()
 local timer t3=CreateTimer()
@@ -24109,10 +24109,10 @@ call DisableTrigger(nO)
 call TriggerRegisterTimerEventPeriodic(nO,20.)
 call TriggerAddCondition(nO,Condition(function Sm))
 call TriggerAddAction(nO,function tm)
-set VO=CreateTrigger()
-call TriggerAddAction(VO,function Um)
-set EO=CreateTrigger()
-call TriggerAddAction(EO,function vM)
+set WaveFightTrigger=CreateTrigger()
+call TriggerAddAction(WaveFightTrigger,function WaveFightTriggerFunction)
+set BossFightTrigger=CreateTrigger()
+call TriggerAddAction(BossFightTrigger,function BossFightTriggerFunction)
 set XO=CreateTrigger()
 call DisableTrigger(XO)
 call TriggerRegisterEnterRectSimple(XO,Uo)
