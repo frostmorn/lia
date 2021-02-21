@@ -611,7 +611,7 @@ trigger Za=null
 trigger vn=null
 trigger en=null
 trigger xn=null
-trigger on=null
+trigger RandomHeroMsgTrigger=null
 trigger rn=null
 trigger in=null
 trigger an=null
@@ -5331,7 +5331,7 @@ call SetPlayerMaxHeroesAllowed(0,ae[In])
 set In=In+1
 endloop
 set He=true
-call DisableTrigger(on)
+call DisableTrigger(RandomHeroMsgTrigger)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Вы скоро получите случайного героя.|R")
 endfunction
 function eB takes nothing returns nothing
@@ -8408,7 +8408,7 @@ if He then
 call Ac()
 else
 if Wx==false then
-call EnableTrigger(on)
+call EnableTrigger(RandomHeroMsgTrigger)
 call EnableTrigger(yR)
 endif
 endif
@@ -23785,19 +23785,19 @@ call TriggerRegisterPlayerUnitEvent(xn,Player(ED),EVENT_PLAYER_HERO_REVIVE_FINIS
 set ED=ED+1
 endloop
 call TriggerAddAction(xn,function hf)
-set on=CreateTrigger()
-call DisableTrigger(on)
+set RandomHeroMsgTrigger=CreateTrigger()
+call DisableTrigger(RandomHeroMsgTrigger)
 // Random hero trigger 
 set bj_forLoopAIndexEnd = 8
 loop
 exitwhen bj_forLoopAIndex == bj_forLoopAIndexEnd
-    call TriggerRegisterPlayerChatEvent(on,Player(bj_forLoopAIndex),"-с",true)
-    call TriggerRegisterPlayerChatEvent(on,Player(bj_forLoopAIndex),"-c",true)
+    call TriggerRegisterPlayerChatEvent(RandomHeroMsgTrigger,Player(bj_forLoopAIndex),"-с",true)
+    call TriggerRegisterPlayerChatEvent(RandomHeroMsgTrigger,Player(bj_forLoopAIndex),"-c",true)
     set bj_forLoopAIndex = bj_forLoopAIndex + 1
 endloop
 set bj_forLoopAIndexEnd = 0
 set bj_forLoopAIndex = 0
-call TriggerAddAction(on,function jf)
+call TriggerAddAction(RandomHeroMsgTrigger,function jf)
 set ED=0
 set wN=16
 set XV=CreateTrigger()
