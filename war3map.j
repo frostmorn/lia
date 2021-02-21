@@ -461,7 +461,7 @@ rect Zo=null
 rect vr=null
 rect er=null
 rect rr=null
-rect ir=null
+rect MinimalArenaAreaRect=null
 rect ar=null
 rect nr=null
 rect Vr=null
@@ -471,8 +471,8 @@ rect Rr=null
 rect Ir=null
 rect Ar=null
 rect Nr=null
-rect br=null
-rect Br=null
+rect ShopsAreaRect=null
+rect TavernAreaRect=null
 rect cr=null
 rect Cr=null
 rect dr=null
@@ -6449,7 +6449,7 @@ endfunction
 function lc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
-set g=GA(ir,null)
+set g=GA(MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -6591,7 +6591,7 @@ local item UB
 local integer Uc
 local integer wc
 call SaveBoolean(Ax,1,StringHash("pr"),false)
-call GroupEnumUnitsInRect(g,ir,Condition(function Pc))
+call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,Condition(function Pc))
 call ForGroup(g,function qc)
 call DestroyGroup(g)
 call PauseUnit(u1,false)
@@ -6638,7 +6638,7 @@ local integer Bc
 call yb()
 call UnitRemoveBuffs(u1,true,true)
 call UnitRemoveBuffs(u2,true,true)
-call EnumItemsInRect(ir,null,function pc)
+call EnumItemsInRect(MinimalArenaAreaRect,null,function pc)
 set In=0
 loop
 exitwhen In>7
@@ -7205,9 +7205,9 @@ set Zv[Kc]=GetPlayerName(Player(-1+(In)))
 set Eo[Kc]=CreateUnitAtLoc(Player(In-1),'n002',T[Kc],bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((Eo[Kc])),StringHash("SuperData:Int"),(Kc))
 call CameraSetupApplyForPlayer(true,pa,Player(-1+(In)),0)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,br)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,Br)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,ir)
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,ShopsAreaRect)
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,TavernAreaRect)
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,MinimalArenaAreaRect)
 call SetPlayerStateBJ(Player(-1+(In)),PLAYER_STATE_RESOURCE_GOLD,50)
 call SetPlayerMaxHeroesAllowed(1,Player(-1+(In)))
 call ClearSelectionForPlayer(Player(-1+(In)))
@@ -17452,7 +17452,7 @@ set t5=null
 endfunction
 function xM takes nothing returns nothing
 local unit u=GetEnteringUnit()
-local location l=GetRectCenter(ir)
+local location l=GetRectCenter(MinimalArenaAreaRect)
 call SetUnitPositionLoc(u,l)
 call RemoveLocation(l)
 set u=null
@@ -18923,7 +18923,7 @@ exitwhen In>vB
 call PauseUnit(F[In],false)
 set In=In+1
 endloop
-call GroupEnumUnitsInRect(g,ir,null)
+call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -18932,7 +18932,7 @@ set n=n+1
 endif
 call GroupRemoveUnit(g,f)
 endloop
-call GroupEnumUnitsInRect(g,ir,null)
+call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -19104,7 +19104,7 @@ call ForGroup(g,function GP)
 call GroupClear(g)
 call PanCameraToTimed(GetLocationX(GetRectCenter(ar)),GetLocationY(GetRectCenter(ar)),0)
 call TriggerExecute(pO)
-set g=HA(ir)
+set g=HA(MinimalArenaAreaRect)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -19180,7 +19180,7 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Ничья. Никто �
 set g=HA(bj_mapInitialPlayableArea)
 call ForGroup(g,function lP)
 call ConditionalTriggerExecute(pO)
-set g=GA(ir,Condition(function LP))
+set g=GA(MinimalArenaAreaRect,Condition(function LP))
 call ForGroup(g,function mP)
 call DestroyGroup(g)
 set jv=false
@@ -20101,20 +20101,20 @@ local real y=GetUnitY(u)
 local location L
 if iv or jv then
 if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))then
-set L=Location(GetRectCenterX(ir),GetRectCenterY(ir))
+set L=Location(GetRectCenterX(MinimalArenaAreaRect),GetRectCenterY(MinimalArenaAreaRect))
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if((no or Wx)and(qv==false))then
-if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(ir)<=x)and(x<=GetRectMaxX(ir))and(GetRectMinY(ir)<=y)and(y<=GetRectMaxY(ir)))then
+if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
 set L=Location(GetRectCenterX(ar),GetRectCenterY(ar))
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if qv then
-if((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))or((GetRectMinX(ir)<=x)and(x<=GetRectMaxX(ir))and(GetRectMinY(ir)<=y)and(y<=GetRectMaxY(ir)))then
+if((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
 set L=Location(GetRectCenterX(wo),GetRectCenterY(wo))
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
@@ -23379,7 +23379,7 @@ set Zo=Rect(-1696.,288.,-1568.,416.)
 set vr=Rect(-2208.,1888.,-2080.,2016.)
 set er=Rect(224.,-608.,352.,-480.)
 set rr=Rect(736.,1376.,864.,1504.)
-set ir=Rect(-3424.,-3648.,-960.,-1344.)
+set MinimalArenaAreaRect=Rect(-2973.,-3475.,-990.,-1500.)
 set ar=Rect(96.,-2816.,800.,-2144.)
 set nr=Rect(-2560.,-3072.,-1728.,-2752.)
 set Vr=Rect(-2272.,-2240.,-2016.,-1984.)
@@ -23388,9 +23388,12 @@ set Xr=Rect(2336.,-224.,2400.,-160.)
 set Rr=Rect(2592.,-352.,2656.,-288.)
 set Ir=Rect(2080.,-480.,2144.,-416.)
 set Ar=Rect(2240.,-416.,2304.,-352.)
+// OLD FOG
 set Nr=Rect(1504.,-1120.,3296.,512.)
-set br=Rect(-960.,-3360.,1472.,-1344.)
-set Br=Rect(1312.,-3584.,3264.,-2368.)
+// set Nr=Rect(1656.,-2182.,3687.,3195.)
+
+set ShopsAreaRect=Rect(-786.,-3475.,1440.,-1500.)
+set TavernAreaRect=Rect(1440.,-3475.,3100.,-2400.)
 set cr=Rect(-2144.,-2592.,-2112.,-2560.)
 set Cr=Rect(2496.,-544.,2560.,-480.)
 set dr=Rect(1984.,-672.,2048.,-608.)
@@ -24208,7 +24211,7 @@ call TriggerAddCondition(hO,Condition(function Rp))
 call TriggerAddAction(hO,function Cp)
 set HO=CreateTrigger()
 call DisableTrigger(HO)
-call TriggerRegisterLeaveRectSimple(HO,ir)
+call TriggerRegisterLeaveRectSimple(HO,MinimalArenaAreaRect)
 call TriggerAddCondition(HO,Condition(function Gp))
 call TriggerAddAction(HO,function hp)
 set jO=CreateTrigger()
@@ -24479,7 +24482,7 @@ call TriggerRegisterPlayerChatEvent(BR,Player(6),"-help",true)
 call TriggerRegisterPlayerChatEvent(BR,Player(7),"-help",true)
 call TriggerAddAction(BR,function RQ)
 set cR=CreateTrigger()
-call TriggerRegisterEnterRectSimple(cR,ir)
+call TriggerRegisterEnterRectSimple(cR,MinimalArenaAreaRect)
 call TriggerRegisterEnterRectSimple(cR,wo)
 call TriggerRegisterEnterRectSimple(cR,Uo)
 call TriggerAddCondition(cR,Condition(function AQ))
