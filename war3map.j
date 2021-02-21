@@ -258,7 +258,7 @@ timer RoundStartTimer=null
 integer CurrentWave=0
 integer array creep_ids
 integer array boss_ids
-multiboard Q=null
+multiboard StatsBoard=null
 integer array U
 integer array W
 integer array vv
@@ -843,7 +843,7 @@ trigger KO=null
 trigger lO=null
 trigger LO=null
 trigger mO=null
-trigger MO=null
+trigger IsReadyTrigDefault=null
 trigger pO=null
 trigger qO=null
 trigger QO=null
@@ -1101,7 +1101,7 @@ endfunction
 // set bj_forLoopAIndexEnd=A
 // loop
 // exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-// call MultiboardSetItemValueBJ(Q,3,(bj_forLoopAIndex+1),GetPlayerName(Player(-1+(D[bj_forLoopAIndex]))))
+// call MultiboardSetItemValueBJ(StatsBoard,3,(bj_forLoopAIndex+1),GetPlayerName(Player(-1+(D[bj_forLoopAIndex]))))
 // set bj_forLoopAIndex=bj_forLoopAIndex+1
 // endloop
 function EN takes nothing returns nothing
@@ -5373,7 +5373,7 @@ endloop
 call DestroyGroup(g)
 call PauseTimer(bj_lastStartedTimer)
 call DestroyTimerDialog(bj_lastCreatedTimerDialog)
-call MultiboardMinimize(Q,false)
+call MultiboardMinimize(StatsBoard,false)
 loop
 exitwhen In>7
 if GetPlayerSlotState(Player(In))!=PLAYER_SLOT_STATE_LEFT then
@@ -5793,8 +5793,8 @@ endfunction
 function QB takes nothing returns nothing
 local integer In=1
 call yb()
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 5973)
+call DisableTrigger(IsReadyTrigDefault)
+call SendDebugToBot("trigger IsReadyTrigDefault disabled", 5973)
 // call BJDebugMsg("DEBUG: Disabling trigger + 7247")
 call DisableTrigger(IsReadyTrig)
 
@@ -6399,7 +6399,7 @@ call RemoveUnit(f)
 endif
 call GroupRemoveUnit(g,f)
 endloop
-call MultiboardMinimize(Q,true)
+call MultiboardMinimize(StatsBoard,true)
 call EnableTrigger(nI)
 set In=1
 loop
@@ -8007,7 +8007,7 @@ set t=null
 endfunction
 function fd takes nothing returns nothing
 local timer t=GetExpiredTimer()
-call EnableTrigger(MO)
+call EnableTrigger(IsReadyTrigDefault)
 call EnableTrigger(IsReadyTrig)
 call EnableTrigger(gR)
 call DestroyTimer(t)
@@ -8017,8 +8017,8 @@ endfunction
 function PrepareBeforeRoundFunction takes nothing returns nothing
     local integer index=0
     local timer t=GetExpiredTimer()
-    call DisableTrigger(MO)
-    call SendDebugToBot("trigger MO disabled", 8231)
+    call DisableTrigger(IsReadyTrigDefault)
+    call SendDebugToBot("trigger IsReadyTrigDefault disabled", 8231)
     // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
     loop
     set IsReady[index]=false
@@ -8088,8 +8088,8 @@ call TimerStart(Gd,6.25,false,function Ub)
 if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
 call ModifyGateBJ(0,ho)
 set Hv=true
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 8303)
+call DisableTrigger(IsReadyTrigDefault)
+call SendDebugToBot("trigger IsReadyTrigDefault disabled", 8303)
 // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
 loop
 set IsReady[index]=false
@@ -8099,7 +8099,7 @@ endloop
 call DisableTrigger(IsReadyTrig)
 set Pe=true
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
-call MultiboardSetItemValueBJ(Q,4,A+2,"|cffffcc00Дуэль")
+call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
 call TimerStart(Hd,30,false,function Cd)
 set fN=CreateTimerDialog(Hd)
 call SaveTimerDialogHandle(Ax,1,jd,fN)
@@ -8137,12 +8137,12 @@ call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
 set In=In+1
 endloop
 if Gb==20 then
-call MultiboardSetItemValueBJ(Q,4,wN+2,"|cffffcc00Финальный босс")
+call MultiboardSetItemValueBJ(StatsBoard,4,wN+2,"|cffffcc00Финальный босс")
 else
 if ModuloInteger(Gb,5)==0 then
-call MultiboardSetItemValueBJ(Q,4,(wN+2),("|cffffcc00Мегабосс"))
+call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00Мегабосс"))
 else
-call MultiboardSetItemValueBJ(Q,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
+call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
 endif
 endif
 call TimerStart(t,2,false,function fd)
@@ -9031,7 +9031,7 @@ local location sb
 call DisableTrigger(vn)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Автоматически выбран режим игры |cffffcc00Выживание|R")
 call kd()
-call MultiboardSetItemValueBJ(Q,4,A+4,"|cffffcc00В|R")
+call MultiboardSetItemValueBJ(StatsBoard,4,A+4,"|cffffcc00В|R")
 call EnableTrigger(UR)
 call EnableTrigger(wR)
 set sb=null
@@ -9109,7 +9109,7 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000"+GetPlayerName(Player(0
 else
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
 endif
-call MultiboardSetItemValueBJ(Q,4,A+6,"|cffffcc00Турнир Кланов|R")
+call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00Турнир Кланов|R")
 call DisableTrigger(vn)
 call DisableTrigger(Za)
 call EnableTrigger(UR)
@@ -9294,9 +9294,9 @@ else
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00"+xf+"|R")
 endif
 if Xf==1 then
-call MultiboardSetItemValueBJ(Q,4,A+4,"|cffffcc00"+of+"|R")
+call MultiboardSetItemValueBJ(StatsBoard,4,A+4,"|cffffcc00"+of+"|R")
 else
-call MultiboardSetItemValueBJ(Q,4,A+6,"|cffffcc00"+of+"|R")
+call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00"+of+"|R")
 endif
 set Vf=null
 set s=null
@@ -18395,64 +18395,64 @@ call KillUnit(GetLeavingUnit())
 endfunction
 function jp takes nothing returns nothing
 call CreateMultiboardBJ(9,(A+4),"Cтaтиcтикa")
-set Q=bj_lastCreatedMultiboard
-call MultiboardSetItemValueBJ(Q,0,0,I2S(0))
-call MultiboardSetItemValueBJ(Q,7,0,("0.0%"))
-call MultiboardSetItemValueBJ(Q,1,1,"")
-call MultiboardSetItemValueBJ(Q,2,1,"")
-call MultiboardSetItemColorBJ(Q,0,2,'d',60.,40.,10.)
-call MultiboardSetItemWidthBJ(Q,1,0,3.)
-call MultiboardSetItemWidthBJ(Q,2,0,1.5)
-call MultiboardSetItemWidthBJ(Q,3,0,10.)
+set StatsBoard=bj_lastCreatedMultiboard
+call MultiboardSetItemValueBJ(StatsBoard,0,0,I2S(0))
+call MultiboardSetItemValueBJ(StatsBoard,7,0,("0.0%"))
+call MultiboardSetItemValueBJ(StatsBoard,1,1,"")
+call MultiboardSetItemValueBJ(StatsBoard,2,1,"")
+call MultiboardSetItemColorBJ(StatsBoard,0,2,'d',60.,40.,10.)
+call MultiboardSetItemWidthBJ(StatsBoard,1,0,3.)
+call MultiboardSetItemWidthBJ(StatsBoard,2,0,1.5)
+call MultiboardSetItemWidthBJ(StatsBoard,3,0,10.)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=A
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemValueBJ(Q,3,(bj_forLoopAIndex+1),GetPlayerName(Player(-1+(D[bj_forLoopAIndex]))))
+call MultiboardSetItemValueBJ(StatsBoard,3,(bj_forLoopAIndex+1),GetPlayerName(Player(-1+(D[bj_forLoopAIndex]))))
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=4
 set bj_forLoopAIndexEnd=9
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemWidthBJ(Q,bj_forLoopAIndex,0,5.5)
+call MultiboardSetItemWidthBJ(StatsBoard,bj_forLoopAIndex,0,5.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardSetItemValueBJ(Q,3,1,"Убитo:")
-call MultiboardSetItemValueBJ(Q,4,1,"кpипoв")
-call MultiboardSetItemValueBJ(Q,5,1,"бoccoв")
-call MultiboardSetItemValueBJ(Q,6,1,"Уpoвeнь")
-call MultiboardSetItemValueBJ(Q,7,1,"Улyчшeния")
-call MultiboardSetItemValueBJ(Q,8,1,"Cмepтeй")
-call MultiboardSetItemValueBJ(Q,9,1,"Peйтинг")
-call MultiboardSetItemWidthBJ(Q,7,0,7.5)
-call MultiboardSetItemWidthBJ(Q,9,0,7.5)
+call MultiboardSetItemValueBJ(StatsBoard,3,1,"Убитo:")
+call MultiboardSetItemValueBJ(StatsBoard,4,1,"кpипoв")
+call MultiboardSetItemValueBJ(StatsBoard,5,1,"бoccoв")
+call MultiboardSetItemValueBJ(StatsBoard,6,1,"Уpoвeнь")
+call MultiboardSetItemValueBJ(StatsBoard,7,1,"Улyчшeния")
+call MultiboardSetItemValueBJ(StatsBoard,8,1,"Cмepтeй")
+call MultiboardSetItemValueBJ(StatsBoard,9,1,"Peйтинг")
+call MultiboardSetItemWidthBJ(StatsBoard,7,0,7.5)
+call MultiboardSetItemWidthBJ(StatsBoard,9,0,7.5)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=(A+2)
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemValueBJ(Q,1,(bj_forLoopAIndex+1),I2S(bj_forLoopAIndex))
+call MultiboardSetItemValueBJ(StatsBoard,1,(bj_forLoopAIndex+1),I2S(bj_forLoopAIndex))
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardSetItemValueBJ(Q,0,(A+3),"")
-call MultiboardSetItemValueBJ(Q,0,(A+2),"")
-call MultiboardSetItemValueBJ(Q,0,(A+4),"")
-call MultiboardSetItemValueBJ(Q,3,(A+2),"|cffffcc00Вoлнa:")
-call MultiboardSetItemValueBJ(Q,4,(A+2),("|cffffcc00"+("1"+(" [ "+(wave_small_descriptions[1]+" ]")))))
-call MultiboardSetItemValueBJ(Q,3,(A+3),"|cffffcc00Вpeмя игpы:")
-call MultiboardSetItemValueBJ(Q,3,(A+4),"|Cffff0000Мoд: |R")
-call MultiboardSetItemWidthBJ(Q,4,(A+2),25.)
-call MultiboardSetItemWidthBJ(Q,4,(A+4),25.)
-call MultiboardSetItemStyleBJ(Q,0,0,true,false)
+call MultiboardSetItemValueBJ(StatsBoard,0,(A+3),"")
+call MultiboardSetItemValueBJ(StatsBoard,0,(A+2),"")
+call MultiboardSetItemValueBJ(StatsBoard,0,(A+4),"")
+call MultiboardSetItemValueBJ(StatsBoard,3,(A+2),"|cffffcc00Вoлнa:")
+call MultiboardSetItemValueBJ(StatsBoard,4,(A+2),("|cffffcc00"+("1"+(" [ "+(wave_small_descriptions[1]+" ]")))))
+call MultiboardSetItemValueBJ(StatsBoard,3,(A+3),"|cffffcc00Вpeмя игpы:")
+call MultiboardSetItemValueBJ(StatsBoard,3,(A+4),"|Cffff0000Мoд: |R")
+call MultiboardSetItemWidthBJ(StatsBoard,4,(A+2),25.)
+call MultiboardSetItemWidthBJ(StatsBoard,4,(A+4),25.)
+call MultiboardSetItemStyleBJ(StatsBoard,0,0,true,false)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=A
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemStyleBJ(Q,2,(bj_forLoopAIndex+1),false,true)
-call MultiboardSetItemIconBJ(Q,2,(bj_forLoopAIndex+1),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
+call MultiboardSetItemStyleBJ(StatsBoard,2,(bj_forLoopAIndex+1),false,true)
+call MultiboardSetItemIconBJ(StatsBoard,2,(bj_forLoopAIndex+1),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardDisplay(Q,true)
+call MultiboardDisplay(StatsBoard,true)
 endfunction
 function kp takes nothing returns nothing
 local unit u=GetLevelingUnit()
@@ -18526,15 +18526,15 @@ set ov=ov+1
 endif
 if xv<10 then
 if no or Wx then
-call MultiboardSetItemValueBJ(Q,4,(A+5),(I2S(ov)+(":"+("0"+I2S(xv)))))
+call MultiboardSetItemValueBJ(StatsBoard,4,(A+5),(I2S(ov)+(":"+("0"+I2S(xv)))))
 else
-call MultiboardSetItemValueBJ(Q,4,(A+3),(I2S(ov)+(":"+("0"+I2S(xv)))))
+call MultiboardSetItemValueBJ(StatsBoard,4,(A+3),(I2S(ov)+(":"+("0"+I2S(xv)))))
 endif
 else
 if no or Wx then
-call MultiboardSetItemValueBJ(Q,4,(A+5),(I2S(ov)+(":"+I2S(xv))))
+call MultiboardSetItemValueBJ(StatsBoard,4,(A+5),(I2S(ov)+(":"+I2S(xv))))
 else
-call MultiboardSetItemValueBJ(Q,4,(A+3),(I2S(ov)+(":"+I2S(xv))))
+call MultiboardSetItemValueBJ(StatsBoard,4,(A+3),(I2S(ov)+(":"+I2S(xv))))
 endif
 endif
 endfunction
@@ -18570,17 +18570,17 @@ set Wp=1
 loop
 exitwhen Wp>yp
 if(Gv[wp]==Wp-1)then
-call MultiboardSetItemIconBJ(Q,2,(GB+1),Xx[Wp])
+call MultiboardSetItemIconBJ(StatsBoard,2,(GB+1),Xx[Wp])
 endif
 set Wp=Wp+1
 endloop
-call MultiboardSetItemValueBJ(Q,3,(GB+1),Zv[wp])
-call MultiboardSetItemValueBJ(Q,4,(GB+1),I2S(W[wp]))
-call MultiboardSetItemValueBJ(Q,5,(GB+1),I2S(vv[wp]))
-call MultiboardSetItemValueBJ(Q,6,(GB+1),I2S(Re[wp]))
-call MultiboardSetItemValueBJ(Q,7,(GB+1),(R2SW(lv,0,1)+"%"))
-call MultiboardSetItemValueBJ(Q,8,(GB+1),I2S(ev[wp]))
-call MultiboardSetItemValueBJ(Q,9,(GB+1),I2S(U[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,3,(GB+1),Zv[wp])
+call MultiboardSetItemValueBJ(StatsBoard,4,(GB+1),I2S(W[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,5,(GB+1),I2S(vv[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,6,(GB+1),I2S(Re[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,7,(GB+1),(R2SW(lv,0,1)+"%"))
+call MultiboardSetItemValueBJ(StatsBoard,8,(GB+1),I2S(ev[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,9,(GB+1),I2S(U[wp]))
 set gx[GB]=wp
 set R=wp
 endif
@@ -18599,14 +18599,14 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTri
 if rv>=av then
 call DestroyTimer(Fo)
 if Ex then
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 18817)
+call DisableTrigger(IsReadyTrigDefault)
+call SendDebugToBot("trigger IsReadyTrigDefault disabled", 18817)
 call RoundStartFunction()
 // call DisplayTimedTextToForce(GetPlayersAll(),10.00,"Loop (stage 2) - Status is ready")
 endif
 if no or Wx then
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 18823)
+call DisableTrigger(IsReadyTrigDefault)
+call SendDebugToBot("trigger IsReadyTrigDefault disabled", 18823)
 call QB()
 endif
 endif
@@ -18622,7 +18622,7 @@ set t=null
 endfunction
 function eP takes nothing returns nothing
 local timer t=GetExpiredTimer()
-call EnableTrigger(MO)
+call EnableTrigger(IsReadyTrigDefault)
 call DisableTrigger(IsReadyTrig)
 call EnableTrigger(kO)
 call DestroyTimer(t)
@@ -18691,7 +18691,7 @@ exitwhen In>wN
 call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
 set In=In+1
 endloop
-call MultiboardSetItemValueBJ(Q,4,wN+4,"|cffffcc00"+I2S(MB))
+call MultiboardSetItemValueBJ(StatsBoard,4,wN+4,"|cffffcc00"+I2S(MB))
 call SetForceAllianceStateBJ(tv,Tv,3)
 call SetForceAllianceStateBJ(Tv,tv,3)
 set Wv=true
@@ -18852,8 +18852,8 @@ local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
 local timerdialog d
 local integer i=0
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 19071)
+call DisableTrigger(IsReadyTrigDefault)
+call SendDebugToBot("trigger IsReadyTrigDefault disabled", 19071)
 // call BJDebugMsg("DEBUG: Disabling trigger + 20306")
 call DisableTrigger(IsReadyTrig)
 loop
@@ -18861,7 +18861,7 @@ exitwhen i>7
 call DisplayTextToPlayer(Player(i),0,0,"|cff706638Следующий раунд - Командная дуэль")
 set i=i+1
 endloop
-call MultiboardSetItemValueBJ(Q,4,mv+Mv+4,"|cffffcc00Дуэль")
+call MultiboardSetItemValueBJ(StatsBoard,4,mv+Mv+4,"|cffffcc00Дуэль")
 call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
 call TimerStart(t,30,false,function NP)
@@ -19193,21 +19193,21 @@ function qP takes nothing returns nothing
 set mv=R2I((I2R(A)/ 2.))
 set Mv=(A-mv)
 call CreateMultiboardBJ(10,(A+6),"Cтaтиcтикa")
-set Q=bj_lastCreatedMultiboard
-call MultiboardSetItemValueBJ(Q,0,0,I2S(0))
-call MultiboardSetItemValueBJ(Q,8,0,("0.0%"))
-call MultiboardSetItemValueBJ(Q,1,1,"")
-call MultiboardSetItemValueBJ(Q,2,1,"")
-call MultiboardSetItemColorBJ(Q,0,2,'d',60.,40.,10.)
-call MultiboardSetItemColorBJ(Q,0,(3+mv),'d',60.,40.,10.)
-call MultiboardSetItemWidthBJ(Q,1,0,3.)
-call MultiboardSetItemWidthBJ(Q,2,0,1.5)
-call MultiboardSetItemWidthBJ(Q,3,0,10.)
+set StatsBoard=bj_lastCreatedMultiboard
+call MultiboardSetItemValueBJ(StatsBoard,0,0,I2S(0))
+call MultiboardSetItemValueBJ(StatsBoard,8,0,("0.0%"))
+call MultiboardSetItemValueBJ(StatsBoard,1,1,"")
+call MultiboardSetItemValueBJ(StatsBoard,2,1,"")
+call MultiboardSetItemColorBJ(StatsBoard,0,2,'d',60.,40.,10.)
+call MultiboardSetItemColorBJ(StatsBoard,0,(3+mv),'d',60.,40.,10.)
+call MultiboardSetItemWidthBJ(StatsBoard,1,0,3.)
+call MultiboardSetItemWidthBJ(StatsBoard,2,0,1.5)
+call MultiboardSetItemWidthBJ(StatsBoard,3,0,10.)
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=mv
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemValueBJ(Q,3,(bj_forLoopAIndex+2),GetPlayerName(ae[bj_forLoopAIndex]))
+call MultiboardSetItemValueBJ(StatsBoard,3,(bj_forLoopAIndex+2),GetPlayerName(ae[bj_forLoopAIndex]))
 call ForceAddPlayer(tv,ae[bj_forLoopAIndex])
 call SetPlayerAllianceStateBJ(ae[bj_forLoopAIndex],Player(8),3)
 call SetPlayerAllianceStateBJ(Player(8),ae[bj_forLoopAIndex],3)
@@ -19217,7 +19217,7 @@ set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=Mv
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemValueBJ(Q,3,(bj_forLoopAIndex+(3+mv)),GetPlayerName(ae[(bj_forLoopAIndex+mv)]))
+call MultiboardSetItemValueBJ(StatsBoard,3,(bj_forLoopAIndex+(3+mv)),GetPlayerName(ae[(bj_forLoopAIndex+mv)]))
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=(mv+1)
@@ -19235,7 +19235,7 @@ set bj_forLoopAIndex=4
 set bj_forLoopAIndexEnd=$A
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemWidthBJ(Q,bj_forLoopAIndex,0,5.5)
+call MultiboardSetItemWidthBJ(StatsBoard,bj_forLoopAIndex,0,5.5)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
@@ -19245,66 +19245,66 @@ exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,true,ae[bj_forLoopAIndex])
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardSetItemValueBJ(Q,3,1,"Убитo:")
-call MultiboardSetItemValueBJ(Q,4,1,"кpипoв")
-call MultiboardSetItemValueBJ(Q,5,1,"бoccoв")
-call MultiboardSetItemValueBJ(Q,6,1,"гepoeв")
-call MultiboardSetItemValueBJ(Q,7,1,"Уpoвeнь")
-call MultiboardSetItemValueBJ(Q,8,1,"Улyчшeния")
-call MultiboardSetItemValueBJ(Q,9,1,"Cмepтeй")
-call MultiboardSetItemValueBJ(Q,10,1,"Peйтинг")
-call MultiboardSetItemWidthBJ(Q,8,0,7.5)
-call MultiboardSetItemWidthBJ(Q,10,0,7.5)
-call MultiboardSetItemValueBJ(Q,3,2,"Клaн Cвeтa")
-call MultiboardSetItemValueBJ(Q,3,(3+mv),"Клaн Тьмы")
+call MultiboardSetItemValueBJ(StatsBoard,3,1,"Убитo:")
+call MultiboardSetItemValueBJ(StatsBoard,4,1,"кpипoв")
+call MultiboardSetItemValueBJ(StatsBoard,5,1,"бoccoв")
+call MultiboardSetItemValueBJ(StatsBoard,6,1,"гepoeв")
+call MultiboardSetItemValueBJ(StatsBoard,7,1,"Уpoвeнь")
+call MultiboardSetItemValueBJ(StatsBoard,8,1,"Улyчшeния")
+call MultiboardSetItemValueBJ(StatsBoard,9,1,"Cмepтeй")
+call MultiboardSetItemValueBJ(StatsBoard,10,1,"Peйтинг")
+call MultiboardSetItemWidthBJ(StatsBoard,8,0,7.5)
+call MultiboardSetItemWidthBJ(StatsBoard,10,0,7.5)
+call MultiboardSetItemValueBJ(StatsBoard,3,2,"Клaн Cвeтa")
+call MultiboardSetItemValueBJ(StatsBoard,3,(3+mv),"Клaн Тьмы")
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=mv
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemValueBJ(Q,1,(bj_forLoopAIndex+2),I2S(bj_forLoopAIndex))
+call MultiboardSetItemValueBJ(StatsBoard,1,(bj_forLoopAIndex+2),I2S(bj_forLoopAIndex))
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=Mv
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemValueBJ(Q,1,(bj_forLoopAIndex+(3+mv)),I2S(bj_forLoopAIndex))
+call MultiboardSetItemValueBJ(StatsBoard,1,(bj_forLoopAIndex+(3+mv)),I2S(bj_forLoopAIndex))
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardSetItemValueBJ(Q,0,(A+6),"")
-call MultiboardSetItemValueBJ(Q,0,(A+5),"")
-call MultiboardSetItemValueBJ(Q,0,(A+4),"")
-call MultiboardSetItemValueBJ(Q,3,(A+4),"|cffffcc00Payнд:")
-call MultiboardSetItemValueBJ(Q,4,(A+4),I2S(1))
-call MultiboardSetItemValueBJ(Q,3,(A+5),"|cffffcc00Вpeмя игpы:")
-call MultiboardSetItemValueBJ(Q,3,(A+6),"|Cffff0000Мoд: |R")
-call MultiboardSetItemStyleBJ(Q,0,0,true,false)
-call MultiboardSetItemValueBJ(Q,7,2,"")
-call MultiboardSetItemValueBJ(Q,8,2,"")
-call MultiboardSetItemValueBJ(Q,7,(3+mv),"")
-call MultiboardSetItemValueBJ(Q,8,(3+mv),"")
+call MultiboardSetItemValueBJ(StatsBoard,0,(A+6),"")
+call MultiboardSetItemValueBJ(StatsBoard,0,(A+5),"")
+call MultiboardSetItemValueBJ(StatsBoard,0,(A+4),"")
+call MultiboardSetItemValueBJ(StatsBoard,3,(A+4),"|cffffcc00Payнд:")
+call MultiboardSetItemValueBJ(StatsBoard,4,(A+4),I2S(1))
+call MultiboardSetItemValueBJ(StatsBoard,3,(A+5),"|cffffcc00Вpeмя игpы:")
+call MultiboardSetItemValueBJ(StatsBoard,3,(A+6),"|Cffff0000Мoд: |R")
+call MultiboardSetItemStyleBJ(StatsBoard,0,0,true,false)
+call MultiboardSetItemValueBJ(StatsBoard,7,2,"")
+call MultiboardSetItemValueBJ(StatsBoard,8,2,"")
+call MultiboardSetItemValueBJ(StatsBoard,7,(3+mv),"")
+call MultiboardSetItemValueBJ(StatsBoard,8,(3+mv),"")
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=mv
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemStyleBJ(Q,2,(bj_forLoopAIndex+2),false,true)
-call MultiboardSetItemIconBJ(Q,2,(bj_forLoopAIndex+2),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
+call MultiboardSetItemStyleBJ(StatsBoard,2,(bj_forLoopAIndex+2),false,true)
+call MultiboardSetItemIconBJ(StatsBoard,2,(bj_forLoopAIndex+2),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=Mv
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-call MultiboardSetItemStyleBJ(Q,2,(bj_forLoopAIndex+(mv+3)),false,true)
-call MultiboardSetItemIconBJ(Q,2,(bj_forLoopAIndex+(mv+3)),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
+call MultiboardSetItemStyleBJ(StatsBoard,2,(bj_forLoopAIndex+(mv+3)),false,true)
+call MultiboardSetItemIconBJ(StatsBoard,2,(bj_forLoopAIndex+(mv+3)),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardSetItemValueBJ(Q,1,2,"")
-call MultiboardSetItemValueBJ(Q,2,2,"")
-call MultiboardSetItemValueBJ(Q,1,(3+mv),"")
-call MultiboardSetItemValueBJ(Q,2,(3+mv),"")
-call MultiboardDisplay(Q,true)
-call MultiboardMinimize(Q,false)
+call MultiboardSetItemValueBJ(StatsBoard,1,2,"")
+call MultiboardSetItemValueBJ(StatsBoard,2,2,"")
+call MultiboardSetItemValueBJ(StatsBoard,1,(3+mv),"")
+call MultiboardSetItemValueBJ(StatsBoard,2,(3+mv),"")
+call MultiboardDisplay(StatsBoard,true)
+call MultiboardMinimize(StatsBoard,false)
 endfunction
 function SP takes nothing returns nothing
 local integer R=0
@@ -19338,18 +19338,18 @@ set Wp=1
 loop
 exitwhen Wp>yp
 if Gv[wp]==Wp-1 then
-call MultiboardSetItemIconBJ(Q,2,GB+2,Xx[Wp])
+call MultiboardSetItemIconBJ(StatsBoard,2,GB+2,Xx[Wp])
 endif
 set Wp=Wp+1
 endloop
-call MultiboardSetItemValueBJ(Q,3,(GB+2),Zv[wp])
-call MultiboardSetItemValueBJ(Q,4,(GB+2),I2S(W[wp]))
-call MultiboardSetItemValueBJ(Q,5,(GB+2),I2S(vv[wp]))
-call MultiboardSetItemValueBJ(Q,6,(GB+2),I2S(Qv[wp]))
-call MultiboardSetItemValueBJ(Q,7,(GB+2),I2S(Re[wp]))
-call MultiboardSetItemValueBJ(Q,8,(GB+2),(R2SW(lv,0,1)+"%"))
-call MultiboardSetItemValueBJ(Q,9,(GB+2),I2S(ev[wp]))
-call MultiboardSetItemValueBJ(Q,10,(GB+2),I2S(U[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,3,(GB+2),Zv[wp])
+call MultiboardSetItemValueBJ(StatsBoard,4,(GB+2),I2S(W[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,5,(GB+2),I2S(vv[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,6,(GB+2),I2S(Qv[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,7,(GB+2),I2S(Re[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,8,(GB+2),(R2SW(lv,0,1)+"%"))
+call MultiboardSetItemValueBJ(StatsBoard,9,(GB+2),I2S(ev[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,10,(GB+2),I2S(U[wp]))
 set R=wp
 endif
 set wp=wp+1
@@ -19390,18 +19390,18 @@ set Wp=1
 loop
 exitwhen Wp>yp
 if Gv[wp+uP]==Wp-1 then
-call MultiboardSetItemIconBJ(Q,2,GB+uP+3,Xx[Wp])
+call MultiboardSetItemIconBJ(StatsBoard,2,GB+uP+3,Xx[Wp])
 endif
 set Wp=Wp+1
 endloop
-call MultiboardSetItemValueBJ(Q,3,(GB+uP+3),Zv[wp+uP])
-call MultiboardSetItemValueBJ(Q,4,(GB+uP+3),I2S(W[wp+uP]))
-call MultiboardSetItemValueBJ(Q,5,(GB+uP+3),I2S(vv[wp+uP]))
-call MultiboardSetItemValueBJ(Q,6,(GB+uP+3),I2S(Qv[wp+uP]))
-call MultiboardSetItemValueBJ(Q,7,(GB+uP+3),I2S(Re[wp+uP]))
-call MultiboardSetItemValueBJ(Q,8,(GB+uP+3),(R2SW(lv,0,1)+"%"))
-call MultiboardSetItemValueBJ(Q,9,(GB+uP+3),I2S(ev[wp+uP]))
-call MultiboardSetItemValueBJ(Q,10,(GB+uP+3),I2S(U[wp+uP]))
+call MultiboardSetItemValueBJ(StatsBoard,3,(GB+uP+3),Zv[wp+uP])
+call MultiboardSetItemValueBJ(StatsBoard,4,(GB+uP+3),I2S(W[wp+uP]))
+call MultiboardSetItemValueBJ(StatsBoard,5,(GB+uP+3),I2S(vv[wp+uP]))
+call MultiboardSetItemValueBJ(StatsBoard,6,(GB+uP+3),I2S(Qv[wp+uP]))
+call MultiboardSetItemValueBJ(StatsBoard,7,(GB+uP+3),I2S(Re[wp+uP]))
+call MultiboardSetItemValueBJ(StatsBoard,8,(GB+uP+3),(R2SW(lv,0,1)+"%"))
+call MultiboardSetItemValueBJ(StatsBoard,9,(GB+uP+3),I2S(ev[wp+uP]))
+call MultiboardSetItemValueBJ(StatsBoard,10,(GB+uP+3),I2S(U[wp+uP]))
 set R=wp
 endif
 set wp=wp+1
@@ -19428,11 +19428,11 @@ set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
 set In=In+1
 endloop
-call MultiboardSetItemValueBJ(Q,10,2,I2S(sv))
-call MultiboardSetItemValueBJ(Q,9,2,I2S(vq))
-call MultiboardSetItemValueBJ(Q,6,2,I2S(ZP))
-call MultiboardSetItemValueBJ(Q,5,2,I2S(zP))
-call MultiboardSetItemValueBJ(Q,4,2,I2S(YP))
+call MultiboardSetItemValueBJ(StatsBoard,10,2,I2S(sv))
+call MultiboardSetItemValueBJ(StatsBoard,9,2,I2S(vq))
+call MultiboardSetItemValueBJ(StatsBoard,6,2,I2S(ZP))
+call MultiboardSetItemValueBJ(StatsBoard,5,2,I2S(zP))
+call MultiboardSetItemValueBJ(StatsBoard,4,2,I2S(YP))
 set YP=0
 set zP=0
 set ZP=0
@@ -19449,11 +19449,11 @@ set vq=vq+ev[In]
 set In=In+1
 endloop
 set In=3+WP
-call MultiboardSetItemValueBJ(Q,10,In,I2S(Sv))
-call MultiboardSetItemValueBJ(Q,9,In,I2S(vq))
-call MultiboardSetItemValueBJ(Q,6,In,I2S(ZP))
-call MultiboardSetItemValueBJ(Q,5,In,I2S(zP))
-call MultiboardSetItemValueBJ(Q,4,In,I2S(YP))
+call MultiboardSetItemValueBJ(StatsBoard,10,In,I2S(Sv))
+call MultiboardSetItemValueBJ(StatsBoard,9,In,I2S(vq))
+call MultiboardSetItemValueBJ(StatsBoard,6,In,I2S(ZP))
+call MultiboardSetItemValueBJ(StatsBoard,5,In,I2S(zP))
+call MultiboardSetItemValueBJ(StatsBoard,4,In,I2S(YP))
 endfunction
 // function xq takes nothing returns nothing
 // call CustomDefeatBJ(GetTriggerPlayer(),"")
@@ -21987,7 +21987,7 @@ endloop
 call DestroyGroup(g)
 call PauseTimer(bj_lastStartedTimer)
 call DestroyTimerDialog(bj_lastCreatedTimerDialog)
-call MultiboardMinimize(Q,false)
+call MultiboardMinimize(StatsBoard,false)
 if sv>Sv then
 loop
 exitwhen In>7
@@ -24246,17 +24246,17 @@ call TriggerRegisterTimerEventPeriodic(LO,1.)
 call TriggerAddAction(LO,function Sp)
 set mO=CreateTrigger()
 call TriggerAddAction(mO,function Tp)
-set MO=CreateTrigger()
-call DisableTrigger(MO)
-call SendDebugToBot("trigger MO disabled", 24481)
-call TriggerRegisterPlayerChatEvent(MO,Player(0),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(1),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(2),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(3),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(4),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(5),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(6),"+",true)
-call TriggerRegisterPlayerChatEvent(MO,Player(7),"+",true)
+set IsReadyTrigDefault=CreateTrigger()
+call DisableTrigger(IsReadyTrigDefault)
+call SendDebugToBot("trigger IsReadyTrigDefault disabled", 24481)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(0),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(1),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(2),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(3),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(4),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(5),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(6),"+",true)
+call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(7),"+",true)
 set pO=CreateTrigger()
 call TriggerAddAction(pO,function xP)
 set qO=CreateTrigger()
