@@ -844,7 +844,7 @@ trigger lO=null
 trigger LO=null
 trigger mO=null
 trigger IsReadyTrigDefault=null
-trigger pO=null
+trigger PrepareBeforeRoundTrigger=null
 trigger qO=null
 trigger QO=null
 trigger sO=null
@@ -5625,7 +5625,7 @@ set In=In+1
 endloop
 call TriggerExecute(wO)
 call TriggerExecute(Sa)
-call TriggerExecute(pO)
+call TriggerExecute(PrepareBeforeRoundTrigger)
 call EnableTrigger(QR)
 call EnableTrigger(sR)
 endfunction
@@ -6213,7 +6213,7 @@ call RemoveLocation(T)
 set In=In+1
 endloop
 call TriggerExecute(Sa)
-call TriggerExecute(pO)
+call TriggerExecute(PrepareBeforeRoundTrigger)
 call DestroyTimer(t)
 set t=null
 set T=null
@@ -18628,98 +18628,102 @@ call EnableTrigger(kO)
 call DestroyTimer(t)
 set t=null
 endfunction
-function xP takes nothing returns nothing
-local integer MB=CurrentWave
-local integer wN=A
-local integer bB=av
-local integer NB=$F
-local timerdialog oP
-local integer BB
-local integer In
-local real w
-local timer t=CreateTimer()
-local timer tL
-local timer Gd=CreateTimer()
-call mB()
-call aB()
-call DisableTrigger(kO)
-if MB==10 then
-call TriggerExecute(aI)
-set Gd=null
-set t=null
-return
-endif
-set In=1
-loop
-exitwhen In>wN
-set Be[In]=false
-set IsReady[GetPlayerId(Player(In-1))]=false
-call DestroyTimerDialog(Pv[In])
-call DestroyTimer(pv[In])
-call AdjustPlayerStateBJ(6+MB,ae[In],PLAYER_STATE_RESOURCE_LUMBER)
-if GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
-call ReviveHeroLoc(F[In],GetUnitLoc(F[In]),false)
-if GetWidgetLife(F[In])<=.405 then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",F[In],"origin"))
-endif
-endif
-set In=In+1
-endloop
-call IB()
-call Go()
-call Yb()
-if av>1 and Hv==false and ModuloInteger(MB,3)==0 and MB!=0 then
-set Hv=true
-call TriggerExecute(SO)
-else
-set Hv=false
-if CurrentWave>0 then
-call SendStatsToBot("WАVЕ",CurrentWave)
-if av==1 then
-call bN()
-endif
-endif
-set CurrentWave=CurrentWave+1
-set MB=MB+1
-if MB==2 then
-call DisableTrigger(yR)
-endif
-set BB=AB(MB,NB,bB)
-set In=1
-loop
-exitwhen In>wN
-call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
-set In=In+1
-endloop
-call MultiboardSetItemValueBJ(StatsBoard,4,wN+4,"|cffffcc00"+I2S(MB))
-call SetForceAllianceStateBJ(tv,Tv,3)
-call SetForceAllianceStateBJ(Tv,tv,3)
-set Wv=true
-call TimerStart(Gd,6.25,false,function Ub)
-call TimerStart(t,2,false,function eP)
-if MB==1 then
-set w=90
-else
-set w=60
-endif
-call FB()
-set tL=CreateTimer()
-set RoundStartTimer=tL
-call TimerStart(tL,w,false,function vP)
-set Oe=CreateTimerDialog(tL)
-set CURRENT_PLAYERS=0
-call TimerDialogDisplay(Oe,true)
-call TimerDialogSetTitle(Oe,"Осталось")
-call DestroyTimer(Fo)
-set Fo=null
-set Fo=CreateTimer()
-call TimerStart(Fo,w-3,false,function hN)
-endif
-set oP=null
-set t=null
-set Gd=null
-set tL=null
+
+function PrepareBeforeRoundFunction takes nothing returns nothing
+    local integer wN=A
+    local integer bB=av
+    local integer NB=$F
+    local timerdialog oP
+    local integer BB
+    local integer In
+    local real w
+    local timer t=CreateTimer()
+    local timer tL
+    local timer Gd=CreateTimer()
+    call mB()
+    call aB()
+    call DisableTrigger(kO)
+    if CurrentWave==10 then
+        call TriggerExecute(aI)
+        set Gd=null
+        set t=null
+        return
+    endif
+
+    set In=1
+    loop
+    exitwhen In>wN
+        set Be[In]=false
+        set IsReady[GetPlayerId(Player(In-1))]=false
+        call DestroyTimerDialog(Pv[In])
+        call DestroyTimer(pv[In])
+        call AdjustPlayerStateBJ(6 + CurrentWave,ae[In],PLAYER_STATE_RESOURCE_LUMBER)
+        if GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
+            call ReviveHeroLoc(F[In],GetUnitLoc(F[In]),false)
+            if GetWidgetLife(F[In])<=.405 then
+                call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",F[In],"origin"))
+            endif
+        endif
+        set In=In+1
+    endloop
+
+    call IB()
+    call Go()
+    call Yb()
+    
+    if av>1 and Hv==false and ModuloInteger(CurrentWave ,3)==0 and CurrentWave!=0 then
+        set Hv=true
+        call TriggerExecute(SO)
+    else
+        set Hv=false
+        if CurrentWave>0 then
+            call SendStatsToBot("WАVЕ",CurrentWave)
+        if av==1 then
+            call bN()
+        endif
+    endif
+
+    set CurrentWave=CurrentWave+1
+    if CurrentWave==2 then
+    call DisableTrigger(yR)
+    endif
+    set BB=AB(CurrentWave,NB,bB)
+    set In=1
+    loop
+    exitwhen In>wN
+    call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
+    set In=In+1
+    endloop
+    call MultiboardSetItemValueBJ(StatsBoard,4,wN+4,"|cffffcc00"+I2S(CurrentWave))
+    call SetForceAllianceStateBJ(tv,Tv,3)
+    call SetForceAllianceStateBJ(Tv,tv,3)
+    set Wv=true
+    call TimerStart(Gd,6.25,false,function Ub)
+    call TimerStart(t,2,false,function eP)
+    if CurrentWave==1 then
+        set w=90
+    else
+        set w=60
+    endif
+    call FB()
+    set tL=CreateTimer()
+    set RoundStartTimer=tL
+    call TimerStart(tL,w,false,function vP)
+    set Oe=CreateTimerDialog(tL)
+    set CURRENT_PLAYERS=0
+    call TimerDialogDisplay(Oe,true)
+    call TimerDialogSetTitle(Oe,"Осталось")
+    call DestroyTimer(Fo)
+    set Fo=null
+    set Fo=CreateTimer()
+    call TimerStart(Fo,w-3,false,function hN)
+    endif
+    set oP=null
+    set t=null
+    set Gd=null
+    set tL=null
 endfunction
+
 function iP takes nothing returns nothing
 local timer t=GetExpiredTimer()
 call TriggerExecute(vR)
@@ -18805,7 +18809,7 @@ call SelectUnitForPlayerSingle(F[In],ae[In])
 call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[In]),GetUnitLoc(F[In]),0)
 set In=In+1
 endloop
-call TriggerExecute(pO)
+call TriggerExecute(PrepareBeforeRoundTrigger)
 set Wv=true
 call TimerStart(tt,6.25,false,function VP)
 call DestroyTimer(t)
@@ -19103,7 +19107,7 @@ set g=HA(bj_mapInitialPlayableArea)
 call ForGroup(g,function GP)
 call GroupClear(g)
 call PanCameraToTimed(GetLocationX(GetRectCenter(ar)),GetLocationY(GetRectCenter(ar)),0)
-call TriggerExecute(pO)
+call TriggerExecute(PrepareBeforeRoundTrigger)
 set g=HA(MinimalArenaAreaRect)
 loop
 set f=FirstOfGroup(g)
@@ -19179,7 +19183,7 @@ endloop
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Ничья. Никто не получит награды.")
 set g=HA(bj_mapInitialPlayableArea)
 call ForGroup(g,function lP)
-call ConditionalTriggerExecute(pO)
+call ConditionalTriggerExecute(PrepareBeforeRoundTrigger)
 set g=GA(MinimalArenaAreaRect,Condition(function LP))
 call ForGroup(g,function mP)
 call DestroyGroup(g)
@@ -24262,8 +24266,8 @@ call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(4),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(5),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(6),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(7),"+",true)
-set pO=CreateTrigger()
-call TriggerAddAction(pO,function xP)
+set PrepareBeforeRoundTrigger=CreateTrigger()
+call TriggerAddAction(PrepareBeforeRoundTrigger,function PrepareBeforeRoundFunction)
 set qO=CreateTrigger()
 call TriggerAddAction(qO,function aP)
 set QO=CreateTrigger()
