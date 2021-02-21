@@ -8598,12 +8598,12 @@ local unit ND
 local item it
 local item UB
 // Trees
-set arrayTreeTypes[1]='NTtw'
+set arrayTreeTypes[1]='NTtw' // Сгоревшие деревья
 set arrayTreeTypes[2]='OTtw' // Другие грибы
 set arrayTreeTypes[3]='YTst'
 set arrayTreeTypes[4]='ITtw' // Заснеженные деревья
 set arrayTreeTypes[5]='DTsh' // Грибы
-set treeTypeIndex=1
+set treeTypeIndex=3
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
 call CreateTreesFunction()
 call Preload("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl")
