@@ -8014,22 +8014,6 @@ call DestroyTimer(t)
 set t=null
 endfunction
 
-function PrepareBeforeRoundFunction takes nothing returns nothing
-    local integer index=0
-    local timer t=GetExpiredTimer()
-    call DisableTrigger(IsReadyTrigDefault)
-    call SendDebugToBot("trigger IsReadyTrigDefault disabled", 8231)
-    // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
-    loop
-    set IsReady[index]=false
-    set index=index+1
-    exitwhen index==16
-    endloop
-    call DisableTrigger(IsReadyTrig)
-    call DisableTrigger(gR)
-    call DestroyTimer(t)
-    set t=null
-endfunction
 
 function gd takes nothing returns nothing
 local integer In=1
@@ -8043,16 +8027,16 @@ local integer NB=Tx
 local timer t=CreateTimer()
 local timer tt=CreateTimer()
 local timer Gd=CreateTimer()
-local timer PrepareBeforeRoundTimer=CreateTimer()
+// local timer PrepareBeforeRoundTimer=CreateTimer()
 local timer Hd=CreateTimer()
 local integer jd=GetHandleId(Hd)
 local integer Jd=GetHandleId(tt)
 local timerdialog fN
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
-call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
+// call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
 if Xv then
 set Hd=null
-set PrepareBeforeRoundTimer=null
+// set PrepareBeforeRoundTimer=null
 set Gd=null
 set tt=null
 set t=null
@@ -8110,7 +8094,7 @@ set Fo=CreateTimer()
 call TimerStart(Fo,27,false,function hN)
 set fN=null
 set Hd=null
-set PrepareBeforeRoundTimer=null
+// set PrepareBeforeRoundTimer=null
 set Gd=null
 set tt=null
 set t=null
@@ -8165,7 +8149,7 @@ else
 set w=60
 endif
 endif
-call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeRoundFunction)
+// call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeRoundFunction)
 set RoundStartTimer=CreateTimer()
 call TimerStart(RoundStartTimer,w,false,function RoundStartFunction)
 set Oe=CreateTimerDialog(RoundStartTimer)
@@ -8178,7 +8162,7 @@ call TimerStart(Fo,w-3,false,function hN)
 set t=null
 set tt=null
 set Gd=null
-set PrepareBeforeRoundTimer=null
+// set PrepareBeforeRoundTimer=null
 set Hd=null
 endfunction
 function kd takes nothing returns nothing
@@ -18640,6 +18624,21 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local timer t=CreateTimer()
     local timer tL
     local timer Gd=CreateTimer()
+    local integer index=0
+    local timer t1=GetExpiredTimer()
+    call DisableTrigger(IsReadyTrigDefault)
+    call SendDebugToBot("trigger IsReadyTrigDefault disabled", 8231)
+    // call BJDebugMsg("DEBUG: Disabling trigger + 9498")
+    loop
+    set IsReady[index]=false
+    set index=index+1
+    exitwhen index==16
+    endloop
+    call DisableTrigger(IsReadyTrig)
+    call DisableTrigger(gR)
+    call DestroyTimer(t1)
+    set t=null
+
     call mB()
     call aB()
     call DisableTrigger(kO)
