@@ -8429,7 +8429,7 @@ call DestroyTimer(t)
 set t=null
 set t2=null
 endfunction
-function RD takes nothing returns nothing
+function CreateTreesFunction takes nothing returns nothing
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,-512.,0,1,6)
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,-384.,0,1,10)
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2944.,896.,0,1,9)
@@ -8599,13 +8599,13 @@ local item it
 local item UB
 // Trees
 set arrayTreeTypes[1]='NTtw'
-set arrayTreeTypes[2]='OTtw'
+set arrayTreeTypes[2]='OTtw' // Другие грибы
 set arrayTreeTypes[3]='YTst'
-set arrayTreeTypes[4]='ITtw'
-set arrayTreeTypes[5]='DTsh'
-set treeTypeIndex=4
+set arrayTreeTypes[4]='ITtw' // Заснеженные деревья
+set arrayTreeTypes[5]='DTsh' // Грибы
+set treeTypeIndex=1
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
-call RD()
+call CreateTreesFunction()
 call Preload("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl")
 set ND=CreateUnit(Player(11),'h00V',0,0,.0)
 set it=UnitAddItemById(ND,'I06Q')
