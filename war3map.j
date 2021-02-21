@@ -6801,7 +6801,7 @@ set f=F[xC]
 set x=GetUnitX(Eo[xC])
 set y=GetUnitY(Eo[xC])
 call SetUnitPosition(No[xC],x,y)
-call SetUnitPositionLoc(f,Location(GetRandomReal(GetRectMinX(oC),GetRectMaxX(oC)),GetRandomReal(GetRectMinY(oC),GetRectMaxY(oC))))
+call SetUnitPositionLoc(f,GetRandomLocInRect(oC))
 set ic=GetUnitLoc(f)
 if IsUnitInGroup(f,fo)and f!=null then
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",f,"origin"))
@@ -6833,7 +6833,7 @@ call UnitRemoveBuffsExBJ(2,2,Le,true,false)
 call PauseUnit(Le,true)
 endfunction
 function iC takes integer id returns nothing
-local location L=Location(GetRandomReal(GetRectMinX(Sr),GetRectMaxX(Sr)),GetRandomReal(GetRectMinY(Sr),GetRectMaxY(Sr)))
+local location L=GetRandomLocInRect(Sr)
 local location aC=Location(GetRectCenterX(Sr),GetRectCenterY(Sr))
 local unit f=CreateUnitAtLoc(Player(11),id,L,bj_RADTODEG*Atan2(GetLocationY(aC)-GetLocationY(L),GetLocationX(aC)-GetLocationX(L)))
 call RemoveLocation(L)
@@ -17507,7 +17507,7 @@ set t=null
 endfunction
 function RM takes nothing returns nothing
 local unit f=GetDyingUnit()
-local location L=Location(GetRandomReal(GetRectMinX(Sr),GetRectMaxX(Sr)),GetRandomReal(GetRectMinY(Sr),GetRectMaxY(Sr)))
+local location L=GetRandomLocInRect(Sr)
 if IsUnitInGroup(f,co)then
 call GroupRemoveUnit(co,f)
 endif
@@ -18191,12 +18191,10 @@ set pD=GetOwningPlayer(uD)
 set pW=GetOwningPlayer(Dp)
 call DisableTrigger(hO)
 call DisableTrigger(cR)
-set L=Location(GetRandomReal(GetRectMinX(ar),GetRectMaxX(ar)),GetRandomReal(GetRectMinY(ar),GetRectMaxY(ar)))
-call SetUnitPositionLoc(uD,L)
-call RemoveLocation(L)
-set L=Location(GetRandomReal(GetRectMinX(ar),GetRectMaxX(ar)),GetRandomReal(GetRectMinY(ar),GetRectMaxY(ar)))
-call SetUnitPositionLoc(Dp,L)
-call RemoveLocation(L)
+call SetUnitPositionLoc(uD,GetRandomLocInRect(ar))
+
+call SetUnitPositionLoc(Dp,GetRandomLocInRect(ar))
+
 call SetWidgetLife(Dp,GetUnitState(Dp,UNIT_STATE_MAX_LIFE))
 call UnitRemoveBuffs(uD,false,true)
 call UnitRemoveBuffs(Dp,false,true)
@@ -18303,9 +18301,7 @@ call TimerStart(fN,.5,false,function Bp)
 set fN=null
 loop
 exitwhen In>wN
-set L=Location(GetRandomReal(GetRectMinX(ar),GetRectMaxX(ar)),GetRandomReal(GetRectMinY(ar),GetRectMaxY(ar)))
-call SetUnitPositionLoc(F[In],L)
-call RemoveLocation(L)
+call SetUnitPositionLoc(F[In], GetRandomLocInRect(ar))
 call zB(F[In])
 set In=In+1
 endloop
@@ -18971,15 +18967,12 @@ set rv=0
 loop
 exitwhen In>vB
 if Oo[In]or GetWidgetLife(F[In])>.405 then
-set L=Location(GetRandomReal(GetRectMinX(MinimalArenaBottomUnitRect),GetRectMaxX(MinimalArenaBottomUnitRect)),GetRandomReal(GetRectMinY(MinimalArenaBottomUnitRect),GetRectMaxY(MinimalArenaBottomUnitRect)))
-call SetUnitPositionLoc(F[In],L)
-call SetUnitFacing(F[In],90.)
-call RemoveLocation(L)
+    call SetUnitPositionLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect))
+    call SetUnitFacing(F[In],90.)
 else
-set L=Location(GetRandomReal(GetRectMinX(MinimalArenaBottomUnitRect),GetRectMaxX(MinimalArenaBottomUnitRect)),GetRandomReal(GetRectMinY(MinimalArenaBottomUnitRect),GetRectMaxY(MinimalArenaBottomUnitRect)))
-call ReviveHeroLoc(F[In],L,false)
-call SetUnitFacingTimed(F[In],90.,0)
-call RemoveLocation(L)
+    call ReviveHeroLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect),false)
+    call SetUnitFacingTimed(F[In],90.,0)
+
 endif
 set In=In+1
 endloop
@@ -18988,14 +18981,12 @@ set vB=A
 loop
 exitwhen In>vB
 if Oo[In]or GetWidgetLife(F[In])>.405 then
-set L=Location(GetRandomReal(GetRectMinX(Qr),GetRectMaxX(Qr)),GetRandomReal(GetRectMinY(Qr),GetRectMaxY(Qr)))
-call SetUnitPositionLoc(F[In],L)
-call SetUnitFacing(F[In],270.)
-call RemoveLocation(L)
+    call SetUnitPositionLoc(F[In],GetRandomLocInRect(Qr))
+    call SetUnitFacing(F[In],270.)
+
 else
-set L=Location(GetRandomReal(GetRectMinX(Qr),GetRectMaxX(Qr)),GetRandomReal(GetRectMinY(Qr),GetRectMaxY(Qr)))
-call ReviveHeroLoc(F[In],L,false)
-call SetUnitFacingTimed(F[In],270.,0)
+    call ReviveHeroLoc(F[In],GetRandomLocInRect(Qr),false)
+    call SetUnitFacingTimed(F[In],270.,0)
 endif
 set In=In+1
 endloop
@@ -19529,16 +19520,15 @@ set Vq=null
 set pk=null
 set pd=null
 endfunction
-function Rq takes rect r returns location
-return Location(GetRandomReal(GetRectMinX(r),GetRectMaxX(r)),GetRandomReal(GetRectMinY(r),GetRectMaxY(r)))
-endfunction
+
+
 function Iq takes nothing returns nothing
 local unit f
 local integer MB=CurrentWave
 local integer In=1
 local location l
 // call BJDebugMsg("This is -b mode")
-set l=Rq(jr)
+set l=GetRandomLocInRect(jr)
 set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
@@ -19546,7 +19536,7 @@ endif
 call RemoveLocation(l)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
 call GroupAddUnit(Ee[3],f)
-set l=Rq(lr)
+set l=GetRandomLocInRect(lr)
 set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
@@ -19554,7 +19544,7 @@ endif
 call RemoveLocation(l)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
 call GroupAddUnit(Ee[7],f)
-set l=Rq(Lr)
+set l=GetRandomLocInRect(Lr)
 set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
@@ -19565,42 +19555,42 @@ call GroupAddUnit(Ee[8],f)
 loop
 exitwhen In>4
 if In<=2 then
-set l=Rq(jr)
+set l=GetRandomLocInRect(jr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[3],f)
-set l=Rq(lr)
+set l=GetRandomLocInRect(lr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[7],f)
-set l=Rq(Hr)
+set l=GetRandomLocInRect(Hr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[2],f)
 endif
 if In<=3 then
-set l=Rq(hr)
+set l=GetRandomLocInRect(hr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[1],f)
-set l=Rq(kr)
+set l=GetRandomLocInRect(kr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[5],f)
-set l=Rq(Jr)
+set l=GetRandomLocInRect(Jr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[4],f)
-set l=Rq(Kr)
+set l=GetRandomLocInRect(Kr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[6],f)
-set l=Rq(Lr)
+set l=GetRandomLocInRect(Lr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[8],f)
 endif
-set l=Rq(mr)
+set l=GetRandomLocInRect(mr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[9],f)
@@ -20227,9 +20217,9 @@ set f=FirstOfGroup(g)
 exitwhen f==null
 if(IsUnitType(f,UNIT_TYPE_HERO)==false and GetUnitTypeId(f)!='n002')or(GetUnitTypeId(f)=='E00E' or GetUnitTypeId(f)=='E00J')then
 if HN(wo,GetUnitX(f),GetUnitY(f))==false then
-set T=Location(GetRandomReal(GetRectMinX(Dr),GetRectMaxX(Dr)),GetRandomReal(GetRectMinY(Dr),GetRectMaxY(Dr)))
-call SetUnitPositionLoc(f,T)
-call RemoveLocation(T)
+
+call SetUnitPositionLoc(f,GetRandomLocInRect(Dr))
+
 set mM=GetOwningPlayer(f)
 if(GetLocalPlayer()==mM)then
 call SelectUnit(f,true)
@@ -20239,7 +20229,7 @@ endif
 call GroupRemoveUnit(g,f)
 endloop
 call DestroyGroup(g)
-set T=Location(GetRandomReal(GetRectMinX(Dr),GetRectMaxX(Dr)),GetRandomReal(GetRectMinY(Dr),GetRectMaxY(Dr)))
+set T=GetRandomLocInRect(Dr)
 call SetUnitPositionLoc(u,T)
 if(GetLocalPlayer()==p)then
 call PanCameraToTimed(GetLocationX(T),GetLocationY(T),.0)
@@ -23394,6 +23384,7 @@ set Nr=Rect(1504.,-1120.,3296.,512.)
 
 set ShopsAreaRect=Rect(-786.,-3475.,1440.,-1500.)
 set TavernAreaRect=Rect(1440.,-3475.,3100.,-2400.)
+
 set cr=Rect(-2144.,-2592.,-2112.,-2560.)
 set Cr=Rect(2496.,-544.,2560.,-480.)
 set dr=Rect(1984.,-672.,2048.,-608.)
