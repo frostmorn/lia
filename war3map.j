@@ -463,8 +463,8 @@ rect er=null
 rect rr=null
 rect MinimalArenaAreaRect=null
 rect ar=null
-rect nr=null
-rect Vr=null
+rect MinimalArenaBottomUnitRect=null
+rect MinimalArenaTopUnitRect=null
 rect Er=null
 rect Xr=null
 rect Rr=null
@@ -6645,8 +6645,8 @@ set In=In+1
 endloop
 call SetUnitInvulnerable(u1,true)
 call SetUnitInvulnerable(u2,true)
-set T1=Location(GetRectCenterX(nr),GetRectCenterY(nr))
-set T2=Location(GetRectCenterX(Vr),GetRectCenterY(Vr))
+set T1=Location(GetRectCenterX(MinimalArenaBottomUnitRect),GetRectCenterY(MinimalArenaBottomUnitRect))
+set T2=Location(GetRectCenterX(MinimalArenaTopUnitRect),GetRectCenterY(MinimalArenaTopUnitRect))
 call ReviveHeroLoc(u1,T1,false)
 call ReviveHeroLoc(u2,T2,false)
 call SetUnitPositionLoc(u1,T1)
@@ -7908,60 +7908,61 @@ set t=null
 set e=null
 endfunction
 function Cd takes nothing returns nothing
-local timer t=GetExpiredTimer()
-local integer dN=GetHandleId(t)
-local timerdialog d=LoadTimerDialogHandle(Ax,1,dN)
-local integer i1=kB()
-local integer i2=kB()
-local integer wN=A
-local group g=CreateGroup()
-local integer ic
-local unit f
-set FI=fI
-call DestroyTimerDialog(d)
-set Pe=false
-set rv=0
-if i1==0 or i2==0 then
-call ForceClear(Hx)
-call TriggerExecute(aO)
-set g=null
-set d=null
-set t=null
-return
-endif
-set jv=true
-set Gx=1
-call EnableTrigger(HO)
-set ic=1
-loop
-exitwhen ic>wN
-call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[ic]),GetRectCenter(cr),0)
-set ic=ic+1
-endloop
-set g=HA(bj_mapInitialPlayableArea)
-loop
-set f=FirstOfGroup(g)
-exitwhen f==null
-if IsUnitType(f,UNIT_TYPE_HERO)==false then
-call PauseUnit(f,true)
-endif
-call GroupRemoveUnit(g,f)
-endloop
-call DestroyGroup(g)
-set jx[1]=F[gx[i1]]
-set jx[2]=F[gx[i2]]
-set ic=1
-loop
-exitwhen ic>8
-call IssueImmediateOrderById(F[ic],$D0004)
-set ic=ic+1
-endloop
-call Wc(jx[1],jx[2])
-call DestroyTimer(t)
-set d=null
-set g=null
-set f=null
-set t=null
+    local timer t=GetExpiredTimer()
+    local integer dN=GetHandleId(t)
+    local timerdialog d=LoadTimerDialogHandle(Ax,1,dN)
+    local integer i1=kB()
+    local integer i2=kB()
+    local integer wN=A
+    local group g=CreateGroup()
+    local integer ic
+    local unit f
+    set FI=fI
+    call DestroyTimerDialog(d)
+    set Pe=false
+    set rv=0
+    if i1==0 or i2==0 then
+        call ForceClear(Hx)
+        call TriggerExecute(aO)
+        set g=null
+        set d=null
+        set t=null
+        return
+    endif
+    set jv=true
+    set Gx=1
+    call EnableTrigger(HO)
+    set ic=1
+    loop
+    exitwhen ic>wN
+        call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[ic]),GetRectCenter(cr),0)
+        set ic=ic+1
+    endloop
+    set g=HA(bj_mapInitialPlayableArea)
+    loop
+    set f=FirstOfGroup(g)
+    exitwhen f==null
+        if IsUnitType(f,UNIT_TYPE_HERO)==false then
+            call PauseUnit(f,true)
+        endif
+        call GroupRemoveUnit(g,f)
+    endloop
+    call DestroyGroup(g)
+    set jx[1]=F[gx[i1]]
+    set jx[2]=F[gx[i2]]
+    set ic=1
+    loop
+    exitwhen ic>8
+        call IssueImmediateOrderById(F[ic],$D0004)
+        set ic=ic+1
+    endloop
+  
+    call Wc(jx[1],jx[2])
+    call DestroyTimer(t)
+    set d=null
+    set g=null
+    set f=null
+    set t=null
 endfunction
 function RoundStartFunction takes nothing returns nothing
     call DestroyTimer(Ho)
@@ -17386,7 +17387,7 @@ call EB()
 call EnableTrigger(nO)
 loop
 exitwhen In>wN
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(nr))
+call SetUnitPositionLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect))
 call SetUnitFacing(F[In],90)
 call PanCameraToTimedLocForPlayer(ae[In],GetRectCenter(cr),0)
 call SelectUnitForPlayerSingle(F[In],ae[In])
@@ -17401,14 +17402,14 @@ call Mc()
 if b then
 call EnableTrigger(dO)
 call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,false,Player(11))
-set Le=CreateUnitAtLoc(Player(11),hv,GetRectCenter(Vr),270)
+set Le=CreateUnitAtLoc(Player(11),hv,GetRectCenter(MinimalArenaTopUnitRect),270)
 call SetHeroLevel(Le,$FA,false)
 call SetUnitManaPercentBJ(Le,'d')
 call SaveInteger(HashData,GetHandleId((Le)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Le,true)
 else
 call EnableTrigger(CO)
-set Me=CreateUnitAtLoc(Player(11),creep_ids[CurrentWave],GetRectCenter(Vr),270)
+set Me=CreateUnitAtLoc(Player(11),creep_ids[CurrentWave],GetRectCenter(MinimalArenaTopUnitRect),270)
 call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Me,true)
 call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
@@ -18614,7 +18615,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local timerdialog oP
     local integer BB
     local integer In
-    local real w
+    local real before_wave_timer
     local timer t=CreateTimer()
     local timer tL
     local timer Gd=CreateTimer()
@@ -18693,14 +18694,14 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     call TimerStart(Gd,6.25,false,function Ub)
     call TimerStart(t,2,false,function eP)
     if CurrentWave==1 then
-        set w=90
+        set before_wave_timer=90
     else
-        set w=60
+        set before_wave_timer=60
     endif
     call FB()
     set tL=CreateTimer()
     set RoundStartTimer=tL
-    call TimerStart(tL,w,false,function vP)
+    call TimerStart(tL,before_wave_timer,false,function vP)
     set Oe=CreateTimerDialog(tL)
     set CURRENT_PLAYERS=0
     call TimerDialogDisplay(Oe,true)
@@ -18708,7 +18709,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     call DestroyTimer(Fo)
     set Fo=null
     set Fo=CreateTimer()
-    call TimerStart(Fo,w-3,false,function hN)
+    call TimerStart(Fo,before_wave_timer-3,false,function hN)
     endif
     set oP=null
     set t=null
@@ -18970,12 +18971,12 @@ set rv=0
 loop
 exitwhen In>vB
 if Oo[In]or GetWidgetLife(F[In])>.405 then
-set L=Location(GetRandomReal(GetRectMinX(nr),GetRectMaxX(nr)),GetRandomReal(GetRectMinY(nr),GetRectMaxY(nr)))
+set L=Location(GetRandomReal(GetRectMinX(MinimalArenaBottomUnitRect),GetRectMaxX(MinimalArenaBottomUnitRect)),GetRandomReal(GetRectMinY(MinimalArenaBottomUnitRect),GetRectMaxY(MinimalArenaBottomUnitRect)))
 call SetUnitPositionLoc(F[In],L)
 call SetUnitFacing(F[In],90.)
 call RemoveLocation(L)
 else
-set L=Location(GetRandomReal(GetRectMinX(nr),GetRectMaxX(nr)),GetRandomReal(GetRectMinY(nr),GetRectMaxY(nr)))
+set L=Location(GetRandomReal(GetRectMinX(MinimalArenaBottomUnitRect),GetRectMaxX(MinimalArenaBottomUnitRect)),GetRandomReal(GetRectMinY(MinimalArenaBottomUnitRect),GetRectMaxY(MinimalArenaBottomUnitRect)))
 call ReviveHeroLoc(F[In],L,false)
 call SetUnitFacingTimed(F[In],90.,0)
 call RemoveLocation(L)
@@ -23376,8 +23377,12 @@ set er=Rect(224.,-608.,352.,-480.)
 set rr=Rect(736.,1376.,864.,1504.)
 set MinimalArenaAreaRect=Rect(-2973.,-3475.,-990.,-1500.)
 set ar=Rect(96.,-2816.,800.,-2144.)
-set nr=Rect(-2560.,-3072.,-1728.,-2752.)
-set Vr=Rect(-2272.,-2240.,-2016.,-1984.)
+
+// Bottom Player Rect on MinimalArena
+set MinimalArenaBottomUnitRect=Rect(-2473.,-3175.,-1490.,-2875.)
+// Top Player Rect on MinimalArena
+set MinimalArenaTopUnitRect=Rect(-2473.,-2100.,-1490.,-1800.)
+
 set Er=Rect(-2784.,-960.,1248.,2528.)
 set Xr=Rect(2336.,-224.,2400.,-160.)
 set Rr=Rect(2592.,-352.,2656.,-288.)
