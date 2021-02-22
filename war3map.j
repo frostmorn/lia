@@ -8017,165 +8017,167 @@ endfunction
 
 
 function gd takes nothing returns nothing
-local integer In=1
-local integer wN=A
-local integer index = 0
-local real w
-local integer Gb=CurrentWave
-local integer BB
-local integer bB=av
-local integer NB=Tx
-local timer t=CreateTimer()
-local timer tt=CreateTimer()
-local timer Gd=CreateTimer()
-// local timer PrepareBeforeRoundTimer=CreateTimer()
-local timer Hd=CreateTimer()
-local integer jd=GetHandleId(Hd)
-local integer Jd=GetHandleId(tt)
-local timerdialog fN
-call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
-call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+    local integer In=1
+    local integer wN=A
+    local integer index = 0
+    local real w
+    local integer Gb=CurrentWave
+    local integer BB
+    local integer bB=av
+    local integer NB=Tx
+    local timer t=CreateTimer()
+    local timer tt=CreateTimer()
+    local timer Gd=CreateTimer()
+    // local timer PrepareBeforeRoundTimer=CreateTimer()
+    local timer Hd=CreateTimer()
+    local integer jd=GetHandleId(Hd)
+    local integer Jd=GetHandleId(tt)
+    local timerdialog fN
+    call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
+    call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 
-call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)", 8039)
-// call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
-if Xv then
-set Hd=null
-// set PrepareBeforeRoundTimer=null
-set Gd=null
-set tt=null
-set t=null
-return
-endif
-call oB()
-loop
-exitwhen In>wN
-set pe[In]=false
-set Be[In]=false
-set IsReady[GetPlayerId(Player(In-1))]=false
-set In=In+1
-endloop
-set go=Vv
-if jv==false then
-set In=1
-loop
-exitwhen In>wN
-call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER)+(3+Gb))
-call SetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED,GetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED)+(3+Gb))
-set In=In+1
-endloop
-endif
-call DestroyTimer(Ho)
-set Ho=null
-call EnableTrigger(Wa)
-call aB()
-call IB()
-call Go()
-call Yb()
-set Wv=true
-call TimerStart(Gd,6.25,false,function Ub)
-if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
-call ModifyGateBJ(0,ho)
-set Hv=true
-call DisableTrigger(IsReadyTrigDefault)
-// call BJDebugMsg("DEBUG: Disabling trigger + 9561")
-loop
-set IsReady[index]=false
-set index=index+1
-exitwhen index==16
-endloop
-call DisableTrigger(IsReadyTrig)
-set Pe=true
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
-call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
-call TimerStart(Hd,30,false,function Cd)
-set fN=CreateTimerDialog(Hd)
-call SaveTimerDialogHandle(Ax,1,jd,fN)
-call TimerDialogSetTitle(fN,"Осталось")
-call TimerDialogDisplay(fN,true)
-call DestroyTimer(Fo)
-set Fo=CreateTimer()
-call TimerStart(Fo,27,false,function hN)
-set fN=null
-set Hd=null
-// set PrepareBeforeRoundTimer=null
-set Gd=null
-set tt=null
-set t=null
-return
-else
-call ModifyGateBJ(1,ho)
-set Hv=false
-endif
-if CurrentWave>0 then
-if av==1 then
-call bN()
-endif
-endif
-set CurrentWave=CurrentWave+1
-set Gb=Gb+1
-if Gb==2 then
-call DisableTrigger(yR)
-endif
-set BB=AB(Gb,NB,bB)
-set In=1
-loop
-exitwhen In>wN
-call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
-set In=In+1
-endloop
-if Gb==20 then
-call MultiboardSetItemValueBJ(StatsBoard,4,wN+2,"|cffffcc00Финальный босс")
-else
-if ModuloInteger(Gb,5)==0 then
-call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00Мегабосс"))
-else
-call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
-endif
-endif
-call TimerStart(t,2,false,function fd)
-if Gb==1 then
-set w=30
-else
-if Ro==false then
-call FB()
-endif
-set w=$F
-endif
-call SaveInteger(Ax,1,Jd,Gb)
-call TimerStart(tt,w,false,function Dd)
-if Gb==1 then
-set w=90
-else
-if Gb==20 then
-set w='x'
-else
-set w=60
-endif
-endif
-// call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeRoundFunction)
-set RoundStartTimer=CreateTimer()
-call TimerStart(RoundStartTimer,w,false,function RoundStartFunction)
-set Oe=CreateTimerDialog(RoundStartTimer)
-set CURRENT_PLAYERS=0
-call TimerDialogSetTitle(Oe,"Осталось")
-call TimerDialogDisplay(Oe,true)
-call DestroyTimer(Fo)
-set Fo=CreateTimer()
-call TimerStart(Fo,w-3,false,function hN)
-set t=null
-set tt=null
-set Gd=null
-// set PrepareBeforeRoundTimer=null
-set Hd=null
-endfunction
+    call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)", 8039)
+    // call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
+    if Xv then
+    set Hd=null
+    // set PrepareBeforeRoundTimer=null
+    set Gd=null
+    set tt=null
+    set t=null
+    return
+    endif
+    call oB()
+    loop
+    exitwhen In>wN
+    set pe[In]=false
+    set Be[In]=false
+    set IsReady[GetPlayerId(Player(In-1))]=false
+    set In=In+1
+    endloop
+    set go=Vv
+    if jv==false then
+    set In=1
+    loop
+    exitwhen In>wN
+    call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER)+(3+Gb))
+    call SetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED,GetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED)+(3+Gb))
+    set In=In+1
+    endloop
+    endif
+    call DestroyTimer(Ho)
+    set Ho=null
+    call EnableTrigger(Wa)
+    call aB()
+    call IB()
+    call Go()
+    call Yb()
+    set Wv=true
+    call TimerStart(Gd,6.25,false,function Ub)
+    if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
+    call ModifyGateBJ(0,ho)
+    set Hv=true
+    call DisableTrigger(IsReadyTrigDefault)
+    // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
+    loop
+    set IsReady[index]=false
+    set index=index+1
+    exitwhen index==16
+    endloop
+    call DisableTrigger(IsReadyTrig)
+    set Pe=true
+    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
+    call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
+    call TimerStart(Hd,30,false,function Cd)
+    set fN=CreateTimerDialog(Hd)
+    call SaveTimerDialogHandle(Ax,1,jd,fN)
+    call TimerDialogSetTitle(fN,"Осталось")
+    call TimerDialogDisplay(fN,true)
+    call DestroyTimer(Fo)
+    set Fo=CreateTimer()
+    call TimerStart(Fo,27,false,function hN)
+    set fN=null
+    set Hd=null
+    // set PrepareBeforeRoundTimer=null
+    set Gd=null
+    set tt=null
+    set t=null
+    return
+    else
+    call ModifyGateBJ(1,ho)
+    set Hv=false
+    endif
+    if CurrentWave>0 then
+    if av==1 then
+    call bN()
+    endif
+    endif
+    set CurrentWave=CurrentWave+1
+    set Gb=Gb+1
+    if Gb==2 then
+    call DisableTrigger(yR)
+    endif
+    set BB=AB(Gb,NB,bB)
+    set In=1
+    loop
+    exitwhen In>wN
+    call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
+    set In=In+1
+    endloop
+    if Gb==20 then
+    call MultiboardSetItemValueBJ(StatsBoard,4,wN+2,"|cffffcc00Финальный босс")
+    else
+    if ModuloInteger(Gb,5)==0 then
+    call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00Мегабосс"))
+    else
+    call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
+    endif
+    endif
+    call TimerStart(t,2,false,function fd)
+    if Gb==1 then
+    set w=30
+    else
+    if Ro==false then
+    call FB()
+    endif
+    set w=$F
+    endif
+    call SaveInteger(Ax,1,Jd,Gb)
+    call TimerStart(tt,w,false,function Dd)
+    if Gb==1 then
+    set w=90
+    else
+    if Gb==20 then
+    set w='x'
+    else
+    set w=60
+    endif
+    endif
+    // call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeBRoundFunction)
+    set RoundStartTimer=CreateTimer()
+    call TimerStart(RoundStartTimer,w,false,function RoundStartFunction)
+    set Oe=CreateTimerDialog(RoundStartTimer)
+    set CURRENT_PLAYERS=0
+    call TimerDialogSetTitle(Oe,"Осталось")
+    call TimerDialogDisplay(Oe,true)
+    call DestroyTimer(Fo)
+    set Fo=CreateTimer()
+    call TimerStart(Fo,w-3,false,function hN)
+    set t=null
+    set tt=null
+    set Gd=null
+    // set PrepareBeforeRoundTimer=null
+    set Hd=null
+    endfunction
+
 function kd takes nothing returns nothing
-local integer re=av
-set Ex=true
-set Vv=$96
-call TriggerExecute(sa)
-call gd()
-call TriggerExecute(jO)
+    local integer re=av
+    set Ex=true
+    set Vv=$96
+    call TriggerExecute(sa)
+    call gd()
+    call TriggerExecute(jO)
 endfunction
+
 function Kd takes integer ld returns nothing
 local trigger t
 if HaveSavedHandle(Ax,ld,1)then
@@ -17735,30 +17737,32 @@ endfunction
 function pM takes nothing returns boolean
 return GetOwningPlayer(GetFilterUnit())==Player(11)and not IsUnitDead(GetFilterUnit())
 endfunction
-function PM takes nothing returns nothing
-local boolexpr b=Condition(function pM)
-local timer t=CreateTimer()
-set bj_wantDestroyGroup=true
-if CountUnitsInGroup(GA(wo,b))==0 and Xv==false then
-set qv=false
-call DisableTrigger(cO)
-call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 
-call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger", 17745)
-if Ro then
-call DisableTrigger(oO)
-else
-call DisableTrigger(rO)
-endif
-set ye=false
-call eC()
-call gd()
-set Wv=true
-call TimerStart(t,6.25,false,function Ub)
-endif
-set b=null
-set t=null
+function PM takes nothing returns nothing
+    local boolexpr b=Condition(function pM)
+    local timer t=CreateTimer()
+    set bj_wantDestroyGroup=true
+    if CountUnitsInGroup(GA(wo,b))==0 and Xv==false then
+        set qv=false
+        call DisableTrigger(cO)
+        call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+
+        call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger", 17745)
+        if Ro then
+            call DisableTrigger(oO)
+        else
+            call DisableTrigger(rO)
+        endif
+        set ye=false
+        call eC()
+        call gd()
+        set Wv=true
+        call TimerStart(t,6.25,false,function Ub)
+    endif
+    set b=null
+    set t=null
 endfunction
+
 function QM takes nothing returns boolean
 return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and GetOwningPlayer(GetDyingUnit())==Player(11)and GetDyingUnit()!=Le and Xv==false
 endfunction
@@ -18629,7 +18633,7 @@ call DestroyTimer(t)
 set t=null
 endfunction
 
-function PrepareBeforeRoundFunction takes nothing returns nothing
+function PrepareBeforeBRoundFunction takes nothing returns nothing
     local integer wN=A
     local integer bB=av
     local integer NB=$F
@@ -18642,14 +18646,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local timer Gd=CreateTimer()
     local integer index=0
     local timer t1=GetExpiredTimer()
-    call SendDebugToBot("Entering PrepareBeforeRoundFunction", 18629)
-    call DisableTrigger(IsReadyTrigDefault)
-    loop
-    set IsReady[index]=false
-    set index=index+1
-    exitwhen index==16
-    endloop
-    call DisableTrigger(IsReadyTrig)
+    call SendDebugToBot("Entering PrepareBeforeBRoundFunction", 18629)
     call DisableTrigger(gR)
     call DestroyTimer(t1)
     set t=null
@@ -24285,7 +24282,7 @@ call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(5),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(6),"+",true)
 call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(7),"+",true)
 set PrepareBeforeRoundTrigger=CreateTrigger()
-call TriggerAddAction(PrepareBeforeRoundTrigger,function PrepareBeforeRoundFunction)
+call TriggerAddAction(PrepareBeforeRoundTrigger,function PrepareBeforeBRoundFunction)
 set qO=CreateTrigger()
 call TriggerAddAction(qO,function aP)
 set QO=CreateTrigger()
