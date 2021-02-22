@@ -17590,7 +17590,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     local unit u
     
     local integer In=1
-    
+    call SendDebugToBot("Entering SpawnCreepsFunction", 17593)
     set xA=CreateUnit(Player(11),'h011',0,0,0)
     
     if DM==1 then
@@ -17632,14 +17632,12 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-    //#    
+  
         call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)
         call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
-    //#
+
         set In=In+1
     endloop
-    //#    
-    //#
     set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
     
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
@@ -18627,7 +18625,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local timer Gd=CreateTimer()
     local integer index=0
     local timer t1=GetExpiredTimer()
-    call SendDebugToBot("Enrtering PrepareBeforeRoundFunction", 18629)
+    call SendDebugToBot("Entering PrepareBeforeRoundFunction", 18629)
     call DisableTrigger(IsReadyTrigDefault)
     loop
     set IsReady[index]=false
