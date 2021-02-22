@@ -17360,13 +17360,13 @@ if b then
 call PauseUnit(Le,false)
 call TriggerRegisterUnitLifeEvent(OO,Le,LESS_THAN_OR_EQUAL,7000.)
 call TriggerRegisterUnitLifeEvent(RO,Le,LESS_THAN_OR_EQUAL,3000.)
-call EnableTrigger(AO)
+// call EnableTrigger(AO)
 call EnableTrigger(dO)
 call EnableTrigger(XO)
 call EnableTrigger(oO)
 else
 call PauseUnit(Me,false)
-call EnableTrigger(AO)
+// call EnableTrigger(AO)
 call EnableTrigger(XO)
 endif
 loop
@@ -17769,7 +17769,7 @@ local integer wN=A
 call DisableTrigger(CO)
 call DisableTrigger(eA)
 set iv=false
-call DisableTrigger(AO)
+// call DisableTrigger(AO)
 call DisableTrigger(XO)
 call DisableTrigger(nO)
 loop
@@ -17792,7 +17792,7 @@ function TM takes nothing returns nothing
 call DisableTrigger(dO)
 set iv=false
 call DisableTrigger(nO)
-call DisableTrigger(AO)
+// call DisableTrigger(AO)
 call DisableTrigger(XO)
 call DisableTrigger(oO)
 call kc()
