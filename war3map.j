@@ -8039,30 +8039,30 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)", 8039)
     // call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
     if Xv then
-    set Hd=null
-    // set PrepareBeforeRoundTimer=null
-    set Gd=null
-    set tt=null
-    set t=null
-    return
+        set Hd=null
+        // set PrepareBeforeRoundTimer=null
+        set Gd=null
+        set tt=null
+        set t=null
+        return
     endif
     call oB()
     loop
     exitwhen In>wN
-    set pe[In]=false
-    set Be[In]=false
-    set IsReady[GetPlayerId(Player(In-1))]=false
-    set In=In+1
+        set pe[In]=false
+        set Be[In]=false
+        set IsReady[GetPlayerId(Player(In-1))]=false
+        set In=In+1
     endloop
     set go=Vv
     if jv==false then
-    set In=1
-    loop
-    exitwhen In>wN
-    call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER)+(3+Gb))
-    call SetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED,GetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED)+(3+Gb))
-    set In=In+1
-    endloop
+        set In=1
+        loop
+        exitwhen In>wN
+            call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER)+(3+Gb))
+            call SetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED,GetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED)+(3+Gb))
+            set In=In+1
+        endloop
     endif
     call DestroyTimer(Ho)
     set Ho=null
@@ -8074,83 +8074,83 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     set Wv=true
     call TimerStart(Gd,6.25,false,function Ub)
     if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
-    call ModifyGateBJ(0,ho)
-    set Hv=true
-    call DisableTrigger(IsReadyTrigDefault)
-    // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
-    loop
-    set IsReady[index]=false
-    set index=index+1
-    exitwhen index==16
-    endloop
-    call DisableTrigger(IsReadyTrig)
-    set Pe=true
-    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
-    call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
-    call TimerStart(Hd,30,false,function Cd)
-    set fN=CreateTimerDialog(Hd)
-    call SaveTimerDialogHandle(Ax,1,jd,fN)
-    call TimerDialogSetTitle(fN,"Осталось")
-    call TimerDialogDisplay(fN,true)
-    call DestroyTimer(Fo)
-    set Fo=CreateTimer()
-    call TimerStart(Fo,27,false,function hN)
-    set fN=null
-    set Hd=null
-    // set PrepareBeforeRoundTimer=null
-    set Gd=null
-    set tt=null
-    set t=null
-    return
+        call ModifyGateBJ(0,ho)
+        set Hv=true
+        call DisableTrigger(IsReadyTrigDefault)
+        // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
+        loop
+            set IsReady[index]=false
+            set index=index+1
+            exitwhen index==16
+        endloop
+        call DisableTrigger(IsReadyTrig)
+        set Pe=true
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
+        call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
+        call TimerStart(Hd,30,false,function Cd)
+        set fN=CreateTimerDialog(Hd)
+        call SaveTimerDialogHandle(Ax,1,jd,fN)
+        call TimerDialogSetTitle(fN,"Осталось")
+        call TimerDialogDisplay(fN,true)
+        call DestroyTimer(Fo)
+        set Fo=CreateTimer()
+        call TimerStart(Fo,27,false,function hN)
+        set fN=null
+        set Hd=null
+        // set PrepareBeforeRoundTimer=null
+        set Gd=null
+        set tt=null
+        set t=null
+        return
     else
-    call ModifyGateBJ(1,ho)
-    set Hv=false
+        call ModifyGateBJ(1,ho)
+        set Hv=false
     endif
     if CurrentWave>0 then
-    if av==1 then
-    call bN()
-    endif
+        if av==1 then
+            call bN()
+        endif
     endif
     set CurrentWave=CurrentWave+1
     set Gb=Gb+1
     if Gb==2 then
-    call DisableTrigger(yR)
+        call DisableTrigger(yR)
     endif
     set BB=AB(Gb,NB,bB)
     set In=1
     loop
     exitwhen In>wN
-    call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
-    set In=In+1
+        call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
+        set In=In+1
     endloop
     if Gb==20 then
-    call MultiboardSetItemValueBJ(StatsBoard,4,wN+2,"|cffffcc00Финальный босс")
+        call MultiboardSetItemValueBJ(StatsBoard,4,wN+2,"|cffffcc00Финальный босс")
     else
-    if ModuloInteger(Gb,5)==0 then
-    call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00Мегабосс"))
-    else
-    call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
-    endif
+        if ModuloInteger(Gb,5)==0 then
+            call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00Мегабосс"))
+        else
+            call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
+        endif
     endif
     call TimerStart(t,2,false,function fd)
     if Gb==1 then
-    set w=30
+        set w=30
     else
-    if Ro==false then
-    call FB()
-    endif
-    set w=$F
+        if Ro==false then
+            call FB()
+        endif
+        set w=$F
     endif
     call SaveInteger(Ax,1,Jd,Gb)
     call TimerStart(tt,w,false,function Dd)
     if Gb==1 then
-    set w=90
+        set w=90
     else
-    if Gb==20 then
-    set w='x'
-    else
-    set w=60
-    endif
+        if Gb==20 then
+            set w='x'
+        else
+            set w=60
+        endif
     endif
     // call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeBRoundFunction)
     set RoundStartTimer=CreateTimer()
@@ -8167,7 +8167,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     set Gd=null
     // set PrepareBeforeRoundTimer=null
     set Hd=null
-    endfunction
+endfunction
 
 function kd takes nothing returns nothing
     local integer re=av
