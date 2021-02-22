@@ -4352,9 +4352,11 @@ endloop
 set first=null
 set dummy=null
 endfunction
-function HN takes rect r,real x,real y returns boolean
-return(GetRectMinX(r)<=x)and(x<=GetRectMaxX(r))and(GetRectMinY(r)<=y)and(y<=GetRectMaxY(r))
+
+function IsUnitInRectFunction takes rect r,real x,real y returns boolean
+    return(GetRectMinX(r)<=x)and(x<=GetRectMaxX(r))and(GetRectMinY(r)<=y)and(y<=GetRectMaxY(r))
 endfunction
+
 function jN takes integer JN,string s returns real
 local real kN
 if(s=="screamaoe")then
@@ -8930,9 +8932,11 @@ endfunction
 function kD takes nothing returns boolean
 return Xv==false
 endfunction
+
 function KD takes nothing returns nothing
-call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(Er),GetRectMaxX(Er)),GetRandomReal(GetRectMinY(Er),GetRectMaxY(Er)))
+    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(Er),GetRectMaxX(Er)),GetRandomReal(GetRectMinY(Er),GetRectMaxY(Er)))
 endfunction
+
 function LD takes nothing returns nothing
 local unit u=GetEnteringUnit()
 call zB(u)
@@ -17264,9 +17268,11 @@ endfunction
 function Sm takes nothing returns boolean
 return Xv==false
 endfunction
+
 function tm takes nothing returns nothing
-call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(Sr),GetRectMaxX(Sr)),GetRandomReal(GetRectMinY(Sr),GetRectMaxY(Sr)))
+    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(Sr),GetRectMaxX(Sr)),GetRandomReal(GetRectMinY(Sr),GetRectMaxY(Sr)))
 endfunction
+
 function um takes nothing returns nothing
 local timer t=GetExpiredTimer()
 set Wv=false
@@ -17620,8 +17626,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     
     set Tx=nC
 
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)
-    
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)   
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     
@@ -17638,8 +17643,8 @@ function SpawnCreepsFunction takes nothing returns nothing
 
         set In=In+1
     endloop
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
     
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     // WTF Duplicate?
@@ -20224,7 +20229,7 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 if(IsUnitType(f,UNIT_TYPE_HERO)==false and GetUnitTypeId(f)!='n002')or(GetUnitTypeId(f)=='E00E' or GetUnitTypeId(f)=='E00J')then
-if HN(wo,GetUnitX(f),GetUnitY(f))==false then
+if IsUnitInRectFunction(wo,GetUnitX(f),GetUnitY(f))==false then
 
 call SetUnitPositionLoc(f,GetRandomLocInRect(Dr))
 
