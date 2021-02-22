@@ -453,8 +453,8 @@ rect To=null
 rect uo=null
 rect Uo=null
 rect wo=null
-rect Wo=null
-rect yo=null
+rect BottomSpawnRect=null
+rect TopSpawnRect=null
 rect Yo=null
 rect zo=null
 rect Zo=null
@@ -17578,25 +17578,21 @@ endfunction
 function BM takes nothing returns boolean
 return(GetOwningPlayer(GetLeavingUnit())==GetFilterPlayer())
 endfunction
+
 function cM takes nothing returns nothing
-call RemoveUnit(GetLeavingUnit())
-call DisplayTextToForce(qA(Condition(function BM)),"Вaш юнит нe дoлжeн нaхoдитьcя в дaннoй oблacти.")
+    call RemoveUnit(GetLeavingUnit())
+    call DisplayTextToForce(qA(Condition(function BM)),"Вaш юнит нe дoлжeн нaхoдитьcя в дaннoй oблacти.")
 endfunction
+
 function SpawnCreepsFunction takes nothing returns nothing
     local integer nC=0
     local integer DM=av
     local unit u
     
     local integer In=1
-    local real fM=GetRectMaxX(Wo)
-    local real FM=GetRectMaxY(Wo)
-    local real gM=GetRectMaxX(yo)
-    local real GM=GetRectMaxY(yo)
-    local real hM=GetRectMinX(Wo)
-    local real HM=GetRectMinY(Wo)
-    local real jM=GetRectMinX(yo)
-    local real JM=GetRectMinY(yo)
+    
     set xA=CreateUnit(Player(11),'h011',0,0,0)
+    
     if DM==1 then
         set nC=18
     endif
@@ -17621,8 +17617,11 @@ function SpawnCreepsFunction takes nothing returns nothing
     if DM==8 then
         set nC=62
     endif
+    
     set Tx=nC
-    set u=CreateUnit(Player(11),boss_ids[CurrentWave],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
+
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)
+    
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     
@@ -17633,14 +17632,20 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-        call CreateUnit(Player(11),creep_ids[CurrentWave],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
-        call CreateUnit(Player(11),creep_ids[CurrentWave],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
+    //#    
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
+    //#
         set In=In+1
     endloop
-    set u=CreateUnit(Player(11),boss_ids[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
+    //#    
+    //#
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
+    
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     // WTF Duplicate?
+    
     if CurrentWave==9 then
         call vD(u)
     endif
@@ -23362,8 +23367,10 @@ set To=Rect(-288.,-3168.,-96.,-2976.)
 set uo=Rect(-480.,-3168.,-288.,-2976.)
 set Uo=Rect(-960.,-3616.,3328.,-1376.)
 set wo=Rect(-3424.,-1376.,1504.,3168.)
-set Wo=Rect(-3264.,-64.,-2432.,896.)
-set yo=Rect(-1216.,2272.,-192.,2976.)
+
+set BottomSpawnRect=Rect(-3264.,-64.,-2432.,896.)
+set TopSpawnRect=Rect(-1216.,2272.,-192.,2976.)
+
 set Yo=Rect(-2400.,-608.,-2272.,-480.)
 set zo=Rect(-1888.,-800.,-1760.,-672.)
 set Zo=Rect(-1696.,288.,-1568.,416.)
