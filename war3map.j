@@ -825,7 +825,7 @@ trigger IO=null
 trigger AO=null
 trigger NO=null
 trigger SpawnCreepsTrigger=null
-trigger BO=null
+trigger CreepsSeekAndAttackPeriodicTrigger=null
 trigger cO=null
 trigger CO=null
 trigger dO=null
@@ -8034,6 +8034,9 @@ local integer jd=GetHandleId(Hd)
 local integer Jd=GetHandleId(tt)
 local timerdialog fN
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
+call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+
+call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)", 8039)
 // call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
 if Xv then
 set Hd=null
@@ -17530,53 +17533,53 @@ set f=null
 set L=null
 endfunction
 function AM takes nothing returns nothing
-local group g=CreateGroup()
-local integer i=1
-local integer Kc=0
-local integer r
-local unit array gg
-local unit u
-local location T
-local unit f
-local player p
-local boolean b
-call GroupEnumUnitsOfPlayer(g,Player(11),null)
-loop
-exitwhen i>8
-set p=GetOwningPlayer(F[i])
-set b=(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)
-if Oo[i]and b then
-set Kc=Kc+1
-set gg[Kc]=F[i]
-endif
-set i=i+1
-endloop
-if Kc==0 then
-set g=null
-return
-endif
-set r=GetRandomInt(1,Kc)
-set u=gg[r]
-set T=GetUnitLoc(u)
-loop
-set f=FirstOfGroup(g)
-exitwhen f==null
-call IssuePointOrderByIdLoc(f,$D000F,T)
-call GroupRemoveUnit(g,f)
-endloop
-call RemoveLocation(T)
-call DestroyGroup(g)
-set i=1
-loop
-exitwhen gg[i]==null
-set gg[i]=null
-set i=i+1
-endloop
-set u=null
-set T=null
-set g=null
-set p=null
-set f=null
+    local group g=CreateGroup()
+    local integer i=1
+    local integer Kc=0
+    local integer r
+    local unit array gg
+    local unit u
+    local location T
+    local unit f
+    local player p
+    local boolean b
+    call GroupEnumUnitsOfPlayer(g,Player(11),null)
+    loop
+    exitwhen i>8
+        set p=GetOwningPlayer(F[i])
+        set b=(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)
+        if Oo[i]and b then
+            set Kc=Kc+1
+            set gg[Kc]=F[i]
+        endif
+        set i=i+1
+    endloop
+    if Kc==0 then
+        set g=null
+    return
+    endif
+        set r=GetRandomInt(1,Kc)
+        set u=gg[r]
+        set T=GetUnitLoc(u)
+    loop
+        set f=FirstOfGroup(g)
+    exitwhen f==null
+        call IssuePointOrderByIdLoc(f,$D000F,T)
+        call GroupRemoveUnit(g,f)
+    endloop
+        call RemoveLocation(T)
+        call DestroyGroup(g)
+        set i=1
+    loop
+    exitwhen gg[i]==null
+        set gg[i]=null
+        set i=i+1
+    endloop
+    set u=null
+    set T=null
+    set g=null
+    set p=null
+    set f=null
 endfunction
 function bM takes nothing returns boolean
 return(Xv==false)
@@ -17654,8 +17657,10 @@ function SpawnCreepsFunction takes nothing returns nothing
     endif
 
     call EnableTrigger(cO)
-    call TriggerExecute(BO)
-    call EnableTrigger(BO)
+
+    call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+        
+    call SendDebugToBot("Trying to enable CreepsSeekAndAttackPeriodicTrigger", 17663)
     set u=null
 endfunction
 
@@ -17682,15 +17687,16 @@ function CreepsSeekAndAttackFunction takes nothing returns nothing
     local player p
     local unit f
     call GroupEnumUnitsOfPlayer(gr,LM,null)
-    call SendDebugToBot("Entering function CreepsSeekAndAttackFunction", 17685)
     loop
     exitwhen L>8
         set f=F[L]
         set b1=Oo[L]
-        set b2=(IsUnitInGroup(f,fo)==false)
-        if b1 and f!=null and b2 then
-            set i=i+1
-            set g[i]=f
+        if f!=null then
+            set b2=(IsUnitInGroup(f,fo)==false)
+            if b1 and b2 then
+                set i=i+1
+                set g[i]=f
+            endif
         endif
         set L=L+1
     endloop
@@ -17736,7 +17742,9 @@ set bj_wantDestroyGroup=true
 if CountUnitsInGroup(GA(wo,b))==0 and Xv==false then
 set qv=false
 call DisableTrigger(cO)
-call DisableTrigger(BO)
+call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+
+call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger", 17745)
 if Ro then
 call DisableTrigger(oO)
 else
@@ -24142,21 +24150,24 @@ set ED=ED+1
 endloop
 call DisableTrigger(IO)
 call TriggerAddAction(IO,function RM)
-set AO=CreateTrigger()
-call DisableTrigger(AO)
-call TriggerRegisterTimerEventPeriodic(AO,2.4)
-call TriggerAddAction(AO,function AM)
+
+// CreepsSeekAndAttackFunction Alternative
+// set AO=CreateTrigger()
+
+// call DisableTrigger(AO)
+// call TriggerRegisterTimerEventPeriodic(AO,2.4)
+// call TriggerAddAction(AO,function AM)
 set NO=CreateTrigger()
 call TriggerRegisterEnterRectSimple(NO,fr)
 call TriggerAddCondition(NO,Condition(function bM))
 call TriggerAddAction(NO,function cM)
 set SpawnCreepsTrigger=CreateTrigger()
 call TriggerAddAction(SpawnCreepsTrigger,function SpawnCreepsFunction)
-set BO=CreateTrigger()
-call DisableTrigger(BO)
-
-call TriggerRegisterTimerEvent(BO,0.50,true)
-call TriggerAddAction(BO,function CreepsSeekAndAttackFunction)
+set CreepsSeekAndAttackPeriodicTrigger=CreateTrigger()
+call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,0.50,true)
+call TriggerAddAction(CreepsSeekAndAttackPeriodicTrigger,function CreepsSeekAndAttackFunction)
+call SendDebugToBot("CreepsSeekAndAttackPeriodicTrigger created, actions added and disabled", 24165)
 
 set cO=CreateTrigger()
 call DisableTrigger(cO)
