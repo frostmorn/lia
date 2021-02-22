@@ -8016,7 +8016,7 @@ set t=null
 endfunction
 
 
-function gd takes nothing returns nothing
+function PrepareBeforeRoundFunction takes nothing returns nothing
     local integer In=1
     local integer wN=A
     local integer index = 0
@@ -8174,7 +8174,7 @@ function kd takes nothing returns nothing
     set Ex=true
     set Vv=$96
     call TriggerExecute(sa)
-    call gd()
+    call PrepareBeforeRoundFunction()
     call TriggerExecute(jO)
 endfunction
 
@@ -17268,7 +17268,7 @@ set i=i+1
 endloop
 endfunction
 function Qm takes nothing returns nothing
-call gd()
+call PrepareBeforeRoundFunction()
 endfunction
 function Sm takes nothing returns boolean
 return Xv==false
@@ -17755,7 +17755,7 @@ function PM takes nothing returns nothing
         endif
         set ye=false
         call eC()
-        call gd()
+        call PrepareBeforeRoundFunction()
         set Wv=true
         call TimerStart(t,6.25,false,function Ub)
     endif
@@ -17784,7 +17784,7 @@ set In=In+1
 endloop
 call ud(GetOwningPlayer(GetKillingUnit()))
 call eC()
-call gd()
+call PrepareBeforeRoundFunction()
 set Wv=true
 call TimerStart(t,6.25,false,function Ub)
 set t=null
@@ -18345,7 +18345,7 @@ call GroupEnumUnitsInRect(g,bj_mapInitialPlayableArea,null)
 call ForGroup(g,function Ip)
 call DestroyGroup(g)
 call DisableTrigger(HO)
-call gd()
+call PrepareBeforeRoundFunction()
 set In=0
 loop
 exitwhen In>wN-1
