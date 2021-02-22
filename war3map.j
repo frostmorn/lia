@@ -824,7 +824,7 @@ trigger RO=null
 trigger IO=null
 trigger AO=null
 trigger NO=null
-trigger bO=null
+trigger SpawnCreepsTrigger=null
 trigger BO=null
 trigger cO=null
 trigger CO=null
@@ -17284,7 +17284,7 @@ set g=null
 return
 endif
 set qv=true
-call TriggerExecute(bO)
+call TriggerExecute(SpawnCreepsTrigger)
 call EB()
 call EC()
 if CurrentWave>=16 then
@@ -17582,70 +17582,75 @@ function cM takes nothing returns nothing
 call RemoveUnit(GetLeavingUnit())
 call DisplayTextToForce(qA(Condition(function BM)),"Вaш юнит нe дoлжeн нaхoдитьcя в дaннoй oблacти.")
 endfunction
-function dM takes nothing returns nothing
-local integer nC=0
-local integer DM=av
-local unit u
-local integer MB=CurrentWave
-local integer In=1
-local real fM=GetRectMaxX(Wo)
-local real FM=GetRectMaxY(Wo)
-local real gM=GetRectMaxX(yo)
-local real GM=GetRectMaxY(yo)
-local real hM=GetRectMinX(Wo)
-local real HM=GetRectMinY(Wo)
-local real jM=GetRectMinX(yo)
-local real JM=GetRectMinY(yo)
-set xA=CreateUnit(Player(11),'h011',0,0,0)
-if DM==1 then
-set nC=18
-endif
-if DM==2 then
-set nC=27
-endif
-if DM==3 then
-set nC=35
-endif
-if DM==4 then
-set nC=40
-endif
-if DM==5 then
-set nC=45
-endif
-if DM==6 then
-set nC=50
-endif
-if DM==7 then
-set nC=55
-endif
-if DM==8 then
-set nC=62
-endif
-set Tx=nC
-set u=CreateUnit(Player(11),boss_ids[MB],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
-call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
-call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
-if MB==9 then
-call vD(u)
-endif
-set In=1
-loop
-exitwhen In>nC
-call CreateUnit(Player(11),creep_ids[MB],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
-call CreateUnit(Player(11),creep_ids[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
-set In=In+1
-endloop
-set u=CreateUnit(Player(11),boss_ids[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
-call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
-call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
-if MB==9 then
-call vD(u)
-endif
-call EnableTrigger(cO)
-call TriggerExecute(BO)
-call EnableTrigger(BO)
-set u=null
+function SpawnCreepsFunction takes nothing returns nothing
+    local integer nC=0
+    local integer DM=av
+    local unit u
+    
+    local integer In=1
+    local real fM=GetRectMaxX(Wo)
+    local real FM=GetRectMaxY(Wo)
+    local real gM=GetRectMaxX(yo)
+    local real GM=GetRectMaxY(yo)
+    local real hM=GetRectMinX(Wo)
+    local real HM=GetRectMinY(Wo)
+    local real jM=GetRectMinX(yo)
+    local real JM=GetRectMinY(yo)
+    set xA=CreateUnit(Player(11),'h011',0,0,0)
+    if DM==1 then
+        set nC=18
+    endif
+    if DM==2 then
+        set nC=27
+    endif
+    if DM==3 then
+        set nC=35
+    endif
+    if DM==4 then
+        set nC=40
+    endif
+    if DM==5 then
+        set nC=45
+    endif
+    if DM==6 then
+        set nC=50
+    endif
+    if DM==7 then
+        set nC=55
+    endif
+    if DM==8 then
+        set nC=62
+    endif
+    set Tx=nC
+    set u=CreateUnit(Player(11),boss_ids[CurrentWave],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
+    call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
+    call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
+    
+    if CurrentWave==9 then
+        call vD(u)
+    endif
+
+    set In=1
+    loop
+    exitwhen In>nC
+        call CreateUnit(Player(11),creep_ids[CurrentWave],GetRandomReal(jM,gM),GetRandomReal(JM,GM),270)
+        call CreateUnit(Player(11),creep_ids[CurrentWave],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
+        set In=In+1
+    endloop
+    set u=CreateUnit(Player(11),boss_ids[MB],GetRandomReal(hM,fM),GetRandomReal(HM,FM),0)
+    call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
+    call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
+    // WTF Duplicate?
+    if CurrentWave==9 then
+        call vD(u)
+    endif
+
+    call EnableTrigger(cO)
+    call TriggerExecute(BO)
+    call EnableTrigger(BO)
+    set u=null
 endfunction
+
 function KM takes nothing returns nothing
 local unit u=GetEnumUnit()
 call IssuePointOrderByIdLoc(u,$D000F,Ye)
@@ -24131,8 +24136,8 @@ set NO=CreateTrigger()
 call TriggerRegisterEnterRectSimple(NO,fr)
 call TriggerAddCondition(NO,Condition(function bM))
 call TriggerAddAction(NO,function cM)
-set bO=CreateTrigger()
-call TriggerAddAction(bO,function dM)
+set SpawnCreepsTrigger=CreateTrigger()
+call TriggerAddAction(SpawnCreepsTrigger,function SpawnCreepsFunction)
 set BO=CreateTrigger()
 call DisableTrigger(BO)
 call TriggerRegisterTimerEvent(BO,1.00,true)
