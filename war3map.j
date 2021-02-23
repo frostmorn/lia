@@ -2,6 +2,7 @@ globals
 hashtable HashData=InitHashtable()
 group array CatchTheShadowGroup
 group array BugFixGroup
+group MonstersGroup=null
 boolean notAffect=false
 constant hashtable DinamiteShot___HASH_TABLE=InitHashtable()
 constant integer DinamiteShot___SPELL_ID='A0IW'
@@ -8034,6 +8035,8 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local integer jd=GetHandleId(Hd)
     local integer Jd=GetHandleId(tt)
     local timerdialog fN
+    call DestroyGroup(MonstersGroup)
+    set MonstersGroup = null
     call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
     call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
     // For FastRound start we must set ReadyPlayers to false.
@@ -17662,7 +17665,9 @@ function SpawnCreepsFunction takes nothing returns nothing
     if CurrentWave==9 then
         call vD(u)
     endif
-
+    // Creeps created, so it's time to create Group. No needness in doing that shit every fucking time
+    set MonstersGroup = CreateGroup()
+    call GroupEnumUnitsOfPlayer(MonstersGroup,Player(11),null)
     call EnableTrigger(cO)
 
     call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
@@ -17678,7 +17683,7 @@ local unit u=GetEnumUnit()
             call IssuePointOrderByIdLoc(u,$D000F,Ye)
             return
         endif
-        call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : CreepsAttackFunction, unit have another order[17682] OrderID:"+I2S(GetUnitCurrentOrder(u)))        
+        // call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : CreepsAttackFunction, unit have another order[17682] OrderID:"+I2S(GetUnitCurrentOrder(u)))        
     endif
 set u=null
 endfunction
@@ -17688,14 +17693,15 @@ function CreepsSeekAndAttackFunction takes nothing returns nothing
     local integer i=0
     local integer r
     local player LM=Player(11)
-    local group gr=CreateGroup()
     local boolean b1
     local boolean b2
     local player mM
     local integer ec
     local player p
     local unit f
-    call GroupEnumUnitsOfPlayer(gr,LM,null)
+    if MonstersGroup == null then
+        return
+    endif
     loop
     exitwhen L>8
         set f=F[L]
@@ -17722,15 +17728,17 @@ function CreepsSeekAndAttackFunction takes nothing returns nothing
             if b1==false or b2==false or vx==null then
                 set r=GetRandomInt(1,i)
                 set vx=g[r]
+            else 
+                return
             endif
         endif
         call RemoveLocation(Ye)
         set Ye=GetUnitLoc(vx)
-        call ForGroup(gr,function CreepsAttackFunction)
+        call ForGroup(MonstersGroup,function CreepsAttackFunction)
     endif
-    call DestroyGroup(gr)
+    // call DestroyGroup(gr)
     set L=1
-    set gr=null
+    // set gr=null
     set p=null
     set mM=null
     loop
@@ -17738,7 +17746,7 @@ function CreepsSeekAndAttackFunction takes nothing returns nothing
         set g[L]=null
         set L=L+1
 endloop
-set LM=null
+// set LM=null
 set f=null
 endfunction
 function pM takes nothing returns boolean
