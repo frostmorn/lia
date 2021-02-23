@@ -452,7 +452,7 @@ rect to=null
 rect To=null
 rect uo=null
 rect Uo=null
-rect wo=null
+rect BigArenaAreaRect=null
 rect BottomSpawnRect=null
 rect TopSpawnRect=null
 rect Yo=null
@@ -471,8 +471,8 @@ rect Rr=null
 rect Ir=null
 rect Ar=null
 rect Nr=null
-rect ShopsAreaRect=null
-rect TavernAreaRect=null
+rect ShopsAreaFogModifierRect=null
+rect TavernAndMinimalArenaAreaFogModifierRect=null
 rect cr=null
 rect Cr=null
 rect dr=null
@@ -5599,14 +5599,16 @@ if GetDestructableTypeId(GetEnumDestructable())!='ATg1' and GetDestructableTypeI
 call DestructableRestoreLife(GetEnumDestructable(),GetDestructableMaxLife(GetEnumDestructable()),true)
 endif
 endfunction
+
 function FB takes nothing returns nothing
-local integer Lb=1
-loop
-exitwhen Lb>oA
-call EnumDestructablesInRect(rA[Lb],null,function fB)
-set Lb=Lb+1
-endloop
+    local integer Lb=1
+    loop
+    exitwhen Lb>oA
+        call EnumDestructablesInRect(rA[Lb],null,function fB)
+        set Lb=Lb+1
+    endloop
 endfunction
+
 function gB takes nothing returns nothing
 local integer In=1
 local integer vB=A
@@ -5631,6 +5633,7 @@ call TriggerExecute(PrepareBeforeRoundTrigger)
 call EnableTrigger(QR)
 call EnableTrigger(sR)
 endfunction
+
 function hB takes nothing returns nothing
 local integer In=1
 local integer vB=A
@@ -5810,7 +5813,7 @@ set rv=0
 loop
 exitwhen In>8
 set Be[(1+GetPlayerId(Player(-1+(In))))]=false
-set IsReady[GetPlayerId(Player(In-1))]=false
+// set IsReady[GetPlayerId(Player(In-1))]=false
 set In=In+1
 endloop
 call IB()
@@ -6853,7 +6856,7 @@ endfunction
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
-if((RectContainsUnit(wo,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
+if((RectContainsUnit(BigArenaAreaRect,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
 call SetUnitPositionLoc(u,GetRandomLocInRect(Dr))
 call AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl")
 if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
@@ -6872,7 +6875,7 @@ loop
 exitwhen In>A
 set g=CreateGroup()
 set g=pA(ae[In])
-if(RectContainsUnit(wo,F[In])==false)then
+if(RectContainsUnit(BigArenaAreaRect,F[In])==false)then
 call ClearSelectionForPlayer(ae[In])
 endif
 call SelectUnitForPlayerSingle(F[In],ae[In])
@@ -7205,9 +7208,9 @@ set Zv[Kc]=GetPlayerName(Player(-1+(In)))
 set Eo[Kc]=CreateUnitAtLoc(Player(In-1),'n002',T[Kc],bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((Eo[Kc])),StringHash("SuperData:Int"),(Kc))
 call CameraSetupApplyForPlayer(true,pa,Player(-1+(In)),0)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,ShopsAreaRect)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,TavernAreaRect)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,MinimalArenaAreaRect)
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,ShopsAreaFogModifierRect)
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,TavernAndMinimalArenaAreaFogModifierRect)
+// call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,MinimalArenaAreaRect)
 call SetPlayerStateBJ(Player(-1+(In)),PLAYER_STATE_RESOURCE_GOLD,50)
 call SetPlayerMaxHeroesAllowed(1,Player(-1+(In)))
 call ClearSelectionForPlayer(Player(-1+(In)))
@@ -8021,7 +8024,6 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local integer wN=A
     local integer index = 0
     local real w
-    local integer Gb=CurrentWave
     local integer BB
     local integer bB=av
     local integer NB=Tx
@@ -8035,7 +8037,12 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local timerdialog fN
     call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
     call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
-
+    // For FastRound start we must set ReadyPlayers to false.
+    loop
+        set IsReady[index]=false
+        set index=index+1
+        exitwhen index==16
+    endloop
     call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)", 8039)
     // call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
     if Xv then
@@ -8051,7 +8058,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     exitwhen In>wN
         set pe[In]=false
         set Be[In]=false
-        set IsReady[GetPlayerId(Player(In-1))]=false
+        // set IsReady[GetPlayerId(Player(In-1))]=false
         set In=In+1
     endloop
     set go=Vv
@@ -8059,8 +8066,8 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         set In=1
         loop
         exitwhen In>wN
-            call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER)+(3+Gb))
-            call SetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED,GetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED)+(3+Gb))
+            call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_LUMBER)+(3+CurrentWave))
+            call SetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED,GetPlayerState(ae[In],PLAYER_STATE_LUMBER_GATHERED)+(3+CurrentWave))
             set In=In+1
         endloop
     endif
@@ -8073,16 +8080,12 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     call Yb()
     set Wv=true
     call TimerStart(Gd,6.25,false,function Ub)
-    if(Hv==false)and(av>1)and(ModuloInteger(Gb,3)==0)and(Gb!=0)then
+    if(Hv==false) and (av>1) and (ModuloInteger(CurrentWave,3)==0) and (CurrentWave!=0) then
         call ModifyGateBJ(0,ho)
         set Hv=true
         call DisableTrigger(IsReadyTrigDefault)
         // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
-        loop
-            set IsReady[index]=false
-            set index=index+1
-            exitwhen index==16
-        endloop
+
         call DisableTrigger(IsReadyTrig)
         set Pe=true
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
@@ -8106,34 +8109,34 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         call ModifyGateBJ(1,ho)
         set Hv=false
     endif
-    if CurrentWave>0 then
+    if CurrentWave > 0 then
         if av==1 then
             call bN()
         endif
     endif
     set CurrentWave=CurrentWave+1
-    set Gb=Gb+1
-    if Gb==2 then
+
+    if CurrentWave==2 then
         call DisableTrigger(yR)
     endif
-    set BB=AB(Gb,NB,bB)
+    set BB=AB(CurrentWave,NB,bB)
     set In=1
     loop
     exitwhen In>wN
         call AdjustPlayerStateBJ(BB,ae[In],PLAYER_STATE_RESOURCE_GOLD)
         set In=In+1
     endloop
-    if Gb==20 then
+    if CurrentWave==20 then
         call MultiboardSetItemValueBJ(StatsBoard,4,wN+2,"|cffffcc00Финальный босс")
     else
-        if ModuloInteger(Gb,5)==0 then
+        if ModuloInteger(CurrentWave,5)==0 then
             call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00Мегабосс"))
         else
-            call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(Gb)+(" [ "+(wave_small_descriptions[Gb]+" ]")))))
+            call MultiboardSetItemValueBJ(StatsBoard,4,(wN+2),("|cffffcc00"+(I2S(CurrentWave)+(" [ "+(wave_small_descriptions[CurrentWave]+" ]")))))
         endif
     endif
     call TimerStart(t,2,false,function fd)
-    if Gb==1 then
+    if CurrentWave==1 then
         set w=30
     else
         if Ro==false then
@@ -8141,12 +8144,12 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         endif
         set w=$F
     endif
-    call SaveInteger(Ax,1,Jd,Gb)
+    call SaveInteger(Ax,1,Jd,CurrentWave)
     call TimerStart(tt,w,false,function Dd)
-    if Gb==1 then
+    if CurrentWave==1 then
         set w=90
     else
-        if Gb==20 then
+        if CurrentWave==20 then
             set w='x'
         else
             set w=60
@@ -8626,8 +8629,8 @@ call UnitAddAbility(ND,'A0I1')
 call RemoveUnit(ND)
 loop
 exitwhen In>8
-set Px[In]=CreateFogModifierRect(Player(In-1),FOG_OF_WAR_MASKED,wo,true,false)
-call FogModifierStart(Px[In])
+// set Px[In]=CreateFogModifierRect(Player(In-1),FOG_OF_WAR_MASKED,BigArenaAreaRect,true,false)
+// call FogModifierStart(Px[In])
 set In=In+1
 endloop
 call jC()
@@ -8804,8 +8807,10 @@ call RemoveDestructable(cI)
 loop
 exitwhen In>8
 call ForceAddPlayer(tv,ae[In])
-call FogModifierStop(Px[In])
-call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,wo)
+// Shit Behind makes wall not visible, so we just ignore dat shit.
+// call FogModifierStop(Px[In])
+
+call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,BigArenaAreaRect)
 set In=In+1
 endloop
 set hv='O006'
@@ -8969,7 +8974,7 @@ call EnableWeatherEffect(Lv,false)
 call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 endfunction
 function TD takes nothing returns nothing
-set Lv=AddWeatherEffect(wo,'RAlr')
+set Lv=AddWeatherEffect(BigArenaAreaRect,'RAlr')
 call EnableWeatherEffect(Lv,true)
 call SetSkyModel("Environment\\Sky\\FelwoodSky\\FelwoodSky.mdl")
 endfunction
@@ -9027,274 +9032,276 @@ call EnableTrigger(UR)
 call EnableTrigger(wR)
 set sb=null
 endfunction
+
 function vf takes nothing returns nothing
-local string s=gMapMode
-local string ef
-local string xf=""
-local string of=""
-local string array gN
-local string array rf
-local string array af
-local string array nf
-local string Vf
-local string Ef
-local string array bb
-local integer Kc=6
-local integer In
-local integer GB
-local integer vB=0
-local integer l=StringLength(s)
-local integer Xf=0
-local boolean bu
-local integer Of=0
-local boolean Rf=false
-local boolean If=false
-local boolean Af=false
-local boolean Nf=false
-local boolean bf=false
-local boolean Bf=false
-local boolean cf=false
-local boolean Cf=false
-local boolean d
-local boolean d2
-local integer wN=A
-local location sb
-if gMapMode=="" then
-set s=GetEventPlayerChatString()
-endif
-set l=StringLength(s)
-set gN[1]="-в"
-set gN[2]="-б"
-set gN[3]="-с"
-set gN[4]="-з"
-set gN[5]="-э"
-set gN[6]="-л"
-set rf[1]="-v"
-set rf[2]="-b"
-set rf[3]="-c"
-set rf[4]="-z"
-set rf[5]="-e"
-set rf[6]="-l"
-set af[1]="Выживание"
-set af[2]="Битва Кланов"
-set af[3]=" + Случайные Герои"
-set af[4]=" + Золото Поровну"
-set af[5]=" + Экстрим"
-set af[6]=" + Легко"
-set nf[1]="В"
-set nf[2]="Б"
-set nf[3]=" + С"
-set nf[4]=" + З"
-set nf[5]=" + Э"
-set nf[6]=" + Л"
-set In=0
-set GB=0
-if s=="-tk" or s=="-тк" then
-if av>1 and(wN==4 or wN==6 or wN==8)then
-set Wx=true
-call hB()
-call tb()
-call Jc()
-if gMapMode=="" then
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000"+GetPlayerName(Player(0))+" |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
-else
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
-endif
-call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00Турнир Кланов|R")
-call DisableTrigger(vn)
-call DisableTrigger(Za)
-call EnableTrigger(UR)
-call EnableTrigger(wR)
-else
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Мод \"-тк\" (-tk) недоступен.|R")
-endif
-return
-endif
-loop
-exitwhen In>=l
-set d=SubString(s,In,In+2)=="в" or SubString(s,In,In+2)=="б" or SubString(s,In,In+2)=="с" or SubString(s,In,In+2)=="з" or SubString(s,In,In+2)=="э" or SubString(s,In,In+2)=="л"
-set d2=SubString(s,In,In+1)=="v" or SubString(s,In,In+1)=="b" or SubString(s,In,In+1)=="c" or SubString(s,In,In+1)=="z" or SubString(s,In,In+1)=="e" or SubString(s,In,In+1)=="l" or SubString(s,In,In+1)=="-"
-if d2 then
-set GB=GB+1
-set bb[GB]=SubString(s,In,In+1)
-else
-if d then
-set GB=GB+1
-set bb[GB]=SubString(s,In,In+2)
-set In=In+1
-else
-return
-endif
-endif
-set In=In+1
-endloop
-set vB=GB
-set GB=1
-loop
-exitwhen GB>Kc
-set In=1
-set Vf=af[GB]
-set Ef=nf[GB]
-loop
-exitwhen In>vB
-set ef=bb[In]+bb[In+1]
-if ef==gN[GB]or ef==rf[GB]then
-if GB==1 or GB==2 then
-if Rf==false then
-set Rf=true
-else
-return
-endif
-set Of=Of+1
-set Xf=GB
-endif
-if GB==3 then
-if If==false then
-set If=true
-else
-return
-endif
-set Of=Of+1
-endif
-if GB==4 then
-if Af==false then
-set Af=true
-set Nf=true
-else
-return
-endif
-if Xf==2 then
-set Vf=""
-set Ef=""
-set Nf=false
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Дополнительный мод \"-з\" (-z) недоступен в режиме игры \"-б\" (-b).|R")
-else
-set Of=Of+1
-endif
-endif
-if GB==5 then
-if bf==false then
-set bf=true
-set Bf=true
-else
-return
-endif
-if Xf==2 then
-set Vf=""
-set Ef=""
-set Bf=false
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Дополнительный мод \"-э\" (-e) недоступен в режиме игры \"-б\" (-b).|R")
-else
-set Of=Of+1
-endif
-endif
-if GB==6 then
-if cf==false then
-set cf=true
-set Cf=true
-set Bf=false
-else
-return
-endif
-if Xf==2 then
-set Vf=""
-set Ef=""
-set Cf=false
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Дополнительный мод \"-л\" (-l) недоступен в режиме игры \"-б\" (-b).|R")
-else
-set Of=Of+1
-endif
-endif
-set xf=xf+Vf
-set of=of+Ef
-endif
-set In=In+2
-endloop
-set GB=GB+1
-endloop
-if xf=="" then
-return
-endif
-if Rf==false then
-set Xf=1
-set xf="Выживание"
-set of="В"
-if If then
-set xf=xf+" + Случайные Герои"
-set of=of+" + С"
-endif
-if Nf then
-set xf=xf+" + Золото Поровну"
-set of=of+" + З"
-endif
-if Bf then
-set xf=xf+" + Экстрим"
-set of=of+" + Э"
-endif
-if Cf then
-set xf=xf+" + Легко"
-set of=of+" + Л"
-endif
-endif
-if Xf==1 then
-call kd()
-else
-if Xf==2 then
-if av<=1 then
-call gB()
-call tb()
-else
-call gB()
-call tb()
-endif
-endif
-endif
-if If then
-call Zb()
-endif
-if Bf then
-set Ro=true
-set tx=.7
-call zb()
-endif
-if Nf then
-set Do=true
-call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,false,Player(11))
-endif
-if Cf then
-set Jo=true
-set tx=1.8
-endif
-if Ro then
-call RemoveDestructable(BI)
-call RemoveDestructable(II)
-set sb=GetDestructableLoc(NI)
-call RemoveDestructable(NI)
-call CreateDestructableLoc('LTba',sb,82.,1,0)
-call RemoveDestructable(bI)
-call RemoveDestructable(AI)
-call RemoveDestructable(RI)
-endif
-call DisableTrigger(vn)
-call DisableTrigger(Za)
-call EnableTrigger(UR)
-call EnableTrigger(wR)
-if gMapMode=="" then
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,HI[GetPlayerId(mI)]+GetPlayerName(mI)+" |Rвыбрал режим игры |cffffcc00"+xf+"|R")
-else
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00"+xf+"|R")
-endif
-if Xf==1 then
-call MultiboardSetItemValueBJ(StatsBoard,4,A+4,"|cffffcc00"+of+"|R")
-else
-call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00"+of+"|R")
-endif
-set Vf=null
-set s=null
-set ef=null
-set xf=null
-set of=null
-set sb=null
+    local string s=gMapMode
+    local string ef
+    local string xf=""
+    local string of=""
+    local string array gN
+    local string array rf
+    local string array af
+    local string array nf
+    local string Vf
+    local string Ef
+    local string array bb
+    local integer Kc=6
+    local integer In
+    local integer GB
+    local integer vB=0
+    local integer l=StringLength(s)
+    local integer Xf=0
+    local boolean bu
+    local integer Of=0
+    local boolean Rf=false
+    local boolean If=false
+    local boolean Af=false
+    local boolean Nf=false
+    local boolean bf=false
+    local boolean Bf=false
+    local boolean cf=false
+    local boolean Cf=false
+    local boolean d
+    local boolean d2
+    local integer wN=A
+    local location sb
+    if gMapMode=="" then
+        set s=GetEventPlayerChatString()
+    endif
+    set l=StringLength(s)
+    set gN[1]="-в"
+    set gN[2]="-б"
+    set gN[3]="-с"
+    set gN[4]="-з"
+    set gN[5]="-э"
+    set gN[6]="-л"
+    set rf[1]="-v"
+    set rf[2]="-b"
+    set rf[3]="-c"
+    set rf[4]="-z"
+    set rf[5]="-e"
+    set rf[6]="-l"
+    set af[1]="Выживание"
+    set af[2]="Битва Кланов"
+    set af[3]=" + Случайные Герои"
+    set af[4]=" + Золото Поровну"
+    set af[5]=" + Экстрим"
+    set af[6]=" + Легко"
+    set nf[1]="В"
+    set nf[2]="Б"
+    set nf[3]=" + С"
+    set nf[4]=" + З"
+    set nf[5]=" + Э"
+    set nf[6]=" + Л"
+    set In=0
+    set GB=0
+    if s=="-tk" or s=="-тк" then
+        if av>1 and(wN==4 or wN==6 or wN==8)then
+            set Wx=true
+            call hB()
+            call tb()
+            call Jc()
+            if gMapMode=="" then
+                call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000"+GetPlayerName(Player(0))+" |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
+            else
+                call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
+            endif
+            call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00Турнир Кланов|R")
+            call DisableTrigger(vn)
+            call DisableTrigger(Za)
+            call EnableTrigger(UR)
+            call EnableTrigger(wR)
+        else
+            call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Мод \"-тк\" (-tk) недоступен.|R")
+        endif
+        return
+    endif
+    loop
+    exitwhen In>=l
+        set d=SubString(s,In,In+2)=="в" or SubString(s,In,In+2)=="б" or SubString(s,In,In+2)=="с" or SubString(s,In,In+2)=="з" or SubString(s,In,In+2)=="э" or SubString(s,In,In+2)=="л"
+        set d2=SubString(s,In,In+1)=="v" or SubString(s,In,In+1)=="b" or SubString(s,In,In+1)=="c" or SubString(s,In,In+1)=="z" or SubString(s,In,In+1)=="e" or SubString(s,In,In+1)=="l" or SubString(s,In,In+1)=="-"
+        if d2 then
+            set GB=GB+1
+            set bb[GB]=SubString(s,In,In+1)
+        else
+            if d then
+                set GB=GB+1
+                set bb[GB]=SubString(s,In,In+2)
+                set In=In+1
+            else
+                return
+            endif
+        endif
+        set In=In+1
+    endloop
+    set vB=GB
+    set GB=1
+    loop
+    exitwhen GB>Kc
+        set In=1
+        set Vf=af[GB]
+        set Ef=nf[GB]
+        loop
+        exitwhen In>vB
+            set ef=bb[In]+bb[In+1]
+            if ef==gN[GB]or ef==rf[GB]then
+                if GB==1 or GB==2 then
+                    if Rf==false then
+                        set Rf=true
+                    else
+                        return
+                    endif
+                    set Of=Of+1
+                    set Xf=GB
+                endif
+                if GB==3 then
+                    if If==false then
+                        set If=true
+                    else
+                        return
+                    endif
+                    set Of=Of+1
+                endif
+                if GB==4 then
+                    if Af==false then
+                        set Af=true
+                        set Nf=true
+                    else
+                        return
+                    endif
+                if Xf==2 then
+                    set Vf=""
+                    set Ef=""
+                    set Nf=false
+                    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Дополнительный мод \"-з\" (-z) недоступен в режиме игры \"-б\" (-b).|R")
+                else
+                    set Of=Of+1
+                endif
+            endif
+            if GB==5 then
+                if bf==false then
+                    set bf=true
+                    set Bf=true
+                else
+                    return
+                endif
+            if Xf==2 then
+                set Vf=""
+                set Ef=""
+                set Bf=false
+                    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Дополнительный мод \"-э\" (-e) недоступен в режиме игры \"-б\" (-b).|R")
+            else
+                set Of=Of+1
+            endif
+        endif
+
+        if GB==6 then
+            if cf==false then
+                set cf=true
+                set Cf=true
+                set Bf=false
+            else
+                return
+            endif
+            if Xf==2 then
+                set Vf=""
+                set Ef=""
+                set Cf=false
+                call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Дополнительный мод \"-л\" (-l) недоступен в режиме игры \"-б\" (-b).|R")
+            else
+                set Of=Of+1
+            endif
+        endif
+    set xf=xf+Vf
+    set of=of+Ef
+    endif
+    set In=In+2
+    endloop
+    set GB=GB+1
+    endloop
+    if xf=="" then
+    return
+    endif
+    if Rf==false then
+    set Xf=1
+    set xf="Выживание"
+    set of="В"
+    if If then
+    set xf=xf+" + Случайные Герои"
+    set of=of+" + С"
+    endif
+    if Nf then
+    set xf=xf+" + Золото Поровну"
+    set of=of+" + З"
+    endif
+    if Bf then
+    set xf=xf+" + Экстрим"
+    set of=of+" + Э"
+    endif
+    if Cf then
+    set xf=xf+" + Легко"
+    set of=of+" + Л"
+    endif
+    endif
+    if Xf==1 then
+    call kd()
+    else
+    if Xf==2 then
+    if av<=1 then
+    call gB()
+    call tb()
+    else
+    call gB()
+    call tb()
+    endif
+    endif
+    endif
+    if If then
+    call Zb()
+    endif
+    if Bf then
+    set Ro=true
+    set tx=.7
+    call zb()
+    endif
+    if Nf then
+    set Do=true
+    call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,false,Player(11))
+    endif
+    if Cf then
+    set Jo=true
+    set tx=1.8
+    endif
+    if Ro then
+    call RemoveDestructable(BI)
+    call RemoveDestructable(II)
+    set sb=GetDestructableLoc(NI)
+    call RemoveDestructable(NI)
+    call CreateDestructableLoc('LTba',sb,82.,1,0)
+    call RemoveDestructable(bI)
+    call RemoveDestructable(AI)
+    call RemoveDestructable(RI)
+    endif
+    call DisableTrigger(vn)
+    call DisableTrigger(Za)
+    call EnableTrigger(UR)
+    call EnableTrigger(wR)
+    if gMapMode=="" then
+    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,HI[GetPlayerId(mI)]+GetPlayerName(mI)+" |Rвыбрал режим игры |cffffcc00"+xf+"|R")
+    else
+    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00"+xf+"|R")
+    endif
+    if Xf==1 then
+    call MultiboardSetItemValueBJ(StatsBoard,4,A+4,"|cffffcc00"+of+"|R")
+    else
+    call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00"+of+"|R")
+    endif
+    set Vf=null
+    set s=null
+    set ef=null
+    set xf=null
+    set of=null
+    set sb=null
 endfunction
 function Df takes nothing returns boolean
 return(IsUnitType(GetSoldUnit(),UNIT_TYPE_HERO))!=null
@@ -17742,7 +17749,7 @@ function PM takes nothing returns nothing
     local boolexpr b=Condition(function pM)
     local timer t=CreateTimer()
     set bj_wantDestroyGroup=true
-    if CountUnitsInGroup(GA(wo,b))==0 and Xv==false then
+    if CountUnitsInGroup(GA(BigArenaAreaRect,b))==0 and Xv==false then
         set qv=false
         call DisableTrigger(cO)
         call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
@@ -20108,14 +20115,14 @@ local real x=GetUnitX(u)
 local real y=GetUnitY(u)
 local location L
 if iv or jv then
-if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))then
+if((GetRectMinX(BigArenaAreaRect)<=x)and(x<=GetRectMaxX(BigArenaAreaRect))and(GetRectMinY(BigArenaAreaRect)<=y)and(y<=GetRectMaxY(BigArenaAreaRect)))or((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))then
 set L=GetRectCenter(MinimalArenaAreaRect)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if((no or Wx)and(qv==false))then
-if((GetRectMinX(wo)<=x)and(x<=GetRectMaxX(wo))and(GetRectMinY(wo)<=y)and(y<=GetRectMaxY(wo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
+if((GetRectMinX(BigArenaAreaRect)<=x)and(x<=GetRectMaxX(BigArenaAreaRect))and(GetRectMinY(BigArenaAreaRect)<=y)and(y<=GetRectMaxY(BigArenaAreaRect)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
 set L=GetRectCenter(ar)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
@@ -20123,7 +20130,7 @@ endif
 else
 if qv then
 if((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
-set L=GetRectCenter(wo)
+set L=GetRectCenter(BigArenaAreaRect)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
@@ -20238,7 +20245,7 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 if(IsUnitType(f,UNIT_TYPE_HERO)==false and GetUnitTypeId(f)!='n002')or(GetUnitTypeId(f)=='E00E' or GetUnitTypeId(f)=='E00J')then
-if IsUnitInRectFunction(wo,GetUnitX(f),GetUnitY(f))==false then
+if IsUnitInRectFunction(BigArenaAreaRect,GetUnitX(f),GetUnitY(f))==false then
 
 call SetUnitPositionLoc(f,GetRandomLocInRect(Dr))
 
@@ -23378,7 +23385,7 @@ set to=Rect(-96.,-3168.,96.,-2976.)
 set To=Rect(-288.,-3168.,-96.,-2976.)
 set uo=Rect(-480.,-3168.,-288.,-2976.)
 set Uo=Rect(-960.,-3616.,3328.,-1376.)
-set wo=Rect(-3424.,-1376.,1504.,3168.)
+set BigArenaAreaRect=Rect(-3220.,-1270.,1670.,3168.)
 
 set BottomSpawnRect=Rect(-3264.,-64.,-2432.,896.)
 set TopSpawnRect=Rect(-1216.,2272.,-192.,2976.)
@@ -23406,8 +23413,8 @@ set Ar=Rect(2240.,-416.,2304.,-352.)
 set Nr=Rect(1504.,-1120.,3296.,512.)
 // set Nr=Rect(1656.,-2182.,3687.,3195.)
 
-set ShopsAreaRect=Rect(-786.,-3475.,1440.,-1500.)
-set TavernAreaRect=Rect(1440.,-3475.,3100.,-2400.)
+set ShopsAreaFogModifierRect=Rect(1535.,-3720.,3330.,-2170.)
+set TavernAndMinimalArenaAreaFogModifierRect=Rect(-3220.,-3720.,1670.,-1270.)
 
 set cr=Rect(-2144.,-2592.,-2112.,-2560.)
 set Cr=Rect(2496.,-544.,2560.,-480.)
@@ -24131,7 +24138,7 @@ call TriggerAddAction(BossFightTrigger,function BossFightTriggerFunction)
 set XO=CreateTrigger()
 call DisableTrigger(XO)
 call TriggerRegisterEnterRectSimple(XO,Uo)
-call TriggerRegisterEnterRectSimple(XO,wo)
+call TriggerRegisterEnterRectSimple(XO,BigArenaAreaRect)
 call TriggerAddAction(XO,function xM)
 set OO=CreateTrigger()
 call TriggerAddAction(OO,function aM)
@@ -24289,7 +24296,7 @@ set QO=CreateTrigger()
 call TriggerAddAction(QO,function XP)
 set sO=CreateTrigger()
 call DisableTrigger(sO)
-call TriggerRegisterEnterRectSimple(sO,wo)
+call TriggerRegisterEnterRectSimple(sO,BigArenaAreaRect)
 call TriggerAddCondition(sO,Condition(function RP))
 call TriggerAddAction(sO,function IP)
 set SO=CreateTrigger()
@@ -24502,7 +24509,7 @@ call TriggerRegisterPlayerChatEvent(BR,Player(7),"-help",true)
 call TriggerAddAction(BR,function RQ)
 set cR=CreateTrigger()
 call TriggerRegisterEnterRectSimple(cR,MinimalArenaAreaRect)
-call TriggerRegisterEnterRectSimple(cR,wo)
+call TriggerRegisterEnterRectSimple(cR,BigArenaAreaRect)
 call TriggerRegisterEnterRectSimple(cR,Uo)
 call TriggerAddCondition(cR,Condition(function AQ))
 call TriggerAddAction(cR,function bQ)
