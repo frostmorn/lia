@@ -227,7 +227,6 @@ trigger gg_trg_HolyForces=null
 trigger gg_trg_WillOfTheLight=null
 trigger gg_trg_PoisionousWeapon=null
 trigger gg_trg_Roflan=null
-trigger gg_trg_TestDebug=null
 trigger gg_trg_MithrilArmor=null
 trigger gg_trg_ArenaEntering=null
 trigger gg_trg_Charge=null
@@ -8043,7 +8042,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         set index=index+1
         exitwhen index==16
     endloop
-    call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)", 8039)
+    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)[8046]")
     // call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
     if Xv then
         set Hd=null
@@ -9375,14 +9374,14 @@ set u=null
 set p=null
 endfunction
 function jf takes nothing returns nothing
-local player p=GetTriggerPlayer()
-local integer id=(1+GetPlayerId(p))
-if zv[id]==false and qv==false and iv==false and jv==false then
-call SetPlayerTechMaxAllowed(p,'HERO',0)
-set zv[id]=true
-call Xc(p)
-endif
-set p=null
+    local player p=GetTriggerPlayer()
+    local integer id=(1+GetPlayerId(p))
+    if zv[id]==false and qv==false and iv==false and jv==false then
+        call SetPlayerTechMaxAllowed(p,'HERO',0)
+        set zv[id]=true
+        call Xc(p)
+    endif
+    set p=null
 endfunction
 function kf takes nothing returns boolean
 return GetSpellAbilityId()=='A0IE' or GetSpellAbilityId()=='A026'
@@ -17598,18 +17597,18 @@ function BM takes nothing returns boolean
 return(GetOwningPlayer(GetLeavingUnit())==GetFilterPlayer())
 endfunction
 
-function cM takes nothing returns nothing
+function DestroyBitchUnit takes nothing returns nothing
     call RemoveUnit(GetLeavingUnit())
     call DisplayTextToForce(qA(Condition(function BM)),"Вaш юнит нe дoлжeн нaхoдитьcя в дaннoй oблacти.")
+    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Entering DestroyBitchUnit [17604]")
 endfunction
 
 function SpawnCreepsFunction takes nothing returns nothing
     local integer nC=0
     local integer DM=av
     local unit u
-    
-    local integer In=1
-    call SendDebugToBot("Entering SpawnCreepsFunction", 17593)
+    local integer In=1    
+    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Entering SpawnCreepsFunction [17612]")
     set xA=CreateUnit(Player(11),'h011',0,0,0)
     
     if DM==1 then
@@ -17650,10 +17649,8 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-  
         call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)
         call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
-
         set In=In+1
     endloop
     
@@ -17670,7 +17667,7 @@ function SpawnCreepsFunction takes nothing returns nothing
 
     call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
         
-    call SendDebugToBot("Trying to enable CreepsSeekAndAttackPeriodicTrigger", 17663)
+    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger [17671]")
     set u=null
 endfunction
 
@@ -17679,7 +17676,9 @@ local unit u=GetEnumUnit()
     if u!=null then
         if GetUnitCurrentOrder(u) == 0 then
             call IssuePointOrderByIdLoc(u,$D000F,Ye)
+            return
         endif
+        call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : CreepsAttackFunction, unit have another order[17682] OrderID:"+I2S(GetUnitCurrentOrder(u)))        
     endif
 set u=null
 endfunction
@@ -17754,8 +17753,7 @@ function PM takes nothing returns nothing
         set qv=false
         call DisableTrigger(cO)
         call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
-
-        call SendDebugToBot("Trying to disable CreepsSeekAndAttackPeriodicTrigger", 17745)
+        call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger [17757]")
         if Ro then
             call DisableTrigger(oO)
         else
@@ -18654,7 +18652,8 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     local timer Gd=CreateTimer()
     local integer index=0
     local timer t1=GetExpiredTimer()
-    call SendDebugToBot("Entering PrepareBeforeBRoundFunction", 18629)
+
+    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Entering PrepareBeforeBRoundFunction [18657]")
     call DisableTrigger(gR)
     call DestroyTimer(t1)
     set t=null
@@ -22690,14 +22689,6 @@ call TriggerRegisterVariableEvent(trig,"udg_AfterDamageEvent",EQUAL,1.00)
 call TriggerAddAction(trig,function PoisionousWeapon___OnActions)
 set trig=null
 endfunction
-function Trig_TestDebug_Actions takes nothing returns nothing
-call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : test test test")
-endfunction
-function InitTrig_TestDebug takes nothing returns nothing
-set gg_trg_TestDebug=CreateTrigger()
-call TriggerRegisterTimerEventSingle(gg_trg_TestDebug,5.00)
-call TriggerAddAction(gg_trg_TestDebug,function Trig_TestDebug_Actions)
-endfunction
 function MithrilArmor___onLoop takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -23326,7 +23317,6 @@ local trigger trg11
 
 // let it snow
 // call EnableWeatherEffect(AddWeatherEffect(bj_mapInitialPlayableArea, 'SNhs'), true)
-
 call SetCameraBounds(-3328.0+GetCameraMargin(CAMERA_MARGIN_LEFT),-3584.0+GetCameraMargin(CAMERA_MARGIN_BOTTOM),3328.0-GetCameraMargin(CAMERA_MARGIN_RIGHT),3072.0-GetCameraMargin(CAMERA_MARGIN_TOP),-3328.0+GetCameraMargin(CAMERA_MARGIN_LEFT),3072.0-GetCameraMargin(CAMERA_MARGIN_TOP),3328.0-GetCameraMargin(CAMERA_MARGIN_RIGHT),-3584.0+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
 call SetTerrainFogEx(0,3000.0,5000.0,0.500,0.000,0.000,0.000)
@@ -24165,7 +24155,7 @@ call TriggerAddAction(IO,function RM)
 set NO=CreateTrigger()
 call TriggerRegisterEnterRectSimple(NO,fr)
 call TriggerAddCondition(NO,Condition(function bM))
-call TriggerAddAction(NO,function cM)
+call TriggerAddAction(NO,function DestroyBitchUnit)
 set SpawnCreepsTrigger=CreateTrigger()
 call TriggerAddAction(SpawnCreepsTrigger,function SpawnCreepsFunction)
 set CreepsSeekAndAttackPeriodicTrigger=CreateTrigger()
@@ -24866,9 +24856,7 @@ call ConditionalTriggerExecute(qa)
 // end of main2
 call InitTrig_SettingsTrueCast()
 set gg_trg_TestPickWave=CreateTrigger()
-call InitTrig_TestDebug()
-// Custom trigers END
-// hz 4o eto
+
 call RunInitializationTriggers()    
 endfunction
 function config takes nothing returns nothing
