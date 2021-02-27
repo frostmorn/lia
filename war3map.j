@@ -419,7 +419,7 @@ boolean no=false
 integer Vo=0
 unit array Eo
 integer Xo=0
-boolean array Oo
+boolean array HeroInGameAndAliveARRAY
 boolean Ro=false
 trigger Io=null
 integer array Ao
@@ -843,7 +843,7 @@ trigger KO=null
 trigger lO=null
 trigger LO=null
 trigger mO=null
-trigger IsReadyTrigDefault=null
+// trigger IsReadyTrigDefault=null
 trigger PrepareBeforeRoundTrigger=null
 trigger qO=null
 trigger QO=null
@@ -5070,7 +5070,7 @@ local real mb
 local integer wN
 loop
 exitwhen In>8
-if Oo[In]then
+if HeroInGameAndAliveARRAY[In]then
 set Lb=Lb+1
 endif
 set In=In+1
@@ -5224,7 +5224,7 @@ local integer In=1
 local integer Lb=0
 loop
 exitwhen In>8
-if Oo[In]then
+if HeroInGameAndAliveARRAY[In]then
 set Lb=Lb+1
 endif
 set In=In+1
@@ -5798,8 +5798,6 @@ endfunction
 function QB takes nothing returns nothing
 local integer In=1
 call yb()
-call DisableTrigger(IsReadyTrigDefault)
-call DisableTrigger(IsReadyTrig)
 
 call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
@@ -5941,7 +5939,7 @@ exitwhen In>A
 if GetOwningPlayer(TB)==ae[In]then
 call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
 set F[In]=TB
-set Oo[In]=true
+set HeroInGameAndAliveARRAY[In]=true
 set Gv[In]=ss
 endif
 set In=In+1
@@ -6037,7 +6035,7 @@ call RemoveUnit(F[In])
 call SetUnitPosition(u,x,y)
 call SetUnitFacing(u,Ec)
 set F[In]=u
-set Oo[In]=true
+set HeroInGameAndAliveARRAY[In]=true
 set Gv[In]=ZB(u)
 endif
 set In=In+1
@@ -6609,7 +6607,7 @@ set Uc=(LoadInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int")))
 set wc=(LoadInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int")))
 call PauseUnit(No[Uc],false)
 call PauseUnit(No[wc],false)
-if((Oo[Uc]==false and GetWidgetLife(u1)<=.405)or(Oo[wc]==false and GetWidgetLife(u2)<=.405))then
+if((HeroInGameAndAliveARRAY[Uc]==false and GetWidgetLife(u1)<=.405)or(HeroInGameAndAliveARRAY[wc]==false and GetWidgetLife(u2)<=.405))then
 call TriggerExecute(hO)
 else
 call EnableTrigger(hO)
@@ -6811,7 +6809,7 @@ set ic=GetUnitLoc(f)
 if IsUnitInGroup(f,fo)and f!=null then
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",f,"origin"))
 call ReviveHeroLoc(f,ic,false)
-set Oo[xC]=true
+set HeroInGameAndAliveARRAY[xC]=true
 call GroupRemoveUnit(fo,f)
 endif
 set p=GetOwningPlayer(f)
@@ -7970,6 +7968,7 @@ function Cd takes nothing returns nothing
     set t=null
 endfunction
 function RoundStartFunction takes nothing returns nothing
+    call DisableTrigger(IsReadyTrig)
     call DestroyTimer(Ho)
     set Ho=null
     set Ho=CreateTimer()
@@ -8011,8 +8010,7 @@ set t=null
 endfunction
 function fd takes nothing returns nothing
 local timer t=GetExpiredTimer()
-call EnableTrigger(IsReadyTrigDefault)
-call EnableTrigger(IsReadyTrig)
+
 call EnableTrigger(gR)
 call DestroyTimer(t)
 set t=null
@@ -8085,7 +8083,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     if(Hv==false) and (av>1) and (ModuloInteger(CurrentWave,3)==0) and (CurrentWave!=0) then
         call ModifyGateBJ(0,ho)
         set Hv=true
-        call DisableTrigger(IsReadyTrigDefault)
+        // call DisableTrigger(IsReadyTrigDefault)
         // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
 
         call DisableTrigger(IsReadyTrig)
@@ -8108,6 +8106,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         set t=null
         return
     else
+        call EnableTrigger(IsReadyTrig)
         call ModifyGateBJ(1,ho)
         set Hv=false
     endif
@@ -8159,6 +8158,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     endif
     // call TimerStart(PrepareBeforeRoundTimer,w-.5,false,function PrepareBeforeBRoundFunction)
     set RoundStartTimer=CreateTimer()
+    
     call TimerStart(RoundStartTimer,w,false,function RoundStartFunction)
     set Oe=CreateTimerDialog(RoundStartTimer)
     set CURRENT_PLAYERS=0
@@ -8424,166 +8424,22 @@ set t=null
 set t2=null
 endfunction
 function CreateTreesFunction takes nothing returns nothing
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,-512.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,-384.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2944.,896.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,1088.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2816.,-640.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2752.,-384.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2624.,-256.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2752.,960.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2752.,1088.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2688.,2624.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2112.,2432.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2176.,2560.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1856.,320.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1856.,2496.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1984.,2496.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1984.,2368.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1856.,2304.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2048.,2624.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1920.,2624.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1600.,2432.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1728.,2432.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1664.,2560.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1792.,2624.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1536.,-1088.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1408.,-1024.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1536.,-960.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1472.,2496.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1536.,2624.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1280.,-1088.,0,1,6)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1216.,448.,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],-1216.,1152.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],210.,-1069.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],256.,-128.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],448.,-192.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],256.,.0,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],455.,-1237.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],640.,320.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],832.,-128.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],896.,704.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],832.,832.,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1664.,-128.,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1664.,.0,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1600.,128.,0,1,10)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1600.,256.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1728.,448.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1728.,320.,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1600.,512.,0,1,5)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1600.,640.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1728.,576.,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1600.,832.,0,1,2)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1600.,960.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1728.,768.,0,1,1)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1664.,1152.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1728.,1024.,0,1,2)
-// call CreateDestructable(arrayTreeTypes[treeTypeIndex],1664.,1408.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1728.,1536.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1792.,-320.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1920.,-192.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1920.,-64.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1984.,192.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1792.,128.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1856.,256.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1984.,320.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1856.,448.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1856.,704.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1984.,512.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1856.,832.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1856.,960.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1792.,1216.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1920.,1216.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1984.,1472.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1920.,1344.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1792.,1344.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],1856.,1536.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,-192.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,.0,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,128.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2240.,448.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,256.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,384.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2176.,640.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,512.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2048.,640.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2048.,832.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2176.,832.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2048.,1152.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2048.,1024.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2176.,1152.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2176.,1344.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2240.,1472.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2048.,1344.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2112.,1536.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2496.,192.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2304.,192.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2496.,448.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2368.,320.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2432.,704.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2304.,576.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2432.,576.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2368.,832.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2304.,960.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2304.,1216.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2432.,1088.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2432.,1216.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2304.,1088.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2368.,1344.,0,1,10)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2624.,-64.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2688.,64.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2560.,64.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2624.,192.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2752.,256.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2752.,384.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2624.,320.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2560.,704.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2688.,704.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2688.,512.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2560.,896.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2688.,832.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2624.,1216.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2752.,1152.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2624.,1024.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2688.,1472.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2688.,1344.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2880.,-128.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3008.,-192.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3008.,.0,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2816.,.0,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3008.,192.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2880.,192.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2944.,448.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3008.,320.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2944.,640.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2816.,768.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3008.,768.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3008.,896.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2880.,896.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2944.,1216.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2880.,1024.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2944.,1472.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2816.,1408.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2816.,1280.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],2880.,1600.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3136.,-64.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3264.,-192.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3136.,-256.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,192.,0,1,3)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,64.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3072.,448.,0,1,6)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3136.,320.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3072.,640.,0,1,1)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3264.,640.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3264.,512.,0,1,4)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,832.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3264.,1216.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,1024.,0,1,8)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3072.,1024.,0,1,7)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3072.,1344.,0,1,9)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,1472.,0,1,5)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,1344.,0,1,2)
-call CreateDestructable(arrayTreeTypes[treeTypeIndex],3072.,1536.,0,1,2)
+local real randomLocX
+local real randomLocY
+local real randomFacing
+local real randomScale
+local integer randomVariation
+local integer i = 0
+loop
+    set randomLocX = GetRandomReal(GetRectMinX(BigArenaAreaRect)+300,GetRectMaxX(BigArenaAreaRect)-300)
+    set randomLocY = GetRandomReal(GetRectMinY(BigArenaAreaRect)+300,GetRectMaxY(BigArenaAreaRect)-300)
+    set randomFacing = GetRandomReal(0,360)
+    set randomScale = GetRandomReal(0.7,1.5)
+    set randomVariation = GetRandomInt(0,9)
+    call CreateDestructable(arrayTreeTypes[treeTypeIndex],randomLocX, randomLocY, randomFacing,randomScale,randomVariation)
+    set i=i+1
+    exitwhen i>20
+endloop
 endfunction
 function AD takes nothing returns nothing
 local timer t=CreateTimer()
@@ -9336,7 +9192,7 @@ exitwhen In>wN
 if p==ae[In]then
 call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
 set F[In]=TB
-set Oo[In]=true
+set HeroInGameAndAliveARRAY[In]=true
 set Gv[In]=ss
 endif
 set In=In+1
@@ -9363,7 +9219,7 @@ function hf takes nothing returns nothing
 local unit u=GetRevivingUnit()
 local player p=GetOwningPlayer(u)
 local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
-set Oo[Bc]=true
+set HeroInGameAndAliveARRAY[Bc]=true
 call GroupRemoveUnit(fo,u)
 call SelectUnitForPlayerSingle(u,p)
 if RectContainsUnit(Ii,u)then
@@ -17298,6 +17154,7 @@ function WaveFightTriggerFunction takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
 local timer t=CreateTimer()
+call DisableTrigger(IsReadyTrig)
 call lb()
 if Xv then
 set t=null
@@ -17342,6 +17199,7 @@ set f=null
 set g=null
 set t=null
 endfunction
+
 function Wm takes nothing returns nothing
 call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,"4...")
 call DestroyTimer(GetExpiredTimer())
@@ -17560,7 +17418,7 @@ function AM takes nothing returns nothing
     exitwhen i>8
         set p=GetOwningPlayer(F[i])
         set b=(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)
-        if Oo[i]and b then
+        if HeroInGameAndAliveARRAY[i]and b then
             set Kc=Kc+1
             set gg[Kc]=F[i]
         endif
@@ -17599,7 +17457,13 @@ endfunction
 function BM takes nothing returns boolean
 return(GetOwningPlayer(GetLeavingUnit())==GetFilterPlayer())
 endfunction
-
+function AcquireTest takes nothing returns nothing
+    local unit u=GetEnumUnit()
+    if u!=null then
+        call SetUnitAcquireRange(u, 10000)
+        call IssuePointOrderByIdLoc(u,$D000F, GetRectCenter(BigArenaAreaRect))
+    endif
+endfunction
 function DestroyBitchUnit takes nothing returns nothing
     call RemoveUnit(GetLeavingUnit())
     call DisplayTextToForce(qA(Condition(function BM)),"Вaш юнит нe дoлжeн нaхoдитьcя в дaннoй oблacти.")
@@ -17641,7 +17505,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     
     set Tx=nC
 
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)   
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 270)   
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     
@@ -17652,12 +17516,12 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(TopSpawnRect), 270)
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 270)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 0)
         set In=In+1
     endloop
     
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BottomSpawnRect), 0)
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 0)
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     // WTF Duplicate?
@@ -17669,86 +17533,13 @@ function SpawnCreepsFunction takes nothing returns nothing
     set MonstersGroup = CreateGroup()
     call GroupEnumUnitsOfPlayer(MonstersGroup,Player(11),null)
     call EnableTrigger(cO)
-
+    call ForGroup(MonstersGroup, function AcquireTest)
     call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
         
     call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger [17671]")
     set u=null
 endfunction
 
-function CreepsAttackFunction takes nothing returns nothing
-local unit u=GetEnumUnit()
-    if u!=null then
-        if GetUnitCurrentOrder(u) == 0 then
-            call IssuePointOrderByIdLoc(u,$D000F,Ye)
-            return
-        endif
-        // call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : CreepsAttackFunction, unit have another order[17682] OrderID:"+I2S(GetUnitCurrentOrder(u)))        
-    endif
-set u=null
-endfunction
-function CreepsSeekAndAttackFunction takes nothing returns nothing
-    local integer L=1
-    local unit array g
-    local integer i=0
-    local integer r
-    local player LM=Player(11)
-    local boolean b1
-    local boolean b2
-    local player mM
-    local integer ec
-    local player p
-    local unit f
-    if MonstersGroup == null then
-        return
-    endif
-    loop
-    exitwhen L>8
-        set f=F[L]
-        set b1=Oo[L]
-        if f!=null then
-            set b2=(IsUnitInGroup(f,fo)==false)
-            if b1 and b2 then
-                set i=i+1
-                set g[i]=f
-            endif
-        endif
-        set L=L+1
-    endloop
-    if i!=0 then
-        if ye==false then
-            set ye=true
-            set r=GetRandomInt(1,i)
-            set vx=g[r]
-        else
-            set mM=GetOwningPlayer(vx)
-            set ec=ee[GetPlayerId(mM)+1]
-            set b1=Oo[ec]
-            set b2=(IsUnitInGroup(vx,fo)==false)
-            if b1==false or b2==false or vx==null then
-                set r=GetRandomInt(1,i)
-                set vx=g[r]
-            else 
-                return
-            endif
-        endif
-        call RemoveLocation(Ye)
-        set Ye=GetUnitLoc(vx)
-        call ForGroup(MonstersGroup,function CreepsAttackFunction)
-    endif
-    // call DestroyGroup(gr)
-    set L=1
-    // set gr=null
-    set p=null
-    set mM=null
-    loop
-    exitwhen(L>i)
-        set g[L]=null
-        set L=L+1
-endloop
-// set LM=null
-set f=null
-endfunction
 function pM takes nothing returns boolean
 return GetOwningPlayer(GetFilterUnit())==Player(11)and not IsUnitDead(GetFilterUnit())
 endfunction
@@ -18198,7 +17989,7 @@ if bb then
 set Dp=u[1]
 set uD=u[2]
 else
-if Oo[Bc[1]]==false then
+if HeroInGameAndAliveARRAY[Bc[1]]==false then
 set Dp=u[2]
 set uD=u[1]
 else
@@ -18221,7 +18012,7 @@ set fp=2
 else
 set fp=1
 endif
-if Oo[Bc[fp]]==false then
+if HeroInGameAndAliveARRAY[Bc[fp]]==false then
 set uD=u[1]
 set Dp=u[2]
 set dp=true
@@ -18620,11 +18411,11 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTri
 if rv>=av then
 call DestroyTimer(Fo)
 if Ex then
-call DisableTrigger(IsReadyTrigDefault)
+// call DisableTrigger(IsReadyTrigDefault)
 call RoundStartFunction()
 endif
 if no or Wx then
-call DisableTrigger(IsReadyTrigDefault)
+// call DisableTrigger(IsReadyTrigDefault)
 call QB()
 endif
 endif
@@ -18640,7 +18431,7 @@ set t=null
 endfunction
 function eP takes nothing returns nothing
 local timer t=GetExpiredTimer()
-call EnableTrigger(IsReadyTrigDefault)
+// call EnableTrigger(IsReadyTrigDefault)
 call DisableTrigger(IsReadyTrig)
 call EnableTrigger(kO)
 call DestroyTimer(t)
@@ -18882,9 +18673,7 @@ local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
 local timerdialog d
 local integer i=0
-call DisableTrigger(IsReadyTrigDefault)
-// call BJDebugMsg("DEBUG: Disabling trigger + 20306")
-call DisableTrigger(IsReadyTrig)
+
 loop
 exitwhen i>7
 call DisplayTextToPlayer(Player(i),0,0,"|cff706638Следующий раунд - Командная дуэль")
@@ -18956,7 +18745,7 @@ call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if(IsPlayerInForce(GetOwningPlayer(f),tv)and IsUnitType(f,UNIT_TYPE_HERO)and(Oo[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or GetWidgetLife(f)>.405))then
+if(IsPlayerInForce(GetOwningPlayer(f),tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or GetWidgetLife(f)>.405))then
 set n=n+1
 endif
 call GroupRemoveUnit(g,f)
@@ -18965,7 +18754,7 @@ call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if(IsPlayerInForce(GetOwningPlayer(f),Tv)and IsUnitType(f,UNIT_TYPE_HERO)and(Oo[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or GetWidgetLife(f)>.405))then
+if(IsPlayerInForce(GetOwningPlayer(f),Tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or GetWidgetLife(f)>.405))then
 set n2=n2+1
 endif
 call GroupRemoveUnit(g,f)
@@ -19003,7 +18792,7 @@ set jv=true
 set rv=0
 loop
 exitwhen In>vB
-if Oo[In]or GetWidgetLife(F[In])>.405 then
+if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
     call SetUnitPositionLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect))
     call SetUnitFacing(F[In],90.)
 else
@@ -19017,7 +18806,7 @@ set In=mv+1
 set vB=A
 loop
 exitwhen In>vB
-if Oo[In]or GetWidgetLife(F[In])>.405 then
+if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
     call SetUnitPositionLoc(F[In],GetRandomLocInRect(Qr))
     call SetUnitFacing(F[In],270.)
 
@@ -21771,7 +21560,7 @@ local integer random
 local integer idNewItem
 if((id)=='vamp')then
 if FN(u)==false then
-if F[Bc]!=null and GetWidgetLife(F[Bc])>.405 and Oo[Bc]then
+if F[Bc]!=null and GetWidgetLife(F[Bc])>.405 and HeroInGameAndAliveARRAY[Bc]then
 call UnitAddItemById(F[Bc],lS(id))
 else
 call SaveReal(Ax,dN,1,x)
@@ -22045,7 +21834,7 @@ local integer Bc=(LoadInteger(HashData,GetHandleId((dy)),StringHash("SuperData:I
 local player p=GetOwningPlayer(dy)
 if Xv==false and IsUnitType(dy,UNIT_TYPE_HERO)and Bc!=$B and Bc!=$C and p!=Player(11)then
 if Ex then
-set Oo[Bc]=false
+set HeroInGameAndAliveARRAY[Bc]=false
 call GroupAddUnit(fo,dy)
 if GetOwningPlayer(GetKillingUnit())==Player(11)then
 set ev[Bc]=ev[Bc]+1
@@ -22057,7 +21846,7 @@ call lb()
 call TriggerExecute(mO)
 endif
 if no or Wx then
-set Oo[Bc]=false
+set HeroInGameAndAliveARRAY[Bc]=false
 endif
 endif
 set dy=null
@@ -23670,7 +23459,7 @@ set pe[i]=false
 set gx[i]=0
 set vo[i]=0
 set eo[i]=false
-set Oo[i]=false
+set HeroInGameAndAliveARRAY[i]=false
 set Ao[i]=0
 set bo[i]=0
 set Bo[i]=false
@@ -24166,11 +23955,6 @@ call TriggerAddCondition(NO,Condition(function bM))
 call TriggerAddAction(NO,function DestroyBitchUnit)
 set SpawnCreepsTrigger=CreateTrigger()
 call TriggerAddAction(SpawnCreepsTrigger,function SpawnCreepsFunction)
-set CreepsSeekAndAttackPeriodicTrigger=CreateTrigger()
-call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
-call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,0.50,true)
-call TriggerAddAction(CreepsSeekAndAttackPeriodicTrigger,function CreepsSeekAndAttackFunction)
-call SendDebugToBot("CreepsSeekAndAttackPeriodicTrigger created, actions added and disabled", 24165)
 
 set cO=CreateTrigger()
 call DisableTrigger(cO)
@@ -24277,16 +24061,16 @@ call TriggerRegisterTimerEventPeriodic(LO,1.)
 call TriggerAddAction(LO,function Sp)
 set mO=CreateTrigger()
 call TriggerAddAction(mO,function Tp)
-set IsReadyTrigDefault=CreateTrigger()
-call DisableTrigger(IsReadyTrigDefault)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(0),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(1),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(2),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(3),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(4),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(5),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(6),"+",true)
-call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(7),"+",true)
+// set IsReadyTrigDefault=CreateTrigger()
+// call DisableTrigger(IsReadyTrigDefault)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(0),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(1),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(2),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(3),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(4),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(5),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(6),"+",true)
+// call TriggerRegisterPlayerChatEvent(IsReadyTrigDefault,Player(7),"+",true)
 set PrepareBeforeRoundTrigger=CreateTrigger()
 call TriggerAddAction(PrepareBeforeRoundTrigger,function PrepareBeforeBRoundFunction)
 set qO=CreateTrigger()
