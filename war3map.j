@@ -19997,7 +19997,7 @@ function hQ takes nothing returns nothing
 call DisplayTimedTextToPlayer(GetOwningPlayer(GetSpellAbilityUnit()),0,0,5.,"Посох Иллюзий не действует на мегабоссов.")
 call IssueImmediateOrderById(GetSpellAbilityUnit(),$D0004)
 endfunction
-function jQ takes nothing returns nothing
+function DestroyBitchUnit_2 takes nothing returns nothing
 local unit u=GetEnteringUnit()
 if GetUnitAbilityLevel(u,'A0K4')==0 and FN(u)and GetUnitTypeId(u)!='u001' and GetUnitTypeId(u)!='h00R' and GetUnitTypeId(u)!='h012' and GetUnitTypeId(u)!='u003' and GetUnitTypeId(u)!='u004' and GetUnitTypeId(u)!='n002' and IsUnitType(u,UNIT_TYPE_HERO)==false then
 call KillUnit(u)
@@ -20006,7 +20006,7 @@ call DisplayTextToPlayer(GetOwningPlayer(u),0,0,"|Cffff0000Ваш юнит не 
 endif
 set u=null
 endfunction
-function kQ takes nothing returns nothing
+function DestroyBitchUnit_3 takes nothing returns nothing
 local unit u=GetEnteringUnit()
 if GetUnitAbilityLevel(u,'A0K4')==0 and FN(u)and GetUnitTypeId(u)!='u001' and GetUnitTypeId(u)!='u003' and GetUnitTypeId(u)!='u004' and GetUnitTypeId(u)!='n002' and IsUnitType(u,UNIT_TYPE_HERO)==false then
 if IsUnitType(u,UNIT_TYPE_FLYING)then
@@ -24314,11 +24314,11 @@ call TriggerAddCondition(DR,Condition(function GQ))
 call TriggerAddAction(DR,function hQ)
 set fR=CreateTrigger()
 call TriggerRegisterEnterRectSimple(fR,fr)
-call TriggerAddAction(fR,function jQ)
+call TriggerAddAction(fR,function DestroyBitchUnit_2)
 set FR=CreateTrigger()
 call TriggerRegisterEnterRectSimple(FR,Xi)
 call TriggerRegisterEnterRectSimple(FR,Ei)
-call TriggerAddAction(FR,function kQ)
+call TriggerAddAction(FR,function DestroyBitchUnit_3)
 call mQ()
 set ED=0
 set wN=16
