@@ -881,8 +881,8 @@ trigger cR=null
 trigger CR=null
 trigger dR=null
 trigger DR=null
-trigger fR=null
-trigger FR=null
+trigger DestroyBitchUnit_2_Trigger=null
+trigger DestroyBitchUnit_3_Trigger=null
 trigger gR=null
 trigger GR=null
 trigger hR=null
@@ -24312,13 +24312,13 @@ set DR=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(DR,EVENT_PLAYER_UNIT_SPELL_CAST)
 call TriggerAddCondition(DR,Condition(function GQ))
 call TriggerAddAction(DR,function hQ)
-set fR=CreateTrigger()
-call TriggerRegisterEnterRectSimple(fR,fr)
-call TriggerAddAction(fR,function DestroyBitchUnit_2)
-set FR=CreateTrigger()
-call TriggerRegisterEnterRectSimple(FR,Xi)
-call TriggerRegisterEnterRectSimple(FR,Ei)
-call TriggerAddAction(FR,function DestroyBitchUnit_3)
+set DestroyBitchUnit_2_Trigger=CreateTrigger()
+call TriggerRegisterEnterRectSimple(DestroyBitchUnit_2_Trigger,fr)
+call TriggerAddAction(DestroyBitchUnit_2_Trigger,function DestroyBitchUnit_2)
+set DestroyBitchUnit_3_Trigger=CreateTrigger()
+call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,Xi)
+call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,Ei)
+call TriggerAddAction(DestroyBitchUnit_3_Trigger,function DestroyBitchUnit_3)
 call mQ()
 set ED=0
 set wN=16
