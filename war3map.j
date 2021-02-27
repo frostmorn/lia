@@ -477,7 +477,7 @@ rect cr=null
 rect Cr=null
 rect dr=null
 rect Dr=null
-rect fr=null
+rect DestroyBitchUnit_2_Rect=null
 rect Fr=null
 rect Gr=null
 rect hr=null
@@ -515,8 +515,8 @@ rect ii=null
 rect ai=null
 rect ni=null
 rect Vi=null
-rect Ei=null
-rect Xi=null
+rect DestroyBitchUnit_3_Rect_2=null
+rect DestroyBitchUnit_3_Rect=null
 rect Oi=null
 rect Ri=null
 rect Ii=null
@@ -23208,7 +23208,7 @@ set cr=Rect(-2144.,-2592.,-2112.,-2560.)
 set Cr=Rect(2496.,-544.,2560.,-480.)
 set dr=Rect(1984.,-672.,2048.,-608.)
 set Dr=Rect(-960.,672.,-608.,1088.)
-set fr=Rect(1440.,-1504.,3328.,3136.)
+set DestroyBitchUnit_2_Rect=Rect(1440.,-1504.,3328.,3136.)
 set Fr=Rect(-2880.,1760.,-2464.,2368.)
 set Gr=Rect(608.,-960.,1184.,-384.)
 set hr=Rect(-832.,-1184.,-512.,-896.)
@@ -23246,8 +23246,8 @@ set ii=Rect(-608.,-2816.,-320.,-2560.)
 set ai=Rect(288.,-2656.,640.,-2336.)
 set ni=Rect(64.,-1952.,352.,-1664.)
 set Vi=Rect(-608.,-2368.,-320.,-2112.)
-set Ei=Rect(-3264.,-1472.,-832.,-1216.)
-set Xi=Rect(64.,2752.,1440.,3008.)
+set DestroyBitchUnit_3_Rect_2=Rect(-3264.,-1472.,-832.,-1216.)
+set DestroyBitchUnit_3_Rect=Rect(64.,2752.,1440.,3008.)
 set Oi=Rect(-800.,-3008.,-768.,-2976.)
 set Ri=Rect(2432.,-3008.,2560.,-2912.)
 set Ii=Rect(1792.,-3616.,3168.,-2304.)
@@ -23950,7 +23950,7 @@ call TriggerAddAction(IO,function RM)
 // call TriggerRegisterTimerEventPeriodic(AO,2.4)
 // call TriggerAddAction(AO,function AM)
 set NO=CreateTrigger()
-call TriggerRegisterEnterRectSimple(NO,fr)
+call TriggerRegisterEnterRectSimple(NO,DestroyBitchUnit_2_Rect)
 call TriggerAddCondition(NO,Condition(function bM))
 call TriggerAddAction(NO,function DestroyBitchUnit)
 set SpawnCreepsTrigger=CreateTrigger()
@@ -24313,11 +24313,11 @@ call TriggerRegisterAnyUnitEventBJ(DR,EVENT_PLAYER_UNIT_SPELL_CAST)
 call TriggerAddCondition(DR,Condition(function GQ))
 call TriggerAddAction(DR,function hQ)
 set DestroyBitchUnit_2_Trigger=CreateTrigger()
-call TriggerRegisterEnterRectSimple(DestroyBitchUnit_2_Trigger,fr)
+call TriggerRegisterEnterRectSimple(DestroyBitchUnit_2_Trigger,DestroyBitchUnit_2_Rect)
 call TriggerAddAction(DestroyBitchUnit_2_Trigger,function DestroyBitchUnit_2)
 set DestroyBitchUnit_3_Trigger=CreateTrigger()
-call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,Xi)
-call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,Ei)
+call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,DestroyBitchUnit_3_Rect)
+call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,DestroyBitchUnit_3_Rect_2)
 call TriggerAddAction(DestroyBitchUnit_3_Trigger,function DestroyBitchUnit_3)
 call mQ()
 set ED=0
