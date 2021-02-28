@@ -221,7 +221,6 @@ trigger gg_trg_SetUnitMaxState=null
 trigger gg_trg_FlexibleSpeed=null
 trigger gg_trg_StatMod=null
 trigger gg_trg_CombatTextIn=null
-trigger gg_trg_TestPickWave=null
 trigger gg_trg_SpiritOfVengeance=null
 trigger gg_trg_CloudOfFog=null
 trigger gg_trg_HolyForces=null
@@ -22512,22 +22511,8 @@ call TriggerAddAction(trig,function HeroLimit___OnActions)
 set trig=null
 set dummy=null
 endfunction
-function Trig_TestPickWave_Actions takes nothing returns nothing
-local integer i=S2I(SubStringBJ(GetEventPlayerChatString(),7,8))
-if i<0 then
-return
-endif
-if i>20 then
-set CurrentWave=20
-endif
-if i==5 or i==10 or i==15 then
-call qm()
-endif
-set CurrentWave=i
-endfunction
-function InitTrig_TestPickWave takes nothing returns nothing
-set gg_trg_TestPickWave=CreateTrigger()
-endfunction
+
+
 function SpiritOfVengeance___OnAction takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -24787,7 +24772,6 @@ call TriggerAddAction(VI,function ot)
 call ConditionalTriggerExecute(qa)
 // end of main2
 call InitTrig_SettingsTrueCast()
-set gg_trg_TestPickWave=CreateTrigger()
 
 call RunInitializationTriggers()    
 endfunction
