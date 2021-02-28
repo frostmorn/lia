@@ -185,7 +185,7 @@ boolean array udg_HideDamageFrom
 boolean array udg_UnitDamageRegistered
 unit udg_EnhancedDamageTarget=null
 group udg_DamageEventAOEGroup=null
-rect gg_rct_ArenaBoundary=null
+
 // sound gg_snd_audio_2020_01_11_07_16_27_1=null
 trigger gg_trg_Unit_Indexer=null
 trigger gg_trg_Damage_Engine_Config=null
@@ -443,155 +443,154 @@ unit lo=null
 boolean Lo=false
 unit mo=null
 effect array Mo
-rect Po=null
-rect qo=null
-rect Qo=null
-rect so=null
-rect So=null
-rect to=null
-rect To=null
-rect uo=null
-rect Uo=null
-rect BigArenaAreaRect=null
-rect BottomSpawnRect=null
-rect TopSpawnRect=null
-rect Yo=null
-rect zo=null
-rect Zo=null
-rect vr=null
-rect er=null
-rect rr=null
-rect MinimalArenaAreaRect=null
-rect ar=null
-rect MinimalArenaBottomUnitRect=null
-rect MinimalArenaTopUnitRect=null
-rect Er=null
-rect Xr=null
-rect Rr=null
-rect Ir=null
-rect Ar=null
-rect Nr=null
-rect ShopsAreaFogModifierRect=null
-rect TavernAndMinimalArenaAreaFogModifierRect=null
-rect cr=null
-rect Cr=null
-rect dr=null
-rect Dr=null
-rect DestroyBitchUnit_2_Rect=null
-rect Fr=null
-rect Gr=null
-rect hr=null
-rect Hr=null
-rect jr=null
-rect Jr=null
-rect kr=null
-rect Kr=null
-rect lr=null
-rect Lr=null
-rect mr=null
-rect Mr=null
-rect pr=null
-rect Pr=null
-rect qr=null
-rect Qr=null
-rect sr=null
-rect Sr=null
-rect tr=null
-rect Tr=null
-rect ur=null
-rect Ur=null
-rect wr=null
-rect Wr=null
-rect yr=null
-rect Yr=null
-rect zr=null
-rect Zr=null
-rect vi=null
-rect ei=null
-rect xi=null
-rect oi=null
-rect ri=null
-rect ii=null
-rect ai=null
-rect ni=null
-rect Vi=null
-rect DestroyBitchUnit_3_Rect_2=null
-rect DestroyBitchUnit_3_Rect=null
-rect Oi=null
-rect Ri=null
-rect Ii=null
-rect Ai=null
-rect Ni=null
-rect bi=null
-rect Bi=null
-rect ci=null
-rect Ci=null
-rect di=null
-rect Di=null
-rect fi=null
-rect Fi=null
-rect gi=null
-rect Gi=null
-rect hi=null
-rect Hi=null
-rect ji=null
-rect Ji=null
-rect ki=null
-rect Ki=null
-rect li=null
-rect Li=null
-rect mi=null
-rect Mi=null
-rect pi=null
-rect Pi=null
-rect qi=null
-rect Qi=null
-rect si=null
-rect Si=null
-rect Ti=null
-rect ui=null
-rect Ui=null
-rect wi=null
-rect Wi=null
-rect yi=null
-rect Yi=null
-rect zi=null
-rect Zi=null
-rect va=null
-rect ea=null
-rect xa=null
-rect oa=null
-rect ra=null
-rect ia=null
-rect aa=null
-rect na=null
-rect Va=null
-rect Ea=null
-rect Xa=null
-rect Oa=null
-rect Ra=null
-rect Ia=null
-rect Aa=null
-rect Na=null
-rect ba=null
-rect Ba=null
-rect ca=null
-rect Ca=null
-rect da=null
-rect Da=null
-rect fa=null
-rect Fa=null
-rect ga=null
-rect Ga=null
-rect ha=null
-rect Ha=null
-rect ja=null
-rect Ja=null
-rect ka=null
-rect Ka=null
-rect la=null
-rect La=null
-rect ma=null
+rect gg_rct_RedPlayerBox=null
+rect gg_rct_BluePlayerBox=null
+rect gg_rct_TealPlayerBox=null
+rect gg_rct_PurplePlayerBox=null
+rect gg_rct_YellowPlayerBox=null
+rect gg_rct_OrangePlayerBox=null
+rect gg_rct_GreenPlayerBox=null
+rect gg_rct_PinkPlayerBox=null
+rect gg_rct_Uo=null
+rect gg_rct_BigArenaAreaRect=null
+rect gg_rct_BottomSpawnRect=null
+rect gg_rct_TopSpawnRect=null
+rect gg_rct_Yo=null
+rect gg_rct_zo=null
+rect gg_rct_Zo=null
+rect gg_rct_vr=null
+rect gg_rct_er=null
+rect gg_rct_rr=null
+rect gg_rct_MinimalArenaAreaRect=null
+rect gg_rct_HeroReSpawn=null
+rect gg_rct_MinimalArenaBottomUnitRect=null
+rect gg_rct_MinimalArenaTopUnitRect=null
+rect gg_rct_Er=null
+rect gg_rct_Xr=null
+rect gg_rct_Rr=null
+rect gg_rct_Ir=null
+rect gg_rct_Ar=null
+rect gg_rct_Nr=null
+rect gg_rct_ShopsAreaFogModifierRect=null
+rect gg_rct_TavernAndMinimalArenaAreaFogModifierRect=null
+rect gg_rct_Cr=null
+rect gg_rct_dr=null
+rect gg_rct_Dr=null
+rect gg_rct_fr=null
+rect gg_rct_Fr=null
+rect gg_rct_Gr=null
+rect gg_rct_hr=null
+rect gg_rct_Hr=null
+rect gg_rct_jr=null
+rect gg_rct_Jr=null
+rect gg_rct_kr=null
+rect gg_rct_Kr=null
+rect gg_rct_lr=null
+rect gg_rct_Lr=null
+rect gg_rct_mr=null
+rect gg_rct_Mr=null
+rect gg_rct_pr=null
+rect gg_rct_Pr=null
+rect gg_rct_qr=null
+rect gg_rct_Qr=null
+rect gg_rct_sr=null
+rect gg_rct_Sr=null
+rect gg_rct_tr=null
+rect gg_rct_Tr=null
+rect gg_rct_ur=null
+rect gg_rct_Ur=null
+rect gg_rct_wr=null
+rect gg_rct_Wr=null
+rect gg_rct_yr=null
+rect gg_rct_Yr=null
+rect gg_rct_zr=null
+rect gg_rct_Zr=null
+rect gg_rct_vi=null
+rect gg_rct_ei=null
+rect gg_rct_xi=null
+rect gg_rct_oi=null
+rect gg_rct_ri=null
+rect gg_rct_ii=null
+rect gg_rct_ai=null
+rect gg_rct_ni=null
+rect gg_rct_Vi=null
+rect gg_rct_Ei=null
+rect gg_rct_Xi=null
+rect gg_rct_Oi=null
+rect gg_rct_Ri=null
+rect gg_rct_Ii=null
+rect gg_rct_Ai=null
+rect gg_rct_Ni=null
+rect gg_rct_bi=null
+rect gg_rct_Bi=null
+rect gg_rct_ci=null
+rect gg_rct_Ci=null
+rect gg_rct_di=null
+rect gg_rct_Di=null
+rect gg_rct_fi=null
+rect gg_rct_Fi=null
+rect gg_rct_gi=null
+rect gg_rct_Gi=null
+rect gg_rct_hi=null
+rect gg_rct_Hi=null
+rect gg_rct_ji=null
+rect gg_rct_Ji=null
+rect gg_rct_ki=null
+rect gg_rct_Ki=null
+rect gg_rct_li=null
+rect gg_rct_Li=null
+rect gg_rct_mi=null
+rect gg_rct_Mi=null
+rect gg_rct_pi=null
+rect gg_rct_Pi=null
+rect gg_rct_qi=null
+rect gg_rct_Qi=null
+rect gg_rct_si=null
+rect gg_rct_Si=null
+rect gg_rct_Ti=null
+rect gg_rct_ui=null
+rect gg_rct_Ui=null
+rect gg_rct_wi=null
+rect gg_rct_Wi=null
+rect gg_rct_yi=null
+rect gg_rct_Yi=null
+rect gg_rct_zi=null
+rect gg_rct_Zi=null
+rect gg_rct_va=null
+rect gg_rct_ea=null
+rect gg_rct_xa=null
+rect gg_rct_oa=null
+rect gg_rct_ra=null
+rect gg_rct_ia=null
+rect gg_rct_aa=null
+rect gg_rct_na=null
+rect gg_rct_Va=null
+rect gg_rct_Ea=null
+rect gg_rct_Xa=null
+rect gg_rct_Oa=null
+rect gg_rct_Ra=null
+rect gg_rct_Ia=null
+rect gg_rct_Aa=null
+rect gg_rct_Na=null
+rect gg_rct_ba=null
+rect gg_rct_Ba=null
+rect gg_rct_ca=null
+rect gg_rct_Ca=null
+rect gg_rct_da=null
+rect gg_rct_Da=null
+rect gg_rct_fa=null
+rect gg_rct_Fa=null
+rect gg_rct_ga=null
+rect gg_rct_Ga=null
+rect gg_rct_ha=null
+rect gg_rct_Ha=null
+rect gg_rct_ja=null
+rect gg_rct_Ja=null
+rect gg_rct_ka=null
+rect gg_rct_Ka=null
+rect gg_rct_la=null
+rect gg_rct_La=null
+rect gg_rct_ma=null
 camerasetup Ma=null
 camerasetup pa=null
 trigger Pa=null
@@ -881,8 +880,8 @@ trigger cR=null
 trigger CR=null
 trigger dR=null
 trigger DR=null
-trigger DestroyBitchUnit_2_Trigger=null
-trigger DestroyBitchUnit_3_Trigger=null
+trigger fR=null
+trigger FR=null
 trigger gR=null
 trigger GR=null
 trigger hR=null
@@ -3570,7 +3569,166 @@ endfunction
 // endfunction
 function CreateRegions takes nothing returns nothing
 local weathereffect we
-set gg_rct_ArenaBoundary=Rect(-3136.0,-3392.0,-1216.0,-1504.0)
+
+    set gg_rct_RedPlayerBox=Rect(864.,-3168.,1056.,-2976.)
+    set gg_rct_BluePlayerBox=Rect(672.,-3168.,864.,-2976.)
+    set gg_rct_TealPlayerBox=Rect(480.,-3168.,672.,-2976.)
+    set gg_rct_PurplePlayerBox=Rect(288.,-3168.,480.,-2976.)
+    set gg_rct_YellowPlayerBox=Rect(96.,-3168.,288.,-2976.)
+    set gg_rct_OrangePlayerBox=Rect(-96.,-3168.,96.,-2976.)
+    set gg_rct_GreenPlayerBox=Rect(-288.,-3168.,-96.,-2976.)
+    set gg_rct_PinkPlayerBox=Rect(-480.,-3168.,-288.,-2976.)
+    set gg_rct_Uo=Rect(-960.,-3616.,3328.,-1376.)
+    set gg_rct_BigArenaAreaRect=Rect(-3220.,-1270.,1670.,3168.)
+
+    set gg_rct_BottomSpawnRect=Rect(-3264.,-64.,-2432.,896.)
+    set gg_rct_TopSpawnRect=Rect(-1216.,2272.,-192.,2976.)
+
+    set gg_rct_Yo=Rect(-2400.,-608.,-2272.,-480.)
+    set gg_rct_zo=Rect(-1888.,-800.,-1760.,-672.)
+    set gg_rct_Zo=Rect(-1696.,288.,-1568.,416.)
+    set gg_rct_vr=Rect(-2208.,1888.,-2080.,2016.)
+    set gg_rct_er=Rect(224.,-608.,352.,-480.)
+    set gg_rct_rr=Rect(736.,1376.,864.,1504.)
+    set gg_rct_MinimalArenaAreaRect=Rect( -2976.0, -3488.0, -992.0, -1504.0 )
+    set gg_rct_HeroReSpawn=Rect(96.,-2816.,800.,-2144.)
+
+    // Bottom Player Rect on MinimalArena
+    set gg_rct_MinimalArenaBottomUnitRect=Rect( -2464.0, -3168.0, -1504.0, -2880.0 )
+    // Top Player Rect on MinimalArena
+    set gg_rct_MinimalArenaTopUnitRect=Rect( -2464.0, -2112.0, -1504.0, -1792.0 )
+
+    set gg_rct_Er=Rect(-2784.,-960.,1248.,2528.)
+    set gg_rct_Xr=Rect(2336.,-224.,2400.,-160.)
+    set gg_rct_Rr=Rect(2592.,-352.,2656.,-288.)
+    set gg_rct_Ir=Rect(2080.,-480.,2144.,-416.)
+    set gg_rct_Ar=Rect(2240.,-416.,2304.,-352.)
+    // OLD FOG
+    set gg_rct_Nr=Rect(1504.,-1120.,3296.,512.)
+    // set gg_rct_Nr=Rect(1656.,-2182.,3687.,3195.)
+
+    set gg_rct_ShopsAreaFogModifierRect=Rect( 1536.0, -3712.0, 3328.0, -2176.0 )
+    set gg_rct_TavernAndMinimalArenaAreaFogModifierRect=Rect( -3232.0, -3712.0, 1664.0, -1280.0 )
+
+
+    set gg_rct_Cr=Rect(2496.,-544.,2560.,-480.)
+    set gg_rct_dr=Rect(1984.,-672.,2048.,-608.)
+    set gg_rct_Dr=Rect(-960.,672.,-608.,1088.)
+    set gg_rct_fr=Rect(1440.,-1504.,3328.,3136.)
+    set gg_rct_Fr=Rect(-2880.,1760.,-2464.,2368.)
+    set gg_rct_Gr=Rect(608.,-960.,1184.,-384.)
+    set gg_rct_hr=Rect(-832.,-1184.,-512.,-896.)
+    set gg_rct_Hr=Rect(896.,800.,1216.,1088.)
+    set gg_rct_jr=Rect(-480.,96.,-192.,352.)
+    set gg_rct_Jr=Rect(-1792.,-416.,-1504.,-160.)
+    set gg_rct_kr=Rect(-2624.,-1088.,-2464.,-928.)
+    set gg_rct_Kr=Rect(-2912.,416.,-2656.,672.)
+    set gg_rct_lr=Rect(-1632.,960.,-1312.,1312.)
+    set gg_rct_Lr=Rect(32.,1792.,416.,2144.)
+    set gg_rct_mr=Rect(-1216.,2272.,-864.,2656.)
+    set gg_rct_Mr=Rect(-2880.,2432.,-2752.,2560.)
+    set gg_rct_pr=Rect(-2880.,1504.,-2752.,1632.)
+    set gg_rct_Pr=Rect(1120.,-256.,1216.,-160.)
+    set gg_rct_qr=Rect(1120.,-1088.,1216.,-992.)
+    set gg_rct_Qr=Rect(-2592.,-2304.,-1728.,-1952.)
+    set gg_rct_sr=Rect(2304.,2048.,2432.,2176.)
+    set gg_rct_Sr=Rect(-3008.,-3232.,-1376.,-1632.)
+    set gg_rct_tr=Rect(2336.,-3200.,2432.,-3104.)
+    set gg_rct_Tr=Rect(2720.,-3200.,2816.,-3104.)
+    set gg_rct_ur=Rect(1952.,-3200.,2048.,-3104.)
+    set gg_rct_Ur=Rect(2720.,-2784.,3040.,-2496.)
+    set gg_rct_wr=Rect(2336.,-2784.,2656.,-2496.)
+    set gg_rct_Wr=Rect(1952.,-2784.,2272.,-2496.)
+    set gg_rct_yr=Rect(2720.,-3424.,3040.,-3136.)
+    set gg_rct_Yr=Rect(2336.,-3424.,2656.,-3136.)
+    set gg_rct_zr=Rect(1952.,-3424.,2272.,-3136.)
+    set gg_rct_Zr=Rect(1088.,-2208.,1376.,-1952.)
+    set gg_rct_vi=Rect(1088.,-1952.,1376.,-1664.)
+    set gg_rct_ei=Rect(832.,-1952.,1120.,-1664.)
+    set gg_rct_xi=Rect(576.,-1952.,864.,-1664.)
+    set gg_rct_oi=Rect(320.,-1952.,608.,-1664.)
+    set gg_rct_ri=Rect(-608.,-2592.,-320.,-2336.)
+    set gg_rct_ii=Rect(-608.,-2816.,-320.,-2560.)
+    set gg_rct_ai=Rect(288.,-2656.,640.,-2336.)
+    set gg_rct_ni=Rect(64.,-1952.,352.,-1664.)
+    set gg_rct_Vi=Rect(-608.,-2368.,-320.,-2112.)
+    set gg_rct_Ei=Rect(-3264.,-1472.,-832.,-1216.)
+    set gg_rct_Xi=Rect(64.,2752.,1440.,3008.)
+    set gg_rct_Oi=Rect(-800.,-3008.,-768.,-2976.)
+    set gg_rct_Ri=Rect(2432.,-3008.,2560.,-2912.)
+    set gg_rct_Ii=Rect(1792.,-3616.,3168.,-2304.)
+    set gg_rct_Ai=Rect(2464.,-3008.,2528.,-2976.)
+    set gg_rct_Ni=Rect(-1216.,-3648.,-960.,-1440.)
+    set gg_rct_bi=Rect(-3424.,-3648.,-1152.,-3392.)
+    set gg_rct_Bi=Rect(-3424.,-1472.,-832.,-1216.)
+    set gg_rct_ci=Rect(-3424.,-3424.,-3136.,-1440.)
+    set gg_rct_Ci=Rect(-3424.,-1248.,-3008.,-192.)
+    set gg_rct_di=Rect(-3424.,-224.,-3136.,-64.)
+    set gg_rct_Di=Rect(-3424.,-96.,-3264.,64.)
+    set gg_rct_fi=Rect(-960.,-2752.,-704.,-2112.)
+    set gg_rct_Fi=Rect(-192.,-1472.,1504.,-1216.)
+    set gg_rct_gi=Rect(-960.,-3616.,1216.,-3264.)
+    set gg_rct_Gi=Rect(1184.,-3616.,1344.,-3392.)
+    set gg_rct_hi=Rect(1312.,-3616.,3328.,-3520.)
+    set gg_rct_Hi=Rect(3264.,-3616.,3328.,-2336.)
+    set gg_rct_ji=Rect(1472.,-2368.,3328.,-1088.)
+    set gg_rct_Ji=Rect(1344.,-1248.,1472.,3168.)
+    set gg_rct_ki=Rect(-64.,2752.,1376.,3168.)
+    set gg_rct_Ki=Rect(-192.,2880.,-32.,3168.)
+    set gg_rct_li=Rect(-320.,3008.,-160.,3168.)
+    set gg_rct_Li=Rect(-1248.,3008.,-1088.,3168.)
+    set gg_rct_mi=Rect(-1376.,2880.,-1216.,3168.)
+    set gg_rct_Mi=Rect(-3424.,2752.,-1344.,3168.)
+    set gg_rct_pi=Rect(-3424.,1088.,-3008.,2784.)
+    set gg_rct_Pi=Rect(-3424.,960.,-3136.,1120.)
+    set gg_rct_qi=Rect(-3424.,832.,-3264.,992.)
+    set gg_rct_Qi=Rect(-864.,-1504.,-160.,-1344.)
+    set gg_rct_si=Rect(64.,2176.,1344.,2720.)
+    set gg_rct_Si=Rect(448.,1920.,1344.,2240.)
+    set gg_rct_Ti=Rect(576.,1792.,1344.,1952.)
+    set gg_rct_ui=Rect(-2368.,2272.,-1472.,2688.)
+    set gg_rct_Ui=Rect(-2432.,1472.,-2112.,1984.)
+    set gg_rct_wi=Rect(-2912.,1120.,-2624.,1632.)
+    set gg_rct_Wi=Rect(-3008.,832.,-2688.,1152.)
+    set gg_rct_yi=Rect(-2112.,.0,-1760.,480.)
+    set gg_rct_Yi=Rect(-1696.,128.,-1472.,448.)
+    set gg_rct_zi=Rect(384.,640.,960.,896.)
+    set gg_rct_Zi=Rect(832.,1280.,1152.,1536.)
+    set gg_rct_va=Rect(1024.,1152.,1312.,1312.)
+    set gg_rct_ea=Rect(864.,-96.,1120.,480.)
+    set gg_rct_xa=Rect(192.,-224.,832.,96.)
+    set gg_rct_oa=Rect(96.,-1184.,608.,-832.)
+    set gg_rct_ra=Rect(224.,-672.,512.,-480.)
+    set gg_rct_ia=Rect(-1664.,-1152.,-1280.,-896.)
+    set gg_rct_aa=Rect(-2912.,-1088.,-2464.,-672.)
+    set gg_rct_na=Rect(-2528.,-704.,-2240.,-512.)
+    set gg_rct_Va=Rect(-2976.,-672.,-2624.,-288.)
+    set gg_rct_Ea=Rect(-2816.,-352.,-2432.,-64.)
+    set gg_rct_Xa=Rect(-2880.,2496.,-2336.,2688.)
+    set gg_rct_Oa=Rect(-1184.,1024.,-928.,1472.)
+    set gg_rct_Ra=Rect(-704.,992.,-320.,1536.)
+    set gg_rct_Ia=Rect(-704.,256.,-352.,736.)
+    set gg_rct_Aa=Rect(-1280.,224.,-896.,672.)
+    set gg_rct_Na=Rect(640.,1664.,768.,1824.)
+    set gg_rct_ba=Rect(1152.,1024.,1312.,1184.)
+    set gg_rct_Ba=Rect(320.,512.,448.,672.)
+    set gg_rct_ca=Rect(512.,1152.,640.,1408.)
+    set gg_rct_Ca=Rect(448.,896.,640.,1152.)
+    set gg_rct_da=Rect(576.,256.,736.,416.)
+    set gg_rct_Da=Rect(768.,-224.,928.,-64.)
+    set gg_rct_fa=Rect(960.,-288.,1088.,-96.)
+    set gg_rct_Fa=Rect(1024.,-384.,1152.,-256.)
+    set gg_rct_ga=Rect(992.,-608.,1152.,-448.)
+    set gg_rct_Ga=Rect(-448.,640.,-320.,768.)
+    set gg_rct_ha=Rect(-384.,960.,-256.,1088.)
+    set gg_rct_Ha=Rect(-1312.,928.,-1184.,1312.)
+    set gg_rct_ja=Rect(-1440.,1120.,-1280.,1280.)
+    set gg_rct_Ja=Rect(-1504.,2432.,-1408.,2560.)
+    set gg_rct_ka=Rect(-2272.,-672.,-2112.,-512.)
+    set gg_rct_Ka=Rect(-1984.,-704.,-1824.,-544.)
+    set gg_rct_la=Rect(-1792.,-1216.,-1632.,-800.)
+    set gg_rct_La=Rect(-4096.,128.,-3616.,768.)
+    set gg_rct_ma=Rect(-1024.,3616.,-384.,4096.)
 endfunction
 function Trig_Unit_Indexer_Func005Func002C takes nothing returns boolean
 if(not(udg_UnitIndexLock[udg_UDex]==0))then
@@ -4977,76 +5135,76 @@ set wN=69
 else
 set wN=25
 endif
-set r[1]=Ni
-set r[2]=bi
-set r[3]=Bi
-set r[4]=ci
-set r[5]=Ci
-set r[6]=di
-set r[7]=Di
-set r[8]=fi
-set r[9]=Fi
-set r[10]=gi
-set r[11]=Gi
-set r[12]=hi
-set r[13]=Hi
-set r[14]=ji
-set r[15]=Ji
-set r[16]=ki
-set r[17]=Ki
-set r[18]=li
-set r[19]=Li
-set r[20]=mi
-set r[21]=Mi
-set r[22]=pi
-set r[23]=Pi
-set r[24]=qi
-set r[25]=Qi
+set r[1]=gg_rct_Ni
+set r[2]=gg_rct_bi
+set r[3]=gg_rct_Bi
+set r[4]=gg_rct_ci
+set r[5]=gg_rct_Ci
+set r[6]=gg_rct_di
+set r[7]=gg_rct_Di
+set r[8]=gg_rct_fi
+set r[9]=gg_rct_Fi
+set r[10]=gg_rct_gi
+set r[11]=gg_rct_Gi
+set r[12]=gg_rct_hi
+set r[13]=gg_rct_Hi
+set r[14]=gg_rct_ji
+set r[15]=gg_rct_Ji
+set r[16]=gg_rct_ki
+set r[17]=gg_rct_Ki
+set r[18]=gg_rct_li
+set r[19]=gg_rct_Li
+set r[20]=gg_rct_mi
+set r[21]=gg_rct_Mi
+set r[22]=gg_rct_pi
+set r[23]=gg_rct_Pi
+set r[24]=gg_rct_qi
+set r[25]=gg_rct_Qi
 if Gb then
-set r[26]=si
-set r[27]=Si
-set r[28]=Ti
-set r[29]=ui
-set r[30]=Ui
-set r[31]=wi
-set r[32]=Wi
-set r[33]=yi
-set r[34]=Yi
-set r[35]=zi
-set r[36]=Zi
-set r[37]=va
-set r[38]=ea
-set r[39]=xa
-set r[40]=oa
-set r[41]=ia
-set r[42]=ia
-set r[43]=aa
-set r[44]=na
-set r[45]=Va
-set r[46]=Ea
-set r[47]=Xa
-set r[48]=Oa
-set r[49]=Ra
-set r[50]=Ia
-set r[51]=Aa
-set r[52]=Na
-set r[53]=ba
-set r[54]=Ba
-set r[55]=ca
-set r[56]=Ca
-set r[57]=da
-set r[58]=Da
-set r[59]=fa
-set r[60]=Fa
-set r[61]=ga
-set r[62]=Ga
-set r[63]=ha
-set r[64]=Ha
-set r[65]=ja
-set r[66]=Ja
-set r[67]=ka
-set r[68]=Ka
-set r[69]=la
+set r[26]=gg_rct_si
+set r[27]=gg_rct_Si
+set r[28]=gg_rct_Ti
+set r[29]=gg_rct_ui
+set r[30]=gg_rct_Ui
+set r[31]=gg_rct_wi
+set r[32]=gg_rct_Wi
+set r[33]=gg_rct_yi
+set r[34]=gg_rct_Yi
+set r[35]=gg_rct_zi
+set r[36]=gg_rct_Zi
+set r[37]=gg_rct_va
+set r[38]=gg_rct_ea
+set r[39]=gg_rct_xa
+set r[40]=gg_rct_oa
+set r[41]=gg_rct_ia
+set r[42]=gg_rct_ia
+set r[43]=gg_rct_aa
+set r[44]=gg_rct_na
+set r[45]=gg_rct_Va
+set r[46]=gg_rct_Ea
+set r[47]=gg_rct_Xa
+set r[48]=gg_rct_Oa
+set r[49]=gg_rct_Ra
+set r[50]=gg_rct_Ia
+set r[51]=gg_rct_Aa
+set r[52]=gg_rct_Na
+set r[53]=gg_rct_ba
+set r[54]=gg_rct_Ba
+set r[55]=gg_rct_ca
+set r[56]=gg_rct_Ca
+set r[57]=gg_rct_da
+set r[58]=gg_rct_Da
+set r[59]=gg_rct_fa
+set r[60]=gg_rct_Fa
+set r[61]=gg_rct_ga
+set r[62]=gg_rct_Ga
+set r[63]=gg_rct_ha
+set r[64]=gg_rct_Ha
+set r[65]=gg_rct_ja
+set r[66]=gg_rct_Ja
+set r[67]=gg_rct_ka
+set r[68]=gg_rct_Ka
+set r[69]=gg_rct_la
 endif
 loop
 exitwhen In>wN or b==false
@@ -5216,7 +5374,7 @@ endloop
 call RemoveUnitFromStock(HeroStocksArray[2],'H00M')
 call RemoveUnitFromStock(HeroStocksArray[4],'U005')
 call RemoveUnit(px[7])
-set px[7]=CreateUnitAtLoc(Player(15),'n01T',GetRectCenter(ri),bj_UNIT_FACING)
+set px[7]=CreateUnitAtLoc(Player(15),'n01T',GetRectCenter(gg_rct_ri),bj_UNIT_FACING)
 call DisableTrigger(mR)
 endfunction
 function Tb takes nothing returns boolean
@@ -5765,17 +5923,17 @@ call RemoveUnit(f)
 call GroupRemoveUnit(g,f)
 endloop
 call DestroyGroup(g)
-set f=CreateUnitAtLoc(p1,pB,GetRectCenter(Pr),bj_UNIT_FACING)
+set f=CreateUnitAtLoc(p1,pB,GetRectCenter(gg_rct_Pr),bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
-set f=CreateUnitAtLoc(p1,pB,GetRectCenter(qr),bj_UNIT_FACING)
-call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
-call UnitAddAbility(f,'A09Z')
-call UnitAddAbility(f,'ANre')
-set f=CreateUnitAtLoc(p2,PB,GetRectCenter(Mr),bj_UNIT_FACING)
+set f=CreateUnitAtLoc(p1,pB,GetRectCenter(gg_rct_qr),bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
 call UnitAddAbility(f,'A09Z')
 call UnitAddAbility(f,'ANre')
-set f=CreateUnitAtLoc(p2,PB,GetRectCenter(pr),bj_UNIT_FACING)
+set f=CreateUnitAtLoc(p2,PB,GetRectCenter(gg_rct_Mr),bj_UNIT_FACING)
+call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
+call UnitAddAbility(f,'A09Z')
+call UnitAddAbility(f,'ANre')
+set f=CreateUnitAtLoc(p2,PB,GetRectCenter(gg_rct_pr),bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
 endif
 set g=null
@@ -6008,7 +6166,7 @@ exitwhen rc!=-1 and xc(rc)
 endloop
 set vo[ec]=rc
 set Vc=HeroIdsArray[rc]
-set u=CreateUnitAtLoc(p,Vc,GetRectCenter(Ri),0)
+set u=CreateUnitAtLoc(p,Vc,GetRectCenter(gg_rct_Ri),0)
 loop
 exitwhen In>6
 call RemoveUnitFromStock(HeroStocksArray[In],GetUnitTypeId(u))
@@ -6124,10 +6282,10 @@ local integer In=LoadInteger(Ax,1,dN)
 local integer vB=LoadInteger(Ax,2,dN)
 call DestroyTextTag(zx)
 if In>=vB then
-set zx=CreateTextTagLocBJ("0",GetRectCenter(Ai),0,20.,'d',.0,.0,10.)
+set zx=CreateTextTagLocBJ("0",GetRectCenter(gg_rct_Ai),0,20.,'d',.0,.0,10.)
 call DestroyTimer(t)
 else
-set zx=CreateTextTagLocBJ(I2S(20-In),GetRectCenter(Ai),0,20.,'d',.0,.0,10.)
+set zx=CreateTextTagLocBJ(I2S(20-In),GetRectCenter(gg_rct_Ai),0,20.,'d',.0,.0,10.)
 call SaveInteger(Ax,1,dN,In+1)
 endif
 set t=null
@@ -6155,7 +6313,7 @@ local timer t
 local integer dN
 local integer In=0
 local sound dc=CreateSound("Sound\\Interface\\Rescue.wav",false,false,true,$319C,$319C,"")
-call SetSoundPosition(dc,GetLocationX(GetRectCenter(Ai)),GetLocationY(GetRectCenter(Ai)),'d')
+call SetSoundPosition(dc,GetLocationX(GetRectCenter(gg_rct_Ai)),GetLocationY(GetRectCenter(gg_rct_Ai)),'d')
 loop
 exitwhen In>7
 call DisplayTimedTextToPlayer(Player(In),0,0,15,"У игрока |Cffff0000"+GetPlayerName(p)+"|r есть |Cffff000020|r секунд, чтобы выбрать героя.")
@@ -6356,12 +6514,12 @@ local rect array r
 local rect array r2
 local player pp
 local integer Kc=0
-set r[1]=Ar
-set r[2]=Cr
-set r[3]=dr
-set r2[1]=Xr
-set r2[2]=Rr
-set r2[3]=Ir
+set r[1]=gg_rct_Ar
+set r[2]=gg_rct_Cr
+set r[3]=gg_rct_dr
+set r2[1]=gg_rct_Xr
+set r2[2]=gg_rct_Rr
+set r2[3]=gg_rct_Ir
 loop
 exitwhen In>8 or Kc>2
 set pp=ae[gx[In]]
@@ -6406,11 +6564,11 @@ set In=1
 loop
 exitwhen In>wN
 call CameraSetupApplyForPlayer(true,Ma,ae[In],0)
-call ReviveHeroLoc(F[In],GetRandomLocInRect(ar),false)
+call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_HeroReSpawn),false)
 call SetUnitLifePercentBJ(F[In],'d')
 call SetUnitManaPercentBJ(F[In],'d')
 call CreateFogModifierRectBJ(false,ae[In],FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
-call CreateFogModifierRectBJ(true,ae[In],FOG_OF_WAR_VISIBLE,Nr)
+call CreateFogModifierRectBJ(true,ae[In],FOG_OF_WAR_VISIBLE,gg_rct_Nr)
 set In=In+1
 endloop
 set g=HA(bj_mapInitialPlayableArea)
@@ -6450,7 +6608,7 @@ endfunction
 function lc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
-set g=GA(MinimalArenaAreaRect,null)
+set g=GA(gg_rct_MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -6473,7 +6631,7 @@ endfunction
 function Lc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
-set g=GA(Uo,null)
+set g=GA(gg_rct_Uo,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -6591,8 +6749,8 @@ local item it
 local item UB
 local integer Uc
 local integer wc
-call SaveBoolean(Ax,1,StringHash("pr"),false)
-call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,Condition(function Pc))
+call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),false)
+call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,Condition(function Pc))
 call ForGroup(g,function qc)
 call DestroyGroup(g)
 call PauseUnit(u1,false)
@@ -6639,7 +6797,7 @@ local integer Bc
 call yb()
 call UnitRemoveBuffs(u1,true,true)
 call UnitRemoveBuffs(u2,true,true)
-call EnumItemsInRect(MinimalArenaAreaRect,null,function pc)
+call EnumItemsInRect(gg_rct_MinimalArenaAreaRect,null,function pc)
 set In=0
 loop
 exitwhen In>7
@@ -6648,8 +6806,8 @@ set In=In+1
 endloop
 call SetUnitInvulnerable(u1,true)
 call SetUnitInvulnerable(u2,true)
-set T1=GetRectCenter(MinimalArenaBottomUnitRect)
-set T2=GetRectCenter(MinimalArenaTopUnitRect)
+set T1=GetRectCenter(gg_rct_MinimalArenaBottomUnitRect)
+set T2=GetRectCenter(gg_rct_MinimalArenaTopUnitRect)
 call ReviveHeroLoc(u1,T1,false)
 call ReviveHeroLoc(u2,T2,false)
 call SetUnitPositionLoc(u1,T1)
@@ -6732,7 +6890,7 @@ exitwhen In>7
 call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00Победитель получит "+I2S(200)+" золотых монет и "+I2S(8)+" дерева.")
 set In=In+1
 endloop
-call SaveBoolean(Ax,1,StringHash("pr"),true)
+call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),true)
 set t=CreateTimer()
 call TimerStart(t,2,false,function sc)
 set t=null
@@ -6797,7 +6955,7 @@ local real x
 local real y
 local location ic
 local player p
-local rect oC=ar
+local rect oC=gg_rct_HeroReSpawn
 loop
 exitwhen xC>8
 set f=F[xC]
@@ -6831,13 +6989,13 @@ function rC takes nothing returns nothing
 call DestroyEffect(AddSpecialEffectLocBJ(GetUnitLoc(Le),"Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"))
 call ShowUnit(Le,false)
 call SetUnitInvulnerable(Le,true)
-call SetUnitPositionLoc(Le,GetRectCenter(sr))
+call SetUnitPositionLoc(Le,GetRectCenter(gg_rct_sr))
 call UnitRemoveBuffsExBJ(2,2,Le,true,false)
 call PauseUnit(Le,true)
 endfunction
 function iC takes integer id returns nothing
-local location L=GetRandomLocInRect(Sr)
-local location aC=GetRectCenter(Sr)
+local location L=GetRandomLocInRect(gg_rct_Sr)
+local location aC=GetRectCenter(gg_rct_Sr)
 local unit f=CreateUnitAtLoc(Player(11),id,L,bj_RADTODEG*Atan2(GetLocationY(aC)-GetLocationY(L),GetLocationX(aC)-GetLocationX(L)))
 call RemoveLocation(L)
 call RemoveLocation(aC)
@@ -6854,8 +7012,8 @@ endfunction
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
-if((RectContainsUnit(BigArenaAreaRect,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
-call SetUnitPositionLoc(u,GetRandomLocInRect(Dr))
+if((RectContainsUnit(gg_rct_BigArenaAreaRect,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
+call SetUnitPositionLoc(u,GetRandomLocInRect(gg_rct_Dr))
 call AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl")
 if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
 call PanCameraToTimedLocForPlayer(p,GetUnitLoc(u),0)
@@ -6873,7 +7031,7 @@ loop
 exitwhen In>A
 set g=CreateGroup()
 set g=pA(ae[In])
-if(RectContainsUnit(BigArenaAreaRect,F[In])==false)then
+if(RectContainsUnit(gg_rct_BigArenaAreaRect,F[In])==false)then
 call ClearSelectionForPlayer(ae[In])
 endif
 call SelectUnitForPlayerSingle(F[In],ae[In])
@@ -7088,7 +7246,7 @@ function jC takes nothing returns nothing
 local player p=Player(15)
 local real Ec=bj_UNIT_FACING
 local unit u
-set HeroStocksArray[1]=CreateUnitAtLoc(p,'n02L',GetRectCenter(Ur),Ec)
+set HeroStocksArray[1]=CreateUnitAtLoc(p,'n02L',GetRectCenter(gg_rct_Ur),Ec)
 set u=HeroStocksArray[1]
 call AddUnitToStock(u,'N00U',0,1)
 call AddUnitToStock(u,'H00F',0,1)
@@ -7099,7 +7257,7 @@ call AddUnitToStock(u,'H008',0,1)
 call AddUnitToStock(u,'H00Z',0,1)
 call AddUnitToStock(u,'O004',0,1)
 call AddUnitToStock(u,'Hpal',0,1)
-set HeroStocksArray[2]=CreateUnitAtLoc(p,'n000',GetRectCenter(yr),Ec)
+set HeroStocksArray[2]=CreateUnitAtLoc(p,'n000',GetRectCenter(gg_rct_yr),Ec)
 set u=HeroStocksArray[2]
 call AddUnitToStock(u,'H00M',0,1)
 call AddUnitToStock(u,'O003',0,1)
@@ -7108,7 +7266,7 @@ call AddUnitToStock(u,'E007',0,1)
 call AddUnitToStock(u,'E00C',0,1)
 call AddUnitToStock(u,'U000',0,1)
 call AddUnitToStock(u,'U00B',0,1)
-set HeroStocksArray[3]=CreateUnitAtLoc(p,'n02M',GetRectCenter(wr),Ec)
+set HeroStocksArray[3]=CreateUnitAtLoc(p,'n02M',GetRectCenter(gg_rct_wr),Ec)
 set u=HeroStocksArray[3]
 call AddUnitToStock(u,'O001',0,1)
 call AddUnitToStock(u,'O00B',0,1)
@@ -7117,7 +7275,7 @@ call AddUnitToStock(u,'H000',0,1)
 call AddUnitToStock(u,'E000',0,1)
 call AddUnitToStock(u,'N01I',0,1)
 call AddUnitToStock(u,'H003',0,1)
-set HeroStocksArray[4]=CreateUnitAtLoc(p,'n003',GetRectCenter(Yr),Ec)
+set HeroStocksArray[4]=CreateUnitAtLoc(p,'n003',GetRectCenter(gg_rct_Yr),Ec)
 set u=HeroStocksArray[4]
 call AddUnitToStock(u,'E00D',0,1)
 call AddUnitToStock(u,'E004',0,1)
@@ -7127,7 +7285,7 @@ call AddUnitToStock(u,'E006',0,1)
 call AddUnitToStock(u,'N02G',0,1)
 call AddUnitToStock(u,'E00L',0,1)
 call AddUnitToStock(u,'H00U',0,1)
-set HeroStocksArray[5]=CreateUnitAtLoc(p,'n00S',GetRectCenter(Wr),Ec)
+set HeroStocksArray[5]=CreateUnitAtLoc(p,'n00S',GetRectCenter(gg_rct_Wr),Ec)
 set u=HeroStocksArray[5]
 call AddUnitToStock(u,'E005',0,1)
 call AddUnitToStock(u,'E00B',0,1)
@@ -7138,7 +7296,7 @@ call AddUnitToStock(u,'U002',0,1)
 call AddUnitToStock(u,'H00A',0,1)
 call AddUnitToStock(u,'U00A',0,1)
 call AddUnitToStock(u,'Hblm',0,1)
-set HeroStocksArray[6]=CreateUnitAtLoc(p,'n007',GetRectCenter(zr),Ec)
+set HeroStocksArray[6]=CreateUnitAtLoc(p,'n007',GetRectCenter(gg_rct_zr),Ec)
 set u=HeroStocksArray[6]
 call AddUnitToStock(u,'H001',0,1)
 call AddUnitToStock(u,'E002',0,1)
@@ -7147,15 +7305,15 @@ call AddUnitToStock(u,'O002',0,1)
 call AddUnitToStock(u,'H007',0,1)
 call AddUnitToStock(u,'E00F',0,1)
 call AddUnitToStock(u,'O00G',0,1)
-set px[1]=CreateUnitAtLoc(p,'n004',GetRectCenter(Zr),Ec)
-set px[2]=CreateUnitAtLoc(p,'n00C',GetRectCenter(vi),Ec)
-set px[3]=CreateUnitAtLoc(p,'n005',GetRectCenter(ei),Ec)
-set px[4]=CreateUnitAtLoc(p,'n006',GetRectCenter(xi),Ec)
-set px[5]=CreateUnitAtLoc(p,'n01J',GetRectCenter(oi),Ec)
-set px[6]=CreateUnitAtLoc(p,'n02F',GetRectCenter(ni),Ec)
-set px[7]=CreateUnitAtLoc(p,'n014',GetRectCenter(ri),Ec)
-set px[8]=CreateUnitAtLoc(p,'n001',GetRectCenter(ii),Ec)
-set px[9]=CreateUnitAtLoc(p,'n00A',GetRectCenter(ai),Ec)
+set px[1]=CreateUnitAtLoc(p,'n004',GetRectCenter(gg_rct_Zr),Ec)
+set px[2]=CreateUnitAtLoc(p,'n00C',GetRectCenter(gg_rct_vi),Ec)
+set px[3]=CreateUnitAtLoc(p,'n005',GetRectCenter(gg_rct_ei),Ec)
+set px[4]=CreateUnitAtLoc(p,'n006',GetRectCenter(gg_rct_xi),Ec)
+set px[5]=CreateUnitAtLoc(p,'n01J',GetRectCenter(gg_rct_oi),Ec)
+set px[6]=CreateUnitAtLoc(p,'n02F',GetRectCenter(gg_rct_ni),Ec)
+set px[7]=CreateUnitAtLoc(p,'n014',GetRectCenter(gg_rct_ri),Ec)
+set px[8]=CreateUnitAtLoc(p,'n001',GetRectCenter(gg_rct_ii),Ec)
+set px[9]=CreateUnitAtLoc(p,'n00A',GetRectCenter(gg_rct_ai),Ec)
 set GI=true
 call SetUnitAnimation(px[1],"work")
 call SetUnitAnimation(px[2],"work")
@@ -7187,14 +7345,14 @@ call SetTimeOfDayScale(1.25)
 call SetDestructableInvulnerable(ho,true)
 call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,true,Player(11))
 call SetPlayerMaxHeroesAllowed(8,Player(15))
-set T[1]=GetRectCenter(Po)
-set T[2]=GetRectCenter(qo)
-set T[3]=GetRectCenter(Qo)
-set T[4]=GetRectCenter(so)
-set T[5]=GetRectCenter(So)
-set T[6]=GetRectCenter(to)
-set T[7]=GetRectCenter(To)
-set T[8]=GetRectCenter(uo)
+set T[1]=GetRectCenter(gg_rct_RedPlayerBox)
+set T[2]=GetRectCenter(gg_rct_BluePlayerBox)
+set T[3]=GetRectCenter(gg_rct_TealPlayerBox)
+set T[4]=GetRectCenter(gg_rct_PurplePlayerBox)
+set T[5]=GetRectCenter(gg_rct_YellowPlayerBox)
+set T[6]=GetRectCenter(gg_rct_OrangePlayerBox)
+set T[7]=GetRectCenter(gg_rct_GreenPlayerBox)
+set T[8]=GetRectCenter(gg_rct_PinkPlayerBox)
 loop
 exitwhen In>8
 if GetPlayerSlotState(Player(-1+(In)))==PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(-1+(In)))==MAP_CONTROL_USER then
@@ -7206,9 +7364,10 @@ set Zv[Kc]=GetPlayerName(Player(-1+(In)))
 set Eo[Kc]=CreateUnitAtLoc(Player(In-1),'n002',T[Kc],bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((Eo[Kc])),StringHash("SuperData:Int"),(Kc))
 call CameraSetupApplyForPlayer(true,pa,Player(-1+(In)),0)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,ShopsAreaFogModifierRect)
-call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,TavernAndMinimalArenaAreaFogModifierRect)
-// call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,MinimalArenaAreaRect)
+
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,gg_rct_ShopsAreaFogModifierRect)
+call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,gg_rct_TavernAndMinimalArenaAreaFogModifierRect)
+// call CreateFogModifierRectBJ(true,Player(-1+(In)),FOG_OF_WAR_VISIBLE,gg_rct_MinimalArenaAreaRect)
 call SetPlayerStateBJ(Player(-1+(In)),PLAYER_STATE_RESOURCE_GOLD,50)
 call SetPlayerMaxHeroesAllowed(1,Player(-1+(In)))
 call ClearSelectionForPlayer(Player(-1+(In)))
@@ -7938,7 +8097,7 @@ function Cd takes nothing returns nothing
     set ic=1
     loop
     exitwhen ic>wN
-        call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[ic]),GetRectCenter(cr),0)
+        call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[ic]),GetRectCenter(gg_rct_MinimalArenaAreaRect),0)
         set ic=ic+1
     endloop
     set g=HA(bj_mapInitialPlayableArea)
@@ -8431,8 +8590,8 @@ local real randomScale
 local integer randomVariation
 local integer i = 0
 loop
-    set randomLocX = GetRandomReal(GetRectMinX(BigArenaAreaRect)+300,GetRectMaxX(BigArenaAreaRect)-300)
-    set randomLocY = GetRandomReal(GetRectMinY(BigArenaAreaRect)+300,GetRectMaxY(BigArenaAreaRect)-300)
+    set randomLocX = GetRandomReal(GetRectMinX(gg_rct_BigArenaAreaRect)+300,GetRectMaxX(gg_rct_BigArenaAreaRect)-300)
+    set randomLocY = GetRandomReal(GetRectMinY(gg_rct_BigArenaAreaRect)+300,GetRectMaxY(gg_rct_BigArenaAreaRect)-300)
     set randomFacing = GetRandomReal(0,360)
     set randomScale = GetRandomReal(0.7,1.5)
     set randomVariation = GetRandomInt(0,9)
@@ -8488,7 +8647,7 @@ call UnitAddAbility(ND,'A0I1')
 call RemoveUnit(ND)
 loop
 exitwhen In>8
-// set Px[In]=CreateFogModifierRect(Player(In-1),FOG_OF_WAR_MASKED,BigArenaAreaRect,true,false)
+// set Px[In]=CreateFogModifierRect(Player(In-1),FOG_OF_WAR_MASKED,gg_rct_BigArenaAreaRect,true,false)
 // call FogModifierStart(Px[In])
 set In=In+1
 endloop
@@ -8669,7 +8828,7 @@ call ForceAddPlayer(tv,ae[In])
 // Shit Behind makes wall not visible, so we just ignore dat shit.
 // call FogModifierStop(Px[In])
 
-call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,BigArenaAreaRect)
+call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,gg_rct_BigArenaAreaRect)
 set In=In+1
 endloop
 set hv='O006'
@@ -8740,27 +8899,27 @@ local unit u2
 local group g=CreateGroup()
 call SetPlayerName(Player(8),"Клан Света")
 call SetPlayerName(Player(10),"Клан Тьмы")
-set u1=CreateUnitAtLoc(Player(8),'h00H',GetRectCenter(Pr),bj_UNIT_FACING)
-set u2=CreateUnitAtLoc(Player(8),'h00H',GetRectCenter(qr),bj_UNIT_FACING)
+set u1=CreateUnitAtLoc(Player(8),'h00H',GetRectCenter(gg_rct_Pr),bj_UNIT_FACING)
+set u2=CreateUnitAtLoc(Player(8),'h00H',GetRectCenter(gg_rct_qr),bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int"),(9))
 call SaveInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int"),(9))
 call UnitAddAbility(u2,'A09Z')
 call UnitAddAbility(u2,'ANre')
-set u1=CreateUnitAtLoc(Player(10),'u006',GetRectCenter(Mr),bj_UNIT_FACING)
-set u2=CreateUnitAtLoc(Player(10),'u006',GetRectCenter(pr),bj_UNIT_FACING)
+set u1=CreateUnitAtLoc(Player(10),'u006',GetRectCenter(gg_rct_Mr),bj_UNIT_FACING)
+set u2=CreateUnitAtLoc(Player(10),'u006',GetRectCenter(gg_rct_pr),bj_UNIT_FACING)
 call SaveInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int"),(9))
 call SaveInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int"),(9))
 call UnitAddAbility(u1,'A09Z')
 call UnitAddAbility(u1,'ANre')
-set Xe[1]=hr
-set Xe[2]=Hr
-set Xe[3]=jr
-set Xe[4]=Jr
-set Xe[5]=kr
-set Xe[6]=Kr
-set Xe[7]=lr
-set Xe[8]=Lr
-set Xe[9]=mr
+set Xe[1]=gg_rct_hr
+set Xe[2]=gg_rct_Hr
+set Xe[3]=gg_rct_jr
+set Xe[4]=gg_rct_Jr
+set Xe[5]=gg_rct_kr
+set Xe[6]=gg_rct_Kr
+set Xe[7]=gg_rct_lr
+set Xe[8]=gg_rct_Lr
+set Xe[9]=gg_rct_mr
 set g=pA(Player(12))
 call ForGroup(g,function gD)
 call DestroyGroup(g)
@@ -8803,7 +8962,7 @@ return Xv==false
 endfunction
 
 function KD takes nothing returns nothing
-    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(Er),GetRectMaxX(Er)),GetRandomReal(GetRectMinY(Er),GetRectMaxY(Er)))
+    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(gg_rct_Er),GetRectMaxX(gg_rct_Er)),GetRandomReal(GetRectMinY(gg_rct_Er),GetRectMaxY(gg_rct_Er)))
 endfunction
 
 function LD takes nothing returns nothing
@@ -8833,7 +8992,7 @@ call EnableWeatherEffect(Lv,false)
 call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 endfunction
 function TD takes nothing returns nothing
-set Lv=AddWeatherEffect(BigArenaAreaRect,'RAlr')
+set Lv=AddWeatherEffect(gg_rct_BigArenaAreaRect,'RAlr')
 call EnableWeatherEffect(Lv,true)
 call SetSkyModel("Environment\\Sky\\FelwoodSky\\FelwoodSky.mdl")
 endfunction
@@ -9174,13 +9333,13 @@ local integer wN=A
 local integer ss=ZB(TB)
 call RemoveUnitFromStock(gf,GetUnitTypeId(TB))
 if gf==HeroStocksArray[6]then
-call SetUnitPositionLoc(TB,GetRectCenter(ur))
+call SetUnitPositionLoc(TB,GetRectCenter(gg_rct_ur))
 endif
 if gf==HeroStocksArray[4]then
-call SetUnitPositionLoc(TB,GetRectCenter(tr))
+call SetUnitPositionLoc(TB,GetRectCenter(gg_rct_tr))
 endif
 if gf==HeroStocksArray[2]then
-call SetUnitPositionLoc(TB,GetRectCenter(Tr))
+call SetUnitPositionLoc(TB,GetRectCenter(gg_rct_Tr))
 endif
 call SaveUnitHandle(Ax,StringHash("HeroInit"),0,TB)
 call ExecuteFunc("HeroInit"+I2S(GetUnitTypeId(TB)))
@@ -9222,11 +9381,11 @@ local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:In
 set HeroInGameAndAliveARRAY[Bc]=true
 call GroupRemoveUnit(fo,u)
 call SelectUnitForPlayerSingle(u,p)
-if RectContainsUnit(Ii,u)then
-call SetUnitPositionLoc(u,GetRectCenter(Ri))
-call PanCameraToTimedLocForPlayer(p,GetRectCenter(Ri),0)
+if RectContainsUnit(gg_rct_Ii,u)then
+call SetUnitPositionLoc(u,GetRectCenter(gg_rct_Ri))
+call PanCameraToTimedLocForPlayer(p,GetRectCenter(gg_rct_Ri),0)
 endif
-if RectContainsUnit(Uo,u)then
+if RectContainsUnit(gg_rct_Uo,u)then
 call SetUnitMoveSpeed(u,500.)
 endif
 set u=null
@@ -10866,7 +11025,7 @@ local unit f
 local unit c
 local effect e
 local effect array e2
-if In>vB or LoadBoolean(Ax,1,StringHash("pr"))then
+if In>vB or LoadBoolean(Ax,1,StringHash("gg_rct_pr"))then
 set e2[1]=LoadEffectHandle(Ax,6,dN)
 set e2[2]=LoadEffectHandle(Ax,7,dN)
 set e2[3]=LoadEffectHandle(Ax,8,dN)
@@ -11416,7 +11575,7 @@ function ih takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local unit u=LoadUnitHandle(Ax,1,dN)
-if RectContainsUnit(Uo,u)then
+if RectContainsUnit(gg_rct_Uo,u)then
 call SetUnitMoveSpeed(u,500)
 endif
 call EnableTrigger(nV)
@@ -11468,7 +11627,7 @@ function Vh takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local unit u=LoadUnitHandle(Ax,1,dN)
-if RectContainsUnit(Uo,u)then
+if RectContainsUnit(gg_rct_Uo,u)then
 call SetUnitMoveSpeed(u,500)
 endif
 call DestroyTimer(t)
@@ -17141,7 +17300,7 @@ return Xv==false
 endfunction
 
 function tm takes nothing returns nothing
-    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(Sr),GetRectMaxX(Sr)),GetRandomReal(GetRectMinY(Sr),GetRectMaxY(Sr)))
+    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(gg_rct_Sr),GetRectMaxX(gg_rct_Sr)),GetRandomReal(GetRectMinY(gg_rct_Sr),GetRectMaxY(gg_rct_Sr)))
 endfunction
 
 function um takes nothing returns nothing
@@ -17177,7 +17336,7 @@ endif
 if CurrentWave>=19 then
 call EnableTrigger(GO)
 endif
-call GroupEnumUnitsInRect(g,Uo,null)
+call GroupEnumUnitsInRect(g,gg_rct_Uo,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -17266,9 +17425,9 @@ call EB()
 call EnableTrigger(nO)
 loop
 exitwhen In>wN
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect))
+call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
 call SetUnitFacing(F[In],90)
-call PanCameraToTimedLocForPlayer(ae[In],GetRectCenter(cr),0)
+call PanCameraToTimedLocForPlayer(ae[In],GetRectCenter(gg_rct_MinimalArenaAreaRect),0)
 call SelectUnitForPlayerSingle(F[In],ae[In])
 set x=GetUnitX(F[In])
 set y=-3325.
@@ -17281,14 +17440,14 @@ call Mc()
 if b then
 call EnableTrigger(dO)
 call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,false,Player(11))
-set Le=CreateUnitAtLoc(Player(11),hv,GetRectCenter(MinimalArenaTopUnitRect),270)
+set Le=CreateUnitAtLoc(Player(11),hv,GetRectCenter(gg_rct_MinimalArenaTopUnitRect),270)
 call SetHeroLevel(Le,$FA,false)
 call SetUnitManaPercentBJ(Le,'d')
 call SaveInteger(HashData,GetHandleId((Le)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Le,true)
 else
 call EnableTrigger(CO)
-set Me=CreateUnitAtLoc(Player(11),creep_ids[CurrentWave],GetRectCenter(MinimalArenaTopUnitRect),270)
+set Me=CreateUnitAtLoc(Player(11),creep_ids[CurrentWave],GetRectCenter(gg_rct_MinimalArenaTopUnitRect),270)
 call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
 call PauseUnit(Me,true)
 call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
@@ -17313,7 +17472,7 @@ set t5=null
 endfunction
 function xM takes nothing returns nothing
 local unit u=GetEnteringUnit()
-local location l=GetRectCenter(MinimalArenaAreaRect)
+local location l=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 call SetUnitPositionLoc(u,l)
 call RemoveLocation(l)
 set u=null
@@ -17386,7 +17545,7 @@ set t=null
 endfunction
 function RM takes nothing returns nothing
 local unit f=GetDyingUnit()
-local location L=GetRandomLocInRect(Sr)
+local location L=GetRandomLocInRect(gg_rct_Sr)
 if IsUnitInGroup(f,co)then
 call GroupRemoveUnit(co,f)
 endif
@@ -17461,7 +17620,7 @@ function AcquireTest takes nothing returns nothing
     local unit u=GetEnumUnit()
     if u!=null then
         call SetUnitAcquireRange(u, 10000)
-        call IssuePointOrderByIdLoc(u,$D000F, GetRectCenter(BigArenaAreaRect))
+        call IssuePointOrderByIdLoc(u,$D000F, GetRectCenter(gg_rct_BigArenaAreaRect))
     endif
 endfunction
 function DestroyBitchUnit takes nothing returns nothing
@@ -17505,7 +17664,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     
     set Tx=nC
 
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 270)   
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 270)   
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     
@@ -17516,12 +17675,12 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 270)
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 0)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 270)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 0)
         set In=In+1
     endloop
     
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(BigArenaAreaRect), 0)
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 0)
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     // WTF Duplicate?
@@ -17548,7 +17707,7 @@ function PM takes nothing returns nothing
     local boolexpr b=Condition(function pM)
     local timer t=CreateTimer()
     set bj_wantDestroyGroup=true
-    if CountUnitsInGroup(GA(BigArenaAreaRect,b))==0 and Xv==false then
+    if CountUnitsInGroup(GA(gg_rct_BigArenaAreaRect,b))==0 and Xv==false then
         set qv=false
         call DisableTrigger(cO)
         call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
@@ -17608,14 +17767,14 @@ call kc()
 endfunction
 function wM takes nothing returns nothing
 local timer t=GetExpiredTimer()
-call TransmissionFromUnitTypeWithNameBJ(bj_FORCE_ALL_PLAYERS,Player(11),'O006',"Орн",GetRectCenter(ai),null,"Вы погубили всех моих зверюшек...
+call TransmissionFromUnitTypeWithNameBJ(bj_FORCE_ALL_PLAYERS,Player(11),'O006',"Орн",GetRectCenter(gg_rct_ai),null,"Вы погубили всех моих зверюшек...
 Теперь я лично займусь вами, гладиаторы.",1,8.,false)
 call DestroyTimer(t)
 set t=null
 endfunction
 function WM takes nothing returns nothing
 local timer t=GetExpiredTimer()
-call TransmissionFromUnitTypeWithNameBJ(bj_FORCE_ALL_PLAYERS,Player(11),'O006',"Орн",GetRectCenter(ai),null,"Ну чтож... Вижу вы набрались сил...
+call TransmissionFromUnitTypeWithNameBJ(bj_FORCE_ALL_PLAYERS,Player(11),'O006',"Орн",GetRectCenter(gg_rct_ai),null,"Ну чтож... Вижу вы набрались сил...
 Теперь все будет будет не так просто...",1,8.,false)
 call DestroyTimer(t)
 set t=null
@@ -17866,7 +18025,7 @@ local integer i1=LoadInteger(Ax,2,dN)
 local integer i2=LoadInteger(Ax,3,dN)
 local integer In=1
 local integer wN=A
-local location L=GetRectCenter(cr)
+local location L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 local string bC
 loop
 exitwhen In>wN
@@ -18025,9 +18184,9 @@ set pD=GetOwningPlayer(uD)
 set pW=GetOwningPlayer(Dp)
 call DisableTrigger(hO)
 call DisableTrigger(cR)
-call SetUnitPositionLoc(uD,GetRandomLocInRect(ar))
+call SetUnitPositionLoc(uD,GetRandomLocInRect(gg_rct_HeroReSpawn))
 
-call SetUnitPositionLoc(Dp,GetRandomLocInRect(ar))
+call SetUnitPositionLoc(Dp,GetRandomLocInRect(gg_rct_HeroReSpawn))
 
 call SetWidgetLife(Dp,GetUnitState(Dp,UNIT_STATE_MAX_LIFE))
 call UnitRemoveBuffs(uD,false,true)
@@ -18135,7 +18294,7 @@ call TimerStart(fN,.5,false,function Bp)
 set fN=null
 loop
 exitwhen In>wN
-call SetUnitPositionLoc(F[In], GetRandomLocInRect(ar))
+call SetUnitPositionLoc(F[In], GetRandomLocInRect(gg_rct_HeroReSpawn))
 call zB(F[In])
 set In=In+1
 endloop
@@ -18564,9 +18723,9 @@ set l=GetUnitLoc(F[In])
 call ReviveHeroLoc(F[In],l,false)
 call RemoveLocation(l)
 if IsPlayerInForce(ae[In],tv)then
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(Gr))
+call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_Gr))
 else
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(Fr))
+call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_Fr))
 endif
 call UnitRemoveBuffsBJ(2,F[In])
 call SelectUnitForPlayerSingle(F[In],ae[In])
@@ -18574,7 +18733,7 @@ call PanCameraToTimedLocForPlayer(ae[In],GetUnitLoc(F[In]),0)
 call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",GetUnitLoc(F[In])))
 set In=In+1
 endloop
-set g=HA(Uo)
+set g=HA(gg_rct_Uo)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -18621,7 +18780,7 @@ set In=1
 loop
 exitwhen In>wN
 call UnitRemoveBuffsBJ(1,F[In])
-call SetUnitPositionLocFacingBJ(F[In],GetRandomLocInRect(ar),bj_UNIT_FACING)
+call SetUnitPositionLocFacingBJ(F[In],GetRandomLocInRect(gg_rct_HeroReSpawn),bj_UNIT_FACING)
 call SelectUnitForPlayerSingle(F[In],ae[In])
 call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[In]),GetUnitLoc(F[In]),0)
 set In=In+1
@@ -18735,13 +18894,13 @@ local group g=CreateGroup()
 local integer n=0
 local integer n2=0
 local unit f
-call SaveBoolean(Ax,1,StringHash("pr"),false)
+call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),false)
 loop
 exitwhen In>vB
 call PauseUnit(F[In],false)
 set In=In+1
 endloop
-call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,null)
+call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -18750,7 +18909,7 @@ set n=n+1
 endif
 call GroupRemoveUnit(g,f)
 endloop
-call GroupEnumUnitsInRect(g,MinimalArenaAreaRect,null)
+call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -18793,10 +18952,10 @@ set rv=0
 loop
 exitwhen In>vB
 if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
-    call SetUnitPositionLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect))
+    call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
     call SetUnitFacing(F[In],90.)
 else
-    call ReviveHeroLoc(F[In],GetRandomLocInRect(MinimalArenaBottomUnitRect),false)
+    call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect),false)
     call SetUnitFacingTimed(F[In],90.,0)
 
 endif
@@ -18807,11 +18966,11 @@ set vB=A
 loop
 exitwhen In>vB
 if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
-    call SetUnitPositionLoc(F[In],GetRandomLocInRect(Qr))
+    call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_Qr))
     call SetUnitFacing(F[In],270.)
 
 else
-    call ReviveHeroLoc(F[In],GetRandomLocInRect(Qr),false)
+    call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_Qr),false)
     call SetUnitFacingTimed(F[In],270.,0)
 endif
 set In=In+1
@@ -18820,7 +18979,7 @@ set In=1
 set vB=A
 loop
 exitwhen In>vB
-set L=GetRectCenter(cr)
+set L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 if GetLocalPlayer()==GetOwningPlayer(F[In])then
 call PanCameraToTimed(GetLocationX(L),GetLocationY(L),0)
 endif
@@ -18841,7 +19000,7 @@ exitwhen In>7
 call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00Победители получат 200 золотых монет и 15 дерева.|r")
 set In=In+1
 endloop
-call SaveBoolean(Ax,1,StringHash("pr"),true)
+call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),true)
 set In=0
 loop
 exitwhen In>7
@@ -18893,7 +19052,7 @@ loop
 exitwhen t>wN
 call UnitRemoveBuffsBJ(1,F[t])
 call UnitResetCooldown(F[t])
-call SetUnitPositionLoc(F[t],GetRandomLocInRect(ar))
+call SetUnitPositionLoc(F[t],GetRandomLocInRect(gg_rct_HeroReSpawn))
 set t=t+1
 endloop
 call EnableTrigger(cR)
@@ -18915,9 +19074,9 @@ endloop
 set g=HA(bj_mapInitialPlayableArea)
 call ForGroup(g,function GP)
 call GroupClear(g)
-call PanCameraToTimed(GetLocationX(GetRectCenter(ar)),GetLocationY(GetRectCenter(ar)),0)
+call PanCameraToTimed(GetLocationX(GetRectCenter(gg_rct_HeroReSpawn)),GetLocationY(GetRectCenter(gg_rct_HeroReSpawn)),0)
 call TriggerExecute(PrepareBeforeRoundTrigger)
-set g=HA(MinimalArenaAreaRect)
+set g=HA(gg_rct_MinimalArenaAreaRect)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -18983,17 +19142,17 @@ local timer t=CreateTimer()
 call DisableTrigger(TO)
 loop
 exitwhen In>wN
-call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[In]),GetRectCenter(ar),0)
+call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[In]),GetRectCenter(gg_rct_HeroReSpawn),0)
 call UnitRemoveBuffsBJ(1,F[In])
 call UnitResetCooldown(F[In])
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(ar))
+call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_HeroReSpawn))
 set In=In+1
 endloop
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Ничья. Никто не получит награды.")
 set g=HA(bj_mapInitialPlayableArea)
 call ForGroup(g,function lP)
 call ConditionalTriggerExecute(PrepareBeforeRoundTrigger)
-set g=GA(MinimalArenaAreaRect,Condition(function LP))
+set g=GA(gg_rct_MinimalArenaAreaRect,Condition(function LP))
 call ForGroup(g,function mP)
 call DestroyGroup(g)
 set jv=false
@@ -19284,11 +19443,11 @@ local location l
 call DestroyTimerDialog(Pv[aq])
 if qv and uv[GetPlayerId(pd)+1]==false then
 if IsPlayerInForce(pd,tv)then
-set l=GetRandomLocInRect(Gr)
+set l=GetRandomLocInRect(gg_rct_Gr)
 call ReviveHeroLoc(u,l,false)
 call RemoveLocation(l)
 else
-set l=GetRandomLocInRect(Fr)
+set l=GetRandomLocInRect(gg_rct_Fr)
 call ReviveHeroLoc(u,l,false)
 call RemoveLocation(l)
 endif
@@ -19354,7 +19513,7 @@ local integer MB=CurrentWave
 local integer In=1
 local location l
 // call BJDebugMsg("This is -b mode")
-set l=GetRandomLocInRect(jr)
+set l=GetRandomLocInRect(gg_rct_jr)
 set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
@@ -19362,7 +19521,7 @@ endif
 call RemoveLocation(l)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
 call GroupAddUnit(Ee[3],f)
-set l=GetRandomLocInRect(lr)
+set l=GetRandomLocInRect(gg_rct_lr)
 set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
@@ -19370,7 +19529,7 @@ endif
 call RemoveLocation(l)
 call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
 call GroupAddUnit(Ee[7],f)
-set l=GetRandomLocInRect(Lr)
+set l=GetRandomLocInRect(gg_rct_Lr)
 set f=CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
 if MB==9 then
 call vD(f)
@@ -19381,42 +19540,42 @@ call GroupAddUnit(Ee[8],f)
 loop
 exitwhen In>4
 if In<=2 then
-set l=GetRandomLocInRect(jr)
+set l=GetRandomLocInRect(gg_rct_jr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[3],f)
-set l=GetRandomLocInRect(lr)
+set l=GetRandomLocInRect(gg_rct_lr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[7],f)
-set l=GetRandomLocInRect(Hr)
+set l=GetRandomLocInRect(gg_rct_Hr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[2],f)
 endif
 if In<=3 then
-set l=GetRandomLocInRect(hr)
+set l=GetRandomLocInRect(gg_rct_hr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[1],f)
-set l=GetRandomLocInRect(kr)
+set l=GetRandomLocInRect(gg_rct_kr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[5],f)
-set l=GetRandomLocInRect(Jr)
+set l=GetRandomLocInRect(gg_rct_Jr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[4],f)
-set l=GetRandomLocInRect(Kr)
+set l=GetRandomLocInRect(gg_rct_Kr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[6],f)
-set l=GetRandomLocInRect(Lr)
+set l=GetRandomLocInRect(gg_rct_Lr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[8],f)
 endif
-set l=GetRandomLocInRect(mr)
+set l=GetRandomLocInRect(gg_rct_mr)
 set f=CreateUnitAtLoc(Player(11),creep_ids[MB],l,GetRandomReal(0,360))
 call RemoveLocation(l)
 call GroupAddUnit(Ee[9],f)
@@ -19912,22 +20071,22 @@ local real x=GetUnitX(u)
 local real y=GetUnitY(u)
 local location L
 if iv or jv then
-if((GetRectMinX(BigArenaAreaRect)<=x)and(x<=GetRectMaxX(BigArenaAreaRect))and(GetRectMinY(BigArenaAreaRect)<=y)and(y<=GetRectMaxY(BigArenaAreaRect)))or((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))then
-set L=GetRectCenter(MinimalArenaAreaRect)
+if((GetRectMinX(gg_rct_BigArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_BigArenaAreaRect))and(GetRectMinY(gg_rct_BigArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_BigArenaAreaRect)))or((GetRectMinX(gg_rct_Uo)<=x)and(x<=GetRectMaxX(gg_rct_Uo))and(GetRectMinY(gg_rct_Uo)<=y)and(y<=GetRectMaxY(gg_rct_Uo)))then
+set L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if((no or Wx)and(qv==false))then
-if((GetRectMinX(BigArenaAreaRect)<=x)and(x<=GetRectMaxX(BigArenaAreaRect))and(GetRectMinY(BigArenaAreaRect)<=y)and(y<=GetRectMaxY(BigArenaAreaRect)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
-set L=GetRectCenter(ar)
+if((GetRectMinX(gg_rct_BigArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_BigArenaAreaRect))and(GetRectMinY(gg_rct_BigArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_BigArenaAreaRect)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
+set L=GetRectCenter(gg_rct_HeroReSpawn)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if qv then
-if((GetRectMinX(Uo)<=x)and(x<=GetRectMaxX(Uo))and(GetRectMinY(Uo)<=y)and(y<=GetRectMaxY(Uo)))or((GetRectMinX(MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(MinimalArenaAreaRect))and(GetRectMinY(MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(MinimalArenaAreaRect)))then
-set L=GetRectCenter(BigArenaAreaRect)
+if((GetRectMinX(gg_rct_Uo)<=x)and(x<=GetRectMaxX(gg_rct_Uo))and(GetRectMinY(gg_rct_Uo)<=y)and(y<=GetRectMaxY(gg_rct_Uo)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
+set L=GetRectCenter(gg_rct_BigArenaAreaRect)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
@@ -19997,7 +20156,7 @@ function hQ takes nothing returns nothing
 call DisplayTimedTextToPlayer(GetOwningPlayer(GetSpellAbilityUnit()),0,0,5.,"Посох Иллюзий не действует на мегабоссов.")
 call IssueImmediateOrderById(GetSpellAbilityUnit(),$D0004)
 endfunction
-function DestroyBitchUnit_2 takes nothing returns nothing
+function jQ takes nothing returns nothing
 local unit u=GetEnteringUnit()
 if GetUnitAbilityLevel(u,'A0K4')==0 and FN(u)and GetUnitTypeId(u)!='u001' and GetUnitTypeId(u)!='h00R' and GetUnitTypeId(u)!='h012' and GetUnitTypeId(u)!='u003' and GetUnitTypeId(u)!='u004' and GetUnitTypeId(u)!='n002' and IsUnitType(u,UNIT_TYPE_HERO)==false then
 call KillUnit(u)
@@ -20006,7 +20165,7 @@ call DisplayTextToPlayer(GetOwningPlayer(u),0,0,"|Cffff0000Ваш юнит не 
 endif
 set u=null
 endfunction
-function DestroyBitchUnit_3 takes nothing returns nothing
+function kQ takes nothing returns nothing
 local unit u=GetEnteringUnit()
 if GetUnitAbilityLevel(u,'A0K4')==0 and FN(u)and GetUnitTypeId(u)!='u001' and GetUnitTypeId(u)!='u003' and GetUnitTypeId(u)!='u004' and GetUnitTypeId(u)!='n002' and IsUnitType(u,UNIT_TYPE_HERO)==false then
 if IsUnitType(u,UNIT_TYPE_FLYING)then
@@ -20042,9 +20201,9 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 if(IsUnitType(f,UNIT_TYPE_HERO)==false and GetUnitTypeId(f)!='n002')or(GetUnitTypeId(f)=='E00E' or GetUnitTypeId(f)=='E00J')then
-if IsUnitInRectFunction(BigArenaAreaRect,GetUnitX(f),GetUnitY(f))==false then
+if IsUnitInRectFunction(gg_rct_BigArenaAreaRect,GetUnitX(f),GetUnitY(f))==false then
 
-call SetUnitPositionLoc(f,GetRandomLocInRect(Dr))
+call SetUnitPositionLoc(f,GetRandomLocInRect(gg_rct_Dr))
 
 set mM=GetOwningPlayer(f)
 if(GetLocalPlayer()==mM)then
@@ -20055,7 +20214,7 @@ endif
 call GroupRemoveUnit(g,f)
 endloop
 call DestroyGroup(g)
-set T=GetRandomLocInRect(Dr)
+set T=GetRandomLocInRect(gg_rct_Dr)
 call SetUnitPositionLoc(u,T)
 if(GetLocalPlayer()==p)then
 call PanCameraToTimed(GetLocationX(T),GetLocationY(T),.0)
@@ -20103,7 +20262,7 @@ function PQ takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
-if RectContainsUnit(Uo,u)then
+if RectContainsUnit(gg_rct_Uo,u)then
 call SaveUnitHandle(Ax,1,dN,u)
 call TimerStart(t,.1,false,function pQ)
 endif
@@ -20342,15 +20501,15 @@ if qv then
 call SelectUnitForPlayerSingle(F[bs],sw)
 call SelectUnitForPlayerSingle(F[Xq],de[Os])
 if IsPlayerInForce(sw,tv)then
-call PanCameraToTimedLocForPlayer(sw,GetRectCenter(Gr),0)
-call PanCameraToTimedLocForPlayer(de[Os],GetRectCenter(Fr),0)
-call SetUnitPositionLoc(F[bs],GetRandomLocInRect(Gr))
-call SetUnitPositionLoc(F[Xq],GetRandomLocInRect(Fr))
+call PanCameraToTimedLocForPlayer(sw,GetRectCenter(gg_rct_Gr),0)
+call PanCameraToTimedLocForPlayer(de[Os],GetRectCenter(gg_rct_Fr),0)
+call SetUnitPositionLoc(F[bs],GetRandomLocInRect(gg_rct_Gr))
+call SetUnitPositionLoc(F[Xq],GetRandomLocInRect(gg_rct_Fr))
 else
-call PanCameraToTimedLocForPlayer(sw,GetRectCenter(Fr),0)
-call PanCameraToTimedLocForPlayer(de[Os],GetRectCenter(Gr),0)
-call SetUnitPositionLoc(F[bs],GetRandomLocInRect(Fr))
-call SetUnitPositionLoc(F[Xq],GetRandomLocInRect(Gr))
+call PanCameraToTimedLocForPlayer(sw,GetRectCenter(gg_rct_Fr),0)
+call PanCameraToTimedLocForPlayer(de[Os],GetRectCenter(gg_rct_Gr),0)
+call SetUnitPositionLoc(F[bs],GetRandomLocInRect(gg_rct_Fr))
+call SetUnitPositionLoc(F[Xq],GetRandomLocInRect(gg_rct_Gr))
 endif
 call SetForceAllianceStateBJ(tv,Tv,0)
 call SetForceAllianceStateBJ(Tv,tv,0)
@@ -20401,7 +20560,7 @@ set F[Xq]=F[bs]
 set F[bs]=c
 set l1=GetUnitLoc(u1)
 set l2=GetUnitLoc(u2)
-call SetUnitPositionLoc(u1,GetRectCenter(sr))
+call SetUnitPositionLoc(u1,GetRectCenter(gg_rct_sr))
 call SetUnitPositionLoc(u2,l1)
 call SetUnitPositionLoc(u1,l2)
 call RemoveLocation(l1)
@@ -22554,10 +22713,10 @@ set u=null
 endfunction
 function ArenaBoundary___Init takes nothing returns nothing
 local trigger trig=CreateTrigger()
-call TriggerRegisterEnterRectSimple(trig,gg_rct_ArenaBoundary)
+call TriggerRegisterEnterRectSimple(trig,gg_rct_MinimalArenaAreaRect)
 call TriggerAddAction(trig,function ArenaBoundary___ArenaBoundaryEnter)
 set trig=CreateTrigger()
-call TriggerRegisterLeaveRectSimple(trig,gg_rct_ArenaBoundary)
+call TriggerRegisterLeaveRectSimple(trig,gg_rct_MinimalArenaAreaRect)
 call TriggerAddAction(trig,function ArenaBoundary___ArenaBoundaryLeave)
 set trig=null
 endfunction
@@ -23164,165 +23323,6 @@ call InitTrig_Unit_Indexer()
 call InitTrig_Damage_Engine_Config()
 call InitTrig_Damage_Engine()
 // Here must be call to main2, but Kira don't respect that way
-set Po=Rect(864.,-3168.,1056.,-2976.)
-set qo=Rect(672.,-3168.,864.,-2976.)
-set Qo=Rect(480.,-3168.,672.,-2976.)
-set so=Rect(288.,-3168.,480.,-2976.)
-set So=Rect(96.,-3168.,288.,-2976.)
-set to=Rect(-96.,-3168.,96.,-2976.)
-set To=Rect(-288.,-3168.,-96.,-2976.)
-set uo=Rect(-480.,-3168.,-288.,-2976.)
-set Uo=Rect(-960.,-3616.,3328.,-1376.)
-set BigArenaAreaRect=Rect(-3220.,-1270.,1670.,3168.)
-
-set BottomSpawnRect=Rect(-3264.,-64.,-2432.,896.)
-set TopSpawnRect=Rect(-1216.,2272.,-192.,2976.)
-
-set Yo=Rect(-2400.,-608.,-2272.,-480.)
-set zo=Rect(-1888.,-800.,-1760.,-672.)
-set Zo=Rect(-1696.,288.,-1568.,416.)
-set vr=Rect(-2208.,1888.,-2080.,2016.)
-set er=Rect(224.,-608.,352.,-480.)
-set rr=Rect(736.,1376.,864.,1504.)
-set MinimalArenaAreaRect=Rect(-2973.,-3475.,-990.,-1500.)
-set ar=Rect(96.,-2816.,800.,-2144.)
-
-// Bottom Player Rect on MinimalArena
-set MinimalArenaBottomUnitRect=Rect(-2473.,-3175.,-1490.,-2875.)
-// Top Player Rect on MinimalArena
-set MinimalArenaTopUnitRect=Rect(-2473.,-2100.,-1490.,-1800.)
-
-set Er=Rect(-2784.,-960.,1248.,2528.)
-set Xr=Rect(2336.,-224.,2400.,-160.)
-set Rr=Rect(2592.,-352.,2656.,-288.)
-set Ir=Rect(2080.,-480.,2144.,-416.)
-set Ar=Rect(2240.,-416.,2304.,-352.)
-// OLD FOG
-set Nr=Rect(1504.,-1120.,3296.,512.)
-// set Nr=Rect(1656.,-2182.,3687.,3195.)
-
-set ShopsAreaFogModifierRect=Rect(1535.,-3720.,3330.,-2170.)
-set TavernAndMinimalArenaAreaFogModifierRect=Rect(-3220.,-3720.,1670.,-1270.)
-
-set cr=Rect(-2144.,-2592.,-2112.,-2560.)
-set Cr=Rect(2496.,-544.,2560.,-480.)
-set dr=Rect(1984.,-672.,2048.,-608.)
-set Dr=Rect(-960.,672.,-608.,1088.)
-set DestroyBitchUnit_2_Rect=Rect(1440.,-1504.,3328.,3136.)
-set Fr=Rect(-2880.,1760.,-2464.,2368.)
-set Gr=Rect(608.,-960.,1184.,-384.)
-set hr=Rect(-832.,-1184.,-512.,-896.)
-set Hr=Rect(896.,800.,1216.,1088.)
-set jr=Rect(-480.,96.,-192.,352.)
-set Jr=Rect(-1792.,-416.,-1504.,-160.)
-set kr=Rect(-2624.,-1088.,-2464.,-928.)
-set Kr=Rect(-2912.,416.,-2656.,672.)
-set lr=Rect(-1632.,960.,-1312.,1312.)
-set Lr=Rect(32.,1792.,416.,2144.)
-set mr=Rect(-1216.,2272.,-864.,2656.)
-set Mr=Rect(-2880.,2432.,-2752.,2560.)
-set pr=Rect(-2880.,1504.,-2752.,1632.)
-set Pr=Rect(1120.,-256.,1216.,-160.)
-set qr=Rect(1120.,-1088.,1216.,-992.)
-set Qr=Rect(-2592.,-2304.,-1728.,-1952.)
-set sr=Rect(2304.,2048.,2432.,2176.)
-set Sr=Rect(-3008.,-3232.,-1376.,-1632.)
-set tr=Rect(2336.,-3200.,2432.,-3104.)
-set Tr=Rect(2720.,-3200.,2816.,-3104.)
-set ur=Rect(1952.,-3200.,2048.,-3104.)
-set Ur=Rect(2720.,-2784.,3040.,-2496.)
-set wr=Rect(2336.,-2784.,2656.,-2496.)
-set Wr=Rect(1952.,-2784.,2272.,-2496.)
-set yr=Rect(2720.,-3424.,3040.,-3136.)
-set Yr=Rect(2336.,-3424.,2656.,-3136.)
-set zr=Rect(1952.,-3424.,2272.,-3136.)
-set Zr=Rect(1088.,-2208.,1376.,-1952.)
-set vi=Rect(1088.,-1952.,1376.,-1664.)
-set ei=Rect(832.,-1952.,1120.,-1664.)
-set xi=Rect(576.,-1952.,864.,-1664.)
-set oi=Rect(320.,-1952.,608.,-1664.)
-set ri=Rect(-608.,-2592.,-320.,-2336.)
-set ii=Rect(-608.,-2816.,-320.,-2560.)
-set ai=Rect(288.,-2656.,640.,-2336.)
-set ni=Rect(64.,-1952.,352.,-1664.)
-set Vi=Rect(-608.,-2368.,-320.,-2112.)
-set DestroyBitchUnit_3_Rect_2=Rect(-3264.,-1472.,-832.,-1216.)
-set DestroyBitchUnit_3_Rect=Rect(64.,2752.,1440.,3008.)
-set Oi=Rect(-800.,-3008.,-768.,-2976.)
-set Ri=Rect(2432.,-3008.,2560.,-2912.)
-set Ii=Rect(1792.,-3616.,3168.,-2304.)
-set Ai=Rect(2464.,-3008.,2528.,-2976.)
-set Ni=Rect(-1216.,-3648.,-960.,-1440.)
-set bi=Rect(-3424.,-3648.,-1152.,-3392.)
-set Bi=Rect(-3424.,-1472.,-832.,-1216.)
-set ci=Rect(-3424.,-3424.,-3136.,-1440.)
-set Ci=Rect(-3424.,-1248.,-3008.,-192.)
-set di=Rect(-3424.,-224.,-3136.,-64.)
-set Di=Rect(-3424.,-96.,-3264.,64.)
-set fi=Rect(-960.,-2752.,-704.,-2112.)
-set Fi=Rect(-192.,-1472.,1504.,-1216.)
-set gi=Rect(-960.,-3616.,1216.,-3264.)
-set Gi=Rect(1184.,-3616.,1344.,-3392.)
-set hi=Rect(1312.,-3616.,3328.,-3520.)
-set Hi=Rect(3264.,-3616.,3328.,-2336.)
-set ji=Rect(1472.,-2368.,3328.,-1088.)
-set Ji=Rect(1344.,-1248.,1472.,3168.)
-set ki=Rect(-64.,2752.,1376.,3168.)
-set Ki=Rect(-192.,2880.,-32.,3168.)
-set li=Rect(-320.,3008.,-160.,3168.)
-set Li=Rect(-1248.,3008.,-1088.,3168.)
-set mi=Rect(-1376.,2880.,-1216.,3168.)
-set Mi=Rect(-3424.,2752.,-1344.,3168.)
-set pi=Rect(-3424.,1088.,-3008.,2784.)
-set Pi=Rect(-3424.,960.,-3136.,1120.)
-set qi=Rect(-3424.,832.,-3264.,992.)
-set Qi=Rect(-864.,-1504.,-160.,-1344.)
-set si=Rect(64.,2176.,1344.,2720.)
-set Si=Rect(448.,1920.,1344.,2240.)
-set Ti=Rect(576.,1792.,1344.,1952.)
-set ui=Rect(-2368.,2272.,-1472.,2688.)
-set Ui=Rect(-2432.,1472.,-2112.,1984.)
-set wi=Rect(-2912.,1120.,-2624.,1632.)
-set Wi=Rect(-3008.,832.,-2688.,1152.)
-set yi=Rect(-2112.,.0,-1760.,480.)
-set Yi=Rect(-1696.,128.,-1472.,448.)
-set zi=Rect(384.,640.,960.,896.)
-set Zi=Rect(832.,1280.,1152.,1536.)
-set va=Rect(1024.,1152.,1312.,1312.)
-set ea=Rect(864.,-96.,1120.,480.)
-set xa=Rect(192.,-224.,832.,96.)
-set oa=Rect(96.,-1184.,608.,-832.)
-set ra=Rect(224.,-672.,512.,-480.)
-set ia=Rect(-1664.,-1152.,-1280.,-896.)
-set aa=Rect(-2912.,-1088.,-2464.,-672.)
-set na=Rect(-2528.,-704.,-2240.,-512.)
-set Va=Rect(-2976.,-672.,-2624.,-288.)
-set Ea=Rect(-2816.,-352.,-2432.,-64.)
-set Xa=Rect(-2880.,2496.,-2336.,2688.)
-set Oa=Rect(-1184.,1024.,-928.,1472.)
-set Ra=Rect(-704.,992.,-320.,1536.)
-set Ia=Rect(-704.,256.,-352.,736.)
-set Aa=Rect(-1280.,224.,-896.,672.)
-set Na=Rect(640.,1664.,768.,1824.)
-set ba=Rect(1152.,1024.,1312.,1184.)
-set Ba=Rect(320.,512.,448.,672.)
-set ca=Rect(512.,1152.,640.,1408.)
-set Ca=Rect(448.,896.,640.,1152.)
-set da=Rect(576.,256.,736.,416.)
-set Da=Rect(768.,-224.,928.,-64.)
-set fa=Rect(960.,-288.,1088.,-96.)
-set Fa=Rect(1024.,-384.,1152.,-256.)
-set ga=Rect(992.,-608.,1152.,-448.)
-set Ga=Rect(-448.,640.,-320.,768.)
-set ha=Rect(-384.,960.,-256.,1088.)
-set Ha=Rect(-1312.,928.,-1184.,1312.)
-set ja=Rect(-1440.,1120.,-1280.,1280.)
-set Ja=Rect(-1504.,2432.,-1408.,2560.)
-set ka=Rect(-2272.,-672.,-2112.,-512.)
-set Ka=Rect(-1984.,-704.,-1824.,-544.)
-set la=Rect(-1792.,-1216.,-1632.,-800.)
-set La=Rect(-4096.,128.,-3616.,768.)
-set ma=Rect(-1024.,3616.,-384.,4096.)
 set Ma=CreateCameraSetup()
 call CameraSetupSetField(Ma,CAMERA_FIELD_ZOFFSET,90.,.0)
 call CameraSetupSetField(Ma,CAMERA_FIELD_ROTATION,90.,.0)
@@ -23555,10 +23555,10 @@ call TriggerRegisterTimerEventPeriodic(ua,60.)
 call TriggerAddCondition(ua,Condition(function kD))
 call TriggerAddAction(ua,function KD)
 set Ua=CreateTrigger()
-call TriggerRegisterEnterRectSimple(Ua,Uo)
+call TriggerRegisterEnterRectSimple(Ua,gg_rct_Uo)
 call TriggerAddAction(Ua,function LD)
 set wa=CreateTrigger()
-call TriggerRegisterLeaveRectSimple(wa,Uo)
+call TriggerRegisterLeaveRectSimple(wa,gg_rct_Uo)
 call TriggerAddAction(wa,function MD)
 set Wa=CreateTrigger()
 call DisableTrigger(Wa)
@@ -23925,8 +23925,8 @@ set BossFightTrigger=CreateTrigger()
 call TriggerAddAction(BossFightTrigger,function BossFightTriggerFunction)
 set XO=CreateTrigger()
 call DisableTrigger(XO)
-call TriggerRegisterEnterRectSimple(XO,Uo)
-call TriggerRegisterEnterRectSimple(XO,BigArenaAreaRect)
+call TriggerRegisterEnterRectSimple(XO,gg_rct_Uo)
+call TriggerRegisterEnterRectSimple(XO,gg_rct_BigArenaAreaRect)
 call TriggerAddAction(XO,function xM)
 set OO=CreateTrigger()
 call TriggerAddAction(OO,function aM)
@@ -23950,7 +23950,7 @@ call TriggerAddAction(IO,function RM)
 // call TriggerRegisterTimerEventPeriodic(AO,2.4)
 // call TriggerAddAction(AO,function AM)
 set NO=CreateTrigger()
-call TriggerRegisterEnterRectSimple(NO,DestroyBitchUnit_2_Rect)
+call TriggerRegisterEnterRectSimple(NO,gg_rct_fr)
 call TriggerAddCondition(NO,Condition(function bM))
 call TriggerAddAction(NO,function DestroyBitchUnit)
 set SpawnCreepsTrigger=CreateTrigger()
@@ -24021,7 +24021,7 @@ call TriggerAddCondition(hO,Condition(function Rp))
 call TriggerAddAction(hO,function Cp)
 set HO=CreateTrigger()
 call DisableTrigger(HO)
-call TriggerRegisterLeaveRectSimple(HO,MinimalArenaAreaRect)
+call TriggerRegisterLeaveRectSimple(HO,gg_rct_MinimalArenaAreaRect)
 call TriggerAddCondition(HO,Condition(function Gp))
 call TriggerAddAction(HO,function hp)
 set jO=CreateTrigger()
@@ -24079,7 +24079,7 @@ set QO=CreateTrigger()
 call TriggerAddAction(QO,function XP)
 set sO=CreateTrigger()
 call DisableTrigger(sO)
-call TriggerRegisterEnterRectSimple(sO,BigArenaAreaRect)
+call TriggerRegisterEnterRectSimple(sO,gg_rct_BigArenaAreaRect)
 call TriggerAddCondition(sO,Condition(function RP))
 call TriggerAddAction(sO,function IP)
 set SO=CreateTrigger()
@@ -24182,29 +24182,29 @@ set wN=16
 set ER=CreateTrigger()
 loop
 exitwhen ED==wN
-call TriggerRegisterEnterRectSimple(ER,Ni)
-call TriggerRegisterEnterRectSimple(ER,bi)
-call TriggerRegisterEnterRectSimple(ER,Bi)
-call TriggerRegisterEnterRectSimple(ER,ci)
-call TriggerRegisterEnterRectSimple(ER,Ci)
-call TriggerRegisterEnterRectSimple(ER,di)
-call TriggerRegisterEnterRectSimple(ER,Di)
-call TriggerRegisterEnterRectSimple(ER,fi)
-call TriggerRegisterEnterRectSimple(ER,gi)
-call TriggerRegisterEnterRectSimple(ER,Gi)
-call TriggerRegisterEnterRectSimple(ER,hi)
-call TriggerRegisterEnterRectSimple(ER,Hi)
-call TriggerRegisterEnterRectSimple(ER,ji)
-call TriggerRegisterEnterRectSimple(ER,Ji)
-call TriggerRegisterEnterRectSimple(ER,ki)
-call TriggerRegisterEnterRectSimple(ER,Ki)
-call TriggerRegisterEnterRectSimple(ER,li)
-call TriggerRegisterEnterRectSimple(ER,Li)
-call TriggerRegisterEnterRectSimple(ER,mi)
-call TriggerRegisterEnterRectSimple(ER,Mi)
-call TriggerRegisterEnterRectSimple(ER,pi)
-call TriggerRegisterEnterRectSimple(ER,Pi)
-call TriggerRegisterEnterRectSimple(ER,qi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Ni)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_bi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Bi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_ci)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Ci)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_di)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Di)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_fi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_gi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Gi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_hi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Hi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_ji)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Ji)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_ki)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Ki)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_li)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Li)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_mi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Mi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_pi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_Pi)
+call TriggerRegisterEnterRectSimple(ER,gg_rct_qi)
 set ED=ED+1
 endloop
 call TriggerAddCondition(ER,Condition(function tq))
@@ -24291,9 +24291,9 @@ call TriggerRegisterPlayerChatEvent(BR,Player(6),"-help",true)
 call TriggerRegisterPlayerChatEvent(BR,Player(7),"-help",true)
 call TriggerAddAction(BR,function RQ)
 set cR=CreateTrigger()
-call TriggerRegisterEnterRectSimple(cR,MinimalArenaAreaRect)
-call TriggerRegisterEnterRectSimple(cR,BigArenaAreaRect)
-call TriggerRegisterEnterRectSimple(cR,Uo)
+call TriggerRegisterEnterRectSimple(cR,gg_rct_MinimalArenaAreaRect)
+call TriggerRegisterEnterRectSimple(cR,gg_rct_BigArenaAreaRect)
+call TriggerRegisterEnterRectSimple(cR,gg_rct_Uo)
 call TriggerAddCondition(cR,Condition(function AQ))
 call TriggerAddAction(cR,function bQ)
 set CR=CreateTrigger()
@@ -24312,13 +24312,13 @@ set DR=CreateTrigger()
 call TriggerRegisterAnyUnitEventBJ(DR,EVENT_PLAYER_UNIT_SPELL_CAST)
 call TriggerAddCondition(DR,Condition(function GQ))
 call TriggerAddAction(DR,function hQ)
-set DestroyBitchUnit_2_Trigger=CreateTrigger()
-call TriggerRegisterEnterRectSimple(DestroyBitchUnit_2_Trigger,DestroyBitchUnit_2_Rect)
-call TriggerAddAction(DestroyBitchUnit_2_Trigger,function DestroyBitchUnit_2)
-set DestroyBitchUnit_3_Trigger=CreateTrigger()
-call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,DestroyBitchUnit_3_Rect)
-call TriggerRegisterEnterRectSimple(DestroyBitchUnit_3_Trigger,DestroyBitchUnit_3_Rect_2)
-call TriggerAddAction(DestroyBitchUnit_3_Trigger,function DestroyBitchUnit_3)
+set fR=CreateTrigger()
+call TriggerRegisterEnterRectSimple(fR,gg_rct_fr)
+call TriggerAddAction(fR,function jQ)
+set FR=CreateTrigger()
+call TriggerRegisterEnterRectSimple(FR,gg_rct_Xi)
+call TriggerRegisterEnterRectSimple(FR,gg_rct_Ei)
+call TriggerAddAction(FR,function kQ)
 call mQ()
 set ED=0
 set wN=16
