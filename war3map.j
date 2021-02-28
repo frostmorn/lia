@@ -491,7 +491,6 @@ rect gg_rct_Mr=null
 rect gg_rct_pr=null
 rect gg_rct_Pr=null
 rect gg_rct_qr=null
-rect gg_rct_Qr=null
 rect gg_rct_sr=null
 rect gg_rct_Sr=null
 rect gg_rct_tr=null
@@ -3608,7 +3607,6 @@ set gg_rct_Mr = Rect( -2880.0, 2432.0, -2752.0, 2560.0 )
 set gg_rct_pr = Rect( -2880.0, 1504.0, -2752.0, 1632.0 )
 set gg_rct_Pr = Rect( 1120.0, -256.0, 1216.0, -160.0 )
 set gg_rct_qr = Rect( 1120.0, -1088.0, 1216.0, -992.0 )
-set gg_rct_Qr = Rect( -2592.0, -2304.0, -1728.0, -1952.0 )
 set gg_rct_sr = Rect( 2304.0, 2048.0, 2432.0, 2176.0 )
 set gg_rct_Sr = Rect( -3008.0, -3232.0, -1376.0, -1632.0 )
 set gg_rct_tr = Rect( 2240.0, -3200.0, 2432.0, -3104.0 )
@@ -19153,11 +19151,11 @@ set vB=A
 loop
 exitwhen In>vB
 if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
-    call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_Qr))
+    call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect))
     call SetUnitFacing(F[In],270.)
 
 else
-    call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_Qr),false)
+    call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect),false)
     call SetUnitFacingTimed(F[In],270.,0)
 endif
 set In=In+1
