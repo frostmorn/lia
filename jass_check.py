@@ -155,7 +155,7 @@ if __name__ == "__main__":
             if "array" in global_variable["type"]:
                 arrays_count = arrays_count + 1
 
-        print(  "Using {globals_count} global variables using {global_types_count} different types.\r\n"
+        print(  "Using {globals_count} global variables with {global_types_count} different types.\r\n"
                 "Part of them are triggers[{triggers_count}], rects[{rects_count}], timers[{timers_count}]\r\n"
                 "and arrays[{arrays_count}].".
             format(globals_count=len(global_variables),
