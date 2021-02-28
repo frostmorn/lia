@@ -451,8 +451,8 @@ rect gg_rct_YellowPlayerBox=null
 rect gg_rct_OrangePlayerBox=null
 rect gg_rct_GreenPlayerBox=null
 rect gg_rct_PinkPlayerBox=null
-rect gg_rct_Uo=null
-rect gg_rct_BigArenaAreaRect=null
+rect gg_rct_PlayersHome=null
+rect gg_rct_BigArenaFogModifier=null
 rect gg_rct_BottomSpawnRect=null
 rect gg_rct_TopSpawnRect=null
 rect gg_rct_Yo=null
@@ -465,7 +465,7 @@ rect gg_rct_MinimalArenaAreaRect=null
 rect gg_rct_HeroReSpawn=null
 rect gg_rct_MinimalArenaBottomUnitRect=null
 rect gg_rct_MinimalArenaTopUnitRect=null
-rect gg_rct_Er=null
+rect gg_rct_BigArena=null
 rect gg_rct_Xr=null
 rect gg_rct_Rr=null
 rect gg_rct_Ir=null
@@ -3570,19 +3570,19 @@ endfunction
 function CreateRegions takes nothing returns nothing
 local weathereffect we
 
-    set gg_rct_RedPlayerBox=Rect(864.,-3168.,1056.,-2976.)
-    set gg_rct_BluePlayerBox=Rect(672.,-3168.,864.,-2976.)
-    set gg_rct_TealPlayerBox=Rect(480.,-3168.,672.,-2976.)
-    set gg_rct_PurplePlayerBox=Rect(288.,-3168.,480.,-2976.)
-    set gg_rct_YellowPlayerBox=Rect(96.,-3168.,288.,-2976.)
-    set gg_rct_OrangePlayerBox=Rect(-96.,-3168.,96.,-2976.)
-    set gg_rct_GreenPlayerBox=Rect(-288.,-3168.,-96.,-2976.)
-    set gg_rct_PinkPlayerBox=Rect(-480.,-3168.,-288.,-2976.)
-    set gg_rct_Uo=Rect(-960.,-3616.,3328.,-1376.)
-    set gg_rct_BigArenaAreaRect=Rect(-3220.,-1270.,1670.,3168.)
-
-    set gg_rct_BottomSpawnRect=Rect(-3264.,-64.,-2432.,896.)
-    set gg_rct_TopSpawnRect=Rect(-1216.,2272.,-192.,2976.)
+    
+    set gg_rct_RedPlayerBox = Rect( 1216.0, -3328.0, 1408.0, -3136.0 )
+    set gg_rct_BluePlayerBox = Rect( 1024.0, -3328.0, 1216.0, -3136.0 )
+    set gg_rct_TealPlayerBox = Rect( 832.0, -3328.0, 1024.0, -3136.0 )
+    set gg_rct_PurplePlayerBox = Rect( 640.0, -3328.0, 832.0, -3136.0 )
+    set gg_rct_YellowPlayerBox = Rect( 448.0, -3328.0, 640.0, -3136.0 )
+    set gg_rct_OrangePlayerBox = Rect( 256.0, -3328.0, 448.0, -3136.0 )
+    set gg_rct_GreenPlayerBox = Rect( 64.0, -3328.0, 256.0, -3136.0 )
+    set gg_rct_PinkPlayerBox = Rect( -128.0, -3328.0, 64.0, -3136.0 )
+    set gg_rct_PlayersHome = Rect( -800.0, -3488.0, 3104.0, -1504.0 )
+    set gg_rct_BigArenaFogModifier = Rect( -3232.0, -1280.0, 1664.0, 2944.0 )
+    set gg_rct_BottomSpawnRect = Rect( -3232.0, 128.0, -2304.0, 1024.0 )
+    set gg_rct_TopSpawnRect = Rect( -1024.0, 2144.0, -256.0, 2976.0 )
 
     set gg_rct_Yo=Rect(-2400.,-608.,-2272.,-480.)
     set gg_rct_zo=Rect(-1888.,-800.,-1760.,-672.)
@@ -3590,15 +3590,13 @@ local weathereffect we
     set gg_rct_vr=Rect(-2208.,1888.,-2080.,2016.)
     set gg_rct_er=Rect(224.,-608.,352.,-480.)
     set gg_rct_rr=Rect(736.,1376.,864.,1504.)
-    set gg_rct_MinimalArenaAreaRect=Rect( -2976.0, -3488.0, -992.0, -1504.0 )
-    set gg_rct_HeroReSpawn=Rect(96.,-2816.,800.,-2144.)
+    
+    set gg_rct_MinimalArenaAreaRect = Rect( -2976.0, -3488.0, -992.0, -1504.0 )
+    set gg_rct_HeroReSpawn = Rect( 96.0, -2816.0, 800.0, -2144.0 )
+    set gg_rct_MinimalArenaBottomUnitRect = Rect( -2432.0, -3200.0, -1536.0, -2816.0 )
+    set gg_rct_MinimalArenaTopUnitRect = Rect( -2432.0, -2176.0, -1536.0, -1792.0 )
+    set gg_rct_BigArena = Rect( -2976.0, -1312.0, 1440.0, 2720.0 )
 
-    // Bottom Player Rect on MinimalArena
-    set gg_rct_MinimalArenaBottomUnitRect=Rect( -2464.0, -3168.0, -1504.0, -2880.0 )
-    // Top Player Rect on MinimalArena
-    set gg_rct_MinimalArenaTopUnitRect=Rect( -2464.0, -2112.0, -1504.0, -1792.0 )
-
-    set gg_rct_Er=Rect(-2784.,-960.,1248.,2528.)
     set gg_rct_Xr=Rect(2336.,-224.,2400.,-160.)
     set gg_rct_Rr=Rect(2592.,-352.,2656.,-288.)
     set gg_rct_Ir=Rect(2080.,-480.,2144.,-416.)
@@ -6631,7 +6629,7 @@ endfunction
 function Lc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
-set g=GA(gg_rct_Uo,null)
+set g=GA(gg_rct_PlayersHome,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -7012,7 +7010,7 @@ endfunction
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
-if((RectContainsUnit(gg_rct_BigArenaAreaRect,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
+if((RectContainsUnit(gg_rct_BigArena,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
 call SetUnitPositionLoc(u,GetRandomLocInRect(gg_rct_Dr))
 call AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl")
 if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
@@ -7031,7 +7029,7 @@ loop
 exitwhen In>A
 set g=CreateGroup()
 set g=pA(ae[In])
-if(RectContainsUnit(gg_rct_BigArenaAreaRect,F[In])==false)then
+if(RectContainsUnit(gg_rct_BigArena,F[In])==false)then
 call ClearSelectionForPlayer(ae[In])
 endif
 call SelectUnitForPlayerSingle(F[In],ae[In])
@@ -8590,8 +8588,8 @@ local real randomScale
 local integer randomVariation
 local integer i = 0
 loop
-    set randomLocX = GetRandomReal(GetRectMinX(gg_rct_BigArenaAreaRect)+300,GetRectMaxX(gg_rct_BigArenaAreaRect)-300)
-    set randomLocY = GetRandomReal(GetRectMinY(gg_rct_BigArenaAreaRect)+300,GetRectMaxY(gg_rct_BigArenaAreaRect)-300)
+    set randomLocX = GetRandomReal(GetRectMinX(gg_rct_BigArena)+300,GetRectMaxX(gg_rct_BigArena)-300)
+    set randomLocY = GetRandomReal(GetRectMinY(gg_rct_BigArena)+300,GetRectMaxY(gg_rct_BigArena)-300)
     set randomFacing = GetRandomReal(0,360)
     set randomScale = GetRandomReal(0.7,1.5)
     set randomVariation = GetRandomInt(0,9)
@@ -8647,7 +8645,7 @@ call UnitAddAbility(ND,'A0I1')
 call RemoveUnit(ND)
 loop
 exitwhen In>8
-// set Px[In]=CreateFogModifierRect(Player(In-1),FOG_OF_WAR_MASKED,gg_rct_BigArenaAreaRect,true,false)
+// set Px[In]=CreateFogModifierRect(Player(In-1),FOG_OF_WAR_MASKED,gg_rct_BigArena,true,false)
 // call FogModifierStart(Px[In])
 set In=In+1
 endloop
@@ -8828,7 +8826,7 @@ call ForceAddPlayer(tv,ae[In])
 // Shit Behind makes wall not visible, so we just ignore dat shit.
 // call FogModifierStop(Px[In])
 
-call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,gg_rct_BigArenaAreaRect)
+call CreateFogModifierRectBJ(true,Player(In-1),FOG_OF_WAR_VISIBLE,gg_rct_BigArenaFogModifier)
 set In=In+1
 endloop
 set hv='O006'
@@ -8962,7 +8960,7 @@ return Xv==false
 endfunction
 
 function KD takes nothing returns nothing
-    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(gg_rct_Er),GetRectMaxX(gg_rct_Er)),GetRandomReal(GetRectMinY(gg_rct_Er),GetRectMaxY(gg_rct_Er)))
+    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(gg_rct_BigArena),GetRectMaxX(gg_rct_BigArena)),GetRandomReal(GetRectMinY(gg_rct_BigArena),GetRectMaxY(gg_rct_BigArena)))
 endfunction
 
 function LD takes nothing returns nothing
@@ -8992,7 +8990,7 @@ call EnableWeatherEffect(Lv,false)
 call SetSkyModel("Environment\\Sky\\LordaeronSummerSky\\LordaeronSummerSky.mdl")
 endfunction
 function TD takes nothing returns nothing
-set Lv=AddWeatherEffect(gg_rct_BigArenaAreaRect,'RAlr')
+set Lv=AddWeatherEffect(gg_rct_BigArena,'RAlr')
 call EnableWeatherEffect(Lv,true)
 call SetSkyModel("Environment\\Sky\\FelwoodSky\\FelwoodSky.mdl")
 endfunction
@@ -9385,7 +9383,7 @@ if RectContainsUnit(gg_rct_Ii,u)then
 call SetUnitPositionLoc(u,GetRectCenter(gg_rct_Ri))
 call PanCameraToTimedLocForPlayer(p,GetRectCenter(gg_rct_Ri),0)
 endif
-if RectContainsUnit(gg_rct_Uo,u)then
+if RectContainsUnit(gg_rct_PlayersHome,u)then
 call SetUnitMoveSpeed(u,500.)
 endif
 set u=null
@@ -11575,7 +11573,7 @@ function ih takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local unit u=LoadUnitHandle(Ax,1,dN)
-if RectContainsUnit(gg_rct_Uo,u)then
+if RectContainsUnit(gg_rct_PlayersHome,u)then
 call SetUnitMoveSpeed(u,500)
 endif
 call EnableTrigger(nV)
@@ -11627,7 +11625,7 @@ function Vh takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local unit u=LoadUnitHandle(Ax,1,dN)
-if RectContainsUnit(gg_rct_Uo,u)then
+if RectContainsUnit(gg_rct_PlayersHome,u)then
 call SetUnitMoveSpeed(u,500)
 endif
 call DestroyTimer(t)
@@ -17336,7 +17334,7 @@ endif
 if CurrentWave>=19 then
 call EnableTrigger(GO)
 endif
-call GroupEnumUnitsInRect(g,gg_rct_Uo,null)
+call GroupEnumUnitsInRect(g,gg_rct_PlayersHome,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -17620,7 +17618,7 @@ function AcquireTest takes nothing returns nothing
     local unit u=GetEnumUnit()
     if u!=null then
         call SetUnitAcquireRange(u, 10000)
-        call IssuePointOrderByIdLoc(u,$D000F, GetRectCenter(gg_rct_BigArenaAreaRect))
+        call IssuePointOrderByIdLoc(u,$D000F, GetRectCenter(gg_rct_BigArena))
     endif
 endfunction
 function DestroyBitchUnit takes nothing returns nothing
@@ -17664,7 +17662,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     
     set Tx=nC
 
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 270)   
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 270)   
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     
@@ -17675,12 +17673,12 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 270)
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 0)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 270)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 0)
         set In=In+1
     endloop
     
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArenaAreaRect), 0)
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 0)
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     // WTF Duplicate?
@@ -17707,7 +17705,7 @@ function PM takes nothing returns nothing
     local boolexpr b=Condition(function pM)
     local timer t=CreateTimer()
     set bj_wantDestroyGroup=true
-    if CountUnitsInGroup(GA(gg_rct_BigArenaAreaRect,b))==0 and Xv==false then
+    if CountUnitsInGroup(GA(gg_rct_BigArena,b))==0 and Xv==false then
         set qv=false
         call DisableTrigger(cO)
         call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
@@ -18733,7 +18731,7 @@ call PanCameraToTimedLocForPlayer(ae[In],GetUnitLoc(F[In]),0)
 call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",GetUnitLoc(F[In])))
 set In=In+1
 endloop
-set g=HA(gg_rct_Uo)
+set g=HA(gg_rct_PlayersHome)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -20071,22 +20069,22 @@ local real x=GetUnitX(u)
 local real y=GetUnitY(u)
 local location L
 if iv or jv then
-if((GetRectMinX(gg_rct_BigArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_BigArenaAreaRect))and(GetRectMinY(gg_rct_BigArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_BigArenaAreaRect)))or((GetRectMinX(gg_rct_Uo)<=x)and(x<=GetRectMaxX(gg_rct_Uo))and(GetRectMinY(gg_rct_Uo)<=y)and(y<=GetRectMaxY(gg_rct_Uo)))then
+if((GetRectMinX(gg_rct_BigArena)<=x)and(x<=GetRectMaxX(gg_rct_BigArena))and(GetRectMinY(gg_rct_BigArena)<=y)and(y<=GetRectMaxY(gg_rct_BigArena)))or((GetRectMinX(gg_rct_PlayersHome)<=x)and(x<=GetRectMaxX(gg_rct_PlayersHome))and(GetRectMinY(gg_rct_PlayersHome)<=y)and(y<=GetRectMaxY(gg_rct_PlayersHome)))then
 set L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if((no or Wx)and(qv==false))then
-if((GetRectMinX(gg_rct_BigArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_BigArenaAreaRect))and(GetRectMinY(gg_rct_BigArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_BigArenaAreaRect)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
+if((GetRectMinX(gg_rct_BigArena)<=x)and(x<=GetRectMaxX(gg_rct_BigArena))and(GetRectMinY(gg_rct_BigArena)<=y)and(y<=GetRectMaxY(gg_rct_BigArena)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
 set L=GetRectCenter(gg_rct_HeroReSpawn)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
 else
 if qv then
-if((GetRectMinX(gg_rct_Uo)<=x)and(x<=GetRectMaxX(gg_rct_Uo))and(GetRectMinY(gg_rct_Uo)<=y)and(y<=GetRectMaxY(gg_rct_Uo)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
-set L=GetRectCenter(gg_rct_BigArenaAreaRect)
+if((GetRectMinX(gg_rct_PlayersHome)<=x)and(x<=GetRectMaxX(gg_rct_PlayersHome))and(GetRectMinY(gg_rct_PlayersHome)<=y)and(y<=GetRectMaxY(gg_rct_PlayersHome)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
+set L=GetRectCenter(gg_rct_BigArena)
 call SetUnitPositionLoc(u,L)
 call RemoveLocation(L)
 endif
@@ -20201,7 +20199,7 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 if(IsUnitType(f,UNIT_TYPE_HERO)==false and GetUnitTypeId(f)!='n002')or(GetUnitTypeId(f)=='E00E' or GetUnitTypeId(f)=='E00J')then
-if IsUnitInRectFunction(gg_rct_BigArenaAreaRect,GetUnitX(f),GetUnitY(f))==false then
+if IsUnitInRectFunction(gg_rct_BigArena,GetUnitX(f),GetUnitY(f))==false then
 
 call SetUnitPositionLoc(f,GetRandomLocInRect(gg_rct_Dr))
 
@@ -20262,7 +20260,7 @@ function PQ takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
-if RectContainsUnit(gg_rct_Uo,u)then
+if RectContainsUnit(gg_rct_PlayersHome,u)then
 call SaveUnitHandle(Ax,1,dN,u)
 call TimerStart(t,.1,false,function pQ)
 endif
@@ -23555,10 +23553,10 @@ call TriggerRegisterTimerEventPeriodic(ua,60.)
 call TriggerAddCondition(ua,Condition(function kD))
 call TriggerAddAction(ua,function KD)
 set Ua=CreateTrigger()
-call TriggerRegisterEnterRectSimple(Ua,gg_rct_Uo)
+call TriggerRegisterEnterRectSimple(Ua,gg_rct_PlayersHome)
 call TriggerAddAction(Ua,function LD)
 set wa=CreateTrigger()
-call TriggerRegisterLeaveRectSimple(wa,gg_rct_Uo)
+call TriggerRegisterLeaveRectSimple(wa,gg_rct_PlayersHome)
 call TriggerAddAction(wa,function MD)
 set Wa=CreateTrigger()
 call DisableTrigger(Wa)
@@ -23925,8 +23923,8 @@ set BossFightTrigger=CreateTrigger()
 call TriggerAddAction(BossFightTrigger,function BossFightTriggerFunction)
 set XO=CreateTrigger()
 call DisableTrigger(XO)
-call TriggerRegisterEnterRectSimple(XO,gg_rct_Uo)
-call TriggerRegisterEnterRectSimple(XO,gg_rct_BigArenaAreaRect)
+call TriggerRegisterEnterRectSimple(XO,gg_rct_PlayersHome)
+call TriggerRegisterEnterRectSimple(XO,gg_rct_BigArena)
 call TriggerAddAction(XO,function xM)
 set OO=CreateTrigger()
 call TriggerAddAction(OO,function aM)
@@ -24079,7 +24077,7 @@ set QO=CreateTrigger()
 call TriggerAddAction(QO,function XP)
 set sO=CreateTrigger()
 call DisableTrigger(sO)
-call TriggerRegisterEnterRectSimple(sO,gg_rct_BigArenaAreaRect)
+call TriggerRegisterEnterRectSimple(sO,gg_rct_BigArena)
 call TriggerAddCondition(sO,Condition(function RP))
 call TriggerAddAction(sO,function IP)
 set SO=CreateTrigger()
@@ -24292,8 +24290,8 @@ call TriggerRegisterPlayerChatEvent(BR,Player(7),"-help",true)
 call TriggerAddAction(BR,function RQ)
 set cR=CreateTrigger()
 call TriggerRegisterEnterRectSimple(cR,gg_rct_MinimalArenaAreaRect)
-call TriggerRegisterEnterRectSimple(cR,gg_rct_BigArenaAreaRect)
-call TriggerRegisterEnterRectSimple(cR,gg_rct_Uo)
+call TriggerRegisterEnterRectSimple(cR,gg_rct_BigArena)
+call TriggerRegisterEnterRectSimple(cR,gg_rct_PlayersHome)
 call TriggerAddCondition(cR,Condition(function AQ))
 call TriggerAddAction(cR,function bQ)
 set CR=CreateTrigger()
