@@ -3081,6 +3081,7 @@ call TriggerEvaluate(st___prototype3[(((LoadInteger(Table__ht,((SpellEvent___Eff
 endif
 set SpellEvent=previous
 endfunction
+
 function RegisterSpellEffectResponse takes integer spellId,integer r returns nothing
 if spellId==0 then
 set SpellEvent___EffectCallList[SpellEvent___EffectCallCount]=r
@@ -3089,6 +3090,7 @@ else
 call SaveInteger(Table__ht,((SpellEvent___EffectTable)),(spellId),((r)))
 endif
 endfunction
+
 function SpellEvent___FinishCalls takes nothing returns nothing
 local integer i=0
 local integer id=GetSpellAbilityId()
@@ -3585,7 +3587,7 @@ set gg_rct_Ir = Rect( 2080.0, -480.0, 2144.0, -416.0 )
 set gg_rct_Ar = Rect( 2240.0, -416.0, 2304.0, -352.0 )
 set gg_rct_Nr = Rect( 1504.0, -1120.0, 3296.0, 512.0 )
 set gg_rct_ShopsAreaFogModifierRect = Rect( 1536.0, -3712.0, 3328.0, -2176.0 )
-set gg_rct_TavernAndMinimalArenaAreaFogModifierRect = Rect( -3264.0, -3328.0, 1632.0, -896.0 )
+set gg_rct_TavernAndMinimalArenaAreaFogModifierRect = Rect( -3232.0, -3648.0, 1664.0, -1248.0 )
 set gg_rct_Cr = Rect( 2496.0, -544.0, 2560.0, -480.0 )
 set gg_rct_Dr = Rect( -960.0, 672.0, -608.0, 1088.0 )
 set gg_rct_fr = Rect( 1440.0, -1504.0, 3328.0, 3136.0 )
@@ -3623,7 +3625,7 @@ set gg_rct_ri = Rect( -800.0, -2464.0, -512.0, -2208.0 )
 set gg_rct_ii = Rect( -800.0, -2688.0, -512.0, -2432.0 )
 set gg_rct_ai = Rect( 288.0, -2656.0, 640.0, -2336.0 )
 set gg_rct_ni = Rect( 128.0, -1824.0, 416.0, -1536.0 )
-set gg_rct_Ei = Rect( -3264.0, -1472.0, -832.0, -1216.0 )
+set gg_rct_Ei = Rect( -3200.0, -1536.0, -768.0, -1280.0 )
 set gg_rct_Xi = Rect( 64.0, 2752.0, 1440.0, 3008.0 )
 set gg_rct_Ri = Rect( 2432.0, -3008.0, 2560.0, -2912.0 )
 set gg_rct_Ii = Rect( 1792.0, -3616.0, 3168.0, -2304.0 )
@@ -17844,7 +17846,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     
     set Tx=nC
 
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 270)   
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BottomSpawnRect), 270)   
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     
@@ -17855,12 +17857,12 @@ function SpawnCreepsFunction takes nothing returns nothing
     set In=1
     loop
     exitwhen In>nC
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 270)
-        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 0)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_BottomSpawnRect), 270)
+        call CreateUnitAtLoc(Player(11), creep_ids[CurrentWave],GetRandomLocInRect(gg_rct_TopSpawnRect), 0)
         set In=In+1
     endloop
     
-    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BigArena), 0)
+    set u=CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_TopSpawnRect), 0)
     call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
     call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
     // WTF Duplicate?
@@ -23448,7 +23450,7 @@ call SetAmbientNightSound("CityScapeNight")
 // call InitSounds()
 call CreateRegions()
 call InitBlizzard()
-// call ExecuteFunc("jasshelper__initstructs29827921")
+call ExecuteFunc("jasshelper__initstructs29827921")
 call ExecuteFunc("BurningArmor___Init")
 call ExecuteFunc("CatchTheShadow___Init")
 call ExecuteFunc("FlexibleSpeed___Init")
