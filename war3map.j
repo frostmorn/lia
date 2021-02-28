@@ -2,7 +2,6 @@ globals
 hashtable HashData=InitHashtable()
 group array CatchTheShadowGroup
 group array BugFixGroup
-group MonstersGroup=null
 boolean notAffect=false
 constant hashtable DinamiteShot___HASH_TABLE=InitHashtable()
 constant integer DinamiteShot___SPELL_ID='A0IW'
@@ -8163,8 +8162,6 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
     local integer jd=GetHandleId(Hd)
     local integer Jd=GetHandleId(tt)
     local timerdialog fN
-    call DestroyGroup(MonstersGroup)
-    set MonstersGroup = null
     call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
     call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
     // For FastRound start we must set ReadyPlayers to false.
@@ -17504,13 +17501,13 @@ if b then
 call PauseUnit(Le,false)
 call TriggerRegisterUnitLifeEvent(OO,Le,LESS_THAN_OR_EQUAL,7000.)
 call TriggerRegisterUnitLifeEvent(RO,Le,LESS_THAN_OR_EQUAL,3000.)
-// call EnableTrigger(AO)
+call EnableTrigger(AO)
 call EnableTrigger(dO)
 call EnableTrigger(XO)
 call EnableTrigger(oO)
 else
 call PauseUnit(Me,false)
-// call EnableTrigger(AO)
+call EnableTrigger(AO)
 call EnableTrigger(XO)
 endif
 loop
@@ -17661,68 +17658,68 @@ endfunction
 
 function CreepsAttackFunction takes nothing returns nothing
     local unit u=GetEnumUnit()
-    if GetUnitCurrentOrder(u) !=0 then
-        call IssuePointOrderByIdLoc(u,$D000F,Ye)
-    endif
+    // if GetUnitCurrentOrder(u) !=0 then
+    call IssuePointOrderByIdLoc(u,$D000F,Ye)
+    // endif
     set u=null
 endfunction
 
 function CreepsSeekAndAttackFunction takes nothing returns nothing
-//     local integer L=1
-//     local unit array g
-//     local integer i=0
-//     local integer r
-//     local player LM=Player(11)
-//     local group gr=CreateGroup()
-//     local boolean b1
-//     local boolean b2
-//     local player mM
-//     local integer ec
-//     local player p
-//     local unit f
-//     call GroupEnumUnitsOfPlayer(gr,LM,null)
-//     loop
-//     exitwhen L>8
-//         set f=F[L]
-//         set b1=Oo[L]
-//         set b2=(IsUnitInGroup(f,fo)==false)
-//         if b1 and f!=null and b2 then
-//             set i=i+1
-//             set g[i]=f
-//         endif
-//         set L=L+1
-//     endloop
-//     if i!=0 then
-//         if ye==false then
-//             set ye=true
-//             set r=GetRandomInt(1,i)
-//             set vx=g[r]
-//         else
-//             set mM=GetOwningPlayer(vx)
-//             set ec=ee[GetPlayerId(mM)+1]
-//             set b1=Oo[ec]
-//             set b2=(IsUnitInGroup(vx,fo)==false)
-//             if b1==false or b2==false or vx==null then
-//                 set r=GetRandomInt(1,i)
-//                 set vx=g[r]
-//             endif
-//         endif
-//         call RemoveLocation(Ye)
-//         set Ye=GetUnitLoc(vx)
-//         call ForGroup(gr,function CreepsAttackFunction)
-//     endif
-//     call DestroyGroup(gr)
-//     set L=1
-//     set gr=null
-//     set p=null
-//     set mM=null
-//     loop
-//     exitwhen(L>i)
-//         set g[L]=null
-//         set L=L+1
-// endloop
-// set LM=null
-// set f=null
+    local integer L=1
+    local unit array g
+    local integer i=0
+    local integer r
+    local player LM=Player(11)
+    local group gr=CreateGroup()
+    local boolean b1
+    local boolean b2
+    local player mM
+    local integer ec
+    local player p
+    local unit f
+    call GroupEnumUnitsOfPlayer(gr,LM,null)
+    loop
+    exitwhen L>8
+        set f=F[L]
+        set b1=HeroInGameAndAliveARRAY[L]
+        set b2=(IsUnitInGroup(f,fo)==false)
+        if b1 and f!=null and b2 then
+            set i=i+1
+            set g[i]=f
+        endif
+        set L=L+1
+    endloop
+    if i!=0 then
+        if ye==false then
+            set ye=true
+            set r=GetRandomInt(1,i)
+            set vx=g[r]
+        else
+            set mM=GetOwningPlayer(vx)
+            set ec=ee[GetPlayerId(mM)+1]
+            set b1=HeroInGameAndAliveARRAY[ec]
+            set b2=(IsUnitInGroup(vx,fo)==false)
+            if b1==false or b2==false or vx==null then
+                set r=GetRandomInt(1,i)
+                set vx=g[r]
+            endif
+        endif
+        call RemoveLocation(Ye)
+        set Ye=GetUnitLoc(vx)
+        call ForGroup(gr,function CreepsAttackFunction)
+    endif
+    call DestroyGroup(gr)
+    set L=1
+    set gr=null
+    set p=null
+    set mM=null
+    loop
+    exitwhen(L>i)
+        set g[L]=null
+        set L=L+1
+    endloop
+set LM=null
+set f=null
 endfunction
 
 function RM takes nothing returns nothing
@@ -17870,11 +17867,9 @@ function SpawnCreepsFunction takes nothing returns nothing
     if CurrentWave==9 then
         call vD(u)
     endif
-    // Creeps created, so it's time to create Group. No needness in doing that shit every fucking time
-    set MonstersGroup = CreateGroup()
-    call GroupEnumUnitsOfPlayer(MonstersGroup,Player(11),null)
+
     call EnableTrigger(cO)
-    call ForGroup(MonstersGroup, function AcquireTest)
+
     call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
         
     call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger [17671]")
@@ -17919,7 +17914,7 @@ local integer wN=A
 call DisableTrigger(CO)
 call DisableTrigger(eA)
 set iv=false
-// call DisableTrigger(AO)
+call DisableTrigger(AO)
 call DisableTrigger(XO)
 call DisableTrigger(nO)
 loop
@@ -17942,7 +17937,7 @@ function TM takes nothing returns nothing
 call DisableTrigger(dO)
 set iv=false
 call DisableTrigger(nO)
-// call DisableTrigger(AO)
+call DisableTrigger(AO)
 call DisableTrigger(XO)
 call DisableTrigger(oO)
 call kc()
@@ -24111,14 +24106,14 @@ call TriggerAddAction(IO,function RM)
 
 set CreepsSeekAndAttackPeriodicTrigger=CreateTrigger()
 call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
-call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,0.50,true)
+call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,1.0,true)
 call TriggerAddAction(CreepsSeekAndAttackPeriodicTrigger,function CreepsSeekAndAttackFunction)
 // CreepsSeekAndAttackFunction Alternative
-// set AO=CreateTrigger()
+set AO=CreateTrigger()
 
-// call DisableTrigger(AO)
-// call TriggerRegisterTimerEventPeriodic(AO,2.4)
-// call TriggerAddAction(AO,function AM)
+call DisableTrigger(AO)
+call TriggerRegisterTimerEventPeriodic(AO,2.4)
+call TriggerAddAction(AO,function AM)
 set NO=CreateTrigger()
 call TriggerRegisterEnterRectSimple(NO,gg_rct_fr)
 call TriggerAddCondition(NO,Condition(function bM))
