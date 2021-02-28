@@ -11,6 +11,7 @@ if __name__ == "__main__":
             line_num = line_num +1
             lines.append(line)
             line = line.lstrip().rstrip()
+            # Skiping comments
             if len(line)>=2:
                 if line[0] == "/" and line[1] == "/":
                     continue
@@ -20,11 +21,15 @@ if __name__ == "__main__":
                     print("Error: Nested function declared on line: {line_num}\r\n{line}".format(line_num = line_num, line=line))
                     exit(-1)
                 if in_globals:
-                    print("Error: Function declaration found in globals block: {line_num}\r\n{line}".format(line_num = line_num, line=line))
+                    print("Error: Function declaration in globals block: {line_num}\r\n{line}".format(line_num = line_num, line=line))
                     exit(-1)
                 
                 in_function = True
-
+            
+            if "local " in line and not(in_function):
+                print("Error: Local variable declaration outside of function: {line_num}\r\n{line}".format(line_num = line_num, line=line))
+                exit(-1)
+                
             if "endfunction" in line:
                 in_function = False
 
@@ -33,7 +38,7 @@ if __name__ == "__main__":
             
             if in_globals:
                 # TODO : parse variables
-                
+
                 if "rect " in line and not "array" in line:
                     splitted_line = line.split("=")[0].split(" ")
                     rect_name = splitted_line[1]
