@@ -1539,6 +1539,7 @@ set ztimer=null
 set zcaster=null
 endif
 endfunction
+
 function DinamiteShotActions takes unit u,unit u2 returns nothing
 local unit caster=u
 local unit target=u2
@@ -3559,164 +3560,153 @@ endfunction
 // endfunction
 function CreateRegions takes nothing returns nothing
 local weathereffect we
-
-    
-    set gg_rct_RedPlayerBox = Rect( 1216.0, -3328.0, 1408.0, -3136.0 )
-    set gg_rct_BluePlayerBox = Rect( 1024.0, -3328.0, 1216.0, -3136.0 )
-    set gg_rct_TealPlayerBox = Rect( 832.0, -3328.0, 1024.0, -3136.0 )
-    set gg_rct_PurplePlayerBox = Rect( 640.0, -3328.0, 832.0, -3136.0 )
-    set gg_rct_YellowPlayerBox = Rect( 448.0, -3328.0, 640.0, -3136.0 )
-    set gg_rct_OrangePlayerBox = Rect( 256.0, -3328.0, 448.0, -3136.0 )
-    set gg_rct_GreenPlayerBox = Rect( 64.0, -3328.0, 256.0, -3136.0 )
-    set gg_rct_PinkPlayerBox = Rect( -128.0, -3328.0, 64.0, -3136.0 )
-    set gg_rct_PlayersHome = Rect( -800.0, -3488.0, 3104.0, -1504.0 )
-    set gg_rct_BigArenaFogModifier = Rect( -3232.0, -1280.0, 1664.0, 2944.0 )
-    set gg_rct_BottomSpawnRect = Rect( -3232.0, 128.0, -2304.0, 1024.0 )
-    set gg_rct_TopSpawnRect = Rect( -1024.0, 2144.0, -256.0, 2976.0 )
-
-    set gg_rct_Yo=Rect(-2400.,-608.,-2272.,-480.)
-    set gg_rct_zo=Rect(-1888.,-800.,-1760.,-672.)
-    set gg_rct_Zo=Rect(-1696.,288.,-1568.,416.)
-    set gg_rct_vr=Rect(-2208.,1888.,-2080.,2016.)
-    set gg_rct_er=Rect(224.,-608.,352.,-480.)
-    set gg_rct_rr=Rect(736.,1376.,864.,1504.)
-    
-    set gg_rct_MinimalArenaAreaRect = Rect( -2976.0, -3488.0, -992.0, -1504.0 )
-    set gg_rct_HeroReSpawn = Rect( 96.0, -2816.0, 800.0, -2144.0 )
-    set gg_rct_MinimalArenaBottomUnitRect = Rect( -2432.0, -3200.0, -1536.0, -2816.0 )
-    set gg_rct_MinimalArenaTopUnitRect = Rect( -2432.0, -2176.0, -1536.0, -1792.0 )
-    set gg_rct_BigArena = Rect( -2976.0, -1312.0, 1440.0, 2720.0 )
-
-    set gg_rct_Xr=Rect(2336.,-224.,2400.,-160.)
-    set gg_rct_Rr=Rect(2592.,-352.,2656.,-288.)
-    set gg_rct_Ir=Rect(2080.,-480.,2144.,-416.)
-    set gg_rct_Ar=Rect(2240.,-416.,2304.,-352.)
-    // OLD FOG
-    set gg_rct_Nr=Rect(1504.,-1120.,3296.,512.)
-    // set gg_rct_Nr=Rect(1656.,-2182.,3687.,3195.)
-
-    set gg_rct_ShopsAreaFogModifierRect=Rect( 1536.0, -3712.0, 3328.0, -2176.0 )
-    set gg_rct_TavernAndMinimalArenaAreaFogModifierRect=Rect( -3232.0, -3712.0, 1664.0, -1280.0 )
-
-
-    set gg_rct_Cr=Rect(2496.,-544.,2560.,-480.)
-    set gg_rct_dr=Rect(1984.,-672.,2048.,-608.)
-    set gg_rct_Dr=Rect(-960.,672.,-608.,1088.)
-    set gg_rct_fr=Rect(1440.,-1504.,3328.,3136.)
-    set gg_rct_Fr=Rect(-2880.,1760.,-2464.,2368.)
-    set gg_rct_Gr=Rect(608.,-960.,1184.,-384.)
-    set gg_rct_hr=Rect(-832.,-1184.,-512.,-896.)
-    set gg_rct_Hr=Rect(896.,800.,1216.,1088.)
-    set gg_rct_jr=Rect(-480.,96.,-192.,352.)
-    set gg_rct_Jr=Rect(-1792.,-416.,-1504.,-160.)
-    set gg_rct_kr=Rect(-2624.,-1088.,-2464.,-928.)
-    set gg_rct_Kr=Rect(-2912.,416.,-2656.,672.)
-    set gg_rct_lr=Rect(-1632.,960.,-1312.,1312.)
-    set gg_rct_Lr=Rect(32.,1792.,416.,2144.)
-    set gg_rct_mr=Rect(-1216.,2272.,-864.,2656.)
-    set gg_rct_Mr=Rect(-2880.,2432.,-2752.,2560.)
-    set gg_rct_pr=Rect(-2880.,1504.,-2752.,1632.)
-    set gg_rct_Pr=Rect(1120.,-256.,1216.,-160.)
-    set gg_rct_qr=Rect(1120.,-1088.,1216.,-992.)
-    set gg_rct_Qr=Rect(-2592.,-2304.,-1728.,-1952.)
-    set gg_rct_sr=Rect(2304.,2048.,2432.,2176.)
-    set gg_rct_Sr=Rect(-3008.,-3232.,-1376.,-1632.)
-    set gg_rct_tr=Rect(2336.,-3200.,2432.,-3104.)
-    set gg_rct_Tr=Rect(2720.,-3200.,2816.,-3104.)
-    set gg_rct_ur=Rect(1952.,-3200.,2048.,-3104.)
-    set gg_rct_Ur=Rect(2720.,-2784.,3040.,-2496.)
-    set gg_rct_wr=Rect(2336.,-2784.,2656.,-2496.)
-    set gg_rct_Wr=Rect(1952.,-2784.,2272.,-2496.)
-    set gg_rct_yr=Rect(2720.,-3424.,3040.,-3136.)
-    set gg_rct_Yr=Rect(2336.,-3424.,2656.,-3136.)
-    set gg_rct_zr=Rect(1952.,-3424.,2272.,-3136.)
-    set gg_rct_Zr=Rect(1088.,-2208.,1376.,-1952.)
-    set gg_rct_vi=Rect(1088.,-1952.,1376.,-1664.)
-    set gg_rct_ei=Rect(832.,-1952.,1120.,-1664.)
-    set gg_rct_xi=Rect(576.,-1952.,864.,-1664.)
-    set gg_rct_oi=Rect(320.,-1952.,608.,-1664.)
-    set gg_rct_ri=Rect(-608.,-2592.,-320.,-2336.)
-    set gg_rct_ii=Rect(-608.,-2816.,-320.,-2560.)
-    set gg_rct_ai=Rect(288.,-2656.,640.,-2336.)
-    set gg_rct_ni=Rect(64.,-1952.,352.,-1664.)
-    set gg_rct_Vi=Rect(-608.,-2368.,-320.,-2112.)
-    set gg_rct_Ei=Rect(-3264.,-1472.,-832.,-1216.)
-    set gg_rct_Xi=Rect(64.,2752.,1440.,3008.)
-    set gg_rct_Oi=Rect(-800.,-3008.,-768.,-2976.)
-    set gg_rct_Ri=Rect(2432.,-3008.,2560.,-2912.)
-    set gg_rct_Ii=Rect(1792.,-3616.,3168.,-2304.)
-    set gg_rct_Ai=Rect(2464.,-3008.,2528.,-2976.)
-    set gg_rct_Ni=Rect(-1216.,-3648.,-960.,-1440.)
-    set gg_rct_bi=Rect(-3424.,-3648.,-1152.,-3392.)
-    set gg_rct_Bi=Rect(-3424.,-1472.,-832.,-1216.)
-    set gg_rct_ci=Rect(-3424.,-3424.,-3136.,-1440.)
-    set gg_rct_Ci=Rect(-3424.,-1248.,-3008.,-192.)
-    set gg_rct_di=Rect(-3424.,-224.,-3136.,-64.)
-    set gg_rct_Di=Rect(-3424.,-96.,-3264.,64.)
-    set gg_rct_fi=Rect(-960.,-2752.,-704.,-2112.)
-    set gg_rct_Fi=Rect(-192.,-1472.,1504.,-1216.)
-    set gg_rct_gi=Rect(-960.,-3616.,1216.,-3264.)
-    set gg_rct_Gi=Rect(1184.,-3616.,1344.,-3392.)
-    set gg_rct_hi=Rect(1312.,-3616.,3328.,-3520.)
-    set gg_rct_Hi=Rect(3264.,-3616.,3328.,-2336.)
-    set gg_rct_ji=Rect(1472.,-2368.,3328.,-1088.)
-    set gg_rct_Ji=Rect(1344.,-1248.,1472.,3168.)
-    set gg_rct_ki=Rect(-64.,2752.,1376.,3168.)
-    set gg_rct_Ki=Rect(-192.,2880.,-32.,3168.)
-    set gg_rct_li=Rect(-320.,3008.,-160.,3168.)
-    set gg_rct_Li=Rect(-1248.,3008.,-1088.,3168.)
-    set gg_rct_mi=Rect(-1376.,2880.,-1216.,3168.)
-    set gg_rct_Mi=Rect(-3424.,2752.,-1344.,3168.)
-    set gg_rct_pi=Rect(-3424.,1088.,-3008.,2784.)
-    set gg_rct_Pi=Rect(-3424.,960.,-3136.,1120.)
-    set gg_rct_qi=Rect(-3424.,832.,-3264.,992.)
-    set gg_rct_Qi=Rect(-864.,-1504.,-160.,-1344.)
-    set gg_rct_si=Rect(64.,2176.,1344.,2720.)
-    set gg_rct_Si=Rect(448.,1920.,1344.,2240.)
-    set gg_rct_Ti=Rect(576.,1792.,1344.,1952.)
-    set gg_rct_ui=Rect(-2368.,2272.,-1472.,2688.)
-    set gg_rct_Ui=Rect(-2432.,1472.,-2112.,1984.)
-    set gg_rct_wi=Rect(-2912.,1120.,-2624.,1632.)
-    set gg_rct_Wi=Rect(-3008.,832.,-2688.,1152.)
-    set gg_rct_yi=Rect(-2112.,.0,-1760.,480.)
-    set gg_rct_Yi=Rect(-1696.,128.,-1472.,448.)
-    set gg_rct_zi=Rect(384.,640.,960.,896.)
-    set gg_rct_Zi=Rect(832.,1280.,1152.,1536.)
-    set gg_rct_va=Rect(1024.,1152.,1312.,1312.)
-    set gg_rct_ea=Rect(864.,-96.,1120.,480.)
-    set gg_rct_xa=Rect(192.,-224.,832.,96.)
-    set gg_rct_oa=Rect(96.,-1184.,608.,-832.)
-    set gg_rct_ra=Rect(224.,-672.,512.,-480.)
-    set gg_rct_ia=Rect(-1664.,-1152.,-1280.,-896.)
-    set gg_rct_aa=Rect(-2912.,-1088.,-2464.,-672.)
-    set gg_rct_na=Rect(-2528.,-704.,-2240.,-512.)
-    set gg_rct_Va=Rect(-2976.,-672.,-2624.,-288.)
-    set gg_rct_Ea=Rect(-2816.,-352.,-2432.,-64.)
-    set gg_rct_Xa=Rect(-2880.,2496.,-2336.,2688.)
-    set gg_rct_Oa=Rect(-1184.,1024.,-928.,1472.)
-    set gg_rct_Ra=Rect(-704.,992.,-320.,1536.)
-    set gg_rct_Ia=Rect(-704.,256.,-352.,736.)
-    set gg_rct_Aa=Rect(-1280.,224.,-896.,672.)
-    set gg_rct_Na=Rect(640.,1664.,768.,1824.)
-    set gg_rct_ba=Rect(1152.,1024.,1312.,1184.)
-    set gg_rct_Ba=Rect(320.,512.,448.,672.)
-    set gg_rct_ca=Rect(512.,1152.,640.,1408.)
-    set gg_rct_Ca=Rect(448.,896.,640.,1152.)
-    set gg_rct_da=Rect(576.,256.,736.,416.)
-    set gg_rct_Da=Rect(768.,-224.,928.,-64.)
-    set gg_rct_fa=Rect(960.,-288.,1088.,-96.)
-    set gg_rct_Fa=Rect(1024.,-384.,1152.,-256.)
-    set gg_rct_ga=Rect(992.,-608.,1152.,-448.)
-    set gg_rct_Ga=Rect(-448.,640.,-320.,768.)
-    set gg_rct_ha=Rect(-384.,960.,-256.,1088.)
-    set gg_rct_Ha=Rect(-1312.,928.,-1184.,1312.)
-    set gg_rct_ja=Rect(-1440.,1120.,-1280.,1280.)
-    set gg_rct_Ja=Rect(-1504.,2432.,-1408.,2560.)
-    set gg_rct_ka=Rect(-2272.,-672.,-2112.,-512.)
-    set gg_rct_Ka=Rect(-1984.,-704.,-1824.,-544.)
-    set gg_rct_la=Rect(-1792.,-1216.,-1632.,-800.)
-    set gg_rct_La=Rect(-4096.,128.,-3616.,768.)
-    set gg_rct_ma=Rect(-1024.,3616.,-384.,4096.)
+set gg_rct_RedPlayerBox = Rect( 1216.0, -3328.0, 1408.0, -3136.0 )
+set gg_rct_BluePlayerBox = Rect( 1024.0, -3328.0, 1216.0, -3136.0 )
+set gg_rct_TealPlayerBox = Rect( 832.0, -3328.0, 1024.0, -3136.0 )
+set gg_rct_PurplePlayerBox = Rect( 640.0, -3328.0, 832.0, -3136.0 )
+set gg_rct_YellowPlayerBox = Rect( 448.0, -3328.0, 640.0, -3136.0 )
+set gg_rct_OrangePlayerBox = Rect( 256.0, -3328.0, 448.0, -3136.0 )
+set gg_rct_GreenPlayerBox = Rect( 64.0, -3328.0, 256.0, -3136.0 )
+set gg_rct_PinkPlayerBox = Rect( -128.0, -3328.0, 64.0, -3136.0 )
+set gg_rct_PlayersHome = Rect( -800.0, -3488.0, 3104.0, -1504.0 )
+set gg_rct_BigArenaFogModifier = Rect( -3232.0, -1280.0, 1664.0, 2944.0 )
+set gg_rct_BottomSpawnRect = Rect( -3232.0, 128.0, -2304.0, 1024.0 )
+set gg_rct_TopSpawnRect = Rect( -1024.0, 2144.0, -256.0, 2976.0 )
+set gg_rct_Yo = Rect( -2400.0, -608.0, -2272.0, -480.0 )
+set gg_rct_zo = Rect( -1888.0, -800.0, -1760.0, -672.0 )
+set gg_rct_Zo = Rect( -1696.0, 288.0, -1568.0, 416.0 )
+set gg_rct_vr = Rect( -2208.0, 1888.0, -2080.0, 2016.0 )
+set gg_rct_er = Rect( 224.0, -608.0, 352.0, -480.0 )
+set gg_rct_rr = Rect( 736.0, 1376.0, 864.0, 1504.0 )
+set gg_rct_MinimalArenaAreaRect = Rect( -2976.0, -3488.0, -992.0, -1504.0 )
+set gg_rct_HeroReSpawn = Rect( 96.0, -2816.0, 800.0, -2144.0 )
+set gg_rct_MinimalArenaBottomUnitRect = Rect( -2432.0, -3200.0, -1536.0, -2816.0 )
+set gg_rct_MinimalArenaTopUnitRect = Rect( -2432.0, -2176.0, -1536.0, -1792.0 )
+set gg_rct_BigArena = Rect( -2976.0, -1312.0, 1440.0, 2720.0 )
+set gg_rct_Xr = Rect( 2336.0, -224.0, 2400.0, -160.0 )
+set gg_rct_Rr = Rect( 2592.0, -352.0, 2656.0, -288.0 )
+set gg_rct_Ir = Rect( 2080.0, -480.0, 2144.0, -416.0 )
+set gg_rct_Ar = Rect( 2240.0, -416.0, 2304.0, -352.0 )
+set gg_rct_Nr = Rect( 1504.0, -1120.0, 3296.0, 512.0 )
+set gg_rct_ShopsAreaFogModifierRect = Rect( 1536.0, -3712.0, 3328.0, -2176.0 )
+set gg_rct_TavernAndMinimalArenaAreaFogModifierRect = Rect( -3232.0, -3712.0, 1664.0, -1280.0 )
+set gg_rct_Cr = Rect( 2496.0, -544.0, 2560.0, -480.0 )
+set gg_rct_Dr = Rect( -960.0, 672.0, -608.0, 1088.0 )
+set gg_rct_fr = Rect( 1440.0, -1504.0, 3328.0, 3136.0 )
+set gg_rct_Fr = Rect( -2880.0, 1760.0, -2464.0, 2368.0 )
+set gg_rct_Gr = Rect( 608.0, -960.0, 1184.0, -384.0 )
+set gg_rct_hr = Rect( -832.0, -1184.0, -512.0, -896.0 )
+set gg_rct_Hr = Rect( 896.0, 800.0, 1216.0, 1088.0 )
+set gg_rct_jr = Rect( -480.0, 96.0, -192.0, 352.0 )
+set gg_rct_Jr = Rect( -1792.0, -416.0, -1504.0, -160.0 )
+set gg_rct_kr = Rect( -2624.0, -1088.0, -2464.0, -928.0 )
+set gg_rct_Kr = Rect( -2912.0, 416.0, -2656.0, 672.0 )
+set gg_rct_lr = Rect( -1632.0, 960.0, -1312.0, 1312.0 )
+set gg_rct_Lr = Rect( 32.0, 1792.0, 416.0, 2144.0 )
+set gg_rct_mr = Rect( -1216.0, 2272.0, -864.0, 2656.0 )
+set gg_rct_Mr = Rect( -2880.0, 2432.0, -2752.0, 2560.0 )
+set gg_rct_pr = Rect( -2880.0, 1504.0, -2752.0, 1632.0 )
+set gg_rct_Pr = Rect( 1120.0, -256.0, 1216.0, -160.0 )
+set gg_rct_qr = Rect( 1120.0, -1088.0, 1216.0, -992.0 )
+set gg_rct_Qr = Rect( -2592.0, -2304.0, -1728.0, -1952.0 )
+set gg_rct_sr = Rect( 2304.0, 2048.0, 2432.0, 2176.0 )
+set gg_rct_Sr = Rect( -3008.0, -3232.0, -1376.0, -1632.0 )
+set gg_rct_tr = Rect( 2240.0, -3200.0, 2432.0, -3104.0 )
+set gg_rct_Tr = Rect( 2720.0, -3200.0, 2816.0, -3104.0 )
+set gg_rct_ur = Rect( 1952.0, -3200.0, 2048.0, -3104.0 )
+set gg_rct_Ur = Rect( 2720.0, -2784.0, 3040.0, -2496.0 )
+set gg_rct_wr = Rect( 2336.0, -2784.0, 2656.0, -2496.0 )
+set gg_rct_Wr = Rect( 1952.0, -2784.0, 2272.0, -2496.0 )
+set gg_rct_yr = Rect( 2720.0, -3424.0, 3040.0, -3136.0 )
+set gg_rct_Yr = Rect( 2336.0, -3424.0, 2656.0, -3136.0 )
+set gg_rct_zr = Rect( 1952.0, -3424.0, 2272.0, -3136.0 )
+set gg_rct_Zr = Rect( 1120.0, -2080.0, 1408.0, -1824.0 )
+set gg_rct_vi = Rect( 1120.0, -1824.0, 1408.0, -1536.0 )
+set gg_rct_ei = Rect( 864.0, -1824.0, 1152.0, -1536.0 )
+set gg_rct_xi = Rect( 608.0, -1824.0, 896.0, -1536.0 )
+set gg_rct_oi = Rect( 352.0, -1824.0, 640.0, -1536.0 )
+set gg_rct_ri = Rect( -608.0, -2592.0, -320.0, -2336.0 )
+set gg_rct_ii = Rect( -608.0, -2816.0, -320.0, -2560.0 )
+set gg_rct_ai = Rect( 288.0, -2656.0, 640.0, -2336.0 )
+set gg_rct_ni = Rect( 96.0, -1824.0, 384.0, -1536.0 )
+set gg_rct_Vi = Rect( -608.0, -2368.0, -320.0, -2112.0 )
+set gg_rct_Ei = Rect( -3264.0, -1472.0, -832.0, -1216.0 )
+set gg_rct_Xi = Rect( 64.0, 2752.0, 1440.0, 3008.0 )
+set gg_rct_Oi = Rect( -800.0, -3008.0, -768.0, -2976.0 )
+set gg_rct_Ri = Rect( 2432.0, -3008.0, 2560.0, -2912.0 )
+set gg_rct_Ii = Rect( 1792.0, -3616.0, 3168.0, -2304.0 )
+set gg_rct_Ai = Rect( 2464.0, -3008.0, 2528.0, -2976.0 )
+set gg_rct_Ni = Rect( -1216.0, -3648.0, -960.0, -1440.0 )
+set gg_rct_bi = Rect( -3424.0, -3648.0, -1152.0, -3392.0 )
+set gg_rct_Bi = Rect( -3424.0, -1472.0, -832.0, -1216.0 )
+set gg_rct_ci = Rect( -3424.0, -3424.0, -3136.0, -1440.0 )
+set gg_rct_Ci = Rect( -3424.0, -1248.0, -3008.0, -192.0 )
+set gg_rct_di = Rect( -3424.0, -224.0, -3136.0, -64.0 )
+set gg_rct_Di = Rect( -3424.0, -96.0, -3264.0, 64.0 )
+set gg_rct_fi = Rect( -960.0, -2752.0, -704.0, -2112.0 )
+set gg_rct_Fi = Rect( -192.0, -1472.0, 1504.0, -1216.0 )
+set gg_rct_gi = Rect( -960.0, -3616.0, 1216.0, -3264.0 )
+set gg_rct_Gi = Rect( 1184.0, -3616.0, 1344.0, -3392.0 )
+set gg_rct_hi = Rect( 1312.0, -3616.0, 3328.0, -3520.0 )
+set gg_rct_Hi = Rect( 3264.0, -3616.0, 3328.0, -2336.0 )
+set gg_rct_ji = Rect( 1472.0, -2368.0, 3328.0, -1088.0 )
+set gg_rct_Ji = Rect( 1344.0, -1248.0, 1472.0, 3168.0 )
+set gg_rct_ki = Rect( -64.0, 2752.0, 1376.0, 3168.0 )
+set gg_rct_Ki = Rect( -192.0, 2880.0, -32.0, 3168.0 )
+set gg_rct_li = Rect( -320.0, 3008.0, -160.0, 3168.0 )
+set gg_rct_Li = Rect( -1248.0, 3008.0, -1088.0, 3168.0 )
+set gg_rct_mi = Rect( -1376.0, 2880.0, -1216.0, 3168.0 )
+set gg_rct_Mi = Rect( -3424.0, 2752.0, -1344.0, 3168.0 )
+set gg_rct_pi = Rect( -3424.0, 1088.0, -3008.0, 2784.0 )
+set gg_rct_Pi = Rect( -3424.0, 960.0, -3136.0, 1120.0 )
+set gg_rct_qi = Rect( -3424.0, 832.0, -3264.0, 992.0 )
+set gg_rct_Qi = Rect( -864.0, -1504.0, -160.0, -1344.0 )
+set gg_rct_si = Rect( 64.0, 2176.0, 1344.0, 2720.0 )
+set gg_rct_Si = Rect( 448.0, 1920.0, 1344.0, 2240.0 )
+set gg_rct_Ti = Rect( 576.0, 1792.0, 1344.0, 1952.0 )
+set gg_rct_ui = Rect( -2368.0, 2272.0, -1472.0, 2688.0 )
+set gg_rct_Ui = Rect( -2432.0, 1472.0, -2112.0, 1984.0 )
+set gg_rct_wi = Rect( -2912.0, 1120.0, -2624.0, 1632.0 )
+set gg_rct_Wi = Rect( -3008.0, 832.0, -2688.0, 1152.0 )
+set gg_rct_yi = Rect( -2112.0, 0.0, -1760.0, 480.0 )
+set gg_rct_Yi = Rect( -1696.0, 128.0, -1472.0, 448.0 )
+set gg_rct_zi = Rect( 384.0, 640.0, 960.0, 896.0 )
+set gg_rct_Zi = Rect( 832.0, 1280.0, 1152.0, 1536.0 )
+set gg_rct_va = Rect( 1024.0, 1152.0, 1312.0, 1312.0 )
+set gg_rct_ea = Rect( 864.0, -96.0, 1120.0, 480.0 )
+set gg_rct_xa = Rect( 192.0, -224.0, 832.0, 96.0 )
+set gg_rct_oa = Rect( 96.0, -1184.0, 608.0, -832.0 )
+set gg_rct_ra = Rect( 224.0, -672.0, 512.0, -480.0 )
+set gg_rct_ia = Rect( -1664.0, 1152.0, -1280.0, 1184.0 )
+set gg_rct_aa = Rect( -2912.0, -1088.0, -2464.0, -672.0 )
+set gg_rct_na = Rect( -2528.0, -704.0, -2240.0, -512.0 )
+set gg_rct_Va = Rect( -2976.0, -672.0, -2624.0, -288.0 )
+set gg_rct_Ea = Rect( -2816.0, -352.0, -2432.0, -64.0 )
+set gg_rct_Xa = Rect( -2880.0, 2496.0, -2336.0, 2688.0 )
+set gg_rct_Oa = Rect( -1184.0, 1024.0, -928.0, 1472.0 )
+set gg_rct_Ra = Rect( -704.0, 992.0, -320.0, 1536.0 )
+set gg_rct_Ia = Rect( -704.0, 256.0, -352.0, 736.0 )
+set gg_rct_Aa = Rect( -1280.0, 224.0, -896.0, 672.0 )
+set gg_rct_Na = Rect( 640.0, 1664.0, 768.0, 1824.0 )
+set gg_rct_ba = Rect( 1152.0, 1024.0, 1312.0, 1184.0 )
+set gg_rct_Ba = Rect( 320.0, 512.0, 448.0, 672.0 )
+set gg_rct_ca = Rect( 512.0, 1152.0, 640.0, 1408.0 )
+set gg_rct_Ca = Rect( 448.0, 896.0, 640.0, 1152.0 )
+set gg_rct_da = Rect( 576.0, 256.0, 736.0, 416.0 )
+set gg_rct_Da = Rect( 768.0, -224.0, 928.0, -64.0 )
+set gg_rct_fa = Rect( 960.0, -288.0, 1088.0, -96.0 )
+set gg_rct_Fa = Rect( 1024.0, -384.0, 1152.0, -256.0 )
+set gg_rct_ga = Rect( 992.0, -608.0, 1152.0, -448.0 )
+set gg_rct_Ga = Rect( -448.0, 640.0, -320.0, 768.0 )
+set gg_rct_ha = Rect( -384.0, 960.0, -256.0, 1088.0 )
+set gg_rct_Ha = Rect( -1312.0, 928.0, -1184.0, 1312.0 )
+set gg_rct_ja = Rect( -1440.0, 1120.0, -1280.0, 1280.0 )
+set gg_rct_Ja = Rect( -1504.0, 2432.0, -1408.0, 2560.0 )
+set gg_rct_ka = Rect( -2272.0, -672.0, -2112.0, -512.0 )
+set gg_rct_Ka = Rect( -1984.0, -704.0, -1824.0, -544.0 )
+set gg_rct_la = Rect( -1792.0, -1216.0, -1632.0, -800.0 )
+set gg_rct_La = Rect( -4096.0, 128.0, -3616.0, 768.0 )
+set gg_rct_ma = Rect( -1024.0, 3616.0, -384.0, 4096.0 )
 endfunction
 function Trig_Unit_Indexer_Func005Func002C takes nothing returns boolean
 if(not(udg_UnitIndexLock[udg_UDex]==0))then
@@ -17675,6 +17665,73 @@ call rC()
 call TimerStart(t,1.2,false,function EM)
 set t=null
 endfunction
+
+function CreepsAttackFunction takes nothing returns nothing
+    local unit u=GetEnumUnit()
+    if GetUnitCurrentOrder(u) !=0 then
+        call IssuePointOrderByIdLoc(u,$D000F,Ye)
+    endif
+    set u=null
+endfunction
+
+function CreepsSeekAndAttackFunction takes nothing returns nothing
+//     local integer L=1
+//     local unit array g
+//     local integer i=0
+//     local integer r
+//     local player LM=Player(11)
+//     local group gr=CreateGroup()
+//     local boolean b1
+//     local boolean b2
+//     local player mM
+//     local integer ec
+//     local player p
+//     local unit f
+//     call GroupEnumUnitsOfPlayer(gr,LM,null)
+//     loop
+//     exitwhen L>8
+//         set f=F[L]
+//         set b1=Oo[L]
+//         set b2=(IsUnitInGroup(f,fo)==false)
+//         if b1 and f!=null and b2 then
+//             set i=i+1
+//             set g[i]=f
+//         endif
+//         set L=L+1
+//     endloop
+//     if i!=0 then
+//         if ye==false then
+//             set ye=true
+//             set r=GetRandomInt(1,i)
+//             set vx=g[r]
+//         else
+//             set mM=GetOwningPlayer(vx)
+//             set ec=ee[GetPlayerId(mM)+1]
+//             set b1=Oo[ec]
+//             set b2=(IsUnitInGroup(vx,fo)==false)
+//             if b1==false or b2==false or vx==null then
+//                 set r=GetRandomInt(1,i)
+//                 set vx=g[r]
+//             endif
+//         endif
+//         call RemoveLocation(Ye)
+//         set Ye=GetUnitLoc(vx)
+//         call ForGroup(gr,function CreepsAttackFunction)
+//     endif
+//     call DestroyGroup(gr)
+//     set L=1
+//     set gr=null
+//     set p=null
+//     set mM=null
+//     loop
+//     exitwhen(L>i)
+//         set g[L]=null
+//         set L=L+1
+// endloop
+// set LM=null
+// set f=null
+endfunction
+
 function RM takes nothing returns nothing
 local unit f=GetDyingUnit()
 local location L=GetRandomLocInRect(gg_rct_Sr)
@@ -23400,7 +23457,7 @@ call SetAmbientNightSound("CityScapeNight")
 // call InitSounds()
 call CreateRegions()
 call InitBlizzard()
-call ExecuteFunc("jasshelper__initstructs29827921")
+// call ExecuteFunc("jasshelper__initstructs29827921")
 call ExecuteFunc("BurningArmor___Init")
 call ExecuteFunc("CatchTheShadow___Init")
 call ExecuteFunc("FlexibleSpeed___Init")
@@ -24059,6 +24116,10 @@ endloop
 call DisableTrigger(IO)
 call TriggerAddAction(IO,function RM)
 
+set CreepsSeekAndAttackPeriodicTrigger=CreateTrigger()
+call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,0.50,true)
+call TriggerAddAction(CreepsSeekAndAttackPeriodicTrigger,function CreepsSeekAndAttackFunction)
 // CreepsSeekAndAttackFunction Alternative
 // set AO=CreateTrigger()
 
@@ -25333,21 +25394,6 @@ call SetUnitAbilityLevel(dummy,'A0JO',2)
 endif
 set caster=null
 set dummy=null
-return true
-endfunction
-function sa___prototype32_s__TableBrArray_clean takes nothing returns boolean
-local integer a=f__arg_integer1
-local integer end=f__arg_integer2
-local integer i=a+5000
-if i<end then
-call s__TableBrArray_clean(i,end)
-set end=i
-endif
-loop
-call FlushChildHashtable(TableBr__ht,(a))
-set a=a+1
-exitwhen a==end
-endloop
 return true
 endfunction
 function jasshelper__initstructs29827921 takes nothing returns nothing
