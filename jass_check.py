@@ -59,7 +59,6 @@ if __name__ == "__main__":
 
         pass
 
-
     with open(script_path) as file:
         line_num = 0
         rects = []
@@ -70,6 +69,12 @@ if __name__ == "__main__":
         rects_count = 0
         timers_count = 0        
         arrays_count = 0
+
+        if extract_mode:
+            function_dir = "functions"
+            os.mkdir(function_dir)
+            os.chdir(function_dir)
+
         for line in file:
             line_num = line_num +1
             lines.append(line)
@@ -109,10 +114,8 @@ if __name__ == "__main__":
                 else:
                     functions.append({"name":function_name, "args":function_args})
                     if extract_mode:
-                        function_dir = str(len(functions)*10)+"_"+function_name
-                        os.mkdir(function_dir)
-                        os.chdir(function_dir)
-                        function_file = open("code.j", "w+")
+                        function_dir = "functions"
+                        function_file = open(str(len(functions)*10)+"_"+function_name+".j", "w+")
 
                 in_function = True
                 
@@ -125,8 +128,9 @@ if __name__ == "__main__":
                 
             if "endfunction" in line:
                 in_function = False
-                function_file.close()
-                os.chdir("..")
+                if extract_mode:
+                    function_file.close()
+
 
             if "endglobals" in line:
                 in_globals = False
