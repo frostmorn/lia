@@ -1083,7 +1083,6 @@ trigger st__TableBr_remove
 trigger st__TableBr_create
 trigger st__SpellEvent___spellEvent_onDestroy
 trigger array st___prototype3
-trigger array st___prototype32
 integer f__arg_integer1
 integer f__arg_integer2
 integer f__arg_this
@@ -1253,16 +1252,8 @@ endfunction
 function sc___prototype3_evaluate takes integer i returns nothing
 call TriggerEvaluate(st___prototype3[i])
 endfunction
-function sc___prototype32_execute takes integer i,integer a1,integer a2 returns nothing
-set f__arg_integer1=a1
-set f__arg_integer2=a2
-call TriggerExecute(st___prototype32[i])
-endfunction
-function sc___prototype32_evaluate takes integer i,integer a1,integer a2 returns nothing
-set f__arg_integer1=a1
-set f__arg_integer2=a2
-call TriggerEvaluate(st___prototype32[i])
-endfunction
+
+
 function BurningArmorAdd takes unit u,unit t returns nothing
 local unit dummy
 local real x=GetUnitX(t)
@@ -25419,7 +25410,4 @@ call TriggerAddCondition(st___prototype3[13],Condition(function sa___prototype3_
 set st___prototype3[14]=CreateTrigger()
 call TriggerAddAction(st___prototype3[14],function sa___prototype3_BorningOfDeath___OnAction)
 call TriggerAddCondition(st___prototype3[14],Condition(function sa___prototype3_BorningOfDeath___OnAction))
-set st___prototype32[1]=CreateTrigger()
-call TriggerAddAction(st___prototype32[1],function sa___prototype32_s__TableBrArray_clean)
-call TriggerAddCondition(st___prototype32[1],Condition(function sa___prototype32_s__TableBrArray_clean))
 endfunction
