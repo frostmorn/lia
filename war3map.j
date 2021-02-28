@@ -492,7 +492,6 @@ rect gg_rct_pr=null
 rect gg_rct_Pr=null
 rect gg_rct_qr=null
 rect gg_rct_sr=null
-rect gg_rct_Sr=null
 rect gg_rct_tr=null
 rect gg_rct_Tr=null
 rect gg_rct_ur=null
@@ -3608,7 +3607,6 @@ set gg_rct_pr = Rect( -2880.0, 1504.0, -2752.0, 1632.0 )
 set gg_rct_Pr = Rect( 1120.0, -256.0, 1216.0, -160.0 )
 set gg_rct_qr = Rect( 1120.0, -1088.0, 1216.0, -992.0 )
 set gg_rct_sr = Rect( 2304.0, 2048.0, 2432.0, 2176.0 )
-set gg_rct_Sr = Rect( -3008.0, -3232.0, -1376.0, -1632.0 )
 set gg_rct_tr = Rect( 2240.0, -3200.0, 2432.0, -3104.0 )
 set gg_rct_Tr = Rect( 2720.0, -3200.0, 2816.0, -3104.0 )
 set gg_rct_ur = Rect( 1952.0, -3200.0, 2048.0, -3104.0 )
@@ -6970,8 +6968,8 @@ call UnitRemoveBuffsExBJ(2,2,Le,true,false)
 call PauseUnit(Le,true)
 endfunction
 function iC takes integer id returns nothing
-local location L=GetRandomLocInRect(gg_rct_Sr)
-local location aC=GetRectCenter(gg_rct_Sr)
+local location L=GetRandomLocInRect(gg_rct_MinimalArenaAreaRect)
+local location aC=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 local unit f=CreateUnitAtLoc(Player(11),id,L,bj_RADTODEG*Atan2(GetLocationY(aC)-GetLocationY(L),GetLocationX(aC)-GetLocationX(L)))
 call RemoveLocation(L)
 call RemoveLocation(aC)
@@ -17420,7 +17418,7 @@ return Xv==false
 endfunction
 
 function tm takes nothing returns nothing
-    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(gg_rct_Sr),GetRectMaxX(gg_rct_Sr)),GetRandomReal(GetRectMinY(gg_rct_Sr),GetRectMaxY(gg_rct_Sr)))
+    call PlaceRandomItem(LI,GetRandomReal(GetRectMinX(gg_rct_MinimalArenaAreaRect),GetRectMaxX(gg_rct_MinimalArenaAreaRect)),GetRandomReal(GetRectMinY(gg_rct_MinimalArenaAreaRect),GetRectMaxY(gg_rct_MinimalArenaAreaRect)))
 endfunction
 
 function um takes nothing returns nothing
@@ -17732,7 +17730,7 @@ endfunction
 
 function RM takes nothing returns nothing
 local unit f=GetDyingUnit()
-local location L=GetRandomLocInRect(gg_rct_Sr)
+local location L=GetRandomLocInRect(gg_rct_MinimalArenaAreaRect)
 if IsUnitInGroup(f,co)then
 call GroupRemoveUnit(co,f)
 endif
