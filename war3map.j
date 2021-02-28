@@ -18124,9 +18124,7 @@ endfunction
 function ap takes nothing returns boolean
 return(GetOwningPlayer(GetDyingUnit())==Player(11))
 endfunction
-function Trig_Volna18_Func004001 takes nothing returns boolean
-return(qv==false)
-endfunction
+
 function np takes nothing returns nothing
 call SetWidgetLife(GetKillingUnit(),(GetUnitStateSwap(UNIT_STATE_LIFE,GetKillingUnit())-100.))
 call TriggerSleepAction(2)
