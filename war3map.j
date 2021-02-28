@@ -512,7 +512,6 @@ rect gg_rct_ai=null
 rect gg_rct_ni=null
 rect gg_rct_Ei=null
 rect gg_rct_Xi=null
-rect gg_rct_Oi=null
 rect gg_rct_Ri=null
 rect gg_rct_Ii=null
 rect gg_rct_Ai=null
@@ -586,7 +585,6 @@ rect gg_rct_ka=null
 rect gg_rct_Ka=null
 rect gg_rct_la=null
 rect gg_rct_La=null
-rect gg_rct_ma=null
 camerasetup Ma=null
 camerasetup pa=null
 trigger Pa=null
@@ -3626,7 +3624,6 @@ set gg_rct_ai = Rect( 288.0, -2656.0, 640.0, -2336.0 )
 set gg_rct_ni = Rect( 96.0, -1824.0, 384.0, -1536.0 )
 set gg_rct_Ei = Rect( -3264.0, -1472.0, -832.0, -1216.0 )
 set gg_rct_Xi = Rect( 64.0, 2752.0, 1440.0, 3008.0 )
-set gg_rct_Oi = Rect( -800.0, -3008.0, -768.0, -2976.0 )
 set gg_rct_Ri = Rect( 2432.0, -3008.0, 2560.0, -2912.0 )
 set gg_rct_Ii = Rect( 1792.0, -3616.0, 3168.0, -2304.0 )
 set gg_rct_Ai = Rect( 2464.0, -3008.0, 2528.0, -2976.0 )
@@ -3700,7 +3697,6 @@ set gg_rct_ka = Rect( -2272.0, -672.0, -2112.0, -512.0 )
 set gg_rct_Ka = Rect( -1984.0, -704.0, -1824.0, -544.0 )
 set gg_rct_la = Rect( -1792.0, -1216.0, -1632.0, -800.0 )
 set gg_rct_La = Rect( -4096.0, 128.0, -3616.0, 768.0 )
-set gg_rct_ma = Rect( -1024.0, 3616.0, -384.0, 4096.0 )
 endfunction
 function Trig_Unit_Indexer_Func005Func002C takes nothing returns boolean
 if(not(udg_UnitIndexLock[udg_UDex]==0))then
