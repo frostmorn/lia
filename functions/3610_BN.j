@@ -1,0 +1,10 @@
+function BN takes nothing returns nothing
+local integer i=0
+call FlushGameCache(InitGameCache("LiAs"))
+set O=InitGameCache("LiAs")
+loop
+exitwhen(i>8)
+set I[i]=false
+set i=i+1
+endloop
+endfunction
