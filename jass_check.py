@@ -1,3 +1,5 @@
+import sys
+import os
 if __name__ == "__main__":
     default_types = [   "hashtable", 
                         "group array", 
@@ -42,6 +44,21 @@ if __name__ == "__main__":
     script_path = "war3map.j"
     in_globals = True
     in_function = False
+    extract_mode = False
+    function_file = ""
+    extract_mode_flag = ["--extract", "-e"]
+
+    if len (sys.argv)>1:
+
+        if ("-extract" in sys.argv) or ("-e" in sys.argv):
+            extract_mode = True
+
+        if not(sys.argv[-1] in extract_mode_flag):
+            script_path = sys.argv[-1]
+
+
+        pass
+
 
     with open(script_path) as file:
         line_num = 0
@@ -65,6 +82,7 @@ if __name__ == "__main__":
             if line == '':
                 continue
             if "function" in line and "takes" in line:
+
                 if in_function:
                     print("Error: Nested function declared on line: {line_num}\r\n{line}".format(line_num = line_num, line=line))
                     exit(-1)
@@ -90,15 +108,25 @@ if __name__ == "__main__":
                     print("Error: function name parsing error")
                 else:
                     functions.append({"name":function_name, "args":function_args})
+                    if extract_mode:
+                        function_dir = str(len(functions)*10)+"_"+function_name
+                        os.mkdir(function_dir)
+                        os.chdir(function_dir)
+                        function_file = open("code.j", "w+")
 
                 in_function = True
-            
+                
+            if in_function and extract_mode:
+                function_file.write(line+"\r\n")
+                
             if "local " in line and not(in_function):
                 print("Error: Local variable declaration outside of function: {line_num}\r\n{line}".format(line_num = line_num, line=line))
                 exit(-1)
                 
             if "endfunction" in line:
                 in_function = False
+                function_file.close()
+                os.chdir("..")
 
             if "endglobals" in line:
                 in_globals = False
