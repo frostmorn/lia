@@ -573,7 +573,6 @@ rect gg_rct_Ja=null
 rect gg_rct_ka=null
 rect gg_rct_Ka=null
 rect gg_rct_la=null
-rect gg_rct_La=null
 camerasetup Ma=null
 camerasetup pa=null
 trigger Pa=null
@@ -3606,7 +3605,6 @@ local weathereffect we
     set gg_rct_Kr = Rect( -2912.0, 416.0, -2656.0, 672.0 )
     set gg_rct_kr = Rect( -2624.0, -1088.0, -2464.0, -928.0 )
     set gg_rct_la = Rect( -1792.0, -1216.0, -1632.0, -800.0 )
-    set gg_rct_La = Rect( -4096.0, 128.0, -3616.0, 768.0 )
     set gg_rct_lr = Rect( -1632.0, 960.0, -1312.0, 1312.0 )
     set gg_rct_Lr = Rect( 32.0, 1792.0, 416.0, 2144.0 )
     set gg_rct_Mi = Rect( -3200.0, 2688.0, -992.0, 2944.0 )
@@ -14415,11 +14413,12 @@ call SaveReal(Ax,id,1,Qk(u,C))
 call SaveInteger(Ax,id,2,0)
 call SetUnitPathing(u,false)
 call SetUnitMoveSpeed(u,0)
-call TimerStart(t,.03,true,function Wk)
+// call TimerStart(t,.03,true,function Wk)
 else
 if IsUnitAlly(u,GetOwningPlayer(C))and GetWidgetLife(u)>.405 then
 call SetWidgetLife(u,GetWidgetLife(u)+$96*JN)
 set e=AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",u,"origin")
+
 set te=CreateTimer()
 set Dg=GetHandleId(te)
 call SaveEffectHandle(Ax,1,Dg,e)
