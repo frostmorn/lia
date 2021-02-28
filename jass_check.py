@@ -85,9 +85,11 @@ if __name__ == "__main__":
                     if word == "takes":
                         continue
                     # TODO : parse function params
-                    
                     pass
-
+                if function_name == "null":
+                    print("Error: function name parsing error")
+                else:
+                    functions.append({"name":function_name, "args":function_args})
 
                 in_function = True
             
@@ -155,15 +157,17 @@ if __name__ == "__main__":
             if "array" in global_variable["type"]:
                 arrays_count = arrays_count + 1
 
-        print(  "Using {globals_count} global variables with {global_types_count} different types.\r\n"
+        print(  "Script using {globals_count} global variables with {global_types_count} different types.\r\n"
                 "Part of them are triggers[{triggers_count}], rects[{rects_count}], timers[{timers_count}]\r\n"
-                "and arrays[{arrays_count}].".
+                "and arrays[{arrays_count}].\r\n"
+                "Also it has {functions_count} declared functions.".
             format(globals_count=len(global_variables),
                     global_types_count = len(global_types),
                     triggers_count = triggers_count,
                     rects_count = rects_count,
                     timers_count = timers_count,
-                    arrays_count = arrays_count
+                    arrays_count = arrays_count,
+                    functions_count = len(functions)
                     ))
         print("Syntax check complete. Nothing suspicious found...")
         # print(global_variables)
