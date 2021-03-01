@@ -5,6 +5,7 @@ Work on code restoration after obfuscation with map optimizers
 
 ## Development:
 
+
 Currently we can't use default WE to change map, due to optimization shit done before.
 Any changes to map done in WE will broke all existing triggers
 
@@ -24,5 +25,10 @@ So main way to make changes:
 
 Such way have some kind of "inconveniences" but if u strong slavic man, u don't give a fck..
 
-So for a basic check we could simply use jass_check.py in root project directory to check JASS syntax
+So before your map script will be ready we will use C-language preprocessor to make script
 
+Just hit that and u will get it
+
+```
+    cpp war3map.lia war3map.j -std=c99 -P
+```
