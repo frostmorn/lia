@@ -25,10 +25,12 @@ So main way to make changes:
 
 Such way have some kind of "inconveniences" but if u strong slavic man, u don't give a fck..
 
-So before your map script will be ready we will use C-language preprocessor to make script
+So before you will do that u must generate war3map.j from war3map.lia.
+For that purposes we use C-language preprocessor, to add macros functionality
+which could be usefull for creation map debug system
 
-Just hit that and u will get it
+Just hit command below and u will get it
 
 ```
-    cpp war3map.lia war3map.j -std=c99 -P
+    cpp war3map.lia war3map.j -std=c99 -P -traditional -fno-extended-identifiers -E
 ```
