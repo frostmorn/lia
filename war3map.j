@@ -1146,7 +1146,9 @@ function IsUnitAlive takes unit u returns boolean
         return false
     endif
 endfunction
-
+function IsUnitDead takes unit u returns boolean
+    return not (IsUnitAlive(u))
+endfunction
 function sc__Table__GTable_onDestroy takes integer this returns nothing
 set f__arg_this=this
 call TriggerEvaluate(st__Table__GTable_onDestroy[1])
@@ -3902,7 +3904,7 @@ call DestroyTrigger(udg_DmgEvTrig)
 set udg_DmgEvTrig=null
 if udg_IsDamageSpell then
 call SetWidgetLife(udg_DamageEventTarget,RMaxBJ(udg_LastDamageHP,0.41))
-if udg_LastDamageHP<=0.405 then
+if udg_LastDamageHP<=00.0 then
 if udg_DamageEventType<0 then
 call SetUnitExploded(udg_DamageEventTarget,true)
 endif
@@ -4456,7 +4458,7 @@ return GetUnitTypeId(gN)!='e00P' and GetUnitTypeId(gN)!='n02Z' and GetUnitTypeId
 endfunction
 function GN takes nothing returns boolean
 local unit f=GetFilterUnit()
-if GetWidgetLife(f)>.405 and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false and FN(f)then
+if IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false and FN(f)then
 call IssueTargetOrderById(DI,852583,f)
 endif
 set f=null
@@ -4830,7 +4832,7 @@ call RemoveLocation(L)
 loop
 set ff=FirstOfGroup(g)
 exitwhen ff==null
-if GetWidgetLife(ff)>.405 and IsUnitType(ff,UNIT_TYPE_HERO)and IsUnitEnemy(ff,p)and GetUnitAbilityLevel(ff,Fb)==0 and GetUnitAbilityLevel(ff,gb)==0 then
+if IsUnitAlive(ff) and IsUnitType(ff,UNIT_TYPE_HERO)and IsUnitEnemy(ff,p)and GetUnitAbilityLevel(ff,Fb)==0 and GetUnitAbilityLevel(ff,gb)==0 then
 if Gb!=0 then
 if LoadBoolean(Ax,Gb,GetHandleId(ff))then
 set ff=null
@@ -5373,7 +5375,7 @@ local unit u2=LoadUnitHandle(Ax,1,dN)
 local effect e=LoadEffectHandle(Ax,2,dN)
 local location l1=GetUnitLoc(u1)
 local location l2=GetUnitLoc(u2)
-if DistanceBetweenPoints(l1,l2)>290. or GetWidgetLife(u1)<=.405 or GetWidgetLife(u2)<=.405 then
+if  IsUnitDead(u1) or IsUnitDead(u2) or DistanceBetweenPoints(l1,l2)>290. then
 call DestroyTimer(t)
 call RemoveLocation(l1)
 call RemoveLocation(l2)
@@ -5535,7 +5537,7 @@ call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(11))
 call DestroyEffect(AddSpecialEffectLoc("war3mapImported\\MirrorImageIllidan.mdx",GetUnitLoc(u)))
 call KillUnit(u)
 call RemoveUnit(u)
-if(GetWidgetLife(m)>.405)then
+if IsUnitAlive(m) then
 call SetWidgetLife(m,(GetWidgetLife(m)+200.))
 endif
 set u=null
@@ -5776,7 +5778,7 @@ set e=null
 return iA
 endfunction
 function jB takes nothing returns boolean
-return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))and GetWidgetLife(GetFilterUnit())>.405
+return IsUnitAlive(GetFilterUnit()) and IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))
 endfunction
 function JB takes nothing returns nothing
 local integer In=1
@@ -6645,7 +6647,7 @@ local unit u1=LoadUnitHandle(Ax,1,dN)
 local unit u2=LoadUnitHandle(Ax,2,dN)
 loop
 exitwhen In>8
-if GetWidgetLife(PlayersHeroArray[In])>.405 and PlayersHeroArray[In]!=u1 and PlayersHeroArray[In]!=u2 and IsUnitHidden(PlayersHeroArray[In])==false then
+if IsUnitAlive(PlayersHeroArray[In]) and PlayersHeroArray[In]!=u1 and PlayersHeroArray[In]!=u2 and IsUnitHidden(PlayersHeroArray[In])==false then
 call ShowUnit(PlayersHeroArray[In],false)
 endif
 set In=In+1
@@ -6726,7 +6728,7 @@ set Uc=(LoadInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int")))
 set wc=(LoadInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int")))
 call PauseUnit(No[Uc],false)
 call PauseUnit(No[wc],false)
-if((HeroInGameAndAliveARRAY[Uc]==false and GetWidgetLife(u1)<=.405)or(HeroInGameAndAliveARRAY[wc]==false and GetWidgetLife(u2)<=.405))then
+if((HeroInGameAndAliveARRAY[Uc]==false and IsUnitDead(u1))or(HeroInGameAndAliveARRAY[wc]==false and IsUnitAlive(u2)))then
 call TriggerExecute(hO)
 else
 call EnableTrigger(hO)
@@ -6809,7 +6811,7 @@ if Qx==false then
 set In=1
 loop
 exitwhen In>8
-if GetWidgetLife(PlayersHeroArray[In])>.405 and PlayersHeroArray[In]!=u1 and PlayersHeroArray[In]!=u2 and IsUnitHidden(PlayersHeroArray[In])==false then
+if IsUnitAlive(PlayersHeroArray[In]) and PlayersHeroArray[In]!=u1 and PlayersHeroArray[In]!=u2 and IsUnitHidden(PlayersHeroArray[In])==false then
 call ShowUnit(PlayersHeroArray[In],false)
 endif
 set In=In+1
@@ -6973,7 +6975,7 @@ endfunction
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
-if((RectContainsUnit(gg_rct_BigArena,u)==false)and(GetWidgetLife(u)>.405)and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
+if((RectContainsUnit(gg_rct_BigArena,u)==false)and(IsUnitAlive(u))and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
 call SetUnitPositionLoc(u,GetRandomLocInRect(gg_rct_Dr))
 call AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl")
 if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
@@ -7189,7 +7191,7 @@ call TriggerSleepAction(.2)
 call DestroyEffect(e)
 endif
 endif
-if GetWidgetLife(du)>.405 then
+if IsUnitAlive(du) then
 call Zc(du,cC)
 endif
 if(HC)then
@@ -7810,7 +7812,7 @@ local integer SC
 loop
 set u=FirstOfGroup(og)
 set sP=GetOwningPlayer(u)
-if IsPlayerEnemy(hP,sP)and hP!=sP and GetWidgetLife(u)>.405 then
+if IsUnitAlive(u) and IsPlayerEnemy(hP,sP)and hP!=sP  then
 set DamageTypeAttack=false
 call UnitDamageTarget(ac,u,DC,true,TC,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -8452,7 +8454,7 @@ endfunction
 function xD takes nothing returns nothing
 local unit Ud=GetKillingUnit()
 local boolean oD=IsUnitType(Ud,UNIT_TYPE_HERO)
-local boolean rD=GetWidgetLife(Ud)>.405
+local boolean rD=IsUnitAlive(Ud)
 local boolean b1=GetUnitTypeId(Ud)!='E00E'
 local boolean b2=GetUnitTypeId(Ud)!='E00J'
 local player p=GetOwningPlayer(Ud)
@@ -8490,7 +8492,7 @@ call GroupRemoveUnit(g,Ud)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitType(f,UNIT_TYPE_HERO)and IsUnitAlly(f,p)and GetUnitTypeId(f)!='E00E' and GetUnitTypeId(f)!='E00J' then
+if IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_HERO)and IsUnitAlly(f,p)and GetUnitTypeId(f)!='E00E' and GetUnitTypeId(f)!='E00J' then
 if IsUnitInGroup(f,nD)==false then
 call GroupAddUnit(nD,f)
 set Lb=Lb+1
@@ -9537,7 +9539,7 @@ call GroupRemoveUnit(g,f)
 set f=FirstOfGroup(g)
 endloop
 call DestroyGroup(g)
-if In==16 or GetWidgetLife(u)<=.405 then
+if In==16 or IsUnitDead(u) then
 call FlushChildHashtable(Ax,dN)
 call DestroyTimer(t)
 call UnitRemoveAbility(u,'A05I')
@@ -9707,7 +9709,7 @@ if damage<0.00 then
 set damage=damage-damage-damage
 endif
 if GetUnitAbilityLevel(u,'BNba')>0 then
-if GetWidgetLife(u)-damage<=.405 then
+if GetWidgetLife(u)-damage<=0.0 then
 set f=CreateUnit(GetOwningPlayer(lo),GetUnitTypeId(u),GetUnitX(u),GetUnitY(u),GetUnitFacing(u))
 call UnitApplyTimedLife(f,'BUan',4+GetUnitAbilityLevel(lo,'A006'))
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",f,"origin"))
@@ -9735,7 +9737,7 @@ call SaveInteger(Ax,GetHandleId(GetSpellTargetUnit()),3,0)
 endif
 endfunction
 function rF takes nothing returns boolean
-return GetWidgetLife(jo)>=.405 and not(LoadBoolean(gI,GetHandleId(jo),10))
+return IsUnitAlive(jo) and not(LoadBoolean(gI,GetHandleId(jo),10))
 endfunction
 function iF takes nothing returns nothing
 local real nd=GetUnitState(jo,UNIT_STATE_MAX_LIFE)
@@ -9855,7 +9857,7 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 set b=((GetUnitTypeId(VF)=='E000' and f!=ed)or(GetUnitTypeId(VF)=='E001'))
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 and b then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) and b then
 call UnitRemoveAbility(f,'B03I')
 set T=GetUnitLoc(f)
 set c=CreateUnitAtLoc(p,'h010',T,0)
@@ -9949,7 +9951,7 @@ loop
 set f=FirstOfGroup(g2)
 exitwhen f==null
 set DC=20*JN
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -9986,7 +9988,7 @@ call RemoveLocation(L)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set GF=CreateTimer()
 set hF=GetHandleId(GF)
 set L=GetUnitLoc(f)
@@ -10147,7 +10149,7 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 set b=(GetUnitAbilityLevel(f,'A09Y')==0 and GetUnitAbilityLevel(f,'B03U')==0 and GetUnitAbilityLevel(f,'BUts')==0 and GetUnitAbilityLevel(f,'BEah')==0 and GetUnitAbilityLevel(f,'A08I')==0 and GetUnitAbilityLevel(f,'B008')==0 and GetUnitAbilityLevel(f,'B003')==0 and GetUnitAbilityLevel(f,'B006')==0 and GetUnitAbilityLevel(f,'B03C')==0 and GetUnitAbilityLevel(f,'B01F')==0)
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 and b then
+if IsUnitAlive(f) and IsUnitEnemy(f,p) and b then
 set kI=true
 set DamageTypeAttack=false
 call UnitDamageTarget(ed,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
@@ -10219,7 +10221,7 @@ call RemoveLocation(L)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitAlly(f,p)and GetWidgetLife(u)>.405 then
+if IsUnitAlive(u) and IsUnitAlly(f,p) then
 set t=CreateTimer()
 set dN=GetHandleId(t)
 set L=GetUnitLoc(f)
@@ -10274,7 +10276,7 @@ set t=null
 set u=null
 endfunction
 function ZF takes nothing returns boolean
-return GetWidgetLife(Rv)>.405
+return IsUnitAlive(Rv)
 endfunction
 function vg takes nothing returns nothing
 local group g=CreateGroup()
@@ -10291,7 +10293,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) and IsUnitEnemy(f,p) then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -10563,7 +10565,7 @@ set DC=$A*JN+(cg-Cg)*(2*JN)/'d'
 else
 set DC=$A*JN+(cg-Cg)*(5*JN)/'d'
 endif
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -10693,7 +10695,7 @@ function jg takes nothing returns boolean
 return GetSpellAbilityId()=='A07L'
 endfunction
 function Jg takes nothing returns boolean
-return GetWidgetLife(GetFilterUnit())>.405 and IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))
+return IsUnitAlive(GetFilterUnit()) and IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))
 endfunction
 function kg takes nothing returns nothing
 local timer t=GetExpiredTimer()
@@ -10914,11 +10916,11 @@ call DestroyTimer(GetExpiredTimer())
 call DestroyTimer(TI)
 endfunction
 function eG takes nothing returns boolean
-return GetUnitAbilityLevel(GetFilterUnit(),'B02M')>0 and GetWidgetLife(GetFilterUnit())>.405
+return  IsUnitAlive(GetFilterUnit()) and GetUnitAbilityLevel(GetFilterUnit(),'B02M')>0
 endfunction
 function xG takes nothing returns nothing
 local unit e=GetEnumUnit()
-if GetUnitAbilityLevel(e,'B02M')>0 and GetWidgetLife(e)>.405 then
+if IsUnitAlive(e) and GetUnitAbilityLevel(e,'B02M')>0 then
 set DamageTypeAttack=false
 call UnitDamageTarget(kx,e,SI,false,false,null,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -10975,7 +10977,7 @@ set DC=nG+VG
 else
 set DC=nG
 endif
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -11019,7 +11021,7 @@ set g=Yc(gg)
 loop
 set f=FirstOfGroup(gg)
 exitwhen f==null
-if GetWidgetLife(f)<=.405 or IsUnitEnemy(f,GetOwningPlayer(uA))==false then
+if IsUnitDead(f) or IsUnitEnemy(f,GetOwningPlayer(uA))==false then
 call GroupRemoveUnit(g,f)
 endif
 call GroupRemoveUnit(gg,f)
@@ -11069,7 +11071,7 @@ set DamageTypeAttack=false
 call UnitDamageTarget(u,T,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
 set e=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl",T,"origin")
-if GetWidgetLife(T)>.405 then
+if IsUnitAlive(T) then
 call SetUnitTimeScale(T,.0)
 call PauseUnit(T,true)
 call SaveUnitHandle(Ax,1,dN,T)
@@ -11151,7 +11153,7 @@ set g=Yc(gg)
 loop
 set f=FirstOfGroup(gg)
 exitwhen f==null
-if GetWidgetLife(f)<=.405 or IsUnitEnemy(f,p)==false then
+if IsUnitDead(f) or IsUnitEnemy(f,p)==false then
 call GroupRemoveUnit(g,f)
 endif
 call GroupRemoveUnit(gg,f)
@@ -11163,7 +11165,7 @@ set g2=Yc(gg)
 loop
 set f=FirstOfGroup(gg)
 exitwhen f==null
-if GetWidgetLife(f)<=.405 or IsUnitEnemy(f,p)==false then
+if IsUnitDead(f) or IsUnitEnemy(f,p)==false then
 call GroupRemoveUnit(g2,f)
 endif
 call GroupRemoveUnit(gg,f)
@@ -11171,11 +11173,11 @@ endloop
 loop
 set f=FirstOfGroup(g2)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) and IsUnitEnemy(f,p) then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 set c=CreateUnitAtLoc(p,'h00P',GetUnitLoc(f),.0)
 call GroupAddUnit(g3,c)
 call UnitAddAbility(c,'A0DI')
@@ -11324,7 +11326,7 @@ call GroupEnumUnitsInRangeOfLoc(g,l,350,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitEnemy(f,p)then
+if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,JN*60,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -11538,7 +11540,7 @@ local group g
 local real uG=LoadReal(Ax,5,dN)
 local real UG=2.5*I2R(JN)+uG
 local unit f
-if In>vB or GetWidgetLife(uA)<=.405 then
+if In>vB or IsUnitDead(uA) then
 call DestroyTimer(t)
 call DestroyEffect(e)
 call RemoveUnit(uI)
@@ -11548,7 +11550,7 @@ call GroupEnumUnitsInRange(g,GetWidgetX(uA),GetWidgetY(uA),375,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 and FN(f)then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) and FN(f)then
 set DamageTypeAttack=false
 call UnitDamageTarget(uI,f,UG,false,false,null,DAMAGE_TYPE_UNIVERSAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -11593,7 +11595,7 @@ call DestroyTrigger(xV)
 endif
 endfunction
 function yG takes nothing returns boolean
-return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(ox))and GetWidgetLife(GetFilterUnit())>.405 and GetUnitLifePercent(GetFilterUnit())<30.
+return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(ox))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())<30.
 endfunction
 function YG takes nothing returns nothing
 local group g=CreateGroup()
@@ -11806,7 +11808,7 @@ call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\VampiricAu
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -11836,7 +11838,7 @@ function bh takes nothing returns nothing
 local unit u=ox
 local integer vC=GetUnitAbilityLevel(u,'A0CG')
 local real r=ix*(2+vC)*.25
-if GetWidgetLife(u)>.405 then
+if IsUnitAlive(u) then
 call SetWidgetLife(u,GetWidgetLife(u)+r)
 endif
 set u=null
@@ -11922,7 +11924,7 @@ function lh takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
-if GetWidgetLife(Te)>.405 then
+if IsUnitAlive(Te) then
 call rB(Te)
 endif
 call SaveUnitHandle(Ax,1,dN,uA)
@@ -12101,7 +12103,7 @@ call GroupAddUnit(g,u)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and GetUnitAbilityLevel(f,'A0BF')==0 then
+if IsUnitAlive(f) and GetUnitAbilityLevel(f,'A0BF')==0 then
 call Bd(f)
 endif
 call GroupRemoveUnit(g,f)
@@ -12141,7 +12143,7 @@ local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
 local integer cC
 local unit f
-if GetWidgetLife(bC)>.405 and IsUnitEnemy(uA,GetOwningPlayer(bC))and DistanceBetweenPoints(sf,RH)<=550. then
+if IsUnitAlive(bC) and IsUnitEnemy(uA,GetOwningPlayer(bC))and DistanceBetweenPoints(sf,RH)<=550. then
 call RemoveLocation(sf)
 call RemoveLocation(RH)
 set cC=GetUnitAbilityLevel(bC,'A04A')
@@ -12170,7 +12172,7 @@ local integer In=1
 local effect e
 local unit uA=GetSpellTargetUnit()
 loop
-exitwhen In>5 or GetWidgetLife(uA)<=.405
+exitwhen In>5 or IsUnitDead(uA)
 set e=AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIre\\AIreTarget.mdl",uA,"origin")
 call TriggerSleepAction(1)
 call DestroyEffect(e)
@@ -12455,7 +12457,7 @@ local unit u=xx
 local real UH=GetUnitState(u,UNIT_STATE_MAX_LIFE)
 local real wH=GetWidgetLife(u)
 local real WH='d'*wH/ UH
-if wH>.405 then
+if wH>0.0 then
 call SetWidgetLife(u,wH+UH*('d'-WH)*(.000025*GetUnitAbilityLevel(u,'A0JS')+.0000125))
 endif
 set u=null
@@ -12463,7 +12465,7 @@ endfunction
 function yH takes nothing returns nothing
 local unit uE=GetEnumUnit()
 local unit uA=GetSpellAbilityUnit()
-if((GetWidgetLife(uE)>.405)and(IsUnitAlly(uE,GetOwningPlayer(uA))==false))then
+if((IsUnitAlive(uE))and(IsUnitAlly(uE,GetOwningPlayer(uA))==false))then
 set DamageTypeAttack=false
 call UnitDamageTargetBJ(uA,uE,(100.*I2R(GetUnitAbilityLevel(uA,'A0A5'))),ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC)
 set DamageTypeAttack=true
@@ -12523,7 +12525,7 @@ set tt=CreateTimer()
 set Jd=GetHandleId(tt)
 if IsUnitEnemy(f,p)and FN(f)then
 set e=AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl",f,"head")
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,DC,false,false,null,DAMAGE_TYPE_UNIVERSAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -12568,7 +12570,7 @@ set n=Yc(g)
 loop
 set f=FirstOfGroup(n)
 exitwhen f==null
-if GetWidgetLife(f)<=.405 then
+if IsUnitDead(f) then
 call GroupRemoveUnit(g,f)
 endif
 call GroupRemoveUnit(n,f)
@@ -12631,7 +12633,7 @@ endif
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitAlly(f,p)then
+if IsUnitAlive(f) and IsUnitAlly(f,p)then
 if b then
 if sp then
 set gN=35*(GetUnitState(f,UNIT_STATE_MAX_LIFE)/'d')
@@ -12650,7 +12652,7 @@ call SaveEffectHandle(Ax,1,dN,e)
 call TimerStart(t,.5,false,function ub)
 set t=null
 endif
-if GetWidgetLife(f)>.405 and IsUnitEnemy(f,p)and FN(f)then
+if IsUnitAlive(f) and IsUnitEnemy(f,p)and FN(f)then
 if b then
 if sp then
 set gN=30*(GetUnitState(f,UNIT_STATE_MAX_LIFE)/'d')
@@ -12750,7 +12752,7 @@ set f=FirstOfGroup(g2)
 exitwhen f==null
 set xp=GetUnitState(f,UNIT_STATE_MAX_LIFE)
 set DC=(xp*(2+JN))/'d'
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -12963,7 +12965,7 @@ call GroupEnumUnitsInRange(g,GetWidgetX(ed),GetWidgetY(ed),$96,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -13204,7 +13206,7 @@ set DC=R+40.*I2R(JN)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitEnemy(f,p)then
+if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set GF=CreateTimer()
 set hF=GetHandleId(GF)
 set e=AddSpecialEffectTarget("Abilities\\Spells\\Orc\\MirrorImage\\MirrorImageDeathCaster.mdl",f,"origin")
@@ -13307,11 +13309,11 @@ call SetUnitAbilityLevel(c,'A0CK',vC)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitEnemy(f,p)then
+if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-if GetWidgetLife(f)>.405 then
+if IsUnitAlive(f) then
 call IssueTargetOrderById(c,$D00B5,f)
 endif
 endif
@@ -13334,7 +13336,7 @@ local unit c=LoadUnitHandle(Ax,3,dN)
 local integer In=LoadInteger(Ax,1,dN)
 local integer vB=LoadInteger(Ax,2,dN)
 local real r=LoadReal(Ax,4,dN)
-if In>vB or GetWidgetLife(c)<=.405 then
+if In>vB or IsUnitDead(c) then
 call DestroyTimer(t)
 else
 call SetWidgetLife(c,GetWidgetLife(c)+r)
@@ -13395,7 +13397,7 @@ local location T
 local unit f
 local player p
 local real cB
-if GetWidgetLife(u)<=.405 then
+if IsUnitDead(u) then
 else
 set p=GetOwningPlayer(u)
 set T=GetUnitLoc(u)
@@ -13405,7 +13407,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if(GetWidgetLife(f)>.405 and IsUnitAlly(f,p))then
+if(IsUnitAlive(f) and IsUnitAlly(f,p))then
 set cB=GetHeroStr(f,false)*.5
 call SetWidgetLife(f,GetWidgetLife(f)+cB)
 endif
@@ -13532,7 +13534,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,9999.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if first!=null and GetWidgetLife(first)>.405 and IsUnitAlly(first,p)and IsUnitType(first,UNIT_TYPE_HERO)and not IsUnitIllusion(first)then
+if first!=null and IsUnitAlive(first) and IsUnitAlly(first,p)and IsUnitType(first,UNIT_TYPE_HERO)and not IsUnitIllusion(first)then
 set t=CreateTimer()
 set h=GetHandleId(t)
 call SaveUnitHandle(HashData,h,StringHash("DarkPact:Target"),first)
@@ -13558,7 +13560,7 @@ call SetUnitState(KG,UNIT_STATE_MANA,GetUnitState(KG,UNIT_STATE_MAX_MANA)*RMaxBJ
 loop
 exitwhen In>8
 set u=PlayersHeroArray[In]
-if u!=null and GetWidgetLife(u)>.405 and IsUnitAlly(u,p)then
+if u!=null and IsUnitAlive(u) and IsUnitAlly(u,p)then
 if u!=KG then
 call SetUnitState(u,UNIT_STATE_LIFE,GetUnitState(u,UNIT_STATE_MAX_LIFE)*RMaxBJ(0,GetUnitStatePercent(u,UNIT_STATE_LIFE,UNIT_STATE_MAX_LIFE)+2.5)*.01)
 call SetUnitState(u,UNIT_STATE_MANA,GetUnitState(u,UNIT_STATE_MAX_MANA)*RMaxBJ(0,GetUnitStatePercent(u,UNIT_STATE_MANA,UNIT_STATE_MAX_MANA)+2.5)*.01)
@@ -13595,7 +13597,7 @@ endfunction
 function CJ takes nothing returns nothing
 local unit u=GetEnumUnit()
 local unit KG=GetSpellAbilityUnit()
-if GetWidgetLife(u)>.405 then
+if IsUnitAlive(u) then
 set DamageTypeAttack=false
 call UnitDamageTarget(KG,u,(80.*I2R(GetUnitAbilityLevel(KG,'A05W'))),true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -13650,7 +13652,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 call UnitRemoveAbility(f,'B02A')
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
@@ -13692,7 +13694,7 @@ call DestroyTrigger(cE)
 endif
 endfunction
 function hJ takes nothing returns boolean
-return GetWidgetLife(gv)>.405 and Xv==false and IsUnitHidden(gv)==false
+return IsUnitAlive(gv) and Xv==false and IsUnitHidden(gv)==false
 endfunction
 function HJ takes nothing returns nothing
 local unit u=gv
@@ -13758,7 +13760,7 @@ elseif golem_fire_rage_level == 2 then
 elseif golem_fire_rage_level == 3 then
     set golem_fire_rage_damage = 160
 endif
-if IsUnitEnemy(u,GetOwningPlayer(GetTriggerUnit()))and GetWidgetLife(u)>.405 then
+if IsUnitEnemy(u,GetOwningPlayer(GetTriggerUnit()))and IsUnitAlive(u) then
 set DamageTypeAttack=false
 call UnitDamageTarget(Fv,u,golem_fire_rage_damage,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -13804,7 +13806,7 @@ return GetSpellAbilityId()=='A04K'
 endfunction
 function QJ takes nothing returns boolean
 local unit f=GetFilterUnit()
-if IsUnitEnemy(f,UI)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,UI)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(vA,f,WI,false,false,null,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -13847,7 +13849,7 @@ local real y
 local real rx
 local real ry
 local real r
-if In>vB or GetWidgetLife(uA)<=.405 then
+if In>vB or IsUnitDead(uA) then
 call DestroyTimer(t)
 else
 set r=$96
@@ -13925,7 +13927,7 @@ local unit VF=GetAttacker()
 local integer JN=GetUnitAbilityLevel(VF,'A043')
 local real r
 if GetRandomInt(1,'d')<=30 then
-if GetWidgetLife(u)>.405 and IsUnitEnemy(u,GetOwningPlayer(VF))then
+if IsUnitAlive(u) and IsUnitEnemy(u,GetOwningPlayer(VF))then
 call TriggerSleepAction(.1)
 set r=GetHeroAgi(VF,true)*1.3*GetUnitAbilityLevel(VF,'A043')+GetRandomInt(1,GetHeroAgi(VF,true))
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Stampede\\StampedeMissileDeath.mdl",u,"chest"))
@@ -13998,7 +14000,7 @@ call EnableTrigger(LE)
 call DestroyTrigger(lE)
 endfunction
 function ok takes nothing returns boolean
-return GetUnitLifePercent(Av)!=100. and GetWidgetLife(Av)>.405
+return GetUnitLifePercent(Av)!=100. and IsUnitAlive(Av)
 endfunction
 function rk takes nothing returns nothing
 call SetWidgetLife(Av,GetWidgetLife(Av)+6.25*GetUnitAbilityLevel(Av,'A03Y'))
@@ -14012,7 +14014,7 @@ call EnableTrigger(ME)
 call DestroyTrigger(mE)
 endfunction
 function nk takes nothing returns boolean
-return GetWidgetLife(Av)>.405
+return IsUnitAlive(Av)
 endfunction
 function Vk takes nothing returns nothing
 if IsUnitInGroup(GetEnumUnit(),qx)then
@@ -14036,7 +14038,7 @@ call RemoveLocation(Xk)
 loop
 set f=FirstOfGroup(gg)
 exitwhen f==null
-if IsUnitEnemy(f,p)==false or GetWidgetLife(f)<=.405 then
+if IsUnitEnemy(f,p)==false or IsUnitDead(f) then
 call GroupRemoveUnit(g,f)
 endif
 call GroupRemoveUnit(gg,f)
@@ -14114,7 +14116,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -14177,7 +14179,7 @@ call RemoveLocation(l)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 and f!=ed then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) and f!=ed then
 set fk=GetUnitState(f,UNIT_STATE_MAX_LIFE)
 set Dk=GetUnitLifePercent(f)
 set DC=.03*fk
@@ -14307,7 +14309,7 @@ function lk takes nothing returns boolean
 return GetSpellAbilityId()=='A02O'
 endfunction
 function Lk takes nothing returns boolean
-return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))and GetWidgetLife(GetSpellAbilityUnit())>.405
+return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))and IsUnitAlive(GetSpellAbilityUnit())
 endfunction
 function mk takes nothing returns nothing
 local unit f=GetEnumUnit()
@@ -14418,7 +14420,7 @@ call GroupEnumUnitsInRange(g,x,y,300,null)
 loop
 set u=FirstOfGroup(g)
 exitwhen u==null
-if GetWidgetLife(u)>.405 and not IsUnitType(u,UNIT_TYPE_STRUCTURE)and IsUnitEnemy(u,GetOwningPlayer(C))then
+if IsUnitAlive(u) and not IsUnitType(u,UNIT_TYPE_STRUCTURE)and IsUnitEnemy(u,GetOwningPlayer(C))then
 set DamageTypeAttack=false
 call UnitDamageTarget(C,u,90*JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -14441,7 +14443,7 @@ call SetUnitPathing(u,false)
 call SetUnitMoveSpeed(u,0)
 // call TimerStart(t,.03,true,function Wk)
 else
-if IsUnitAlly(u,GetOwningPlayer(C))and GetWidgetLife(u)>.405 then
+if IsUnitAlly(u,GetOwningPlayer(C))and IsUnitAlive(u) then
 call SetWidgetLife(u,GetWidgetLife(u)+$96*JN)
 set e=AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",u,"origin")
 
@@ -14485,7 +14487,7 @@ endfunction
 function xK takes nothing returns boolean
 local unit uA=GetSpellAbilityUnit()
 local unit uE=GetFilterUnit()
-if IsUnitEnemy(uE,GetOwningPlayer(uA))and GetWidgetLife(uE)>.405 then
+if IsUnitEnemy(uE,GetOwningPlayer(uA))and IsUnitAlive(uE) then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,uE,yI,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -14528,7 +14530,7 @@ set g=HA(bj_mapInitialPlayableArea)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetUnitAbilityLevel(f,'Bspl')>0 and GetWidgetLife(f)>.405 then
+if GetUnitAbilityLevel(f,'Bspl')>0 and IsUnitAlive(f) then
 call SetWidgetLife(f,GetWidgetLife(f)+r)
 set b=true
 endif
@@ -14629,7 +14631,7 @@ endif
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitAlly(f,p)and GetWidgetLife(f)>.405 and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false then
+if IsUnitAlly(f,p)and IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false then
 set pb=CreateTrigger()
 set Pb=GetHandleId(pb)
 call TriggerRegisterUnitEvent(pb,f,EVENT_UNIT_DAMAGED)
@@ -14668,7 +14670,7 @@ local integer dN=GetHandleId(t)
 local unit u=LoadUnitHandle(Ax,1,dN)
 local integer bC=LoadInteger(Ax,2,dN)
 local real xp
-if GetWidgetLife(u)<=.405 then
+if IsUnitDead(u) then
 call ModifyHeroStat(0,u,1,bC)
 call SetWidgetLife(u,.0)
 else
@@ -14711,7 +14713,7 @@ local real xp
 local location L
 local integer JN
 local integer CK=0
-if GetWidgetLife(u)<=.405 then
+if IsUnitDead(u) then
 call SetHeroStr(u,GetHeroStr(u,false)-cK,true)
 call SetWidgetLife(u,.0)
 else
@@ -14726,13 +14728,13 @@ call RemoveLocation(L)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if f!=Ev and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false and GetWidgetLife(f)>.405 then
+if f!=Ev and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false and IsUnitAlive(f) then
 set CK=CK+1
 endif
 call GroupRemoveUnit(g,f)
 endloop
 set cK=CK*JN
-if GetWidgetLife(u)<=.405 then
+if IsUnitDead(u) then
 call SetHeroStr(u,GetHeroStr(u,false)+cK,true)
 call SetWidgetLife(u,.0)
 else
@@ -14780,7 +14782,7 @@ function GK takes nothing returns nothing
 local trigger pb=GetTriggeringTrigger()
 local integer Id=GetHandleId(pb)
 local unit u=LoadUnitHandle(Ax,StringHash("Naga"),Id)
-if GetWidgetLife(u)>.405 and GetIssuedOrderId()!=$D0005 then
+if IsUnitAlive(u) and GetIssuedOrderId()!=$D0005 then
 call DisableTrigger(pb)
 call IssueTargetOrderById(GetTriggerUnit(),$D000F,u)
 call EnableTrigger(pb)
@@ -14944,7 +14946,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -15008,7 +15010,7 @@ local unit u=GetEnumUnit()
 local unit uA=GetSpellAbilityUnit()
 local player p=GetOwningPlayer(uA)
 local integer JN=GetUnitAbilityLevel(uA,'A03C')
-if GetUnitLevel(u)>=6 or IsUnitType(u,UNIT_TYPE_HERO)or(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))!=0 or GetWidgetLife(u)<=.405 or IsUnitAlly(u,p)or IsUnitType(u,UNIT_TYPE_STRUCTURE)or IsUnitIllusion(u)then
+if GetUnitLevel(u)>=6 or IsUnitType(u,UNIT_TYPE_HERO)or(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))!=0 or IsUnitDead(u) or IsUnitAlly(u,p)or IsUnitType(u,UNIT_TYPE_STRUCTURE)or IsUnitIllusion(u)then
 else
 call sK(u,uA)
 endif
@@ -15041,7 +15043,7 @@ function UK takes nothing returns nothing
 local unit u=Ov
 local unit d=GetDyingUnit()
 local integer JN=GetUnitAbilityLevel(u,'A03D')
-if GetWidgetLife(u)>.405 and(IsUnitType(d,UNIT_TYPE_MELEE_ATTACKER)or IsUnitType(d,UNIT_TYPE_RANGED_ATTACKER))then
+if IsUnitAlive(u) and(IsUnitType(d,UNIT_TYPE_MELEE_ATTACKER)or IsUnitType(d,UNIT_TYPE_RANGED_ATTACKER))then
 call SetWidgetLife(u,GetWidgetLife(u)+.15*I2R(JN)*GetUnitStateSwap(UNIT_STATE_MAX_LIFE,d))
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Polymorph\\PolyMorphDoneGround.mdl",u,"origin"))
 endif
@@ -15095,7 +15097,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if IsUnitEnemy(f,p)and GetWidgetLife(f)>.405 and IsUnitType(f,UNIT_TYPE_HERO)==false and IsUnitIllusion(f)==false and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))==0 and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false then
+if IsUnitEnemy(f,p)and IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_HERO)==false and IsUnitIllusion(f)==false and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))==0 and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,$C350,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -15166,7 +15168,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitEnemy(f,p)then
+if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,50*JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -15194,7 +15196,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if GetWidgetLife(f)>.405 and IsUnitEnemy(f,p)then
+if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,50*JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -15227,7 +15229,7 @@ endif
 endif
 endfunction
 function nl takes nothing returns nothing
-if GetWidgetLife(bv)>.405 then
+if IsUnitAlive(bv) then
 call SetHeroInt(bv,GetHeroInt(bv,false)+fv,true)
 endif
 endfunction
@@ -15423,7 +15425,7 @@ set c=null
 set L=null
 endfunction
 function Dl takes nothing returns boolean
-return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellTargetUnit()))and GetWidgetLife(GetFilterUnit())>.405 and GetUnitLifePercent(GetFilterUnit())<100.
+return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellTargetUnit()))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())<100.
 endfunction
 function fl takes nothing returns nothing
 local integer Id=GetSpellAbilityId()
@@ -15490,7 +15492,7 @@ local unit u=qe
 local effect e
 local timer t
 local integer dN
-if IsUnitEnemy(uE,GetOwningPlayer(u))and GetWidgetLife(uE)>.405 then
+if IsUnitEnemy(uE,GetOwningPlayer(u))and IsUnitAlive(uE) then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,uE,20+20*GetUnitAbilityLevel(u,Vo),true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
@@ -15769,7 +15771,7 @@ call RemoveLocation(T)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if(GetWidgetLife(f)>.405 and IsUnitAlly(f,p))or f==u then
+if(IsUnitAlive(f) and IsUnitAlly(f,p))or f==u then
 call SetWidgetLife(f,GetWidgetLife(f)+cB)
 if f!=u then
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",f,"origin"))
@@ -15889,7 +15891,7 @@ function DL takes nothing returns nothing
 local trigger pb=GetTriggeringTrigger()
 local integer Id=GetHandleId(pb)
 local unit u=LoadUnitHandle(Ax,StringHash("ItemNew"),Id)
-if GetWidgetLife(u)>.405 then
+if IsUnitAlive(u) then
 call DisableTrigger(pb)
 call IssueTargetOrderById(GetTriggerUnit(),$D000F,u)
 call EnableTrigger(pb)
@@ -16070,7 +16072,7 @@ set qL=null
 endfunction
 function QL takes nothing returns boolean
 local unit f=GetFilterUnit()
-if IsUnitType(f,UNIT_TYPE_STRUCTURE)or IsUnitAlly(f,zI)or GetWidgetLife(f)<=.405 or IsUnitInvisible(f,zI)or FN(f)==false then
+if IsUnitType(f,UNIT_TYPE_STRUCTURE)or IsUnitAlly(f,zI)or IsUnitDead(f) or IsUnitInvisible(f,zI)or FN(f)==false then
 set f=null
 set f=null
 return false
@@ -16110,7 +16112,7 @@ call SaveUnitHandle(Ax,GetHandleId(fN),1,f)
 call TimerStart(fN,2,false,function PL)
 set fN=null
 endif
-if In>16 or GetWidgetLife(uA)<=.405 then
+if In>16 or IsUnitDead(uA) then
 call DestroyTimer(t)
 call DestroyGroup(qL)
 call FlushChildHashtable(Ax,dN)
@@ -16202,7 +16204,7 @@ call RemoveLocation(T)
 loop
 set f2=FirstOfGroup(g2)
 exitwhen f2==null
-if GetWidgetLife(f2)>.405 and IsUnitAlly(f2,GetOwningPlayer(f1))and GetUnitLifePercent(f2)<50. then
+if IsUnitAlive(f2) and IsUnitAlly(f2,GetOwningPlayer(f1))and GetUnitLifePercent(f2)<50. then
 call SetWidgetLife(f2,GetWidgetLife(f2)+20.)
 endif
 call GroupRemoveUnit(g2,f2)
@@ -16243,7 +16245,7 @@ loop
 set f=FirstOfGroup(g2)
 exitwhen f==null
 set b=true
-if GetWidgetLife(f)>.405 and FN(f)then
+if IsUnitAlive(f) and FN(f)then
 set DamageTypeAttack=false
 call UnitDamageTarget(ff,f,50,false,false,null,DAMAGE_TYPE_UNIVERSAL,null)
 set DamageTypeAttack=true
@@ -16259,7 +16261,7 @@ set p=GetOwningPlayer(uA)
 loop
 set f=FirstOfGroup(g2)
 exitwhen f==null
-if IsUnitAlly(f,p)and GetWidgetLife(f)>.405 then
+if IsUnitAlly(f,p)and IsUnitAlive(f) then
 call SetWidgetLife(f,GetWidgetLife(f)+50.)
 endif
 call GroupRemoveUnit(g2,f)
@@ -18808,7 +18810,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
         call AdjustPlayerStateBJ(6 + CurrentWave,ae[In],PLAYER_STATE_RESOURCE_LUMBER)
         if GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
             call ReviveHeroLoc(PlayersHeroArray[In],GetUnitLoc(PlayersHeroArray[In]),false)
-            if GetWidgetLife(PlayersHeroArray[In])<=.405 then
+            if IsUnitDead(PlayersHeroArray[In]) then
                 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",PlayersHeroArray[In],"origin"))
             endif
         endif
@@ -19078,7 +19080,7 @@ call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if(IsPlayerInForce(GetOwningPlayer(f),tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or GetWidgetLife(f)>.405))then
+if(IsPlayerInForce(GetOwningPlayer(f),tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or IsUnitAlive(f)))then
 set n=n+1
 endif
 call GroupRemoveUnit(g,f)
@@ -19087,7 +19089,7 @@ call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,null)
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
-if(IsPlayerInForce(GetOwningPlayer(f),Tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or GetWidgetLife(f)>.405))then
+if(IsPlayerInForce(GetOwningPlayer(f),Tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or IsUnitAlive(f)))then
 set n2=n2+1
 endif
 call GroupRemoveUnit(g,f)
@@ -19125,7 +19127,7 @@ set jv=true
 set rv=0
 loop
 exitwhen In>vB
-if HeroInGameAndAliveARRAY[In]or GetWidgetLife(PlayersHeroArray[In])>.405 then
+if HeroInGameAndAliveARRAY[In]or IsUnitAlive(PlayersHeroArray[In]) then
     call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
     call SetUnitFacing(PlayersHeroArray[In],90.)
 else
@@ -19139,7 +19141,7 @@ set In=mv+1
 set vB=A
 loop
 exitwhen In>vB
-if HeroInGameAndAliveARRAY[In]or GetWidgetLife(PlayersHeroArray[In])>.405 then
+if HeroInGameAndAliveARRAY[In]or IsUnitAlive(PlayersHeroArray[In]) then
     call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect))
     call SetUnitFacing(PlayersHeroArray[In],270.)
 
@@ -20364,7 +20366,7 @@ local unit f
 local location T
 if pe[ec]==false then
 set pe[ec]=true
-if GetWidgetLife(u)>.405 then
+if IsUnitAlive(u) then
 if(GetLocalPlayer()==p)then
 call ClearSelection()
 call SelectUnit(u,true)
@@ -21894,7 +21896,7 @@ local integer random
 local integer idNewItem
 if((id)=='vamp')then
 if FN(u)==false then
-if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 and HeroInGameAndAliveARRAY[Bc]then
+if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) and HeroInGameAndAliveARRAY[Bc]then
 call UnitAddItemById(PlayersHeroArray[Bc],lS(id))
 else
 call SaveReal(Ax,dN,1,x)
@@ -21907,7 +21909,7 @@ call UnitAddItemById(u,lS(id))
 endif
 endif
 if id=='I07H' then
-if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 then
+if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) then
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
 call ModifyHeroStat(1,PlayersHeroArray[Bc],0,1)
 else
@@ -21918,7 +21920,7 @@ call TimerStart(t,.0,false,function mS)
 endif
 endif
 if id=='I07J' then
-if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 then
+if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) then
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
 call ModifyHeroStat(0,PlayersHeroArray[Bc],0,1)
 else
@@ -21929,7 +21931,7 @@ call TimerStart(t,.0,false,function mS)
 endif
 endif
 if id=='I07I' then
-if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 then
+if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) then
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",PlayersHeroArray[Bc],"origin"))
 call ModifyHeroStat(2,PlayersHeroArray[Bc],0,1)
 else
@@ -22262,7 +22264,7 @@ local timer t
 local integer dN
 local integer cC
 local unit f
-if GetUnitAbilityLevel(bC,'A04A')>0 and GetWidgetLife(bC)>.405 and IsUnitEnemy(uA,GetOwningPlayer(bC))and DistanceBetweenPoints(sf,RH)<=550. then
+if GetUnitAbilityLevel(bC,'A04A')>0 and IsUnitAlive(bC) and IsUnitEnemy(uA,GetOwningPlayer(bC))and DistanceBetweenPoints(sf,RH)<=550. then
 set t=CreateTimer()
 set dN=GetHandleId(t)
 call RemoveLocation(sf)
@@ -22615,7 +22617,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,aoe,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if GetUnitAbilityLevel(first,'B03G')>0 and IsUnitAlly(first,GetOwningPlayer(u))and GetWidgetLife(first)>.405 then
+if GetUnitAbilityLevel(first,'B03G')>0 and IsUnitAlly(first,GetOwningPlayer(u))and IsUnitAlive(first) then
 call SetWidgetLife(first,GetWidgetLife(first)+heal)
 // call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\FaerieDragonInvis\\FaerieDragon_Invis.mdl",first,"origin"))
 endif
@@ -22626,7 +22628,7 @@ loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
 set b=(GetUnitAbilityLevel(first,'A09Y')==0 and GetUnitAbilityLevel(first,'B03U')==0 and GetUnitAbilityLevel(first,'BUts')==0 and GetUnitAbilityLevel(first,'BEah')==0 and GetUnitAbilityLevel(first,'A08I')==0 and GetUnitAbilityLevel(first,'B008')==0 and GetUnitAbilityLevel(first,'B003')==0 and GetUnitAbilityLevel(first,'B006')==0 and GetUnitAbilityLevel(first,'B03C')==0 and GetUnitAbilityLevel(first,'B01F')==0)
-if b and IsUnitEnemy(first,GetOwningPlayer(u))and GetWidgetLife(first)>.405 then
+if b and IsUnitEnemy(first,GetOwningPlayer(u))and IsUnitAlive(first) then
 set kI=true
 set DamageTypeAttack=false
 call UnitDamageTarget(u,first,heal,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
@@ -22820,7 +22822,7 @@ if not IssueTargetOrder(first,"attack",caster)then
 call IssueTargetOrder(first,"smart",caster)
 endif
 // endif
-if IsUnitAlive(first)or not IsUnitAlive(caster) or GetUnitAbilityLevel(first,'B03N')>0 or duration<=0.00 or not b then
+if IsUnitAlive(first)or IsUnitDead(caster) or GetUnitAbilityLevel(first,'B03N')>0 or duration<=0.00 or not b then
 call KillTimer(t)
 call FlushChildHashtable(HashData,h)
 call RemoveSavedHandle(HashData,h1,StringHash("MithrilArmor:Caster"))
