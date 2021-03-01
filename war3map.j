@@ -1075,7 +1075,16 @@ endglobals
 function IsPlayerOnline takes player p returns boolean
 return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
 endfunction
+function CameraAutoSetup takes nothing returns nothing
 
+local integer player_iterator=0
+loop
+    call SetCameraFieldForPlayer(Player(player_iterator),CAMERA_FIELD_TARGET_DISTANCE,2625.0,1.)
+    set player_iterator = player_iterator+1
+exitwhen player_iterator==11
+endloop
+
+endfunction
 
 // set bj_forLoopAIndex=1
 // set bj_forLoopAIndexEnd=A
@@ -9100,6 +9109,7 @@ return false
 endfunction
 function yD takes nothing returns nothing
 local integer i=0
+call CameraAutoSetup()
 set gMapMode=""
 call SelectMapModeFromHCLString()
 if gMapMode=="" then
@@ -23404,7 +23414,6 @@ local integer SA
 local integer ED
 local integer wN
 local trigger trg11
-
 // let it snow
 // call EnableWeatherEffect(AddWeatherEffect(bj_mapInitialPlayableArea, 'SNhs'), true)
 call SetCameraBounds( -3584.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 3200.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3584.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 3200.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM) )
@@ -23416,7 +23425,6 @@ call SetAmbientNightSound( "DalaranNight" )
 call SetMapMusic( "Music", true, 0 )
 call CreateRegions()
 call InitBlizzard()
-
 
 call ExecuteFunc("jasshelper__initstructs29827921")
 call ExecuteFunc("BurningArmor___Init")
