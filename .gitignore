@@ -1,3 +1,6 @@
 generated_war3map.j
 *.w3x
 functions/*
+(listfile)
+stormer
+.vscode/*
