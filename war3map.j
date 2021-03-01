@@ -1071,13 +1071,18 @@ integer f__arg_integer2
 integer f__arg_this
 integer f__result_integer
 boolean f__result_boolean
+//  debug_method
+//  0 - disabled
+//  1 - enabled
+//
+integer debug_method = 0
 endglobals
 function IsPlayerOnline takes player p returns boolean
-return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
+    return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
 endfunction
-function CameraAutoSetup takes nothing returns nothing
 
-local integer player_iterator=0
+function CameraAutoSetup takes nothing returns nothing
+local integer player_iterator = 0
 loop
     call SetCameraFieldForPlayer(Player(player_iterator),CAMERA_FIELD_TARGET_DISTANCE,2625.0,1.)
     set player_iterator = player_iterator+1
@@ -1085,7 +1090,6 @@ exitwhen player_iterator==11
 endloop
 
 endfunction
-
 // set bj_forLoopAIndex=1
 // set bj_forLoopAIndexEnd=A
 // loop
@@ -1126,6 +1130,11 @@ call StoreInteger(O,"SТАТS",AN,NN)
 if gMapMode!="" and GetLocalPlayer()==E then
 call SyncStoredInteger(O,"SТАТS",AN)
 endif
+endfunction
+function DMesg takes string message returns nothing
+    if debug_method == 1 then
+        call DisplayTextToPlayer(Player(0), 500, 0, "|Cffff0000DEBUG:|R" + message)
+    endif
 endfunction
 function sc__Table__GTable_onDestroy takes integer this returns nothing
 set f__arg_this=this
@@ -3544,14 +3553,7 @@ set i=i+1
 endloop
 set udg_DamageEventAOEGroup=CreateGroup()
 endfunction
-// Saved for history, Pauk imba sound
-// function InitSounds takes nothing returns nothing
-// set gg_snd_audio_2020_01_11_07_16_27_1=CreateSound("war3mapImported\\audio_2020-01-11_07-16-27_1.mp3",false,false,false,10,10,"")
-// call SetSoundDuration(gg_snd_audio_2020_01_11_07_16_27_1,5904)
-// call SetSoundChannel(gg_snd_audio_2020_01_11_07_16_27_1,0)
-// call SetSoundVolume(gg_snd_audio_2020_01_11_07_16_27_1,127)
-// call SetSoundPitch(gg_snd_audio_2020_01_11_07_16_27_1,1.0)
-// endfunction
+
 function CreateRegions takes nothing returns nothing
 local weathereffect we
 
@@ -8076,6 +8078,7 @@ function Cd takes nothing returns nothing
 endfunction
 function RoundStartFunction takes nothing returns nothing
     call DisableTrigger(IsReadyTrig)
+    call DMesg("IsReadyTrig disabled")
     call DestroyTimer(Ho)
     set Ho=null
     set Ho=CreateTimer()
@@ -8148,7 +8151,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         set index=index+1
         exitwhen index==16
     endloop
-    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger(Round END)[8046]")
+
     // call SaveTimerHandle(Ax,2,StringHash("timers"),PrepareBeforeRoundTimer)
     if Xv then
         set Hd=null
@@ -8189,9 +8192,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         call ModifyGateBJ(0,ho)
         set Hv=true
         // call DisableTrigger(IsReadyTrigDefault)
-        // call BJDebugMsg("DEBUG: Disabling trigger + 9561")
 
-        call DisableTrigger(IsReadyTrig)
         set Pe=true
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
         call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
@@ -8212,6 +8213,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         return
     else
         call EnableTrigger(IsReadyTrig)
+        call DMesg("IsReadyTrig enabled")
         call ModifyGateBJ(1,ho)
         set Hv=false
     endif
@@ -17409,6 +17411,7 @@ local group g=CreateGroup()
 local unit f
 local timer t=CreateTimer()
 call DisableTrigger(IsReadyTrig)
+call DMesg("IsReadyTrig disabled")
 call lb()
 if Xv then
 set t=null
@@ -17485,12 +17488,14 @@ call PauseUnit(Le,false)
 call TriggerRegisterUnitLifeEvent(OO,Le,LESS_THAN_OR_EQUAL,7000.)
 call TriggerRegisterUnitLifeEvent(RO,Le,LESS_THAN_OR_EQUAL,3000.)
 call EnableTrigger(AO)
+call DMesg("Trigger AO Enabled")
 call EnableTrigger(dO)
 call EnableTrigger(XO)
 call EnableTrigger(oO)
 else
 call PauseUnit(Me,false)
 call EnableTrigger(AO)
+call DMesg("Trigger AO Enabled")
 call EnableTrigger(XO)
 endif
 loop
@@ -17788,7 +17793,6 @@ endfunction
 function DestroyBitchUnit takes nothing returns nothing
     call RemoveUnit(GetLeavingUnit())
     call DisplayTextToForce(qA(Condition(function BM)),"Вaш юнит нe дoлжeн нaхoдитьcя в дaннoй oблacти.")
-    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Entering DestroyBitchUnit [17604]")
 endfunction
 
 function SpawnCreepsFunction takes nothing returns nothing
@@ -17796,7 +17800,7 @@ function SpawnCreepsFunction takes nothing returns nothing
     local integer DM=av
     local unit u
     local integer In=1    
-    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Entering SpawnCreepsFunction [17612]")
+    call DMesg("Entering SpawnCreepsFunction [17612]")
     set xA=CreateUnit(Player(11),'h011',0,0,0)
     
     if DM==1 then
@@ -17855,7 +17859,6 @@ function SpawnCreepsFunction takes nothing returns nothing
 
     call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
         
-    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger [17671]")
     set u=null
 endfunction
 
@@ -17871,7 +17874,6 @@ function PM takes nothing returns nothing
         set qv=false
         call DisableTrigger(cO)
         call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
-        call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Trying to disable CreepsSeekAndAttackPeriodicTrigger [17757]")
         if Ro then
             call DisableTrigger(oO)
         else
@@ -17898,6 +17900,7 @@ call DisableTrigger(CO)
 call DisableTrigger(eA)
 set iv=false
 call DisableTrigger(AO)
+call DMesg("Trigger AO Disabled")
 call DisableTrigger(XO)
 call DisableTrigger(nO)
 loop
@@ -17921,6 +17924,7 @@ call DisableTrigger(dO)
 set iv=false
 call DisableTrigger(nO)
 call DisableTrigger(AO)
+call DMesg("Trigger AO Disabled")
 call DisableTrigger(XO)
 call DisableTrigger(oO)
 call kc()
@@ -18750,6 +18754,7 @@ function eP takes nothing returns nothing
 local timer t=GetExpiredTimer()
 // call EnableTrigger(IsReadyTrigDefault)
 call DisableTrigger(IsReadyTrig)
+call DMesg("IsReadyTrig disabled")
 call EnableTrigger(kO)
 call DestroyTimer(t)
 set t=null
@@ -18768,8 +18773,6 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     local timer Gd=CreateTimer()
     local integer index=0
     local timer t1=GetExpiredTimer()
-
-    call DisplayTextToForce(bj_FORCE_PLAYER[11],"DEBUG : Entering PrepareBeforeBRoundFunction [18657]")
     call DisableTrigger(gR)
     call DestroyTimer(t1)
     set t=null
@@ -18809,6 +18812,8 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
         set Hv=true
         call TriggerExecute(SO)
     else
+        call EnableTrigger(IsReadyTrig)    
+        call DMesg("IsReadyTrig enabled")
         set Hv=false
         if CurrentWave>0 then
             call SendStatsToBot("WАVЕ",CurrentWave)
@@ -22462,32 +22467,30 @@ function ItsReady___OnConditions takes nothing returns boolean
 return GetPlayerSlotState(GetTriggerPlayer())==PLAYER_SLOT_STATE_PLAYING and GetPlayerController(GetTriggerPlayer())==MAP_CONTROL_USER
 endfunction
 function ItsReady___OnActions takes nothing returns nothing
-local player p=GetTriggerPlayer()
-local integer index=0
-set ItsReady___MAX_PLAYERS=0
-loop
-if GetPlayerSlotState(Player(index))==PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(index))==MAP_CONTROL_USER then
-set ItsReady___MAX_PLAYERS=ItsReady___MAX_PLAYERS+1
-endif
-set index=index+1
-exitwhen index==16
-endloop
-// call BJDebugMsg("ItsReady___MAX_PLAYERS="+I2S(ItsReady___MAX_PLAYERS))
+    local player p=GetTriggerPlayer()
+    local integer index=0
+    set ItsReady___MAX_PLAYERS=0
+    loop
+        if GetPlayerSlotState(Player(index))==PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(index))==MAP_CONTROL_USER then
+            set ItsReady___MAX_PLAYERS=ItsReady___MAX_PLAYERS+1
+        endif
+            set index=index+1
+        exitwhen index==16
+    endloop
 if not IsReady[GetPlayerId(p)]then
 set IsReady[GetPlayerId(p)]=true
 set CURRENT_PLAYERS=CURRENT_PLAYERS+1
-// call BJDebugMsg("CURRENT_PLAYERS="+I2S(CURRENT_PLAYERS))
 call DestroyTimer(Fo)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTriggerPlayer())+(" хочет немедленно начать раунд! ("+(I2S(CURRENT_PLAYERS)+("\\"+(I2S(ItsReady___MAX_PLAYERS)+")|R")))))))
 if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
 if Ex then
-// call BJDebugMsg("DEBUG: Disabling trigger + 23809")
 call DisableTrigger(IsReadyTrig)
+call DMesg("IsReadyTrig disabled")
 call RoundStartFunction()
 endif
 if no or Wx then
-// call BJDebugMsg("DEBUG: Disabling trigger + 23814")
 call DisableTrigger(IsReadyTrig)
+call DMesg("IsReadyTrig disabled")
 call QB()
 endif
 endif
@@ -22505,6 +22508,7 @@ call TriggerAddCondition(IsReadyTrig,Condition(function ItsReady___OnConditions)
 call TriggerAddAction(IsReadyTrig,function ItsReady___OnActions)
 // call BJDebugMsg("DEBUG: Disabling trigger + 23832")
 call DisableTrigger(IsReadyTrig)
+call DMesg("IsReadyTrig disabled")
 endfunction
 function HeroLimit___OnConditions takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())!=Player(11)and IsUnitType(GetEnteringUnit(),UNIT_TYPE_HERO)==true
@@ -23425,7 +23429,7 @@ call SetAmbientNightSound( "DalaranNight" )
 call SetMapMusic( "Music", true, 0 )
 call CreateRegions()
 call InitBlizzard()
-
+call DMesg("Testing debug mode...")
 call ExecuteFunc("jasshelper__initstructs29827921")
 call ExecuteFunc("BurningArmor___Init")
 call ExecuteFunc("CatchTheShadow___Init")
@@ -24093,6 +24097,7 @@ call TriggerAddAction(CreepsSeekAndAttackPeriodicTrigger,function CreepsSeekAndA
 set AO=CreateTrigger()
 
 call DisableTrigger(AO)
+call DMesg("Trigger AO Disabled")
 call TriggerRegisterTimerEventPeriodic(AO,2.4)
 call TriggerAddAction(AO,function AM)
 set NO=CreateTrigger()
