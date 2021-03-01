@@ -17,7 +17,7 @@ if GetRandomInt(1,5)==1 then
 set DamageTypeAttack=false
 call UnitDamageTarget(qH,QH,50.+50.*I2R(WF),true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e=AddSpecialEffectTarget("Abilities\Spells\Human\SpellSteal\SpellStealTarget.mdl",QH,"chest")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\Human\\SpellSteal\\SpellStealTarget.mdl",QH,"chest")
 call TriggerSleepAction(.2)
 call DestroyEffect(e)
 endif

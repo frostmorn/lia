@@ -34,7 +34,7 @@ call AdjustPlayerStateBJ(6 + CurrentWave,ae[In],PLAYER_STATE_RESOURCE_LUMBER)
 if GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
 call ReviveHeroLoc(PlayersHeroArray[In],GetUnitLoc(PlayersHeroArray[In]),false)
 if IsUnitDead(PlayersHeroArray[In]) then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\Resurrect\ResurrectCaster.mdl",PlayersHeroArray[In],"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",PlayersHeroArray[In],"origin"))
 endif
 endif
 set In=In+1

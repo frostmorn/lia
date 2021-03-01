@@ -54,7 +54,7 @@ set bj_forLoopAIndexEnd=A
 loop
 exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 call MultiboardSetItemStyleBJ(StatsBoard,2,(bj_forLoopAIndex+1),false,true)
-call MultiboardSetItemIconBJ(StatsBoard,2,(bj_forLoopAIndex+1),"ReplaceableTextures\WorldEditUI\Editor-Random-Unit.blp")
+call MultiboardSetItemIconBJ(StatsBoard,2,(bj_forLoopAIndex+1),"ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp")
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 call MultiboardDisplay(StatsBoard,true)

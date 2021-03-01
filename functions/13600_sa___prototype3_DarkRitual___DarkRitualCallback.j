@@ -36,7 +36,7 @@ call SetUnitState(target,UNIT_STATE_LIFE,1.00)
 call UnitDamageTarget(caster,target,5.00,false,false,ATTACK_TYPE_CHAOS,DAMAGE_TYPE_UNIVERSAL,null)
 set DamageTypeAttack=true
 endif
-call DestroyEffect(AddSpecialEffect("war3mapImported\desecrate.mdx",GetUnitX(target),GetUnitY(target)))
+call DestroyEffect(AddSpecialEffect("war3mapImported\\desecrate.mdx",GetUnitX(target),GetUnitY(target)))
 call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,400.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
@@ -49,7 +49,7 @@ else
 call SetUnitState(first,UNIT_STATE_LIFE,GetUnitState(first,UNIT_STATE_LIFE)+life)
 call CombatTextCreate(first,I2S(R2I(life)),47,255,93,TEXT_TYPE_DAMAGE)
 endif
-call AddSpecialEffectTarget("Abilities\Spells\Undead\DeathCoil\DeathCoilSpecialArt.mdl",first,"chest")
+call AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl",first,"chest")
 endif
 call GroupRemoveUnit(bj_lastCreatedGroup,first)
 endloop

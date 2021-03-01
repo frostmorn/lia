@@ -12,7 +12,7 @@ local integer ED
 local integer wN
 local trigger trg11
 call SetCameraBounds( -3584.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 3200.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3584.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 3200.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM) )
-call SetDayNightModels( "Environment\DNC\DNCDalaran\DNCDalaranTerrain\DNCDalaranTerrain.mdl", "Environment\DNC\DNCDalaran\DNCDalaranUnit\DNCDalaranUnit.mdl" )
+call SetDayNightModels( "Environment\\DNC\\DNCDalaran\\DNCDalaranTerrain\\DNCDalaranTerrain.mdl", "Environment\\DNC\\DNCDalaran\\DNCDalaranUnit\\DNCDalaranUnit.mdl" )
 call SetTerrainFogEx(0,3000.0,5000.0,0.500,0.000,0.000,0.000)
 call NewSoundEnvironment("Default")
 call SetAmbientDaySound( "DalaranDay" )
@@ -1266,7 +1266,7 @@ call TriggerRegisterPlayerUnitEvent(YR,Player(ED),EVENT_PLAYER_UNIT_PICKUP_ITEM,
 set ED=ED+1
 endloop
 call TriggerAddAction(YR,function IS)
-call Preload("Abilities\Spells\Items\AIam\AIamTarget.mdl")
+call Preload("Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl")
 set ED=0
 set wN=16
 set zR=CreateTrigger()

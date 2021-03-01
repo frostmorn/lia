@@ -9,7 +9,7 @@ if i>0 then
 set i=10+(5*GetUnitAbilityLevel(target,'A0G2'))
 if GetRandomInt(1,100)<=i then
 set udg_DamageEventAmount=0.00
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\NightElf\FaerieDragonInvis\FaerieDragon_Invis.mdl",target,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\FaerieDragonInvis\\FaerieDragon_Invis.mdl",target,"origin"))
 endif
 endif
 endif

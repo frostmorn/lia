@@ -21,7 +21,7 @@ set x=x+50.00*Cos(a*bj_DEGTORAD)
 set y=y+50.00*Sin(a*bj_DEGTORAD)
 set dummy=CreateUnit(GetOwningPlayer(caster),id,x,y,a)
 call UnitApplyTimedLife(dummy,'BEsv',duration)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Orc\FeralSpirit\feralspiritdone.mdl",dummy,"chest"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Orc\\FeralSpirit\\feralspiritdone.mdl",dummy,"chest"))
 set SoV_Owner[GetPlayerId(GetOwningPlayer(caster))]=caster
 set caster=null
 set dummy=null

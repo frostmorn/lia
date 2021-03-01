@@ -13,7 +13,7 @@ if c<=NG then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,T,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e=AddSpecialEffectTarget("Abilities\Spells\Undead\FreezingBreath\FreezingBreathTargetArt.mdl",T,"origin")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl",T,"origin")
 if IsUnitAlive(T) then
 call SetUnitTimeScale(T,.0)
 call PauseUnit(T,true)

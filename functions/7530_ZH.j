@@ -28,7 +28,7 @@ set tt=null
 set tt=CreateTimer()
 set Jd=GetHandleId(tt)
 if IsUnitEnemy(f,p)and FN(f)then
-set e=AddSpecialEffectTarget("Abilities\Spells\NightElf\CorrosiveBreath\ChimaeraAcidTargetArt.mdl",f,"head")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\CorrosiveBreath\\ChimaeraAcidTargetArt.mdl",f,"head")
 if IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,DC,false,false,null,DAMAGE_TYPE_UNIVERSAL,WEAPON_TYPE_WHOKNOWS)
@@ -38,7 +38,7 @@ call GroupRemoveUnit(g,f)
 endif
 else
 if FN(f)then
-set e=AddSpecialEffectTarget("Abilities\Spells\NightElf\FaerieFire\FaerieFireTarget.mdl",f,"head")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\FaerieFire\\FaerieFireTarget.mdl",f,"head")
 call SetWidgetLife(f,GetWidgetLife(f)+DC+25)
 endif
 endif

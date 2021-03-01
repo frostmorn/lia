@@ -28,7 +28,7 @@ set DamageTypeAttack=true
 else
 call GroupRemoveUnit(g,f)
 endif
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\Possession\PossessionTarget.mdl",f,"head"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\Possession\\PossessionTarget.mdl",f,"head"))
 call GroupRemoveUnit(g2,f)
 endloop
 if b then

@@ -17,7 +17,7 @@ set yv=0
 set DamageTypeAttack=false
 call UnitDamageTarget(qH,QH,(150.*I2R(WF)),true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set fg=AddSpecialEffectTarget("Abilities\Spells\Human\Thunderclap\ThunderClapCaster.mdl",QH,"origin")
+set fg=AddSpecialEffectTarget("Abilities\\Spells\\Human\\Thunderclap\\ThunderClapCaster.mdl",QH,"origin")
 call TriggerSleepAction(.2)
 call DestroyEffect(fg)
 endif

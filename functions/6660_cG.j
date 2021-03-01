@@ -74,7 +74,7 @@ endif
 call GroupRemoveUnit(g2,f)
 endloop
 if IsUnitEnemy(uu,p)then
-set e=AddSpecialEffectLoc("Abilities\Spells\Undead\FrostNova\FrostNovaTarget.mdl",l)
+set e=AddSpecialEffectLoc("Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl",l)
 endif
 call RemoveLocation(l)
 call SaveEffectHandle(Ax,1,Jd,e)

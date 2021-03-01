@@ -12,7 +12,7 @@ set DC=(cC+2)*GetHeroInt(c,false)
 set DamageTypeAttack=false
 call UnitDamageTarget(c,uA,DC,false,false,null,DAMAGE_TYPE_MAGIC,null)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Other\Monsoon\MonsoonBoltTarget.mdl",uA,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Monsoon\\MonsoonBoltTarget.mdl",uA,"origin"))
 set f=CreateUnitAtLoc(GetOwningPlayer(c),'h011',GetUnitLoc(uA),GetUnitFacing(uA))
 call UnitAddAbility(f,'Aprg')
 call IssueTargetOrderById(f,$D008F,uA)

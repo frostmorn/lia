@@ -19,7 +19,7 @@ set DamageTypeAttack=true
 set wN=wN+r*.08
 if wN<=$5DC then
 call SetWidgetLife(uA,GetWidgetLife(uA)+r*.08)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\VampiricAura\\VampiricAuraTarget.mdl",f,"origin"))
 endif
 endif
 call GroupRemoveUnit(g,f)

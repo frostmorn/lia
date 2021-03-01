@@ -6,7 +6,7 @@ local integer JN=GetUnitAbilityLevel(u,'A033')
 local timer tt=CreateTimer()
 local integer Jd=GetHandleId(tt)
 local integer zf=JN+1
-local effect e=AddSpecialEffectTarget("Abilities\Spells\Other\Drain\DrainCaster.mdl",u,"origin")
+local effect e=AddSpecialEffectTarget("Abilities\\Spells\\Other\\Drain\\DrainCaster.mdl",u,"origin")
 set io=true
 call SetUnitInvulnerable(u,true)
 call SaveUnitHandle(Ax,1,Jd,u)

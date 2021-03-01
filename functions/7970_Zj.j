@@ -13,7 +13,7 @@ set uT=GetSpellTargetUnit()
 set uA=GetSpellAbilityUnit()
 set WF=GetUnitAbilityLevel(uA,'A06Q')
 set l=GetUnitLoc(uT)
-call DestroyEffect(AddSpecialEffectLoc("Objects\Spawnmodels\Other\PandarenBrewmasterBlood\PandarenBrewmasterBlood.mdl",l))
+call DestroyEffect(AddSpecialEffectLoc("Objects\\Spawnmodels\\Other\\PandarenBrewmasterBlood\\PandarenBrewmasterBlood.mdl",l))
 call RemoveLocation(l)
 set Lj=CreateUnit(GetOwningPlayer(uA),'h00P',0,0,.0)
 set DamageTypeAttack=false

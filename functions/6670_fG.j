@@ -9,7 +9,7 @@ local integer hG=1
 local real DC=150.*I2R(JN)-50.
 local real HG=75.
 local real Fg=18.
-local string fg="Abilities\Spells\Undead\FrostArmor\FrostArmorTarget.mdl"
+local string fg="Abilities\\Spells\\Undead\\FrostArmor\\FrostArmorTarget.mdl"
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
 local effect array e

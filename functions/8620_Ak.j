@@ -24,7 +24,7 @@ if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\DeathandDecay\DeathandDecayTarget.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayTarget.mdl",f,"origin"))
 endif
 call GroupRemoveUnit(g,f)
 endloop

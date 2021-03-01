@@ -9,7 +9,7 @@ if id!='n01X' then
 call SaveStr(HashData,GetHandleId(f),StringHash("MainCore:BossData"),"mini-boss")
 endif
 call GroupAddUnit(co,f)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",f,"origin"))
 set f=null
 set L=null
 set aC=null

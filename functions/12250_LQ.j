@@ -35,7 +35,7 @@ call SetUnitPositionLoc(u,T)
 if(GetLocalPlayer()==p)then
 call PanCameraToTimed(GetLocationX(T),GetLocationY(T),.0)
 endif
-call DestroyEffect(AddSpecialEffectLoc("Abilities\Spells\NightElf\Blink\BlinkTarget.mdl",T))
+call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",T))
 call RemoveLocation(T)
 endif
 endif

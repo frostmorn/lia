@@ -5,7 +5,7 @@ local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A0D7')
 local integer cB=25*JN
 local integer jj=GetHeroAgi(u,false)
-local effect e=AddSpecialEffectTarget("Abilities\Spells\Items\OrbCorruption\OrbCorruption.mdl",u,"overhead")
+local effect e=AddSpecialEffectTarget("Abilities\\Spells\\Items\\OrbCorruption\\OrbCorruption.mdl",u,"overhead")
 call SetHeroAgi(u,cB+jj,true)
 call SaveEffectHandle(Ax,1,dN,e)
 call SaveUnitHandle(Ax,2,dN,u)

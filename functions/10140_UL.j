@@ -14,14 +14,14 @@ exitwhen f==null
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,350,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Demon\DemonBoltImpact\DemonBoltImpact.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Demon\\DemonBoltImpact\\DemonBoltImpact.mdl",f,"origin"))
 call GroupRemoveUnit(g,f)
 endloop
 call DestroyGroup(g)
 call UnitAddAbility(uA,'A0BV')
 loop
 exitwhen In>6
-set e=AddSpecialEffectTarget("Abilities\Spells\Orc\AncestralSpirit\AncestralSpiritCaster.mdl",uA,"origin")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\Orc\\AncestralSpirit\\AncestralSpiritCaster.mdl",uA,"origin")
 call TriggerSleepAction(1)
 call DestroyEffect(e)
 set In=In+1

@@ -1,11 +1,11 @@
 function KN takes string s returns string
 local string kN
 if(s=="screameffect")then
-set kN="Abilities\Spells\Other\TalkToMe\TalkToMe.mdl"
+set kN="Abilities\\Spells\\Other\\TalkToMe\\TalkToMe.mdl"
 elseif(s=="panzereffect")then
-set kN="Environment\UndeadBuildingFire\UndeadLargeBuildingFire2.mdl"
+set kN="Environment\\UndeadBuildingFire\\UndeadLargeBuildingFire2.mdl"
 elseif(s=="insecteffect")then
-set kN="Abilities\Spells\Orc\LiquidFire\Liquidfire.mdl"
+set kN="Abilities\\Spells\\Orc\\LiquidFire\\Liquidfire.mdl"
 elseif(s=="screameffectpoint")then
 set kN="overhead"
 elseif(s=="panzereffectpoint")then

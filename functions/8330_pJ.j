@@ -3,7 +3,7 @@ local unit uA=GetSpellAbilityUnit()
 local integer Id=GetSpellAbilityId()
 if Id=='A093' or Id=='A04H' then
 call SetWidgetLife(uA,GetWidgetLife(uA)+150.*GetUnitAbilityLevel(uA,Id))
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\MarkOfChaos\MarkOfChaosTarget.mdl",uA,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\MarkOfChaos\\MarkOfChaosTarget.mdl",uA,"origin"))
 endif
 set uA=null
 endfunction

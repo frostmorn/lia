@@ -14,7 +14,7 @@ exitwhen f==null
 if(IsUnitAlive(f) and IsUnitAlly(f,p))or f==u then
 call SetWidgetLife(f,GetWidgetLife(f)+cB)
 if f!=u then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\Heal\HealTarget.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",f,"origin"))
 endif
 endif
 call GroupRemoveUnit(g,f)

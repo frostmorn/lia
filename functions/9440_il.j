@@ -16,7 +16,7 @@ if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,50*JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\NightElf\MoonWell\MoonWellCasterArt.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\MoonWell\\MoonWellCasterArt.mdl",f,"origin"))
 endif
 call GroupRemoveUnit(g,f)
 endloop
@@ -31,7 +31,7 @@ endif
 call SetUnitPositionLoc(uA,Dv[po])
 call SetWidgetLife(uA,dv[po])
 call SetUnitFacingTimed(uA,Dx[po],0)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\ManaFlare\ManaFlareBoltImpact.mdl",uA,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl",uA,"origin"))
 call TriggerSleepAction(.05)
 call GroupClear(g)
 set T=GetUnitLoc(uA)
@@ -44,12 +44,12 @@ if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,50*JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\NightElf\MoonWell\MoonWellCasterArt.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\MoonWell\\MoonWellCasterArt.mdl",f,"origin"))
 endif
 call GroupRemoveUnit(g,f)
 endloop
 else
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\ManaFlare\ManaFlareBoltImpact.mdl",uA,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl",uA,"origin"))
 endif
 if GetUnitAbilityLevel(uA,'B03Q')==0 then
 call SetUnitInvulnerable(uA,false)

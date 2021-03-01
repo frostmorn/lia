@@ -26,7 +26,7 @@ exitwhen f==null
 set tt=null
 set tt=CreateTimer()
 set Jd=GetHandleId(tt)
-set e=AddSpecialEffectTarget("Abilities\Weapons\CryptFiendMissile\CryptFiendMissileTarget.mdl",f,"head")
+set e=AddSpecialEffectTarget("Abilities\\Weapons\\CryptFiendMissile\\CryptFiendMissileTarget.mdl",f,"head")
 set cg=GetUnitState(f,UNIT_STATE_MAX_LIFE)
 set Cg=GetWidgetLife(f)
 if(IsUnitType(f,UNIT_TYPE_HERO)or((LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=0 and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=1))then

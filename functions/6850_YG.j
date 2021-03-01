@@ -17,7 +17,7 @@ endloop
 if n>0 and Mx==false then
 set Mx=true
 call SetUnitAbilityLevel(uA,'A0CF',vC+1)
-set mx=AddSpecialEffectTarget("Abilities\Spells\Orc\Bloodlust\BloodlustTarget.mdl",uA,"head")
+set mx=AddSpecialEffectTarget("Abilities\\Spells\\Orc\\Bloodlust\\BloodlustTarget.mdl",uA,"head")
 endif
 if n==0 then
 set Mx=false

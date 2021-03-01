@@ -11,7 +11,7 @@ set DC=DC-DC-DC
 endif
 if rc<=5*JN+10 then
 call SetWidgetLife(uA,GetWidgetLife(uA)+DC)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\NightElf\FaerieDragonInvis\FaerieDragon_Invis.mdl",uA,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\FaerieDragonInvis\\FaerieDragon_Invis.mdl",uA,"origin"))
 endif
 set uA=null
 endfunction

@@ -16,7 +16,7 @@ local effect e
 local unit c=CreateUnitAtLoc(p,'h00P',T,0)
 call UnitAddAbility(c,'A0ED')
 call IssueImmediateOrderById(c,$D011D)
-set e=AddSpecialEffectTarget("Abilities\Spells\Undead\ReplenishMana\ReplenishManaCasterOverhead.mdl",uA,"overhead")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\ReplenishMana\\ReplenishManaCasterOverhead.mdl",uA,"overhead")
 call SaveEffectHandle(Ax,1,Dg,e)
 call TimerStart(te,5,false,function Ej)
 set g=jA(450,T,Condition(function jB))

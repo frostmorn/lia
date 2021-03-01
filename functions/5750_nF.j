@@ -11,7 +11,7 @@ if DC<0.00 then
 set DC=DC-DC-DC
 endif
 if rc<=3*JN+7 then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Other\Stampede\StampedeMissileDeath.mdl",VF,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Stampede\\StampedeMissileDeath.mdl",VF,"origin"))
 set DamageTypeAttack=false
 call UnitDamageTarget(ed,VF,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true

@@ -160,7 +160,7 @@ if(bj_cineFadeFinishTimer!=null)then
 call DestroyTimer(bj_cineFadeFinishTimer)
 endif
 call EnableUserUI(false)
-call SetCineFilterTexture("ReplaceableTextures\CameraMasks\Black_mask.blp")
+call SetCineFilterTexture("ReplaceableTextures\\CameraMasks\\Black_mask.blp")
 call SetCineFilterBlendMode(BLEND_MODE_BLEND)
 call SetCineFilterTexMapFlags(TEXMAP_FLAG_NONE)
 call SetCineFilterStartUV(0,0,1,1)

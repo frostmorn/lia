@@ -13,7 +13,7 @@ if IsUnitAlive(u) and IsPlayerEnemy(hP,sP)and hP!=sP  then
 set DamageTypeAttack=false
 call UnitDamageTarget(ac,u,DC,true,TC,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e=AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",u,"origin")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",u,"origin")
 set t=CreateTimer()
 set SC=GetHandleId(t)
 call SaveEffectHandle(Ax,0,SC,e)

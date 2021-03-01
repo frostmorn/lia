@@ -8,7 +8,7 @@ if IsUnitEnemy(uE,GetOwningPlayer(u))and IsUnitAlive(uE) then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,uE,20+20*GetUnitAbilityLevel(u,Vo),true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e=AddSpecialEffectTarget("Abilities\Spells\NightElf\ManaBurn\ManaBurnTarget.mdl",uE,"origin")
+set e=AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\ManaBurn\\ManaBurnTarget.mdl",uE,"origin")
 set t=CreateTimer()
 set dN=GetHandleId(t)
 call SaveEffectHandle(Ax,1,dN,e)

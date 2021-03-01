@@ -1,6 +1,6 @@
 function HeroInit1211117653 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
-call AddSpecialEffectTarget("Abilities\Spells\Undead\AbsorbMana\AbsorbManaBirthMissile.mdl",u,"hand,left")
+call AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl",u,"hand,left")
 set ShamanAgilityMeassureMsgTrigger=CreateTrigger()
 call TriggerAddAction(ShamanAgilityMeassureMsgTrigger,function ShamanAgilityMeassureFunction)
 set Jn=CreateTrigger()

@@ -20,7 +20,7 @@ set ge[GetPlayerId(p)+1]=true
 set In=0
 loop
 exitwhen In>7
-call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00"+GetPlayerName(p)+" согласен ("+I2S(Ge)+"\"+I2S(av-1)+")|R")
+call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00"+GetPlayerName(p)+" согласен ("+I2S(Ge)+"\\"+I2S(av-1)+")|R")
 set In=In+1
 endloop
 if Ge>=av-2 then

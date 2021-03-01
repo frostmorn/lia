@@ -1,5 +1,5 @@
 function rC takes nothing returns nothing
-call DestroyEffect(AddSpecialEffectLocBJ(GetUnitLoc(Le),"Abilities\Spells\Undead\DeathCoil\DeathCoilSpecialArt.mdl"))
+call DestroyEffect(AddSpecialEffectLocBJ(GetUnitLoc(Le),"Abilities\\Spells\\Undead\\DeathCoil\\DeathCoilSpecialArt.mdl"))
 call ShowUnit(Le,false)
 call SetUnitInvulnerable(Le,true)
 call SetUnitPositionLoc(Le,GetRectCenter(gg_rct_sr))

@@ -25,7 +25,7 @@ call UnitRemoveAbility(f,'B02A')
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Objects\Spawnmodels\Human\HumanBlood\HumanBloodFootman.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodFootman.mdl",f,"origin"))
 endif
 call GroupRemoveUnit(g,f)
 endloop
