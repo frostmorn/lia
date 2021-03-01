@@ -43,7 +43,7 @@ endif
 set In=In+1
 endloop
 call SendStatsToBot("EОG",1)
-call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
+call CinematicFadeBJ(1,2.,"ReplaceableTextures\CameraMasks\White_mask.blp",0,0,0,0)
 call BA(2)
 set g=HA(bj_mapInitialPlayableArea)
 loop
@@ -88,7 +88,7 @@ call ShowTextTagForceBJ(true,CreateTextTagLocBJ(("Рейтинг "+I2S(U[l[In]])
 endif
 set In=In+1
 endloop
-call CinematicFadeBJ(0,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
+call CinematicFadeBJ(0,2.,"ReplaceableTextures\CameraMasks\White_mask.blp",0,0,0,0)
 set In=1
 set g=null
 set f=null

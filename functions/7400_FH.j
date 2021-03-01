@@ -7,7 +7,7 @@ local unit c
 local effect e
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
-set e=AddSpecialEffectLoc("Abilities\\Spells\\Undead\\DeathPact\\DeathPactTarget.mdl",gH)
+set e=AddSpecialEffectLoc("Abilities\Spells\Undead\DeathPact\DeathPactTarget.mdl",gH)
 set c=CreateUnitAtLoc(p,'h00P',gH,0)
 call UnitAddAbility(c,'A0EN')
 call SetUnitAbilityLevel(c,'A0EN',JN)

@@ -45,7 +45,7 @@ call SetUnitMoveSpeed(u,0)
 else
 if IsUnitAlly(u,GetOwningPlayer(C))and IsUnitAlive(u) then
 call SetWidgetLife(u,GetWidgetLife(u)+$96*JN)
-set e=AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",u,"origin")
+set e=AddSpecialEffectTarget("Abilities\Spells\Human\Heal\HealTarget.mdl",u,"origin")
 set te=CreateTimer()
 set Dg=GetHandleId(te)
 call SaveEffectHandle(Ax,1,Dg,e)

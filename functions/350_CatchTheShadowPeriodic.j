@@ -14,7 +14,7 @@ call SaveReal(HashData,h,StringHash("CatchTheShadowPeriodic"),0.00)
 set DamageTypeAttack=false
 call UnitDamageTarget(caster,target,12.00*lvl,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayDamage.mdl",target," origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\DeathandDecay\DeathandDecayDamage.mdl",target," origin"))
 endif
 if time>=10.00 or IsUnitDead(target)then
 call GroupRemoveUnit(CatchTheShadowGroup[playerId],target)

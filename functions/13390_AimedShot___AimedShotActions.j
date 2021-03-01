@@ -18,7 +18,7 @@ set dy=GetUnitY(caster)+50.00*Sin(angle*bj_DEGTORAD)
 set first=false
 set dummy=CreateUnit(Player(15),'h013',dx,dy,angle)
 call AddSpecialEffectTarget(AimedShot___FX_PATH,dummy,"origin")
-call AddSpecialEffectTarget("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl",dummy,"origin")
+call AddSpecialEffectTarget("Abilities\Spells\Other\BreathOfFire\BreathOfFireDamage.mdl",dummy,"origin")
 call SetUnitScale(dummy,1.0,1.0,0.00)
 call SetUnitPathing(dummy,false)
 call SaveUnitHandle(AimedShot___HASH_TABLE,ehandle,1,caster)

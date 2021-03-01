@@ -43,8 +43,8 @@ call UnitApplyTimedLife(dummy,'BTLF',0.50)
 set DamageTypeAttack=false
 call UnitDamageTarget(caster,first,damage,false,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,null)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\AssassinateExplode.mdx",first,"chest"))
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",first,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("war3mapImported\AssassinateExplode.mdx",first,"chest"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",first,"origin"))
 call GroupRemoveUnit(enemy,first)
 else
 call GroupRemoveUnit(enemy,first)

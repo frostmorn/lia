@@ -52,7 +52,7 @@ endif
 else
 call SetWidgetLife(f,GetWidgetLife(f)+oj)
 endif
-set e=AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",f,"origin")
+set e=AddSpecialEffectTarget("Abilities\Spells\Human\Heal\HealTarget.mdl",f,"origin")
 set t=CreateTimer()
 set dN=GetHandleId(t)
 call SaveEffectHandle(Ax,1,dN,e)
@@ -77,7 +77,7 @@ set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,DC,false,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
 endif
-set e=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\CarrionSwarm\\CarrionSwarmDamage.mdl",f,"origin")
+set e=AddSpecialEffectTarget("Abilities\Spells\Undead\CarrionSwarm\CarrionSwarmDamage.mdl",f,"origin")
 set t=CreateTimer()
 set dN=GetHandleId(t)
 call SaveEffectHandle(Ax,1,dN,e)

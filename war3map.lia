@@ -5,7 +5,7 @@ group array BugFixGroup
 boolean notAffect=false
 constant hashtable DinamiteShot___HASH_TABLE=InitHashtable()
 constant integer DinamiteShot___SPELL_ID='A0IW'
-constant string DinamiteShot___FX_PATH="Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl"
+constant string DinamiteShot___FX_PATH="Abilities\Spells\Other\Doom\DoomDeath.mdl"
 constant boolean LIBRARY_FlexibleSpeed=true
 integer FlexibleSpeed___fs
 constant boolean LIBRARY_Logarithm=true
@@ -980,11 +980,11 @@ integer array WillOfTheLight___stackCount
 real array WillOfTheLight___stackDamage
 unit array WillOfTheLight___stackHero
 integer Charge___spellId='A0FI'
-string Charge___runFx="Environment\\LargeBuildingFire\\LargeBuildingFire2.mdl"
+string Charge___runFx="Environment\LargeBuildingFire\LargeBuildingFire2.mdl"
 constant hashtable AimedShot___HASH_TABLE=InitHashtable()
 constant integer AimedShot___SPELL_ID='A0IV'
-constant string AimedShot___FX_PATH="war3mapImported\\FireworksDragonHead.mdx"
-constant string AimedShot___FX2_PATH="Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl"
+constant string AimedShot___FX_PATH="war3mapImported\FireworksDragonHead.mdx"
+constant string AimedShot___FX2_PATH="Abilities\Spells\NightElf\Blink\BlinkTarget.mdl"
 constant hashtable DemonicRage___hash=InitHashtable()
 constant integer DemonicRage___abilityId='A0IZ'
 constant integer DemonicRage___dummyBuffId='B049'

@@ -17,7 +17,7 @@ if IsUnitAlive(f) and IsUnitEnemy(f,p) then
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e[In]=AddSpecialEffectLoc("Abilities\\Spells\\Undead\\ReplenishHealth\\ReplenishHealthCaster.mdl",GetUnitLoc(f))
+set e[In]=AddSpecialEffectLoc("Abilities\Spells\Undead\ReplenishHealth\ReplenishHealthCaster.mdl",GetUnitLoc(f))
 set In=In+1
 endif
 call GroupRemoveUnit(g,f)

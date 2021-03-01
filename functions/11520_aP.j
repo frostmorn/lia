@@ -22,7 +22,7 @@ endif
 call UnitRemoveBuffsBJ(2,PlayersHeroArray[In])
 call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
 call PanCameraToTimedLocForPlayer(ae[In],GetUnitLoc(PlayersHeroArray[In]),0)
-call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",GetUnitLoc(PlayersHeroArray[In])))
+call DestroyEffect(AddSpecialEffectLoc("Abilities\Spells\NightElf\Blink\BlinkTarget.mdl",GetUnitLoc(PlayersHeroArray[In])))
 set In=In+1
 endloop
 set g=HA(gg_rct_PlayersHome)

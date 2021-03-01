@@ -35,7 +35,7 @@ endloop
 call RemoveLocation(L)
 set L=Location(rx,ry)
 call GroupEnumUnitsInRangeOfLoc(g,L,240.,null)
-call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",L))
+call DestroyEffect(AddSpecialEffectLoc("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",L))
 call RemoveLocation(L)
 loop
 set f=FirstOfGroup(g)

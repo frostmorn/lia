@@ -2,7 +2,7 @@ function rB takes unit iB returns nothing
 local unit u=iB
 local unit m=ue
 call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(11))
-call DestroyEffect(AddSpecialEffectLoc("war3mapImported\\MirrorImageIllidan.mdx",GetUnitLoc(u)))
+call DestroyEffect(AddSpecialEffectLoc("war3mapImported\MirrorImageIllidan.mdx",GetUnitLoc(u)))
 call KillUnit(u)
 call RemoveUnit(u)
 if IsUnitAlive(m) then

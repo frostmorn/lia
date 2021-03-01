@@ -20,7 +20,7 @@ call SetUnitManaPercentBJ(u,60.)
 set l=GetUnitLoc(u)
 call PanCameraToTimedLocForPlayer(pd,l,0)
 call RemoveLocation(l)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",u,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\Resurrect\ResurrectCaster.mdl",u,"origin"))
 endif
 call DestroyTimer(t)
 set u=null

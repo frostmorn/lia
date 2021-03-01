@@ -16,7 +16,7 @@ call RemoveUnit(u)
 set u=CreateUnit(p,id,x,y,Ec)
 call SetWidgetLife(u,xp)
 call SetUnitState(u,UNIT_STATE_MANA,mp)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Polymorph\\PolyMorphDoneGround.mdl",u,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\Polymorph\PolyMorphDoneGround.mdl",u,"origin"))
 call KillUnit(Lj)
 call RemoveUnit(Lj)
 set u=null

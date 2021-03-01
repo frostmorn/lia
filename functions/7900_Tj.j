@@ -34,7 +34,7 @@ exitwhen f==null
 if IsUnitAlive(f) and IsUnitEnemy(f,p)then
 set GF=CreateTimer()
 set hF=GetHandleId(GF)
-set e=AddSpecialEffectTarget("Abilities\\Spells\\Orc\\MirrorImage\\MirrorImageDeathCaster.mdl",f,"origin")
+set e=AddSpecialEffectTarget("Abilities\Spells\Orc\MirrorImage\MirrorImageDeathCaster.mdl",f,"origin")
 call SaveEffectHandle(Ax,1,hF,e)
 call TimerStart(GF,.2,false,function tj)
 set DamageTypeAttack=false

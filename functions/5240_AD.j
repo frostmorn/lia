@@ -13,7 +13,7 @@ set arrayTreeTypes[6]='ATtr' // Зеленые деревья
 set treeTypeIndex=6
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
 call CreateTreesFunction()
-call Preload("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl")
+call Preload("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl")
 set ND=CreateUnit(Player(11),'h00V',0,0,.0)
 set it=UnitAddItemById(ND,'I06Q')
 set UB=UnitAddItemById(ND,'I06Z')

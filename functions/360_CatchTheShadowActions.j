@@ -34,7 +34,7 @@ call SaveInteger(HashData,h,StringHash("CatchTheShadowLevel"),lvl)
 call SaveReal(HashData,h,StringHash("CatchTheShadowTimer"),0.00)
 call SaveReal(HashData,h,StringHash("CatchTheShadowPeriodic"),0.00)
 call SaveInteger(HashData,GetHandleId(first),StringHash("CatchTheShadowOldBuff"),h)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayDamage.mdl",first,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\DeathandDecay\DeathandDecayDamage.mdl",first,"origin"))
 call TimerStart(t,0.05,true,function CatchTheShadowPeriodic)
 endif
 endif

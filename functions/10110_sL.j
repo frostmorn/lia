@@ -14,8 +14,8 @@ call GroupRemoveGroup(qL,g)
 set f=GroupPickRandomUnit(g)
 call DestroyGroup(g)
 if f!=null then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Monsoon\\MonsoonBoltTarget.mdl",f,"origin"))
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\ManaFlare\\ManaFlareBoltImpact.mdl",f,"head"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Other\Monsoon\MonsoonBoltTarget.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\ManaFlare\ManaFlareBoltImpact.mdl",f,"head"))
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,500,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true

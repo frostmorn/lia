@@ -13,7 +13,7 @@ if IsUnitEnemy(u,GetOwningPlayer(GetTriggerUnit()))and IsUnitAlive(u) then
 set DamageTypeAttack=false
 call UnitDamageTarget(Fv,u,golem_fire_rage_damage,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",u,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Other\Doom\DoomDeath.mdl",u,"origin"))
 endif
 set u=null
 return false

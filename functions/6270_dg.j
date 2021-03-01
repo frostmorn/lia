@@ -10,7 +10,7 @@ local timer te=CreateTimer()
 local integer Dg=GetHandleId(te)
 local unit f
 local effect array e
-local string fg="Abilities\\Spells\\NightElf\\Blink\\BlinkCaster.mdl"
+local string fg="Abilities\Spells\NightElf\Blink\BlinkCaster.mdl"
 local real lX
 local real lY
 local real lZ=50

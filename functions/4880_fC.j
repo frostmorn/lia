@@ -13,7 +13,7 @@ if(GC!=gC)then
 set DamageTypeAttack=false
 call UnitDamageTarget(ke,du,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e=AddSpecialEffectTarget("Abilities\\Spells\\Other\\Incinerate\\FireLordDeathExplode.mdl",du,"origin")
+set e=AddSpecialEffectTarget("Abilities\Spells\Other\Incinerate\FireLordDeathExplode.mdl",du,"origin")
 call TriggerSleepAction(.2)
 call DestroyEffect(e)
 endif
@@ -22,7 +22,7 @@ if(IsPlayerEnemy(gC,GC))then
 set DamageTypeAttack=false
 call UnitDamageTarget(ke,du,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-set e=AddSpecialEffectTarget("Abilities\\Spells\\Other\\Incinerate\\FireLordDeathExplode.mdl",du,"origin")
+set e=AddSpecialEffectTarget("Abilities\Spells\Other\Incinerate\FireLordDeathExplode.mdl",du,"origin")
 call TriggerSleepAction(.2)
 call DestroyEffect(e)
 endif

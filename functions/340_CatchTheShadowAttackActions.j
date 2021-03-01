@@ -9,7 +9,7 @@ if GetUnitAbilityLevel(attacker,'B01Q')>0 then
 set DamageTypeAttack=false
 call UnitDamageTarget(attacker,target,1.5*agi,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\ReplenishMana\\SpiritTouchTarget.mdl",target,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\ReplenishMana\SpiritTouchTarget.mdl",target,"origin"))
 endif
 call GroupAddGroup(CatchTheShadowGroup[playerId],g)
 call GroupEnumUnitsInRange(g,0.00,0.00,99999.00,null)

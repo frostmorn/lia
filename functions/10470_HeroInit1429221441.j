@@ -8,11 +8,11 @@ set Wn=CreateTrigger()
 call TriggerRegisterUnitEvent(Wn,u,EVENT_UNIT_ATTACKED)
 call TriggerAddCondition(Wn,Condition(function RG))
 call TriggerAddAction(Wn,function AG)
-call Preload("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTargetArt.mdl")
+call Preload("Abilities\Spells\Undead\FreezingBreath\FreezingBreathTargetArt.mdl")
 set yn=CreateTrigger()
 call TriggerRegisterUnitEvent(yn,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(yn,Condition(function bG))
 call TriggerAddAction(yn,function fG)
-call Preload("Abilities\\Spells\\Undead\\FrostArmor\\FrostArmorTarget.mdl")
+call Preload("Abilities\Spells\Undead\FrostArmor\FrostArmorTarget.mdl")
 set u=null
 endfunction

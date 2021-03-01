@@ -15,7 +15,7 @@ if first!=null and IsUnitAlive(first) and IsUnitAlly(first,p)and IsUnitType(firs
 set t=CreateTimer()
 set h=GetHandleId(t)
 call SaveUnitHandle(HashData,h,StringHash("DarkPact:Target"),first)
-call SaveEffectHandle(HashData,h,StringHash("DarkPact:Effect"),AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DarkSummoning\\DarkSummonMissile.mdl",first,"chest"))
+call SaveEffectHandle(HashData,h,StringHash("DarkPact:Effect"),AddSpecialEffectTarget("Abilities\Spells\Undead\DarkSummoning\DarkSummonMissile.mdl",first,"chest"))
 call UnitAddAbility(first,'Avul')
 call TimerStart(t,GetUnitAbilityLevel(u1,'A02P')*3,false,function RJ)
 endif

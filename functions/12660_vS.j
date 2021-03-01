@@ -23,7 +23,7 @@ endif
 if ID!=ES then
 call Ws(u,XS,true,false)
 endif
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl",u,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Items\AIam\AIamTarget.mdl",u,"origin"))
 set it=UnitAddItemById(u,OS)
 call SetItemUserData(it,(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"))))
 set it=null

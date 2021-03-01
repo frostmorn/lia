@@ -3,7 +3,7 @@ local integer Bc=ee[GetPlayerId(p)+1]
 local timer t
 local integer dN
 local integer In=0
-local sound dc=CreateSound("Sound\\Interface\\Rescue.wav",false,false,true,$319C,$319C,"")
+local sound dc=CreateSound("Sound\Interface\Rescue.wav",false,false,true,$319C,$319C,"")
 call SetSoundPosition(dc,GetLocationX(GetRectCenter(gg_rct_Ai)),GetLocationY(GetRectCenter(gg_rct_Ai)),'d')
 loop
 exitwhen In>7

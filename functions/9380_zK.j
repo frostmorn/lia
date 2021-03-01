@@ -21,7 +21,7 @@ if IsUnitEnemy(f,p)and IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_HERO)==false an
 set DamageTypeAttack=false
 call UnitDamageTarget(uA,f,$C350,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkCaster.mdl",GetUnitLoc(f)))
+call DestroyEffect(AddSpecialEffectLoc("Abilities\Spells\NightElf\Blink\BlinkCaster.mdl",GetUnitLoc(f)))
 endif
 call GroupRemoveUnit(g,f)
 endloop

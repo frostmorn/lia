@@ -11,7 +11,7 @@ call RemoveLocation(L)
 call ShowUnit(Le,true)
 call SetUnitInvulnerable(Le,false)
 call PauseUnit(Le,false)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",Le,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",Le,"origin"))
 endif
 set f=null
 set L=null

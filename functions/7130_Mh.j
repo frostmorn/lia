@@ -21,7 +21,7 @@ exitwhen f==null
 set DamageTypeAttack=false
 call UnitDamageTarget(u,f,$C*JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DeathandDecay\\DeathandDecayDamage.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\DeathandDecay\DeathandDecayDamage.mdl",f,"origin"))
 call GroupRemoveUnit(g,f)
 endloop
 call DestroyGroup(g)

@@ -3,7 +3,7 @@ local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
 local unit cd=ue
 local integer JN=GetUnitAbilityLevel(cd,'A0GP')
-local effect e=AddSpecialEffectTarget("Abilities\\Spells\\Other\\HealingSpray\\HealBottleMissile.mdl",u,"head")
+local effect e=AddSpecialEffectTarget("Abilities\Spells\Other\HealingSpray\HealBottleMissile.mdl",u,"head")
 call UnitAddAbility(u,'A0BF')
 call SetUnitAbilityLevel(u,'A0BF',JN)
 call SaveEffectHandle(Ax,1,dN,e)

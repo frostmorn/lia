@@ -15,7 +15,7 @@ set x=x+175.00*Cos(a*bj_DEGTORAD)
 set y=y+175.00*Sin(a*bj_DEGTORAD)
 set dummy=CreateUnit(GetOwningPlayer(caster),id,x,y,a)
 call UnitApplyTimedLife(dummy,'BTLF',30.00)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",dummy,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",dummy,"origin"))
 if i==2 then
 if b then
 call AddUnitMaxState(dummy,UNIT_STATE_MAX_LIFE,600)
@@ -38,7 +38,7 @@ set x=GetUnitX(caster)+20.00*Cos((a-35.00)*bj_DEGTORAD)
 set y=GetUnitY(caster)+20.00*Sin((a-35.00)*bj_DEGTORAD)
 set dummy=CreateUnit(GetOwningPlayer(caster),id,x,y,a)
 call UnitApplyTimedLife(dummy,'BTLF',30.00)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",dummy,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",dummy,"origin"))
 if i==2 then
 call AddUnitMaxState(dummy,UNIT_STATE_MAX_LIFE,500)
 elseif i==3 then
@@ -51,7 +51,7 @@ set x=GetUnitX(caster)+20.00*Cos((a+35.00)*bj_DEGTORAD)
 set y=GetUnitY(caster)+20.00*Sin((a+35.00)*bj_DEGTORAD)
 set dummy=CreateUnit(GetOwningPlayer(caster),id,x,y,a)
 call UnitApplyTimedLife(dummy,'BTLF',30.00)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",dummy,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\AnimateDead\AnimateDeadTarget.mdl",dummy,"origin"))
 if i==2 then
 if b then
 call AddUnitMaxState(dummy,UNIT_STATE_MAX_LIFE,600)

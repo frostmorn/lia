@@ -16,7 +16,7 @@ set f=FirstOfGroup(JI)
 loop
 exitwhen f==null
 if IsUnitEnemy(f,kH)and IsUnitAliveBJ(f)and IsUnitType(f,UNIT_TYPE_MAGIC_IMMUNE)==false then
-set fx=AddSpecialEffectTarget("Abilities\\Spells\\Orc\\Purge\\PurgeBuffTarget.mdl",f,"origin")
+set fx=AddSpecialEffectTarget("Abilities\Spells\Orc\Purge\PurgeBuffTarget.mdl",f,"origin")
 set ml=CreateTimer()
 call TimerStart(ml,1,false,function kl)
 call SaveEffectHandle(Ax,GetHandleId(ml),0,fx)

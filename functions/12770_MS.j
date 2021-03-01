@@ -25,7 +25,7 @@ endif
 endif
 if id=='I07H' then
 if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Items\AIsm\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
 call ModifyHeroStat(1,PlayersHeroArray[Bc],0,1)
 else
 call SaveReal(Ax,dN,1,x)
@@ -36,7 +36,7 @@ endif
 endif
 if id=='I07J' then
 if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Items\AIsm\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
 call ModifyHeroStat(0,PlayersHeroArray[Bc],0,1)
 else
 call SaveReal(Ax,dN,1,x)
@@ -47,7 +47,7 @@ endif
 endif
 if id=='I07I' then
 if PlayersHeroArray[Bc]!=null and IsUnitAlive(PlayersHeroArray[Bc]) then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",PlayersHeroArray[Bc],"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Items\AIim\AIimTarget.mdl",PlayersHeroArray[Bc],"origin"))
 call ModifyHeroStat(2,PlayersHeroArray[Bc],0,1)
 else
 call SaveReal(Ax,dN,1,x)

@@ -16,7 +16,7 @@ set Kx=u
 call SetHeroStr(u,GetHeroStr(u,false)+Wg,true)
 call SetHeroAgi(u,GetHeroAgi(u,false)+Wg,true)
 call SetHeroInt(u,GetHeroInt(u,false)+Wg,true)
-call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl",GetWidgetX(u),GetWidgetY(u)))
+call DestroyEffect(AddSpecialEffect("Abilities\Spells\Human\DispelMagic\DispelMagicTarget.mdl",GetWidgetX(u),GetWidgetY(u)))
 call SetHeroLevel(u,GetHeroLevel(kx),false)
 call SuspendHeroXP(u,true)
 call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(12))

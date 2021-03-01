@@ -15,7 +15,7 @@ set DamageTypeAttack=false
 call UnitDamageTarget(zcaster,ztarget,zdamage,false,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,null)
 set DamageTypeAttack=true
 set notAffect=false
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",ztarget,"chest"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Weapons\LordofFlameMissile\LordofFlameMissile.mdl",ztarget,"chest"))
 else
 call PauseTimer(ztimer)
 call DestroyTimer(ztimer)

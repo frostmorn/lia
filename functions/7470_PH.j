@@ -20,7 +20,7 @@ set DamageTypeAttack=false
 call UnitDamageTarget(qH,QH,(50.*I2R(WF)),true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
 call SetUnitState(QH,UNIT_STATE_MANA,(tH-(50.*I2R(WF))))
-set fg=AddSpecialEffectTarget("Abilities\\Spells\\Orc\\FeralSpirit\\feralspiritdone.mdl",QH,"origin")
+set fg=AddSpecialEffectTarget("Abilities\Spells\Orc\FeralSpirit\feralspiritdone.mdl",QH,"origin")
 call DestroyEffect(fg)
 endif
 endif

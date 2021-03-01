@@ -19,7 +19,7 @@ set T=GetUnitLoc(ed)
 call GroupEnumUnitsInRangeOfLoc(g,T,$96,null)
 call RemoveLocation(T)
 call SetWidgetLife(VF,GetWidgetLife(VF)+Ih)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\VampiricAura\\VampiricAuraTarget.mdl",VF,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl",VF,"origin"))
 loop
 set f=FirstOfGroup(g)
 exitwhen f==null
@@ -27,7 +27,7 @@ if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set DamageTypeAttack=false
 call UnitDamageTarget(VF,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
-call DestroyEffect(AddSpecialEffectTarget("Objects\\Spawnmodels\\Critters\\Albatross\\CritterBloodAlbatross.mdl",f,"head"))
+call DestroyEffect(AddSpecialEffectTarget("Objects\Spawnmodels\Critters\Albatross\CritterBloodAlbatross.mdl",f,"head"))
 endif
 call GroupRemoveUnit(g,f)
 endloop

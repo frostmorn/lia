@@ -9,7 +9,7 @@ call Ws(u,oS,true,false)
 call Ws(u,iS,true,false)
 call Ws(u,nS,true,false)
 call Ws(u,ES,true,false)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl",u,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Items\AIam\AIamTarget.mdl",u,"origin"))
 set it=UnitAddItemById(u,OS)
 call SetItemUserData(it,(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"))))
 set it=null

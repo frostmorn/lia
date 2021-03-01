@@ -19,7 +19,7 @@ set f=FirstOfGroup(g)
 exitwhen f==null
 if f!=uT then
 call SetWidgetLife(f,GetWidgetLife(f)+150.*vC)
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl",f,"origin"))
 endif
 call GroupRemoveUnit(g,f)
 endloop

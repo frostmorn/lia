@@ -15,7 +15,7 @@ call SetUnitPosition(No[xC],x,y)
 call SetUnitPositionLoc(f,GetRandomLocInRect(oC))
 set ic=GetUnitLoc(f)
 if IsUnitInGroup(f,fo)and f!=null then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",f,"origin"))
+call DestroyEffect(AddSpecialEffectTarget("Abilities\Spells\Human\Resurrect\ResurrectCaster.mdl",f,"origin"))
 call ReviveHeroLoc(f,ic,false)
 set HeroInGameAndAliveARRAY[xC]=true
 call GroupRemoveUnit(fo,f)

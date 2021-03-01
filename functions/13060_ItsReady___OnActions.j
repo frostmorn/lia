@@ -13,7 +13,7 @@ if not IsReady[GetPlayerId(p)]then
 set IsReady[GetPlayerId(p)]=true
 set CURRENT_PLAYERS=CURRENT_PLAYERS+1
 call DestroyTimer(Fo)
-call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTriggerPlayer())+(" хочет немедленно начать раунд! ("+(I2S(CURRENT_PLAYERS)+("\\"+(I2S(ItsReady___MAX_PLAYERS)+")|R")))))))
+call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTriggerPlayer())+(" хочет немедленно начать раунд! ("+(I2S(CURRENT_PLAYERS)+("\"+(I2S(ItsReady___MAX_PLAYERS)+")|R")))))))
 if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
 if Ex then
 call DisableTrigger(IsReadyTrig)
