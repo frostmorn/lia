@@ -2,7 +2,7 @@ function PM takes nothing returns nothing
 local boolexpr b=Condition(function pM)
 local timer t=CreateTimer()
 set bj_wantDestroyGroup=true
-if CountUnitsInGroup(GA(gg_rct_BigArena,b))==0 and Xv==false then
+if (CountUnitsInGroup(GA(gg_rct_BigArena,b))==0 and CountUnitsInGroup(GA(gg_rct_PortalTopNoTp,b))==0 and CountUnitsInGroup(GA(gg_rct_PortalBottomNoTp,b))==0) and Xv==false then
 set qv=false
 call DisableTrigger(cO)
 call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
