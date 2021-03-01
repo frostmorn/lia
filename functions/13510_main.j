@@ -29,7 +29,9 @@ call ExecuteFunc("MagicLumpRegeneration___Init")
 call ExecuteFunc("SetUnitMaxState___Initialize")
 call ExecuteFunc("StatMod___Init")
 call ExecuteFunc("ArmorUtils__Init")
-call ExecuteFunc("IDDS___Init")
+// Calls to many shit, but this shit isn't used anywhere...
+// If something fails, we should look here
+// call ExecuteFunc("IDDS___Init")
 call ExecuteFunc("MissOnAttack___Init")
 call ExecuteFunc("SpellEvent___Init")
 call ExecuteFunc("SpellEventSpecial___Init")
