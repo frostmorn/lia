@@ -251,7 +251,7 @@ gamecache O
 boolean array I
 integer A=0
 integer array D
-unit array F
+unit array PlayersHeroArray
 timer RoundStartTimer=null
 integer CurrentWave=0
 integer array creep_ids
@@ -887,7 +887,7 @@ trigger TR=null
 trigger uR=null
 trigger UR=null
 trigger wR=null
-trigger WR=null
+trigger SwapNoTrigger=null
 trigger yR=null
 trigger YR=null
 trigger zR=null
@@ -954,8 +954,8 @@ string array aA
 real array nA
 real array VA
 timer EA=null
-real OA=.0
-real RA=.0
+real OA= 0.0
+real RA= 0.0
 group IA=null
 force AA=null
 boolexpr NA=null
@@ -1118,8 +1118,8 @@ function EN takes nothing returns nothing
 endfunction
 
 function SendDebugToBot takes string sVariable, integer iValue returns nothing
-    call StoreInteger(O, "DEBUG:",sVariable,  iValue)
-    call SyncStoredInteger(O, "DEBUG:",sVariable)
+    call StoreInteger(O, "DEBUG:", sVariable,  iValue)
+    call SyncStoredInteger(O, "DEBUG:", sVariable)
 endfunction
 
 function SendStatsToBot takes string AN,integer NN returns nothing
@@ -1156,7 +1156,7 @@ set si__Table__GTable_V[this]=-1
 return this
 endfunction
 function sc__Table__GTable_deallocate takes integer this returns nothing
-if this==null then
+if this==0 then
 return
 elseif(si__Table__GTable_V[this]!=-1)then
 return
@@ -1191,7 +1191,7 @@ set si__SpellEvent___spellEvent_V[this]=-1
 return this
 endfunction
 function sc__SpellEvent___spellEvent_deallocate takes integer this returns nothing
-if this==null then
+if this==0 then
 return
 elseif(si__SpellEvent___spellEvent_V[this]!=-1)then
 return
@@ -1853,9 +1853,10 @@ function GetZLoc takes real x,real y returns real
 call MoveLocation(Table__z,x,y)
 return GetLocationZ(Table__z)
 endfunction
-function UnitAlive takes unit u returns boolean
-return not IsUnitType(u,UNIT_TYPE_DEAD)and GetUnitTypeId(u)!=0
-endfunction
+// Redeclaration...
+// function UnitAlive takes unit u returns boolean
+// return not IsUnitType(u,UNIT_TYPE_DEAD)and GetUnitTypeId(u)!=0
+// endfunction
 function GetUnitZ takes unit u returns real
 return GetZLoc(GetUnitX(u),GetUnitY(u))+GetUnitFlyHeight(u)
 endfunction
@@ -2099,6 +2100,7 @@ endfunction
 function s__TableBr__sounds__getindex takes integer this,integer key returns sound
 return LoadSoundHandle(TableBr__ht,this,key)
 endfunction
+
 function s__TableBr__sounds__setindex takes integer this,integer key,sound value returns nothing
 call SaveSoundHandle(TableBr__ht,this,key,value)
 endfunction
@@ -3017,7 +3019,7 @@ endif
 set s__SpellEvent___spellEvent_CastingUnit[this]=null
 endfunction
 function s__SpellEvent___spellEvent_deallocate takes integer this returns nothing
-if this==null then
+if this==0 then
 return
 elseif(si__SpellEvent___spellEvent_V[this]!=-1)then
 return
@@ -4865,8 +4867,8 @@ exitwhen(f==null)or(jb>Jb)
 set In=1
 loop
 exitwhen In>8
-call SaveBoolean(Ax,13,GetHandleId(F[In]),false)
-call SaveBoolean(Ax,12,GetHandleId(F[In]),false)
+call SaveBoolean(Ax,13,GetHandleId(PlayersHeroArray[In]),false)
+call SaveBoolean(Ax,12,GetHandleId(PlayersHeroArray[In]),false)
 set In=In+1
 endloop
 if GetUnitTypeId(f)=='n009' or GetUnitTypeId(f)=='n02J' then
@@ -5687,7 +5689,7 @@ endif
 if Gb==14 then
 set BB=R2I(I2R(NB/ bB)*21.*cB)
 endif
-if Gb==$F or Gb==16 then
+if Gb==15 or Gb==16 then
 set BB=R2I(I2R(NB/ bB)*24.*cB)
 endif
 if Gb==17 or Gb==18 then
@@ -5805,7 +5807,7 @@ local player p
 loop
 exitwhen In>wN
 set p=ae[gx[In]]
-if GetPlayerSlotState(p)!=PLAYER_SLOT_STATE_LEFT and IsPlayerInForce(p,Hx)==false and F[gx[In]]!=null then
+if GetPlayerSlotState(p)!=PLAYER_SLOT_STATE_LEFT and IsPlayerInForce(p,Hx)==false and PlayersHeroArray[gx[In]]!=null then
 call ForceAddPlayer(Hx,p)
 return In
 endif
@@ -5934,8 +5936,8 @@ endfunction
 function sB takes player p1,player p2 returns nothing
 local integer SB=ee[(1+GetPlayerId(p1))]
 local integer tB=ee[(1+GetPlayerId(p2))]
-local unit u1=F[SB]
-local unit u2=F[tB]
+local unit u1=PlayersHeroArray[SB]
+local unit u2=PlayersHeroArray[tB]
 local integer TB=Gv[SB]
 local unit z1=Eo[SB]
 local unit z2=Eo[tB]
@@ -5956,8 +5958,8 @@ call SetUnitPosition(u2,GetWidgetX(u1),GetWidgetY(u1))
 call SetUnitPosition(u1,x,y)
 set Gv[SB]=Gv[tB]
 set Gv[tB]=TB
-set F[SB]=u2
-set F[tB]=u1
+set PlayersHeroArray[SB]=u2
+set PlayersHeroArray[tB]=u1
 call PanCameraToTimedLocForPlayer(p1,GetUnitLoc(u2),0)
 call PanCameraToTimedLocForPlayer(p2,GetUnitLoc(u1),0)
 call SetPlayerName(p1,Zv[SB]+" ("+GetUnitName(u2)+")")
@@ -6046,7 +6048,7 @@ loop
 exitwhen In>A
 if GetOwningPlayer(TB)==ae[In]then
 call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
-set F[In]=TB
+set PlayersHeroArray[In]=TB
 set HeroInGameAndAliveARRAY[In]=true
 set Gv[In]=ss
 endif
@@ -6129,20 +6131,20 @@ loop
 exitwhen In>A
 if GetOwningPlayer(u)==ae[In]then
 call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(In))
-set x=GetUnitX(F[In])
-set y=GetUnitY(F[In])
-set Ec=GetUnitFacing(F[In])
+set x=GetUnitX(PlayersHeroArray[In])
+set y=GetUnitY(PlayersHeroArray[In])
+set Ec=GetUnitFacing(PlayersHeroArray[In])
 loop
 exitwhen n>5
-set it[n]=UnitRemoveItemFromSlot(F[In],n)
+set it[n]=UnitRemoveItemFromSlot(PlayersHeroArray[In],n)
 call UnitAddItem(u,it[n])
 set n=n+1
 endloop
-call KillUnit(F[In])
-call RemoveUnit(F[In])
+call KillUnit(PlayersHeroArray[In])
+call RemoveUnit(PlayersHeroArray[In])
 call SetUnitPosition(u,x,y)
 call SetUnitFacing(u,Ec)
-set F[In]=u
+set PlayersHeroArray[In]=u
 set HeroInGameAndAliveARRAY[In]=true
 set Gv[In]=ZB(u)
 endif
@@ -6247,7 +6249,7 @@ local integer In=LoadInteger(Ax,1,dN)
 local integer vB=LoadInteger(Ax,2,dN)
 local integer Bc=LoadInteger(Ax,3,dN)
 if In>=vB then
-if F[Bc]==null then
+if PlayersHeroArray[Bc]==null then
 call SetPlayerTechMaxAllowed(ae[Bc],'HERO',0)
 call Xc(ae[Bc])
 endif
@@ -6314,9 +6316,9 @@ local location T
 call DestroyTextTag(zx)
 loop
 exitwhen In>wN
-call ShowUnit(F[In],true)
-call SelectUnitForPlayerSingle(F[In],ae[In])
-set T=GetUnitLoc(F[In])
+call ShowUnit(PlayersHeroArray[In],true)
+call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
+set T=GetUnitLoc(PlayersHeroArray[In])
 call PanCameraToTimedLocForPlayer(ae[In],T,0)
 call RemoveLocation(T)
 set In=In+1
@@ -6473,10 +6475,10 @@ set r2[3]=gg_rct_Ir
 loop
 exitwhen In>8 or Kc>2
 set pp=ae[gx[In]]
-if GetPlayerSlotState(pp)!=PLAYER_SLOT_STATE_LEFT and F[gx[In]]!=null then
+if GetPlayerSlotState(pp)!=PLAYER_SLOT_STATE_LEFT and PlayersHeroArray[gx[In]]!=null then
 set Kc=Kc+1
 set l[Kc]=gx[In]
-set m[Kc]=F[l[Kc]]
+set m[Kc]=PlayersHeroArray[l[Kc]]
 set p[Kc]=GetOwningPlayer(m[Kc])
 set ec[Kc]=ee[GetPlayerId(p[Kc])+1]
 endif
@@ -6514,9 +6516,9 @@ set In=1
 loop
 exitwhen In>wN
 call CameraSetupApplyForPlayer(true,Ma,ae[In],0)
-call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_HeroReSpawn),false)
-call SetUnitLifePercentBJ(F[In],'d')
-call SetUnitManaPercentBJ(F[In],'d')
+call ReviveHeroLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_HeroReSpawn),false)
+call SetUnitLifePercentBJ(PlayersHeroArray[In],'d')
+call SetUnitManaPercentBJ(PlayersHeroArray[In],'d')
 call CreateFogModifierRectBJ(false,ae[In],FOG_OF_WAR_VISIBLE,bj_mapInitialPlayableArea)
 call CreateFogModifierRectBJ(true,ae[In],FOG_OF_WAR_VISIBLE,gg_rct_Nr)
 set In=In+1
@@ -6634,8 +6636,8 @@ local unit u1=LoadUnitHandle(Ax,1,dN)
 local unit u2=LoadUnitHandle(Ax,2,dN)
 loop
 exitwhen In>8
-if GetWidgetLife(F[In])>.405 and F[In]!=u1 and F[In]!=u2 and IsUnitHidden(F[In])==false then
-call ShowUnit(F[In],false)
+if GetWidgetLife(PlayersHeroArray[In])>.405 and PlayersHeroArray[In]!=u1 and PlayersHeroArray[In]!=u2 and IsUnitHidden(PlayersHeroArray[In])==false then
+call ShowUnit(PlayersHeroArray[In],false)
 endif
 set In=In+1
 endloop
@@ -6798,8 +6800,8 @@ if Qx==false then
 set In=1
 loop
 exitwhen In>8
-if GetWidgetLife(F[In])>.405 and F[In]!=u1 and F[In]!=u2 and IsUnitHidden(F[In])==false then
-call ShowUnit(F[In],false)
+if GetWidgetLife(PlayersHeroArray[In])>.405 and PlayersHeroArray[In]!=u1 and PlayersHeroArray[In]!=u2 and IsUnitHidden(PlayersHeroArray[In])==false then
+call ShowUnit(PlayersHeroArray[In],false)
 endif
 set In=In+1
 endloop
@@ -6908,7 +6910,7 @@ local player p
 local rect oC=gg_rct_HeroReSpawn
 loop
 exitwhen xC>8
-set f=F[xC]
+set f=PlayersHeroArray[xC]
 set x=GetUnitX(Eo[xC])
 set y=GetUnitY(Eo[xC])
 call SetUnitPosition(No[xC],x,y)
@@ -6981,10 +6983,10 @@ loop
 exitwhen In>A
 set g=CreateGroup()
 set g=pA(ae[In])
-if(RectContainsUnit(gg_rct_BigArena,F[In])==false)then
+if(RectContainsUnit(gg_rct_BigArena,PlayersHeroArray[In])==false)then
 call ClearSelectionForPlayer(ae[In])
 endif
-call SelectUnitForPlayerSingle(F[In],ae[In])
+call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
 call ForGroup(g,function VC)
 call DestroyGroup(g)
 set In=In+1
@@ -7001,7 +7003,7 @@ function OC takes player p returns nothing
 local string RC=GetPlayerName(p)
 local integer ec=ee[GetPlayerId(p)+1]
 local integer ID=GetHandleId(p)
-local unit IC=F[ec]
+local unit IC=PlayersHeroArray[ec]
 local integer BB
 local integer AC
 local integer In
@@ -8047,7 +8049,7 @@ function Cd takes nothing returns nothing
     set ic=1
     loop
     exitwhen ic>wN
-        call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[ic]),GetRectCenter(gg_rct_MinimalArenaAreaRect),0)
+        call PanCameraToTimedLocForPlayer(GetOwningPlayer(PlayersHeroArray[ic]),GetRectCenter(gg_rct_MinimalArenaAreaRect),0)
         set ic=ic+1
     endloop
     set g=HA(bj_mapInitialPlayableArea)
@@ -8060,12 +8062,12 @@ function Cd takes nothing returns nothing
         call GroupRemoveUnit(g,f)
     endloop
     call DestroyGroup(g)
-    set jx[1]=F[gx[i1]]
-    set jx[2]=F[gx[i2]]
+    set jx[1]=PlayersHeroArray[gx[i1]]
+    set jx[2]=PlayersHeroArray[gx[i2]]
     set ic=1
     loop
     exitwhen ic>8
-        call IssueImmediateOrderById(F[ic],$D0004)
+        call IssueImmediateOrderById(PlayersHeroArray[ic],$D0004)
         set ic=ic+1
     endloop
   
@@ -8250,7 +8252,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
         if Ro==false then
             call FB()
         endif
-        set w=$F
+        set w=15
     endif
     call SaveInteger(Ax,1,Jd,CurrentWave)
     call TimerStart(tt,w,false,function Dd)
@@ -8471,7 +8473,7 @@ set Lb=0
 else
 set Lb=1
 set Bc=ee[GetPlayerId(p)+1]
-call GroupAddUnit(nD,F[Bc])
+call GroupAddUnit(nD,PlayersHeroArray[Bc])
 endif
 endif
 call GroupEnumUnitsInRange(g,x,y,JA,null)
@@ -9446,7 +9448,7 @@ loop
 exitwhen In>wN
 if p==ae[In]then
 call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
-set F[In]=TB
+set PlayersHeroArray[In]=TB
 set HeroInGameAndAliveARRAY[In]=true
 set Gv[In]=ss
 endif
@@ -10866,7 +10868,7 @@ local integer yg=GetSpellAbilityId()
 local integer JN=GetUnitAbilityLevel(kx,yg)
 local unit u=CreateUnit(GetOwningPlayer(xr),'E00J',GetWidgetX(xr),GetWidgetY(xr),GetUnitFacing(xr))
 if yg=='A0DX' then
-set Wg=$F*JN
+set Wg=15*JN
 set nd=5+5*JN
 else
 set Wg=25*JN
@@ -10921,9 +10923,9 @@ call ForGroup(tI,function xG)
 endfunction
 function rG takes nothing returns nothing
 if GetSpellAbilityId()=='A09D' then
-set SI=$F*GetUnitAbilityLevel(GetSpellAbilityUnit(),'A09D')+$F
+set SI=15*GetUnitAbilityLevel(GetSpellAbilityUnit(),'A09D')+15
 else
-set SI=$F*GetUnitAbilityLevel(GetSpellAbilityUnit(),'A0DU')+30
+set SI=15*GetUnitAbilityLevel(GetSpellAbilityUnit(),'A0DU')+30
 endif
 call TimerStart(CreateTimer(),5,false,function Zg)
 call TimerStart(CreateTimer(),10,false,function vG)
@@ -13546,7 +13548,7 @@ call SetUnitState(KG,UNIT_STATE_LIFE,GetUnitState(KG,UNIT_STATE_MAX_LIFE)*RMaxBJ
 call SetUnitState(KG,UNIT_STATE_MANA,GetUnitState(KG,UNIT_STATE_MAX_MANA)*RMaxBJ(0,GetUnitStatePercent(KG,UNIT_STATE_MANA,UNIT_STATE_MAX_MANA)-2.5)*.01)
 loop
 exitwhen In>8
-set u=F[In]
+set u=PlayersHeroArray[In]
 if u!=null and GetWidgetLife(u)>.405 and IsUnitAlly(u,p)then
 if u!=KG then
 call SetUnitState(u,UNIT_STATE_LIFE,GetUnitState(u,UNIT_STATE_MAX_LIFE)*RMaxBJ(0,GetUnitStatePercent(u,UNIT_STATE_LIFE,UNIT_STATE_MAX_LIFE)+2.5)*.01)
@@ -14672,7 +14674,7 @@ endfunction
 function AK takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A034')
-local integer bC=$F*JN
+local integer bC=15*JN
 local real xp=GetUnitLifePercent(u)
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -17383,8 +17385,8 @@ set eA=CreateTrigger()
 call TriggerAddAction(eA,function pm)
 loop
 exitwhen i==8
-if F[i]!=null then
-call TriggerRegisterUnitEvent(eA,F[i],EVENT_UNIT_DAMAGED)
+if PlayersHeroArray[i]!=null then
+call TriggerRegisterUnitEvent(eA,PlayersHeroArray[i],EVENT_UNIT_DAMAGED)
 endif
 set i=i+1
 endloop
@@ -17500,7 +17502,7 @@ call EnableTrigger(XO)
 endif
 loop
 exitwhen In>8
-call PauseUnit(F[In],false)
+call PauseUnit(PlayersHeroArray[In],false)
 call PauseUnit(No[In],false)
 set In=In+1
 endloop
@@ -17525,11 +17527,11 @@ call EB()
 call EnableTrigger(nO)
 loop
 exitwhen In>wN
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
-call SetUnitFacing(F[In],90)
+call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
+call SetUnitFacing(PlayersHeroArray[In],90)
 call PanCameraToTimedLocForPlayer(ae[In],GetRectCenter(gg_rct_MinimalArenaAreaRect),0)
-call SelectUnitForPlayerSingle(F[In],ae[In])
-set x=GetUnitX(F[In])
+call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
+set x=GetUnitX(PlayersHeroArray[In])
 set y=-3325.
 call SetUnitPosition(No[In],x,y)
 call SetUnitFacing(No[In],90)
@@ -17668,7 +17670,7 @@ function CreepsSeekAndAttackFunction takes nothing returns nothing
     call GroupEnumUnitsOfPlayer(gr,LM,null)
     loop
     exitwhen L>8
-        set f=F[L]
+        set f=PlayersHeroArray[L]
         set b1=HeroInGameAndAliveARRAY[L]
         set b2=(IsUnitInGroup(f,fo)==false)
         if b1 and f!=null and b2 then
@@ -17742,11 +17744,11 @@ function AM takes nothing returns nothing
     call GroupEnumUnitsOfPlayer(g,Player(11),null)
     loop
     exitwhen i>8
-        set p=GetOwningPlayer(F[i])
+        set p=GetOwningPlayer(PlayersHeroArray[i])
         set b=(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)
         if HeroInGameAndAliveARRAY[i]and b then
             set Kc=Kc+1
-            set gg[Kc]=F[i]
+            set gg[Kc]=PlayersHeroArray[i]
         endif
         set i=i+1
     endloop
@@ -18191,7 +18193,7 @@ local location L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
 local string bC
 loop
 exitwhen In>wN
-if(GetLocalPlayer()==GetOwningPlayer(F[In]))then
+if(GetLocalPlayer()==GetOwningPlayer(PlayersHeroArray[In]))then
 call PanCameraToTimed(GetLocationX(L),GetLocationY(L),0)
 endif
 set In=In+1
@@ -18230,12 +18232,12 @@ exitwhen In>7
 call DisplayTextToPlayer(Player(In),0,0,bC)
 set In=In+1
 endloop
-call ShowUnit(F[gx[i1]],true)
-call ShowUnit(F[gx[i2]],true)
+call ShowUnit(PlayersHeroArray[gx[i1]],true)
+call ShowUnit(PlayersHeroArray[gx[i2]],true)
 set Ie=false
 set Gx=Gx+1
-set jx[1]=F[gx[i1]]
-set jx[2]=F[gx[i2]]
+set jx[1]=PlayersHeroArray[gx[i1]]
+set jx[2]=PlayersHeroArray[gx[i2]]
 call Wc(jx[1],jx[2])
 call DestroyTimer(t)
 set t=null
@@ -18254,7 +18256,7 @@ local integer i=1
 call eC()
 loop
 exitwhen i>8
-call UnitResetCooldown(F[i])
+call UnitResetCooldown(PlayersHeroArray[i])
 set i=i+1
 endloop
 call DestroyTimer(t)
@@ -18296,7 +18298,7 @@ local integer dN
 local timer fN
 loop
 exitwhen In>wN
-if F[In]!=null and GetPlayerSlotState(GetOwningPlayer(F[In]))!=PLAYER_SLOT_STATE_LEFT then
+if PlayersHeroArray[In]!=null and GetPlayerSlotState(GetOwningPlayer(PlayersHeroArray[In]))!=PLAYER_SLOT_STATE_LEFT then
 set Kc=Kc+1
 endif
 set In=In+1
@@ -18456,14 +18458,14 @@ call TimerStart(fN,.5,false,function Bp)
 set fN=null
 loop
 exitwhen In>wN
-call SetUnitPositionLoc(F[In], GetRandomLocInRect(gg_rct_HeroReSpawn))
-call zB(F[In])
+call SetUnitPositionLoc(PlayersHeroArray[In], GetRandomLocInRect(gg_rct_HeroReSpawn))
+call zB(PlayersHeroArray[In])
 set In=In+1
 endloop
 set In=1
 loop
 exitwhen In>wN
-call ShowUnit(F[In],true)
+call ShowUnit(PlayersHeroArray[In],true)
 set In=In+1
 endloop
 set g=CreateGroup()
@@ -18763,7 +18765,7 @@ endfunction
 function PrepareBeforeBRoundFunction takes nothing returns nothing
     local integer wN=A
     local integer bB=av
-    local integer NB=$F
+    local integer NB=15
     local timerdialog oP
     local integer BB
     local integer In
@@ -18796,9 +18798,9 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
         call DestroyTimer(pv[In])
         call AdjustPlayerStateBJ(6 + CurrentWave,ae[In],PLAYER_STATE_RESOURCE_LUMBER)
         if GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
-            call ReviveHeroLoc(F[In],GetUnitLoc(F[In]),false)
-            if GetWidgetLife(F[In])<=.405 then
-                call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",F[In],"origin"))
+            call ReviveHeroLoc(PlayersHeroArray[In],GetUnitLoc(PlayersHeroArray[In]),false)
+            if GetWidgetLife(PlayersHeroArray[In])<=.405 then
+                call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Resurrect\\ResurrectCaster.mdl",PlayersHeroArray[In],"origin"))
             endif
         endif
         set In=In+1
@@ -18882,18 +18884,18 @@ call TimerStart(t,.6,false,function iP)
 call EB()
 loop
 exitwhen In>wN
-set l=GetUnitLoc(F[In])
-call ReviveHeroLoc(F[In],l,false)
+set l=GetUnitLoc(PlayersHeroArray[In])
+call ReviveHeroLoc(PlayersHeroArray[In],l,false)
 call RemoveLocation(l)
 if IsPlayerInForce(ae[In],tv)then
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_Gr))
+call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_Gr))
 else
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_Fr))
+call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_Fr))
 endif
-call UnitRemoveBuffsBJ(2,F[In])
-call SelectUnitForPlayerSingle(F[In],ae[In])
-call PanCameraToTimedLocForPlayer(ae[In],GetUnitLoc(F[In]),0)
-call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",GetUnitLoc(F[In])))
+call UnitRemoveBuffsBJ(2,PlayersHeroArray[In])
+call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
+call PanCameraToTimedLocForPlayer(ae[In],GetUnitLoc(PlayersHeroArray[In]),0)
+call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",GetUnitLoc(PlayersHeroArray[In])))
 set In=In+1
 endloop
 set g=HA(gg_rct_PlayersHome)
@@ -18942,10 +18944,10 @@ call SetForceAllianceStateBJ(Tv,tv,3)
 set In=1
 loop
 exitwhen In>wN
-call UnitRemoveBuffsBJ(1,F[In])
-call SetUnitPositionLocFacingBJ(F[In],GetRandomLocInRect(gg_rct_HeroReSpawn),bj_UNIT_FACING)
-call SelectUnitForPlayerSingle(F[In],ae[In])
-call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[In]),GetUnitLoc(F[In]),0)
+call UnitRemoveBuffsBJ(1,PlayersHeroArray[In])
+call SetUnitPositionLocFacingBJ(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_HeroReSpawn),bj_UNIT_FACING)
+call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
+call PanCameraToTimedLocForPlayer(GetOwningPlayer(PlayersHeroArray[In]),GetUnitLoc(PlayersHeroArray[In]),0)
 set In=In+1
 endloop
 call TriggerExecute(PrepareBeforeRoundTrigger)
@@ -19060,7 +19062,7 @@ local unit f
 call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),false)
 loop
 exitwhen In>vB
-call PauseUnit(F[In],false)
+call PauseUnit(PlayersHeroArray[In],false)
 set In=In+1
 endloop
 call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,null)
@@ -19114,12 +19116,12 @@ set jv=true
 set rv=0
 loop
 exitwhen In>vB
-if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
-    call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
-    call SetUnitFacing(F[In],90.)
+if HeroInGameAndAliveARRAY[In]or GetWidgetLife(PlayersHeroArray[In])>.405 then
+    call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect))
+    call SetUnitFacing(PlayersHeroArray[In],90.)
 else
-    call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect),false)
-    call SetUnitFacingTimed(F[In],90.,0)
+    call ReviveHeroLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaBottomUnitRect),false)
+    call SetUnitFacingTimed(PlayersHeroArray[In],90.,0)
 
 endif
 set In=In+1
@@ -19128,13 +19130,13 @@ set In=mv+1
 set vB=A
 loop
 exitwhen In>vB
-if HeroInGameAndAliveARRAY[In]or GetWidgetLife(F[In])>.405 then
-    call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect))
-    call SetUnitFacing(F[In],270.)
+if HeroInGameAndAliveARRAY[In]or GetWidgetLife(PlayersHeroArray[In])>.405 then
+    call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect))
+    call SetUnitFacing(PlayersHeroArray[In],270.)
 
 else
-    call ReviveHeroLoc(F[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect),false)
-    call SetUnitFacingTimed(F[In],270.,0)
+    call ReviveHeroLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_MinimalArenaTopUnitRect),false)
+    call SetUnitFacingTimed(PlayersHeroArray[In],270.,0)
 endif
 set In=In+1
 endloop
@@ -19143,16 +19145,16 @@ set vB=A
 loop
 exitwhen In>vB
 set L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
-if GetLocalPlayer()==GetOwningPlayer(F[In])then
+if GetLocalPlayer()==GetOwningPlayer(PlayersHeroArray[In])then
 call PanCameraToTimed(GetLocationX(L),GetLocationY(L),0)
 endif
 call RemoveLocation(L)
-call UnitResetCooldown(F[In])
-call SetUnitState(F[In],UNIT_STATE_LIFE,GetUnitState(F[In],UNIT_STATE_MAX_LIFE))
-call SetUnitState(F[In],UNIT_STATE_MANA,GetUnitState(F[In],UNIT_STATE_MAX_MANA))
-if GetLocalPlayer()==GetOwningPlayer(F[In])then
+call UnitResetCooldown(PlayersHeroArray[In])
+call SetUnitState(PlayersHeroArray[In],UNIT_STATE_LIFE,GetUnitState(PlayersHeroArray[In],UNIT_STATE_MAX_LIFE))
+call SetUnitState(PlayersHeroArray[In],UNIT_STATE_MANA,GetUnitState(PlayersHeroArray[In],UNIT_STATE_MAX_MANA))
+if GetLocalPlayer()==GetOwningPlayer(PlayersHeroArray[In])then
 call ClearSelection()
-call SelectUnit(F[In],true)
+call SelectUnit(PlayersHeroArray[In],true)
 endif
 set In=In+1
 endloop
@@ -19213,9 +19215,9 @@ set wN=A
 call DisableTrigger(cR)
 loop
 exitwhen t>wN
-call UnitRemoveBuffsBJ(1,F[t])
-call UnitResetCooldown(F[t])
-call SetUnitPositionLoc(F[t],GetRandomLocInRect(gg_rct_HeroReSpawn))
+call UnitRemoveBuffsBJ(1,PlayersHeroArray[t])
+call UnitResetCooldown(PlayersHeroArray[t])
+call SetUnitPositionLoc(PlayersHeroArray[t],GetRandomLocInRect(gg_rct_HeroReSpawn))
 set t=t+1
 endloop
 call EnableTrigger(cR)
@@ -19230,8 +19232,8 @@ endif
 set t=p
 loop
 exitwhen t>wN
-call AdjustPlayerStateBJ(200,GetOwningPlayer(F[t]),PLAYER_STATE_RESOURCE_GOLD)
-call AdjustPlayerStateBJ(15,GetOwningPlayer(F[t]),PLAYER_STATE_RESOURCE_LUMBER)
+call AdjustPlayerStateBJ(200,GetOwningPlayer(PlayersHeroArray[t]),PLAYER_STATE_RESOURCE_GOLD)
+call AdjustPlayerStateBJ(15,GetOwningPlayer(PlayersHeroArray[t]),PLAYER_STATE_RESOURCE_LUMBER)
 set t=t+1
 endloop
 set g=HA(bj_mapInitialPlayableArea)
@@ -19305,10 +19307,10 @@ local timer t=CreateTimer()
 call DisableTrigger(TO)
 loop
 exitwhen In>wN
-call PanCameraToTimedLocForPlayer(GetOwningPlayer(F[In]),GetRectCenter(gg_rct_HeroReSpawn),0)
-call UnitRemoveBuffsBJ(1,F[In])
-call UnitResetCooldown(F[In])
-call SetUnitPositionLoc(F[In],GetRandomLocInRect(gg_rct_HeroReSpawn))
+call PanCameraToTimedLocForPlayer(GetOwningPlayer(PlayersHeroArray[In]),GetRectCenter(gg_rct_HeroReSpawn),0)
+call UnitRemoveBuffsBJ(1,PlayersHeroArray[In])
+call UnitResetCooldown(PlayersHeroArray[In])
+call SetUnitPositionLoc(PlayersHeroArray[In],GetRandomLocInRect(gg_rct_HeroReSpawn))
 set In=In+1
 endloop
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Ничья. Никто не получит награды.")
@@ -19454,7 +19456,7 @@ set up[0]=false
 loop
 exitwhen wp>Up
 set lv=100.*(I2R(Jv[wp])/ I2R(kv))
-set U[wp]=(Re[wp]-1)*30+vv[wp]*20+R2I(lv)*7-ev[wp]*$F+Qv[wp]*25
+set U[wp]=(Re[wp]-1)*30+vv[wp]*20+R2I(lv)*7-ev[wp]*15+Qv[wp]*25
 set up[wp]=false
 set wp=wp+1
 endloop
@@ -19506,7 +19508,7 @@ set up[0]=false
 loop
 exitwhen wp>Up
 set lv=100.*(I2R(Jv[wp+uP])/ I2R(kv))
-set U[wp+uP]=(Re[wp+uP]-1)*30+vv[wp+uP]*20+R2I(lv)*7-ev[wp+uP]*$F+Qv[wp+uP]*25
+set U[wp+uP]=(Re[wp+uP]-1)*30+vv[wp+uP]*20+R2I(lv)*7-ev[wp+uP]*15+Qv[wp+uP]*25
 set up[wp]=false
 set wp=wp+1
 endloop
@@ -20042,7 +20044,7 @@ endfunction
 function Tq takes nothing returns nothing
 local unit u=GetEnteringUnit()
 local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
-local unit ac=F[Bc]
+local unit ac=PlayersHeroArray[Bc]
 local real x=GetUnitX(ac)
 local real y=GetUnitY(ac)
 call SetUnitPosition(u,x,y)
@@ -20056,7 +20058,7 @@ endfunction
 function wq takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
-local unit ac=F[Bc]
+local unit ac=PlayersHeroArray[Bc]
 local real x=GetUnitX(ac)
 local real y=GetUnitY(ac)
 call TriggerSleepAction(.1)
@@ -20216,7 +20218,7 @@ endfunction
 function RQ takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
-if GetUnitTypeId(F[ec])=='E00L' then
+if GetUnitTypeId(PlayersHeroArray[ec])=='E00L' then
 call DisplayTimedTextToPlayer(p,0,0,20,"|Cffff0000Для охотницы орбы предметов Сферы огня, Сферы льда, Меча льда, Жезла огня не работают или вообще нарушают нормальную работу атаки.
 Предметы, дающие вероятность критического удара и оглушения срабатывают, но только на первом юните. Дальнейшее отскакивание чакрума прекращается.
 Вампиризм срабатывает только на первом юните. Отскакивание продолжается.|R")
@@ -20346,7 +20348,7 @@ endfunction
 function LQ takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
-local unit u=F[ec]
+local unit u=PlayersHeroArray[ec]
 local player mM
 local group g
 local unit f
@@ -20441,7 +20443,7 @@ endfunction
 function tQ takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer Bc=ee[GetPlayerId(p)+1]
-call DisplayTextToPlayer(p,0,0,"Скорость перемещения : |Cffff0000"+I2S(R2I(GetUnitMoveSpeed(F[Bc])))+"|R")
+call DisplayTextToPlayer(p,0,0,"Скорость перемещения : |Cffff0000"+I2S(R2I(GetUnitMoveSpeed(PlayersHeroArray[Bc])))+"|R")
 set p=null
 endfunction
 function uQ takes nothing returns nothing
@@ -20497,10 +20499,10 @@ endfunction
 function is takes nothing returns nothing
 if((Je==false))then
 set Je=true
-call UnitAddAbility(F[1],'A0A7')
+call UnitAddAbility(PlayersHeroArray[1],'A0A7')
 else
 set Je=false
-call UnitRemoveAbility(F[1],'A0A7')
+call UnitRemoveAbility(PlayersHeroArray[1],'A0A7')
 endif
 endfunction
 function ns takes nothing returns nothing
@@ -20661,18 +20663,18 @@ endif
 call SetForceAllianceStateBJ(tv,tv,3)
 call SetForceAllianceStateBJ(Tv,Tv,3)
 if qv then
-call SelectUnitForPlayerSingle(F[bs],sw)
-call SelectUnitForPlayerSingle(F[Xq],de[Os])
+call SelectUnitForPlayerSingle(PlayersHeroArray[bs],sw)
+call SelectUnitForPlayerSingle(PlayersHeroArray[Xq],de[Os])
 if IsPlayerInForce(sw,tv)then
 call PanCameraToTimedLocForPlayer(sw,GetRectCenter(gg_rct_Gr),0)
 call PanCameraToTimedLocForPlayer(de[Os],GetRectCenter(gg_rct_Fr),0)
-call SetUnitPositionLoc(F[bs],GetRandomLocInRect(gg_rct_Gr))
-call SetUnitPositionLoc(F[Xq],GetRandomLocInRect(gg_rct_Fr))
+call SetUnitPositionLoc(PlayersHeroArray[bs],GetRandomLocInRect(gg_rct_Gr))
+call SetUnitPositionLoc(PlayersHeroArray[Xq],GetRandomLocInRect(gg_rct_Fr))
 else
 call PanCameraToTimedLocForPlayer(sw,GetRectCenter(gg_rct_Fr),0)
 call PanCameraToTimedLocForPlayer(de[Os],GetRectCenter(gg_rct_Gr),0)
-call SetUnitPositionLoc(F[bs],GetRandomLocInRect(gg_rct_Fr))
-call SetUnitPositionLoc(F[Xq],GetRandomLocInRect(gg_rct_Gr))
+call SetUnitPositionLoc(PlayersHeroArray[bs],GetRandomLocInRect(gg_rct_Fr))
+call SetUnitPositionLoc(PlayersHeroArray[Xq],GetRandomLocInRect(gg_rct_Gr))
 endif
 call SetForceAllianceStateBJ(tv,Tv,0)
 call SetForceAllianceStateBJ(Tv,tv,0)
@@ -20706,21 +20708,21 @@ call SaveInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int"),(ED))
 set s=Zv[bs]
 set Zv[bs]=Zv[Xq]
 set Zv[Xq]=s
-call SaveInteger(HashData,GetHandleId((F[bs])),StringHash("SuperData:Int"),(Xq))
-call SaveInteger(HashData,GetHandleId((F[Xq])),StringHash("SuperData:Int"),(bs))
+call SaveInteger(HashData,GetHandleId((PlayersHeroArray[bs])),StringHash("SuperData:Int"),(Xq))
+call SaveInteger(HashData,GetHandleId((PlayersHeroArray[Xq])),StringHash("SuperData:Int"),(bs))
 set oo=bs
 set ro=Xq
 call EnumItemsInRect(bj_mapInitialPlayableArea,null,function As)
 set In=1
 loop
 exitwhen In>6
-call SetItemUserData(UnitItemInSlot(F[bs],In-1),Xq)
-call SetItemUserData(UnitItemInSlot(F[Xq],In-1),bs)
+call SetItemUserData(UnitItemInSlot(PlayersHeroArray[bs],In-1),Xq)
+call SetItemUserData(UnitItemInSlot(PlayersHeroArray[Xq],In-1),bs)
 set In=In+1
 endloop
-set c=F[Xq]
-set F[Xq]=F[bs]
-set F[bs]=c
+set c=PlayersHeroArray[Xq]
+set PlayersHeroArray[Xq]=PlayersHeroArray[bs]
+set PlayersHeroArray[bs]=c
 set l1=GetUnitLoc(u1)
 set l2=GetUnitLoc(u2)
 call SetUnitPositionLoc(u1,GetRectCenter(gg_rct_sr))
@@ -20788,7 +20790,7 @@ if GetPlayerController(ae[In])==MAP_CONTROL_USER then
 set N=N+1
 if p!=ae[In]and GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
 set ec=ee[(1+GetPlayerId(ae[In]))]
-call DisplayTimedTextToPlayer(p,0,0,12,(("|Cffff0000"+I2S(N))+(". "+GetUnitName(F[ec]))))
+call DisplayTimedTextToPlayer(p,0,0,12,(("|Cffff0000"+I2S(N))+(". "+GetUnitName(PlayersHeroArray[ec]))))
 endif
 endif
 set In=In+1
@@ -20814,7 +20816,7 @@ else
 set p2=Ix[Js]
 set ec=ee[(1+GetPlayerId(p))]
 set tB=ee[(1+GetPlayerId(p2))]
-if F[ec]==null or F[tB]==null or Js==ks then
+if PlayersHeroArray[ec]==null or PlayersHeroArray[tB]==null or Js==ks then
 else
 call SaveBoolean(Ax,ec,StringHash("p"+I2S(ec)+"or"+I2S(tB)),true)
 set b=LoadBoolean(Ax,ec,StringHash("p"+I2S(ec)+"or"+I2S(tB)))
@@ -20830,7 +20832,7 @@ set In=In+1
 endloop
 call sB(p,p2)
 else
-call DisplayTimedTextToPlayer(p2,0,0,12,"|Cffff0000"+GetUnitName(F[ec])+" |Rхочет обменяться героями, для согласия введите |Cffff0000-об "+I2S(ks)+"|R")
+call DisplayTimedTextToPlayer(p2,0,0,12,"|Cffff0000"+GetUnitName(PlayersHeroArray[ec])+" |Rхочет обменяться героями, для согласия введите |Cffff0000-об "+I2S(ks)+"|R")
 endif
 endif
 endif
@@ -20850,7 +20852,7 @@ endif
 set p2=Ix[Js]
 set ec=ee[(1+GetPlayerId(p))]
 set tB=ee[(1+GetPlayerId(p2))]
-if F[ec]==null or F[tB]==null or Js==ks then
+if PlayersHeroArray[ec]==null or PlayersHeroArray[tB]==null or Js==ks then
 return
 endif
 call SaveBoolean(Ax,ec,StringHash("p"+I2S(ec)+"or"+I2S(tB)),true)
@@ -20867,12 +20869,12 @@ endloop
 call sB(p,p2)
 return
 endif
-call DisplayTimedTextToPlayer(p2,0,0,12,"|Cffff0000"+GetUnitName(F[ec])+" |Rхочет обменяться героями, для согласия введите |Cffff0000-об "+I2S(ks)+"|R")
+call DisplayTimedTextToPlayer(p2,0,0,12,"|Cffff0000"+GetUnitName(PlayersHeroArray[ec])+" |Rхочет обменяться героями, для согласия введите |Cffff0000-об "+I2S(ks)+"|R")
 endif
 set p=null
 set p2=null
 endfunction
-function Ls takes nothing returns nothing
+function SwapNoFunction takes nothing returns nothing
 local integer In=1
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
@@ -20883,16 +20885,17 @@ set In=In+1
 endloop
 set p=null
 endfunction
-function ms takes nothing returns nothing
+
+function RegisterSwapNoFunction takes nothing returns nothing
 local integer i=0
-set WR=CreateTrigger()
+set SwapNoTrigger=CreateTrigger()
 loop
 exitwhen i>7
-call TriggerRegisterPlayerChatEvent(WR,Player(i),"-обн",true)
-call TriggerRegisterPlayerChatEvent(WR,Player(i),"-swapno",true)
+call TriggerRegisterPlayerChatEvent(SwapNoTrigger,Player(i),"-обн",true)
+call TriggerRegisterPlayerChatEvent(SwapNoTrigger,Player(i),"-swapno",true)
 set i=i+1
 endloop
-call TriggerAddAction(WR,function Ls)
+call TriggerAddAction(SwapNoTrigger,function SwapNoFunction)
 endfunction
 function Ms takes nothing returns nothing
 local player p=GetTriggerPlayer()
@@ -20900,7 +20903,7 @@ local integer id=GetPlayerId(p)+1
 local integer ec=ee[id]
 local integer In=1
 local integer Js=0
-if F[ec]!=null then
+if PlayersHeroArray[ec]!=null then
 if GetPlayerState(p,PLAYER_STATE_RESOURCE_GOLD)>=50 then
 if(eo[ec]==false and(zv[id]or He))then
 set In=1
@@ -21629,8 +21632,8 @@ function gS takes item it returns unit
 local integer In=1
 loop
 exitwhen In>8
-if UnitHasItem(F[In],it)then
-return F[In]
+if UnitHasItem(PlayersHeroArray[In],it)then
+return PlayersHeroArray[In]
 endif
 if UnitHasItem(No[In],it)then
 return No[In]
@@ -21658,7 +21661,7 @@ local integer gN
 local item t
 local unit f
 local unit c
-local unit cc=F[hS]
+local unit cc=PlayersHeroArray[hS]
 local unit HS=No[hS]
 local unit z
 local boolean b=false
@@ -21882,8 +21885,8 @@ local integer random
 local integer idNewItem
 if((id)=='vamp')then
 if FN(u)==false then
-if F[Bc]!=null and GetWidgetLife(F[Bc])>.405 and HeroInGameAndAliveARRAY[Bc]then
-call UnitAddItemById(F[Bc],lS(id))
+if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 and HeroInGameAndAliveARRAY[Bc]then
+call UnitAddItemById(PlayersHeroArray[Bc],lS(id))
 else
 call SaveReal(Ax,dN,1,x)
 call SaveReal(Ax,dN,2,y)
@@ -21895,9 +21898,9 @@ call UnitAddItemById(u,lS(id))
 endif
 endif
 if id=='I07H' then
-if F[Bc]!=null and GetWidgetLife(F[Bc])>.405 then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",F[Bc],"origin"))
-call ModifyHeroStat(1,F[Bc],0,1)
+if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 then
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
+call ModifyHeroStat(1,PlayersHeroArray[Bc],0,1)
 else
 call SaveReal(Ax,dN,1,x)
 call SaveReal(Ax,dN,2,y)
@@ -21906,9 +21909,9 @@ call TimerStart(t,.0,false,function mS)
 endif
 endif
 if id=='I07J' then
-if F[Bc]!=null and GetWidgetLife(F[Bc])>.405 then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",F[Bc],"origin"))
-call ModifyHeroStat(0,F[Bc],0,1)
+if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 then
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIsm\\AIsmTarget.mdl",PlayersHeroArray[Bc],"origin"))
+call ModifyHeroStat(0,PlayersHeroArray[Bc],0,1)
 else
 call SaveReal(Ax,dN,1,x)
 call SaveReal(Ax,dN,2,y)
@@ -21917,9 +21920,9 @@ call TimerStart(t,.0,false,function mS)
 endif
 endif
 if id=='I07I' then
-if F[Bc]!=null and GetWidgetLife(F[Bc])>.405 then
-call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",F[Bc],"origin"))
-call ModifyHeroStat(2,F[Bc],0,1)
+if PlayersHeroArray[Bc]!=null and GetWidgetLife(PlayersHeroArray[Bc])>.405 then
+call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIim\\AIimTarget.mdl",PlayersHeroArray[Bc],"origin"))
+call ModifyHeroStat(2,PlayersHeroArray[Bc],0,1)
 else
 call SaveReal(Ax,dN,1,x)
 call SaveReal(Ax,dN,2,y)
@@ -24675,7 +24678,7 @@ call TriggerRegisterPlayerChatEvent(wR,Player(5),"-swap",false)
 call TriggerRegisterPlayerChatEvent(wR,Player(6),"-swap",false)
 call TriggerRegisterPlayerChatEvent(wR,Player(7),"-swap",false)
 call TriggerAddAction(wR,function js)
-call ms()
+call RegisterSwapNoFunction()
 set yR=CreateTrigger()
 call DisableTrigger(yR)
 call TriggerRegisterPlayerChatEvent(yR,Player(0),"-ре",true)
