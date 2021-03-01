@@ -573,6 +573,8 @@ rect gg_rct_Ja=null
 rect gg_rct_ka=null
 rect gg_rct_Ka=null
 rect gg_rct_la=null
+rect gg_rct_PortalTopNoTp=null
+rect gg_rct_PortalBottomNoTp=null
 camerasetup Ma=null
 camerasetup pa=null
 trigger Pa=null
@@ -1146,9 +1148,27 @@ function IsUnitAlive takes unit u returns boolean
         return false
     endif
 endfunction
+
 function IsUnitDead takes unit u returns boolean
     return not (IsUnitAlive(u))
 endfunction
+
+function IsCordsInRect takes rect r,real x,real y returns boolean
+    return(GetRectMinX(r)<=x)and(x<=GetRectMaxX(r))and(GetRectMinY(r)<=y)and(y<=GetRectMaxY(r))
+endfunction
+
+function IsUnitInRect takes unit u, rect rct returns boolean
+    if IsUnitAlive(u) then
+        return IsCordsInRect(rct, GetUnitX(u), GetUnitY(u) ) 
+    endif
+endfunction
+
+function IsUnitOnBigArena takes unit u returns boolean
+    // Better create region, and all logic do with that region
+    return IsUnitInRect(u, gg_rct_BigArena) or IsUnitInRect(u, gg_rct_PortalTopNoTp) or IsUnitInRect(u, gg_rct_PortalBottomNoTp)
+endfunction
+
+
 function sc__Table__GTable_onDestroy takes integer this returns nothing
 set f__arg_this=this
 call TriggerEvaluate(st__Table__GTable_onDestroy[1])
@@ -1300,9 +1320,7 @@ call TriggerAddCondition(trig,Condition(function BurningArmor___OnConditions))
 call TriggerAddAction(trig,function BurningArmor___OnActions)
 set trig=null
 endfunction
-function IsUnitDead takes unit u returns boolean
-return IsUnitType(u,UNIT_TYPE_DEAD)or GetUnitTypeId(u)<1
-endfunction
+
 function CatchTheShadowBoolSpellId takes nothing returns boolean
 return GetSpellAbilityId()=='A0BB'
 endfunction
@@ -3581,12 +3599,12 @@ set gg_rct_Bi = Rect( -2976.0, -1536.0, -768.0, -1280.0 )
 set gg_rct_bi = Rect( -3232.0, -3712.0, 3328.0, -3456.0 )
 set gg_rct_BigArena = Rect( -2976.0, -1312.0, 1440.0, 2720.0 )
 set gg_rct_BigArenaFogModifier = Rect( -3232.0, -1280.0, 1664.0, 2944.0 )
-set gg_rct_BluePlayerBox = Rect( -768.0, -3232.0, -576.0, -3040.0 )
-set gg_rct_BottomSpawnRect = Rect( -3232.0, 128.0, -2304.0, 1024.0 )
+set gg_rct_BluePlayerBox = Rect( -800.0, -3168.0, -608.0, -2976.0 )
+set gg_rct_BottomSpawnRect = Rect( -3232.0, 96.0, -2304.0, 1024.0 )
 set gg_rct_ca = Rect( 512.0, 1152.0, 640.0, 1408.0 )
 set gg_rct_Ca = Rect( 448.0, 896.0, 640.0, 1152.0 )
 set gg_rct_ci = Rect( -3232.0, -3488.0, -2944.0, -1280.0 )
-set gg_rct_Ci = Rect( -3232.0, -1312.0, -2944.0, 128.0 )
+set gg_rct_Ci = Rect( -3232.0, -1312.0, -2944.0, 96.0 )
 set gg_rct_Cr = Rect( 2496.0, -544.0, 2560.0, -480.0 )
 set gg_rct_da = Rect( 576.0, 256.0, 736.0, 416.0 )
 set gg_rct_Da = Rect( 768.0, -224.0, 928.0, -64.0 )
@@ -3604,7 +3622,7 @@ set gg_rct_fr = Rect( 1440.0, -1504.0, 3328.0, 3136.0 )
 set gg_rct_Ga = Rect( -448.0, 640.0, -320.0, 768.0 )
 set gg_rct_ga = Rect( 992.0, -608.0, 1152.0, -448.0 )
 set gg_rct_Gr = Rect( 608.0, -960.0, 1184.0, -384.0 )
-set gg_rct_GreenPlayerBox = Rect( -576.0, -2144.0, -384.0, -1952.0 )
+set gg_rct_GreenPlayerBox = Rect( -640.0, -2208.0, -448.0, -2016.0 )
 set gg_rct_ha = Rect( -384.0, 960.0, -256.0, 1088.0 )
 set gg_rct_Ha = Rect( -1312.0, 928.0, -1184.0, 1312.0 )
 set gg_rct_HeroReSpawn = Rect( 96.0, -2816.0, 800.0, -2144.0 )
@@ -3624,14 +3642,14 @@ set gg_rct_jr = Rect( -480.0, 96.0, -192.0, 352.0 )
 set gg_rct_Jr = Rect( -1792.0, -416.0, -1504.0, -160.0 )
 set gg_rct_Ka = Rect( -1984.0, -704.0, -1824.0, -544.0 )
 set gg_rct_ka = Rect( -2272.0, -672.0, -2112.0, -512.0 )
-set gg_rct_ki = Rect( -288.0, 2688.0, 1664.0, 2912.0 )
+set gg_rct_ki = Rect( -256.0, 2688.0, 1664.0, 2912.0 )
 set gg_rct_Ki = Rect( -1280.0, 2880.0, 0.0, 3520.0 )
 set gg_rct_Kr = Rect( -2912.0, 416.0, -2656.0, 672.0 )
 set gg_rct_kr = Rect( -2624.0, -1088.0, -2464.0, -928.0 )
 set gg_rct_la = Rect( -1792.0, -1216.0, -1632.0, -800.0 )
 set gg_rct_lr = Rect( -1632.0, 960.0, -1312.0, 1312.0 )
 set gg_rct_Lr = Rect( 32.0, 1792.0, 416.0, 2144.0 )
-set gg_rct_Mi = Rect( -3200.0, 2688.0, -992.0, 2944.0 )
+set gg_rct_Mi = Rect( -3200.0, 2688.0, -1024.0, 2944.0 )
 set gg_rct_MinimalArenaAreaRect = Rect( -2976.0, -3488.0, -992.0, -1504.0 )
 set gg_rct_MinimalArenaBottomUnitRect = Rect( -2432.0, -3200.0, -1536.0, -2816.0 )
 set gg_rct_MinimalArenaTopUnitRect = Rect( -2432.0, -2176.0, -1536.0, -1792.0 )
@@ -3645,19 +3663,19 @@ set gg_rct_Nr = Rect( 1504.0, -1120.0, 3296.0, 512.0 )
 set gg_rct_oa = Rect( 96.0, -1184.0, 608.0, -832.0 )
 set gg_rct_Oa = Rect( -1184.0, 1024.0, -928.0, 1472.0 )
 set gg_rct_oi = Rect( 384.0, -1824.0, 672.0, -1536.0 )
-set gg_rct_OrangePlayerBox = Rect( -768.0, -2336.0, -576.0, -2144.0 )
-set gg_rct_pi = Rect( -3200.0, 992.0, -2944.0, 2720.0 )
+set gg_rct_OrangePlayerBox = Rect( -800.0, -2368.0, -608.0, -2176.0 )
+set gg_rct_pi = Rect( -3200.0, 1024.0, -2944.0, 2720.0 )
 set gg_rct_Pi = Rect( -3648.0, -160.0, -3168.0, 1280.0 )
-set gg_rct_PinkPlayerBox = Rect( -768.0, -2144.0, -576.0, -1952.0 )
+set gg_rct_PinkPlayerBox = Rect( -800.0, -2208.0, -608.0, -2016.0 )
 set gg_rct_PlayersHome = Rect( -800.0, -3488.0, 3104.0, -1504.0 )
 set gg_rct_pr = Rect( -2880.0, 1504.0, -2752.0, 1632.0 )
 set gg_rct_Pr = Rect( 1120.0, -256.0, 1216.0, -160.0 )
-set gg_rct_PurplePlayerBox = Rect( -768.0, -3040.0, -576.0, -2848.0 )
+set gg_rct_PurplePlayerBox = Rect( -800.0, -3008.0, -608.0, -2816.0 )
 set gg_rct_Qi = Rect( -800.0, -1504.0, -160.0, -1344.0 )
 set gg_rct_qr = Rect( 1120.0, -1088.0, 1216.0, -992.0 )
 set gg_rct_ra = Rect( 224.0, -672.0, 512.0, -480.0 )
 set gg_rct_Ra = Rect( -704.0, 992.0, -320.0, 1536.0 )
-set gg_rct_RedPlayerBox = Rect( -576.0, -3232.0, -384.0, -3040.0 )
+set gg_rct_RedPlayerBox = Rect( -640.0, -3168.0, -448.0, -2976.0 )
 set gg_rct_ri = Rect( -800.0, -2592.0, -512.0, -2336.0 )
 set gg_rct_Ri = Rect( 2432.0, -3008.0, 2560.0, -2912.0 )
 set gg_rct_rr = Rect( 736.0, 1376.0, 864.0, 1504.0 )
@@ -3667,7 +3685,7 @@ set gg_rct_Si = Rect( 448.0, 1920.0, 1344.0, 2240.0 )
 set gg_rct_si = Rect( 64.0, 2176.0, 1344.0, 2720.0 )
 set gg_rct_sr = Rect( 2304.0, 2048.0, 2432.0, 2176.0 )
 set gg_rct_TavernAndMinimalArenaAreaFogModifierRect = Rect( -3232.0, -3648.0, 1664.0, -1248.0 )
-set gg_rct_TealPlayerBox = Rect( -576.0, -3040.0, -384.0, -2848.0 )
+set gg_rct_TealPlayerBox = Rect( -640.0, -3008.0, -448.0, -2816.0 )
 set gg_rct_Ti = Rect( 576.0, 1792.0, 1344.0, 1952.0 )
 set gg_rct_TopSpawnRect = Rect( -1024.0, 2144.0, -256.0, 2976.0 )
 set gg_rct_tr = Rect( 2240.0, -3200.0, 2432.0, -3104.0 )
@@ -3686,10 +3704,10 @@ set gg_rct_wr = Rect( 2336.0, -2784.0, 2656.0, -2496.0 )
 set gg_rct_Wr = Rect( 1952.0, -2784.0, 2272.0, -2496.0 )
 set gg_rct_xa = Rect( 192.0, -224.0, 832.0, 96.0 )
 set gg_rct_Xa = Rect( -2880.0, 2496.0, -2336.0, 2688.0 )
-set gg_rct_Xi = Rect( -288.0, 2688.0, 1792.0, 3072.0 )
+set gg_rct_Xi = Rect( -224.0, 2688.0, 1792.0, 3072.0 )
 set gg_rct_xi = Rect( 640.0, -1824.0, 928.0, -1536.0 )
 set gg_rct_Xr = Rect( 2336.0, -224.0, 2400.0, -160.0 )
-set gg_rct_YellowPlayerBox = Rect( -576.0, -2336.0, -384.0, -2144.0 )
+set gg_rct_YellowPlayerBox = Rect( -640.0, -2368.0, -448.0, -2176.0 )
 set gg_rct_Yi = Rect( -1696.0, 128.0, -1472.0, 448.0 )
 set gg_rct_yi = Rect( -2112.0, 0.0, -1760.0, 480.0 )
 set gg_rct_Yo = Rect( -2400.0, -608.0, -2272.0, -480.0 )
@@ -3701,6 +3719,9 @@ set gg_rct_zo = Rect( -1888.0, -800.0, -1760.0, -672.0 )
 set gg_rct_Zo = Rect( -1696.0, 288.0, -1568.0, 416.0 )
 set gg_rct_zr = Rect( 1952.0, -3424.0, 2272.0, -3136.0 )
 set gg_rct_Zr = Rect( 1152.0, -2080.0, 1440.0, -1824.0 )
+set gg_rct_PortalTopNoTp = Rect( -1056.0, 2688.0, -224.0, 2976.0 )
+set gg_rct_PortalBottomNoTp = Rect( -3232.0, 64.0, -2944.0, 1056.0 )
+
 endfunction
 function Trig_Unit_Indexer_Func005Func002C takes nothing returns boolean
 if(not(udg_UnitIndexLock[udg_UDex]==0))then
@@ -4483,9 +4504,7 @@ set first=null
 set dummy=null
 endfunction
 
-function IsUnitInRectFunction takes rect r,real x,real y returns boolean
-    return(GetRectMinX(r)<=x)and(x<=GetRectMaxX(r))and(GetRectMinY(r)<=y)and(y<=GetRectMaxY(r))
-endfunction
+
 
 function jN takes integer JN,string s returns real
 local real kN
@@ -6975,7 +6994,7 @@ endfunction
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
-if((RectContainsUnit(gg_rct_BigArena,u)==false)and(IsUnitAlive(u))and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
+if((not IsUnitOnBigArena(u))and(IsUnitAlive(u))and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
 call SetUnitPositionLoc(u,GetRandomLocInRect(gg_rct_Dr))
 call AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl")
 if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
@@ -6994,7 +7013,7 @@ loop
 exitwhen In>A
 set g=CreateGroup()
 set g=pA(ae[In])
-if(RectContainsUnit(gg_rct_BigArena,PlayersHeroArray[In])==false)then
+if (not IsUnitOnBigArena(PlayersHeroArray[In])) then
 call ClearSelectionForPlayer(ae[In])
 endif
 call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
@@ -20377,7 +20396,7 @@ loop
 set f=FirstOfGroup(g)
 exitwhen f==null
 if(IsUnitType(f,UNIT_TYPE_HERO)==false and GetUnitTypeId(f)!='n002')or(GetUnitTypeId(f)=='E00E' or GetUnitTypeId(f)=='E00J')then
-if IsUnitInRectFunction(gg_rct_BigArena,GetUnitX(f),GetUnitY(f))==false then
+if not IsUnitOnBigArena(f) then
 
 call SetUnitPositionLoc(f,GetRandomLocInRect(gg_rct_Dr))
 
