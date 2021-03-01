@@ -22309,7 +22309,7 @@ function TrueCastActions takes nothing returns nothing
 local timer t
 local integer h
 local unit u=GetSpellAbilityUnit()
-if  IsUnitAlive(u) and GetUnitAbilityLevel(u,'A0K4')==0 and GetUnitTypeId(u)!=0 and then
+if  IsUnitAlive(u) and GetUnitAbilityLevel(u,'A0K4')==0 then
 set t=CreateTimer()
 set h=GetHandleId(t)
 call SaveUnitHandle(HashData,h,StringHash("TrueCast-Caster"),u)
