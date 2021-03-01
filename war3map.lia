@@ -2430,7 +2430,10 @@ endglobals
 #include "functions/13480_BorningOfDeath___Init.j"
 #include "functions/13490_RunInitializationTriggers.j"
 #include "functions/13500_InitCustomPlayerSlots.j"
+
+// Main function, here our script starts
 #include "functions/13510_main.j"
+
 #include "functions/13520_config.j"
 #include "functions/13530_sa__Table__GTable_onDestroy.j"
 #include "functions/13540_sa__SpellEvent___spellEvent_onDestroy.j"

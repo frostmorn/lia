@@ -118,10 +118,11 @@ if __name__ == "__main__":
                         function_file = open(str(len(functions)*10)+"_"+function_name+".j", "w+")
 
                 in_function = True
-                
+                if "if " in line and not("then") in line:
+                    print("if doesn't have then on line: {line_num}\r\n{line}".format(line_num = line_num, line=line))
             if in_function and extract_mode:
                 function_file.write(line+"\r\n")
-                
+            
             if "local " in line and not(in_function):
                 print("Error: Local variable declaration outside of function: {line_num}\r\n{line}".format(line_num = line_num, line=line))
                 exit(-1)
@@ -202,4 +203,8 @@ if __name__ == "__main__":
                     functions_count = len(functions)
                     ))
         print("Syntax check complete. Nothing suspicious found...")
+        function_number = 1
+        for function in functions:
+            print("#include \"functions/"+str(function_number*10)+"_"+function["name"]+".j\"")
+            function_number = function_number+1
         # print(global_variables)
