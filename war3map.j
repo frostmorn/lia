@@ -1077,7 +1077,7 @@ boolean f__result_boolean
 //  0 - disabled
 //  1 - enabled
 //
-integer debug_method = 0
+integer debug_method = 1
 endglobals
 function IsPlayerOnline takes player p returns boolean
     return(GetPlayerSlotState(p)==PLAYER_SLOT_STATE_PLAYING)and(GetPlayerController(p)==MAP_CONTROL_USER)and(I[GetPlayerId(p)]==false)
@@ -1164,6 +1164,9 @@ function IsUnitInRect takes unit u, rect rct returns boolean
 endfunction
 
 function IsUnitOnBigArena takes unit u returns boolean
+    if debug_method!=0 then
+        call DMesg("Checking if "+GetUnitName(u)+" is on BigArena")
+    endif
     // Better create region, and all logic do with that region
     return IsUnitInRect(u, gg_rct_BigArena) or IsUnitInRect(u, gg_rct_PortalTopNoTp) or IsUnitInRect(u, gg_rct_PortalBottomNoTp)
 endfunction
@@ -5190,7 +5193,7 @@ set r[59]=gg_rct_la
 endif
 loop
 exitwhen In>wN or b==false
-if(GetRectMinX(r[In])<=x)and(x<=GetRectMaxX(r[In]))and(GetRectMinY(r[In])<=y)and(y<=GetRectMaxY(r[In]))then
+if( IsCordsInRect(r[In],x,y)) then
 set b=false
 endif
 set In=In+1
@@ -6992,37 +6995,38 @@ set L=null
 set aC=null
 endfunction
 function VC takes nothing returns nothing
-local unit u=GetEnumUnit()
-local player p=GetOwningPlayer(u)
-if((not IsUnitOnBigArena(u))and(IsUnitAlive(u))and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
-call SetUnitPositionLoc(u,GetRandomLocInRect(gg_rct_Dr))
-call AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl")
-if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
-call PanCameraToTimedLocForPlayer(p,GetUnitLoc(u),0)
-endif
-call SelectUnitAddForPlayer(u,p)
-endif
-set u=null
-set p=null
+    local unit u=GetEnumUnit()
+    local player p=GetOwningPlayer(u)
+    call DMesg("Entering VC")
+    if((not IsUnitOnBigArena(u))and(IsUnitAlive(u))and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then
+        call SetUnitPositionLoc(u,GetRandomLocInRect(gg_rct_Dr))
+        call DestroyEffect(AddSpecialEffectLocBJ(GetUnitLoc(u),"Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl"))
+    if((IsUnitType(u,UNIT_TYPE_HERO))and(GetUnitTypeId(u)!='E00E'))then
+        call PanCameraToTimedLocForPlayer(p,GetUnitLoc(u),0)
+    endif
+        call SelectUnitAddForPlayer(u,p)
+    endif
+    set u=null
+    set p=null
 endfunction
+
 function EC takes nothing returns nothing
-local integer In
-local group g
-set In=1
-loop
-exitwhen In>A
-set g=CreateGroup()
-set g=pA(ae[In])
-if (not IsUnitOnBigArena(PlayersHeroArray[In])) then
-call ClearSelectionForPlayer(ae[In])
-endif
-call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
-call ForGroup(g,function VC)
-call DestroyGroup(g)
-set In=In+1
+    local integer In
+    local group g
+    set In=1
+    call DMesg("Entering EC")
+    loop
+    exitwhen In>A
+    set g=CreateGroup()
+    set g=pA(ae[In])
+    call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
+    call ForGroup(g,function VC)
+    call DestroyGroup(g)
+    set In=In+1
 endloop
 set g=null
 endfunction
+
 function XC takes nothing returns nothing
 if LoadInteger(Ax,1,StringHash("leave"))==GetItemUserData(GetEnumItem())then
 call UnitAddItem(jI,GetEnumItem())
@@ -17453,6 +17457,7 @@ endif
 set qv=true
 call TriggerExecute(SpawnCreepsTrigger)
 call EB()
+
 call EC()
 if CurrentWave>=16 then
 call EnableTrigger(fO)
@@ -20258,42 +20263,34 @@ endfunction
 function AQ takes nothing returns boolean
 return(FN(GetEnteringUnit())and IsUnitType(GetEnteringUnit(),UNIT_TYPE_STRUCTURE)==false and GetOwningPlayer(GetEnteringUnit())!=Player(11))!=null
 endfunction
+
 function NQ takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
-local unit u=LoadUnitHandle(Ax,1,dN)
-local real x=GetUnitX(u)
-local real y=GetUnitY(u)
-local location L
+local unit u = LoadUnitHandle(Ax,1,dN)
 if iv or jv then
-if((GetRectMinX(gg_rct_BigArena)<=x)and(x<=GetRectMaxX(gg_rct_BigArena))and(GetRectMinY(gg_rct_BigArena)<=y)and(y<=GetRectMaxY(gg_rct_BigArena)))or((GetRectMinX(gg_rct_PlayersHome)<=x)and(x<=GetRectMaxX(gg_rct_PlayersHome))and(GetRectMinY(gg_rct_PlayersHome)<=y)and(y<=GetRectMaxY(gg_rct_PlayersHome)))then
-set L=GetRectCenter(gg_rct_MinimalArenaAreaRect)
-call SetUnitPositionLoc(u,L)
-call RemoveLocation(L)
-endif
+    if IsUnitOnBigArena(u) or IsUnitInRect(u, gg_rct_PlayersHome) then
+        call SetUnitPositionLoc(u,GetRectCenter(gg_rct_MinimalArenaAreaRect))
+    endif
 else
-if((no or Wx)and(qv==false))then
-if((GetRectMinX(gg_rct_BigArena)<=x)and(x<=GetRectMaxX(gg_rct_BigArena))and(GetRectMinY(gg_rct_BigArena)<=y)and(y<=GetRectMaxY(gg_rct_BigArena)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
-set L=GetRectCenter(gg_rct_HeroReSpawn)
-call SetUnitPositionLoc(u,L)
-call RemoveLocation(L)
-endif
-else
-if qv then
-if((GetRectMinX(gg_rct_PlayersHome)<=x)and(x<=GetRectMaxX(gg_rct_PlayersHome))and(GetRectMinY(gg_rct_PlayersHome)<=y)and(y<=GetRectMaxY(gg_rct_PlayersHome)))or((GetRectMinX(gg_rct_MinimalArenaAreaRect)<=x)and(x<=GetRectMaxX(gg_rct_MinimalArenaAreaRect))and(GetRectMinY(gg_rct_MinimalArenaAreaRect)<=y)and(y<=GetRectMaxY(gg_rct_MinimalArenaAreaRect)))then
-set L=GetRectCenter(gg_rct_BigArena)
-call SetUnitPositionLoc(u,L)
-call RemoveLocation(L)
-endif
-endif
-endif
+    if((no or Wx)and(qv==false))then
+        if IsUnitOnBigArena(u) or IsUnitInRect(u, gg_rct_MinimalArenaAreaRect) then
+            call SetUnitPositionLoc(u,GetRectCenter(gg_rct_HeroReSpawn))
+        endif
+    else
+        if qv then
+            if IsUnitInRect(u, gg_rct_PlayersHome) or IsUnitInRect(u, gg_rct_MinimalArenaAreaRect) then
+                call SetUnitPositionLoc(u,GetRectCenter(gg_rct_BigArena))
+            endif
+        endif
+    endif
 endif
 call FlushChildHashtable(Ax,dN)
 call DestroyTimer(t)
 set t=null
 set u=null
-set L=null
 endfunction
+
 function bQ takes nothing returns nothing
 local unit u=GetEnteringUnit()
 local timer t=CreateTimer()
