@@ -32,5 +32,5 @@ which could be usefull for creation map debug system
 Just hit command below and u will get it
 
 ```
-    cpp war3map.lia war3map.j -std=c99 -P -traditional -fno-extended-identifiers -E
+    cpp war3map.lia war3map.j -std=c99 -P -fno-extended-identifiers 
 ```
