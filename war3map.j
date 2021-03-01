@@ -1854,7 +1854,7 @@ call MoveLocation(Table__z,x,y)
 return GetLocationZ(Table__z)
 endfunction
 // Redeclaration
-function UnitAlive takes unit u returns boolean
+function IsUnitAlive takes unit u returns boolean
 return not IsUnitType(u,UNIT_TYPE_DEAD)and GetUnitTypeId(u)!=0
 endfunction
 function GetUnitZ takes unit u returns real
@@ -3297,7 +3297,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,400.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if IsUnitAlly(first,GetOwningPlayer(caster))and UnitAlive(first)then
+if IsUnitAlly(first,GetOwningPlayer(caster))and IsUnitAlive(first)then
 if first==caster then
 call SetUnitState(first,UNIT_STATE_MANA,GetUnitState(first,UNIT_STATE_MANA)+life)
 call CombatTextCreate(first,I2S(R2I(life)),16,137,255,TEXT_TYPE_DAMAGE)
@@ -4460,7 +4460,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,0.00,0.00,9999.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if UnitAlive(first)and IsUnitType(first,UNIT_TYPE_STRUCTURE)==false and FN(first)then
+if IsUnitAlive(first)and IsUnitType(first,UNIT_TYPE_STRUCTURE)==false and FN(first)then
 set dummy=CreateUnit(GetOwningPlayer(first),'h00R',GetUnitX(first),GetUnitY(first),0.00)
 call UnitAddAbility(dummy,'A0HR')
 call UnitApplyTimedLife(dummy,'BTLF',1.00)
@@ -22283,11 +22283,11 @@ local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
 local unit caster=LoadUnitHandle(HashData,h,StringHash("TrueCast-Caster"))
 if(ItemUseBool[GetPlayerId(GetOwningPlayer((caster)))])then
-if GetHandleId(caster)!=0 and GetUnitAbilityLevel(caster,'A0K4')==0 and GetUnitTypeId(caster)!=0 and UnitAlive(caster)then
+if GetHandleId(caster)!=0 and GetUnitAbilityLevel(caster,'A0K4')==0 and GetUnitTypeId(caster)!=0 and IsUnitAlive(caster)then
 call TrueCastSet(caster,false)
 endif
 else
-if GetHandleId(caster)!=0 and GetUnitAbilityLevel(caster,'A0K4')==0 and GetUnitTypeId(caster)!=0 and UnitAlive(caster)then
+if GetHandleId(caster)!=0 and GetUnitAbilityLevel(caster,'A0K4')==0 and GetUnitTypeId(caster)!=0 and IsUnitAlive(caster)then
 call OH2(caster)
 endif
 endif
@@ -22300,7 +22300,7 @@ function TrueCastActions takes nothing returns nothing
 local timer t
 local integer h
 local unit u=GetSpellAbilityUnit()
-if GetHandleId(u)!=0 and GetUnitAbilityLevel(u,'A0K4')==0 and GetUnitTypeId(u)!=0 and UnitAlive(u)then
+if GetHandleId(u)!=0 and GetUnitAbilityLevel(u,'A0K4')==0 and GetUnitTypeId(u)!=0 and IsUnitAlive(u)then
 set t=CreateTimer()
 set h=GetHandleId(t)
 call SaveUnitHandle(HashData,h,StringHash("TrueCast-Caster"),u)
@@ -22779,7 +22779,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,130.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if IsUnitEnemy(first,GetOwningPlayer(source))and UnitAlive(first)then
+if IsUnitEnemy(first,GetOwningPlayer(source))and IsUnitAlive(first)then
 call PoisionousWeapon___onApply(source,first,level)
 endif
 call GroupRemoveUnit(bj_lastCreatedGroup,first)
@@ -22811,7 +22811,7 @@ if not IssueTargetOrder(first,"attack",caster)then
 call IssueTargetOrder(first,"smart",caster)
 endif
 // endif
-if GetHandleId(first)==0 or GetUnitAbilityLevel(first,'B03N')>0 or duration<=0.00 or not UnitAlive(first)or not UnitAlive(caster)or not b then
+if GetHandleId(first)==0 or GetUnitAbilityLevel(first,'B03N')>0 or duration<=0.00 or not IsUnitAlive(first)or not IsUnitAlive(caster)or not b then
 call KillTimer(t)
 call FlushChildHashtable(HashData,h)
 call RemoveSavedHandle(HashData,h1,StringHash("MithrilArmor:Caster"))
@@ -22833,7 +22833,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,500.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if GetUnitAbilityLevel(first,'B03N')==0 and not IsUnitAlly(first,GetOwningPlayer(caster))and GetWidgetLife(first)>.405 and UnitAlive(first)then
+if GetUnitAbilityLevel(first,'B03N')==0 and not IsUnitAlly(first,GetOwningPlayer(caster))and GetWidgetLife(first)>.405 and IsUnitAlive(first)then
 set t=CreateTimer()
 set h=GetHandleId(t)
 call SaveUnitHandle(HashData,h,StringHash("MithrilArmor:Target"),first)
@@ -22895,10 +22895,10 @@ call SetUnitX(caster,x[3])
 call SetUnitY(caster,y[3])
 call SaveReal(HashData,h,StringHash("Effect"),fx+40.00)
 call SetUnitFacing(caster,a)
-if target!=null and UnitAlive(target)then
+if target!=null and IsUnitAlive(target)then
 call SaveReal(HashData,h,StringHash("TargetX"),GetUnitX(target))
 call SaveReal(HashData,h,StringHash("TargetY"),GetUnitY(target))
-elseif target==null or UnitAlive(target)then
+elseif target==null or IsUnitAlive(target)then
 call SaveReal(HashData,h,StringHash("TargetX"),x[3])
 call SaveReal(HashData,h,StringHash("TargetY"),y[3])
 endif
@@ -22919,7 +22919,7 @@ call IssueTargetOrder(dummy,"thunderbolt",first)
 call UnitApplyTimedLife(dummy,'BHwe',0.50)
 call GroupRemoveUnit(bj_lastCreatedGroup,first)
 endloop
-if UnitAlive(target)then
+if IsUnitAlive(target)then
 call IssueTargetOrder(caster,"attack",target)
 endif
 call FlushChildHashtable(HashData,h)
@@ -24908,7 +24908,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,400.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if IsUnitAlly(first,GetOwningPlayer(caster))and UnitAlive(first)then
+if IsUnitAlly(first,GetOwningPlayer(caster))and IsUnitAlive(first)then
 if first==caster then
 call SetUnitState(first,UNIT_STATE_MANA,GetUnitState(first,UNIT_STATE_MANA)+life)
 call CombatTextCreate(first,I2S(R2I(life)),16,137,255,TEXT_TYPE_DAMAGE)
@@ -25090,7 +25090,7 @@ call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,500.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 exitwhen first==null
-if GetUnitAbilityLevel(first,'B03N')==0 and not IsUnitAlly(first,GetOwningPlayer(caster))and GetWidgetLife(first)>.405 and UnitAlive(first)then
+if GetUnitAbilityLevel(first,'B03N')==0 and not IsUnitAlly(first,GetOwningPlayer(caster))and GetWidgetLife(first)>.405 and IsUnitAlive(first)then
 set t=CreateTimer()
 set h=GetHandleId(t)
 call SaveUnitHandle(HashData,h,StringHash("MithrilArmor:Target"),first)
