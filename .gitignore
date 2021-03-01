@@ -1,7 +1,13 @@
 generated_war3map.j
 *.w3x
-functions/*
 (listfile)
 stormer
 .vscode/*
 test_map.sh
+war3map_rects.j
+errors.txt
+common.j
+common.ai
+blizzard.j
+war3map.j
+syntax_check.sh
