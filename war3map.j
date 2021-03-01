@@ -4136,9 +4136,7 @@ call UnitAddAbility(u,udg_SpellDamageAbility)
 call RemoveUnit(u)
 set u=null
 endfunction
-function PDDSTrueTarget takes unit u returns unit
-return LoadUnitHandle(HashData,GetHandleId(u),StringHash("AttackTarget_Main"))
-endfunction
+
 function DamageMod__OnActions takes nothing returns nothing
 local unit source=udg_DamageEventSource
 local unit target=udg_DamageEventTarget
@@ -4365,7 +4363,7 @@ set nN[60]=true
 set nN[70]=true
 set nN[80]=true
 set nN[90]=true
-set nN['d']=true
+set nN[100]=true
 set i=0
 set j=0
 loop
@@ -4714,7 +4712,7 @@ local timer t=CreateTimer()
 local effect e=AddSpecialEffectTarget(KN("screameffect"),u,KN("screameffectpoint"))
 call SaveEffectHandle(gI,GetHandleId(t),0,e)
 call TimerStart(t,jN(0,"screameffecttime"),false,function Eb)
-call IssueTargetOrderById(u,$D000F,jo)
+call IssueTargetOrderById(u,851983,jo)
 set u=null
 set t=null
 set e=null
@@ -9854,7 +9852,7 @@ call SetUnitPathing(c,false)
 call RemoveLocation(T)
 call UnitAddAbility(c,'A0B9')
 call SetUnitAbilityLevel(c,'A0B9',JN)
-call IssueTargetOrderById(c,$D000F,f)
+call IssueTargetOrderById(c,851983,f)
 set t=CreateTimer()
 set dN=GetHandleId(t)
 call SaveUnitHandle(Ax,1,dN,c)
@@ -14773,7 +14771,7 @@ local integer Id=GetHandleId(pb)
 local unit u=LoadUnitHandle(Ax,StringHash("Naga"),Id)
 if GetWidgetLife(u)>.405 and GetIssuedOrderId()!=$D0005 then
 call DisableTrigger(pb)
-call IssueTargetOrderById(GetTriggerUnit(),$D000F,u)
+call IssueTargetOrderById(GetTriggerUnit(),851983,u)
 call EnableTrigger(pb)
 endif
 set pb=null
@@ -14846,7 +14844,7 @@ if GetUnitAbilityLevel(f,'B037')>0 then
 call UnitRemoveAbility(f,'B03N')
 endif
 if GetUnitAbilityLevel(f,'B03N')>0 then
-call IssueTargetOrderById(f,$D000F,u)
+call IssueTargetOrderById(f,851983,u)
 endif
 call GroupRemoveUnit(g,f)
 endloop
@@ -15882,7 +15880,7 @@ local integer Id=GetHandleId(pb)
 local unit u=LoadUnitHandle(Ax,StringHash("ItemNew"),Id)
 if GetWidgetLife(u)>.405 then
 call DisableTrigger(pb)
-call IssueTargetOrderById(GetTriggerUnit(),$D000F,u)
+call IssueTargetOrderById(GetTriggerUnit(),851983,u)
 call EnableTrigger(pb)
 endif
 set pb=null
@@ -15939,7 +15937,7 @@ if GetUnitAbilityLevel(f,'B03N')>0 then
 call UnitRemoveAbility(f,'B037')
 endif
 if GetUnitAbilityLevel(f,'B037')>0 then
-call IssueTargetOrderById(f,$D000F,u)
+call IssueTargetOrderById(f,851983,u)
 endif
 call GroupRemoveUnit(g,f)
 endloop
@@ -17649,7 +17647,7 @@ endfunction
 function CreepsAttackFunction takes nothing returns nothing
     local unit u=GetEnumUnit()
     // if GetUnitCurrentOrder(u) !=0 then
-    call IssuePointOrderByIdLoc(u,$D000F,Ye)
+    call IssuePointOrderByIdLoc(u,851983,Ye)
     // endif
     set u=null
 endfunction
@@ -17762,7 +17760,7 @@ function AM takes nothing returns nothing
     loop
         set f=FirstOfGroup(g)
     exitwhen f==null
-        call IssuePointOrderByIdLoc(f,$D000F,T)
+        call IssuePointOrderByIdLoc(f,851983,T)
         call GroupRemoveUnit(g,f)
     endloop
         call RemoveLocation(T)
@@ -17789,7 +17787,7 @@ function AcquireTest takes nothing returns nothing
     local unit u=GetEnumUnit()
     if u!=null then
         call SetUnitAcquireRange(u, 10000)
-        call IssuePointOrderByIdLoc(u,$D000F, GetRectCenter(gg_rct_BigArena))
+        call IssuePointOrderByIdLoc(u,851983, GetRectCenter(gg_rct_BigArena))
     endif
 endfunction
 function DestroyBitchUnit takes nothing returns nothing
