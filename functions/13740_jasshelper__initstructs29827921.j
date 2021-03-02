@@ -1,5 +1,27 @@
 #ifndef H_13740
 #define H_13740
+#include "13530_sa__Table__GTable_onDestroy.j"
+#include "13540_sa__SpellEvent___spellEvent_onDestroy.j"
+#include "13550_sa__TableBr__getindex.j"
+#include "13560_sa__TableBr__setindex.j"
+#include "13570_sa__TableBr_has.j"
+#include "13580_sa__TableBr_remove.j"
+#include "13590_sa__TableBr_create.j"
+#include "13600_sa___prototype3_DarkRitual___DarkRitualCallback.j"
+#include "13610_sa___prototype3_MagicLump___OnCast.j"
+#include "13620_sa___prototype3_Void___VoidCallback.j"
+#include "13630_sa___prototype3_Rage___onCast.j"
+#include "13640_sa___prototype3_ButchersRage___onCast.j"
+#include "13650_sa___prototype3_ChainsOfLight___onCast.j"
+#include "13660_sa___prototype3_SpiritOfVengeance___OnAction.j"
+#include "13670_sa___prototype3_MithrilArmor___OnActions.j"
+#include "13680_sa___prototype3_Charge___onCast.j"
+#include "13690_sa___prototype3_Charge___onPrecast.j"
+#include "13700_sa___prototype3_AimedShot___AimedShotActions.j"
+#include "13710_sa___prototype3_DemonicRage___DemonicRageActions.j"
+#include "13720_sa___prototype3_EssenceOfShadow___OnAction.j"
+#include "13730_sa___prototype3_BorningOfDeath___OnAction.j"
+
 function jasshelper__initstructs29827921 takes nothing returns nothing
 set st__Table__GTable_onDestroy[1]=CreateTrigger()
 set st__Table__GTable_onDestroy[2]=st__Table__GTable_onDestroy[1]
