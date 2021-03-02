@@ -49,7 +49,6 @@ set Hv=true
 call TriggerExecute(SO)
 else
 call EnableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig enabled")
 set Hv=false
 if CurrentWave>0 then
 call SendStatsToBot("WАVЕ",CurrentWave)

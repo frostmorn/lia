@@ -2,7 +2,6 @@
 #define H_5090
 function RoundStartFunction takes nothing returns nothing
 call DisableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig disabled")
 call DestroyTimer(Ho)
 set Ho=null
 set Ho=CreateTimer()

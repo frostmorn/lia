@@ -11,14 +11,12 @@ call PauseUnit(Le,false)
 call TriggerRegisterUnitLifeEvent(OO,Le,LESS_THAN_OR_EQUAL,7000.)
 call TriggerRegisterUnitLifeEvent(RO,Le,LESS_THAN_OR_EQUAL,3000.)
 call EnableTrigger(AO)
-call DMesg("Trigger AO Enabled")
 call EnableTrigger(dO)
 call EnableTrigger(XO)
 call EnableTrigger(oO)
 else
 call PauseUnit(Me,false)
 call EnableTrigger(AO)
-call DMesg("Trigger AO Enabled")
 call EnableTrigger(XO)
 endif
 loop

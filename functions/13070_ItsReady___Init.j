@@ -10,7 +10,6 @@ endloop
 call TriggerAddCondition(IsReadyTrig,Condition(function ItsReady___OnConditions))
 call TriggerAddAction(IsReadyTrig,function ItsReady___OnActions)
 call DisableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig disabled")
 endfunction
 
 #endif

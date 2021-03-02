@@ -19,12 +19,10 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTri
 if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
 if Ex then
 call DisableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig disabled")
 call RoundStartFunction()
 endif
 if no or Wx then
 call DisableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig disabled")
 call QB()
 endif
 endif

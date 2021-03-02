@@ -5,7 +5,6 @@ local group g=CreateGroup()
 local unit f
 local timer t=CreateTimer()
 call DisableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig disabled")
 call lb()
 if Xv then
 set t=null
