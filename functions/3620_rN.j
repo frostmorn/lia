@@ -1,7 +1,5 @@
 #ifndef H_3620
 #define H_3620
-#ifndef H_3620
-#define H_3620
 function rN takes nothing returns nothing
 local integer i
 local integer j
@@ -42,5 +40,4 @@ endif
 set i=i+1
 endloop
 endfunction
-#endif
 #endif

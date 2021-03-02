@@ -1,7 +1,5 @@
 #ifndef H_3140
 #define H_3140
-#ifndef H_3140
-#define H_3140
 function CreateRegions takes nothing returns nothing
 local weathereffect we
 set gg_rct_aa = Rect( -2912.0, -1088.0, -2464.0, -672.0 )
@@ -138,5 +136,4 @@ set gg_rct_Zr = Rect( 1152.0, -2080.0, 1440.0, -1824.0 )
 set gg_rct_PortalTopNoTp = Rect( -1056.0, 2688.0, -224.0, 2976.0 )
 set gg_rct_PortalBottomNoTp = Rect( -3232.0, 64.0, -2944.0, 1056.0 )
 endfunction
-#endif
 #endif

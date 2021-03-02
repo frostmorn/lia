@@ -1,7 +1,5 @@
 #ifndef H_13640
 #define H_13640
-#ifndef H_13640
-#define H_13640
 #include "160_s__SpellEvent___spellEvent__allocate.j"
 #include "2770_s__SpellEvent___spellEvent_SpellEvent___init.j"
 #include "12970_ButchersRage___Update.j"
@@ -27,5 +25,4 @@ set t=null
 set caster=null
 return true
 endfunction
-#endif
 #endif
