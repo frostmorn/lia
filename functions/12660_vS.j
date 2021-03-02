@@ -1,3 +1,5 @@
+#ifndef H_12660
+#define H_12660
 function vS takes boolean zs,unit u,integer ID,integer eS,integer xS,integer oS,integer rS,integer iS,integer aS,integer nS,integer VS,integer ES,integer XS,integer OS returns nothing
 local item it
 if zs then
@@ -28,3 +30,5 @@ set it=UnitAddItemById(u,OS)
 call SetItemUserData(it,(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"))))
 set it=null
 endfunction
+
+#endif

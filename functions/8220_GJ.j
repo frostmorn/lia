@@ -1,3 +1,5 @@
+#ifndef H_8220
+#define H_8220
 function GJ takes nothing returns nothing
 if(GetLearnedSkill()=='A05G')then
 set oe[1]='n01F'
@@ -7,3 +9,5 @@ call EnableTrigger(CE)
 call DestroyTrigger(cE)
 endif
 endfunction
+
+#endif

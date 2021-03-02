@@ -1,3 +1,5 @@
+#ifndef H_12570
+#define H_12570
 function Ms takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer id=GetPlayerId(p)+1
@@ -24,3 +26,5 @@ endif
 endif
 set p=null
 endfunction
+
+#endif

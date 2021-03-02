@@ -1,3 +1,5 @@
+#ifndef H_12720
+#define H_12720
 function GS takes nothing returns nothing
 local timer ti=GetExpiredTimer()
 local integer dN=GetHandleId(ti)
@@ -118,3 +120,5 @@ set z=null
 set HS=null
 set cc=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_9230
+#define H_9230
 function MK takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A03A')
@@ -16,3 +18,5 @@ call UnitRemoveAbility(u,'A0CP')
 call DisableTrigger(EX)
 set u=null
 endfunction
+
+#endif

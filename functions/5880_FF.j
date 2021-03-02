@@ -1,3 +1,5 @@
+#ifndef H_5880
+#define H_5880
 function FF takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -37,3 +39,5 @@ set g2=null
 set u=null
 set f=null
 endfunction
+
+#endif

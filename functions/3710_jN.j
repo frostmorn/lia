@@ -1,3 +1,5 @@
+#ifndef H_3710
+#define H_3710
 function jN takes integer JN,string s returns real
 local real kN
 if(s=="screamaoe")then
@@ -37,3 +39,5 @@ set kN=.5
 endif
 return kN
 endfunction
+
+#endif

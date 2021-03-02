@@ -1,3 +1,5 @@
+#ifndef H_6250
+#define H_6250
 function bg takes nothing returns nothing
 local integer In=1
 local timer t=GetExpiredTimer()
@@ -13,3 +15,5 @@ call DestroyTimer(t)
 set e=null
 set t=null
 endfunction
+
+#endif

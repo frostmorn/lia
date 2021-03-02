@@ -1,3 +1,5 @@
+#ifndef H_13720
+#define H_13720
 function sa___prototype3_EssenceOfShadow___OnAction takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local unit target=s__SpellEvent___spellEvent_TargetUnit[SpellEvent]
@@ -6,6 +8,7 @@ local timer t=LoadTimerHandle(HashData,GetHandleId(target),StringHash("EssenceOf
 local integer h
 local integer abilId
 local boolean b=LoadBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
+call DMesg("Essence of shadow onAction call 13720")
 if t!=null then
 set h=GetHandleId(t)
 call AddStat(target,BONUS_TYPE_ARMOR,-(5*lvl))
@@ -56,3 +59,5 @@ set caster=null
 set target=null
 return true
 endfunction
+
+#endif

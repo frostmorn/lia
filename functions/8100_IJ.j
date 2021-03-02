@@ -1,3 +1,5 @@
+#ifndef H_8100
+#define H_8100
 function IJ takes unit u1 returns nothing
 local unit u
 local integer In=0
@@ -26,3 +28,5 @@ set p=null
 set first=null
 set t=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_280
+#define H_280
 function BurningArmorAdd takes unit u,unit t returns nothing
 local unit dummy
 local real x=GetUnitX(t)
@@ -9,3 +11,5 @@ call SetUnitAbilityLevel(dummy,'A0J9',GetUnitAbilityLevel(u,'A0JA'))
 call IssueTargetOrder(dummy,"drunkenhaze",t)
 set dummy=null
 endfunction
+
+#endif

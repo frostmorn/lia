@@ -1,3 +1,5 @@
+#ifndef H_8920
+#define H_8920
 function xK takes nothing returns boolean
 local unit uA=GetSpellAbilityUnit()
 local unit uE=GetFilterUnit()
@@ -11,3 +13,5 @@ set uA=null
 set uE=null
 return false
 endfunction
+
+#endif

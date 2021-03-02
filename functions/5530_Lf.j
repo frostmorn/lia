@@ -1,3 +1,5 @@
+#ifndef H_5530
+#define H_5530
 function Lf takes nothing returns real
 local integer JN=GetUnitAbilityLevel(Ko,'A0IE')
 if JN==0 then
@@ -19,3 +21,5 @@ return 80.
 endif
 endif
 endfunction
+
+#endif

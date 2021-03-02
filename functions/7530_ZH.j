@@ -1,3 +1,5 @@
+#ifndef H_7530
+#define H_7530
 function ZH takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -60,3 +62,5 @@ set e=null
 set ff=null
 set L=null
 endfunction
+
+#endif

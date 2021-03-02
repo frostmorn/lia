@@ -1,3 +1,5 @@
+#ifndef H_11050
+#define H_11050
 function RM takes nothing returns nothing
 local unit f=GetDyingUnit()
 local location L=GetRandomLocInRect(gg_rct_MinimalArenaAreaRect)
@@ -16,3 +18,5 @@ endif
 set f=null
 set L=null
 endfunction
+
+#endif

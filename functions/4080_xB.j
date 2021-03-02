@@ -1,3 +1,5 @@
+#ifndef H_4080
+#define H_4080
 function xB takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -34,3 +36,5 @@ set g=null
 set f=null
 set pb=null
 endfunction
+
+#endif

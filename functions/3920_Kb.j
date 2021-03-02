@@ -1,3 +1,5 @@
+#ifndef H_3920
+#define H_3920
 function Kb takes real x,real y returns boolean
 local rect array r
 local integer wN
@@ -85,3 +87,5 @@ set In=In+1
 endloop
 return b
 endfunction
+
+#endif

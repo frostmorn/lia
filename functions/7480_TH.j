@@ -1,3 +1,5 @@
+#ifndef H_7480
+#define H_7480
 function TH takes nothing returns nothing
 local integer JN
 local integer array id
@@ -18,3 +20,5 @@ endif
 endif
 set u=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_3380
+#define H_3380
 function DamageMod__OnActions takes nothing returns nothing
 local unit source=udg_DamageEventSource
 local unit target=udg_DamageEventTarget
@@ -31,3 +33,5 @@ endif
 set source=null
 set target=null
 endfunction
+
+#endif

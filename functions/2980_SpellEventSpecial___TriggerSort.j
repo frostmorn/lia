@@ -1,3 +1,5 @@
+#ifndef H_2980
+#define H_2980
 function SpellEventSpecial___TriggerSort takes nothing returns boolean
 local integer i=1
 local integer j=0
@@ -23,3 +25,5 @@ endloop
 set t=null
 return true
 endfunction
+
+#endif

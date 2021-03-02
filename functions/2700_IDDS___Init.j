@@ -1,3 +1,5 @@
+#ifndef H_2700
+#define H_2700
 function IDDS___Init takes nothing returns nothing
 local rect r=GetWorldBounds()
 local region re=CreateRegion()
@@ -20,3 +22,5 @@ set g=null
 set b=null
 set r=null
 endfunction
+
+#endif

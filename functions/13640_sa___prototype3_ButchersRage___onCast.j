@@ -1,3 +1,10 @@
+#ifndef H_13640
+#define H_13640
+#ifndef H_13640
+#define H_13640
+#include "160_s__SpellEvent___spellEvent__allocate.j"
+#include "2770_s__SpellEvent___spellEvent_SpellEvent___init.j"
+#include "12970_ButchersRage___Update.j"
 function sa___prototype3_ButchersRage___onCast takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local timer t
@@ -20,3 +27,5 @@ set t=null
 set caster=null
 return true
 endfunction
+#endif
+#endif

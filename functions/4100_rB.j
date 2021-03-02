@@ -1,3 +1,5 @@
+#ifndef H_4100
+#define H_4100
 function rB takes unit iB returns nothing
 local unit u=iB
 local unit m=ue
@@ -11,3 +13,5 @@ endif
 set u=null
 set m=null
 endfunction
+
+#endif

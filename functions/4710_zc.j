@@ -1,3 +1,5 @@
+#ifndef H_4710
+#define H_4710
 function zc takes unit cB,real re returns nothing
 local real r=re
 local unit u=cB
@@ -8,3 +10,5 @@ call ModifyHeroStat(2,u,2,R2I((I2R(GetHeroStatBJ(2,uM,false))*r)))
 set u=null
 set uM=null
 endfunction
+
+#endif

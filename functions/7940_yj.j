@@ -1,3 +1,5 @@
+#ifndef H_7940
+#define H_7940
 function yj takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 if GetSpellAbilityId()=='A04L' or GetSpellAbilityId()=='A08O' then
@@ -8,3 +10,5 @@ endif
 endif
 set u=null
 endfunction
+
+#endif

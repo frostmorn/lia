@@ -1,3 +1,5 @@
+#ifndef H_6730
+#define H_6730
 function mG takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local location l=GetUnitLoc(u)
@@ -10,3 +12,5 @@ set u=null
 set l=null
 set t=null
 endfunction
+
+#endif

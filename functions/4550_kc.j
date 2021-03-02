@@ -1,3 +1,5 @@
+#ifndef H_4550
+#define H_4550
 function kc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -102,3 +104,5 @@ set p[In]=null
 set In=In+1
 endloop
 endfunction
+
+#endif

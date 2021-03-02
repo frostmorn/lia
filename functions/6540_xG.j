@@ -1,3 +1,5 @@
+#ifndef H_6540
+#define H_6540
 function xG takes nothing returns nothing
 local unit e=GetEnumUnit()
 if IsUnitAlive(e) and GetUnitAbilityLevel(e,'B02M')>0 then
@@ -9,3 +11,5 @@ call GroupRemoveUnit(tI,e)
 endif
 set e=null
 endfunction
+
+#endif

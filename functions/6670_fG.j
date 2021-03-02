@@ -1,3 +1,5 @@
+#ifndef H_6670
+#define H_6670
 function fG takes nothing returns nothing
 local integer FG=GetSpellAbilityId()
 local integer gG='A0DJ'
@@ -48,3 +50,5 @@ set e[5]=null
 set fg=null
 set t=null
 endfunction
+
+#endif

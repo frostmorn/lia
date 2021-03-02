@@ -1,3 +1,5 @@
+#ifndef H_3060
+#define H_3060
 function MagicLump___OnLoop takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -16,3 +18,5 @@ set t=null
 set u=null
 set fx=null
 endfunction
+
+#endif

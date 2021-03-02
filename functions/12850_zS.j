@@ -1,3 +1,5 @@
+#ifndef H_12850
+#define H_12850
 function zS takes nothing returns nothing
 local group g=CreateGroup()
 local integer In=0
@@ -42,3 +44,5 @@ endif
 set g=null
 set f=null
 endfunction
+
+#endif

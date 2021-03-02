@@ -1,3 +1,5 @@
+#ifndef H_12110
+#define H_12110
 function RQ takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
@@ -8,3 +10,5 @@ call DisplayTimedTextToPlayer(p,0,0,20,"|Cffff0000Для охотницы орб
 endif
 set p=null
 endfunction
+
+#endif

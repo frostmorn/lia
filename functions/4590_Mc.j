@@ -1,3 +1,5 @@
+#ifndef H_4590
+#define H_4590
 function Mc takes nothing returns nothing
 local timer t=CreateTimer()
 call aB()
@@ -8,3 +10,5 @@ call XB()
 call TimerStart(t,1.3,false,function mc)
 set t=null
 endfunction
+
+#endif

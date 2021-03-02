@@ -1,3 +1,5 @@
+#ifndef H_8340
+#define H_8340
 function PJ takes nothing returns nothing
 local unit u
 local integer WF
@@ -14,3 +16,5 @@ endif
 set u=null
 set e=null
 endfunction
+
+#endif

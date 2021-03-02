@@ -1,3 +1,5 @@
+#ifndef H_5280
+#define H_5280
 function dD takes nothing returns nothing
 local integer q=0
 local integer qq=2
@@ -102,3 +104,5 @@ set t=null
 set t2=null
 set t3=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_10820
+#define H_10820
 function Mm takes nothing returns nothing
 local integer i=GetPlayerId(GetOwningPlayer(GetEventDamageSource()))
 local real damage=GetEventDamage()
@@ -15,3 +17,5 @@ set nA[i]=nA[i]+GetWidgetLife(GetTriggerUnit())
 endif
 endif
 endfunction
+
+#endif

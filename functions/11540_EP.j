@@ -1,3 +1,5 @@
+#ifndef H_11540
+#define H_11540
 function EP takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -34,3 +36,5 @@ set t=null
 set tt=null
 set d=null
 endfunction
+
+#endif

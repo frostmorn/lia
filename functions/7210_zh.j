@@ -1,3 +1,5 @@
+#ifndef H_7210
+#define H_7210
 function zh takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -44,3 +46,5 @@ set Zh=null
 set p=null
 set T=null
 endfunction
+
+#endif

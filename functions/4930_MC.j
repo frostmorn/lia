@@ -1,3 +1,5 @@
+#ifndef H_4930
+#define H_4930
 function MC takes nothing returns nothing
 set Xx[1]="ReplaceableTextures\\WorldEditUI\\Editor-Random-Unit.blp"
 set Xx[2]="ReplaceableTextures\\CommandButtons\\BTNPriestessOfTheMoon.blp"
@@ -97,3 +99,5 @@ set HeroIdsArray[45]='O00G'
 set HeroIdsArray[46]='Hpal'
 set HeroIdsArray[47]='Hblm'
 endfunction
+
+#endif

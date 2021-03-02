@@ -1,3 +1,5 @@
+#ifndef H_8470
+#define H_8470
 function zJ takes nothing returns nothing
 local unit wF=GetAttacker()
 local integer WF=GetUnitAbilityLevel(wF,'A044')
@@ -10,3 +12,5 @@ call SetUnitAbilityLevel(wF,'A0A8',Rx)
 endif
 set wF=null
 endfunction
+
+#endif

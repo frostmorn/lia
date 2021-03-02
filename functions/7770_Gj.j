@@ -1,3 +1,5 @@
+#ifndef H_7770
+#define H_7770
 function Gj takes nothing returns nothing
 local unit wF
 if(GetSpellAbilityId()=='A04Q')then
@@ -10,3 +12,5 @@ call UnitRemoveAbility(wF,'A0AG')
 endif
 set wF=null
 endfunction
+
+#endif

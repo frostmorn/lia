@@ -1,3 +1,5 @@
+#ifndef H_5270
+#define H_5270
 function CD takes nothing returns nothing
 local timer t=GetExpiredTimer()
 if je==false and A==1 then
@@ -7,3 +9,5 @@ endif
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_2560
+#define H_2560
 function TriggerRegisterDamageEvent takes trigger trg,integer priority returns boolean
 if trg==null or priority<0 then
 return false
@@ -11,3 +13,5 @@ call SaveInteger(Table__ht,((IDDS___TrigTable)),((GetHandleId((trg)))),(IDDS___C
 set IDDS___Count=IDDS___Count+1
 return IDDS___TriggerSort()
 endfunction
+
+#endif

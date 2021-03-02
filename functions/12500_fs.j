@@ -1,3 +1,5 @@
+#ifndef H_12500
+#define H_12500
 function fs takes nothing returns nothing
 local integer In=0
 loop
@@ -8,3 +10,5 @@ endloop
 call DestroyTimer(he)
 call JB()
 endfunction
+
+#endif

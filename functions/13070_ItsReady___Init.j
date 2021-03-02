@@ -1,3 +1,5 @@
+#ifndef H_13070
+#define H_13070
 function ItsReady___Init takes nothing returns nothing
 local integer index=0
 loop
@@ -10,3 +12,5 @@ call TriggerAddAction(IsReadyTrig,function ItsReady___OnActions)
 call DisableTrigger(IsReadyTrig)
 call DMesg("IsReadyTrig disabled")
 endfunction
+
+#endif

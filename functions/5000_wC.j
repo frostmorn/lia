@@ -1,3 +1,5 @@
+#ifndef H_5000
+#define H_5000
 function wC takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer SC=GetHandleId(t)
@@ -29,3 +31,5 @@ call FlushChildHashtable(Ax,SC)
 set ac=null
 set t=null
 endfunction
+
+#endif

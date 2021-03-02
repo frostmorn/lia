@@ -1,3 +1,5 @@
+#ifndef H_9240
+#define H_9240
 function pK takes nothing returns nothing
 local integer ld=GetHandleId(GetEventDamageSource())
 local unit VF=GetEventDamageSource()
@@ -38,3 +40,5 @@ set T=null
 set f=null
 call Kd(ld)
 endfunction
+
+#endif

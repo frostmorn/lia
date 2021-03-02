@@ -1,3 +1,5 @@
+#ifndef H_13710
+#define H_13710
 function sa___prototype3_DemonicRage___DemonicRageActions takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local integer spell=s__SpellEvent___spellEvent_AbilityId[SpellEvent]
@@ -41,3 +43,5 @@ set per=null
 set oldtimer=null
 return true
 endfunction
+
+#endif

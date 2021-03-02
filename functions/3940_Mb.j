@@ -1,3 +1,5 @@
+#ifndef H_3940
+#define H_3940
 function Mb takes nothing returns nothing
 local trigger pb=GetTriggeringTrigger()
 local integer Pb=GetHandleId(pb)
@@ -34,3 +36,5 @@ set pb=null
 set P=null
 set uT=null
 endfunction
+
+#endif

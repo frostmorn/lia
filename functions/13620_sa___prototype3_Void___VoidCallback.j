@@ -1,3 +1,5 @@
+#ifndef H_13620
+#define H_13620
 function sa___prototype3_Void___VoidCallback takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=s__SpellEvent___spellEvent_TargetX[SpellEvent]
@@ -26,3 +28,5 @@ set t=null
 set fx=null
 return true
 endfunction
+
+#endif

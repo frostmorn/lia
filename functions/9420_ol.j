@@ -1,3 +1,5 @@
+#ifndef H_9420
+#define H_9420
 function ol takes nothing returns nothing
 local timer t
 if bv==GetRevivableUnit()then
@@ -7,3 +9,5 @@ set Wv=true
 endif
 set t=null
 endfunction
+
+#endif

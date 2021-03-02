@@ -1,3 +1,5 @@
+#ifndef H_30
+#define H_30
 function EN takes nothing returns nothing
 local player array XN
 local integer ON=0
@@ -17,3 +19,5 @@ set RN=GetRandomInt(0,ON-1)
 set E=XN[RN]
 endif
 endfunction
+
+#endif

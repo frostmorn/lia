@@ -1,3 +1,5 @@
+#ifndef H_13700
+#define H_13700
 function sa___prototype3_AimedShot___AimedShotActions takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=s__SpellEvent___spellEvent_TargetX[SpellEvent]
@@ -36,3 +38,5 @@ set etimer=null
 set g=null
 return true
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_10430
+#define H_10430
 function km takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 call UnitAddAbility(u,'A09M')
@@ -24,3 +26,5 @@ call UnitAddAbility(u,'A09M')
 call UnitAddAbility(u,'A0EJ')
 set u=null
 endfunction
+
+#endif

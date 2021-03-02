@@ -1,3 +1,5 @@
+#ifndef H_2840
+#define H_2840
 function RegisterSpellCastResponse takes integer spellId,integer r returns nothing
 if spellId==0 then
 set SpellEvent___CastCallList[SpellEvent___CastCallCount]=r
@@ -6,3 +8,5 @@ else
 call SaveInteger(Table__ht,((SpellEvent___CastTable)),(spellId),((r)))
 endif
 endfunction
+
+#endif

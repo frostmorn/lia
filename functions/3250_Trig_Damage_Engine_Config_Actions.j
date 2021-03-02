@@ -1,3 +1,5 @@
+#ifndef H_3250
+#define H_3250
 function Trig_Damage_Engine_Config_Actions takes nothing returns nothing
 set udg_DamageBlockingAbility='A0J8'
 set udg_SpellDamageAbility='A0J7'
@@ -12,3 +14,5 @@ set udg_DAMAGE_FACTOR_ETHEREAL=1.67
 set udg_DamageEventAOE=1
 set udg_DamageEventLevel=1
 endfunction
+
+#endif

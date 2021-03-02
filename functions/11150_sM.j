@@ -1,3 +1,5 @@
+#ifndef H_11150
+#define H_11150
 function sM takes nothing returns nothing
 local timer t=CreateTimer()
 local integer In=1
@@ -22,3 +24,5 @@ set Wv=true
 call TimerStart(t,6.25,false,function Ub)
 set t=null
 endfunction
+
+#endif

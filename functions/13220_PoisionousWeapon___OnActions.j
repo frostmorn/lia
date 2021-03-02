@@ -1,3 +1,5 @@
+#ifndef H_13220
+#define H_13220
 function PoisionousWeapon___OnActions takes nothing returns nothing
 local unit source=udg_DamageEventSource
 local unit target=udg_DamageEventTarget
@@ -25,3 +27,5 @@ set source=null
 set target=null
 set first=null
 endfunction
+
+#endif

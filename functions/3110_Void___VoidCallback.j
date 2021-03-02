@@ -1,3 +1,5 @@
+#ifndef H_3110
+#define H_3110
 function Void___VoidCallback takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=s__SpellEvent___spellEvent_TargetX[SpellEvent]
@@ -25,3 +27,5 @@ set dummy=null
 set t=null
 set fx=null
 endfunction
+
+#endif

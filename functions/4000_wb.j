@@ -1,3 +1,5 @@
+#ifndef H_4000
+#define H_4000
 function wb takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -20,3 +22,5 @@ set t=null
 set l1=null
 set l2=null
 endfunction
+
+#endif

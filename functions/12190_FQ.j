@@ -1,3 +1,5 @@
+#ifndef H_12190
+#define H_12190
 function FQ takes nothing returns nothing
 local group g=CreateGroup()
 local destructable d=GetDyingDestructable()
@@ -17,3 +19,5 @@ set d=null
 set l=null
 set f=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_8740
+#define H_8740
 function jk takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -14,3 +16,5 @@ call TimerStart(t,.3,false,function Hk)
 set t=null
 set a=null
 endfunction
+
+#endif

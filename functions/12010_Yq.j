@@ -1,3 +1,5 @@
+#ifndef H_12010
+#define H_12010
 function Yq takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local player p=GetOwningPlayer(u)
@@ -56,3 +58,5 @@ set it[In]=null
 set In=In+1
 endloop
 endfunction
+
+#endif

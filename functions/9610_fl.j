@@ -1,3 +1,5 @@
+#ifndef H_9610
+#define H_9610
 function fl takes nothing returns nothing
 local integer Id=GetSpellAbilityId()
 local location l
@@ -31,3 +33,5 @@ set g=null
 set f=null
 set l=null
 endfunction
+
+#endif

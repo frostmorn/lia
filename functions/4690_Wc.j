@@ -1,3 +1,5 @@
+#ifndef H_4690
+#define H_4690
 function Wc takes unit u1,unit u2 returns nothing
 local player p1=GetOwningPlayer(u1)
 local player p2=GetOwningPlayer(u2)
@@ -134,3 +136,5 @@ set p1=null
 set p2=null
 set g=null
 endfunction
+
+#endif

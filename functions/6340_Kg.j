@@ -1,3 +1,5 @@
+#ifndef H_6340
+#define H_6340
 function Kg takes player pl,location l,integer JN,unit u returns nothing
 local timer t=CreateTimer()
 local unit c=CreateUnitAtLoc(pl,'h00P',l,0)
@@ -18,3 +20,5 @@ call TimerStart(t,5,false,function kg)
 set c=null
 set t=null
 endfunction
+
+#endif

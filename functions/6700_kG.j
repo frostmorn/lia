@@ -1,3 +1,5 @@
+#ifndef H_6700
+#define H_6700
 function kG takes nothing returns nothing
 local unit KG=GetSpellAbilityUnit()
 local unit u=GetSpellTargetUnit()
@@ -25,3 +27,5 @@ set u=null
 set KG=null
 set t=null
 endfunction
+
+#endif

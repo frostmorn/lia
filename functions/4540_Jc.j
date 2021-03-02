@@ -1,3 +1,5 @@
+#ifndef H_4540
+#define H_4540
 function Jc takes nothing returns nothing
 local integer In=0
 local timer t=CreateTimer()
@@ -9,3 +11,5 @@ endloop
 call TimerStart(t,4,false,function jc)
 set t=null
 endfunction
+
+#endif

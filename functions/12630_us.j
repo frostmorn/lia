@@ -1,3 +1,5 @@
+#ifndef H_12630
+#define H_12630
 function us takes unit u,item it returns nothing
 local integer In=1
 local integer TT=0
@@ -26,3 +28,5 @@ endif
 set uB=null
 set UB=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_3360
+#define H_3360
 function InitTrig_Damage_Engine takes nothing returns nothing
 local unit u=CreateUnit(Player(bj_PLAYER_NEUTRAL_EXTRA),'h00R',0,0,0)
 local integer i=16
@@ -24,3 +26,5 @@ call UnitAddAbility(u,udg_SpellDamageAbility)
 call RemoveUnit(u)
 set u=null
 endfunction
+
+#endif

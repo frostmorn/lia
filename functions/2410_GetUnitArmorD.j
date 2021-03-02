@@ -1,3 +1,5 @@
+#ifndef H_2410
+#define H_2410
 function GetUnitArmorD takes unit u returns real
 local real life=GetWidgetLife(u)
 local real test=life
@@ -39,3 +41,5 @@ endif
 set trig=null
 return 0.
 endfunction
+
+#endif

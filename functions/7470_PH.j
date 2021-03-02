@@ -1,3 +1,5 @@
+#ifndef H_7470
+#define H_7470
 function PH takes nothing returns nothing
 local unit qH
 local unit QH
@@ -29,3 +31,5 @@ set qH=null
 set QH=null
 set fg=null
 endfunction
+
+#endif

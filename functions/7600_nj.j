@@ -1,3 +1,5 @@
+#ifndef H_7600
+#define H_7600
 function nj takes nothing returns nothing
 local unit u=GetTriggerUnit()
 local unit s=GetEventDamageSource()
@@ -18,3 +20,5 @@ set kI=false
 set u=null
 set s=null
 endfunction
+
+#endif

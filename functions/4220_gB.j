@@ -1,3 +1,5 @@
+#ifndef H_4220
+#define H_4220
 function gB takes nothing returns nothing
 local integer In=1
 local integer vB=A
@@ -22,3 +24,5 @@ call TriggerExecute(PrepareBeforeRoundTrigger)
 call EnableTrigger(QR)
 call EnableTrigger(sR)
 endfunction
+
+#endif

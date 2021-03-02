@@ -1,3 +1,5 @@
+#ifndef H_3850
+#define H_3850
 function Rb takes nothing returns nothing
 local unit u=GetEnumUnit()
 local integer pN=GetHandleId(jo)
@@ -14,3 +16,5 @@ call SaveBoolean(gI,pN,13,false)
 endif
 set u=null
 endfunction
+
+#endif

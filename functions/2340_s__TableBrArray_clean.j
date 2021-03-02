@@ -1,3 +1,5 @@
+#ifndef H_2340
+#define H_2340
 function s__TableBrArray_clean takes integer a,integer end returns nothing
 local integer i=a+5000
 if i<end then
@@ -10,3 +12,5 @@ set a=a+1
 exitwhen a==end
 endloop
 endfunction
+
+#endif

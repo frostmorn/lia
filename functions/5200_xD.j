@@ -1,3 +1,5 @@
+#ifndef H_5200
+#define H_5200
 function xD takes nothing returns nothing
 local unit Ud=GetKillingUnit()
 local boolean oD=IsUnitType(Ud,UNIT_TYPE_HERO)
@@ -63,3 +65,5 @@ set g=null
 set nD=null
 set f=null
 endfunction
+
+#endif

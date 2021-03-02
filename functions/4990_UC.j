@@ -1,3 +1,5 @@
+#ifndef H_4990
+#define H_4990
 function UC takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer SC=GetHandleId(t)
@@ -12,3 +14,5 @@ set it=null
 set d=null
 set t=null
 endfunction
+
+#endif

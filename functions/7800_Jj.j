@@ -1,3 +1,5 @@
+#ifndef H_7800
+#define H_7800
 function Jj takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -15,3 +17,5 @@ set t=null
 set u=null
 set e=null
 endfunction
+
+#endif

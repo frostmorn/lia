@@ -1,3 +1,5 @@
+#ifndef H_3810
+#define H_3810
 function ib takes nothing returns boolean
 local unit fu=GetFilterUnit()
 local boolean nb=false
@@ -11,3 +13,5 @@ set Vb=null
 set fu=null
 return nb
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4490
+#define H_4490
 function Cc takes player p returns nothing
 local integer Bc=ee[GetPlayerId(p)+1]
 local timer t
@@ -25,3 +27,5 @@ call TimerStart(t,1,true,function bc)
 set t=null
 set dc=null
 endfunction
+
+#endif

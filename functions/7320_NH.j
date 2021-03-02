@@ -1,3 +1,5 @@
+#ifndef H_7320
+#define H_7320
 function NH takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -21,3 +23,5 @@ set ed=null
 set p=null
 set c=null
 endfunction
+
+#endif

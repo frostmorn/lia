@@ -1,3 +1,5 @@
+#ifndef H_11670
+#define H_11670
 function HP takes nothing returns nothing
 local group g=CreateGroup()
 local unit u=GetDyingUnit()
@@ -74,3 +76,5 @@ set u=null
 set pl=null
 set Gd=null
 endfunction
+
+#endif

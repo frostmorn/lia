@@ -1,3 +1,5 @@
+#ifndef H_11330
+#define H_11330
 function Np takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -61,3 +63,5 @@ set t=null
 set bC=null
 set L=null
 endfunction
+
+#endif

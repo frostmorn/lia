@@ -1,3 +1,5 @@
+#ifndef H_4140
+#define H_4140
 function Go takes nothing returns nothing
 local integer In
 set In=1
@@ -7,3 +9,5 @@ call PauseUnit(HeroStocksArray[In],false)
 set In=In+1
 endloop
 endfunction
+
+#endif

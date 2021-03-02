@@ -1,3 +1,5 @@
+#ifndef H_430
+#define H_430
 function AddMoveSpeed takes unit u,real i returns nothing
 local unit target=u
 local timer t
@@ -17,3 +19,5 @@ endif
 set target=null
 set t=null
 endfunction
+
+#endif

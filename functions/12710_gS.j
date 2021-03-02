@@ -1,3 +1,5 @@
+#ifndef H_12710
+#define H_12710
 function gS takes item it returns unit
 local integer In=1
 loop
@@ -15,3 +17,5 @@ set In=In+1
 endloop
 return null
 endfunction
+
+#endif

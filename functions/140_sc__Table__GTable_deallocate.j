@@ -1,3 +1,5 @@
+#ifndef H_140
+#define H_140
 function sc__Table__GTable_deallocate takes integer this returns nothing
 if this==0 then
 return
@@ -9,3 +11,5 @@ call TriggerEvaluate(st__Table__GTable_onDestroy[si__Table__GTable_type[this]])
 set si__Table__GTable_V[this]=si__Table__GTable_F
 set si__Table__GTable_F=this
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6380
+#define H_6380
 function pg takes unit u returns nothing
 local texttag tt=CreateTextTag()
 local timer t=CreateTimer()
@@ -11,3 +13,5 @@ call TimerStart(t,1.3,false,function Mg)
 set tt=null
 set t=null
 endfunction
+
+#endif

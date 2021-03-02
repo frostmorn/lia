@@ -1,3 +1,5 @@
+#ifndef H_5210
+#define H_5210
 function XD takes nothing returns nothing
 local timer t=GetExpiredTimer()
 if He then
@@ -11,3 +13,5 @@ endif
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

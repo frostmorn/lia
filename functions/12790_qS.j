@@ -1,3 +1,5 @@
+#ifndef H_12790
+#define H_12790
 function qS takes nothing returns nothing
 local integer array QS
 local integer array sS
@@ -60,3 +62,5 @@ endif
 set it=null
 set u=null
 endfunction
+
+#endif

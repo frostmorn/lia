@@ -1,3 +1,5 @@
+#ifndef H_9910
+#define H_9910
 function RL takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A0IA')
@@ -14,3 +16,5 @@ call TimerStart(t,zf,false,function XL)
 set t=null
 set u=null
 endfunction
+
+#endif

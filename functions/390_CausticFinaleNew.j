@@ -1,3 +1,5 @@
+#ifndef H_390
+#define H_390
 function CausticFinaleNew takes unit u,unit t returns nothing
 local unit source=u
 local unit target=t
@@ -28,3 +30,5 @@ set source=null
 set target=null
 set trig=null
 endfunction
+
+#endif

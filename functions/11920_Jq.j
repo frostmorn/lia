@@ -1,3 +1,5 @@
+#ifndef H_11920
+#define H_11920
 function Jq takes nothing returns nothing
 local item it=GetManipulatedItem()
 local integer Id=GetItemTypeId(it)
@@ -13,3 +15,5 @@ set it=null
 set u=null
 set p=null
 endfunction
+
+#endif

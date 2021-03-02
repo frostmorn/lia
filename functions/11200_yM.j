@@ -1,3 +1,5 @@
+#ifndef H_11200
+#define H_11200
 function yM takes nothing returns nothing
 local string bC
 local integer MB=CurrentWave
@@ -17,3 +19,5 @@ call DisplayTimedTextToPlayer(GetLocalPlayer(),0,0,10,bC)
 call DestroyTimer(GetExpiredTimer())
 set bC=null
 endfunction
+
+#endif

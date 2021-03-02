@@ -1,3 +1,5 @@
+#ifndef H_5660
+#define H_5660
 function yf takes nothing returns nothing
 local unit Yf=lo
 local real zf=15.01+GetUnitAbilityLevel(Yf,GetSpellAbilityId())*5
@@ -12,3 +14,5 @@ call TimerStart(CreateTimer(),zf,false,function Wf)
 endif
 set Yf=null
 endfunction
+
+#endif

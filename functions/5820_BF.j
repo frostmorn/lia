@@ -1,3 +1,5 @@
+#ifndef H_5820
+#define H_5820
 function BF takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -56,3 +58,5 @@ set g=null
 set T=null
 set f=null
 endfunction
+
+#endif

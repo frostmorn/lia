@@ -1,3 +1,5 @@
+#ifndef H_5450
+#define H_5450
 function vf takes nothing returns nothing
 local string s=gMapMode
 local string ef
@@ -267,3 +269,5 @@ set xf=null
 set of=null
 set sb=null
 endfunction
+
+#endif

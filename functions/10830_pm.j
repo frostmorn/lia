@@ -1,3 +1,5 @@
+#ifndef H_10830
+#define H_10830
 function pm takes nothing returns nothing
 local integer i=GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
 local real damage=GetEventDamage()
@@ -13,3 +15,5 @@ else
 set VA[i]=VA[i]+GetWidgetLife(GetTriggerUnit())
 endif
 endfunction
+
+#endif

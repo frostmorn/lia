@@ -1,3 +1,5 @@
+#ifndef H_5080
+#define H_5080
 function Cd takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -54,3 +56,5 @@ set g=null
 set f=null
 set t=null
 endfunction
+
+#endif

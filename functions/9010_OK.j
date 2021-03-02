@@ -1,3 +1,5 @@
+#ifndef H_9010
+#define H_9010
 function OK takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(uA,GetSpellAbilityId())
@@ -50,3 +52,5 @@ set f=null
 set pb=null
 set GF=null
 endfunction
+
+#endif

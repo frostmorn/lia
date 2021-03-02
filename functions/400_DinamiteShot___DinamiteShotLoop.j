@@ -1,3 +1,5 @@
+#ifndef H_400
+#define H_400
 function DinamiteShot___DinamiteShotLoop takes nothing returns nothing
 local timer ztimer=GetExpiredTimer()
 local integer zhandle=GetHandleId(ztimer)
@@ -25,3 +27,5 @@ set ztimer=null
 set zcaster=null
 endif
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_13240
+#define H_13240
 function MithrilArmor___onLoop takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -22,3 +24,5 @@ set t=null
 set first=null
 set caster=null
 endfunction
+
+#endif

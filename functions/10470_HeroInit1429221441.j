@@ -1,3 +1,5 @@
+#ifndef H_10470
+#define H_10470
 function HeroInit1429221441 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set wn=CreateTrigger()
@@ -16,3 +18,5 @@ call TriggerAddAction(yn,function fG)
 call Preload("Abilities\\Spells\\Undead\\FrostArmor\\FrostArmorTarget.mdl")
 set u=null
 endfunction
+
+#endif

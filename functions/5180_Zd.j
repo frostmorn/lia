@@ -1,3 +1,5 @@
+#ifndef H_5180
+#define H_5180
 function Zd takes nothing returns nothing
 local real damage=GetEventDamage()
 if damage==0.00 or damage>1000000.00 then
@@ -11,3 +13,5 @@ call CreateUnit(Player(11),'n03D',GetWidgetX(GetTriggerUnit()),GetWidgetY(GetTri
 call QueueUnitAnimation(bj_lastCreatedUnit,"Birth Swim")
 endif
 endfunction
+
+#endif

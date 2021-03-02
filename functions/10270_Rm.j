@@ -1,3 +1,5 @@
+#ifndef H_10270
+#define H_10270
 function Rm takes nothing returns nothing
 local unit u=GetTriggerUnit()
 local player p=GetOwningPlayer(u)
@@ -19,3 +21,5 @@ call GroupRemoveUnit(ZI,u)
 endif
 set u=null
 endfunction
+
+#endif

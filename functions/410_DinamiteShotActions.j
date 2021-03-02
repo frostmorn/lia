@@ -1,3 +1,5 @@
+#ifndef H_410
+#define H_410
 function DinamiteShotActions takes unit u,unit u2 returns nothing
 local unit caster=u
 local unit target=u2
@@ -30,3 +32,5 @@ set target=null
 set etimer=null
 set oldtimer=null
 endfunction
+
+#endif

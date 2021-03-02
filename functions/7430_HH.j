@@ -1,3 +1,5 @@
+#ifndef H_7430
+#define H_7430
 function HH takes nothing returns nothing
 local integer JN
 local unit wF=GetSpellAbilityUnit()
@@ -17,3 +19,5 @@ endif
 set wF=null
 set t=null
 endfunction
+
+#endif

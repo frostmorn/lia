@@ -1,3 +1,5 @@
+#ifndef H_10070
+#define H_10070
 function mL takes nothing returns nothing
 local group g=CreateGroup()
 local real r
@@ -30,3 +32,5 @@ set f=null
 set uA=null
 set T=null
 endfunction
+
+#endif

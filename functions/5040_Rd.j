@@ -1,3 +1,5 @@
+#ifndef H_5040
+#define H_5040
 function Rd takes unit u returns boolean
 local real hc=GetWidgetLife(u)
 local boolean ch
@@ -16,3 +18,5 @@ call SetWidgetLife(u,hc)
 endif
 return ch
 endfunction
+
+#endif

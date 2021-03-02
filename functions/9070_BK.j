@@ -1,3 +1,5 @@
+#ifndef H_9070
+#define H_9070
 function BK takes nothing returns nothing
 local unit u=Ev
 local group g=CreateGroup()
@@ -43,3 +45,5 @@ set f=null
 set g=null
 set L=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_9440
+#define H_9440
 function il takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local location T=GetUnitLoc(uA)
@@ -60,3 +62,5 @@ set T=null
 set g=null
 set f=null
 endfunction
+
+#endif

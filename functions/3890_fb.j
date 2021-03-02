@@ -1,3 +1,5 @@
+#ifndef H_3890
+#define H_3890
 function fb takes real JA,unit f,integer Fb,integer gb,integer Gb returns unit
 local group g=CreateGroup()
 local location L=GetUnitLoc(f)
@@ -37,3 +39,5 @@ set p=null
 set ff=null
 return null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_13000
+#define H_13000
 function ChainsOfLight___OnPeriodic takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -18,3 +20,5 @@ endif
 set t=null
 set u=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_3190
+#define H_3190
 function Trig_Unit_Indexer_Func014C takes nothing returns boolean
 if(not(udg_UnitIndexerEnabled==true))then
 return false
@@ -10,3 +12,5 @@ return false
 endif
 return true
 endfunction
+
+#endif

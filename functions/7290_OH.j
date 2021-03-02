@@ -1,3 +1,5 @@
+#ifndef H_7290
+#define H_7290
 function OH takes nothing returns nothing
 local unit uA=(SpellEventSpecial___SystemSpellCaster)
 local unit bC=Se
@@ -28,3 +30,5 @@ set RH=null
 set f=null
 set t=null
 endfunction
+
+#endif

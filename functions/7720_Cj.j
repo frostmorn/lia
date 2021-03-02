@@ -1,3 +1,5 @@
+#ifndef H_7720
+#define H_7720
 function Cj takes nothing returns nothing
 local unit qH
 local unit QH
@@ -27,3 +29,5 @@ set e=null
 set qH=null
 set QH=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_8710
+#define H_8710
 function Gk takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -8,3 +10,5 @@ call TimerStart(t,25,false,function gk)
 set t=null
 set c=null
 endfunction
+
+#endif

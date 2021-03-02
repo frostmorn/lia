@@ -1,3 +1,5 @@
+#ifndef H_13410
+#define H_13410
 function DemonicRage___DemonicRageLoop takes nothing returns nothing
 local timer zper=GetExpiredTimer()
 local integer zkey=GetHandleId(zper)
@@ -40,3 +42,5 @@ call SetUnitVertexColor(zcaster,255,255,255,255)
 endif
 set zcaster=null
 endfunction
+
+#endif

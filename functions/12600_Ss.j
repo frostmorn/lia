@@ -1,3 +1,5 @@
+#ifndef H_12600
+#define H_12600
 function Ss takes nothing returns nothing
 local timer ti=GetExpiredTimer()
 local integer dN=GetHandleId(ti)
@@ -13,3 +15,5 @@ call DestroyTimer(ti)
 set t=null
 set ti=null
 endfunction
+
+#endif

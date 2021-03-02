@@ -1,3 +1,5 @@
+#ifndef H_13650
+#define H_13650
 function sa___prototype3_ChainsOfLight___onCast takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=s__SpellEvent___spellEvent_TargetX[SpellEvent]
@@ -46,3 +48,5 @@ set caster=null
 set first=null
 return true
 endfunction
+
+#endif

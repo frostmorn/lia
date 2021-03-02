@@ -1,3 +1,5 @@
+#ifndef H_8400
+#define H_8400
 function TJ takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -11,3 +13,5 @@ call TimerStart(t,.5,true,function tJ)
 set uA=null
 set t=null
 endfunction
+
+#endif

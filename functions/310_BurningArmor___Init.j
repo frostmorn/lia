@@ -1,3 +1,5 @@
+#ifndef H_310
+#define H_310
 function BurningArmor___Init takes nothing returns nothing
 local trigger trig=CreateTrigger()
 local integer index
@@ -11,3 +13,5 @@ call TriggerAddCondition(trig,Condition(function BurningArmor___OnConditions))
 call TriggerAddAction(trig,function BurningArmor___OnActions)
 set trig=null
 endfunction
+
+#endif

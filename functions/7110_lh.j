@@ -1,3 +1,5 @@
+#ifndef H_7110
+#define H_7110
 function lh takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local timer t=CreateTimer()
@@ -10,3 +12,5 @@ call TimerStart(t,.45,false,function kh)
 set uA=null
 set t=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6100
+#define H_6100
 function vg takes nothing returns nothing
 local group g=CreateGroup()
 local unit u=Rv
@@ -40,3 +42,5 @@ set e[In]=null
 set In=In+1
 endloop
 endfunction
+
+#endif

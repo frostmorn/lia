@@ -1,3 +1,5 @@
+#ifndef H_10790
+#define H_10790
 function lm takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set qe=u
@@ -33,3 +35,5 @@ call TriggerRegisterTimerEventPeriodic(JX,1.)
 call TriggerAddAction(JX,function jl)
 set u=null
 endfunction
+
+#endif

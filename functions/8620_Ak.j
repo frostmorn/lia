@@ -1,3 +1,5 @@
+#ifndef H_8620
+#define H_8620
 function Ak takes nothing returns nothing
 local integer ld=GetHandleId(GetEventDamageSource())
 local unit VF=GetEventDamageSource()
@@ -38,3 +40,5 @@ set T=null
 set f=null
 call Kd(ld)
 endfunction
+
+#endif

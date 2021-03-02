@@ -1,3 +1,5 @@
+#ifndef H_4270
+#define H_4270
 function EndKik takes nothing returns nothing
 local integer In=2
 loop
@@ -14,3 +16,5 @@ call DisableTrigger(qR)
 call EnableTrigger(MR)
 call EnableTrigger(pR)
 endfunction
+
+#endif

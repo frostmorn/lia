@@ -1,3 +1,5 @@
+#ifndef H_5240
+#define H_5240
 function AD takes nothing returns nothing
 local timer t=CreateTimer()
 local integer In=1
@@ -78,3 +80,5 @@ set ND=null
 set it=null
 set UB=null
 endfunction
+
+#endif

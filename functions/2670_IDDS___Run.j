@@ -1,3 +1,5 @@
+#ifndef H_2670
+#define H_2670
 function IDDS___Run takes nothing returns nothing
 local unit u=GetEventDamageSource()
 local unit s=IDDS___DamageSource
@@ -53,3 +55,5 @@ set u=null
 set s=null
 set t=null
 endfunction
+
+#endif

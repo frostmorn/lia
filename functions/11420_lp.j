@@ -1,3 +1,5 @@
+#ifndef H_11420
+#define H_11420
 function lp takes nothing returns nothing
 local unit u=GetDyingUnit()
 local unit IF=GetKillingUnit()
@@ -16,3 +18,5 @@ set u=null
 set IF=null
 set p=null
 endfunction
+
+#endif

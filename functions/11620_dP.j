@@ -1,3 +1,5 @@
+#ifndef H_11620
+#define H_11620
 function dP takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer i=0
@@ -9,3 +11,5 @@ endloop
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

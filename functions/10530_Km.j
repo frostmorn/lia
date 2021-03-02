@@ -1,3 +1,5 @@
+#ifndef H_10530
+#define H_10530
 function Km takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 local integer ED=0
@@ -20,3 +22,5 @@ call TriggerAddCondition(gV,Condition(function IH))
 call TriggerAddAction(gV,function AH)
 set u=null
 endfunction
+
+#endif

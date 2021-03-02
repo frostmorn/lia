@@ -1,3 +1,5 @@
+#ifndef H_6400
+#define H_6400
 function qg takes nothing returns nothing
 local unit u=GetSpellTargetUnit()
 local unit uA=GetSpellAbilityUnit()
@@ -10,3 +12,5 @@ set t=null
 set u=null
 set uA=null
 endfunction
+
+#endif

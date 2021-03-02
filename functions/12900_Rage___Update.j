@@ -1,3 +1,7 @@
+#ifndef H_12900
+#define H_12900
+#ifndef H_12900
+#define H_12900
 function Rage___Update takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer i1=(GetHandleId((t)))
@@ -16,3 +20,5 @@ endif
 set t=null
 set caster=null
 endfunction
+#endif
+#endif

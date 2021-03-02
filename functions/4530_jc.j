@@ -1,3 +1,5 @@
+#ifndef H_4530
+#define H_4530
 function jc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local timer tt=CreateTimer()
@@ -24,3 +26,5 @@ set t=null
 set tt=null
 set s=null
 endfunction
+
+#endif

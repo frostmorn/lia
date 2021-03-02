@@ -1,3 +1,5 @@
+#ifndef H_3230
+#define H_3230
 function InitializeUnitIndexer takes nothing returns nothing
 local integer i=16
 local boolexpr b=Filter(function IndexUnit)
@@ -22,3 +24,5 @@ set b=null
 set udg_UnitIndexEvent=3.00
 set udg_UnitIndexEvent=0.00
 endfunction
+
+#endif

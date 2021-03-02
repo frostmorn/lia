@@ -1,3 +1,5 @@
+#ifndef H_13320
+#define H_13320
 function Charge___onPrecast takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local unit target=s__SpellEvent___spellEvent_TargetUnit[SpellEvent]
@@ -21,3 +23,5 @@ endif
 set caster=null
 set target=null
 endfunction
+
+#endif

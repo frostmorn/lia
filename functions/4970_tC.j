@@ -1,3 +1,5 @@
+#ifndef H_4970
+#define H_4970
 function tC takes unit ac,group g,real DC,boolean TC returns nothing
 local unit u
 local group og=g
@@ -30,3 +32,5 @@ set u=null
 set hP=null
 set sP=null
 endfunction
+
+#endif

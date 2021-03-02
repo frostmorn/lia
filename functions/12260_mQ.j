@@ -1,3 +1,5 @@
+#ifndef H_12260
+#define H_12260
 function mQ takes nothing returns nothing
 local integer i=0
 set gR=CreateTrigger()
@@ -14,3 +16,5 @@ endloop
 call TriggerAddCondition(gR,Condition(function lQ))
 call TriggerAddAction(gR,function LQ)
 endfunction
+
+#endif

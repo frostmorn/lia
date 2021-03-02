@@ -1,3 +1,5 @@
+#ifndef H_4070
+#define H_4070
 function eB takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -15,3 +17,5 @@ call DestroyGroup(g)
 set g=null
 set f=null
 endfunction
+
+#endif

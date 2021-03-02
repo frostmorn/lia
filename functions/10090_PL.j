@@ -1,3 +1,5 @@
+#ifndef H_10090
+#define H_10090
 function PL takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -10,3 +12,5 @@ set t=null
 set f=null
 set qL=null
 endfunction
+
+#endif

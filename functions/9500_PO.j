@@ -1,3 +1,5 @@
+#ifndef H_9500
+#define H_9500
 function PO takes unit u,integer JN returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -16,3 +18,5 @@ call TimerStart(t2,.5,false,function Xl)
 set t=null
 set t2=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6720
+#define H_6720
 function LG takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -29,3 +31,5 @@ set p=null
 set f=null
 set g=null
 endfunction
+
+#endif

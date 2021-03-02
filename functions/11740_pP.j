@@ -1,3 +1,5 @@
+#ifndef H_11740
+#define H_11740
 function pP takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -25,3 +27,5 @@ call TimerStart(t,6.25,false,function MP)
 set g=null
 set t=null
 endfunction
+
+#endif

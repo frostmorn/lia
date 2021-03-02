@@ -1,3 +1,5 @@
+#ifndef H_9370
+#define H_9370
 function YK takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local location T=GetUnitLoc(uA)
@@ -14,3 +16,5 @@ set g=null
 set uA=null
 set T=null
 endfunction
+
+#endif

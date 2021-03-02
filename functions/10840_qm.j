@@ -1,3 +1,5 @@
+#ifndef H_10840
+#define H_10840
 function qm takes nothing returns nothing
 local integer i=0
 set eA=CreateTrigger()
@@ -10,3 +12,5 @@ endif
 set i=i+1
 endloop
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6650
+#define H_6650
 function BG takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -20,3 +22,5 @@ set t=null
 set e=null
 set g=null
 endfunction
+
+#endif

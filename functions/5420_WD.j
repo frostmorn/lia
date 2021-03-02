@@ -1,3 +1,5 @@
+#ifndef H_5420
+#define H_5420
 function WD takes nothing returns boolean
 local integer i=0
 local integer i2=0
@@ -16,3 +18,5 @@ set i=i+1
 endloop
 return false
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_12810
+#define H_12810
 function TS takes nothing returns nothing
 local integer array QS
 local integer array sS
@@ -70,3 +72,5 @@ endif
 set it=null
 set u=null
 endfunction
+
+#endif

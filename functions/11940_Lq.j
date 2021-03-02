@@ -1,3 +1,5 @@
+#ifndef H_11940
+#define H_11940
 function Lq takes nothing returns nothing
 local rect aN=bj_mapInitialPlayableArea
 local real mq=GetRectMaxX(aN)
@@ -26,3 +28,5 @@ set c=c+1
 endloop
 set aN=null
 endfunction
+
+#endif

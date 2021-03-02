@@ -1,3 +1,5 @@
+#ifndef H_13420
+#define H_13420
 function DemonicRage___DemonicRageActions takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local integer spell=s__SpellEvent___spellEvent_AbilityId[SpellEvent]
@@ -40,3 +42,5 @@ set caster=null
 set per=null
 set oldtimer=null
 endfunction
+
+#endif

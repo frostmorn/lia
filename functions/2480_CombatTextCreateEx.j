@@ -1,3 +1,5 @@
+#ifndef H_2480
+#define H_2480
 function CombatTextCreateEx takes unit combatUnit,unit sourceUnit,string combatString,integer combatRed,integer combatGreen,integer combatBlue,integer textType returns nothing
 local texttag text
 local integer start=0
@@ -67,3 +69,5 @@ set combatUnit=null
 set text=null
 set textforce=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4940
+#define H_4940
 function pC takes integer n returns integer
 local integer array id
 set id[1]='A0EP'
@@ -9,3 +11,5 @@ set id[8]='I06Q'
 set id[10]='H00U'
 return id[n]
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_13170
+#define H_13170
 function WillOfTheLight___onStack takes nothing returns nothing
 local integer i=0
 loop
@@ -10,3 +12,5 @@ endif
 set i=i+1
 endloop
 endfunction
+
+#endif

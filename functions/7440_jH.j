@@ -1,3 +1,5 @@
+#ifndef H_7440
+#define H_7440
 function jH takes nothing returns nothing
 local integer hC=('A0AE')
 local integer JH=('h00L')
@@ -36,3 +38,5 @@ set KH=null
 set kH=null
 set KG=null
 endfunction
+
+#endif

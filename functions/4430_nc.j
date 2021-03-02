@@ -1,3 +1,5 @@
+#ifndef H_4430
+#define H_4430
 function nc takes player p returns nothing
 local integer rc=-1
 local integer Vc
@@ -70,3 +72,5 @@ set it[5]=null
 set it[6]=null
 set u=null
 endfunction
+
+#endif

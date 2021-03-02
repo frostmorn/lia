@@ -1,3 +1,5 @@
+#ifndef H_11630
+#define H_11630
 function DP takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer In=1
@@ -47,3 +49,5 @@ set t=null
 set g=null
 set f=null
 endfunction
+
+#endif

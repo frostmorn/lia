@@ -1,3 +1,5 @@
+#ifndef H_12480
+#define H_12480
 function Cs takes nothing returns nothing
 local integer In=0
 loop
@@ -8,3 +10,5 @@ endloop
 call DestroyTimer(he)
 call JB()
 endfunction
+
+#endif

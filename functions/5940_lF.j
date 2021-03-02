@@ -1,3 +1,5 @@
+#ifndef H_5940
+#define H_5940
 function lF takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local player p=GetOwningPlayer(u)
@@ -36,3 +38,5 @@ set LF=null
 set pb=null
 set t=null
 endfunction
+
+#endif

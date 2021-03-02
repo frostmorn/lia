@@ -1,3 +1,5 @@
+#ifndef H_8700
+#define H_8700
 function gk takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -9,3 +11,5 @@ call DestroyTimer(t)
 set t=null
 set c=null
 endfunction
+
+#endif

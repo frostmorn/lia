@@ -1,3 +1,5 @@
+#ifndef H_3010
+#define H_3010
 function SpellCastRun takes unit c returns nothing
 local unit u=c
 local integer i=0
@@ -21,3 +23,5 @@ set SpellEventSpecial___SystemSpellCaster=null
 set SpellEventSpecial___IgnPrior=false
 set u=null
 endfunction
+
+#endif

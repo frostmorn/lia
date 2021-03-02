@@ -1,3 +1,5 @@
+#ifndef H_10100
+#define H_10100
 function QL takes nothing returns boolean
 local unit f=GetFilterUnit()
 if IsUnitType(f,UNIT_TYPE_STRUCTURE)or IsUnitAlly(f,zI)or IsUnitDead(f) or IsUnitInvisible(f,zI)or FN(f)==false then
@@ -12,3 +14,5 @@ endif
 set f=null
 return true
 endfunction
+
+#endif

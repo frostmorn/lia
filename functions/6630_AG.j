@@ -1,3 +1,5 @@
+#ifndef H_6630
+#define H_6630
 function AG takes nothing returns nothing
 local effect e
 local timer t=CreateTimer()
@@ -29,3 +31,5 @@ set u=null
 set T=null
 set t=null
 endfunction
+
+#endif

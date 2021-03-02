@@ -1,3 +1,5 @@
+#ifndef H_350
+#define H_350
 function CatchTheShadowPeriodic takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -29,3 +31,5 @@ set t=null
 set caster=null
 set target=null
 endfunction
+
+#endif

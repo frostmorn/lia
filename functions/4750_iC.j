@@ -1,3 +1,5 @@
+#ifndef H_4750
+#define H_4750
 function iC takes integer id returns nothing
 local location L=GetRandomLocInRect(gg_rct_MinimalArenaAreaRect)
 local location aC=GetRectCenter(gg_rct_MinimalArenaAreaRect)
@@ -14,3 +16,5 @@ set f=null
 set L=null
 set aC=null
 endfunction
+
+#endif

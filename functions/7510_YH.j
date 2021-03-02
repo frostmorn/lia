@@ -1,3 +1,5 @@
+#ifndef H_7510
+#define H_7510
 function YH takes nothing returns nothing
 local unit uT
 local unit uA
@@ -15,3 +17,5 @@ set uT=null
 set uA=null
 set g=null
 endfunction
+
+#endif

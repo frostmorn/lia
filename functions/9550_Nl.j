@@ -1,3 +1,5 @@
+#ifndef H_9550
+#define H_9550
 function Nl takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local unit f
@@ -28,3 +30,5 @@ set uA=null
 set f=null
 set T=null
 endfunction
+
+#endif

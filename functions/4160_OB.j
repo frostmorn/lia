@@ -1,3 +1,5 @@
+#ifndef H_4160
+#define H_4160
 function OB takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -16,3 +18,5 @@ call DestroyGroup(g)
 set g=null
 set f=null
 endfunction
+
+#endif

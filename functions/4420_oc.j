@@ -1,3 +1,5 @@
+#ifndef H_4420
+#define H_4420
 function oc takes nothing returns integer
 local integer rc
 local boolean ic
@@ -22,3 +24,5 @@ exitwhen ic
 endloop
 return rc
 endfunction
+
+#endif

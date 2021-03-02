@@ -1,3 +1,5 @@
+#ifndef H_10140
+#define H_10140
 function UL takes nothing returns nothing
 local group g=CreateGroup()
 local real r
@@ -33,3 +35,5 @@ set e=null
 set uA=null
 set T=null
 endfunction
+
+#endif

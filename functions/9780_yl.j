@@ -1,3 +1,5 @@
+#ifndef H_9780
+#define H_9780
 function yl takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local timer t=CreateTimer()
@@ -10,3 +12,5 @@ set u=null
 set t=null
 set p=null
 endfunction
+
+#endif

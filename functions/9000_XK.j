@@ -1,3 +1,5 @@
+#ifndef H_9000
+#define H_9000
 function XK takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -12,3 +14,5 @@ set c=null
 set t=null
 set u=null
 endfunction
+
+#endif

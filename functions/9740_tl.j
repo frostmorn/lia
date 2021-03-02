@@ -1,3 +1,5 @@
+#ifndef H_9740
+#define H_9740
 function tl takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -16,3 +18,5 @@ endif
 set u=null
 set t=null
 endfunction
+
+#endif

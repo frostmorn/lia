@@ -1,3 +1,5 @@
+#ifndef H_3610
+#define H_3610
 function SelectMapModeFromHCLString takes nothing returns nothing
 local string lcharhcl=""
 local integer lhcllength=StringLength(V)
@@ -24,3 +26,5 @@ endif
 set i=i+1
 endloop
 endfunction
+
+#endif

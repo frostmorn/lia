@@ -1,3 +1,5 @@
+#ifndef H_9880
+#define H_9880
 function RL1 takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local timer t=CreateTimer()
@@ -13,3 +15,5 @@ call TimerStart(t,zf,false,function XL1)
 set t=null
 set u=null
 endfunction
+
+#endif

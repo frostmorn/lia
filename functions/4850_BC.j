@@ -1,3 +1,5 @@
+#ifndef H_4850
+#define H_4850
 function BC takes integer cC returns real
 local real CC
 local integer Qb=(2)
@@ -18,3 +20,5 @@ set rs=$7D0
 endif
 return(CC/ rs)
 endfunction
+
+#endif

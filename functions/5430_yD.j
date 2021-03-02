@@ -1,3 +1,5 @@
+#ifndef H_5430
+#define H_5430
 function yD takes nothing returns nothing
 local integer i=0
 call CameraAutoSetup()
@@ -25,3 +27,5 @@ else
 call TriggerExecute(vn)
 endif
 endfunction
+
+#endif

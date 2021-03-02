@@ -1,3 +1,5 @@
+#ifndef H_6580
+#define H_6580
 function aG takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -45,3 +47,5 @@ set uA=null
 set f=null
 set p=null
 endfunction
+
+#endif

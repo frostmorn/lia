@@ -1,3 +1,5 @@
+#ifndef H_13680
+#define H_13680
 function sa___prototype3_Charge___onCast takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local unit target=s__SpellEvent___spellEvent_TargetUnit[SpellEvent]
@@ -17,3 +19,5 @@ set target=null
 set t=null
 return true
 endfunction
+
+#endif

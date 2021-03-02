@@ -1,3 +1,5 @@
+#ifndef H_4910
+#define H_4910
 function kC takes nothing returns nothing
 local integer In=1
 local integer Kc=0
@@ -51,3 +53,5 @@ set In=In+1
 endloop
 call JC()
 endfunction
+
+#endif

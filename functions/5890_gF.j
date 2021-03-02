@@ -1,3 +1,5 @@
+#ifndef H_5890
+#define H_5890
 function gF takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A0G8')
@@ -50,3 +52,5 @@ set gg=null
 set f=null
 set c=null
 endfunction
+
+#endif

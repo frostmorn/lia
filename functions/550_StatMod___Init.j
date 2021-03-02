@@ -1,3 +1,5 @@
+#ifndef H_550
+#define H_550
 function StatMod___Init takes nothing returns nothing
 local integer i=1
 set StatMod___ABILITY_DAMAGE[1]='Dx01'
@@ -82,3 +84,5 @@ set StatMod___SIZE[i]=StatMod___SIZE[i-1]*2
 set i=i+1
 endloop
 endfunction
+
+#endif

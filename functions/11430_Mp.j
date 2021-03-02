@@ -1,3 +1,5 @@
+#ifndef H_11430
+#define H_11430
 function Mp takes nothing returns nothing
 local unit u=GetDyingUnit()
 local unit IF=GetKillingUnit()
@@ -18,3 +20,5 @@ set u=null
 set IF=null
 set p=null
 endfunction
+
+#endif

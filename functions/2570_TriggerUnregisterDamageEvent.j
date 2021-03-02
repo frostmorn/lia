@@ -1,3 +1,5 @@
+#ifndef H_2570
+#define H_2570
 function TriggerUnregisterDamageEvent takes trigger trg returns boolean
 local integer i=0
 if trg==null then
@@ -14,3 +16,5 @@ call SaveInteger(Table__ht,((IDDS___RegiTable)),((GetHandleId((trg)))),(0))
 set IDDS___Count=IDDS___Count-1
 return IDDS___TriggerSort()
 endfunction
+
+#endif

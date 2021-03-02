@@ -1,3 +1,5 @@
+#ifndef H_3210
+#define H_3210
 function ClearUnitIndex takes nothing returns nothing
 if(Trig_Unit_Indexer_Func005C())then
 set udg_UnitIndexLock[udg_UDex]=(udg_UnitIndexLock[udg_UDex]-1)
@@ -16,3 +18,5 @@ endif
 else
 endif
 endfunction
+
+#endif

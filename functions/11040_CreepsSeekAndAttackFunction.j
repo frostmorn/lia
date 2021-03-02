@@ -1,3 +1,5 @@
+#ifndef H_11040
+#define H_11040
 function CreepsSeekAndAttackFunction takes nothing returns nothing
 local integer L=1
 local unit array g
@@ -55,3 +57,5 @@ endloop
 set LM=null
 set f=null
 endfunction
+
+#endif

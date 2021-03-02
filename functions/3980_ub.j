@@ -1,3 +1,5 @@
+#ifndef H_3980
+#define H_3980
 function ub takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -7,3 +9,5 @@ call DestroyTimer(t)
 set t=null
 set e=null
 endfunction
+
+#endif

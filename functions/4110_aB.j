@@ -1,3 +1,5 @@
+#ifndef H_4110
+#define H_4110
 function aB takes nothing returns nothing
 local unit f
 local group g=CreateGroup()
@@ -12,3 +14,5 @@ call DestroyGroup(g)
 set f=null
 set g=null
 endfunction
+
+#endif

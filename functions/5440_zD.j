@@ -1,3 +1,5 @@
+#ifndef H_5440
+#define H_5440
 function zD takes nothing returns nothing
 local location sb
 call DisableTrigger(vn)
@@ -8,3 +10,5 @@ call EnableTrigger(UR)
 call EnableTrigger(wR)
 set sb=null
 endfunction
+
+#endif

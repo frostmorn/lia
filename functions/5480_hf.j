@@ -1,3 +1,5 @@
+#ifndef H_5480
+#define H_5480
 function hf takes nothing returns nothing
 local unit u=GetRevivingUnit()
 local player p=GetOwningPlayer(u)
@@ -15,3 +17,5 @@ endif
 set u=null
 set p=null
 endfunction
+
+#endif

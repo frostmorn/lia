@@ -1,3 +1,5 @@
+#ifndef H_370
+#define H_370
 function CatchTheShadow___Init takes nothing returns nothing
 local trigger trig=CreateTrigger()
 local trigger trig2=CreateTrigger()
@@ -21,3 +23,5 @@ call TriggerAddAction(trig2,function CatchTheShadowAttackActions)
 set trig=null
 set trig2=null
 endfunction
+
+#endif

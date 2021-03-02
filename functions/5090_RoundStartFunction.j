@@ -1,3 +1,5 @@
+#ifndef H_5090
+#define H_5090
 function RoundStartFunction takes nothing returns nothing
 call DisableTrigger(IsReadyTrig)
 call DMesg("IsReadyTrig disabled")
@@ -29,3 +31,5 @@ else
 call TriggerExecute(WaveFightTrigger)
 endif
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_7700
+#define H_7700
 function SkeletonWarriorUltimateDamageDealerFunction takes nothing returns nothing
 local integer WF
 local unit qH
@@ -28,3 +30,5 @@ set QH=null
 set fg=null
 set P=null
 endfunction
+
+#endif

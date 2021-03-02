@@ -1,3 +1,5 @@
+#ifndef H_13100
+#define H_13100
 function HeroLimit___Init takes nothing returns nothing
 local trigger trig=CreateTrigger()
 local unit dummy=CreateUnit(Player(15),'h00R',0.0,0.0,0.0)
@@ -10,3 +12,5 @@ call TriggerAddAction(trig,function HeroLimit___OnActions)
 set trig=null
 set dummy=null
 endfunction
+
+#endif

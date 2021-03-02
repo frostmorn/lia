@@ -1,3 +1,5 @@
+#ifndef H_3880
+#define H_3880
 function Cb takes nothing returns nothing
 local trigger db=CreateTrigger()
 local trigger Db=CreateTrigger()
@@ -14,3 +16,5 @@ call TriggerAddAction(Db,function Nb)
 set db=null
 set Db=null
 endfunction
+
+#endif

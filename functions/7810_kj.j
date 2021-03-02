@@ -1,3 +1,5 @@
+#ifndef H_7810
+#define H_7810
 function kj takes nothing returns boolean
 local trigger t=GetTriggeringTrigger()
 local unit u=LoadUnitHandle(Ax,GetHandleId(t),0)
@@ -11,3 +13,5 @@ set t=null
 set u=null
 return false
 endfunction
+
+#endif

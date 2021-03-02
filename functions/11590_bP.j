@@ -1,3 +1,5 @@
+#ifndef H_11590
+#define H_11590
 function bP takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -23,3 +25,5 @@ call TimerStart(Fo,27,false,function hN)
 set t=null
 set d=null
 endfunction
+
+#endif

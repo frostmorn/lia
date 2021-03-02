@@ -1,3 +1,5 @@
+#ifndef H_10940
+#define H_10940
 function Zm takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -29,3 +31,5 @@ call XB()
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

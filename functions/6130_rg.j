@@ -1,3 +1,5 @@
+#ifndef H_6130
+#define H_6130
 function rg takes nothing returns nothing
 local unit u=GetLearningUnit()
 local player p=GetOwningPlayer(u)
@@ -8,3 +10,5 @@ call DestroyTrigger(Jn)
 set p=null
 set u=null
 endfunction
+
+#endif

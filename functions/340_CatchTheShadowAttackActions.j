@@ -1,3 +1,5 @@
+#ifndef H_340
+#define H_340
 function CatchTheShadowAttackActions takes nothing returns nothing
 local unit attacker=GetAttacker()
 local unit target=GetTriggerUnit()
@@ -27,3 +29,5 @@ call DestroyGroup(g)
 set attacker=null
 set target=null
 endfunction
+
+#endif

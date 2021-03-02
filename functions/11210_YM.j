@@ -1,3 +1,5 @@
+#ifndef H_11210
+#define H_11210
 function YM takes nothing returns nothing
 local integer In=0
 local integer MB=CurrentWave
@@ -147,3 +149,5 @@ set bC=null
 set t=null
 set tt=null
 endfunction
+
+#endif

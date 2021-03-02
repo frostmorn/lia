@@ -1,3 +1,5 @@
+#ifndef H_7830
+#define H_7830
 function mj takes nothing returns boolean
 local trigger t
 local integer h
@@ -19,3 +21,5 @@ endif
 set t=null
 return false
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_5920
+#define H_5920
 function JF takes nothing returns nothing
 local trigger pb=GetTriggeringTrigger()
 local integer Pb=GetHandleId(pb)
@@ -21,3 +23,5 @@ set pb=null
 set kF=null
 set u=null
 endfunction
+
+#endif

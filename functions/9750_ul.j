@@ -1,3 +1,5 @@
+#ifndef H_9750
+#define H_9750
 function ul takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local unit kF=GetSpellTargetUnit()
@@ -30,3 +32,5 @@ set u=null
 set t=null
 set kF=null
 endfunction
+
+#endif

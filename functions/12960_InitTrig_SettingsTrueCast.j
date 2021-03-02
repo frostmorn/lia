@@ -1,3 +1,5 @@
+#ifndef H_12960
+#define H_12960
 function InitTrig_SettingsTrueCast takes nothing returns nothing
 local trigger trig=CreateTrigger()
 local integer index
@@ -10,3 +12,5 @@ endloop
 call TriggerAddAction(trig,function TrueCastActions)
 set trig=null
 endfunction
+
+#endif

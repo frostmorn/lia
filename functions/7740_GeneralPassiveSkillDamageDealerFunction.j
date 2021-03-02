@@ -1,3 +1,5 @@
+#ifndef H_7740
+#define H_7740
 function GeneralPassiveSkillDamageDealerFunction takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -31,3 +33,5 @@ set p=null
 set g=null
 set f=null
 endfunction
+
+#endif

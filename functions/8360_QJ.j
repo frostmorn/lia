@@ -1,3 +1,5 @@
+#ifndef H_8360
+#define H_8360
 function QJ takes nothing returns boolean
 local unit f=GetFilterUnit()
 if IsUnitEnemy(f,UI)and IsUnitAlive(f) then
@@ -10,3 +12,5 @@ endif
 set f=null
 return false
 endfunction
+
+#endif

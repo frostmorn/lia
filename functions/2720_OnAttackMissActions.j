@@ -1,3 +1,5 @@
+#ifndef H_2720
+#define H_2720
 function OnAttackMissActions takes nothing returns nothing
 local unit u=GetAttacker()
 local unit t=GetTriggerUnit()
@@ -12,3 +14,5 @@ endif
 set u=null
 set t=null
 endfunction
+
+#endif

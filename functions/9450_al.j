@@ -1,3 +1,5 @@
+#ifndef H_9450
+#define H_9450
 function al takes nothing returns nothing
 if GetLearnedSkill()=='A054' then
 set fv=fv+1
@@ -10,3 +12,5 @@ call DisableTrigger(CX)
 endif
 endif
 endfunction
+
+#endif

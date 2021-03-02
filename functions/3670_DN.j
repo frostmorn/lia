@@ -1,3 +1,5 @@
+#ifndef H_3670
+#define H_3670
 function DN takes unit u returns nothing
 local integer fN
 if GetUnitTypeId(u)=='O004' then
@@ -9,3 +11,5 @@ call SetUnitAbilityLevel(u,'A0HS',fN)
 endif
 endif
 endfunction
+
+#endif

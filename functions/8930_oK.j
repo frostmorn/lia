@@ -1,3 +1,5 @@
+#ifndef H_8930
+#define H_8930
 function oK takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local location T=GetUnitLoc(uA)
@@ -14,3 +16,5 @@ set uA=null
 set T=null
 set g=null
 endfunction
+
+#endif

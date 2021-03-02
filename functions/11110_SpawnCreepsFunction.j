@@ -1,3 +1,5 @@
+#ifndef H_11110
+#define H_11110
 function SpawnCreepsFunction takes nothing returns nothing
 local integer nC=0
 local integer DM=av
@@ -53,3 +55,5 @@ call EnableTrigger(cO)
 call EnableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 set u=null
 endfunction
+
+#endif

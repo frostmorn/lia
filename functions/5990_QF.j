@@ -1,3 +1,5 @@
+#ifndef H_5990
+#define H_5990
 function QF takes nothing returns nothing
 local unit u=GetLearningUnit()
 local trigger pb=CreateTrigger()
@@ -7,3 +9,5 @@ call TriggerAddCondition(pb,Condition(function pF))
 set u=null
 set pb=null
 endfunction
+
+#endif

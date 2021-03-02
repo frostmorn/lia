@@ -1,3 +1,5 @@
+#ifndef H_9510
+#define H_9510
 function Ol takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -17,3 +19,5 @@ set g=null
 set f=null
 set t=null
 endfunction
+
+#endif

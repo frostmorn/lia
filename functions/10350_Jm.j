@@ -1,3 +1,5 @@
+#ifndef H_10350
+#define H_10350
 function Jm takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set lo=u
@@ -24,3 +26,5 @@ call TriggerRegisterUnitEvent(On,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(On,Condition(function xF))
 set u=null
 endfunction
+
+#endif

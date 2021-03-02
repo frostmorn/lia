@@ -1,3 +1,5 @@
+#ifndef H_11220
+#define H_11220
 function ZM takes nothing returns boolean
 if IsUnitType(GetFilterUnit(),UNIT_TYPE_HERO)then
 set DamageTypeAttack=false
@@ -6,3 +8,5 @@ set DamageTypeAttack=true
 endif
 return false
 endfunction
+
+#endif

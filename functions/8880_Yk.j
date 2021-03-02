@@ -1,3 +1,5 @@
+#ifndef H_8880
+#define H_8880
 function Yk takes nothing returns nothing
 local trigger pb
 local unit C=GetSpellAbilityUnit()
@@ -65,3 +67,5 @@ set GF=null
 set e=null
 set pb=null
 endfunction
+
+#endif

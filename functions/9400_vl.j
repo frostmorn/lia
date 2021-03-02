@@ -1,3 +1,5 @@
+#ifndef H_9400
+#define H_9400
 function vl takes nothing returns nothing
 local timer t
 if GetLearnedSkill()=='A009' or GetLearnedSkill()=='A02U' then
@@ -11,3 +13,5 @@ call TimerStart(t,6.25,false,function ZK)
 endif
 set t=null
 endfunction
+
+#endif

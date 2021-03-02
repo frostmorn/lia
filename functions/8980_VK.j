@@ -1,3 +1,5 @@
+#ifndef H_8980
+#define H_8980
 function VK takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -24,3 +26,5 @@ set uA=null
 set t=null
 set pb=null
 endfunction
+
+#endif

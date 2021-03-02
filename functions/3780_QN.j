@@ -1,3 +1,5 @@
+#ifndef H_3780
+#define H_3780
 function QN takes nothing returns nothing
 local unit du=GetEventDamageSource()
 local unit sN=jo
@@ -54,3 +56,5 @@ set tt=null
 set du=null
 set sN=null
 endfunction
+
+#endif

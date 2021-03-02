@@ -1,3 +1,5 @@
+#ifndef H_4340
+#define H_4340
 function QB takes nothing returns nothing
 local integer In=1
 call yb()
@@ -24,3 +26,5 @@ call DisableTrigger(sO)
 call EnableTrigger(ZO)
 call EnableTrigger(eR)
 endfunction
+
+#endif

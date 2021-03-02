@@ -1,3 +1,5 @@
+#ifndef H_9100
+#define H_9100
 function fK takes nothing returns nothing
 local unit ed=Ev
 local unit VF=GetAttacker()
@@ -14,3 +16,5 @@ endif
 set ed=null
 set VF=null
 endfunction
+
+#endif

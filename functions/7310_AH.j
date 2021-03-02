@@ -1,3 +1,5 @@
+#ifndef H_7310
+#define H_7310
 function AH takes nothing returns nothing
 local integer In=1
 local effect e
@@ -12,3 +14,5 @@ endloop
 set uA=null
 set e=null
 endfunction
+
+#endif

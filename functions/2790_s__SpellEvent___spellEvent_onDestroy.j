@@ -1,3 +1,5 @@
+#ifndef H_2790
+#define H_2790
 function s__SpellEvent___spellEvent_onDestroy takes integer this returns nothing
 if s__SpellEvent___spellEvent_interrupt[this]==0 then
 call RemoveSavedInteger(Table__ht,((s__SpellEvent___spellEvent_SpellEvent___casterTable)),GetHandleId((s__SpellEvent___spellEvent_CastingUnit[this])))
@@ -6,3 +8,5 @@ call SaveInteger(Table__ht,((s__SpellEvent___spellEvent_SpellEvent___casterTable
 endif
 set s__SpellEvent___spellEvent_CastingUnit[this]=null
 endfunction
+
+#endif

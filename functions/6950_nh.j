@@ -1,3 +1,5 @@
+#ifndef H_6950
+#define H_6950
 function nh takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local timer t2=CreateTimer()
@@ -26,3 +28,5 @@ set g=null
 set f=null
 set t2=null
 endfunction
+
+#endif

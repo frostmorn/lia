@@ -1,3 +1,5 @@
+#ifndef H_13090
+#define H_13090
 function HeroLimit___OnActions takes nothing returns nothing
 call SetPlayerMaxHeroesAllowed(0,GetOwningPlayer(GetEnteringUnit()))
 if GetUnitTypeId(GetTriggerUnit())=='Hblm' then
@@ -7,3 +9,5 @@ if GetUnitTypeId(GetTriggerUnit())=='H007' or GetUnitTypeId(GetTriggerUnit())=='
 set Se=GetTriggerUnit()
 endif
 endfunction
+
+#endif

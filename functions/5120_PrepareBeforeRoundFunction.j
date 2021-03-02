@@ -1,3 +1,5 @@
+#ifndef H_5120
+#define H_5120
 function PrepareBeforeRoundFunction takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -138,3 +140,5 @@ set tt=null
 set Gd=null
 set Hd=null
 endfunction
+
+#endif

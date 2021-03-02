@@ -1,3 +1,5 @@
+#ifndef H_3070
+#define H_3070
 function MagicLump___OnActions takes nothing returns nothing
 local unit u=GetEnteringUnit()
 local timer t=CreateTimer()
@@ -11,3 +13,5 @@ call TimerStart(t,0.10,true,function MagicLump___OnLoop)
 set u=null
 set t=null
 endfunction
+
+#endif

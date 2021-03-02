@@ -1,3 +1,5 @@
+#ifndef H_540
+#define H_540
 function AddStat takes unit u,integer bType,integer val returns nothing
 local integer value=val
 local integer i=StatMod___MAX_POWER
@@ -36,3 +38,5 @@ set i=i-1
 endif
 endloop
 endfunction
+
+#endif

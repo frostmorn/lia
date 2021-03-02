@@ -1,3 +1,5 @@
+#ifndef H_6050
+#define H_6050
 function UF takes nothing returns nothing
 local unit wF
 local integer WF
@@ -11,3 +13,5 @@ endif
 endif
 set wF=null
 endfunction
+
+#endif

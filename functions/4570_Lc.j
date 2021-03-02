@@ -1,3 +1,5 @@
+#ifndef H_4570
+#define H_4570
 function Lc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -14,3 +16,5 @@ endloop
 set g=null
 set f=null
 endfunction
+
+#endif

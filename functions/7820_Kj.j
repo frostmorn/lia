@@ -1,3 +1,5 @@
+#ifndef H_7820
+#define H_7820
 function Kj takes nothing returns boolean
 local trigger t=GetTriggeringTrigger()
 local integer h=GetHandleId(t)
@@ -33,3 +35,5 @@ set lj=null
 set u=null
 return false
 endfunction
+
+#endif

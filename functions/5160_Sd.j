@@ -1,3 +1,5 @@
+#ifndef H_5160
+#define H_5160
 function Sd takes unit td,unitstate whichUnitState,integer Td returns boolean
 local integer c=Td
 local integer i='A0HG'
@@ -40,3 +42,5 @@ endloop
 endif
 return true
 endfunction
+
+#endif

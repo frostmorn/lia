@@ -1,3 +1,5 @@
+#ifndef H_7450
+#define H_7450
 function MH takes nothing returns nothing
 local location qb=GetUnitLoc(ke)
 local real r=GetUnitFacing(ke)
@@ -18,3 +20,5 @@ call RemoveLocation(qb)
 set sb=null
 set qb=null
 endfunction
+
+#endif

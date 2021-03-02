@@ -1,3 +1,5 @@
+#ifndef H_4500
+#define H_4500
 function Dc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -20,3 +22,5 @@ set p2=null
 set t=null
 set fc=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_5540
+#define H_5540
 function mf takes nothing returns nothing
 local unit u=GetSpellTargetUnit()
 local timer t=CreateTimer()
@@ -12,3 +14,5 @@ call SetPlayerAbilityAvailable(GetOwningPlayer(u),'A05I',false)
 set t=null
 set u=null
 endfunction
+
+#endif

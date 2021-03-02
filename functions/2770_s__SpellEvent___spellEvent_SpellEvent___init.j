@@ -1,3 +1,7 @@
+#ifndef H_2770
+#define H_2770
+#ifndef H_2770
+#define H_2770
 function s__SpellEvent___spellEvent_SpellEvent___init takes nothing returns integer
 local integer s=s__SpellEvent___spellEvent__allocate()
 set s__SpellEvent___spellEvent_AbilityId[s]=GetSpellAbilityId()
@@ -26,3 +30,5 @@ set s__SpellEvent___spellEvent_interrupt[s]=(LoadInteger(Table__ht,((s__SpellEve
 call SaveInteger(Table__ht,((s__SpellEvent___spellEvent_SpellEvent___casterTable)),GetHandleId((s__SpellEvent___spellEvent_CastingUnit[s])),((s)))
 return s
 endfunction
+#endif
+#endif

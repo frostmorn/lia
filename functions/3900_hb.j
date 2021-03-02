@@ -1,3 +1,5 @@
+#ifndef H_3900
+#define H_3900
 function hb takes nothing returns nothing
 local group g=CreateGroup()
 local player p=Player(11)
@@ -195,3 +197,5 @@ set f=null
 set gN=null
 set L=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_9590
+#define H_9590
 function Cl takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(uA,GetSpellAbilityId())
@@ -26,3 +28,5 @@ set uA=null
 set c=null
 set L=null
 endfunction
+
+#endif

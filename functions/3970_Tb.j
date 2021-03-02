@@ -1,3 +1,5 @@
+#ifndef H_3970
+#define H_3970
 function Tb takes nothing returns boolean
 local integer In=1
 local integer Lb=0
@@ -10,3 +12,5 @@ set In=In+1
 endloop
 return Lb==0
 endfunction
+
+#endif

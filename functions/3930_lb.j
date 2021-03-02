@@ -1,3 +1,5 @@
+#ifndef H_3930
+#define H_3930
 function lb takes nothing returns nothing
 local integer In=1
 local integer Lb=0
@@ -88,3 +90,5 @@ endif
 endif
 set go=R2I(mb)
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_12550
+#define H_12550
 function SwapNoFunction takes nothing returns nothing
 local integer In=1
 local player p=GetTriggerPlayer()
@@ -9,3 +11,5 @@ set In=In+1
 endloop
 set p=null
 endfunction
+
+#endif

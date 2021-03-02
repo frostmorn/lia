@@ -1,3 +1,5 @@
+#ifndef H_7660
+#define H_7660
 function Ij takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -11,3 +13,5 @@ set u=null
 set e=null
 set t=null
 endfunction
+
+#endif

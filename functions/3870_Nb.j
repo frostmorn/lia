@@ -1,3 +1,5 @@
+#ifndef H_3870
+#define H_3870
 function Nb takes nothing returns nothing
 local timer t
 local integer pN=GetHandleId(jo)
@@ -33,3 +35,5 @@ set cb=null
 set g=null
 set t=null
 endfunction
+
+#endif

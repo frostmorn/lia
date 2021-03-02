@@ -1,3 +1,5 @@
+#ifndef H_470
+#define H_470
 function MagicLumpRegeneration___OnActions takes nothing returns nothing
 local unit first
 call GroupEnumUnitsInRange(bj_lastCreatedGroup,0.00,0.00,99999,null)
@@ -11,3 +13,5 @@ call GroupRemoveUnit(bj_lastCreatedGroup,first)
 endloop
 set first=null
 endfunction
+
+#endif

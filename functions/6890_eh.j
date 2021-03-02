@@ -1,3 +1,5 @@
+#ifndef H_6890
+#define H_6890
 function eh takes nothing returns nothing
 local integer vC
 local unit u=GetLearningUnit()
@@ -20,3 +22,5 @@ endif
 set u=null
 set t=null
 endfunction
+
+#endif

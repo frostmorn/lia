@@ -1,3 +1,5 @@
+#ifndef H_8020
+#define H_8020
 function iJ takes nothing returns nothing
 local unit IF=GetKillingUnit()
 local unit AF=GetDyingUnit()
@@ -14,3 +16,5 @@ endif
 set IF=null
 set AF=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_3220
+#define H_3220
 function IndexUnit takes nothing returns boolean
 local integer pdex=udg_UDex
 local integer ndex
@@ -35,3 +37,5 @@ else
 endif
 return false
 endfunction
+
+#endif

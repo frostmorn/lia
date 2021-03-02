@@ -1,3 +1,5 @@
+#ifndef H_9570
+#define H_9570
 function Bl takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 set ze=true
@@ -8,3 +10,5 @@ call RemoveUnit(u)
 endif
 set u=null
 endfunction
+
+#endif

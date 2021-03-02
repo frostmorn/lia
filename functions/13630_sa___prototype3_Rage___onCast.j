@@ -1,3 +1,5 @@
+#ifndef H_13630
+#define H_13630
 function sa___prototype3_Rage___onCast takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local timer t
@@ -20,3 +22,5 @@ set t=null
 set caster=null
 return true
 endfunction
+
+#endif

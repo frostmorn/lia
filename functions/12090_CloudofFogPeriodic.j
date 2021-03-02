@@ -1,3 +1,5 @@
+#ifndef H_12090
+#define H_12090
 // Туман странника 
 function CloudofFogPeriodic takes nothing returns nothing
     local timer t=GetExpiredTimer()
@@ -43,3 +45,5 @@ function CloudofFogPeriodic takes nothing returns nothing
     set caster=null
     set first=null
 endfunction
+
+#endif

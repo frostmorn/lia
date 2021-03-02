@@ -1,3 +1,5 @@
+#ifndef H_4950
+#define H_4950
 function PC takes integer n returns real
 local real array qC
 local real JA=300.
@@ -20,3 +22,5 @@ set nb=QC[n-4]
 endif
 return nb
 endfunction
+
+#endif

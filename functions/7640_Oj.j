@@ -1,3 +1,5 @@
+#ifndef H_7640
+#define H_7640
 function Oj takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local location T=GetUnitLoc(uA)
@@ -50,3 +52,5 @@ set te=null
 set e=null
 set tt=null
 endfunction
+
+#endif

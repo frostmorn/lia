@@ -1,3 +1,5 @@
+#ifndef H_7620
+#define H_7620
 function Ej takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -7,3 +9,5 @@ call DestroyTimer(t)
 set e=null
 set t=null
 endfunction
+
+#endif

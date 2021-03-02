@@ -1,3 +1,5 @@
+#ifndef H_13670
+#define H_13670
 function sa___prototype3_MithrilArmor___OnActions takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -26,3 +28,5 @@ set first=null
 set t=null
 return true
 endfunction
+
+#endif

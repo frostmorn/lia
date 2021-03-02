@@ -1,3 +1,5 @@
+#ifndef H_6010
+#define H_6010
 function SF takes nothing returns nothing
 local unit uA=GetTriggerUnit()
 local real DC=GetEventDamage()
@@ -15,3 +17,5 @@ call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\FaerieDr
 endif
 set uA=null
 endfunction
+
+#endif

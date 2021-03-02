@@ -1,3 +1,5 @@
+#ifndef H_4190
+#define H_4190
 function AB takes integer Gb,integer NB,integer bB returns integer
 local integer BB=0
 local real cB=tx
@@ -72,3 +74,5 @@ set CB=(2*DB[Gb]+2*NB*dB[Gb])/ bB
 endif
 return BB+CB
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_8160
+#define H_8160
 function CJ takes nothing returns nothing
 local unit u=GetEnumUnit()
 local unit KG=GetSpellAbilityUnit()
@@ -10,3 +12,5 @@ endif
 set u=null
 set KG=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_11440
+#define H_11440
 function qp takes nothing returns nothing
 local integer id=GetResearched()
 if id=='R007' then
@@ -12,3 +14,5 @@ if Ex then
 call TriggerExecute(mO)
 endif
 endfunction
+
+#endif

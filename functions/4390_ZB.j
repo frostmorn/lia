@@ -1,3 +1,5 @@
+#ifndef H_4390
+#define H_4390
 function ZB takes unit s returns integer
 local integer id=GetUnitTypeId(s)
 local integer wN=HeroesCount
@@ -11,3 +13,5 @@ set In=In+1
 endloop
 return 0
 endfunction
+
+#endif

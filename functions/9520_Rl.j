@@ -1,3 +1,5 @@
+#ifndef H_9520
+#define H_9520
 function Rl takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(uA,'A05D')
@@ -37,3 +39,5 @@ set t=null
 set T=null
 set c=null
 endfunction
+
+#endif

@@ -1,3 +1,7 @@
+#ifndef H_160
+#define H_160
+#ifndef H_160
+#define H_160
 function s__SpellEvent___spellEvent__allocate takes nothing returns integer
 local integer this=si__SpellEvent___spellEvent_F
 if(this!=0)then
@@ -18,3 +22,5 @@ set s__SpellEvent___spellEvent_CastFinished[this]=false
 set si__SpellEvent___spellEvent_V[this]=-1
 return this
 endfunction
+#endif
+#endif

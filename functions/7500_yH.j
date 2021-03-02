@@ -1,3 +1,5 @@
+#ifndef H_7500
+#define H_7500
 function yH takes nothing returns nothing
 local unit uE=GetEnumUnit()
 local unit uA=GetSpellAbilityUnit()
@@ -10,3 +12,5 @@ endif
 set uE=null
 set uA=null
 endfunction
+
+#endif

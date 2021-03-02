@@ -1,3 +1,5 @@
+#ifndef H_5070
+#define H_5070
 function Bd takes unit u returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -13,3 +15,5 @@ set cd=null
 set t=null
 set e=null
 endfunction
+
+#endif

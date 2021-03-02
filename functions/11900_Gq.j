@@ -1,3 +1,5 @@
+#ifndef H_11900
+#define H_11900
 function Gq takes nothing returns nothing
 local item it=GetManipulatedItem()
 local unit u=GetTriggerUnit()
@@ -20,3 +22,5 @@ endif
 set it=null
 set u=null
 endfunction
+
+#endif

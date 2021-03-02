@@ -1,3 +1,5 @@
+#ifndef H_3830
+#define H_3830
 function Xb takes nothing returns nothing
 local unit u=GetEnumUnit()
 local timer t=CreateTimer()
@@ -9,3 +11,5 @@ set u=null
 set t=null
 set e=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_11130
+#define H_11130
 function PM takes nothing returns nothing
 local boolexpr b=Condition(function pM)
 local timer t=CreateTimer()
@@ -21,3 +23,5 @@ endif
 set b=null
 set t=null
 endfunction
+
+#endif

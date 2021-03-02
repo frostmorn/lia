@@ -1,3 +1,5 @@
+#ifndef H_5470
+#define H_5470
 function Ff takes nothing returns nothing
 local unit TB=GetSoldUnit()
 local unit gf=GetSellingUnit()
@@ -48,3 +50,5 @@ set TB=null
 set gf=null
 set p=null
 endfunction
+
+#endif

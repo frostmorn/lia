@@ -1,3 +1,5 @@
+#ifndef H_13150
+#define H_13150
 function WillOfTheLight___WillOfTheLight takes unit u,real d returns nothing
 local unit first
 local integer lvl=GetUnitAbilityLevel(u,'A0G1')
@@ -31,3 +33,5 @@ call GroupRemoveUnit(bj_lastCreatedGroup,first)
 endloop
 set first=null
 endfunction
+
+#endif

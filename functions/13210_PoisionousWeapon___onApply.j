@@ -1,3 +1,5 @@
+#ifndef H_13210
+#define H_13210
 function PoisionousWeapon___onApply takes unit cstr,unit trg,integer level returns nothing
 local unit caster=cstr
 local unit target=trg
@@ -40,3 +42,5 @@ set t=null
 set caster=null
 set target=null
 endfunction
+
+#endif

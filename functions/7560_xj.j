@@ -1,3 +1,5 @@
+#ifndef H_7560
+#define H_7560
 function xj takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local player p=GetOwningPlayer(uA)
@@ -93,3 +95,5 @@ set p=null
 set g=null
 set e=null
 endfunction
+
+#endif

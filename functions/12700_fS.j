@@ -1,3 +1,5 @@
+#ifndef H_12700
+#define H_12700
 function fS takes nothing returns nothing
 local unit u=GetManipulatingUnit()
 local player p=GetOwningPlayer(u)
@@ -21,3 +23,5 @@ set it=null
 set t=null
 set ti=null
 endfunction
+
+#endif

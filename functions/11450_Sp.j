@@ -1,3 +1,5 @@
+#ifndef H_11450
+#define H_11450
 function Sp takes nothing returns nothing
 set xv=xv+1
 if xv==60 then
@@ -18,3 +20,5 @@ call MultiboardSetItemValueBJ(StatsBoard,4,(A+3),(I2S(ov)+(":"+I2S(xv))))
 endif
 endif
 endfunction
+
+#endif

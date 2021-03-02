@@ -1,3 +1,5 @@
+#ifndef H_7170
+#define H_7170
 function th takes nothing returns nothing
 local unit VF=GetAttacker()
 local unit u=GetTriggerUnit()
@@ -13,3 +15,5 @@ endif
 set u=null
 set VF=null
 endfunction
+
+#endif

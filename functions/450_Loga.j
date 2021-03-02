@@ -1,3 +1,5 @@
+#ifndef H_450
+#define H_450
 function Loga takes real x returns real
 local real min=-88.0
 local real max=88.0
@@ -15,3 +17,5 @@ endif
 endloop
 return mid
 endfunction
+
+#endif

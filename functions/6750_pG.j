@@ -1,3 +1,5 @@
+#ifndef H_6750
+#define H_6750
 function pG takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer In=0
@@ -29,3 +31,5 @@ set gg=null
 set f=null
 set t=null
 endfunction
+
+#endif

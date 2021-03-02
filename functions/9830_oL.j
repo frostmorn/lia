@@ -1,3 +1,5 @@
+#ifndef H_9830
+#define H_9830
 function oL takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local unit uT=GetSpellTargetUnit()
@@ -30,3 +32,5 @@ set uT=null
 set pb=null
 set t=null
 endfunction
+
+#endif

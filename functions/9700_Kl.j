@@ -1,3 +1,5 @@
+#ifndef H_9700
+#define H_9700
 function Kl takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -42,3 +44,5 @@ set f=null
 set ml=null
 set fx=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_11810
+#define H_11810
 function nq takes nothing returns nothing
 local unit Ud=GetKillingUnit()
 local unit Vq=GetDyingUnit()
@@ -40,3 +42,5 @@ set Vq=null
 set pk=null
 set pd=null
 endfunction
+
+#endif

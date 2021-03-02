@@ -1,3 +1,5 @@
+#ifndef H_9670
+#define H_9670
 function jl takes nothing returns nothing
 local unit u=qe
 local location l=GetUnitLoc(u)
@@ -16,3 +18,5 @@ set g=null
 set u=null
 set l=null
 endfunction
+
+#endif

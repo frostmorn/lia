@@ -1,3 +1,5 @@
+#ifndef H_6980
+#define H_6980
 function Rh takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -40,3 +42,5 @@ set g=null
 set T=null
 set f=null
 endfunction
+
+#endif

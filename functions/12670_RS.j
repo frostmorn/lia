@@ -1,3 +1,5 @@
+#ifndef H_12670
+#define H_12670
 function RS takes boolean zs,unit u,integer eS,integer oS,integer iS,integer nS,integer ES,integer OS returns nothing
 local item it
 if zs then
@@ -14,3 +16,5 @@ set it=UnitAddItemById(u,OS)
 call SetItemUserData(it,(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"))))
 set it=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_8190
+#define H_8190
 function fJ takes nothing returns nothing
 local integer ld=GetHandleId(GetEventDamageSource())
 local unit VF=GetEventDamageSource()
@@ -39,3 +41,5 @@ set T=null
 set f=null
 call Kd(ld)
 endfunction
+
+#endif

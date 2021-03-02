@@ -1,3 +1,5 @@
+#ifndef H_6350
+#define H_6350
 function lg takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local player p=GetOwningPlayer(uA)
@@ -28,3 +30,5 @@ set g=null
 set f=null
 set c=null
 endfunction
+
+#endif

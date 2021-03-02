@@ -1,3 +1,5 @@
+#ifndef H_13440
+#define H_13440
 function EssenceOfShadow___OnLoop takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -26,3 +28,5 @@ endif
 set t=null
 set target=null
 endfunction
+
+#endif

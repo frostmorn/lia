@@ -1,3 +1,5 @@
+#ifndef H_5060
+#define H_5060
 function bd takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -10,3 +12,5 @@ set e=null
 set t=null
 set u=null
 endfunction
+
+#endif

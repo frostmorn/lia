@@ -1,3 +1,5 @@
+#ifndef H_12410
+#define H_12410
 function ns takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer In=1
@@ -28,3 +30,5 @@ call DisplayTextToPlayer(p,0,0,"|Cffff0000Функция не доступна �
 endif
 set p=null
 endfunction
+
+#endif

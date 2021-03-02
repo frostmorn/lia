@@ -1,3 +1,5 @@
+#ifndef H_3270
+#define H_3270
 function GetUnitMagicResistanse takes unit u returns real
 local real r=0.00
 if GetUnitAbilityLevel(u,'A0I4')>0 then
@@ -38,3 +40,5 @@ set r=1.00
 endif
 return r
 endfunction
+
+#endif

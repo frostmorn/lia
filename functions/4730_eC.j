@@ -1,3 +1,5 @@
+#ifndef H_4730
+#define H_4730
 function eC takes nothing returns nothing
 local integer xC=1
 local unit f
@@ -35,3 +37,5 @@ set p=null
 set f=null
 set ic=null
 endfunction
+
+#endif

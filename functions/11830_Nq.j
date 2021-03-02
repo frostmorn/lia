@@ -1,3 +1,5 @@
+#ifndef H_11830
+#define H_11830
 function Nq takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -22,3 +24,5 @@ set l=null
 set f=null
 set t=null
 endfunction
+
+#endif

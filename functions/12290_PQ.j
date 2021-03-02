@@ -1,3 +1,5 @@
+#ifndef H_12290
+#define H_12290
 function PQ takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local timer t=CreateTimer()
@@ -9,3 +11,5 @@ endif
 set t=null
 set u=null
 endfunction
+
+#endif

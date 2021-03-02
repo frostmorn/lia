@@ -1,3 +1,5 @@
+#ifndef H_11470
+#define H_11470
 function zp takes nothing returns nothing
 local player p=GetTriggerPlayer()
 if not IsReady[GetPlayerId(p)]then
@@ -18,3 +20,5 @@ else
 endif
 set p=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_12760
+#define H_12760
 function mS takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -9,3 +11,5 @@ call FlushChildHashtable(Ax,dN)
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

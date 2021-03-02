@@ -1,3 +1,5 @@
+#ifndef H_12690
+#define H_12690
 function dS takes nothing returns nothing
 local item it=GetSoldItem()
 local unit u=GetBuyingUnit()
@@ -16,3 +18,5 @@ call SetItemPosition(it,x,y)
 set it=null
 set u=null
 endfunction
+
+#endif

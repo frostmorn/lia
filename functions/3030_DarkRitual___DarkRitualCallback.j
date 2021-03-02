@@ -1,3 +1,5 @@
+#ifndef H_3030
+#define H_3030
 function DarkRitual___DarkRitualCallback takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local unit target=s__SpellEvent___spellEvent_TargetUnit[SpellEvent]
@@ -57,3 +59,5 @@ set target=null
 set caster=null
 set first=null
 endfunction
+
+#endif

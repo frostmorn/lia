@@ -1,3 +1,5 @@
+#ifndef H_12060
+#define H_12060
 function SetCamera_Trigger_Function takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local real fA=S2R(SubString(GetEventPlayerChatString(),6,StringLength(GetEventPlayerChatString())))
@@ -9,3 +11,5 @@ call DisplayTextToPlayer(p,0,0,"|Cffff0000Enter a zoom % between 100 and 200. (D
 endif
 set p=null
 endfunction
+
+#endif

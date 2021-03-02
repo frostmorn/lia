@@ -1,3 +1,5 @@
+#ifndef H_4350
+#define H_4350
 function sB takes player p1,player p2 returns nothing
 local integer SB=ee[(1+GetPlayerId(p1))]
 local integer tB=ee[(1+GetPlayerId(p2))]
@@ -58,3 +60,5 @@ set UB=null
 set WB=null
 set wB=null
 endfunction
+
+#endif

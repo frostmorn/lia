@@ -1,3 +1,5 @@
+#ifndef H_2420
+#define H_2420
 function GetUnitArmorInt takes unit u returns integer
 local real a=GetUnitArmorD(u)
 local integer a2
@@ -13,3 +15,5 @@ set a2=EasyMath(a)
 endif
 return a2
 endfunction
+
+#endif

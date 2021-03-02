@@ -1,3 +1,5 @@
+#ifndef H_8900
+#define H_8900
 function vK takes nothing returns nothing
 local unit u=GetLearningUnit()
 local integer JN=GetUnitAbilityLevel(u,'A02S')
@@ -10,3 +12,5 @@ call DestroyTrigger(wE)
 endif
 set u=null
 endfunction
+
+#endif

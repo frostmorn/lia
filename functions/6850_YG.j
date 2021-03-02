@@ -1,3 +1,5 @@
+#ifndef H_6850
+#define H_6850
 function YG takes nothing returns nothing
 local group g=CreateGroup()
 local unit uA=ox
@@ -30,3 +32,5 @@ set f=null
 set uA=null
 set T=null
 endfunction
+
+#endif

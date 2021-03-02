@@ -1,3 +1,5 @@
+#ifndef H_12430
+#define H_12430
 function Xs takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -54,3 +56,5 @@ set he=CreateTimer()
 call TimerStart(he,45,false,function Es)
 set p=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_3790
+#define H_3790
 function YN takes nothing returns nothing
 local unit lu=GetLearningUnit()
 local integer zN=GetLearnedSkill()
@@ -39,3 +41,5 @@ set eb=null
 set xb=null
 set lu=null
 endfunction
+
+#endif

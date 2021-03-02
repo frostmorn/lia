@@ -1,3 +1,5 @@
+#ifndef H_3700
+#define H_3700
 function hN takes nothing returns nothing
 local unit first
 local unit dummy
@@ -16,3 +18,5 @@ endloop
 set first=null
 set dummy=null
 endfunction
+
+#endif

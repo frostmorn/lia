@@ -1,3 +1,5 @@
+#ifndef H_13060
+#define H_13060
 function ItsReady___OnActions takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer index=0
@@ -29,3 +31,5 @@ endif
 endif
 set p=null
 endfunction
+
+#endif

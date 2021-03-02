@@ -1,3 +1,5 @@
+#ifndef H_6020
+#define H_6020
 function tF takes nothing returns nothing
 local unit u=GetLearningUnit()
 local trigger pb=CreateTrigger()
@@ -6,3 +8,5 @@ call TriggerAddAction(pb,function SF)
 set u=null
 set pb=null
 endfunction
+
+#endif

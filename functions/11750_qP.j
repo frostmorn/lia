@@ -1,3 +1,5 @@
+#ifndef H_11750
+#define H_11750
 function qP takes nothing returns nothing
 set mv=R2I((I2R(A)/ 2.))
 set Mv=(A-mv)
@@ -115,3 +117,5 @@ call MultiboardSetItemValueBJ(StatsBoard,2,(3+mv),"")
 call MultiboardDisplay(StatsBoard,true)
 call MultiboardMinimize(StatsBoard,false)
 endfunction
+
+#endif

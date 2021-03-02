@@ -1,3 +1,5 @@
+#ifndef H_12940
+#define H_12940
 function TrueCastMain takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -16,3 +18,5 @@ call KillTimer(t)
 set caster=null
 set t=null
 endfunction
+
+#endif

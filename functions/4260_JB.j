@@ -1,3 +1,5 @@
+#ifndef H_4260
+#define H_4260
 function JB takes nothing returns nothing
 local integer In=1
 loop
@@ -13,3 +15,5 @@ call DisableTrigger(TR)
 set Fe=false
 call EnableTrigger(sR)
 endfunction
+
+#endif

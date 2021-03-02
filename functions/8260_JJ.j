@@ -1,3 +1,5 @@
+#ifndef H_8260
+#define H_8260
 function JJ takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -18,3 +20,5 @@ call DestroyTimer(t)
 set t=null
 set u=null
 endfunction
+
+#endif

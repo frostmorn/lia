@@ -1,3 +1,5 @@
+#ifndef H_10240
+#define H_10240
 function Vm takes nothing returns nothing
 local unit u=GetEnumUnit()
 if not(IsUnitHidden(u)or IsUnitPaused(u))then
@@ -10,3 +12,5 @@ endif
 endif
 set u=null
 endfunction
+
+#endif

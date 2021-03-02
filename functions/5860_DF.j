@@ -1,3 +1,5 @@
+#ifndef H_5860
+#define H_5860
 function DF takes nothing returns nothing
 local trigger pb=CreateTrigger()
 local integer Pb
@@ -21,3 +23,5 @@ call SaveTriggerHandle(Ax,1,Pb,pb)
 set gN=null
 set pb=null
 endfunction
+
+#endif

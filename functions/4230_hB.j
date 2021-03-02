@@ -1,3 +1,5 @@
+#ifndef H_4230
+#define H_4230
 function hB takes nothing returns nothing
 local integer In=1
 local integer vB=A
@@ -11,3 +13,5 @@ set In=In+1
 endloop
 call TriggerExecute(wO)
 endfunction
+
+#endif

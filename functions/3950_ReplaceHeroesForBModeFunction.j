@@ -1,3 +1,5 @@
+#ifndef H_3950
+#define H_3950
 function ReplaceHeroesForBModeFunction takes nothing returns nothing
 set HeroIdsArray[21]='H00S'
 call RemoveUnitFromStock(HeroStocksArray[6],'H002')
@@ -15,3 +17,5 @@ set HeroIdsArray[8]='H00Y'
 call RemoveUnitFromStock(HeroStocksArray[6],'H007')
 call AddUnitToStock(HeroStocksArray[6],'H00Y',1,1)
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_5750
+#define H_5750
 function nF takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -19,3 +21,5 @@ endif
 set VF=null
 set ed=null
 endfunction
+
+#endif

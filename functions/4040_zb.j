@@ -1,3 +1,5 @@
+#ifndef H_4040
+#define H_4040
 function zb takes nothing returns nothing
 set boss_ids[1]='n02J'
 set boss_ids[2]='n02O'
@@ -21,3 +23,5 @@ set creep_ids[18]='n038'
 set boss_ids[19]='n039'
 set creep_ids[19]='n03A'
 endfunction
+
+#endif

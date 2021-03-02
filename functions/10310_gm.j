@@ -1,3 +1,5 @@
+#ifndef H_10310
+#define H_10310
 function gm takes nothing returns nothing
 local unit u=GetLearningUnit()
 local integer Gm='A002'
@@ -13,3 +15,5 @@ endif
 endif
 set u=null
 endfunction
+
+#endif

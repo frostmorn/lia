@@ -1,3 +1,5 @@
+#ifndef H_5100
+#define H_5100
 function Dd takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -8,3 +10,5 @@ endif
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

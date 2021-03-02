@@ -1,3 +1,5 @@
+#ifndef H_9970
+#define H_9970
 function DL takes nothing returns nothing
 local trigger pb=GetTriggeringTrigger()
 local integer Id=GetHandleId(pb)
@@ -10,3 +12,5 @@ endif
 set pb=null
 set u=null
 endfunction
+
+#endif

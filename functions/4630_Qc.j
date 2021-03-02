@@ -1,3 +1,5 @@
+#ifndef H_4630
+#define H_4630
 function Qc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -16,3 +18,5 @@ set t=null
 set u1=null
 set u2=null
 endfunction
+
+#endif

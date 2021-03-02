@@ -1,3 +1,5 @@
+#ifndef H_4440
+#define H_4440
 function Xc takes player pl returns nothing
 local player p=pl
 local integer In=1
@@ -25,3 +27,5 @@ endloop
 set p=null
 set ut=null
 endfunction
+
+#endif

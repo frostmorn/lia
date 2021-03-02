@@ -1,3 +1,5 @@
+#ifndef H_4640
+#define H_4640
 function sc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer In=0
@@ -9,3 +11,5 @@ endloop
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

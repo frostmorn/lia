@@ -1,3 +1,5 @@
+#ifndef H_7910
+#define H_7910
 function uj takes nothing returns nothing
 local unit Uj=GetSpellAbilityUnit()
 local location T=GetSpellTargetLoc()
@@ -17,3 +19,5 @@ set Uj=null
 set T=null
 set t=null
 endfunction
+
+#endif

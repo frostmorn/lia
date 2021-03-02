@@ -1,3 +1,5 @@
+#ifndef H_12250
+#define H_12250
 function LQ takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
@@ -46,3 +48,5 @@ set T=null
 set f=null
 set mM=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6970
+#define H_6970
 function Eh takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local group g=CreateGroup()
@@ -38,3 +40,5 @@ set t3=null
 set t4=null
 set t=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_7540
+#define H_7540
 function vj takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local group g=CreateGroup()
@@ -30,3 +32,5 @@ set f=null
 set T=null
 set t=null
 endfunction
+
+#endif

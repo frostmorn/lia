@@ -1,3 +1,5 @@
+#ifndef H_11820
+#define H_11820
 function Iq takes nothing returns nothing
 local unit f
 local integer MB=CurrentWave
@@ -74,3 +76,5 @@ endloop
 set f=null
 set l=null
 endfunction
+
+#endif

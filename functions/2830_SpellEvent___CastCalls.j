@@ -1,3 +1,5 @@
+#ifndef H_2830
+#define H_2830
 function SpellEvent___CastCalls takes nothing returns nothing
 local integer i=0
 local integer id=GetSpellAbilityId()
@@ -13,3 +15,5 @@ call TriggerEvaluate(st___prototype3[(((LoadInteger(Table__ht,((SpellEvent___Cas
 endif
 set SpellEvent=previous
 endfunction
+
+#endif

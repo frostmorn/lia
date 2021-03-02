@@ -1,3 +1,5 @@
+#ifndef H_9820
+#define H_9820
 function xL takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -26,3 +28,5 @@ set L=null
 set c=null
 set pb=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_5050
+#define H_5050
 function Ad takes unit u returns real
 local integer Nd=go
 if jv then
@@ -26,3 +28,5 @@ endif
 endif
 return .0
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_7260
+#define H_7260
 function nH takes unit u returns nothing
 local group g=CreateGroup()
 local timer t=CreateTimer()
@@ -20,3 +22,5 @@ set g=null
 set t=null
 set f=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_9190
+#define H_9190
 function KK takes nothing returns nothing
 local unit k=GetKillingUnit()
 local unit d=GetDyingUnit()
@@ -12,3 +14,5 @@ endif
 set k=null
 set d=null
 endfunction
+
+#endif

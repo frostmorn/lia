@@ -1,3 +1,5 @@
+#ifndef H_10200
+#define H_10200
 function xm takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -54,3 +56,5 @@ set uA=null
 set f=null
 set ff=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_13500
+#define H_13500
 function InitCustomPlayerSlots takes nothing returns nothing
 call SetPlayerStartLocation(Player(0),0)
 call SetPlayerColor(Player(0),ConvertPlayerColor(0))
@@ -46,3 +48,5 @@ call SetPlayerRacePreference(Player(11),RACE_PREF_UNDEAD)
 call SetPlayerRaceSelectable(Player(11),false)
 call SetPlayerController(Player(11),MAP_CONTROL_COMPUTER)
 endfunction
+
+#endif

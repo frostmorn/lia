@@ -1,3 +1,5 @@
+#ifndef H_70
+#define H_70
 function IsUnitAlive takes unit u returns boolean
     if u!=null and (GetWidgetLife(u) > 0.0) then
         return true
@@ -5,3 +7,5 @@ function IsUnitAlive takes unit u returns boolean
         return false
     endif
 endfunction
+
+#endif

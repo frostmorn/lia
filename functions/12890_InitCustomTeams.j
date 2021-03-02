@@ -1,3 +1,5 @@
+#ifndef H_12890
+#define H_12890
 function InitCustomTeams takes nothing returns nothing
 set bj_forLoopAIndexEnd = 8
 set bj_forLoopBIndexEnd = 8
@@ -20,3 +22,5 @@ set bj_forLoopBIndexEnd = 0
 call SetPlayerTeam(Player(11),1)
 call SetPlayerState(Player(11),PLAYER_STATE_ALLIED_VICTORY,1)
 endfunction
+
+#endif

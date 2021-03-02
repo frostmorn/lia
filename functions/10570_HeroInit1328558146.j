@@ -1,3 +1,5 @@
+#ifndef H_10570
+#define H_10570
 function HeroInit1328558146 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 call UnitAddAbility(u,'A0AA')
@@ -17,3 +19,5 @@ call TriggerRegisterTimerEventPeriodic(LV,.01)
 call TriggerAddAction(LV,function MH)
 set u=null
 endfunction
+
+#endif

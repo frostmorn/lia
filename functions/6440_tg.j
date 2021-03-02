@@ -1,3 +1,5 @@
+#ifndef H_6440
+#define H_6440
 function tg takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local group g=lA('e00K')
@@ -15,3 +17,5 @@ set t=null
 set f=null
 set g=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_10890
+#define H_10890
 function WaveFightTriggerFunction takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -48,3 +50,5 @@ set f=null
 set g=null
 set t=null
 endfunction
+
+#endif

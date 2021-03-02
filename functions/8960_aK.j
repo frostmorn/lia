@@ -1,3 +1,5 @@
+#ifndef H_8960
+#define H_8960
 function aK takes nothing returns nothing
 local group g=CreateGroup()
 local unit Z=ax
@@ -23,3 +25,5 @@ set g=null
 set Z=null
 set f=null
 endfunction
+
+#endif

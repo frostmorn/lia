@@ -1,3 +1,5 @@
+#ifndef H_5010
+#define H_5010
 function YC takes unit zC,unit ac returns nothing
 local player ZC=GetOwningPlayer(ac)
 local player vd=GetOwningPlayer(zC)
@@ -57,3 +59,5 @@ set it=null
 set t=null
 set ad=null
 endfunction
+
+#endif

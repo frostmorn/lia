@@ -1,3 +1,5 @@
+#ifndef H_13250
+#define H_13250
 function MithrilArmor___OnActions takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -25,3 +27,5 @@ set caster=null
 set first=null
 set t=null
 endfunction
+
+#endif

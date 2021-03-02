@@ -1,3 +1,5 @@
+#ifndef H_9290
+#define H_9290
 function SK takes nothing returns nothing
 local unit u=GetEnumUnit()
 local unit uA=GetSpellAbilityUnit()
@@ -11,3 +13,5 @@ set u=null
 set uA=null
 set p=null
 endfunction
+
+#endif

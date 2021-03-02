@@ -1,3 +1,5 @@
+#ifndef H_11950
+#define H_11950
 function sq takes nothing returns nothing
 local unit u=GetResearchingUnit()
 local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
@@ -46,3 +48,5 @@ set u=null
 set p=null
 set gN=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6760
+#define H_6760
 function PG takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local player p=GetOwningPlayer(u)
@@ -52,3 +54,5 @@ set p=null
 set c=null
 set l=null
 endfunction
+
+#endif

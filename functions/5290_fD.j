@@ -1,3 +1,5 @@
+#ifndef H_5290
+#define H_5290
 function fD takes nothing returns nothing
 local integer In=1
 call RemoveDestructable(OI)
@@ -72,3 +74,5 @@ set boss_ids[17]='n02A'
 set boss_ids[18]='n02C'
 set boss_ids[19]='n01U'
 endfunction
+
+#endif

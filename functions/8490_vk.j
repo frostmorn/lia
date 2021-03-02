@@ -1,3 +1,5 @@
+#ifndef H_8490
+#define H_8490
 function vk takes nothing returns nothing
 local unit u
 local integer JN
@@ -26,3 +28,5 @@ endif
 endif
 set u=null
 endfunction
+
+#endif

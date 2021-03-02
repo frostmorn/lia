@@ -1,3 +1,5 @@
+#ifndef H_6170
+#define H_6170
 function Vg takes nothing returns nothing
 local unit uA
 local unit uT
@@ -86,3 +88,5 @@ set wB=null
 set t=null
 set ad=null
 endfunction
+
+#endif

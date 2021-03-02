@@ -1,3 +1,5 @@
+#ifndef H_4400
+#define H_4400
 function vc takes unit cB,player p returns nothing
 local unit TB=cB
 local integer In=1
@@ -31,3 +33,5 @@ call TriggerExecute(mO)
 endif
 set TB=null
 endfunction
+
+#endif

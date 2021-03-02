@@ -1,3 +1,5 @@
+#ifndef H_130
+#define H_130
 function s__Table__GTable__allocate takes nothing returns integer
 local integer this=si__Table__GTable_F
 if(this!=0)then
@@ -13,3 +15,5 @@ set si__Table__GTable_type[this]=1
 set si__Table__GTable_V[this]=-1
 return this
 endfunction
+
+#endif

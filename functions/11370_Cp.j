@@ -1,3 +1,5 @@
+#ifndef H_11370
+#define H_11370
 function Cp takes nothing returns nothing
 local integer i
 local integer In=1
@@ -249,3 +251,5 @@ set d=null
 set L=null
 call TimerStart(CreateTimer(),.5,false,function cp)
 endfunction
+
+#endif

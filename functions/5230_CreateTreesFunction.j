@@ -1,3 +1,5 @@
+#ifndef H_5230
+#define H_5230
 function CreateTreesFunction takes nothing returns nothing
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,-512.,0,1,6)
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],-2880.,-384.,0,1,10)
@@ -148,3 +150,5 @@ call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,1472.,0,1,5)
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],3200.,1344.,0,1,2)
 call CreateDestructable(arrayTreeTypes[treeTypeIndex],3072.,1536.,0,1,2)
 endfunction
+
+#endif

@@ -1,5 +1,7 @@
 #ifndef H_13510
 #define H_13510
+#ifndef H_13510
+#define H_13510
 #ifdef NEW_INCLUDES
     #include "60_DMesg.j"
     #include "150_sc__SpellEvent___spellEvent_onDestroy.j"
@@ -1593,4 +1595,5 @@ call ConditionalTriggerExecute(qa)
 call InitTrig_SettingsTrueCast()
 call RunInitializationTriggers()
 endfunction
+#endif
 #endif

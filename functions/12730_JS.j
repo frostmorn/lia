@@ -1,3 +1,5 @@
+#ifndef H_12730
+#define H_12730
 function JS takes nothing returns nothing
 local unit u=GetManipulatingUnit()
 local item it=GetManipulatedItem()
@@ -14,3 +16,5 @@ set u=null
 set it=null
 set ti=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_13010
+#define H_13010
 function ChainsOfLight___onCast takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=s__SpellEvent___spellEvent_TargetX[SpellEvent]
@@ -45,3 +47,5 @@ set t=null
 set caster=null
 set first=null
 endfunction
+
+#endif

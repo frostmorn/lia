@@ -1,3 +1,5 @@
+#ifndef H_9280
+#define H_9280
 function sK takes unit kN,unit Ph returns nothing
 local unit u=kN
 local unit c=Ph
@@ -24,3 +26,5 @@ set c=null
 set p=null
 set Lj=null
 endfunction
+
+#endif

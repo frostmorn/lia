@@ -1,3 +1,5 @@
+#ifndef H_4470
+#define H_4470
 function Nc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -13,3 +15,5 @@ call SaveInteger(Ax,1,dN,In+1)
 endif
 set t=null
 endfunction
+
+#endif

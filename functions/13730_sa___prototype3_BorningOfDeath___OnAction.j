@@ -1,3 +1,5 @@
+#ifndef H_13730
+#define H_13730
 function sa___prototype3_BorningOfDeath___OnAction takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -72,3 +74,5 @@ set caster=null
 set dummy=null
 return true
 endfunction
+
+#endif

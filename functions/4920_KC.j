@@ -1,3 +1,5 @@
+#ifndef H_4920
+#define H_4920
 function KC takes integer ID,boolean lC returns integer
 local integer wN=160
 local integer In=1
@@ -303,3 +305,5 @@ endloop
 endif
 return 0
 endfunction
+
+#endif

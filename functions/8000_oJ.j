@@ -1,3 +1,5 @@
+#ifndef H_8000
+#define H_8000
 function oJ takes nothing returns nothing
 local timer t
 local integer dN
@@ -16,3 +18,5 @@ endif
 set u=null
 set t=null
 endfunction
+
+#endif

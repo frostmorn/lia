@@ -1,3 +1,5 @@
+#ifndef H_6040
+#define H_6040
 function uF takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A0G4')
@@ -36,3 +38,5 @@ set g=null
 set L=null
 set p=null
 endfunction
+
+#endif

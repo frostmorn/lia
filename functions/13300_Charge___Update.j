@@ -1,3 +1,5 @@
+#ifndef H_13300
+#define H_13300
 function Charge___Update takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -58,3 +60,5 @@ set target=null
 set first=null
 set dummy=null
 endfunction
+
+#endif

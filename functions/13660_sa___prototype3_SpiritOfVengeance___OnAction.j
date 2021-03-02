@@ -1,3 +1,5 @@
+#ifndef H_13660
+#define H_13660
 function sa___prototype3_SpiritOfVengeance___OnAction takes nothing returns boolean
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -27,3 +29,5 @@ set caster=null
 set dummy=null
 return true
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_10980
+#define H_10980
 function iM takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local timer tt=CreateTimer()
@@ -8,3 +10,5 @@ call DestroyTimer(t)
 set t=null
 set tt=null
 endfunction
+
+#endif

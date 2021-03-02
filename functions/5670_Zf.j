@@ -1,3 +1,5 @@
+#ifndef H_5670
+#define H_5670
 function Zf takes nothing returns nothing
 local unit u=GetTriggerUnit()
 local unit f
@@ -18,3 +20,5 @@ endif
 set u=null
 set f=null
 endfunction
+
+#endif

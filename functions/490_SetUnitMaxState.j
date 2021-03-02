@@ -1,3 +1,5 @@
+#ifndef H_490
+#define H_490
 function SetUnitMaxState takes unit u,unitstate state,real newValue returns nothing
 local integer stateAbility
 local integer newVal=R2I(newValue)
@@ -31,3 +33,5 @@ set i=i-1
 endif
 endloop
 endfunction
+
+#endif

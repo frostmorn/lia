@@ -1,3 +1,5 @@
+#ifndef H_6390
+#define H_6390
 function Pg takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -12,3 +14,5 @@ set t=null
 set u=null
 set uA=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_10050
+#define H_10050
 function kL takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -21,3 +23,5 @@ set g=null
 set f=null
 set uA=null
 endfunction
+
+#endif

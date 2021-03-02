@@ -1,3 +1,5 @@
+#ifndef H_6160
+#define H_6160
 function ng takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer SC=GetHandleId(t)
@@ -29,3 +31,5 @@ call FlushChildHashtable(Ax,SC)
 set ac=null
 set t=null
 endfunction
+
+#endif

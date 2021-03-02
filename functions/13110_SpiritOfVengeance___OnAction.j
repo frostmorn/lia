@@ -1,3 +1,5 @@
+#ifndef H_13110
+#define H_13110
 function SpiritOfVengeance___OnAction takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -26,3 +28,5 @@ set SoV_Owner[GetPlayerId(GetOwningPlayer(caster))]=caster
 set caster=null
 set dummy=null
 endfunction
+
+#endif

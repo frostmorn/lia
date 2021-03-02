@@ -1,3 +1,5 @@
+#ifndef H_3960
+#define H_3960
 function tb takes nothing returns nothing
 local integer In=0
 loop
@@ -11,3 +13,5 @@ call RemoveUnit(px[7])
 set px[7]=CreateUnitAtLoc(Player(15),'n01T',GetRectCenter(gg_rct_ri),bj_UNIT_FACING)
 call DisableTrigger(mR)
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_8170
+#define H_8170
 function dJ takes nothing returns nothing
 local unit KG=GetSpellAbilityUnit()
 local group g
@@ -10,3 +12,5 @@ call DestroyGroup(g)
 set KG=null
 set g=null
 endfunction
+
+#endif

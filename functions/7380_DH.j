@@ -1,3 +1,5 @@
+#ifndef H_7380
+#define H_7380
 function DH takes nothing returns nothing
 local integer WF
 local unit wF
@@ -14,3 +16,5 @@ endif
 endif
 set wF=null
 endfunction
+
+#endif

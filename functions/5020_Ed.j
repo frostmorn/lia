@@ -1,3 +1,5 @@
+#ifndef H_5020
+#define H_5020
 function Ed takes unit ac returns nothing
 local integer cv=xo
 local integer rd=GetUnitAbilityLevel(ac,pC(3))
@@ -10,3 +12,5 @@ set qC=I2R(GetHeroAgi(ac,true))*PC(rd)
 set qC=cv*qC
 call uC(ac,GetUnitX(ac),GetUnitY(ac),PC(4),qC,false)
 endfunction
+
+#endif

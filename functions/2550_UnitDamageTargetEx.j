@@ -1,3 +1,5 @@
+#ifndef H_2550
+#define H_2550
 function UnitDamageTargetEx takes unit source,unit target,real damage,integer damageType,boolean ConsiderArmor returns boolean
 local boolean b=false
 set IDDS___DamageType=damageType
@@ -17,3 +19,5 @@ set IDDS___DamageSource=null
 endif
 return b
 endfunction
+
+#endif

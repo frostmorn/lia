@@ -1,3 +1,5 @@
+#ifndef H_13470
+#define H_13470
 function BorningOfDeath___OnAction takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=GetUnitX(caster)
@@ -71,3 +73,5 @@ endif
 set caster=null
 set dummy=null
 endfunction
+
+#endif

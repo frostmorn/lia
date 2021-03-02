@@ -1,3 +1,5 @@
+#ifndef H_9380
+#define H_9380
 function zK takes nothing returns nothing
 local integer Id=GetSpellAbilityId()
 local integer JN
@@ -33,3 +35,5 @@ set uA=null
 set T=null
 set f=null
 endfunction
+
+#endif

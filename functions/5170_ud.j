@@ -1,3 +1,5 @@
+#ifndef H_5170
+#define H_5170
 function ud takes player Ud returns nothing
 local integer wd=0
 local integer Wd=0
@@ -61,3 +63,5 @@ set VA[5]=0
 set VA[6]=0
 set VA[7]=0
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_420
+#define H_420
 function FlexibleSpeed___SpeedUpdate takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -19,3 +21,5 @@ endif
 set u=null
 set t=null
 endfunction
+
+#endif

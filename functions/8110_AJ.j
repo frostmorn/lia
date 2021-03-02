@@ -1,3 +1,5 @@
+#ifndef H_8110
+#define H_8110
 function AJ takes nothing returns nothing
 local integer In=0
 local unit KG=mo
@@ -24,3 +26,5 @@ set KG=null
 set p=null
 set u=null
 endfunction
+
+#endif

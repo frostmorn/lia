@@ -1,3 +1,5 @@
+#ifndef H_12340
+#define H_12340
 function EnableTestModeFunction takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set je=true
@@ -7,3 +9,5 @@ call EnableTrigger(KR)
 call EnableTrigger(lR)
 call EnableTrigger(LR)
 endfunction
+
+#endif

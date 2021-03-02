@@ -1,3 +1,5 @@
+#ifndef H_3660
+#define H_3660
 function CN takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -11,3 +13,5 @@ call DestroyTimer(t)
 set c=null
 set t=null
 endfunction
+
+#endif

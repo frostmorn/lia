@@ -1,3 +1,5 @@
+#ifndef H_7680
+#define H_7680
 function Nj takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local timer t=CreateTimer()
@@ -7,3 +9,5 @@ call TimerStart(t,.0,false,function Aj)
 set u=null
 set t=null
 endfunction
+
+#endif

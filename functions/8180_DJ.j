@@ -1,3 +1,5 @@
+#ifndef H_8180
+#define H_8180
 function DJ takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 if(GetSpellAbilityId()=='A0IO')then
@@ -10,3 +12,5 @@ call DestroyTrigger(hx)
 endif
 set u=null
 endfunction
+
+#endif

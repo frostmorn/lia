@@ -1,3 +1,5 @@
+#ifndef H_10320
+#define H_10320
 function Hm takes nothing returns nothing
 local item it=GetManipulatedItem()
 local unit u=GetManipulatingUnit()
@@ -36,3 +38,5 @@ endif
 set u=null
 set it=null
 endfunction
+
+#endif

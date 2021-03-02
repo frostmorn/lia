@@ -1,3 +1,5 @@
+#ifndef H_5250
+#define H_5250
 function BD takes nothing returns nothing
 local timer t=GetExpiredTimer()
 if He==false and Wx==false then
@@ -9,3 +11,5 @@ endif
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

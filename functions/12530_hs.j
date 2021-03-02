@@ -1,3 +1,5 @@
+#ifndef H_12530
+#define H_12530
 function hs takes nothing returns nothing
 local integer N=0
 local integer In=1
@@ -15,3 +17,5 @@ endif
 set In=In+1
 endloop
 endfunction
+
+#endif

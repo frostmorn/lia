@@ -1,3 +1,5 @@
+#ifndef H_3860
+#define H_3860
 function Ab takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local texttag tt
@@ -10,3 +12,5 @@ call DestroyTimer(t)
 set t=null
 set tt=null
 endfunction
+
+#endif

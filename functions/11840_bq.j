@@ -1,3 +1,5 @@
+#ifndef H_11840
+#define H_11840
 function bq takes nothing returns nothing
 local unit u1=GetDyingUnit()
 local unit u2=GetChangingUnit()
@@ -55,3 +57,5 @@ set u1=null
 set u2=null
 set u=null
 endfunction
+
+#endif

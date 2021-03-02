@@ -1,3 +1,5 @@
+#ifndef H_4760
+#define H_4760
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
@@ -13,3 +15,5 @@ endif
 set u=null
 set p=null
 endfunction
+
+#endif

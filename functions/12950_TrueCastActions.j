@@ -1,3 +1,5 @@
+#ifndef H_12950
+#define H_12950
 function TrueCastActions takes nothing returns nothing
 local timer t
 local integer h
@@ -11,3 +13,5 @@ endif
 set t=null
 set u=null
 endfunction
+
+#endif

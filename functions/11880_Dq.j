@@ -1,3 +1,5 @@
+#ifndef H_11880
+#define H_11880
 function Dq takes unit td,integer fq returns boolean
 local integer ZA=0
 local item Fq
@@ -14,3 +16,5 @@ endloop
 set Fq=null
 return false
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4320
+#define H_4320
 function mB takes nothing returns nothing
 local group g=CreateGroup()
 local integer MB=CurrentWave
@@ -50,3 +52,5 @@ set f=null
 set p1=null
 set p2=null
 endfunction
+
+#endif

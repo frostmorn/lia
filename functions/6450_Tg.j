@@ -1,3 +1,5 @@
+#ifndef H_6450
+#define H_6450
 function Tg takes nothing returns nothing
 local group G=CreateGroup()
 local unit ac=GetSpellAbilityUnit()
@@ -22,3 +24,5 @@ set G=null
 set ac=null
 set t=null
 endfunction
+
+#endif

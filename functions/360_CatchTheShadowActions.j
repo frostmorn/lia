@@ -1,3 +1,5 @@
+#ifndef H_360
+#define H_360
 function CatchTheShadowActions takes nothing returns nothing
 local unit caster=GetSpellAbilityUnit()
 local real x=GetSpellTargetX()
@@ -46,3 +48,5 @@ set first=null
 set g=null
 set t=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_12770
+#define H_12770
 function MS takes nothing returns nothing
 local unit u=GetManipulatingUnit()
 local item it=GetManipulatedItem()
@@ -63,3 +65,5 @@ set t=null
 set it=null
 set u=null
 endfunction
+
+#endif

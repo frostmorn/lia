@@ -1,3 +1,5 @@
+#ifndef H_13030
+#define H_13030
 function ChainsOfLight___OnAttack takes nothing returns nothing
 local unit target=GetAttacker()
 local integer h=GetHandleId(target)
@@ -17,3 +19,5 @@ set DamageTypeAttack=true
 set attacker=null
 set target=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_8430
+#define H_8430
 function wJ takes unit u,real r returns nothing
 local texttag tt=CreateTextTag()
 call SetTextTagText(tt,I2S(R2I(r)),.0276)
@@ -7,3 +9,5 @@ call SetTextTagVelocity(tt,-.016,.032)
 call TriggerSleepAction(.75)
 call DestroyTextTag(tt)
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_12400
+#define H_12400
 function is takes nothing returns nothing
 if((Je==false))then
 set Je=true
@@ -7,3 +9,5 @@ set Je=false
 call UnitRemoveAbility(PlayersHeroArray[1],'A0A7')
 endif
 endfunction
+
+#endif

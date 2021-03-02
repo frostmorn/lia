@@ -1,3 +1,5 @@
+#ifndef H_12930
+#define H_12930
 function OH2 takes unit u returns nothing
 local unit uA=u
 local unit bC=Se
@@ -32,3 +34,5 @@ set RH=null
 set f=null
 set t=null
 endfunction
+
+#endif

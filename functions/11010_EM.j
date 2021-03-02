@@ -1,3 +1,5 @@
+#ifndef H_11010
+#define H_11010
 function EM takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local timer tt=CreateTimer()
@@ -8,3 +10,5 @@ call DestroyTimer(t)
 set t=null
 set tt=null
 endfunction
+
+#endif

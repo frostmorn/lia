@@ -1,3 +1,5 @@
+#ifndef H_7400
+#define H_7400
 function FH takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(uA,'A0AT')
@@ -27,3 +29,5 @@ set c=null
 set t=null
 set e=null
 endfunction
+
+#endif

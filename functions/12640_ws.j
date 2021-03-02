@@ -1,3 +1,5 @@
+#ifndef H_12640
+#define H_12640
 function ws takes unit u returns integer
 local integer i=0
 local integer Lb=0
@@ -10,3 +12,5 @@ set i=i+1
 endloop
 return Lb
 endfunction
+
+#endif

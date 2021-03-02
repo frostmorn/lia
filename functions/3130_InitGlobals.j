@@ -1,3 +1,5 @@
+#ifndef H_3130
+#define H_3130
 function InitGlobals takes nothing returns nothing
 local integer i=0
 set udg_UDex=0
@@ -92,3 +94,5 @@ set i=i+1
 endloop
 set udg_DamageEventAOEGroup=CreateGroup()
 endfunction
+
+#endif

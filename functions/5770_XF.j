@@ -1,3 +1,5 @@
+#ifndef H_5770
+#define H_5770
 function XF takes nothing returns nothing
 local unit u=GetLearningUnit()
 local player p=GetOwningPlayer(u)
@@ -11,3 +13,5 @@ call DestroyTrigger(bn)
 set p=null
 set u=null
 endfunction
+
+#endif

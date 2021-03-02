@@ -1,3 +1,5 @@
+#ifndef H_10180
+#define H_10180
 function ZL takes nothing returns nothing
 local group g1=CreateGroup()
 local group g2=CreateGroup()
@@ -29,3 +31,5 @@ set f1=null
 set f2=null
 set T=null
 endfunction
+
+#endif

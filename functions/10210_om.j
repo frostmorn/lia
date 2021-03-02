@@ -1,3 +1,5 @@
+#ifndef H_10210
+#define H_10210
 function om takes nothing returns nothing
 local group g=CreateGroup()
 local timer t=CreateTimer()
@@ -13,3 +15,5 @@ set g=null
 set t=null
 set uA=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6600
+#define H_6600
 function XG takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local location lT=GetSpellTargetLoc()
@@ -32,3 +34,5 @@ set f=null
 set g=null
 set gg=null
 endfunction
+
+#endif

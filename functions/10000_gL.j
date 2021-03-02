@@ -1,3 +1,5 @@
+#ifndef H_10000
+#define H_10000
 function gL takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -42,3 +44,5 @@ set pb=null
 set u=null
 set f=null
 endfunction
+
+#endif

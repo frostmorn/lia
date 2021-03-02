@@ -1,3 +1,5 @@
+#ifndef H_8580
+#define H_8580
 function Ek takes nothing returns nothing
 local unit u=Av
 local real Lg=290
@@ -37,3 +39,5 @@ set g=null
 set gg=null
 set u=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4280
+#define H_4280
 function kB takes nothing returns integer
 local integer In=1
 local integer wN=A
@@ -14,3 +16,5 @@ endloop
 set p=null
 return 0
 endfunction
+
+#endif

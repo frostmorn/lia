@@ -1,3 +1,5 @@
+#ifndef H_5260
+#define H_5260
 function cD takes nothing returns nothing
 local timer t=GetExpiredTimer()
 if Ex or no then
@@ -6,3 +8,5 @@ endif
 call DestroyTimer(t)
 set t=null
 endfunction
+
+#endif

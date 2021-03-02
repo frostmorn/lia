@@ -1,3 +1,5 @@
+#ifndef H_2300
+#define H_2300
 function s__TableBrArray__staticgetindex takes integer array_size returns integer
 local integer a=(LoadInteger(TableBr__ht,((1)),(array_size)))
 local integer this=(LoadInteger(TableBr__ht,(a),(0)))
@@ -11,3 +13,5 @@ endif
 call SaveInteger(TableBr__ht,((1)),(this),(array_size))
 return this
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_7970
+#define H_7970
 function Zj takes nothing returns nothing
 local unit uT
 local unit uA
@@ -38,3 +40,5 @@ set l=null
 set t=null
 set Lj=null
 endfunction
+
+#endif

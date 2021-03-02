@@ -1,3 +1,5 @@
+#ifndef H_2740
+#define H_2740
 function MissOnAttack___Init takes nothing returns nothing
 local trigger trig=CreateTrigger()
 local integer index
@@ -10,3 +12,5 @@ endloop
 call TriggerAddAction(trig,function OnAttackMissActions)
 set trig=null
 endfunction
+
+#endif

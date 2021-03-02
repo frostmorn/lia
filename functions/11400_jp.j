@@ -1,3 +1,5 @@
+#ifndef H_11400
+#define H_11400
 function jp takes nothing returns nothing
 call CreateMultiboardBJ(9,(A+4),"Cтaтиcтикa")
 set StatsBoard=bj_lastCreatedMultiboard
@@ -59,3 +61,5 @@ set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 call MultiboardDisplay(StatsBoard,true)
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_2990
+#define H_2990
 function RegisterSpellEventSpecial takes trigger trg,integer priority returns boolean
 if trg==null or priority<0 then
 return false
@@ -11,3 +13,5 @@ call SaveInteger(TableBr__ht,(SpellEventSpecial___TrigTable),((GetHandleId((trg)
 set SpellEventSpecial___Count=SpellEventSpecial___Count+1
 return SpellEventSpecial___TriggerSort()
 endfunction
+
+#endif

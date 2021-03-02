@@ -1,3 +1,5 @@
+#ifndef H_11290
+#define H_11290
 function Xp takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 if FN(u)then
@@ -11,3 +13,5 @@ call TriggerSleepAction(2)
 endif
 set u=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_11930
+#define H_11930
 function Kq takes nothing returns nothing
 local item it=GetManipulatedItem()
 local integer Id=GetItemTypeId(it)
@@ -26,3 +28,5 @@ set it=null
 set u=null
 set p=null
 endfunction
+
+#endif

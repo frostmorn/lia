@@ -1,3 +1,5 @@
+#ifndef H_11500
+#define H_11500
 function PrepareBeforeBRoundFunction takes nothing returns nothing
 local integer wN=A
 local integer bB=av
@@ -95,3 +97,5 @@ set t=null
 set Gd=null
 set tL=null
 endfunction
+
+#endif

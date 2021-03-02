@@ -1,3 +1,5 @@
+#ifndef H_13190
+#define H_13190
 function WillOfTheLight___Init takes nothing returns nothing
 local trigger trig=CreateTrigger()
 local integer i=0
@@ -21,3 +23,5 @@ set i=i+1
 endloop
 set trig=null
 endfunction
+
+#endif

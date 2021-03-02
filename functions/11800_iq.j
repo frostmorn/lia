@@ -1,3 +1,5 @@
+#ifndef H_11800
+#define H_11800
 function iq takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -28,3 +30,5 @@ set pd=null
 set l=null
 set t=null
 endfunction
+
+#endif

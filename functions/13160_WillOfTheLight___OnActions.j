@@ -1,3 +1,5 @@
+#ifndef H_13160
+#define H_13160
 function WillOfTheLight___OnActions takes nothing returns nothing
 local unit source=udg_DamageEventSource
 local unit target=udg_DamageEventTarget
@@ -13,3 +15,5 @@ endif
 set source=null
 set target=null
 endfunction
+
+#endif

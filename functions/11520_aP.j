@@ -1,3 +1,5 @@
+#ifndef H_11520
+#define H_11520
 function aP takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -44,3 +46,5 @@ set t=null
 set Gd=null
 set l=null
 endfunction
+
+#endif

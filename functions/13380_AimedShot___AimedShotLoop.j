@@ -1,3 +1,5 @@
+#ifndef H_13380
+#define H_13380
 function AimedShot___AimedShotLoop takes nothing returns nothing
 local timer ztimer=GetExpiredTimer()
 local integer zhandle=GetHandleId(ztimer)
@@ -68,3 +70,5 @@ set first=null
 set g=null
 set dummy=null
 endfunction
+
+#endif

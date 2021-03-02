@@ -1,3 +1,5 @@
+#ifndef H_3100
+#define H_3100
 function Void___VoidOnAction takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -66,3 +68,5 @@ set enemy=null
 set caster=null
 set first=null
 endfunction
+
+#endif

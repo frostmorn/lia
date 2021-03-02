@@ -1,3 +1,5 @@
+#ifndef H_10580
+#define H_10580
 function HeroInit1160785987 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set xx=u
@@ -20,3 +22,5 @@ call TriggerRegisterUnitEvent(QV,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddAction(QV,function YH)
 set u=null
 endfunction
+
+#endif

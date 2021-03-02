@@ -1,3 +1,5 @@
+#ifndef H_10760
+#define H_10760
 function HeroInit1211117619 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 local integer ED=0
@@ -36,3 +38,5 @@ call TriggerAddCondition(EX,Condition(function PK))
 call TriggerAddAction(EX,function qK)
 set u=null
 endfunction
+
+#endif

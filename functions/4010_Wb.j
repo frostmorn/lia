@@ -1,3 +1,5 @@
+#ifndef H_4010
+#define H_4010
 function Wb takes unit k,unit w returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -9,3 +11,5 @@ call TimerStart(t,.5,true,function wb)
 set t=null
 set e=null
 endfunction
+
+#endif

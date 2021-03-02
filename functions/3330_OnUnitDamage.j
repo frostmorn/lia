@@ -1,3 +1,5 @@
+#ifndef H_3330
+#define H_3330
 function OnUnitDamage takes nothing returns boolean
 local boolean override=udg_DamageEventOverride
 local integer i
@@ -135,3 +137,5 @@ set u=null
 set f=null
 return false
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_9850
+#define H_9850
 function aL takes nothing returns nothing
 local unit u=GetSpellTargetUnit()
 local real nL=GetUnitState(u,UNIT_STATE_MAX_LIFE)
@@ -26,3 +28,5 @@ set p=null
 set u=null
 set T=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_380
+#define H_380
 function CausticFinale___CausticFinaleNewAction takes nothing returns nothing
 local trigger trig=GetTriggeringTrigger()
 local integer id=GetHandleId(trig)
@@ -54,3 +56,5 @@ set target=null
 set g=null
 set first=null
 endfunction
+
+#endif

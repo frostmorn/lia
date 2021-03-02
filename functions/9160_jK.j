@@ -1,3 +1,5 @@
+#ifndef H_9160
+#define H_9160
 function jK takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -61,3 +63,5 @@ set f=null
 set c=null
 set tt=null
 endfunction
+
+#endif

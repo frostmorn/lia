@@ -1,3 +1,5 @@
+#ifndef H_2400
+#define H_2400
 function EasyMath takes real r returns integer
 local real rAx=r
 local real rBx
@@ -12,3 +14,5 @@ set iAx=R2I(rBx)+iMix
 endif
 return iAx
 endfunction
+
+#endif

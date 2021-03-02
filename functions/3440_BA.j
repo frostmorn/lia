@@ -1,3 +1,5 @@
+#ifndef H_3440
+#define H_3440
 function BA takes real cA returns nothing
 local real CA
 local real st=TimerGetElapsed(EA)
@@ -17,3 +19,5 @@ endif
 endloop
 endif
 endfunction
+
+#endif

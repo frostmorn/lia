@@ -1,3 +1,5 @@
+#ifndef H_7930
+#define H_7930
 function Wj takes nothing returns nothing
 local location T=GetSpellTargetLoc()
 local integer Id=GetSpellAbilityId()
@@ -22,3 +24,5 @@ set f=null
 set p=null
 set t=null
 endfunction
+
+#endif

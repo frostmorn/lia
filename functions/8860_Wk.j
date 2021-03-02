@@ -1,3 +1,5 @@
+#ifndef H_8860
+#define H_8860
 function Wk takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer id=GetHandleId(t)
@@ -30,3 +32,5 @@ set t=null
 set u=null
 set pb=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4090
+#define H_4090
 function oB takes nothing returns nothing
 local unit f
 local group g=CreateGroup()
@@ -18,3 +20,5 @@ set f=null
 set g=null
 set p=null
 endfunction
+
+#endif

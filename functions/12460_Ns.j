@@ -1,3 +1,5 @@
+#ifndef H_12460
+#define H_12460
 function Ns takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local player sw=Ce
@@ -130,3 +132,5 @@ set l1=null
 set l2=null
 set s=null
 endfunction
+
+#endif

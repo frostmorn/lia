@@ -1,3 +1,5 @@
+#ifndef H_5790
+#define H_5790
 function RF takes nothing returns nothing
 local unit IF=GetKillingUnit()
 local unit AF=GetDyingUnit()
@@ -20,3 +22,5 @@ endif
 set IF=null
 set AF=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_9150
+#define H_9150
 function HK takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -9,3 +11,5 @@ call DestroyTimer(t)
 set pb=null
 set t=null
 endfunction
+
+#endif

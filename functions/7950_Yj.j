@@ -1,3 +1,5 @@
+#ifndef H_7950
+#define H_7950
 function Yj takes nothing returns nothing
 local group g
 local unit u
@@ -41,3 +43,5 @@ set c=null
 set p=null
 set u=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_11060
+#define H_11060
 function AM takes nothing returns nothing
 local group g=CreateGroup()
 local integer i=1
@@ -47,3 +49,5 @@ set g=null
 set p=null
 set f=null
 endfunction
+
+#endif

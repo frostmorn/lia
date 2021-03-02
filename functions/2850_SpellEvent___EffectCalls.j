@@ -1,3 +1,5 @@
+#ifndef H_2850
+#define H_2850
 function SpellEvent___EffectCalls takes nothing returns nothing
 local integer i=0
 local integer id=GetSpellAbilityId()
@@ -13,3 +15,5 @@ call TriggerEvaluate(st___prototype3[(((LoadInteger(Table__ht,((SpellEvent___Eff
 endif
 set SpellEvent=previous
 endfunction
+
+#endif

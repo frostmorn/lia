@@ -1,3 +1,5 @@
+#ifndef H_11860
+#define H_11860
 function Cq takes nothing returns nothing
 local item it=GetManipulatedItem()
 local unit u=GetTriggerUnit()
@@ -20,3 +22,5 @@ set it=null
 set u=null
 set p=null
 endfunction
+
+#endif

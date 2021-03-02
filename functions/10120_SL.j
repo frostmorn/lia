@@ -1,3 +1,5 @@
+#ifndef H_10120
+#define H_10120
 function SL takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -11,3 +13,5 @@ set t=null
 set uA=null
 set qL=null
 endfunction
+
+#endif

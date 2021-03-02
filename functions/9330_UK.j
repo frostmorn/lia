@@ -1,3 +1,5 @@
+#ifndef H_9330
+#define H_9330
 function UK takes nothing returns nothing
 local unit u=Ov
 local unit d=GetDyingUnit()
@@ -9,3 +11,5 @@ endif
 set u=null
 set d=null
 endfunction
+
+#endif

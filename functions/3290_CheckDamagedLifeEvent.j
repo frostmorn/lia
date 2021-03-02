@@ -1,3 +1,5 @@
+#ifndef H_3290
+#define H_3290
 function CheckDamagedLifeEvent takes boolean clear returns nothing
 if clear then
 set udg_NextDamageOverride=false
@@ -28,3 +30,5 @@ endif
 call DmgEvResetVars()
 endif
 endfunction
+
+#endif

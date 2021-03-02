@@ -1,3 +1,5 @@
+#ifndef H_3570
+#define H_3570
 function tA takes nothing returns nothing
 local integer pickedItemId
 local itemtype TA
@@ -37,3 +39,5 @@ endif
 call QA(TA,UA)
 set TA=null
 endfunction
+
+#endif

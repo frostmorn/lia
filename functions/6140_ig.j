@@ -1,3 +1,5 @@
+#ifndef H_6140
+#define H_6140
 function ig takes nothing returns nothing
 local unit ac=GetTriggerUnit()
 local unit zC=GetAttacker()
@@ -11,3 +13,5 @@ endif
 set zC=null
 set ac=null
 endfunction
+
+#endif

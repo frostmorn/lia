@@ -1,3 +1,5 @@
+#ifndef H_8310
+#define H_8310
 function mJ takes nothing returns boolean
 local unit u=GetFilterUnit()
 local integer golem_fire_rage_level = GetUnitAbilityLevel(Fv,'A02Z')
@@ -18,3 +20,5 @@ endif
 set u=null
 return false
 endfunction
+
+#endif

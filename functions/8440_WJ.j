@@ -1,3 +1,5 @@
+#ifndef H_8440
+#define H_8440
 function WJ takes nothing returns nothing
 local unit u=GetTriggerUnit()
 local unit VF=GetAttacker()
@@ -17,3 +19,5 @@ endif
 set u=null
 set VF=null
 endfunction
+
+#endif

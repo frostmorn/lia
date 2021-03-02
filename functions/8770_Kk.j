@@ -1,3 +1,5 @@
+#ifndef H_8770
+#define H_8770
 function Kk takes nothing returns nothing
 local timer t
 local integer dN
@@ -11,3 +13,5 @@ endif
 set u=null
 set t=null
 endfunction
+
+#endif

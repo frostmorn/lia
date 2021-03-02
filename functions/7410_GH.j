@@ -1,3 +1,5 @@
+#ifndef H_7410
+#define H_7410
 function GH takes nothing returns nothing
 local unit wF
 local integer WF
@@ -12,3 +14,5 @@ endif
 endif
 set wF=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4880
+#define H_4880
 function fC takes nothing returns nothing
 local boolean FC=(false)
 local unit du=GetTriggerUnit()
@@ -41,3 +43,5 @@ set gC=null
 set du=null
 set e=null
 endfunction
+
+#endif

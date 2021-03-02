@@ -1,3 +1,5 @@
+#ifndef H_12750
+#define H_12750
 function LS takes nothing returns integer
 local integer r
 set r=GetRandomInt(0,'d')
@@ -63,3 +65,5 @@ else
 return'I06C'
 endif
 endfunction
+
+#endif

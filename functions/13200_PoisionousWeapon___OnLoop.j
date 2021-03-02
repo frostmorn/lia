@@ -1,3 +1,5 @@
+#ifndef H_13200
+#define H_13200
 function PoisionousWeapon___OnLoop takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer h=GetHandleId(t)
@@ -35,3 +37,5 @@ endif
 set t=null
 set target=null
 endfunction
+
+#endif

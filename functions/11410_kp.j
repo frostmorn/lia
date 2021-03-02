@@ -1,3 +1,5 @@
+#ifndef H_11410
+#define H_11410
 function kp takes nothing returns nothing
 local unit u=GetLevelingUnit()
 local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
@@ -10,3 +12,5 @@ call TriggerExecute(mO)
 endif
 set u=null
 endfunction
+
+#endif

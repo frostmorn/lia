@@ -1,3 +1,5 @@
+#ifndef H_8370
+#define H_8370
 function sJ takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local integer vC=GetUnitAbilityLevel(uA,'A04K')
@@ -10,3 +12,5 @@ call UnitApplyTimedLife(wI,'BTLF',1)
 call GroupEnumUnitsInRange(JI,GetSpellTargetX(),GetSpellTargetY(),475.,Condition(function QJ))
 set uA=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_10420
+#define H_10420
 function HeroInit1211117653 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 call AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl",u,"hand,left")
@@ -22,3 +24,5 @@ call TriggerAddCondition(Ln,Condition(function Eg))
 call TriggerAddAction(Ln,function Xg)
 set u=null
 endfunction
+
+#endif

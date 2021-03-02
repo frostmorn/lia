@@ -1,3 +1,5 @@
+#ifndef H_5810
+#define H_5810
 function bF takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -8,3 +10,5 @@ call DestroyTimer(t)
 set t=null
 set c=null
 endfunction
+
+#endif

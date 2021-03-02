@@ -1,3 +1,5 @@
+#ifndef H_12620
+#define H_12620
 function Ts takes unit u,integer id,item UB returns nothing
 local integer In=1
 local item it
@@ -11,3 +13,5 @@ endloop
 call SetItemCharges(it,GetItemCharges(it)+GetItemCharges(UB))
 set it=null
 endfunction
+
+#endif

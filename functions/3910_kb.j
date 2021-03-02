@@ -1,3 +1,5 @@
+#ifndef H_3910
+#define H_3910
 function kb takes unit u,item it returns nothing
 if GetItemTypeId(it)=='I07P' then
 call UnitRemoveAbility(u,'A0HO')
@@ -36,3 +38,5 @@ endif
 set it=null
 set u=null
 endfunction
+
+#endif

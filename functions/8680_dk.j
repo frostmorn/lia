@@ -1,3 +1,5 @@
+#ifndef H_8680
+#define H_8680
 function dk takes nothing returns nothing
 local unit VF=GetAttacker()
 local unit ed=GetTriggerUnit()
@@ -37,3 +39,5 @@ set g=null
 set l=null
 set f=null
 endfunction
+
+#endif

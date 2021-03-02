@@ -1,3 +1,5 @@
+#ifndef H_4510
+#define H_4510
 function gc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer In=1
@@ -19,3 +21,5 @@ call DestroyTimer(t)
 set t=null
 set T=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_5310
+#define H_5310
 function GD takes nothing returns nothing
 local unit u1
 local unit u2
@@ -56,3 +58,5 @@ set g=null
 set u1=null
 set u2=null
 endfunction
+
+#endif

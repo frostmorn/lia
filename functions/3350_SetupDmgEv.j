@@ -1,3 +1,5 @@
+#ifndef H_3350
+#define H_3350
 function SetupDmgEv takes nothing returns boolean
 local integer i=udg_UDex
 local unit u
@@ -32,3 +34,5 @@ endif
 endif
 return false
 endfunction
+
+#endif

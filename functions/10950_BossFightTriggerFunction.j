@@ -1,3 +1,5 @@
+#ifndef H_10950
+#define H_10950
 function BossFightTriggerFunction takes nothing returns nothing
 local timer t=CreateTimer()
 local timer t2=CreateTimer()
@@ -60,3 +62,5 @@ set t3=null
 set t4=null
 set t5=null
 endfunction
+
+#endif

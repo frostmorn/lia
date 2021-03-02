@@ -1,3 +1,5 @@
+#ifndef H_5590
+#define H_5590
 function Qf takes nothing returns nothing
 local unit uA=GetAttacker()
 local unit c=Ko
@@ -35,3 +37,5 @@ set sf=null
 set f=null
 set g=null
 endfunction
+
+#endif

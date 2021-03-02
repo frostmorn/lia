@@ -1,3 +1,5 @@
+#ifndef H_10020
+#define H_10020
 function HL takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local unit f=LoadUnitHandle(Ax,1,GetHandleId(t))
@@ -8,3 +10,5 @@ call DestroyTimer(t)
 set t=null
 set f=null
 endfunction
+
+#endif

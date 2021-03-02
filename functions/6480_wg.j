@@ -1,3 +1,5 @@
+#ifndef H_6480
+#define H_6480
 function wg takes nothing returns nothing
 local integer Wg
 local real nd
@@ -26,3 +28,5 @@ call TriggerRegisterUnitEvent(sI,u,EVENT_UNIT_DEATH)
 set xr=null
 set u=null
 endfunction
+
+#endif

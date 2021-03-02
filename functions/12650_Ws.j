@@ -1,3 +1,5 @@
+#ifndef H_12650
+#define H_12650
 function Ws takes unit u,integer ys,boolean Ys,boolean zs returns boolean
 local integer ZA=0
 local integer Zs=0
@@ -28,3 +30,5 @@ endif
 set Fq=null
 return false
 endfunction
+
+#endif

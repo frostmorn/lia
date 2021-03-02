@@ -1,3 +1,5 @@
+#ifndef H_4560
+#define H_4560
 function lc takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
@@ -21,3 +23,5 @@ call DestroyGroup(g)
 set g=null
 set f=null
 endfunction
+
+#endif

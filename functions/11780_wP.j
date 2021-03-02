@@ -1,3 +1,5 @@
+#ifndef H_11780
+#define H_11780
 function wP takes nothing returns nothing
 local integer WP=mv
 local integer In=1
@@ -44,3 +46,5 @@ call MultiboardSetItemValueBJ(StatsBoard,6,In,I2S(ZP))
 call MultiboardSetItemValueBJ(StatsBoard,5,In,I2S(zP))
 call MultiboardSetItemValueBJ(StatsBoard,4,In,I2S(YP))
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_6270
+#define H_6270
 function dg takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local location T=GetSpellTargetLoc()
@@ -58,3 +60,5 @@ set e[3]=null
 set e[4]=null
 set e[5]=null
 endfunction
+
+#endif

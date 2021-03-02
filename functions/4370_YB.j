@@ -1,3 +1,5 @@
+#ifndef H_4370
+#define H_4370
 function YB takes nothing returns nothing
 local integer N=0
 local integer In=1
@@ -10,3 +12,5 @@ endif
 set In=In+1
 endloop
 endfunction
+
+#endif

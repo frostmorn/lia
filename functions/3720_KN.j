@@ -1,3 +1,5 @@
+#ifndef H_3720
+#define H_3720
 function KN takes string s returns string
 local string kN
 if(s=="screameffect")then
@@ -13,3 +15,5 @@ set kN="overhead"
 endif
 return kN
 endfunction
+
+#endif

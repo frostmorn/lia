@@ -1,3 +1,5 @@
+#ifndef H_12740
+#define H_12740
 function lS takes integer id returns integer
 if id=='vamp' then
 return'I07G'
@@ -13,3 +15,5 @@ return'I07J'
 endif
 return 0
 endfunction
+
+#endif

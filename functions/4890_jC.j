@@ -1,3 +1,5 @@
+#ifndef H_4890
+#define H_4890
 function jC takes nothing returns nothing
 local player p=Player(15)
 local real Ec=bj_UNIT_FACING
@@ -83,3 +85,5 @@ call SetUnitAnimation(px[9],"work")
 set p=null
 set u=null
 endfunction
+
+#endif

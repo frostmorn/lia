@@ -1,3 +1,5 @@
+#ifndef H_11460
+#define H_11460
 function Tp takes nothing returns nothing
 local integer R=0
 local boolean array up
@@ -49,3 +51,5 @@ endloop
 set GB=GB+1
 endloop
 endfunction
+
+#endif

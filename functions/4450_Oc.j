@@ -1,3 +1,5 @@
+#ifndef H_4450
+#define H_4450
 function Oc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -15,3 +17,5 @@ set Rc=Rc+1
 call SaveInteger(Ax,1,dN,Rc)
 set t=null
 endfunction
+
+#endif

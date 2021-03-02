@@ -1,3 +1,5 @@
+#ifndef H_11640
+#define H_11640
 function fP takes nothing returns nothing
 local integer In=1
 local integer vB=mv
@@ -79,3 +81,5 @@ set t4=null
 set g=null
 set L=null
 endfunction
+
+#endif

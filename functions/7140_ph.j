@@ -1,3 +1,5 @@
+#ifndef H_7140
+#define H_7140
 function ph takes nothing returns nothing
 local unit Ph=GetSpellAbilityUnit()
 local location qh=GetSpellTargetLoc()
@@ -17,3 +19,5 @@ set Ph=null
 set qh=null
 set t=null
 endfunction
+
+#endif

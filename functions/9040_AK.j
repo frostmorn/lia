@@ -1,3 +1,5 @@
+#ifndef H_9040
+#define H_9040
 function AK takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local integer JN=GetUnitAbilityLevel(u,'A034')
@@ -13,3 +15,5 @@ call TimerStart(t,15,false,function IK)
 set t=null
 set u=null
 endfunction
+
+#endif

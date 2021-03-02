@@ -1,3 +1,5 @@
+#ifndef H_7860
+#define H_7860
 function Pj takes nothing returns nothing
 local integer qj=GetUnitAbilityLevel(GetTriggerUnit(),GetSpellAbilityId())
 local trigger pb
@@ -33,3 +35,5 @@ set t=null
 set Qj=null
 set e=null
 endfunction
+
+#endif

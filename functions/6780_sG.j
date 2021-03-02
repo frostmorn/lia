@@ -1,3 +1,5 @@
+#ifndef H_6780
+#define H_6780
 function sG takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -66,3 +68,5 @@ set f=null
 set l=null
 set t2=null
 endfunction
+
+#endif

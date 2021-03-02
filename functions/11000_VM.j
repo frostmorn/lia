@@ -1,3 +1,5 @@
+#ifndef H_11000
+#define H_11000
 function VM takes nothing returns nothing
 local timer tt=GetExpiredTimer()
 local integer Jd=GetHandleId(tt)
@@ -12,3 +14,5 @@ call SaveInteger(Ax,1,Jd,In+1)
 endif
 set tt=null
 endfunction
+
+#endif

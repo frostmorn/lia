@@ -1,3 +1,5 @@
+#ifndef H_3750
+#define H_3750
 function mN takes nothing returns nothing
 local texttag tt=LoadTextTagHandle(gI,GetHandleId(jo),12)
 if IsPlayerAlly(GetLocalPlayer(),GetOwningPlayer(jo))then
@@ -8,3 +10,5 @@ endif
 call SetTextTagPosUnit(tt,jo,.0)
 set tt=null
 endfunction
+
+#endif

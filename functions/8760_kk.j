@@ -1,3 +1,5 @@
+#ifndef H_8760
+#define H_8760
 function kk takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -22,3 +24,5 @@ set p=null
 set l=null
 set f=null
 endfunction
+
+#endif

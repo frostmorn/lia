@@ -1,3 +1,5 @@
+#ifndef H_5980
+#define H_5980
 function qF takes nothing returns nothing
 local unit VF=GetEventDamageSource()
 local unit ed=GetTriggerUnit()
@@ -55,3 +57,5 @@ set g=null
 set T=null
 set f=null
 endfunction
+
+#endif

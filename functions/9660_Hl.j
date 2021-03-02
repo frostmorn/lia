@@ -1,3 +1,5 @@
+#ifndef H_9660
+#define H_9660
 function Hl takes nothing returns nothing
 local unit uE=GetEnumUnit()
 local unit u=qe
@@ -19,3 +21,5 @@ set u=null
 set e=null
 set t=null
 endfunction
+
+#endif

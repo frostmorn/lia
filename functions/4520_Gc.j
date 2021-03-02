@@ -1,3 +1,5 @@
+#ifndef H_4520
+#define H_4520
 function Gc takes nothing returns nothing
 local timer fc
 local integer Fc
@@ -85,3 +87,5 @@ set p2[2]=null
 set p2[3]=null
 set p2[4]=null
 endfunction
+
+#endif

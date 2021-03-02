@@ -1,3 +1,5 @@
+#ifndef H_13740
+#define H_13740
 function jasshelper__initstructs29827921 takes nothing returns nothing
 set st__Table__GTable_onDestroy[1]=CreateTrigger()
 set st__Table__GTable_onDestroy[2]=st__Table__GTable_onDestroy[1]
@@ -59,3 +61,5 @@ set st___prototype3[14]=CreateTrigger()
 call TriggerAddAction(st___prototype3[14],function sa___prototype3_BorningOfDeath___OnAction)
 call TriggerAddCondition(st___prototype3[14],Condition(function sa___prototype3_BorningOfDeath___OnAction))
 endfunction
+
+#endif

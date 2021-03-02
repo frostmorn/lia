@@ -1,3 +1,5 @@
+#ifndef H_11870
+#define H_11870
 function dq takes nothing returns nothing
 local integer i=0
 set xR=CreateTrigger()
@@ -9,3 +11,5 @@ endloop
 call TriggerAddAction(xR,function Cq)
 call TriggerAddCondition(xR,Condition(function cq))
 endfunction
+
+#endif

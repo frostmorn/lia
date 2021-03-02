@@ -1,3 +1,5 @@
+#ifndef H_20
+#define H_20
 function CameraAutoSetup takes nothing returns nothing
 local integer player_iterator = 0
 loop
@@ -6,3 +8,5 @@ set player_iterator = player_iterator+1
 exitwhen player_iterator==11
 endloop
 endfunction
+
+#endif

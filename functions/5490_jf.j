@@ -1,3 +1,5 @@
+#ifndef H_5490
+#define H_5490
 function jf takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer id=(1+GetPlayerId(p))
@@ -8,3 +10,5 @@ call Xc(p)
 endif
 set p=null
 endfunction
+
+#endif

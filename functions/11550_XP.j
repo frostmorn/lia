@@ -1,3 +1,5 @@
+#ifndef H_11550
+#define H_11550
 function XP takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -10,3 +12,5 @@ call TimerDialogSetTitle(d,"Раунд")
 set t=null
 set d=null
 endfunction
+
+#endif

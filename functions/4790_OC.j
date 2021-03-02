@@ -1,3 +1,5 @@
+#ifndef H_4790
+#define H_4790
 function OC takes player p returns nothing
 local string RC=GetPlayerName(p)
 local integer ec=ee[GetPlayerId(p)+1]
@@ -101,3 +103,5 @@ set t=null
 set NC=null
 set IC=null
 endfunction
+
+#endif

@@ -1,3 +1,5 @@
+#ifndef H_4680
+#define H_4680
 function uc takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
@@ -39,3 +41,5 @@ set u2=null
 set it=null
 set UB=null
 endfunction
+
+#endif

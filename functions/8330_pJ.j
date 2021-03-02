@@ -1,3 +1,5 @@
+#ifndef H_8330
+#define H_8330
 function pJ takes nothing returns nothing
 local unit uA=GetSpellAbilityUnit()
 local integer Id=GetSpellAbilityId()
@@ -7,3 +9,5 @@ call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\MarkOfChaos
 endif
 set uA=null
 endfunction
+
+#endif

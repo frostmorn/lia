@@ -1,3 +1,5 @@
+#ifndef H_6820
+#define H_6820
 function wG takes nothing returns nothing
 local timer t=CreateTimer()
 local integer dN=GetHandleId(t)
@@ -17,3 +19,5 @@ set uA=null
 set t=null
 set e=null
 endfunction
+
+#endif

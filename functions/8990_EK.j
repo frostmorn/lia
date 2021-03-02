@@ -1,3 +1,5 @@
+#ifndef H_8990
+#define H_8990
 function EK takes nothing returns nothing
 local real DC=GetEventDamage()
 local unit uA=GetTriggerUnit()
@@ -20,3 +22,5 @@ set pb=null
 set uA=null
 set t=null
 endfunction
+
+#endif

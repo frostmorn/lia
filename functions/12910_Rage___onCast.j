@@ -1,3 +1,5 @@
+#ifndef H_12910
+#define H_12910
 function Rage___onCast takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local timer t
@@ -19,3 +21,5 @@ endif
 set t=null
 set caster=null
 endfunction
+
+#endif

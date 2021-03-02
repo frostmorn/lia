@@ -1,3 +1,5 @@
+#ifndef H_4770
+#define H_4770
 function EC takes nothing returns nothing
 local integer In
 local group g
@@ -14,3 +16,5 @@ set In=In+1
 endloop
 set g=null
 endfunction
+
+#endif
