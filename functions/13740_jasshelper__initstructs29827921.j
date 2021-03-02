@@ -21,7 +21,7 @@
 #include "13710_sa___prototype3_DemonicRage___DemonicRageActions.j"
 #include "13720_sa___prototype3_EssenceOfShadow___OnAction.j"
 #include "13730_sa___prototype3_BorningOfDeath___OnAction.j"
-
+#include "13735_sa___prototype32_s__TableBrArray_clean.j"
 function jasshelper__initstructs29827921 takes nothing returns nothing
 set st__Table__GTable_onDestroy[1]=CreateTrigger()
 set st__Table__GTable_onDestroy[2]=st__Table__GTable_onDestroy[1]
@@ -82,6 +82,9 @@ call TriggerAddCondition(st___prototype3[13],Condition(function sa___prototype3_
 set st___prototype3[14]=CreateTrigger()
 call TriggerAddAction(st___prototype3[14],function sa___prototype3_BorningOfDeath___OnAction)
 call TriggerAddCondition(st___prototype3[14],Condition(function sa___prototype3_BorningOfDeath___OnAction))
+set st___prototype32[1]=CreateTrigger()
+call TriggerAddAction(st___prototype32[1],function sa___prototype32_s__TableBrArray_clean)
+call TriggerAddCondition(st___prototype32[1],Condition(function sa___prototype32_s__TableBrArray_clean))
 endfunction
 
 #endif
