@@ -16,7 +16,7 @@ if GetUnitAbilityLevel(target,'BNic')>0 then
 call CausticFinaleNew(source,target)
 endif
 endif
-if notAffect==false and GetUnitAbilityLevel(source,'A0IW')>0 and GetRandomInt(1,100)<=50 then
+if notAffect==false and GetUnitAbilityLevel(source,DinamiteShot___SPELL_ID)>0 and GetRandomInt(1,100)<=50 then
 call DinamiteShotActions(source,target)
 endif
 if GetUnitAbilityLevel(target,'A0JA')>0 and IsUnitEnemy(target,GetOwningPlayer(source))then
