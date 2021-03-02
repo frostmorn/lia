@@ -1,3 +1,5 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
 globals
 hashtable HashData=InitHashtable()
 group array CatchTheShadowGroup
@@ -1077,5 +1079,6 @@ boolean f__result_boolean
 //  0 - disabled
 //  1 - enabled
 //
-integer debug_method = 0
+integer debug_method = 1
 endglobals
+#endif
