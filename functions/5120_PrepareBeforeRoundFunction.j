@@ -15,6 +15,10 @@ local timer Hd=CreateTimer()
 local integer jd=GetHandleId(Hd)
 local integer Jd=GetHandleId(tt)
 local timerdialog fN
+#ifdef D_5120
+#define D_5120
+call DMesg("Entering PrepareBeforeRoundFunction")
+#endif
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
 call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 loop
@@ -77,7 +81,7 @@ set t=null
 return
 else
 call EnableTrigger(IsReadyTrig)
-call DMesg("IsReadyTrig enabled")
+//call DMesg("IsReadyTrig enabled")
 call ModifyGateBJ(1,ho)
 set Hv=false
 endif

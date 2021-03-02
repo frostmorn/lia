@@ -1,5 +1,7 @@
 #ifndef H_11130
 #define H_11130
+#include "5120_PrepareBeforeRoundFunction.j"
+
 function PM takes nothing returns nothing
 local boolexpr b=Condition(function pM)
 local timer t=CreateTimer()
@@ -17,6 +19,10 @@ endif
 set ye=false
 call eC()
 call PrepareBeforeRoundFunction()
+#ifdef D_5120
+#define D_5120
+call DMesg("Call PrepareBeforeRoundFunction from 11130")
+#endif
 set Wv=true
 call TimerStart(t,6.25,false,function Ub)
 endif

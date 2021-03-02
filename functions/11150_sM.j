@@ -8,7 +8,6 @@ call DisableTrigger(CO)
 call DisableTrigger(eA)
 set iv=false
 call DisableTrigger(AO)
-call DMesg("Trigger AO Disabled")
 call DisableTrigger(XO)
 call DisableTrigger(nO)
 loop
@@ -20,6 +19,10 @@ endloop
 call ud(GetOwningPlayer(GetKillingUnit()))
 call eC()
 call PrepareBeforeRoundFunction()
+#ifdef D_5120
+#define D_5120
+call DMesg("Call PrepareBeforeRoundFunction from 11150")
+#endif
 set Wv=true
 call TimerStart(t,6.25,false,function Ub)
 set t=null

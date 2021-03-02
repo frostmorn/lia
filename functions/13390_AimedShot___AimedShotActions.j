@@ -14,7 +14,9 @@ local integer ehandle=GetHandleId(etimer)
 local group g=CreateGroup()
 local boolean first=true
 local unit dummy
+#ifdef D_13390
 call DMesg("Испепелитель: Entering 13390_AimedShot___AimedShotActions")
+#endif
 call TerrainDeformationWaveBJ(1.00,Location(x,y),Location(dx,dy),200.00,96.00,0)
 set dx=GetUnitX(caster)+50.00*Cos(angle*bj_DEGTORAD)
 set dy=GetUnitY(caster)+50.00*Sin(angle*bj_DEGTORAD)
