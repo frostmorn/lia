@@ -1079,6 +1079,10 @@ boolean f__result_boolean
 //  0 - disabled
 //  1 - enabled
 //
+#ifdef DEBUG
 integer debug_method = 1
+#else
+integer debug_method = 0
+#endif
 endglobals
 #endif
