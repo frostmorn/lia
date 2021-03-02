@@ -7,6 +7,7 @@ local string bC
 local timer t
 local timer tt
 local boolean b=Ro
+#ifndef DEBUG_NO_WAVE_DESCRIPTIONS
 loop
 exitwhen In>7
 call DisplayTimedTextToPlayer(Player(In),0,0,14,"|cffffcc00Волна - "+I2S(CurrentWave)+": "+wave_small_descriptions[CurrentWave]+"|R")
@@ -135,6 +136,7 @@ exitwhen In>7
 call DisplayTimedTextToPlayer(Player(In),0,0,15,bC)
 set In=In+1
 endloop
+#endif
 if MB==20 then
 set t=CreateTimer()
 call TimerStart(t,3,false,function wM)
