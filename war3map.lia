@@ -1,4 +1,12 @@
-#include "globals.lia"    
+#include "globals.lia"
+#ifdef DEBUG
+#define D_5120
+#define DEBUG_NO_WAVE_DESCRIPTIONS    
+#define DEBUG_NOCLEAR_MESSAGES
+#endif
+// This actually brokes passive DemonicRage ability, but it doesn't
+// stuck at round end.
+#define TMP_FIX_3390
 #include "functions/10_IsPlayerOnline.j"
 #include "functions/20_CameraAutoSetup.j"
 #include "functions/30_EN.j"
