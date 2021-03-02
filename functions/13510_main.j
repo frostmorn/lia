@@ -235,8 +235,9 @@
     #include "13660_sa___prototype3_SpiritOfVengeance___OnAction.j"
     #include "13680_sa___prototype3_Charge___onCast.j"
     #include "13690_sa___prototype3_Charge___onPrecast.j"
-    #include "13740_jasshelper__initstructs29827921.j"
 #endif
+
+#include "13740_jasshelper__initstructs29827921.j"
 function main takes nothing returns nothing
 local weathereffect we
 local destructable d
@@ -259,27 +260,26 @@ call SetAmbientNightSound( "DalaranNight" )
 call SetMapMusic( "Music", true, 0 )
 call CreateRegions()
 call InitBlizzard()
-call ExecuteFunc("jasshelper__initstructs29827921")
-call ExecuteFunc("BurningArmor___Init")
-call ExecuteFunc("CatchTheShadow___Init")
-call ExecuteFunc("FlexibleSpeed___Init")
-call ExecuteFunc("MagicLumpRegeneration___Init")
-call ExecuteFunc("SetUnitMaxState___Initialize")
-call ExecuteFunc("StatMod___Init")
-call ExecuteFunc("ArmorUtils__Init")
-
-call ExecuteFunc("IDDS___Init")         // Magic lump could not work without that, I suppose...
-call ExecuteFunc("MissOnAttack___Init")
-call ExecuteFunc("SpellEvent___Init")
-call ExecuteFunc("SpellEventSpecial___Init")
-call ExecuteFunc("DarkRitual___Init")
-call ExecuteFunc("MagicLump___Init")
-call ExecuteFunc("Void___Init")
+call jasshelper__initstructs29827921()
+call BurningArmor___Init()
+call CatchTheShadow___Init()
+call FlexibleSpeed___Init()
+call MagicLumpRegeneration___Init()
+call SetUnitMaxState___Initialize()
+call StatMod___Init()
+call ArmorUtils__Init()
+#ifdef IDDS_ENABLED
+call IDDS___Init()
+#endif
+call MissOnAttack___Init()
+call SpellEvent___Init()
+call SpellEventSpecial___Init()
+call DarkRitual___Init()
+call MagicLump___Init()
+call Void___Init()
 call DamageMod__Init()
 call Rage___Init()
-#ifdef H_12990
 call ButchersRage___Init()
-#endif
 call ChainsOfLight___Init()
 call ItsReady___Init()
 call HeroLimit___Init()
@@ -404,8 +404,8 @@ set bj_stockItemPurchased=CreateTrigger()
 call TriggerRegisterPlayerUnitEvent(bj_stockItemPurchased,Player(15),EVENT_PLAYER_UNIT_SELL_ITEM,null)
 call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
 call DetectGameStarted()
-call ExecuteFunc("rN")
-call ExecuteFunc("BN")
+call rN()
+call BN()
 set i=0
 set i=0
 loop
