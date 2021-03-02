@@ -1075,6 +1075,7 @@ integer f__arg_integer2
 integer f__arg_this
 integer f__result_integer
 boolean f__result_boolean
+trigger array st___prototype32
 //  debug_method
 //  0 - disabled
 //  1 - enabled

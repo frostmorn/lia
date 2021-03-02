@@ -1,5 +1,11 @@
 #ifndef H_2700
 #define H_2700
+#include "250_s__Table__allocate.j"
+#include "2670_IDDS___Run.j"
+#include "2640_IDDS___RunConditions.j"
+#include "2650_IDDS___AddConditions.j"
+#include "2680_IDDS___Load.j"
+#include "2690_IDDS___PreloadUnits.j"
 function IDDS___Init takes nothing returns nothing
 local rect r=GetWorldBounds()
 local region re=CreateRegion()

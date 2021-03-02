@@ -6,7 +6,8 @@
 #endif
 // This actually brokes passive DemonicRage ability, but it doesn't
 // stuck at round end.
-#define TMP_FIX_3390
+#define TMP_FIX_3390 0
+#define IDDS_ENABLED 0
 #include "functions/10_IsPlayerOnline.j"
 #include "functions/20_CameraAutoSetup.j"
 #include "functions/30_EN.j"
@@ -20,34 +21,36 @@
 #include "functions/110_IsUnitOnBigArena.j"
 
 // Not used anywhere
-// #include "functions/120_sc__Table__GTable_onDestroy.j"
+#include "functions/120_sc__Table__GTable_onDestroy.j"
 
 #include "functions/130_s__Table__GTable__allocate.j"
 
 // Not used anywhere
-// #include "functions/140_sc__Table__GTable_deallocate.j"
-// #include "functions/150_sc__SpellEvent___spellEvent_onDestroy.j"
+#include "functions/140_sc__Table__GTable_deallocate.j"
+#include "functions/150_sc__SpellEvent___spellEvent_onDestroy.j"
 
 #include "functions/160_s__SpellEvent___spellEvent__allocate.j"
 
 // Not used anywhere
-// #include "functions/170_sc__SpellEvent___spellEvent_deallocate.j"
-// #include "functions/180_sc__TableBr__getindex.j"
-// #include "functions/190_sc__TableBr__setindex.j"
-// #include "functions/200_sc__TableBr_has.j"
-// #include "functions/210_sc__TableBr_remove.j"
+#include "functions/170_sc__SpellEvent___spellEvent_deallocate.j"
+#include "functions/180_sc__TableBr__getindex.j"
+#include "functions/190_sc__TableBr__setindex.j"
+#include "functions/200_sc__TableBr_has.j"
+#include "functions/210_sc__TableBr_remove.j"
 
 #include "functions/220_sc__TableBr_create.j"
 #include "functions/230_s__HandleTable__allocate.j"
 
 // Not used anywhere
-// #include "functions/240_s__StringTable__allocate.j"
+#include "functions/240_s__StringTable__allocate.j"
 
 #include "functions/250_s__Table__allocate.j"
 
 // Not used anywhere
-// #include "functions/260_sc___prototype3_execute.j"
-// #include "functions/270_sc___prototype3_evaluate.j"
+#include "functions/260_sc___prototype3_execute.j"
+#include "functions/270_sc___prototype3_evaluate.j"
+#include "functions/275_sc___prototype32_execute.j"
+#include "functions/277_sc___prototype32_evaluate.j"
 
 #include "functions/280_BurningArmorAdd.j"
 #include "functions/290_BurningArmor___OnConditions.j"
@@ -66,7 +69,7 @@
 #include "functions/420_FlexibleSpeed___SpeedUpdate.j"
 
 // Not used anywhere
-// #include "functions/430_AddMoveSpeed.j"
+#include "functions/430_AddMoveSpeed.j"
 
 #include "functions/440_FlexibleSpeed___Init.j"
 #include "functions/450_Loga.j"
@@ -79,7 +82,7 @@
 #include "functions/520_StatMod___BonusType.j"
 
 // Not used anywhere
-// #include "functions/530_BonusCount.j"
+#include "functions/530_BonusCount.j"
 
 #include "functions/540_AddStat.j"
 #include "functions/550_StatMod___Init.j"
@@ -87,244 +90,251 @@
 #include "functions/570_GetUnitZ.j"
 
 // Not used anywhere
-// #include "functions/580_SetUnitZ.j"
+#include "functions/580_SetUnitZ.j"
 
-// #include "functions/590_H2IT.j"
+#include "functions/590_H2IT.j"
 
-// #include "functions/600_IsUnitDummy.j"
+#include "functions/600_IsUnitDummy.j"
 
 #include "functions/610_KillTimer.j"
 
 
 // Not used anywhere
-// #include "functions/620_CloudofFogStatus.j"    
-// #include "functions/630_CloudofFogStatusSet.j" 
-// #include "functions/640_IsUnitAtArena.j"
+#include "functions/620_CloudofFogStatus.j"    
+#include "functions/630_CloudofFogStatusSet.j" 
+#include "functions/640_IsUnitAtArena.j"
 
-// #include "functions/650_SetUnitArenaStatus.j"
+#include "functions/650_SetUnitArenaStatus.j"
 
 #include "functions/660_GetDistance.j"                          // Used in 12090, 13300, 13320
 
 // Not used anywhere
-// #include "functions/670_s__Table__GTable_reset.j"
-// #include "functions/680_s__Table__GTable_onDestroy.j"
-// #include "functions/690_s__Table__getindex.j"
-// #include "functions/700_s__Table__setindex.j"
-// #include "functions/710_s__Table_flush.j"                    // Used in 730 but 730 not used anywhere
-// #include "functions/720_s__Table_exists.j"
-// #include "functions/730_s__Table_flush2D.j"             
+#include "functions/670_s__Table__GTable_reset.j"
+#include "functions/680_s__Table__GTable_onDestroy.j"
+#include "functions/690_s__Table__getindex.j"
+#include "functions/700_s__Table__setindex.j"
+#include "functions/710_s__Table_flush.j"                    // Used in 730 but 730 not used anywhere
+#include "functions/720_s__Table_exists.j"
+#include "functions/730_s__Table_flush2D.j"             
 
-// #include "functions/740_s__Table__staticgetindex.j"
-// #include "functions/750_s__StringTable__getindex.j"
-// #include "functions/760_s__StringTable__setindex.j"
-// #include "functions/770_s__StringTable_flush.j"              // Used in 790 but 790 not used anywhere
-// #include "functions/780_s__StringTable_exists.j"
-// #include "functions/790_s__StringTable_flush2D.j"
+#include "functions/740_s__Table__staticgetindex.j"
+#include "functions/750_s__StringTable__getindex.j"
+#include "functions/760_s__StringTable__setindex.j"
+#include "functions/770_s__StringTable_flush.j"              // Used in 790 but 790 not used anywhere
+#include "functions/780_s__StringTable_exists.j"
+#include "functions/790_s__StringTable_flush2D.j"
 
-// #include "functions/800_s__StringTable__staticgetindex.j"
-// #include "functions/810_s__HandleTable__getindex.j"
-// #include "functions/820_s__HandleTable__setindex.j"
-// #include "functions/830_s__HandleTable_flush.j"              // Used in 850 but 850 not used anywhere
-// #include "functions/840_s__HandleTable_exists.j"
-// #include "functions/850_s__HandleTable_flush2D.j"
+#include "functions/800_s__StringTable__staticgetindex.j"
+#include "functions/810_s__HandleTable__getindex.j"
+#include "functions/820_s__HandleTable__setindex.j"
+#include "functions/830_s__HandleTable_flush.j"              // Used in 850 but 850 not used anywhere
+#include "functions/840_s__HandleTable_exists.j"
+#include "functions/850_s__HandleTable_flush2D.j"
 
-// #include "functions/860_s__HandleTable__staticgetindex.j"
-// #include "functions/870_s__TableBr__dex__get_size.j"
-// #include "functions/880_s__TableBr__dex__get_list.j"
-// #include "functions/890_s__TableBr__handles_has.j"
-// #include "functions/900_s__TableBr__handles_remove.j"
-// #include "functions/910_s__TableBr__agents__setindex.j"
-// #include "functions/920_s__TableBr__reals__getindex.j"
-// #include "functions/930_s__TableBr__reals__setindex.j"
-// #include "functions/940_s__TableBr__reals_has.j"
-// #include "functions/950_s__TableBr__reals_remove.j"
-// #include "functions/960_s__TableBr__booleans__getindex.j"
-// #include "functions/970_s__TableBr__booleans__setindex.j"
-// #include "functions/980_s__TableBr__booleans_has.j"
-// #include "functions/990_s__TableBr__booleans_remove.j"
-// #include "functions/1000_s__TableBr__strings__getindex.j"
-// #include "functions/1010_s__TableBr__strings__setindex.j"
-// #include "functions/1020_s__TableBr__strings_has.j"
-// #include "functions/1030_s__TableBr__strings_remove.j"
-// #include "functions/1040_s__TableBr__players__getindex.j"
-// #include "functions/1050_s__TableBr__players__setindex.j"
-// #include "functions/1060_s__TableBr__widgets__getindex.j"
-// #include "functions/1070_s__TableBr__widgets__setindex.j"
-// #include "functions/1080_s__TableBr__destructables__getindex.j"
-// #include "functions/1090_s__TableBr__destructables__setindex.j"
-// #include "functions/1100_s__TableBr__items__getindex.j"
-// #include "functions/1110_s__TableBr__items__setindex.j"
-// #include "functions/1120_s__TableBr__units__getindex.j"
-// #include "functions/1130_s__TableBr__units__setindex.j"
-// #include "functions/1140_s__TableBr__abilitys__getindex.j"
-// #include "functions/1150_s__TableBr__abilitys__setindex.j"
-// #include "functions/1160_s__TableBr__timers__getindex.j"
-// #include "functions/1170_s__TableBr__timers__setindex.j"
-// #include "functions/1180_s__TableBr__triggers__getindex.j"
-// #include "functions/1190_s__TableBr__triggers__setindex.j"
-// #include "functions/1200_s__TableBr__triggerconditions__getindex.j"
-// #include "functions/1210_s__TableBr__triggerconditions__setindex.j"
-// #include "functions/1220_s__TableBr__triggeractions__getindex.j"
-// #include "functions/1230_s__TableBr__triggeractions__setindex.j"
-// #include "functions/1240_s__TableBr__events__getindex.j"
-// #include "functions/1250_s__TableBr__events__setindex.j"
-// #include "functions/1260_s__TableBr__forces__getindex.j"
-// #include "functions/1270_s__TableBr__forces__setindex.j"
-// #include "functions/1280_s__TableBr__groups__getindex.j"
-// #include "functions/1290_s__TableBr__groups__setindex.j"
-// #include "functions/1300_s__TableBr__locations__getindex.j"
-// #include "functions/1310_s__TableBr__locations__setindex.j"
-// #include "functions/1320_s__TableBr__rects__getindex.j"
-// #include "functions/1330_s__TableBr__rects__setindex.j"
-// #include "functions/1340_s__TableBr__boolexprs__getindex.j"
-// #include "functions/1350_s__TableBr__boolexprs__setindex.j"
-// #include "functions/1360_s__TableBr__sounds__getindex.j"
-// #include "functions/1370_s__TableBr__sounds__setindex.j"
-// #include "functions/1380_s__TableBr__effects__getindex.j"
-// #include "functions/1390_s__TableBr__effects__setindex.j"
-// #include "functions/1400_s__TableBr__unitpools__getindex.j"
-// #include "functions/1410_s__TableBr__unitpools__setindex.j"
-// #include "functions/1420_s__TableBr__itempools__getindex.j"
-// #include "functions/1430_s__TableBr__itempools__setindex.j"
-// #include "functions/1440_s__TableBr__quests__getindex.j"
-// #include "functions/1450_s__TableBr__quests__setindex.j"
-// #include "functions/1460_s__TableBr__questitems__getindex.j"
-// #include "functions/1470_s__TableBr__questitems__setindex.j"
-// #include "functions/1480_s__TableBr__defeatconditions__getindex.j"
-// #include "functions/1490_s__TableBr__defeatconditions__setindex.j"
-// #include "functions/1500_s__TableBr__timerdialogs__getindex.j"
-// #include "functions/1510_s__TableBr__timerdialogs__setindex.j"
-// #include "functions/1520_s__TableBr__leaderboards__getindex.j"
-// #include "functions/1530_s__TableBr__leaderboards__setindex.j"
-// #include "functions/1540_s__TableBr__multiboards__getindex.j"
-// #include "functions/1550_s__TableBr__multiboards__setindex.j"
-// #include "functions/1560_s__TableBr__multiboarditems__getindex.j"
-// #include "functions/1570_s__TableBr__multiboarditems__setindex.j"
-// #include "functions/1580_s__TableBr__trackables__getindex.j"
-// #include "functions/1590_s__TableBr__trackables__setindex.j"
-// #include "functions/1600_s__TableBr__dialogs__getindex.j"
-// #include "functions/1610_s__TableBr__dialogs__setindex.j"
-// #include "functions/1620_s__TableBr__buttons__getindex.j"
-// #include "functions/1630_s__TableBr__buttons__setindex.j"
-// #include "functions/1640_s__TableBr__texttags__getindex.j"
-// #include "functions/1650_s__TableBr__texttags__setindex.j"
-// #include "functions/1660_s__TableBr__lightnings__getindex.j"
-// #include "functions/1670_s__TableBr__lightnings__setindex.j"
-// #include "functions/1680_s__TableBr__images__getindex.j"
-// #include "functions/1690_s__TableBr__images__setindex.j"
-// #include "functions/1700_s__TableBr__ubersplats__getindex.j"
-// #include "functions/1710_s__TableBr__ubersplats__setindex.j"
-// #include "functions/1720_s__TableBr__regions__getindex.j"
-// #include "functions/1730_s__TableBr__regions__setindex.j"
-// #include "functions/1740_s__TableBr__fogstates__getindex.j"
-// #include "functions/1750_s__TableBr__fogstates__setindex.j"
-// #include "functions/1760_s__TableBr__fogmodifiers__getindex.j"
-// #include "functions/1770_s__TableBr__fogmodifiers__setindex.j"
-// #include "functions/1780_s__TableBr__hashtables__getindex.j"
-// #include "functions/1790_s__TableBr__hashtables__setindex.j"
-// #include "functions/1800_s__TableBr__get_real.j"
-// #include "functions/1810_s__TableBr__get_boolean.j"
-// #include "functions/1820_s__TableBr__get_string.j"
-// #include "functions/1830_s__TableBr__get_player.j"
-// #include "functions/1840_s__TableBr__get_widget.j"
-// #include "functions/1850_s__TableBr__get_destructable.j"
-// #include "functions/1860_s__TableBr__get_item.j"
-// #include "functions/1870_s__TableBr__get_unit.j"
-// #include "functions/1880_s__TableBr__get_ability.j"
-// #include "functions/1890_s__TableBr__get_timer.j"
-// #include "functions/1900_s__TableBr__get_trigger.j"
-// #include "functions/1910_s__TableBr__get_triggercondition.j"
-// #include "functions/1920_s__TableBr__get_triggeraction.j"
-// #include "functions/1930_s__TableBr__get_event.j"
-// #include "functions/1940_s__TableBr__get_force.j"
-// #include "functions/1950_s__TableBr__get_group.j"
-// #include "functions/1960_s__TableBr__get_location.j"
-// #include "functions/1970_s__TableBr__get_rect.j"
-// #include "functions/1980_s__TableBr__get_boolexpr.j"
-// #include "functions/1990_s__TableBr__get_sound.j"
-// #include "functions/2000_s__TableBr__get_effect.j"
-// #include "functions/2010_s__TableBr__get_unitpool.j"
-// #include "functions/2020_s__TableBr__get_itempool.j"
-// #include "functions/2030_s__TableBr__get_quest.j"
-// #include "functions/2040_s__TableBr__get_questitem.j"
-// #include "functions/2050_s__TableBr__get_defeatcondition.j"
-// #include "functions/2060_s__TableBr__get_timerdialog.j"
-// #include "functions/2070_s__TableBr__get_leaderboard.j"
-// #include "functions/2080_s__TableBr__get_multiboard.j"
-// #include "functions/2090_s__TableBr__get_multiboarditem.j"
-// #include "functions/2100_s__TableBr__get_trackable.j"
-// #include "functions/2110_s__TableBr__get_dialog.j"
-// #include "functions/2120_s__TableBr__get_button.j"
-// #include "functions/2130_s__TableBr__get_texttag.j"
-// #include "functions/2140_s__TableBr__get_lightning.j"
-// #include "functions/2150_s__TableBr__get_image.j"
-// #include "functions/2160_s__TableBr__get_ubersplat.j"
-// #include "functions/2170_s__TableBr__get_region.j"
-// #include "functions/2180_s__TableBr__get_fogstate.j"
-// #include "functions/2190_s__TableBr__get_fogmodifier.j"
-// #include "functions/2200_s__TableBr__get_hashtable.j"
-// #include "functions/2210_s__TableBr__get_handle.j"
-// #include "functions/2220_s__TableBr__get_agent.j"
-// #include "functions/2230_s__TableBr__getindex.j"
-// #include "functions/2240_s__TableBr__setindex.j"
-// #include "functions/2250_s__TableBr_has.j"
-// #include "functions/2260_s__TableBr_remove.j"
-// #include "functions/2270_s__TableBr_flush.j"
+#include "functions/860_s__HandleTable__staticgetindex.j"
+#include "functions/870_s__TableBr__dex__get_size.j"
+#include "functions/880_s__TableBr__dex__get_list.j"
+#include "functions/890_s__TableBr__handles_has.j"
+#include "functions/900_s__TableBr__handles_remove.j"
+#include "functions/910_s__TableBr__agents__setindex.j"
+#include "functions/920_s__TableBr__reals__getindex.j"
+#include "functions/930_s__TableBr__reals__setindex.j"
+#include "functions/940_s__TableBr__reals_has.j"
+#include "functions/950_s__TableBr__reals_remove.j"
+#include "functions/960_s__TableBr__booleans__getindex.j"
+#include "functions/970_s__TableBr__booleans__setindex.j"
+#include "functions/980_s__TableBr__booleans_has.j"
+#include "functions/990_s__TableBr__booleans_remove.j"
+#include "functions/1000_s__TableBr__strings__getindex.j"
+#include "functions/1010_s__TableBr__strings__setindex.j"
+#include "functions/1020_s__TableBr__strings_has.j"
+#include "functions/1030_s__TableBr__strings_remove.j"
+#include "functions/1040_s__TableBr__players__getindex.j"
+#include "functions/1050_s__TableBr__players__setindex.j"
+#include "functions/1060_s__TableBr__widgets__getindex.j"
+#include "functions/1070_s__TableBr__widgets__setindex.j"
+#include "functions/1080_s__TableBr__destructables__getindex.j"
+#include "functions/1090_s__TableBr__destructables__setindex.j"
+#include "functions/1100_s__TableBr__items__getindex.j"
+#include "functions/1110_s__TableBr__items__setindex.j"
+#include "functions/1120_s__TableBr__units__getindex.j"
+#include "functions/1130_s__TableBr__units__setindex.j"
+#include "functions/1140_s__TableBr__abilitys__getindex.j"
+#include "functions/1150_s__TableBr__abilitys__setindex.j"
+#include "functions/1160_s__TableBr__timers__getindex.j"
+#include "functions/1170_s__TableBr__timers__setindex.j"
+#include "functions/1180_s__TableBr__triggers__getindex.j"
+#include "functions/1190_s__TableBr__triggers__setindex.j"
+#include "functions/1200_s__TableBr__triggerconditions__getindex.j"
+#include "functions/1210_s__TableBr__triggerconditions__setindex.j"
+#include "functions/1220_s__TableBr__triggeractions__getindex.j"
+#include "functions/1230_s__TableBr__triggeractions__setindex.j"
+#include "functions/1240_s__TableBr__events__getindex.j"
+#include "functions/1250_s__TableBr__events__setindex.j"
+#include "functions/1260_s__TableBr__forces__getindex.j"
+#include "functions/1270_s__TableBr__forces__setindex.j"
+#include "functions/1280_s__TableBr__groups__getindex.j"
+#include "functions/1290_s__TableBr__groups__setindex.j"
+#include "functions/1300_s__TableBr__locations__getindex.j"
+#include "functions/1310_s__TableBr__locations__setindex.j"
+#include "functions/1320_s__TableBr__rects__getindex.j"
+#include "functions/1330_s__TableBr__rects__setindex.j"
+#include "functions/1340_s__TableBr__boolexprs__getindex.j"
+#include "functions/1350_s__TableBr__boolexprs__setindex.j"
+#include "functions/1360_s__TableBr__sounds__getindex.j"
+#include "functions/1370_s__TableBr__sounds__setindex.j"
+#include "functions/1380_s__TableBr__effects__getindex.j"
+#include "functions/1390_s__TableBr__effects__setindex.j"
+#include "functions/1400_s__TableBr__unitpools__getindex.j"
+#include "functions/1410_s__TableBr__unitpools__setindex.j"
+#include "functions/1420_s__TableBr__itempools__getindex.j"
+#include "functions/1430_s__TableBr__itempools__setindex.j"
+#include "functions/1440_s__TableBr__quests__getindex.j"
+#include "functions/1450_s__TableBr__quests__setindex.j"
+#include "functions/1460_s__TableBr__questitems__getindex.j"
+#include "functions/1470_s__TableBr__questitems__setindex.j"
+#include "functions/1480_s__TableBr__defeatconditions__getindex.j"
+#include "functions/1490_s__TableBr__defeatconditions__setindex.j"
+#include "functions/1500_s__TableBr__timerdialogs__getindex.j"
+#include "functions/1510_s__TableBr__timerdialogs__setindex.j"
+#include "functions/1520_s__TableBr__leaderboards__getindex.j"
+#include "functions/1530_s__TableBr__leaderboards__setindex.j"
+#include "functions/1540_s__TableBr__multiboards__getindex.j"
+#include "functions/1550_s__TableBr__multiboards__setindex.j"
+#include "functions/1560_s__TableBr__multiboarditems__getindex.j"
+#include "functions/1570_s__TableBr__multiboarditems__setindex.j"
+#include "functions/1580_s__TableBr__trackables__getindex.j"
+#include "functions/1590_s__TableBr__trackables__setindex.j"
+#include "functions/1600_s__TableBr__dialogs__getindex.j"
+#include "functions/1610_s__TableBr__dialogs__setindex.j"
+#include "functions/1620_s__TableBr__buttons__getindex.j"
+#include "functions/1630_s__TableBr__buttons__setindex.j"
+#include "functions/1640_s__TableBr__texttags__getindex.j"
+#include "functions/1650_s__TableBr__texttags__setindex.j"
+#include "functions/1660_s__TableBr__lightnings__getindex.j"
+#include "functions/1670_s__TableBr__lightnings__setindex.j"
+#include "functions/1680_s__TableBr__images__getindex.j"
+#include "functions/1690_s__TableBr__images__setindex.j"
+#include "functions/1700_s__TableBr__ubersplats__getindex.j"
+#include "functions/1710_s__TableBr__ubersplats__setindex.j"
+#include "functions/1720_s__TableBr__regions__getindex.j"
+#include "functions/1730_s__TableBr__regions__setindex.j"
+#include "functions/1740_s__TableBr__fogstates__getindex.j"
+#include "functions/1750_s__TableBr__fogstates__setindex.j"
+#include "functions/1760_s__TableBr__fogmodifiers__getindex.j"
+#include "functions/1770_s__TableBr__fogmodifiers__setindex.j"
+#include "functions/1780_s__TableBr__hashtables__getindex.j"
+#include "functions/1790_s__TableBr__hashtables__setindex.j"
+#include "functions/1800_s__TableBr__get_real.j"
+#include "functions/1810_s__TableBr__get_boolean.j"
+#include "functions/1820_s__TableBr__get_string.j"
+#include "functions/1830_s__TableBr__get_player.j"
+#include "functions/1840_s__TableBr__get_widget.j"
+#include "functions/1850_s__TableBr__get_destructable.j"
+#include "functions/1860_s__TableBr__get_item.j"
+#include "functions/1870_s__TableBr__get_unit.j"
+#include "functions/1880_s__TableBr__get_ability.j"
+#include "functions/1890_s__TableBr__get_timer.j"
+#include "functions/1900_s__TableBr__get_trigger.j"
+#include "functions/1910_s__TableBr__get_triggercondition.j"
+#include "functions/1920_s__TableBr__get_triggeraction.j"
+#include "functions/1930_s__TableBr__get_event.j"
+#include "functions/1940_s__TableBr__get_force.j"
+#include "functions/1950_s__TableBr__get_group.j"
+#include "functions/1960_s__TableBr__get_location.j"
+#include "functions/1970_s__TableBr__get_rect.j"
+#include "functions/1980_s__TableBr__get_boolexpr.j"
+#include "functions/1990_s__TableBr__get_sound.j"
+#include "functions/2000_s__TableBr__get_effect.j"
+#include "functions/2010_s__TableBr__get_unitpool.j"
+#include "functions/2020_s__TableBr__get_itempool.j"
+#include "functions/2030_s__TableBr__get_quest.j"
+#include "functions/2040_s__TableBr__get_questitem.j"
+#include "functions/2050_s__TableBr__get_defeatcondition.j"
+#include "functions/2060_s__TableBr__get_timerdialog.j"
+#include "functions/2070_s__TableBr__get_leaderboard.j"
+#include "functions/2080_s__TableBr__get_multiboard.j"
+#include "functions/2090_s__TableBr__get_multiboarditem.j"
+#include "functions/2100_s__TableBr__get_trackable.j"
+#include "functions/2110_s__TableBr__get_dialog.j"
+#include "functions/2120_s__TableBr__get_button.j"
+#include "functions/2130_s__TableBr__get_texttag.j"
+#include "functions/2140_s__TableBr__get_lightning.j"
+#include "functions/2150_s__TableBr__get_image.j"
+#include "functions/2160_s__TableBr__get_ubersplat.j"
+#include "functions/2170_s__TableBr__get_region.j"
+#include "functions/2180_s__TableBr__get_fogstate.j"
+#include "functions/2190_s__TableBr__get_fogmodifier.j"
+#include "functions/2200_s__TableBr__get_hashtable.j"
+#include "functions/2210_s__TableBr__get_handle.j"
+#include "functions/2220_s__TableBr__get_agent.j"
+#include "functions/2230_s__TableBr__getindex.j"
+#include "functions/2240_s__TableBr__setindex.j"
+#include "functions/2250_s__TableBr_has.j"
+#include "functions/2260_s__TableBr_remove.j"
+#include "functions/2270_s__TableBr_flush.j"
 #include "functions/2280_s__TableBr_create.j"                   // Oh fuck, really? It's used by 12920, 12990  and 3020... We can't delete that shit
 
 // Not used again -_-
-// #include "functions/2290_s__TableBr_destroy.j"
-// #include "functions/2300_s__TableBrArray__staticgetindex.j"
+#include "functions/2290_s__TableBr_destroy.j"
+#include "functions/2300_s__TableBrArray__staticgetindex.j"
 
-// #include "functions/2310_s__TableBrArray__get_size.j"
-// #include "functions/2320_s__TableBrArray__getindex.j"
-// #include "functions/2330_s__TableBrArray_destroy.j"          // Used in 2350 but 2350 not, u know...
-// #include "functions/2340_s__TableBrArray_clean.j"
-// #include "functions/2350_s__TableBrArray_flush.j"
+#include "functions/2310_s__TableBrArray__get_size.j"
+#include "functions/2320_s__TableBrArray__getindex.j"
+#include "functions/2330_s__TableBrArray_destroy.j"          // Used in 2350 but 2350 not, u know...
+#include "functions/2340_s__TableBrArray_clean.j"
+#include "functions/2350_s__TableBrArray_flush.j"
 #include "functions/2360_GetAngle.j"                            // Used in 13300
 #include "functions/2370_TimedEffectAction.j"                   // Used in 2370, 2380 and 2390
 #include "functions/2380_AddTimedEffect.j"                      // Used in 2390 and 13300 
 
 // Not used again -_-
-// #include "functions/2390_AddTimedEffectUnit.j"
-// #include "functions/2400_EasyMath.j"                         // Used in 2420 but 2420 not used
-// #include "functions/2410_GetUnitArmorD.j"                    // Used in 2420 and 2430 but them not used
-// #include "functions/2420_GetUnitArmorInt.j"
-// #include "functions/2430_GetUnitArmorReal.j"
-// #include "functions/2440_GetReducedDamage.j"
-// #include "functions/2450_GetFullDamage.j"
+#include "functions/2390_AddTimedEffectUnit.j"
+#include "functions/2400_EasyMath.j"                         // Used in 2420 but 2420 not used
+#include "functions/2410_GetUnitArmorD.j"                    // Used in 2420 and 2430 but them not used
+#include "functions/2420_GetUnitArmorInt.j"
+#include "functions/2430_GetUnitArmorReal.j"
+#include "functions/2440_GetReducedDamage.j"
+#include "functions/2450_GetFullDamage.j"
 #include "functions/2460_ArmorUtils__Init.j"                    // Used in 13510
 #include "functions/2470_CombatTextCreate.j"                    // Used in 2480, 3030 and 13600
 
 // Not used again -_- How many shit this map contains?
 
-// #include "functions/2480_CombatTextCreateEx.j"               
+#include "functions/2480_CombatTextCreateEx.j"     
+#ifdef IDDS_ENABLED          
 #include "functions/2490_IDDS___TriggerSort.j"                  // Used in 2540, 2560 and 2570
-// #include "functions/2500_IgnoreHigherPriority.j"
-// #include "functions/2510_SetDamage.j"                        // Used in 2520 but 2520 not used
-// #include "functions/2520_SetDamageType.j"
-// #include "functions/2530_GetTriggerPriority.j"
-// #include "functions/2540_SetTriggerPriority.j"
-// #include "functions/2550_UnitDamageTargetEx.j"
-// #include "functions/2560_TriggerRegisterDamageEvent.j"
-// #include "functions/2570_TriggerUnregisterDamageEvent.j"
-// #include "functions/2580_RegisterDamageType.j"
-// #include "functions/2590_GetTriggerDamageType.j"
-// #include "functions/2600_GetTriggerDamageSource.j"
-// #include "functions/2610_GetTriggerDamageTarget.j"
-// #include "functions/2620_GetTriggerDamageBase.j"
-// #include "functions/2630_GetTriggerDamage.j"
+#endif
+#include "functions/2500_IgnoreHigherPriority.j"
+#include "functions/2510_SetDamage.j"                        // Used in 2520 but 2520 not used
+#include "functions/2520_SetDamageType.j"
+#include "functions/2530_GetTriggerPriority.j"
+#ifdef IDDS_ENABLED
+    #include "functions/2540_SetTriggerPriority.j"
+#endif
+#include "functions/2550_UnitDamageTargetEx.j"
+#ifdef IDDS_ENABLED
+    #include "functions/2560_TriggerRegisterDamageEvent.j"
+    #include "functions/2570_TriggerUnregisterDamageEvent.j"
+#endif
+#include "functions/2580_RegisterDamageType.j"
+#include "functions/2590_GetTriggerDamageType.j"
+#include "functions/2600_GetTriggerDamageSource.j"
+#include "functions/2610_GetTriggerDamageTarget.j"
+#include "functions/2620_GetTriggerDamageBase.j"
+#include "functions/2630_GetTriggerDamage.j"
 
 //  Such optimization doesn't guarantee that everythings gonna be okay,
 //  But if shit happen, u know what to do
-// #include "functions/2640_IDDS___RunConditions.j"                // Used in 2700
-// #include "functions/2650_IDDS___AddConditions.j"                // Used in 2700
-// #include "functions/2660_IDDS___PreloadConditions.j"            // Used in 2690
-// #include "functions/2670_IDDS___Run.j"                          // Used in 2700
-// #include "functions/2680_IDDS___Load.j"                         // Used in 2700
-// #include "functions/2690_IDDS___PreloadUnits.j"                 // Used in 2700
-// #include "functions/2700_IDDS___Init.j"                         // Used in 13510  but it actually does nothing usefull
-
+#ifdef IDDS_ENABLED
+    #include "functions/2640_IDDS___RunConditions.j"                // Used in 2700
+    #include "functions/2650_IDDS___AddConditions.j"                // Used in 2700
+    #include "functions/2660_IDDS___PreloadConditions.j"            // Used in 2690
+    #include "functions/2670_IDDS___Run.j"                          // Used in 2700
+    #include "functions/2680_IDDS___Load.j"                         // Used in 2700
+    #include "functions/2690_IDDS___PreloadUnits.j"                 // Used in 2700
+    #include "functions/2700_IDDS___Init.j"                         // Used in 13510  but it actually does nothing usefull
+#endif
 #include "functions/2710_RemoveBuff.j"
 #include "functions/2720_OnAttackMissActions.j"
 #include "functions/2730_OnAttackMissConditions.j"
@@ -1264,7 +1274,7 @@
 #include "functions/12070_nQ.j"
 #include "functions/12080_EQ.j"
 // Used nowhere...
-// #include "functions/12090_CloudofFogPeriodic.j"
+#include "functions/12090_CloudofFogPeriodic.j"
 #include "functions/12100_XQ.j"
 #include "functions/12110_RQ.j"
 #include "functions/12120_AQ.j"
@@ -1411,6 +1421,9 @@
 #include "functions/13510_main.j"
 
 #include "functions/13520_config.j"
+// Allready included in main.
+
+#ifdef JASS_HELPER_EXECUTEFUNC
 #include "functions/13530_sa__Table__GTable_onDestroy.j"
 #include "functions/13540_sa__SpellEvent___spellEvent_onDestroy.j"
 #include "functions/13550_sa__TableBr__getindex.j"
@@ -1433,3 +1446,4 @@
 #include "functions/13720_sa___prototype3_EssenceOfShadow___OnAction.j"
 #include "functions/13730_sa___prototype3_BorningOfDeath___OnAction.j"
 #include "functions/13740_jasshelper__initstructs29827921.j"
+#endif
