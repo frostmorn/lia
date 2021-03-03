@@ -1,11 +1,16 @@
 #ifndef H_10950
 #define H_10950
 function BossFightTriggerFunction takes nothing returns nothing
+#ifdef WO_TIMER_START
+local integer timeBeforeStart = 5
+#else
 local timer t=CreateTimer()
 local timer t2=CreateTimer()
 local timer t3=CreateTimer()
 local timer t4=CreateTimer()
+#endif
 local timer t5=CreateTimer()
+
 local integer dN=GetHandleId(t5)
 local integer In=1
 local integer wN=A
@@ -50,17 +55,32 @@ call EnableTrigger(eA)
 endif
 call XB()
 call SaveBoolean(Ax,1,StringHash("pr2"),true)
+#ifdef WO_TIMER_START
+loop
+    call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,I2S(timeBeforeStart)+"...")
+    call TriggerSleepAction(1)
+    set timeBeforeStart = timeBeforeStart - 1
+    exitwhen timeBeforeStart == 1       // Should be zero but for WHATAFUCK purposes we actually have needness in t5
+endloop
+call TimerStart(t5,6,false,function Zm)
+#else
 call TimerStart(t,2,false,function Wm)
 call TimerStart(t2,3,false,function ym)
 call TimerStart(t3,4,false,function Ym)
 call TimerStart(t4,5,false,function zm)
-call SaveBoolean(Ax,1,dN,b)
 call TimerStart(t5,6,false,function Zm)
+
+#endif
+call SaveBoolean(Ax,1,dN,b)
+
+
+#ifndef WO_TIMER_START
 set t=null
 set t2=null
 set t3=null
 set t4=null
 set t5=null
+#endif
 endfunction
 
 #endif

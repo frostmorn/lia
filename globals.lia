@@ -3,6 +3,7 @@
 #define DEBUG 0
 #ifdef DEBUG
 // #define D_5120
+#define D_5090
 #define DEBUG_NO_WAVE_DESCRIPTIONS    
 #define DEBUG_NOCLEAR_MESSAGES
 #endif
@@ -12,6 +13,7 @@
 #define IDDS_ENABLED 0
 #define FEATURE_TESTMODE_SETWAVE 1
 #define MIFRIL_VARIANT_2
+#define WO_TIMER_START 1
 globals
 #ifdef FEATURE_TESTMODE_SETWAVE
 trigger TesterSetWave = null
