@@ -11,7 +11,7 @@
 #define TMP_FIX_3390 0
 #define IDDS_ENABLED 0
 #define FEATURE_TESTMODE_SETWAVE 1
-
+#define MIFRIL_VARIANT_2
 globals
 #ifdef FEATURE_TESTMODE_SETWAVE
 trigger TesterSetWave = null
