@@ -1,5 +1,7 @@
 #ifndef H_3230
 #define H_3230
+#include "3210_ClearUnitIndex.j"
+#include "3220_IndexUnit.j"
 function InitializeUnitIndexer takes nothing returns nothing
 local integer i=16
 local boolexpr b=Filter(function IndexUnit)
