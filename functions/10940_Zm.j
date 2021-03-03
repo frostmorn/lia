@@ -3,13 +3,12 @@
 function Zm takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
-local boolean b=LoadBoolean(Ax,1,dN)
 local integer In=1
 #if D_10940
     call DMesg("Entering 10940_Zm")
 #endif
 call SaveBoolean(Ax,1,StringHash("pr2"),false)
-if b then
+if CurrentWave==20 then
 call PauseUnit(Le,false)
 call TriggerRegisterUnitLifeEvent(OO,Le,LESS_THAN_OR_EQUAL,7000.)
 call TriggerRegisterUnitLifeEvent(RO,Le,LESS_THAN_OR_EQUAL,3000.)
