@@ -1146,11 +1146,13 @@
 #include "functions/10870_tm.j"
 #include "functions/10880_um.j"
 #include "functions/10890_WaveFightTriggerFunction.j"
-#include "functions/10900_Wm.j"
-#include "functions/10910_ym.j"
-#include "functions/10920_Ym.j"
-#include "functions/10930_zm.j"
-#include "functions/10940_Zm.j"
+
+// Allready included in 10950
+// #include "functions/10900_Wm.j"
+// #include "functions/10910_ym.j"
+// #include "functions/10920_Ym.j"
+// #include "functions/10930_zm.j"
+// #include "functions/10940_Zm.j"
 #include "functions/10950_BossFightTriggerFunction.j"
 #include "functions/10960_xM.j"
 #include "functions/10970_rM.j"
