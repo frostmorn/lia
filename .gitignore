@@ -11,3 +11,4 @@ common.ai
 blizzard.j
 war3map.j
 syntax_check.sh
+functions/check.py
