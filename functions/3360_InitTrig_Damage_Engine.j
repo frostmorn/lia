@@ -1,5 +1,6 @@
 #ifndef H_3360
 #define H_3360
+#include "3250_Trig_Damage_Engine_Config_Actions.j"
 function InitTrig_Damage_Engine takes nothing returns nothing
 local unit u=CreateUnit(Player(bj_PLAYER_NEUTRAL_EXTRA),'h00R',0,0,0)
 local integer i=16
@@ -9,7 +10,7 @@ call TriggerRegisterVariableEvent(t,"udg_UnitIndexEvent",EQUAL,2.00)
 call TriggerAddCondition(t,Filter(function SetupDmgEv))
 set t=null
 if gg_trg_Damage_Engine_Config==null then
-call ExecuteFunc("Trig_Damage_Engine_Config_Actions")
+call Trig_Damage_Engine_Config_Actions()
 else
 call TriggerExecute(gg_trg_Damage_Engine_Config)
 endif
