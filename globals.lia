@@ -15,6 +15,7 @@
 globals
 #ifdef FEATURE_TESTMODE_SETWAVE
 trigger TesterSetWave = null
+boolean setWaveAllowed = false
 #endif
 hashtable HashData=InitHashtable()
 group array CatchTheShadowGroup
