@@ -5,6 +5,9 @@ local integer In=1
 #if FEATURE_TESTMODE_SETWAVE
     set setWaveAllowed=false
 #endif
+#if BEFORE_ROUND_SILENCE_VARIANT_2
+call DestroyTimer(Fo)
+#endif
 call DisableTrigger(IsReadyTrig)
 call yb()
 call DestroyTimer(RoundStartTimer)

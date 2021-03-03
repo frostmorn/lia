@@ -7,6 +7,10 @@ set setWaveAllowed=false
 #if D_5090
     call DMesg("Starting RoundStartFunction")
 #endif
+
+#if BEFORE_ROUND_SILENCE_VARIANT_2
+call DestroyTimer(Fo)
+#endif
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(Ho)
 set Ho=null

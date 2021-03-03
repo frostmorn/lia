@@ -14,7 +14,11 @@ function ItsReady___OnActions takes nothing returns nothing
     if not IsReady[GetPlayerId(p)]then
         set IsReady[GetPlayerId(p)]=true
         set CURRENT_PLAYERS=CURRENT_PLAYERS+1
+
+        #if BEFORE_ROUND_SILENCE_VARIANT_2
+        #else
         call DestroyTimer(Fo)
+        #endif
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(p)+(" хочет немедленно начать раунд! ("+(I2S(CURRENT_PLAYERS)+("\\"+(I2S(ItsReady___MAX_PLAYERS)+")|R")))))))
         if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
             if Ex then
