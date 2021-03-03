@@ -24,12 +24,9 @@ set udg_LastDmgTarget[i]=udg_DamageEventTarget
 set udg_LastDmgWasSpell[i]=udg_IsDamageSpell
 set udg_LastDmgPrevType[i]=udg_DamageEventType
 else
-set s="WARNING: Recursion error when dealing damage! Make sure when you deal damage from within a DamageEvent trigger, do it like this:
-"
-set s=s+"Trigger - Turn off (This Trigger)
-"
-set s=s+"Unit - Cause...
-"
+set s="WARNING: Recursion error when dealing damage! Make sure when you deal damage from within a DamageEvent trigger, do it like this:"
+set s=s+"Trigger - Turn off (This Trigger)"
+set s=s+"Unit - Cause..."
 set s=s+"Trigger - Turn on (This Trigger)"
 return false
 endif
