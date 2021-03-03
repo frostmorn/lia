@@ -1,7 +1,9 @@
 #ifndef H_5090
 #define H_5090
 function RoundStartFunction takes nothing returns nothing
+#ifdef FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed=false
+#endif
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(Ho)
 set Ho=null
