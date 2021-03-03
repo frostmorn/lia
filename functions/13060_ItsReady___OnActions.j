@@ -18,11 +18,9 @@ call DestroyTimer(Fo)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(GetTriggerPlayer())+(" хочет немедленно начать раунд! ("+(I2S(CURRENT_PLAYERS)+("\\"+(I2S(ItsReady___MAX_PLAYERS)+")|R")))))))
 if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
 if Ex then
-call DisableTrigger(IsReadyTrig)
 call RoundStartFunction()
 endif
 if no or Wx then
-call DisableTrigger(IsReadyTrig)
 call QB()
 endif
 endif

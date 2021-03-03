@@ -2,6 +2,8 @@
 #define H_4340
 function QB takes nothing returns nothing
 local integer In=1
+setWaveAllowed=false
+call DisableTrigger(IsReadyTrig)
 call yb()
 call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
