@@ -238,6 +238,10 @@
 #endif
 
 #include "13740_jasshelper__initstructs29827921.j"
+
+#ifdef FEATURE_TESTMODE_SETWAVE
+    #include "../features/00100_TesterSetWaveCallback.j"
+#endif
 function main takes nothing returns nothing
 local weathereffect we
 local destructable d
@@ -1358,6 +1362,28 @@ call TriggerRegisterPlayerChatEvent(QR,Player(5),"-switch",true)
 call TriggerRegisterPlayerChatEvent(QR,Player(6),"-switch",true)
 call TriggerRegisterPlayerChatEvent(QR,Player(7),"-switch",true)
 call TriggerAddAction(QR,function ns)
+
+#ifdef FEATURE_TESTMODE_SETWAVE
+    set TesterSetWave=CreateTrigger()
+    call DisableTrigger(TesterSetWave)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(0),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(1),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(2),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(3),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(4),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(5),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(6),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(7),"-волна ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(0),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(1),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(2),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(3),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(4),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(5),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(6),"-wave ",false)
+    call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(7),"-wave ",false)
+    call TriggerAddAction(TesterSetWave,function TesterSetWaveCallback)
+#endif
 set sR=CreateTrigger()
 call DisableTrigger(sR)
 call TriggerRegisterPlayerChatEvent(sR,Player(0),"-св",false)
