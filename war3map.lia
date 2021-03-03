@@ -1205,7 +1205,10 @@
 #include "functions/11440_qp.j"
 #include "functions/11450_Sp.j"
 #include "functions/11460_Tp.j"
-#include "functions/11470_zp.j"
+
+// Default Fast Start trigger function.
+// Non-needed
+// #include "functions/11470_zp.j"
 #include "functions/11480_vP.j"
 #include "functions/11490_eP.j"
 #include "functions/11500_PrepareBeforeBRoundFunction.j"
