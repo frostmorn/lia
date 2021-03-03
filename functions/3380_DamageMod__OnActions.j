@@ -11,7 +11,7 @@ local real amount=udg_DamageEventAmount
 local boolean damageType=udg_IsDamageSpell
 local integer i=0
 local boolean b=true
-#ifdef D_3380
+#if D_3380
 call DMesg("Испепелитель: Entering 3380_DamageMod__OnActions")
 #endif
     if GetUnitAbilityLevel(target,'A0IK')>0 and amount>0.00 then

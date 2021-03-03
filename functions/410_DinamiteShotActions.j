@@ -9,7 +9,7 @@ function DinamiteShotActions takes unit u,unit u2 returns nothing
     local timer etimer=CreateTimer()
     local integer ehandle=GetHandleId(etimer)
     local timer oldtimer=LoadTimerHandle(DinamiteShot___HASH_TABLE,GetHandleId(target),1)
-    #ifdef D_410
+    #if D_410
         call DMesg("Испепелитель: Entering DinamiteShotActions")
     #endif
     if oldtimer!=null then

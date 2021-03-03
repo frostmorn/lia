@@ -1,7 +1,8 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 #define DEBUG 0
-#ifdef DEBUG
+
+#if DEBUG
 // #define D_5120
 // #define D_5090
 #define D_10940
@@ -16,7 +17,7 @@
 #define MIFRIL_VARIANT_2
 #define WO_TIMER_START 1
 globals
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
 trigger TesterSetWave = null
 boolean setWaveAllowed = false
 #endif
@@ -1099,7 +1100,7 @@ trigger array st___prototype32
 //  0 - disabled
 //  1 - enabled
 //
-#ifdef DEBUG
+#if DEBUG
 integer debug_method = 1
 #else
 integer debug_method = 0

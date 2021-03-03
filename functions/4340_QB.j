@@ -2,7 +2,7 @@
 #define H_4340
 function QB takes nothing returns nothing
 local integer In=1
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
     set setWaveAllowed=false
 #endif
 call DisableTrigger(IsReadyTrig)

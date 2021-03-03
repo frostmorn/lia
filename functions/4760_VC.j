@@ -3,7 +3,7 @@
 function VC takes nothing returns nothing
 local unit u=GetEnumUnit()
 local player p=GetOwningPlayer(u)
-#ifdef D_4760
+#if D_4760
 call DMesg("Entering VC")
 #endif
 if((not IsUnitOnBigArena(u))and(IsUnitAlive(u))and(GetUnitTypeId(u)!='n002')and(GetUnitTypeId(u)!='h00P'))then

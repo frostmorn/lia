@@ -1,7 +1,7 @@
 #ifndef H_10950
 #define H_10950
 function BossFightTriggerFunction takes nothing returns nothing
-#ifdef WO_TIMER_START
+#if WO_TIMER_START
 local integer timeBeforeStart = 5
 #else
 local timer t=CreateTimer()
@@ -55,7 +55,7 @@ call EnableTrigger(eA)
 endif
 call XB()
 call SaveBoolean(Ax,1,StringHash("pr2"),true)
-#ifdef WO_TIMER_START
+#if WO_TIMER_START
 loop
     call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,I2S(timeBeforeStart)+"...")
     call TriggerSleepAction(1)

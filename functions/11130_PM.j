@@ -19,7 +19,7 @@ endif
 set ye=false
 call eC()
 call PrepareBeforeRoundFunction()
-#ifdef D_5120
+#if D_5120
 #define D_5120
 call DMesg("Call PrepareBeforeRoundFunction from 11130")
 #endif

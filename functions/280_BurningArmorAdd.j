@@ -4,7 +4,7 @@ function BurningArmorAdd takes unit u,unit t returns nothing
     local unit dummy
     local real x=GetUnitX(t)
     local real y=GetUnitY(t)
-#ifdef D_280
+#if D_280
     call DMesg("Испепелитель: Entering 280_BurningArmorAdd")
 #endif
 

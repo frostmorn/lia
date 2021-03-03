@@ -2,7 +2,7 @@
 #define H_110
 function IsUnitOnBigArena takes unit u returns boolean
 
-#ifdef D_110
+#if D_110
     call DMesg("Checking if "+GetUnitName(u)+" is on BigArena")
 #endif
 

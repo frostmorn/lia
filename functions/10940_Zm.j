@@ -5,7 +5,7 @@ local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local boolean b=LoadBoolean(Ax,1,dN)
 local integer In=1
-#ifdef D_10940
+#if D_10940
     call DMesg("Entering 10940_Zm")
 #endif
 call SaveBoolean(Ax,1,StringHash("pr2"),false)
@@ -17,14 +17,14 @@ call EnableTrigger(AO)
 call EnableTrigger(dO)
 call EnableTrigger(XO)
 call EnableTrigger(oO)
-#ifdef D_10940
+#if D_10940
     call DMesg("10940 enables triggers AO dO XO oO")
 #endif
 else
 call PauseUnit(Me,false)
 call EnableTrigger(AO)
 call EnableTrigger(XO)
-#ifdef D_10940
+#if D_10940
 call DMesg("10940 enables triggers AO XO")
 #endif
 

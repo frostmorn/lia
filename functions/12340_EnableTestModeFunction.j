@@ -9,7 +9,7 @@ call EnableTrigger(kR)
 call EnableTrigger(KR)
 call EnableTrigger(lR)
 call EnableTrigger(LR)
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
 call EnableTrigger(TesterSetWave)
 set setWaveAllowed = true
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cff17e7eeОбратите внимание, тестер может теперь выбрать волну командами|R")

@@ -8,7 +8,7 @@ local timer t=LoadTimerHandle(HashData,GetHandleId(target),StringHash("EssenceOf
 local integer h
 local integer abilId
 local boolean b=LoadBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
-#ifdef D_13720
+#if D_13720
 call DMesg("Essence of shadow onAction call 13720")
 #endif
 if t!=null then

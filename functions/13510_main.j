@@ -1,6 +1,6 @@
 #ifndef H_13510
 #define H_13510
-#ifdef NEW_INCLUDES
+#if NEW_INCLUDES
     #include "60_DMesg.j"
     #include "150_sc__SpellEvent___spellEvent_onDestroy.j"
     #include "160_s__SpellEvent___spellEvent__allocate.j"
@@ -239,7 +239,7 @@
 
 #include "13740_jasshelper__initstructs29827921.j"
 
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
     #include "../features/00100_TesterSetWaveCallback.j"
 #endif
 function main takes nothing returns nothing
@@ -272,7 +272,7 @@ call MagicLumpRegeneration___Init()
 call SetUnitMaxState___Initialize()
 call StatMod___Init()
 call ArmorUtils__Init()
-#ifdef IDDS_ENABLED
+#if IDDS_ENABLED
 call IDDS___Init()
 #endif
 call MissOnAttack___Init()
@@ -1363,7 +1363,7 @@ call TriggerRegisterPlayerChatEvent(QR,Player(6),"-switch",true)
 call TriggerRegisterPlayerChatEvent(QR,Player(7),"-switch",true)
 call TriggerAddAction(QR,function ns)
 
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
     set TesterSetWave=CreateTrigger()
     call DisableTrigger(TesterSetWave)
     call TriggerRegisterPlayerChatEvent(TesterSetWave,Player(0),"-волна ",false)

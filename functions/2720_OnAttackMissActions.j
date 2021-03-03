@@ -6,7 +6,7 @@ function OnAttackMissActions takes nothing returns nothing
     call SaveUnitHandle(HashData,GetHandleId(u),StringHash("AttackTarget_Main"),t)
     if LoadBoolean(HashData,GetHandleId(u),StringHash("MithrilArmor:Bool"))then
         if t!=LoadUnitHandle(HashData,GetHandleId(u),StringHash("MithrilArmor:Caster"))then
-            #ifdef MIFRIL_VARIANT_2
+            #if MIFRIL_VARIANT_2
             call IssueTargetOrder(u,"attack",LoadUnitHandle(HashData,GetHandleId(u),StringHash("MithrilArmor:Caster")))
             #else
             if GetUnitCurrentOrder(u)!=OrderId("attack")then

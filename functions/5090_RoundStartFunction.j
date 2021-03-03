@@ -1,10 +1,10 @@
 #ifndef H_5090
 #define H_5090
 function RoundStartFunction takes nothing returns nothing
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed=false
 #endif
-#ifdef D_5090
+#if D_5090
     call DMesg("Starting RoundStartFunction")
 #endif
 call DisableTrigger(IsReadyTrig)
@@ -33,12 +33,12 @@ endif
 if ModuloInteger(CurrentWave,5)==0 then
     // Starting Boss Fight
 call TriggerExecute(BossFightTrigger)
-#ifdef D_5090
+#if D_5090
 call DMesg("Executing BossFightTrigger")
 #endif
 else
 call TriggerExecute(WaveFightTrigger)
-#ifdef D_5090
+#if D_5090
 call DMesg("Executing WaveFightTrigger")
 #endif
 endif

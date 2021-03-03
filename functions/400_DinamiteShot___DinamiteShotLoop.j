@@ -7,7 +7,7 @@ local unit zcaster=LoadUnitHandle(DinamiteShot___HASH_TABLE,zhandle,1)
 local unit ztarget=LoadUnitHandle(DinamiteShot___HASH_TABLE,zhandle,2)
 local real zdamage=LoadReal(DinamiteShot___HASH_TABLE,zhandle,3)
 local real zloop=LoadReal(DinamiteShot___HASH_TABLE,zhandle,4)
-#ifdef D_400
+#if D_400
 call DMesg("Испепелитель: Entering DinamiteShot___DinamiteShotLoop")
 #endif
 if zloop<6.00 and not IsUnitType(ztarget,UNIT_TYPE_DEAD)then

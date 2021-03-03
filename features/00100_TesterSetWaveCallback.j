@@ -1,7 +1,7 @@
 #ifndef F_00100
 #define F_00100
 
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
 #include "../functions/4340_QB.j"
 #include "../functions/5090_RoundStartFunction.j"
 #include "../functions/5100_Dd.j"

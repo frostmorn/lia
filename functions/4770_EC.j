@@ -4,7 +4,7 @@ function EC takes nothing returns nothing
 local integer In
 local group g
 set In=1
-#ifdef D_4770
+#if D_4770
 call DMesg("Entering EC")
 #endif
 loop

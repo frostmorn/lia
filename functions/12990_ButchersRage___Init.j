@@ -1,6 +1,6 @@
 #ifndef H_12990
 #define H_12990
-#ifdef GLOBALS_H
+#if GLOBALS_H
 
 #include "2280_s__TableBr_create.j"
 function ButchersRage___Init takes nothing returns nothing

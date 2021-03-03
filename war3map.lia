@@ -294,18 +294,18 @@
 // Not used again -_- How many shit this map contains?
 
 #include "functions/2480_CombatTextCreateEx.j"     
-#ifdef IDDS_ENABLED          
+#if IDDS_ENABLED          
 #include "functions/2490_IDDS___TriggerSort.j"                  // Used in 2540, 2560 and 2570
 #endif
 #include "functions/2500_IgnoreHigherPriority.j"
 #include "functions/2510_SetDamage.j"                        // Used in 2520 but 2520 not used
 #include "functions/2520_SetDamageType.j"
 #include "functions/2530_GetTriggerPriority.j"
-#ifdef IDDS_ENABLED
+#if IDDS_ENABLED
     #include "functions/2540_SetTriggerPriority.j"
 #endif
 #include "functions/2550_UnitDamageTargetEx.j"
-#ifdef IDDS_ENABLED
+#if IDDS_ENABLED
     #include "functions/2560_TriggerRegisterDamageEvent.j"
     #include "functions/2570_TriggerUnregisterDamageEvent.j"
 #endif
@@ -318,7 +318,7 @@
 
 //  Such optimization doesn't guarantee that everythings gonna be okay,
 //  But if shit happen, u know what to do
-#ifdef IDDS_ENABLED
+#if IDDS_ENABLED
     #include "functions/2640_IDDS___RunConditions.j"                // Used in 2700
     #include "functions/2650_IDDS___AddConditions.j"                // Used in 2700
     #include "functions/2660_IDDS___PreloadConditions.j"            // Used in 2690
@@ -1415,7 +1415,7 @@
 #include "functions/13520_config.j"
 // Allready included in main.
 
-#ifdef JASS_HELPER_EXECUTEFUNC
+#if JASS_HELPER_EXECUTEFUNC
 #include "functions/13530_sa__Table__GTable_onDestroy.j"
 #include "functions/13540_sa__SpellEvent___spellEvent_onDestroy.j"
 #include "functions/13550_sa__TableBr__getindex.j"

@@ -5,7 +5,7 @@ local integer nC=0
 local integer DM=av
 local unit u
 local integer In=1
-#ifdef D_11110
+#if D_11110
     call DMesg("Entering SpawnCreepsFunction ")
 #endif
 set xA=CreateUnit(Player(11),'h011',0,0,0)

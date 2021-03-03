@@ -15,10 +15,10 @@ local timer Hd=CreateTimer()
 local integer jd=GetHandleId(Hd)
 local integer Jd=GetHandleId(tt)
 local timerdialog fN
-#ifdef FEATURE_TESTMODE_SETWAVE
+#if FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed = true
 #endif
-#ifdef D_5120
+#if D_5120
 #define D_5120
 call DMesg("Entering PrepareBeforeRoundFunction")
 #endif
