@@ -21,7 +21,7 @@ function TesterSetWaveCallback takes nothing returns nothing
         endloop
         
         set wave = S2I(SubString(PlayerChatString, i, PlayerChatStringLength-i))
-        if wave > 0 and wave < 20 then
+        if wave > 0 and wave <= 20 then
             set CurrentWave = wave
             if Ex then
                 call RoundStartFunction()
