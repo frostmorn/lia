@@ -1,5 +1,6 @@
 #ifndef H_4220
 #define H_4220
+#include "11750_MultiboardInit.j"
 function gB takes nothing returns nothing
 local integer In=1
 local integer vB=A
@@ -18,7 +19,7 @@ call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,true,ae[In])
 call AdjustPlayerStateBJ(50,ae[In],PLAYER_STATE_RESOURCE_GOLD)
 set In=In+1
 endloop
-call TriggerExecute(wO)
+call MultiboardInit()
 call TriggerExecute(Sa)
 call TriggerExecute(PrepareBeforeRoundTrigger)
 call EnableTrigger(QR)
