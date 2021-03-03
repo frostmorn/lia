@@ -30,6 +30,8 @@ call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
     call DisableTrigger(XO)
     call DisableTrigger(oO)
 #endif
+call DestroyTimer(Fo)
+
 loop
 set IsReady[index]=false
 set index=index+1
@@ -79,7 +81,7 @@ set fN=CreateTimerDialog(Hd)
 call SaveTimerDialogHandle(Ax,1,jd,fN)
 call TimerDialogSetTitle(fN,"Осталось")
 call TimerDialogDisplay(fN,true)
-call DestroyTimer(Fo)
+
 set Fo=CreateTimer()
 call TimerStart(Fo,27,false,function hN)
 set fN=null
@@ -145,7 +147,6 @@ set Oe=CreateTimerDialog(RoundStartTimer)
 set CURRENT_PLAYERS=0
 call TimerDialogSetTitle(Oe,"Осталось")
 call TimerDialogDisplay(Oe,true)
-call DestroyTimer(Fo)
 set Fo=CreateTimer()
 call TimerStart(Fo,w-3,false,function hN)
 set t=null
