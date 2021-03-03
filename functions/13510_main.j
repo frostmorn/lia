@@ -408,6 +408,7 @@ set bj_stockItemPurchased=CreateTrigger()
 call TriggerRegisterPlayerUnitEvent(bj_stockItemPurchased,Player(15),EVENT_PLAYER_UNIT_SELL_ITEM,null)
 call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
 call DetectGameStarted()
+
 call rN()
 call BN()
 set i=0
@@ -1069,8 +1070,7 @@ set uO=CreateTrigger()
 call TriggerAddAction(uO,function kP)
 set UO=CreateTrigger()
 call TriggerAddAction(UO,function pP)
-set wO=CreateTrigger()
-call TriggerAddAction(wO,function qP)
+
 set WO=CreateTrigger()
 call TriggerAddAction(WO,function SP)
 set yO=CreateTrigger()

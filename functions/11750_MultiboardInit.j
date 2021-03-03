@@ -1,6 +1,6 @@
 #ifndef H_11750
 #define H_11750
-function qP takes nothing returns nothing
+function MultiboardInit takes nothing returns nothing
 set mv=R2I((I2R(A)/ 2.))
 set Mv=(A-mv)
 call CreateMultiboardBJ(10,(A+6),"Cтaтиcтикa")
