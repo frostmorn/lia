@@ -24,6 +24,12 @@ call DMesg("Entering PrepareBeforeRoundFunction")
 #endif
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
 call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
+#if DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND
+    call DisableTrigger(AO)
+    call DisableTrigger(dO)
+    call DisableTrigger(XO)
+    call DisableTrigger(oO)
+#endif
 loop
 set IsReady[index]=false
 set index=index+1
