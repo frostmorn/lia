@@ -58,10 +58,14 @@ else
     call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
     call PauseUnit(Me,true)
     call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
-if CurrentWave==5 then
-    call qm()
-endif
-    call EnableTrigger(eA)
+    #if WO_TIMER_START
+    if CurrentWave!=20 then
+    #else
+    if CurrentWave==5 then
+    #endif
+        call qm()
+    endif
+        call EnableTrigger(eA)
 endif
     call XB()
     call SaveBoolean(Ax,1,StringHash("pr2"),true)
@@ -70,7 +74,7 @@ loop
     call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,I2S(timeBeforeStart)+"...")
     call TriggerSleepAction(1)
     set timeBeforeStart = timeBeforeStart - 1
-    exitwhen timeBeforeStart == 0       // Should be zero but for WHATAFUCK purposes we actually have needness in t5
+    exitwhen timeBeforeStart == 0       
 endloop
 call Zm()
 #else
