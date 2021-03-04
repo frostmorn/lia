@@ -3,11 +3,12 @@
 #define F_00110
 
 #if FEATURE_PRELOAD_MODELS
-#define WAY_1 1
-#define WAY_2 0
-
+#define WAY_1 0
+#define WAY_2 1
+#define WAY_3 0
 function PreloadModels takes nothing returns nothing
-#if WAY_1
+local integer i =1
+    #if WAY_1
     call Preload("Objects\\Spawnmodels\\Orc\\Orcblood\\BattrollBlood.mdl")
     call Preload("Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdl")
     call Preload("Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl")
@@ -194,11 +195,23 @@ call DestroyEffect(AddSpecialEffect("war3mapImported\\AssassinateExplode.mdx", 0
 call DestroyEffect(AddSpecialEffect("war3mapImported\\MagicCircle_Demon.mdx", 0.0, 0.0))
 call DestroyEffect(AddSpecialEffect("war3mapImported\\MirrorImageIllidan.mdx", 0.0, 0.0))
 call DestroyEffect(AddSpecialEffect("GroundBonds.mdx", 0.0, 0.0))
-
 #endif
 
 #undef WAY_1
 #undef WAY_2
+#if WAY_3
+call PreloadGenClear()
+call PreloadGenStart()
+
+
+loop
+exitwhen i>HeroesCount
+call RemoveUnit( CreateUnit(Player(15),HeroIdsArray[i],0,0,0) )
+set i = i +1
+endloop
+call PreloadGenEnd( "Save\_dummies.pld" )
+
+#endif
 
 endfunction
 #endif
