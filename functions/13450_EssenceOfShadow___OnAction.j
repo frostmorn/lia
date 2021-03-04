@@ -8,6 +8,9 @@ function EssenceOfShadow___OnAction takes nothing returns nothing
     local integer h
     local integer abilId
     local boolean b=LoadBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
+    #if D_13450
+    call DMesg("Essence of shadow onAction call 13450")
+    #endif
     if t!=null then
     set h=GetHandleId(t)
     call AddStat(target,BONUS_TYPE_ARMOR,-(5*lvl))
