@@ -242,6 +242,12 @@
 #if FEATURE_TESTMODE_SETWAVE
     #include "../features/00100_TesterSetWaveCallback.j"
 #endif
+#if MAP_INITIALIZATION_VARIANT_2
+#if FEATURE_PRELOAD_MODELS
+#include "../features/00110_PreloadModels.j"
+#endif
+#include "5240_AD.j"
+#endif
 function main takes nothing returns nothing
 local weathereffect we
 local destructable d
@@ -407,10 +413,15 @@ call TimerStart(bj_stockUpdateTimer,bj_STOCK_RESTOCK_INITIAL_DELAY,false,functio
 set bj_stockItemPurchased=CreateTrigger()
 call TriggerRegisterPlayerUnitEvent(bj_stockItemPurchased,Player(15),EVENT_PLAYER_UNIT_SELL_ITEM,null)
 call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
-call DetectGameStarted()
 
+
+#if MAP_INITIALIZATION_VARIANT_2
+#else
+call DetectGameStarted()
+#endif
 call rN()
 call BN()
+
 set i=0
 set i=0
 loop
@@ -511,8 +522,13 @@ call TriggerRegisterPlayerUnitEvent(Pa,Player(ED),EVENT_PLAYER_UNIT_DEATH,null)
 set ED=ED+1
 endloop
 call TriggerAddAction(Pa,function xD)
+
+#if MAP_INITIALIZATION_VARIANT_2
+#else
 set qa=CreateTrigger()
 call TriggerAddAction(qa,function AD)
+#endif
+
 set Qa=CreateTrigger()
 call TriggerAddAction(Qa,function dD)
 set sa=CreateTrigger()
@@ -1533,7 +1549,10 @@ call TriggerRegisterPlayerUnitEvent(YR,Player(ED),EVENT_PLAYER_UNIT_PICKUP_ITEM,
 set ED=ED+1
 endloop
 call TriggerAddAction(YR,function IS)
+#if FEATURE_PRELOAD_MODELS
+#else
 call Preload("Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl")
+#endif
 set ED=0
 set wN=16
 set zR=CreateTrigger()
@@ -1616,5 +1635,14 @@ call TriggerAddAction(VI,function ot)
 call ConditionalTriggerExecute(qa)
 call InitTrig_SettingsTrueCast()
 call RunInitializationTriggers()
+
+#if MAP_INITIALIZATION_VARIANT_2
+call AD()
+
+#if FEATURE_PRELOAD_MODELS
+call PreloadModels()
+#endif
+call DetectGameStarted()
+#endif
 endfunction
 #endif

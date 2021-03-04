@@ -23,7 +23,10 @@ set Tn=CreateTrigger()
 call TriggerRegisterUnitEvent(Tn,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(Tn,Condition(function ug))
 call TriggerAddAction(Tn,function wg)
+#if FEATURE_PRELOAD_MODELS
+#else
 call Preload("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl")
+#endif
 set Un=CreateTrigger()
 call TriggerRegisterUnitEvent(Un,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddCondition(Un,Condition(function Yg))

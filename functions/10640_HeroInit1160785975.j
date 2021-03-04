@@ -6,7 +6,10 @@ call UnitAddAbility(u,'A0FH')
 set nE=CreateTrigger()
 call TriggerRegisterUnitEvent(nE,u,EVENT_UNIT_SPELL_EFFECT)
 call TriggerAddAction(nE,function Zj)
+#if FEATURE_PRELOAD_MODELS
+#else
 call Preload("Objects\\Spawnmodels\\Other\\PandarenBrewmasterBlood\\PandarenBrewmasterBlood.mdl")
+#endif
 set VE=CreateTrigger()
 call TriggerRegisterUnitEvent(VE,u,EVENT_UNIT_HERO_SKILL)
 call TriggerAddCondition(VE,Condition(function eJ))

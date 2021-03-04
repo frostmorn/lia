@@ -1,5 +1,9 @@
 #ifndef H_5240
 #define H_5240
+#include "4890_jC.j"
+#include "4910_kC.j"
+#include "4930_MC.j"
+#include "5220_OD.j"
 function AD takes nothing returns nothing
 local timer t=CreateTimer()
 local integer In=1
@@ -15,7 +19,10 @@ set arrayTreeTypes[6]='ATtr' // Зеленые деревья
 set treeTypeIndex=6
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
 call CreateTreesFunction()
+#if FEATURE_PRELOAD_MODELS
+#else
 call Preload("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl")
+#endif
 set ND=CreateUnit(Player(11),'h00V',0,0,.0)
 set it=UnitAddItemById(ND,'I06Q')
 set UB=UnitAddItemById(ND,'I06Z')
