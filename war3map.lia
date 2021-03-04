@@ -1406,9 +1406,11 @@
 #include "functions/13410_DemonicRage___DemonicRageLoop.j"
 #include "functions/13420_DemonicRage___DemonicRageActions.j"
 #include "functions/13430_DemonicRage___DemonicRageSpell.j"
+
+// actualy we call sa__prototypes
 #include "functions/13440_EssenceOfShadow___OnLoop.j"
-#include "functions/13450_EssenceOfShadow___OnAction.j"
-#include "functions/13460_EssenceOfShadow___Init.j"
+// #include "functions/13450_EssenceOfShadow___OnAction.j"
+// #include "functions/13460_EssenceOfShadow___Init.j"
 #include "functions/13470_BorningOfDeath___OnAction.j"
 #include "functions/13480_BorningOfDeath___Init.j"
 #include "functions/13490_RunInitializationTriggers.j"
