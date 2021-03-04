@@ -924,7 +924,6 @@ trigger xI=null
 trigger oI=null
 trigger rI=null
 trigger iI=null
-trigger aI=null
 trigger nI=null
 trigger VI=null
 destructable EI=null

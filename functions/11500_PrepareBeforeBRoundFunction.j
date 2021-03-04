@@ -1,5 +1,6 @@
 #ifndef H_11500
 #define H_11500
+#include "12850_zS.j"
 function PrepareBeforeBRoundFunction takes nothing returns nothing
 local integer wN=A
 local integer bB=av
@@ -20,7 +21,7 @@ call mB()
 call aB()
 call DisableTrigger(kO)
 if CurrentWave==10 then
-call TriggerExecute(aI)
+call zS()
 set Gd=null
 set t=null
 return
