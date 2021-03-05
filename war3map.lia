@@ -1417,8 +1417,11 @@
 #include "functions/13500_InitCustomPlayerSlots.j"
 
 // Main function, here our script starts
+#if MAP_INITIALIZATION_VARIANT_3
+#include "features/10000_main.j"
+#else
 #include "functions/13510_main.j"
-
+#endif
 #include "functions/13520_config.j"
 // Allready included in main.
 
