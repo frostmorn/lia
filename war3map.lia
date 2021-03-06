@@ -4,10 +4,7 @@
 #include "functions/20_CameraAutoSetup.j"
 #include "functions/30_EN.j"
 #include "functions/50_SendStatsToBot.j"
-#include "functions/70_IsUnitAlive.j"
-#include "functions/80_IsUnitDead.j"
-#include "functions/90_IsCordsInRect.j"
-#include "functions/100_IsUnitInRect.j"
+#include "features/01000_UnitAPI.j"
 #include "functions/110_IsUnitOnBigArena.j"
 
 // Not used anywhere
@@ -81,8 +78,6 @@
 
 // Not used anywhere
 #include "functions/580_SetUnitZ.j"
-
-#include "functions/590_H2IT.j"
 
 #include "functions/600_IsUnitDummy.j"
 
