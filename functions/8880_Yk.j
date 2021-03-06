@@ -44,6 +44,7 @@ call SaveReal(Ax,id,1,Qk(u,C))
 call SaveInteger(Ax,id,2,0)
 call SetUnitPathing(u,false)
 call SetUnitMoveSpeed(u,0)
+call TimerStart(t,.03,true,function Wk)
 else
 if IsUnitAlly(u,GetOwningPlayer(C))and IsUnitAlive(u) then
 call SetWidgetLife(u,GetWidgetLife(u)+$96*JN)
