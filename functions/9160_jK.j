@@ -17,7 +17,7 @@ local integer JN=GetUnitAbilityLevel(u,'A0GF')
 local unit f
 local unit c
 set l=GetUnitLoc(u)
-set c=CreateUnitAtLoc(p,'h00P',l,0)
+set c=CreateUnitAtLoc(p,'h00R',l,0)
 call UnitAddAbility(c,'A0GG')
 call SetUnitAbilityLevel(c,'A0GG',JN)
 call RemoveLocation(l)

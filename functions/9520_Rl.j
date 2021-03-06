@@ -19,7 +19,7 @@ if GetUnitTypeId(f)!='n002' then
 call SetUnitTimeScalePercent(f,.0)
 call PO(f,JN)
 set T=GetUnitLoc(f)
-set c=CreateUnitAtLoc(GetOwningPlayer(uA),'h00P',T,0)
+set c=CreateUnitAtLoc(GetOwningPlayer(uA),'h00R',T,0)
 call UnitAddAbility(c,'A09U')
 call SetUnitAbilityLevel(c,'A09U',JN)
 call IssueTargetOrderById(c,$D007F,f)

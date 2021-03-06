@@ -67,7 +67,7 @@ set DamageTypeAttack=false
 call UnitDamageTarget(u,f,DC,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true
 if IsUnitAlive(f) then
-set c=CreateUnitAtLoc(p,'h00P',GetUnitLoc(f),.0)
+set c=CreateUnitAtLoc(p,'h00R',GetUnitLoc(f),.0)
 call GroupAddUnit(g3,c)
 call UnitAddAbility(c,'A0DI')
 call IssueTargetOrderById(c,$D006B,f)

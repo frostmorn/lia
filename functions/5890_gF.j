@@ -23,7 +23,7 @@ if IsUnitEnemy(f,p)and IsUnitAlive(f) then
 set GF=CreateTimer()
 set hF=GetHandleId(GF)
 set L=GetUnitLoc(f)
-set c=CreateUnitAtLoc(p,'h00P',L,0)
+set c=CreateUnitAtLoc(p,'h00R',L,0)
 call RemoveLocation(L)
 call UnitAddAbility(c,'A0G9')
 call SetUnitAbilityLevel(c,'A0G9',JN)

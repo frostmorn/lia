@@ -15,7 +15,7 @@ local timer te=CreateTimer()
 local integer Dg=GetHandleId(te)
 local unit f
 local effect e
-local unit c=CreateUnitAtLoc(p,'h00P',T,0)
+local unit c=CreateUnitAtLoc(p,'h00R',T,0)
 call UnitAddAbility(c,'A0ED')
 call IssueImmediateOrderById(c,$D011D)
 set e=AddSpecialEffectTarget("Abilities\\Spells\\Undead\\ReplenishMana\\ReplenishManaCasterOverhead.mdl",uA,"overhead")

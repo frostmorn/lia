@@ -11,7 +11,7 @@ local integer dN=GetHandleId(t)
 local real fA=$96+25*JN
 local unit f
 call TerrainDeformCrater(GetLocationX(T),GetLocationY(T),fA,-'d'*JN,$3E8*JN,false)
-set f=CreateUnitAtLoc(p,'h00P',T,0)
+set f=CreateUnitAtLoc(p,'h00R',T,0)
 call RemoveLocation(T)
 call UnitAddAbility(f,'A0E2')
 call SetUnitAbilityLevel(f,'A0E2',JN)

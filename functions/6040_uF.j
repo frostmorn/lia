@@ -19,7 +19,7 @@ if IsUnitAlive(u) and IsUnitAlly(f,p) then
 set t=CreateTimer()
 set dN=GetHandleId(t)
 set L=GetUnitLoc(f)
-set c=CreateUnitAtLoc(p,'h00P',L,0)
+set c=CreateUnitAtLoc(p,'h00R',L,0)
 call UnitAddAbility(c,'A0G3')
 call SetUnitAbilityLevel(u,'A0G3',JN)
 call IssueTargetOrderById(c,$D0062,f)

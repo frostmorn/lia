@@ -12,7 +12,7 @@ local integer qG=GetHandleId(t2)
 local unit c
 call SetUnitPathing(uA,true)
 call DestroyTrigger(pb)
-set c=CreateUnitAtLoc(p,'h00P',L,0)
+set c=CreateUnitAtLoc(p,'h00R',L,0)
 call RemoveLocation(L)
 call UnitAddAbility(c,'A0FJ')
 call IssueImmediateOrderById(c,$D009F)

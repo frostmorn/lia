@@ -11,7 +11,7 @@ local unit uA=LoadUnitHandle(Ax,3,dN)
 local unit f
 local boolean b
 local player p
-local unit ff=CreateUnit(GetOwningPlayer(uA),'h00P',0,0,0)
+local unit ff=CreateUnit(GetOwningPlayer(uA),'h00R',0,0,0)
 set g=LoadGroupHandle(Ax,4,dN)
 if In>vB or FirstOfGroup(g)==null then
 call DestroyGroup(g)

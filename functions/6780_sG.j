@@ -35,7 +35,7 @@ loop
 set f=FirstOfGroup(gg)
 exitwhen f==null
 set l=GetUnitLoc(f)
-set cc=CreateUnitAtLoc(p,'h00P',l,0)
+set cc=CreateUnitAtLoc(p,'h00R',l,0)
 call RemoveLocation(l)
 call UnitAddAbility(cc,'A0EA')
 call SetUnitAbilityLevel(cc,'A0EA',JN)

@@ -10,7 +10,7 @@ local real y=GetUnitY(u)
 local real Ec=GetUnitFacing(u)
 local real xp=GetWidgetLife(u)
 local real mp=GetUnitState(u,UNIT_STATE_MANA)
-local unit Lj=CreateUnit(p,'h00P',0,0,.0)
+local unit Lj=CreateUnit(p,'h00R',0,0,.0)
 set DamageTypeAttack=false
 call UnitDamageTarget(Lj,u,99999,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true

@@ -17,7 +17,7 @@ set WF=GetUnitAbilityLevel(uA,'A06Q')
 set l=GetUnitLoc(uT)
 call DestroyEffect(AddSpecialEffectLoc("Objects\\Spawnmodels\\Other\\PandarenBrewmasterBlood\\PandarenBrewmasterBlood.mdl",l))
 call RemoveLocation(l)
-set Lj=CreateUnit(GetOwningPlayer(uA),'h00P',0,0,.0)
+set Lj=CreateUnit(GetOwningPlayer(uA),'h00R',0,0,.0)
 set DamageTypeAttack=false
 call UnitDamageTarget(Lj,uT,99999,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
 set DamageTypeAttack=true

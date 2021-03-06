@@ -6,7 +6,7 @@ local unit ab=Ke
 local player p=GetOwningPlayer(ab)
 local integer JN=vC
 local unit f
-set f=CreateUnitAtLoc(p,'h00P',GetUnitLoc(u),GetUnitFacing(u))
+set f=CreateUnitAtLoc(p,'h00R',GetUnitLoc(u),GetUnitFacing(u))
 call UnitAddAbility(f,'A0CN')
 call SetUnitAbilityLevel(f,'A0CN',JN)
 call IssueTargetOrderById(f,$D006B,u)
