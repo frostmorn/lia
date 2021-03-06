@@ -4,8 +4,11 @@
 // #define D_5120 1
 // #define D_5090 1
 // #define D_10940 1 
-#define D_13450 1
-#define D_13720 1
+// #define D_13450 1
+// #define D_13720 1
+// #define D_8760 1
+// #define D_13670 1
+// #define D_13240 1
 #define DEBUG_NO_WAVE_DESCRIPTIONS    
 #define DEBUG_NOCLEAR_MESSAGES
 #endif
@@ -15,6 +18,8 @@
 #define IDDS_ENABLED 1
 #define FEATURE_TESTMODE_SETWAVE 1
 #define MIFRIL_VARIANT_2 1
+
+// Causes fucking critical error. Why? I don't even know
 #define WO_TIMER_START 0
 
 #define DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND 1
