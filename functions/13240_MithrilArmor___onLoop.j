@@ -17,7 +17,7 @@ call DMesg("Mithril duration = "+R2S(duration))
 if not IssueTargetOrder(first,"attack",caster)then
 call IssueTargetOrder(first,"smart",caster)
 endif
-if IsUnitAlive(first) or IsUnitDead(caster) or GetUnitAbilityLevel(first,'B03N')>0 or duration<=0.00 or not b then
+if IsUnitDead(first) or IsUnitDead(caster) or GetUnitAbilityLevel(first,'B03N')>0 or duration<=0.00 or not b then
 call KillTimer(t)
 call FlushChildHashtable(HashData,h)
 call RemoveSavedHandle(HashData,h1,StringHash("MithrilArmor:Caster"))
