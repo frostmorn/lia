@@ -3,7 +3,6 @@
 #include "functions/10_IsPlayerOnline.j"
 #include "functions/20_CameraAutoSetup.j"
 #include "functions/30_EN.j"
-#include "functions/40_SendDebugToBot.j"
 #include "functions/50_SendStatsToBot.j"
 #include "functions/70_IsUnitAlive.j"
 #include "functions/80_IsUnitDead.j"

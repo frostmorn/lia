@@ -1,7 +1,12 @@
 #ifndef F_00120
 #define F_00120
 #if DEBUG
+//
+//  Place where all debug shit purposes functions located.
+//  Actually we don't have needness in them in release versions
+//
 function I2HS takes integer i returns string
+    // Gets integer and returns hex-string
     local string abc = "0123456789ABCDEF" 
     local integer temp1 = i
     local string s = ""
@@ -26,7 +31,16 @@ function I2HS takes integer i returns string
     endif
 endfunction
 
+function SendDebugToBot takes string sVariable, integer iValue returns nothing
+    //  Sends debug messages to ghostpp bot
+    //  Bot must have an ability to read that data
+    call StoreInteger(O, "DEBUG:", sVariable,  iValue)
+    call SyncStoredInteger(O, "DEBUG:", sVariable)
+endfunction
+    
+
 function DMesg takes string message returns nothing
+    //  Our debug log function
     call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS, 2,"|Cffff0000DEBUG:|R" + message)
 endfunction
 
