@@ -5,7 +5,6 @@
 #include "functions/30_EN.j"
 #include "functions/40_SendDebugToBot.j"
 #include "functions/50_SendStatsToBot.j"
-#include "functions/60_DMesg.j"
 #include "functions/70_IsUnitAlive.j"
 #include "functions/80_IsUnitDead.j"
 #include "functions/90_IsCordsInRect.j"

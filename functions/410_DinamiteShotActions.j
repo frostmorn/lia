@@ -1,6 +1,8 @@
 #ifndef H_410
 #define H_410
+#include "../features/00120_Debug.j"
 #include "400_DinamiteShot___DinamiteShotLoop.j"
+
 function DinamiteShotActions takes unit u,unit u2 returns nothing
     local unit caster=u
     local unit target=u2

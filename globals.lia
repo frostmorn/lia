@@ -301,11 +301,6 @@ integer CURRENT_PLAYERS=0
 integer CurrentWave=0
 integer Cv=0
 integer De=0
-#if DEBUG
-integer debug_method = 1
-#else
-integer debug_method = 1
-#endif
 integer do=0
 integer f__arg_integer1
 integer f__arg_integer2

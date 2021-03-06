@@ -1,5 +1,6 @@
 #ifndef H_3380
 #define H_3380
+#include "../features/00120_Debug.j"
 #include "280_BurningArmorAdd.j"
 #include "390_CausticFinaleNew.j"
 #include "410_DinamiteShotActions.j"

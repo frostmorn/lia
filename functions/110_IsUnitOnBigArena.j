@@ -1,5 +1,6 @@
 #ifndef H_110
 #define H_110
+#include "../features/00120_Debug.j"
 function IsUnitOnBigArena takes unit u returns boolean
 
 #if D_110

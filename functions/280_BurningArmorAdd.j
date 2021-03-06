@@ -1,5 +1,6 @@
 #ifndef H_280
 #define H_280
+#include "../features/00120_Debug.j"
 function BurningArmorAdd takes unit u,unit t returns nothing
     local unit dummy
     local real x=GetUnitX(t)

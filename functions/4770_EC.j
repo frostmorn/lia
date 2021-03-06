@@ -1,5 +1,6 @@
 #ifndef H_4770
 #define H_4770
+#include "../features/00120_Debug.j"
 function EC takes nothing returns nothing
 local integer In
 local group g

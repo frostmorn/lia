@@ -853,7 +853,7 @@ set ZI=CreateGroup()
 call TriggerRegisterTimerEvent(oO,1,true)
 call TriggerRegisterTimerEvent(rO,2,true) 
 call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,1.0,true)
-//call DMesg("Trigger AO Disabled")
+
 call dq()
 call jq()
 call TriggerRegisterTimerEventSingle(aR,1.)

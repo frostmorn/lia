@@ -1,5 +1,7 @@
 #ifndef H_5130
 #define H_5130
+
+#include "../features/00120_Debug.j"
 #include "5120_PrepareBeforeRoundFunction.j"
 
 function kd takes nothing returns nothing

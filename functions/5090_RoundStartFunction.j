@@ -1,5 +1,7 @@
 #ifndef H_5090
 #define H_5090
+#include "../features/00120_Debug.j"
+
 function RoundStartFunction takes nothing returns nothing
 #if FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed=false

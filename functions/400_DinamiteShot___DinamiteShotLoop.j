@@ -1,5 +1,6 @@
 #ifndef H_400
 #define H_400
+#include "../features/00120_Debug.j"
 function DinamiteShot___DinamiteShotLoop takes nothing returns nothing
 local timer ztimer=GetExpiredTimer()
 local integer zhandle=GetHandleId(ztimer)

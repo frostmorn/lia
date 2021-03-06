@@ -1,5 +1,6 @@
 #ifndef H_300
 #define H_300
+#include "../features/00120_Debug.j"
 function BurningArmor___OnActions takes nothing returns nothing
 local unit u=GetLearningUnit()
 #if D_300

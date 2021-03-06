@@ -1,7 +1,6 @@
 #ifndef H_13510
 #define H_13510
 #if NEW_INCLUDES
-    #include "60_DMesg.j"
     #include "150_sc__SpellEvent___spellEvent_onDestroy.j"
     #include "160_s__SpellEvent___spellEvent__allocate.j"
     #include "170_sc__SpellEvent___spellEvent_deallocate.j"
@@ -261,6 +260,7 @@ local integer SA
 local integer ED
 local integer wN
 local trigger trg11
+local unit dummy = CreateUnit(Player(15), 'h00R', 0,0,0)
 call SetCameraBounds( -3584.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 3200.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3584.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 3200.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM) )
 call SetDayNightModels( "Environment\\DNC\\DNCDalaran\\DNCDalaranTerrain\\DNCDalaranTerrain.mdl", "Environment\\DNC\\DNCDalaran\\DNCDalaranUnit\\DNCDalaranUnit.mdl" )
 call SetTerrainFogEx(0,3000.0,5000.0,0.500,0.000,0.000,0.000)
@@ -281,6 +281,7 @@ call ArmorUtils__Init()
 #if IDDS_ENABLED
 call IDDS___Init()
 #endif
+
 call MissOnAttack___Init()
 call SpellEvent___Init()
 call SpellEventSpecial___Init()
@@ -543,6 +544,7 @@ exitwhen ED==wN
 call TriggerRegisterPlayerUnitEvent(Ta,Player(ED),EVENT_PLAYER_UNIT_ATTACKED,null)
 set ED=ED+1
 endloop
+
 call TriggerAddCondition(Ta,Condition(function HD))
 call TriggerAddAction(Ta,function jD)
 set ua=CreateTrigger()
@@ -942,7 +944,6 @@ call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,1.0,true)
 call TriggerAddAction(CreepsSeekAndAttackPeriodicTrigger,function CreepsSeekAndAttackFunction)
 set AO=CreateTrigger()
 call DisableTrigger(AO)
-//call DMesg("Trigger AO Disabled")
 call TriggerRegisterTimerEventPeriodic(AO,2.4)
 call TriggerAddAction(AO,function AM)
 set NO=CreateTrigger()
@@ -1639,6 +1640,19 @@ call RunInitializationTriggers()
 #if MAP_INITIALIZATION_VARIANT_2
 call AD()
 
+loop 
+    call UnitAddAbility(dummy, StatMod___ABILITY_DAMAGE[i])
+    call UnitAddAbility(dummy, StatMod___ABILITY_ARMOR[i])
+    call UnitAddAbility(dummy, StatMod___ABILITY_ATTACKSPEED[i])
+    exitwhen i == 25
+endloop
+call UnitAddAbility(dummy, 'A0JL')
+call UnitAddAbility(dummy, 'A0JM')
+call UnitAddAbility(dummy, 'A0JN')
+call UnitAddAbility(dummy, 'A0JK')
+// UnitAddAbility(dummy, 'A0JM')
+call RemoveUnit(dummy)
+set i = 1
 #if FEATURE_PRELOAD_MODELS
 call PreloadModels()
 #endif

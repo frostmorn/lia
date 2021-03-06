@@ -1,5 +1,6 @@
 #ifndef H_13390
 #define H_13390
+#include "../features/00120_Debug.j"
 function AimedShot___AimedShotActions takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local real x=s__SpellEvent___spellEvent_TargetX[SpellEvent]
