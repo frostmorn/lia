@@ -11,16 +11,12 @@ local timer t
 local integer h
 #if D_13670
 call DMesg ("Unit "+GetUnitName(caster)+" in Location :"+Loc2S(GetUnitLoc(caster)))
-call DisableTrigger(AO)
-call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 #endif
 call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,500.00,null)
 loop
 set first=FirstOfGroup(bj_lastCreatedGroup)
 #if D_13670
 call DMesg ("Unit "+GetUnitName(first)+" in Location :"+Loc2S(GetUnitLoc(first))+" enumerated by MithrilOnActions")
-call DisableTrigger(AO)
-call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 #endif
 exitwhen first==null
 if IsUnitAlive(first) and GetUnitAbilityLevel(first,'B03N')==0 and not IsUnitAlly(first,GetOwningPlayer(caster)) then
