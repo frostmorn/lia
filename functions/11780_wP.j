@@ -14,11 +14,16 @@ loop
 exitwhen In>WP
 set sv=sv+U[In]
 set YP=YP+W[In]
-set zP=zP+vv[In]
+set zP=zP+vv[In]    // Boss count
 set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
 set In=In+1
 endloop
+#if D_11780
+call DMesg("|Cffcc490cTeam 1|R  stats data: ")
+call DMesg("sv (Rating) = "+I2S(sv)+"; vq (DeathCount) = "+ I2S(vq)+"; ZP(KillsCount) = "+I2S(ZP)+"; zP (BossCount) = "+I2S(zP)+"; YP = "+I2S(YP))
+#endif
+// TEAM 1
 call MultiboardSetItemValueBJ(StatsBoard,10,2,I2S(sv))
 call MultiboardSetItemValueBJ(StatsBoard,9,2,I2S(vq))
 call MultiboardSetItemValueBJ(StatsBoard,6,2,I2S(ZP))
@@ -39,12 +44,18 @@ set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
 set In=In+1
 endloop
+#if D_11780
+call DMesg("|Cff3976e6Team 2|R stats data: ")
+call DMesg("sv (Rating) = "+I2S(sv)+"; vq (DeathCount) = "+ I2S(vq)+"; ZP(KillsCount) = "+I2S(ZP)+"; zP (BossCount) = "+I2S(zP)+"; YP = "+I2S(YP))
+#endif
 set In=3+WP
+// Command 2
 call MultiboardSetItemValueBJ(StatsBoard,10,In,I2S(Sv))
 call MultiboardSetItemValueBJ(StatsBoard,9,In,I2S(vq))
 call MultiboardSetItemValueBJ(StatsBoard,6,In,I2S(ZP))
 call MultiboardSetItemValueBJ(StatsBoard,5,In,I2S(zP))
 call MultiboardSetItemValueBJ(StatsBoard,4,In,I2S(YP))
+
 endfunction
 
 #endif

@@ -8,6 +8,10 @@ local integer In=1
 #if BEFORE_ROUND_SILENCE_VARIANT_2
 call DestroyTimer(Fo)
 #endif
+// TODO : Disable trigger on command duel battle
+// Creeps Calculation trigger
+call EnableTrigger(kO)
+
 call DisableTrigger(IsReadyTrig)
 call yb()
 call DestroyTimer(RoundStartTimer)

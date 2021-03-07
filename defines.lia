@@ -9,6 +9,8 @@
 // #define D_8760 1
 // #define D_13670 1
 // #define D_13240 1
+// #define D_11780 1    // Stats -b mode
+// #define D_11420 1
 #define DEBUG_NO_WAVE_DESCRIPTIONS    
 #define DEBUG_NOCLEAR_MESSAGES
 #endif
