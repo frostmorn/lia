@@ -7,7 +7,7 @@ local integer Bc=(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:In
 set HeroInGameAndAliveARRAY[Bc]=true
 call GroupRemoveUnit(fo,u)
 call SelectUnitForPlayerSingle(u,p)
-if RectContainsUnit(gg_rct_Ii,u)then
+if RectContainsUnit(gg_rct_TavernRect,u)then
 call SetUnitPositionLoc(u,GetRectCenter(gg_rct_Ri))
 call PanCameraToTimedLocForPlayer(p,GetRectCenter(gg_rct_Ri),0)
 endif

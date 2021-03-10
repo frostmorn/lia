@@ -501,7 +501,7 @@ rect gg_rct_Hr=null
 rect gg_rct_ia=null
 rect gg_rct_Ia=null
 rect gg_rct_ii=null
-rect gg_rct_Ii=null
+rect gg_rct_TavernRect=null
 rect gg_rct_Ir=null
 rect gg_rct_ja=null
 rect gg_rct_Ja=null
@@ -555,7 +555,7 @@ rect gg_rct_ShopsAreaFogModifierRect=null
 rect gg_rct_si=null
 rect gg_rct_Si=null
 rect gg_rct_sr=null
-rect gg_rct_TavernAndMinimalArenaAreaFogModifierRect=null
+rect gg_rct_MinimalArenaAndShopsFogModifierRect=null
 rect gg_rct_TealPlayerBox=null
 rect gg_rct_Ti=null
 rect gg_rct_TopSpawnRect=null
@@ -590,6 +590,9 @@ rect gg_rct_zo=null
 rect gg_rct_Zo=null
 rect gg_rct_zr=null
 rect gg_rct_Zr=null
+// Place where heroes feels some kind of comfortability
+// High hp and mp regeneration
+region SweetHome = null
 // sound gg_snd_audio_2020_01_11_07_16_27_1=null
 string array aA
 string array HI
@@ -765,6 +768,8 @@ trigger hn=null
 trigger Hn=null
 trigger hO=null
 trigger HO=null
+trigger HomeRegenerationEnterTrig=null
+trigger HomeRegenerationLeaveTrig=null
 trigger hR=null
 trigger HR=null
 trigger hV=null
