@@ -590,6 +590,9 @@ rect gg_rct_zo=null
 rect gg_rct_Zo=null
 rect gg_rct_zr=null
 rect gg_rct_Zr=null
+
+
+rect gg_rct_ShopsRect=null
 // Place where heroes feels some kind of comfortability
 // High hp and mp regeneration
 region SweetHome = null
@@ -769,7 +772,6 @@ trigger Hn=null
 trigger hO=null
 trigger HO=null
 trigger HomeRegenerationEnterTrig=null
-trigger HomeRegenerationLeaveTrig=null
 trigger hR=null
 trigger HR=null
 trigger hV=null

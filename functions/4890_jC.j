@@ -71,7 +71,8 @@ set px[5]=CreateUnitAtLoc(p,'n01J',GetRectCenter(gg_rct_oi),Ec)
 set px[6]=CreateUnitAtLoc(p,'n02F',GetRectCenter(gg_rct_ni),Ec)
 set px[7]=CreateUnitAtLoc(p,'n014',GetRectCenter(gg_rct_ri),Ec)
 set px[8]=CreateUnitAtLoc(p,'n001',GetRectCenter(gg_rct_ii),Ec)
-set px[9]=CreateUnitAtLoc(p,'n00A',GetRectCenter(gg_rct_ai),Ec)
+// Fountain of Health
+// set px[9]=CreateUnitAtLoc(p,'n00A',GetRectCenter(gg_rct_ai),Ec)
 set GI=true
 call SetUnitAnimation(px[1],"work")
 call SetUnitAnimation(px[2],"work")
@@ -81,7 +82,7 @@ call SetUnitAnimation(px[5],"work")
 call SetUnitAnimation(px[6],"work")
 call SetUnitAnimation(px[7],"work")
 call SetUnitAnimation(px[8],"work")
-call SetUnitAnimation(px[9],"work")
+// call SetUnitAnimation(px[9],"work")
 set p=null
 set u=null
 endfunction

@@ -1,3 +1,5 @@
+#include "00100_HomeRegenerationCallbacks.j"
+
 function CreateTriggers takes nothing returns nothing
     local integer ED
     local integer wN
@@ -155,6 +157,8 @@ function CreateTriggers takes nothing returns nothing
     set iI=CreateTrigger()
     set nI=CreateTrigger()
     set VI=CreateTrigger()
+    // custom Triggers
+    set HomeRegenerationEnterTrig = CreateTrigger()
     call DisableTrigger(Wa)
     call DisableTrigger(ya)
     call DisableTrigger(Ya)
@@ -204,6 +208,7 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(yR)
     call DisableTrigger(nI)
     // Everything at top okay
+    call TriggerAddAction(HomeRegenerationEnterTrig, function HomeRegenerationEnter)
     call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
     call TriggerAddAction(Pa,function xD)
     call TriggerAddAction(Qa,function dD)
@@ -579,4 +584,9 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterDeathEvent(dR,bI)
     call TriggerRegisterDeathEvent(dR,AI)
     call TriggerRegisterDeathEvent(dR,RI)
+
+// Regeneration in SweetHomeRegion
+
+    call TriggerRegisterEnterRegionSimple(HomeRegenerationEnterTrig, SweetHome)
+
 endfunction
