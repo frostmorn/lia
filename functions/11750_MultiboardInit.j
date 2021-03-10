@@ -3,7 +3,7 @@
 function MultiboardInit takes nothing returns nothing
 set mv=R2I((I2R(A)/ 2.))
 set Mv=(A-mv)
-call CreateMultiboardBJ(10,(A+6),"Cтaтиcтикa")
+call CreateMultiboardBJ(10,(A+6),"Статистика")
 set StatsBoard=bj_lastCreatedMultiboard
 call MultiboardSetItemValueBJ(StatsBoard,0,0,I2S(0))
 call MultiboardSetItemValueBJ(StatsBoard,8,0,("0.0%"))
@@ -56,14 +56,14 @@ exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,true,ae[bj_forLoopAIndex])
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
-call MultiboardSetItemValueBJ(StatsBoard,3,1,"Убитo:")
-call MultiboardSetItemValueBJ(StatsBoard,4,1,"кpипoв")
-call MultiboardSetItemValueBJ(StatsBoard,5,1,"бoccoв")
-call MultiboardSetItemValueBJ(StatsBoard,6,1,"гepoeв")
-call MultiboardSetItemValueBJ(StatsBoard,7,1,"Уpoвeнь")
-call MultiboardSetItemValueBJ(StatsBoard,8,1,"Улyчшeния")
-call MultiboardSetItemValueBJ(StatsBoard,9,1,"Cмepтeй")
-call MultiboardSetItemValueBJ(StatsBoard,10,1,"Peйтинг")
+call MultiboardSetItemValueBJ(StatsBoard,3,1,"Убито:")
+call MultiboardSetItemValueBJ(StatsBoard,4,1,"крипов")
+call MultiboardSetItemValueBJ(StatsBoard,5,1,"боссов")
+call MultiboardSetItemValueBJ(StatsBoard,6,1,"героев")
+call MultiboardSetItemValueBJ(StatsBoard,7,1,"Уровень")
+call MultiboardSetItemValueBJ(StatsBoard,8,1,"Улучшения")
+call MultiboardSetItemValueBJ(StatsBoard,9,1,"Смертей")
+call MultiboardSetItemValueBJ(StatsBoard,10,1,"Рейтинг")
 call MultiboardSetItemWidthBJ(StatsBoard,8,0,7.5)
 call MultiboardSetItemWidthBJ(StatsBoard,10,0,7.5)
 call MultiboardSetItemValueBJ(StatsBoard,3,2,"Клaн Cвeтa")
