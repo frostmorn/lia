@@ -1278,7 +1278,6 @@
 #include "functions/12200_GQ.j"
 #include "functions/12210_hQ.j"
 #include "functions/12220_jQ.j"
-#include "functions/12230_kQ.j"
 #include "functions/12240_lQ.j"
 #include "functions/12250_LQ.j"
 #include "functions/12260_mQ.j"

@@ -1280,10 +1280,6 @@ call TriggerAddAction(DR,function hQ)
 set fR=CreateTrigger()
 call TriggerRegisterEnterRectSimple(fR,gg_rct_fr)
 call TriggerAddAction(fR,function jQ)
-set FR=CreateTrigger()
-call TriggerRegisterEnterRectSimple(FR,gg_rct_Xi)
-call TriggerRegisterEnterRectSimple(FR,gg_rct_Ei)
-call TriggerAddAction(FR,function kQ)
 call mQ()
 set ED=0
 set wN=16
