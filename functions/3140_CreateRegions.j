@@ -5,7 +5,6 @@ local weathereffect we
 
 set gg_rct_aa = Rect( -2912.0, -1088.0, -2464.0, -672.0 )
 set gg_rct_Aa = Rect( -1280.0, 224.0, -896.0, 672.0 )
-set gg_rct_ai = Rect( 288.0, -2656.0, 640.0, -2336.0 )
 set gg_rct_Ai = Rect( 2464.0, -3008.0, 2528.0, -2976.0 )
 set gg_rct_Ar = Rect( 2240.0, -416.0, 2304.0, -352.0 )
 set gg_rct_ba = Rect( 1152.0, 1024.0, 1312.0, 1184.0 )
