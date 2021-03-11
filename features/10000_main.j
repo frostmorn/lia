@@ -193,7 +193,6 @@ set ee[i]=0
 set Re[i]=1
 set Be[i]=false
 set IsReady[i]=false
-set ce[i]=false
 set ge[i]=false
 set pe[i]=false
 set gx[i]=0
@@ -202,7 +201,6 @@ set eo[i]=false
 set HeroInGameAndAliveARRAY[i]=false
 set Ao[i]=0
 set bo[i]=0
-set Bo[i]=false
 set i=i+1
 endloop
 set RoundStartTimer=CreateTimer()

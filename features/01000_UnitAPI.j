@@ -24,4 +24,8 @@ function IsUnitInRect takes unit u, rect rct returns boolean
     endif
 endfunction
 
+function GetUnitZ takes unit u returns real
+    return GetLocationZ(GetUnitLoc(u))+GetUnitFlyHeight(u)
+endfunction
+
 #endif

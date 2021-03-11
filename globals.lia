@@ -3,8 +3,6 @@
 #include "defines.lia"
 globals
 boolean array Be
-boolean array Bo
-boolean array ce
 boolean array DemonicRage___recolor
 boolean array eo
 boolean array ge
@@ -391,7 +389,6 @@ integer Yx=0
 item array s__SpellEvent___spellEvent_TargetItem
 itempool LI
 location array Dv
-location Table__z=Location(0.00,0.00)
 location Ye=null
 multiboard StatsBoard=null
 player array ae

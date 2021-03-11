@@ -73,8 +73,7 @@
 
 #include "functions/540_AddStat.j"
 #include "functions/550_StatMod___Init.j"
-#include "functions/560_GetZLoc.j"
-#include "functions/570_GetUnitZ.j"
+
 
 // Not used anywhere
 #include "functions/580_SetUnitZ.j"
@@ -282,11 +281,9 @@
 #include "functions/2440_GetReducedDamage.j"
 #include "functions/2450_GetFullDamage.j"
 #include "functions/2460_ArmorUtils__Init.j"                    // Used in 13510
-#include "functions/2470_CombatTextCreate.j"                    // Used in 2480, 3030 and 13600
 
 // Not used again -_- How many shit this map contains?
 
-#include "functions/2480_CombatTextCreateEx.j"     
 #if IDDS_ENABLED          
 #include "functions/2490_IDDS___TriggerSort.j"                  // Used in 2540, 2560 and 2570
 #endif
@@ -476,7 +473,6 @@
 #include "functions/4240_HB.j"
 #include "functions/4250_jB.j"
 #include "functions/4260_JB.j"
-#include "functions/4270_EndKik.j"
 #include "functions/4280_kB.j"
 #include "functions/4290_KB.j"
 #include "functions/4300_lB.j"

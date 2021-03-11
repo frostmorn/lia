@@ -1,5 +1,6 @@
 #ifndef H_3030
 #define H_3030
+#include "../features/01500_CombatTextAPI.j"
 function DarkRitual___DarkRitualCallback takes nothing returns nothing
 local unit caster=s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 local unit target=s__SpellEvent___spellEvent_TargetUnit[SpellEvent]
