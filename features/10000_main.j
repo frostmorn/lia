@@ -222,12 +222,6 @@ exitwhen(i>9)
 set Ee[i]=CreateGroup()
 set i=i+1
 endloop
-set i=0
-loop
-exitwhen(i>7)
-set be[i]=false
-set i=i+1
-endloop
 set he=CreateTimer()
 set i=0
 loop

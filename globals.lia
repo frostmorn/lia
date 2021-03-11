@@ -2,7 +2,6 @@
 #define GLOBALS_H
 #include "defines.lia"
 globals
-boolean array be
 boolean array Be
 boolean array Bo
 boolean array ce
@@ -72,26 +71,11 @@ boolexpr NA=null
 camerasetup Ma=null
 camerasetup pa=null
 constant attacktype ArmorUtils__ATTACK_TYPE_USED=ATTACK_TYPE_CHAOS
-constant boolean LIBRARY_ArmorUtils=true
-constant boolean LIBRARY_CombatTextIn=true
-constant boolean LIBRARY_DarkRitual=true
-constant boolean LIBRARY_FlexibleSpeed=true
-constant boolean LIBRARY_IDDS=true
-constant boolean LIBRARY_Logarithm=true
-constant boolean LIBRARY_MagicLumpRegeneration=true
-constant boolean LIBRARY_MagicLump=true
-constant boolean LIBRARY_MissOnAttack=true
-constant boolean LIBRARY_SetUnitMaxState=true
-constant boolean LIBRARY_SpellEventSpecial=true
-constant boolean LIBRARY_SpellEvent=true
-constant boolean LIBRARY_StatMod=true
-constant boolean LIBRARY_TableBr=true
-constant boolean LIBRARY_Table=true
-constant boolean LIBRARY_TimedEffect=true
-constant boolean LIBRARY_Void=true
+
 constant hashtable AimedShot___HASH_TABLE=InitHashtable()
 constant hashtable DemonicRage___hash=InitHashtable()
 constant hashtable DinamiteShot___HASH_TABLE=InitHashtable()
+
 constant integer AimedShot___SPELL_ID='A0IV'
 constant integer ArmorUtils__LIFE_BONUS_SPELL_ID='A0K3'
 constant integer BONUS_TYPE_ARMOR=2
