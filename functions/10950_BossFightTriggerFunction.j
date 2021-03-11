@@ -44,6 +44,8 @@ call PauseUnit(No[In],true)
 set In=In+1
 endloop
 call Mc()
+call DisableTrigger(AO)
+call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 if CurrentWave==20 then
     call EnableTrigger(dO)
     call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,false,Player(11))
@@ -58,11 +60,7 @@ else
     call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
     call PauseUnit(Me,true)
     call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
-    #if WO_TIMER_START
     if CurrentWave!=20 then
-    #else
-    if CurrentWave==5 then
-    #endif
         call qm()
     endif
         call EnableTrigger(eA)
