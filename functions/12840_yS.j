@@ -17,7 +17,7 @@ call SaveBoolean(Ax,ec,StringHash("p"+I2S(ec)+"or"+I2S(In)),false)
 set In=In+1
 endloop
 call OC(p)
-if kD() and Ex then
+if IsNotGameOver() and Ex then
 endif
 set p=null
 endfunction

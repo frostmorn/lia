@@ -867,7 +867,6 @@
 #include "functions/8270_kJ.j"
 #include "functions/8280_KJ.j"
 #include "functions/8290_lJ.j"
-#include "functions/8300_LJ.j"
 #include "functions/8310_mJ.j"
 #include "functions/8320_MJ.j"
 #include "functions/8330_pJ.j"

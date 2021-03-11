@@ -31,7 +31,7 @@ set ec[Kc]=ee[GetPlayerId(p[Kc])+1]
 endif
 set In=In+1
 endloop
-set Xv=true
+set GameOver=true
 call DisableTrigger(LO)
 call PauseTimer(bj_lastStartedTimer)
 call DestroyTimerDialog(bj_lastCreatedTimerDialog)

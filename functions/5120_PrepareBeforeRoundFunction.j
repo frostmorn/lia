@@ -39,7 +39,7 @@ set IsReady[index]=false
 set index=index+1
 exitwhen index==16
 endloop
-if Xv then
+if GameOver then
 set Hd=null
 set Gd=null
 set tt=null

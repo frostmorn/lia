@@ -11,8 +11,8 @@ function HD takes nothing returns boolean
     return IsUnitAlly(GetAttacker(),GetOwningPlayer(GetTriggerUnit()))
 endfunction
     
-function kD takes nothing returns boolean
-    return Xv==false
+function IsNotGameOver takes nothing returns boolean
+    return GameOver==false
 endfunction
     
 function qD takes nothing returns boolean
@@ -137,7 +137,7 @@ function IsDyingUnitMonster takes nothing returns boolean
 endfunction
 
 function QM takes nothing returns boolean
-    return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and IsDyingUnitMonster()and GetDyingUnit()!=Le and kD()
+    return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and IsDyingUnitMonster()and GetDyingUnit()!=Le and IsNotGameOver()
 endfunction
     
 function tM takes nothing returns boolean

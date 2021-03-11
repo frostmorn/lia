@@ -7,7 +7,7 @@ local integer In=0
 local trigger pb=CreateTrigger()
 call TriggerAddAction(pb,function eB)
 call TriggerRegisterTimerEventPeriodic(pb,1.)
-set Xv=true
+set GameOver=true
 call DisableTrigger(LO)
 call GroupEnumUnitsInRect(g,bj_mapInitialPlayableArea,null)
 loop

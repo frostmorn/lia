@@ -16,7 +16,7 @@ local item t
 local unit NC
 local string bC
 local boolean b=LoadBoolean(Ax,1,ID)
-if kD() then
+if IsNotGameOver() then
 call UnitRemoveAbility(IC,'A01U')
 call SaveInteger(Ax,1,StringHash("leave"),ec)
 set NC=Eo[ec]

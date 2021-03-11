@@ -6,7 +6,7 @@ local unit f
 local timer t=CreateTimer()
 call DisableTrigger(IsReadyTrig)
 call lb()
-if Xv then
+if GameOver then
 set t=null
 set g=null
 return

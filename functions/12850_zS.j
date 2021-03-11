@@ -4,7 +4,7 @@ function zS takes nothing returns nothing
 local group g=CreateGroup()
 local integer In=0
 local unit f
-set Xv=true
+set GameOver=true
 call DisableTrigger(LO)
 call GroupEnumUnitsInRect(g,bj_mapInitialPlayableArea,null)
 loop
