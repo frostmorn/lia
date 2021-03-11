@@ -17,7 +17,7 @@ call SaveInteger(DemonicRage___hash,zkey,3,zbr-10)
 else
 set DemonicRage___recolor[zplyrId]=true
 endif
-if zbr<255 and DemonicRage___recolor[zplyrId]==true then
+if zbr<255 and DemonicRage___recolor[zplyrId] then
 call SaveInteger(DemonicRage___hash,zkey,2,zgr+10)
 call SaveInteger(DemonicRage___hash,zkey,3,zbr+10)
 else

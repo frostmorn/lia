@@ -1,7 +1,7 @@
 #ifndef H_3190
 #define H_3190
 function Trig_Unit_Indexer_Func014C takes nothing returns boolean
-if(not(udg_UnitIndexerEnabled==true))then
+if(not(udg_UnitIndexerEnabled))then
 return false
 endif
 if(not(GetUnitUserData(GetFilterUnit())==0))then

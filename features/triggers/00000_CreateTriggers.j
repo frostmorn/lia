@@ -480,7 +480,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(hR,EVENT_PLAYER_UNIT_DEATH)
     call TriggerRegisterAnyUnitEventBJ(xI,EVENT_PLAYER_UNIT_PICKUP_ITEM)
     call TriggerRegisterAnyUnitEventBJ(oI,EVENT_PLAYER_UNIT_DROP_ITEM)
-    call TriggerAddCondition(Ta,Condition(function HD))
+    call TriggerAddCondition(Ta,Condition(function IsUnitAttackedByAlly))
     call TriggerAddCondition(ua,Condition(function IsNotGameOver))
     call TriggerAddCondition(Wa,Condition(function qD))
     call TriggerAddCondition(en,Condition(function Df))

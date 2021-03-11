@@ -3,7 +3,7 @@
 function mj takes nothing returns boolean
 local trigger t
 local integer h
-if GetTriggerEventId()==EVENT_UNIT_ATTACKED and IsUnitAlly(GetAttacker(),GetOwningPlayer(GetTriggerUnit()))==false then
+if GetTriggerEventId()==EVENT_UNIT_ATTACKED and IsUnitAttackedByEnemy() then
 set t=CreateTrigger()
 set h=GetHandleId(t)
 call TriggerRegisterUnitEvent(t,GetTriggerUnit(),EVENT_UNIT_DAMAGED)

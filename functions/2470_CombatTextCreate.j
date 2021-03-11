@@ -46,7 +46,7 @@ set typed=true
 endif
 loop
 exitwhen start==end
-if IsUnitVisible(combatUnit,Player(start))==true then
+if IsUnitVisible(combatUnit,Player(start)) then
 call ForceAddPlayer(textforce,Player(start))
 endif
 set start=start+1

@@ -7,7 +7,7 @@
 // Duplicates should be deleted
 
 #include "../../functions/3680_FN.j"
-function HD takes nothing returns boolean
+function IsUnitAttackedByAlly takes nothing returns boolean
     return IsUnitAlly(GetAttacker(),GetOwningPlayer(GetTriggerUnit()))
 endfunction
     
