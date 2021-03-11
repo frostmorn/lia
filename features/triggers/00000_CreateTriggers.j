@@ -535,7 +535,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddCondition(tR,Condition(function cs))
     call TriggerAddCondition(TR,Condition(function Ds))
     call TriggerAddCondition(xI,Condition(function PS))
-    call TriggerAddCondition(oI,Condition(function tS))
+    call TriggerAddCondition(oI,Condition(function PS))
     call TriggerAddCondition(rI,Condition(function US))
     call TriggerRegisterTimerEventPeriodic(ua,60.)
     call TriggerRegisterTimerEventPeriodic(Wa,2.)

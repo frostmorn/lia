@@ -126,7 +126,7 @@ endfunction
     
 function QM takes nothing returns boolean
     return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and GetOwningPlayer(GetDyingUnit())==Player(11)and GetDyingUnit()!=Le and Xv==false
-    endfunction
+endfunction
     
 function tM takes nothing returns boolean
     return GetDyingUnit()==Le
@@ -214,18 +214,14 @@ endfunction
     
 function Ds takes nothing returns boolean
     return GetTriggerPlayer()==Ce
-    endfunction
+endfunction
     
 function PS takes nothing returns boolean
     return GetItemTypeId(GetManipulatedItem())=='I00Z'
 endfunction
-    
-function tS takes nothing returns boolean
-    return GetItemTypeId(GetManipulatedItem())=='I00Z'
-endfunction
-    
+        
 function US takes nothing returns boolean
     return(CurrentWave<=7)
-    endfunction
+endfunction
     
 #endif
