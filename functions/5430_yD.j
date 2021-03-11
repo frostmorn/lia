@@ -2,7 +2,6 @@
 #define H_5430
 function yD takes nothing returns nothing
 local integer i=0
-call CameraAutoSetup()
 set gMapMode=""
 call SelectMapModeFromHCLString()
 if gMapMode=="" then
