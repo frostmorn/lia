@@ -1,4 +1,4 @@
-#include "00100_HomeRegenerationCallbacks.j"
+#include "callbacks/00100_HomeRegeneration.j"
 #include "01000_Conditions.j"
 function CreateTriggers takes nothing returns nothing
     local integer ED
@@ -206,7 +206,7 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(wR)
     call DisableTrigger(yR)
     call DisableTrigger(nI)
-    // Everything at top okay
+
     call TriggerAddAction(HomeRegenerationEnterTrig, function HomeRegenerationEnter)
     call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
     call TriggerAddAction(Pa,function xD)
@@ -550,9 +550,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterTimerEventPeriodic(nI,.5)
     call TriggerRegisterEnterRectSimple(Ua,gg_rct_PlayersHome)
     call TriggerRegisterEnterRectSimple(XO,gg_rct_PlayersHome)
-    call TriggerRegisterEnterRectSimple(XO,gg_rct_BigArena)
     call TriggerRegisterEnterRectSimple(NO,gg_rct_fr)
-    call TriggerRegisterEnterRectSimple(sO,gg_rct_BigArena)
     call TriggerRegisterEnterRectSimple(ER,gg_rct_Ni)
     call TriggerRegisterEnterRectSimple(ER,gg_rct_bi)
     call TriggerRegisterEnterRectSimple(ER,gg_rct_Bi)
@@ -567,7 +565,6 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterEnterRectSimple(ER,gg_rct_pi)
     call TriggerRegisterEnterRectSimple(ER,gg_rct_Pi)
     call TriggerRegisterEnterRectSimple(cR,gg_rct_MinimalArenaAreaRect)
-    call TriggerRegisterEnterRectSimple(cR,gg_rct_BigArena)
     call TriggerRegisterEnterRectSimple(cR,gg_rct_PlayersHome)
     call TriggerRegisterEnterRectSimple(fR,gg_rct_fr)
     call TriggerRegisterLeaveRectSimple(wa,gg_rct_PlayersHome)
@@ -580,6 +577,12 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterDeathEvent(dR,bI)
     call TriggerRegisterDeathEvent(dR,AI)
     call TriggerRegisterDeathEvent(dR,RI)
+
+
+// Enter BigArena region triggers registration
+    call TriggerRegisterEnterRegionSimple(XO,BigArena)    
+    call TriggerRegisterEnterRegionSimple(cR,BigArena)
+    call TriggerRegisterEnterRegionSimple(sO,BigArena)
 
 // Regeneration in SweetHomeRegion
 

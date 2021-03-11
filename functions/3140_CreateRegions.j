@@ -136,7 +136,15 @@ set gg_rct_PortalBottomNoTp = Rect( -3232.0, 64.0, -2944.0, 1056.0 )
 set gg_rct_ShopsRect = Rect( -800.0, -3488.0, 1472.0, -1504.0 )
 
 set SweetHome = CreateRegion()
+
 call RegionAddRect(SweetHome, gg_rct_ShopsRect)
 call RegionAddRect(SweetHome, gg_rct_TavernRect)
+
+set BigArena = CreateRegion()
+
+call RegionAddRect(BigArena, gg_rct_BigArena)
+call RegionAddRect(BigArena, gg_rct_PortalTopNoTp)
+call RegionAddRect(BigArena, gg_rct_PortalBottomNoTp)
+
 endfunction
 #endif

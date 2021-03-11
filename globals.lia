@@ -574,6 +574,7 @@ rect gg_rct_ShopsRect=null
 // Place where heroes feels some kind of comfortability
 // High hp and mp regeneration
 region SweetHome = null
+region BigArena = null
 // sound gg_snd_audio_2020_01_11_07_16_27_1=null
 string array aA
 string array HI
