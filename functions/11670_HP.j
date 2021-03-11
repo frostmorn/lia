@@ -10,20 +10,22 @@ function HP takes nothing returns nothing
     local integer s=yx
     local timer Gd=CreateTimer()
     local unit f
+    // looks like t and s contains count of alive heroes
+    // So, that's okay
     if IsPlayerInForce(pl,tv)then
     set s=s-1
     else
     set t=t-1
     endif
     if t==0 or s==0 then
-    call DestroyTimerDialog(Ux)
-    call DestroyTimer(ux)
-    set Ux=null
-    set ux=null
-    call DisableTrigger(TO)
-    set t=1
-    set wN=A
-    call DisableTrigger(cR)
+        call DestroyTimerDialog(Ux)
+        call DestroyTimer(ux)
+        set Ux=null
+        set ux=null
+        call DisableTrigger(TO)
+        set t=1
+        set wN=A
+        call DisableTrigger(cR)
     loop
     exitwhen t>wN
     call UnitRemoveBuffsBJ(bj_REMOVEBUFFS_ALL,PlayersHeroArray[t])
@@ -33,12 +35,12 @@ function HP takes nothing returns nothing
     endloop
     call EnableTrigger(cR)
     if s==0 then
-    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cffffcc00Победитель   -   Клан Тьмы"))
-    set p=mv+1
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cffffcc00Победитель   -   Клан Тьмы"))
+        set p=mv+1
     else
-    call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cffffcc00Победитель   -   Клан Света"))
-    set p=1
-    set wN=mv
+        call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cffffcc00Победитель   -   Клан Света"))
+        set p=1
+        set wN=mv
     endif
     set t=p
     loop
