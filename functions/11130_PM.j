@@ -2,12 +2,12 @@
 #define H_11130
 #include "../features/00120_Debug.j"
 #include "5120_PrepareBeforeRoundFunction.j"
-
+#include "../features/triggers/01000_Conditions.j"
 function PM takes nothing returns nothing
 local boolexpr b=Condition(function pM)
 local timer t=CreateTimer()
 set bj_wantDestroyGroup=true
-if (CountUnitsInGroup(GA(gg_rct_BigArena,b))==0) and (CountUnitsInGroup(GA(gg_rct_PortalTopNoTp,b))==0) and (CountUnitsInGroup(GA(gg_rct_PortalBottomNoTp,b))==0) and Xv==false then
+if (CountUnitsInGroup(GA(gg_rct_BigArena,b))==0) and (CountUnitsInGroup(GA(gg_rct_PortalTopNoTp,b))==0) and (CountUnitsInGroup(GA(gg_rct_PortalBottomNoTp,b))==0) and kD() then
 call DestroyBoolExpr(b)
 set qv=false
 call DisableTrigger(cO)

@@ -1,5 +1,6 @@
 #ifndef H_4790
 #define H_4790
+#include "../features/triggers/01000_Conditions.j"
 function OC takes player p returns nothing
 local string RC=GetPlayerName(p)
 local integer ec=ee[GetPlayerId(p)+1]
@@ -15,7 +16,7 @@ local item t
 local unit NC
 local string bC
 local boolean b=LoadBoolean(Ax,1,ID)
-if Xv==false then
+if kD() then
 call UnitRemoveAbility(IC,'A01U')
 call SaveInteger(Ax,1,StringHash("leave"),ec)
 set NC=Eo[ec]

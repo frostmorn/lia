@@ -22,37 +22,49 @@ endfunction
 function Df takes nothing returns boolean
     return(IsUnitType(GetSoldUnit(),UNIT_TYPE_HERO))!=null
 endfunction
-    
+
+// Master of Shadow (Мастер Теней)
+
 function Bh takes nothing returns boolean
+    // E00E: Unit Shadow (Mater of Shadow summon)
     return GetUnitTypeId(GetDyingUnit())=='E00E' and IsUnitIllusion(GetDyingUnit())==false
 endfunction
     
 function Dh takes nothing returns boolean
+    // A0AR: Return to Master (Master of Shadow)
     return GetSpellAbilityId()=='A0AR'
+endfunction
+    
+function Jh takes nothing returns boolean
+    // A0BA: Ability Shadow(Master of Shadow)
+    return GetSpellAbilityId()=='A0BA'
+endfunction
+    
+function mh takes nothing returns boolean
+    // A0BB: Get the Shadow (Master of Shadow)
+    return GetSpellAbilityId()=='A0BB'
+endfunction
+
+function sh takes nothing returns boolean
+    // E00E: Unit Shadow (Mater of Shadow summon)
+    return GetUnitTypeId(GetAttacker())=='E00E' and IsUnitInGroup(GetTriggerUnit(),Ue)
 endfunction
     
 function gh takes nothing returns boolean
     return GetDyingUnit()==ue
 endfunction
-    
-function Jh takes nothing returns boolean
-    return GetSpellAbilityId()=='A0BA'
+
+function IsUnitAttackedByEnemy takes nothing returns boolean
+    return IsUnitEnemy(GetAttacker(),GetOwningPlayer(GetTriggerUnit()))
 endfunction
-    
-function mh takes nothing returns boolean
-    return GetSpellAbilityId()=='A0BB'
-endfunction
-    
-function sh takes nothing returns boolean
-    return GetUnitTypeId(GetAttacker())=='E00E' and IsUnitInGroup(GetTriggerUnit(),Ue)
-endfunction
-    
+
+
 function Uh takes nothing returns boolean
     return IsUnitInGroup(GetDyingUnit(),Ue)
 endfunction
     
 function eH takes nothing returns boolean
-    return GetAttacker()==ue and IsUnitEnemy(GetAttacker(),GetOwningPlayer(GetTriggerUnit()))
+    return GetAttacker()==ue and IsUnitAttackedByEnemy()
 endfunction
     
 function Jl takes nothing returns boolean
@@ -111,31 +123,27 @@ function em takes nothing returns boolean
     return GetSpellAbilityId()=='A0C5'
 endfunction
     
-function im takes nothing returns boolean
-    return GetItemTypeId(GetManipulatedItem())=='I045'
-endfunction
-    
-function Om takes nothing returns boolean
-    set ItemUseBool[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=true
-    return(GetItemTypeId(GetManipulatedItem())=='I01U')or(GetItemTypeId(GetManipulatedItem())=='I07N')
-endfunction
-    
 function Am takes nothing returns boolean
     return(GetItemTypeId(GetManipulatedItem())=='I01U')or(GetItemTypeId(GetManipulatedItem())=='I07N')
 endfunction
-    
+
+function Om takes nothing returns boolean
+    set ItemUseBool[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=true
+    return Am()
+endfunction
+
+function IsDyingUnitMonster takes nothing returns boolean
+    return GetOwningPlayer(GetDyingUnit())==Player(11)
+endfunction
+
 function QM takes nothing returns boolean
-    return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and GetOwningPlayer(GetDyingUnit())==Player(11)and GetDyingUnit()!=Le and Xv==false
+    return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and IsDyingUnitMonster()and GetDyingUnit()!=Le and kD()
 endfunction
     
 function tM takes nothing returns boolean
     return GetDyingUnit()==Le
 endfunction
-    
-function ap takes nothing returns boolean
-    return(GetOwningPlayer(GetDyingUnit())==Player(11))
-endfunction
-    
+        
 function Ep takes nothing returns boolean
     return GetOwningPlayer(GetSpellAbilityUnit())!=Player(11)
 endfunction
@@ -193,7 +201,7 @@ function cQ takes nothing returns boolean
 endfunction
     
 function GQ takes nothing returns boolean
-    return((GetSpellAbilityId()=='AIil')and((GetUnitTypeId(GetSpellTargetUnit())=='n00K')or(GetUnitTypeId(GetSpellTargetUnit())=='n00Z')or(GetUnitTypeId(GetSpellTargetUnit())=='n017')or(GetSpellTargetUnit()==Le)))
+    return((cQ())and((GetUnitTypeId(GetSpellTargetUnit())=='n00K')or(GetUnitTypeId(GetSpellTargetUnit())=='n00Z')or(GetUnitTypeId(GetSpellTargetUnit())=='n017')or(GetSpellTargetUnit()==Le)))
 endfunction
     
 function MQ takes nothing returns boolean
@@ -201,19 +209,18 @@ function MQ takes nothing returns boolean
 endfunction
     
 function QQ takes nothing returns boolean
-    return GetOwningPlayer(GetDyingUnit())==Player(11)and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==1
+    return IsDyingUnitMonster()and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==1
 endfunction
-    
+function Ds takes nothing returns boolean
+    return GetTriggerPlayer()==Ce
+endfunction
+
 function Is takes nothing returns boolean
-    return GetTriggerPlayer()!=Ce
+    return not(Ds())
 endfunction
     
 function cs takes nothing returns boolean
-    return GetTriggerPlayer()!=Ce and ge[(1+GetPlayerId(GetTriggerPlayer()))]==false
-endfunction
-    
-function Ds takes nothing returns boolean
-    return GetTriggerPlayer()==Ce
+    return Is() and ge[(1+GetPlayerId(GetTriggerPlayer()))]==false
 endfunction
     
 function PS takes nothing returns boolean

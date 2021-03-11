@@ -1,6 +1,7 @@
 #ifndef H_5120
 #define H_5120
 #include "../features/00120_Debug.j"
+#include "../features/triggers/01000_Conditions.j"
 function PrepareBeforeRoundFunction takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -53,7 +54,7 @@ set Be[In]=false
 set In=In+1
 endloop
 set go=Vv
-if jv==false then
+if qD() then
 set In=1
 loop
 exitwhen In>wN

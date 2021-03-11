@@ -1,10 +1,11 @@
 #ifndef H_12880
 #define H_12880
+#include "../features/triggers/01000_Conditions.j"
 function ot takes nothing returns nothing
 local unit dy=GetDyingUnit()
 local integer Bc=(LoadInteger(HashData,GetHandleId((dy)),StringHash("SuperData:Int")))
 local player p=GetOwningPlayer(dy)
-if Xv==false and IsUnitType(dy,UNIT_TYPE_HERO)and Bc!=$B and Bc!=$C and p!=Player(11)then
+if kD() and IsUnitType(dy,UNIT_TYPE_HERO)and Bc!=$B and Bc!=$C and p!=Player(11)then
 if Ex then
 set HeroInGameAndAliveARRAY[Bc]=false
 call GroupAddUnit(fo,dy)

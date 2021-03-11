@@ -1,5 +1,6 @@
 #ifndef H_10670
 #define H_10670
+#include "../features/triggers/01000_Conditions.j"
 function HeroInit1328558132 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set dE=CreateTrigger()
@@ -13,7 +14,7 @@ call TriggerAddAction(DE,function lJ)
 set fE=CreateTrigger()
 call TriggerRegisterUnitEvent(fE,u,EVENT_UNIT_ATTACKED)
 call DisableTrigger(fE)
-call TriggerAddCondition(fE,Condition(function LJ))
+call TriggerAddCondition(fE,Condition(function IsUnitAttackedByEnemy))
 call TriggerAddAction(fE,function MJ)
 set u=null
 endfunction

@@ -1,5 +1,6 @@
 #ifndef H_12410
 #define H_12410
+#include "../features/triggers/01000_Conditions.j"
 function ns takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer In=1
@@ -9,7 +10,7 @@ if fe then
 call DisplayTextToPlayer(p,0,0,"|Cffff0000Функция временно не доступна.")
 return
 endif
-if jv==false then
+if qD() then
 if av>1 then
 call DisplayTimedTextToPlayer(p,0,0,15.,"|Cffff0000Вводите \"-св (-sv) номер игрока\". Чтобы игроки были свапнуты необходимо согласие других игроков. Вводите \"-стоп св\" (-stop sv) чтобы отменить голосование.")
 loop

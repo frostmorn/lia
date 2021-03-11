@@ -1,5 +1,6 @@
 #ifndef H_12840
 #define H_12840
+#include "../features/triggers/01000_Conditions.j"
 function yS takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
@@ -16,7 +17,7 @@ call SaveBoolean(Ax,ec,StringHash("p"+I2S(ec)+"or"+I2S(In)),false)
 set In=In+1
 endloop
 call OC(p)
-if Xv==false and Ex then
+if kD() and Ex then
 endif
 set p=null
 endfunction

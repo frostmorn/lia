@@ -1,9 +1,10 @@
 #ifndef H_5490
 #define H_5490
+#include "../features/triggers/01000_Conditions.j"
 function jf takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer id=(1+GetPlayerId(p))
-if zv[id]==false and qv==false and iv==false and jv==false then
+if zv[id]==false and qv==false and iv==false and qD() then
 call SetPlayerTechMaxAllowed(p,'HERO',0)
 set zv[id]=true
 call Xc(p)

@@ -16,7 +16,6 @@
 #endif
 // This actually brokes passive DemonicRage ability, but it doesn't
 // stuck at round end.
-#define TMP_FIX_3390 0
 #define IDDS_ENABLED 1
 #define FEATURE_TESTMODE_SETWAVE 1
 #define MIFRIL_VARIANT_2 1
@@ -26,6 +25,5 @@
 
 #define DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND 1
 #define BEFORE_ROUND_SILENCE_VARIANT_2 0
-#define MAP_INITIALIZATION_VARIANT_2 0
 #define FEATURE_PRELOAD_MODELS 1
 #define MAP_INITIALIZATION_VARIANT_3 1
