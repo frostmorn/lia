@@ -1,5 +1,5 @@
 #include "00100_HomeRegenerationCallbacks.j"
-
+#include "01000_Conditions.j"
 function CreateTriggers takes nothing returns nothing
     local integer ED
     local integer wN
@@ -509,8 +509,8 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddCondition(yX,Condition(function im))
     call TriggerAddCondition(zX,Condition(function Om))
     call TriggerAddCondition(ZX,Condition(function Am))
-    call TriggerAddCondition(nO,Condition(function Sm))
-    call TriggerAddCondition(NO,Condition(function bM))
+    call TriggerAddCondition(nO,Condition(function kD))
+    call TriggerAddCondition(NO,Condition(function kD))
     call TriggerAddCondition(CO,Condition(function QM))
     call TriggerAddCondition(dO,Condition(function tM))
     call TriggerAddCondition(gO,Condition(function ap))
