@@ -1346,35 +1346,6 @@
 #include "functions/13500_InitCustomPlayerSlots.j"
 
 // Main function, here our script starts
-#if MAP_INITIALIZATION_VARIANT_3
-#include "features/10000_main.j"
-#else
-#include "functions/13510_main.j"
-#endif
-#include "functions/13520_config.j"
-// Allready included in main.
 
-#if JASS_HELPER_EXECUTEFUNC
-#include "functions/13530_sa__Table__GTable_onDestroy.j"
-#include "functions/13540_sa__SpellEvent___spellEvent_onDestroy.j"
-#include "functions/13550_sa__TableBr__getindex.j"
-#include "functions/13560_sa__TableBr__setindex.j"
-#include "functions/13570_sa__TableBr_has.j"
-#include "functions/13580_sa__TableBr_remove.j"
-#include "functions/13590_sa__TableBr_create.j"
-#include "functions/13600_sa___prototype3_DarkRitual___DarkRitualCallback.j"
-#include "functions/13610_sa___prototype3_MagicLump___OnCast.j"
-#include "functions/13620_sa___prototype3_Void___VoidCallback.j"
-#include "functions/13630_sa___prototype3_Rage___onCast.j"
-#include "functions/13640_sa___prototype3_ButchersRage___onCast.j"
-#include "functions/13650_sa___prototype3_ChainsOfLight___onCast.j"
-#include "functions/13660_sa___prototype3_SpiritOfVengeance___OnAction.j"
-#include "functions/13670_sa___prototype3_MithrilArmor___OnActions.j"
-#include "functions/13680_sa___prototype3_Charge___onCast.j"
-#include "functions/13690_sa___prototype3_Charge___onPrecast.j"
-#include "functions/13700_sa___prototype3_AimedShot___AimedShotActions.j"
-#include "functions/13710_sa___prototype3_DemonicRage___DemonicRageActions.j"
-#include "functions/13720_sa___prototype3_EssenceOfShadow___OnAction.j"
-#include "functions/13730_sa___prototype3_BorningOfDeath___OnAction.j"
-#include "functions/13740_jasshelper__initstructs29827921.j"
-#endif
+#include "features/10000_main.j"
+#include "functions/13520_config.j"
