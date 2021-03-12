@@ -189,6 +189,7 @@ function xQ takes nothing returns boolean
 endfunction
     
 function EQ takes nothing returns boolean
+    // Spirit of Vengeance Fog
     return GetSpellAbilityId()=='A049'
 endfunction
     

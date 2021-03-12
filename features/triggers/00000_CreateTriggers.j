@@ -320,7 +320,10 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(IR,function oQ)
     call TriggerAddAction(SetCamera_Trigger,function SetCamera_Trigger_Function)
     call TriggerAddAction(NR,function nQ)
+    #if DISABLE_DUMMY_FOG
+    #else
     call TriggerAddAction(bR,function XQ)
+    #endif
     call TriggerAddAction(BR,function RQ)
     call TriggerAddAction(cR,function bQ)
     call TriggerAddAction(CR,function dQ)
@@ -410,7 +413,7 @@ function CreateTriggers takes nothing returns nothing
         call TriggerRegisterPlayerUnitEvent(OR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
         call TriggerRegisterPlayerUnitEvent(RR,Player(ED),EVENT_PLAYER_UNIT_PICKUP_ITEM,null)
         call TriggerRegisterPlayerUnitEvent(IR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
-        call TriggerRegisterPlayerUnitEvent(bR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
+        // call TriggerRegisterPlayerUnitEvent(bR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
         call TriggerRegisterPlayerUnitEvent(GR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
         call TriggerRegisterPlayerUnitEvent(YR,Player(ED),EVENT_PLAYER_UNIT_PICKUP_ITEM,null)
         call TriggerRegisterPlayerUnitEvent(zR,Player(ED),EVENT_PLAYER_UNIT_SELL_ITEM,null)
@@ -525,7 +528,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddCondition(OR,Condition(function yq))
     call TriggerAddCondition(RR,Condition(function Zq))
     call TriggerAddCondition(IR,Condition(function xQ))
-    call TriggerAddCondition(bR,Condition(function EQ))
+    // call TriggerAddCondition(bR,Condition(function EQ))
     call TriggerAddCondition(cR,Condition(function AQ))
     call TriggerAddCondition(CR,Condition(function cQ))
     call TriggerAddCondition(DR,Condition(function GQ))
