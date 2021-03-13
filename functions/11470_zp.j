@@ -13,7 +13,7 @@ if Ex then
 call RoundStartFunction()
 endif
 if no or Wx then
-call QB()
+call BRoundStartFunction()
 endif
 endif
 else

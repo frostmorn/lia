@@ -25,7 +25,7 @@ function ItsReady___OnActions takes nothing returns nothing
                 call RoundStartFunction()
             endif
             if no or Wx then
-                call QB()
+                call BRoundStartFunction()
             endif
         endif
     endif

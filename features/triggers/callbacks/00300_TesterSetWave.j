@@ -2,9 +2,8 @@
 #define T_00300
 
 #if FEATURE_TESTMODE_SETWAVE
-#include "../../../functions/4340_QB.j"
+#include "../../../functions/4340_BRoundStartFunction.j"
 #include "../../../functions/5090_RoundStartFunction.j"
-#include "../../../functions/5100_Dd.j"
 
 
 function TesterSetWaveCallback takes nothing returns nothing
@@ -27,7 +26,7 @@ function TesterSetWaveCallback takes nothing returns nothing
                 call RoundStartFunction()
             endif
             if no or Wx then
-                call QB()
+                call BRoundStartFunction()
             endif
         else
             call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS, 2,"|Cffff0000Ошибка. Номер волны указан неверно.|R")

@@ -1,6 +1,6 @@
 #ifndef H_4340
 #define H_4340
-function QB takes nothing returns nothing
+function BRoundStartFunction takes nothing returns nothing
 local integer In=1
 #if FEATURE_TESTMODE_SETWAVE
     set setWaveAllowed=false
