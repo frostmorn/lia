@@ -1,4 +1,7 @@
 #include "callbacks/00100_HomeRegeneration.j"
+#if FEATURE_SET_CAMERA_ATTACK_ANGLE
+    #include "callbacks/00200_SetCameraAttackAngle.j"
+#endif
 #include "01000_Conditions.j"
 function CreateTriggers takes nothing returns nothing
     local integer ED
@@ -118,6 +121,7 @@ function CreateTriggers takes nothing returns nothing
     set RR=CreateTrigger()
     set IR=CreateTrigger()
     set SetCamera_Trigger=CreateTrigger()
+    set SetCameraAttackAngleTrigger=CreateTrigger()
     set NR=CreateTrigger()
     set bR=CreateTrigger()
     set BR=CreateTrigger()
@@ -324,6 +328,9 @@ function CreateTriggers takes nothing returns nothing
     #else
     call TriggerAddAction(bR,function XQ)
     #endif
+    #if FEATURE_SET_CAMERA_ATTACK_ANGLE
+    call TriggerAddAction(SetCameraAttackAngleTrigger,function SetCameraAttackAngleCallback)
+    #endif
     call TriggerAddAction(BR,function RQ)
     call TriggerAddAction(cR,function bQ)
     call TriggerAddAction(CR,function dQ)
@@ -462,7 +469,12 @@ function CreateTriggers takes nothing returns nothing
         call TriggerRegisterPlayerChatEvent(wR,Player(ED),"-swap",false)
         call TriggerRegisterPlayerChatEvent(yR,Player(ED),"-ре",true)
         call TriggerRegisterPlayerChatEvent(yR,Player(ED),"-re",true)
+        #if FEATURE_SET_CAMERA_ATTACK_ANGLE
+        call TriggerRegisterPlayerChatEvent(SetCameraAttackAngleTrigger,Player(ED),"-angle ",false)
+        call TriggerRegisterPlayerChatEvent(SetCameraAttackAngleTrigger,Player(ED),"-угол ",false)
+        #endif
         call TriggerRegisterPlayerEvent(iI,Player(ED),EVENT_PLAYER_LEAVE)
+
     set ED=ED+1
     endloop
     

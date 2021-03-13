@@ -890,6 +890,9 @@ trigger sa=null
 trigger Sa=null
 trigger sE=null
 trigger SE=null
+#if FEATURE_SET_CAMERA_ATTACK_ANGLE
+trigger SetCameraAttackAngleTrigger=null
+#endif
 trigger SetCamera_Trigger=null
 trigger ShamanAgilityMeassureMsgTrigger=null
 trigger sI

@@ -16,6 +16,7 @@
 #endif
 #define IDDS_ENABLED 1
 #define FEATURE_TESTMODE_SETWAVE 1
+#define FEATURE_SET_CAMERA_ATTACK_ANGLE 1
 #define MIFRIL_VARIANT_2 1
 
 // Causes fucking critical error. Why? I don't even know
