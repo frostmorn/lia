@@ -1,10 +1,10 @@
-#ifndef F_00100
-#define F_00100
+#ifndef T_00300
+#define T_00300
 
 #if FEATURE_TESTMODE_SETWAVE
-#include "../functions/4340_QB.j"
-#include "../functions/5090_RoundStartFunction.j"
-#include "../functions/5100_Dd.j"
+#include "../../../functions/4340_QB.j"
+#include "../../../functions/5090_RoundStartFunction.j"
+#include "../../../functions/5100_Dd.j"
 
 
 function TesterSetWaveCallback takes nothing returns nothing
