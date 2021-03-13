@@ -413,7 +413,10 @@ function CreateTriggers takes nothing returns nothing
         call TriggerRegisterPlayerUnitEvent(OR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
         call TriggerRegisterPlayerUnitEvent(RR,Player(ED),EVENT_PLAYER_UNIT_PICKUP_ITEM,null)
         call TriggerRegisterPlayerUnitEvent(IR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
-        // call TriggerRegisterPlayerUnitEvent(bR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
+        #if DISABLE_DUMMY_FOG
+        #else
+        call TriggerRegisterPlayerUnitEvent(bR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
+        #endif
         call TriggerRegisterPlayerUnitEvent(GR,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
         call TriggerRegisterPlayerUnitEvent(YR,Player(ED),EVENT_PLAYER_UNIT_PICKUP_ITEM,null)
         call TriggerRegisterPlayerUnitEvent(zR,Player(ED),EVENT_PLAYER_UNIT_SELL_ITEM,null)
@@ -528,7 +531,10 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddCondition(OR,Condition(function yq))
     call TriggerAddCondition(RR,Condition(function Zq))
     call TriggerAddCondition(IR,Condition(function xQ))
-    // call TriggerAddCondition(bR,Condition(function EQ))
+    #if DISABLE_DUMMY_FOG
+    #else
+    call TriggerAddCondition(bR,Condition(function EQ))
+    #endif
     call TriggerAddCondition(cR,Condition(function AQ))
     call TriggerAddCondition(CR,Condition(function cQ))
     call TriggerAddCondition(DR,Condition(function GQ))
