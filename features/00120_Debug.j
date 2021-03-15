@@ -47,5 +47,9 @@ endfunction
 function Loc2S takes location loc returns string
     return "[ x: "+R2S( GetLocationX(loc) )+", y: " + R2S(GetLocationY (loc) )+" ]"
 endfunction
+function WTF_Unit takes unit u returns nothing
+    call DMesg("Unit with type " + I2HS(GetUnitTypeId(u)) + " and name " + GetUnitName(u) + " chills in location " + Loc2S(GetUnitLoc(u)))   
+endfunction
 #endif
+
 #endif
