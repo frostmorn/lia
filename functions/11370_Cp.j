@@ -205,8 +205,8 @@ call ForGroup(g,function Ip)
 call DestroyGroup(g)
 call DisableTrigger(HO)
 call PrepareBeforeRoundFunction()
-#if D_5120
-#define D_5120
+#if D_11370
+#define D_11370
 call DMesg("Call PrepareBeforeRoundFunction from 11370")
 #endif
 set In=0

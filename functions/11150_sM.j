@@ -20,8 +20,8 @@ endloop
 call ud(GetOwningPlayer(GetKillingUnit()))
 call eC()
 call PrepareBeforeRoundFunction()
-#if D_5120
-#define D_5120
+#if D_11150
+#define D_11150
 call DMesg("Call PrepareBeforeRoundFunction from 11150")
 #endif
 set Wv=true

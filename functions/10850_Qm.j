@@ -5,7 +5,7 @@
 
 function Qm takes nothing returns nothing
 call PrepareBeforeRoundFunction()
-#if D_5120
+#if D_10850
 call DMesg("Call PrepareBeforeRoundFunction from 10850")
 #endif
 endfunction
