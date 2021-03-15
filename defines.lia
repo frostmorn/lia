@@ -1,8 +1,13 @@
 #define DEBUG 0
 
 #if DEBUG
-// #define D_5120 1
+// #define D_400 1
+#define D_5130 1
 // #define D_5090 1
+#define D_10850 1
+#define D_11130 1
+#define D_11150 1
+#define D_11170 1
 // #define D_10940 1 
 // #define D_13450 1
 // #define D_13720 1
@@ -28,5 +33,13 @@
 // of 3 Spirit of Vengeance summons from A049 to A0GA
 #define DISABLE_DUMMY_FOG 0
 #define DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND 1
-#define BEFORE_ROUND_SILENCE_VARIANT_2 0
+#define BEFORE_ROUND_SILENCE_VARIANT_2 1
 #define FEATURE_PRELOAD_MODELS 1
+
+// On some waves we need dummy for monsters
+// which will attack our heroes and so all.
+// But for I don't fucking know purposes, dummy exists every fucking time
+// `h011` - id
+// Need something to do with that dummy, before 
+// variant 2
+#define CHECK_ROUND_END_VARIANT_2 0
