@@ -84,8 +84,6 @@ call SaveTimerDialogHandle(Ax,1,jd,fN)
 call TimerDialogSetTitle(fN,"Осталось")
 call TimerDialogDisplay(fN,true)
 
-set Fo=CreateTimer()
-call TimerStart(Fo,27,false,function hN)
 set fN=null
 set Hd=null
 set Gd=null
