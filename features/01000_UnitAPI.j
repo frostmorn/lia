@@ -28,8 +28,14 @@ function GetUnitZ takes unit u returns real
     return GetLocationZ(GetUnitLoc(u))+GetUnitFlyHeight(u)
 endfunction
 
+// Filters
 function IsUnitAliveFilter takes nothing returns boolean
     return IsUnitAlive(GetFilterUnit())
 endfunction
+
+function IsUnitDeadFilter takes nothing returns boolean
+    return IsUnitDead(GetFilterUnit())
+endfunction
+
 
 #endif
