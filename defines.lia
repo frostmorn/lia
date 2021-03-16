@@ -33,7 +33,8 @@
 // of 3 Spirit of Vengeance summons from A049 to A0GA
 #define DISABLE_DUMMY_FOG 0
 #define DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND 1
-#define BEFORE_ROUND_SILENCE_VARIANT_2 1
+// OH FUCK
+#define BEFORE_ROUND_SILENCE_VARIANT_2 0
 #define FEATURE_PRELOAD_MODELS 1
 
 // On some waves we need dummy for monsters
