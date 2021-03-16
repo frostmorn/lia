@@ -4,9 +4,9 @@ function SendStatsToBot takes string AN,integer NN returns nothing
 if E==null or IsPlayerOnline(E)==false then
 call EN()
 endif
-call StoreInteger(O,"SТАТS",AN,NN)
+call StoreInteger(O,"STATS",AN,NN)
 if gMapMode!="" and GetLocalPlayer()==E then
-call SyncStoredInteger(O,"SТАТS",AN)
+call SyncStoredInteger(O,"STATS",AN)
 endif
 endfunction
 

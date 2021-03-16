@@ -31,7 +31,7 @@ call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call SendStatsToBot("EОG",0)
+call SendStatsToBot("EOG",0)
 set g=null
 set f=null
 set pb=null

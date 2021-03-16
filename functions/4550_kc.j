@@ -44,7 +44,7 @@ call SendStatsToBot(I2S(In),U[ee[In+1]])
 endif
 set In=In+1
 endloop
-call SendStatsToBot("EОG",1)
+call SendStatsToBot("EOG",1)
 call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
 call BA(2)
 set g=HA(bj_mapInitialPlayableArea)
