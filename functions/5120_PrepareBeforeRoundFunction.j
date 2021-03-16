@@ -91,7 +91,6 @@ set tt=null
 set t=null
 return
 else
-call EnableTrigger(IsReadyTrig)
 //call DMesg("IsReadyTrig enabled")
 call ModifyGateBJ(1,ho)
 set Hv=false
@@ -153,6 +152,7 @@ set t=null
 set tt=null
 set Gd=null
 set Hd=null
+
 endfunction
 
 #endif

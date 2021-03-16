@@ -5,6 +5,7 @@ local timer t=GetExpiredTimer()
 set Wv=false
 call DestroyTimer(t)
 set t=null
+call EnableTrigger(IsReadyTrig)
 endfunction
 
 #endif
