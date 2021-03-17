@@ -1,4 +1,5 @@
 #include "callbacks/00100_HomeRegeneration.j"
+#include "callbacks/00400_OnPirateAttack.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/00200_SetCameraAttackAngle.j"
 #endif
@@ -160,6 +161,7 @@ function CreateTriggers takes nothing returns nothing
     set iI=CreateTrigger()
     set nI=CreateTrigger()
     set VI=CreateTrigger()
+    set OnPirateAttack = CreateTrigger()
     // custom Triggers
     set HomeRegenerationEnterTrig = CreateTrigger()
     call DisableTrigger(Wa)
@@ -210,7 +212,7 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(wR)
     call DisableTrigger(yR)
     call DisableTrigger(nI)
-
+    call TriggerAddAction(OnPirateAttack, function OnPirateAttackCallback)
     call TriggerAddAction(HomeRegenerationEnterTrig, function HomeRegenerationEnter)
     call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
     call TriggerAddAction(Pa,function xD)
@@ -498,6 +500,8 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(hR,EVENT_PLAYER_UNIT_DEATH)
     call TriggerRegisterAnyUnitEventBJ(xI,EVENT_PLAYER_UNIT_PICKUP_ITEM)
     call TriggerRegisterAnyUnitEventBJ(oI,EVENT_PLAYER_UNIT_DROP_ITEM)
+    call TriggerRegisterAnyUnitEventBJ(OnPirateAttack, EVENT_PLAYER_UNIT_ATTACKED)
+    call TriggerAddCondition(OnPirateAttack, Condition(function IsPirateAttack))
     call TriggerAddCondition(Ta,Condition(function IsUnitAttackedByAlly))
     call TriggerAddCondition(ua,Condition(function IsNotGameOver))
     call TriggerAddCondition(Wa,Condition(function qD))

@@ -839,6 +839,7 @@ trigger oI=null
 trigger On=null
 trigger oO=null
 trigger OO=null
+trigger OnPirateAttack=null
 trigger oR=null
 trigger OR=null
 trigger oV=null

@@ -231,5 +231,7 @@ endfunction
 function US takes nothing returns boolean
     return(CurrentWave<=7)
 endfunction
-    
+function IsPirateAttack takes nothing returns boolean
+    return GetUnitTypeId(GetAttacker()) == 'E000'
+endfunction
 #endif
