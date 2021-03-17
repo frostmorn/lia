@@ -2,10 +2,11 @@
 #define T_00500
 #include "../../00120_Debug.j"
 function FlushAllDestructionShit takes unit attackTargetUnit returns nothing
-    local timer t = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit),StringHash("Destruction:PeriodicDamageTimer"))
     
+    local timer t = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit),StringHash("Destruction:PeriodicDamageTimer"))
+    call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit),StringHash("Destruction:PeriodicDamageTimer"))
+    call FlushChildHashtable(HashData, GetHandleId(t))    
     call DestroyTimer(t)
-
 
 endfunction
 function OnDestructionTimer takes nothing returns nothing
@@ -14,13 +15,13 @@ function OnDestructionTimer takes nothing returns nothing
     local real damagePart =  LoadReal(HashData, timerHandle, StringHash("Destruction:DamagePart"))
     local unit attacker = LoadUnitHandle(HashData, timerHandle, StringHash("Destruction:DamageDealer"))
     local unit attackTargetUnit = LoadUnitHandle(HashData, timerHandle, StringHash("Destruction:DamageTarget"))
-#if DEBUG    
-call WTF_Unit(attacker)
-call DMesg("and attacks")
-call WTF_Unit(attackTargetUnit)
-call DMesg("DamagePart = "+R2S(damagePart))
-call DMesg("DamageMax = "+R2S(damage))
-#endif
+    #if DEBUG    
+    call WTF_Unit(attacker)
+    call DMesg("and attacks")
+    call WTF_Unit(attackTargetUnit)
+    call DMesg("DamagePart = "+R2S(damagePart))
+    call DMesg("DamageMax = "+R2S(damage))
+    #endif
     
     if IsUnitAlive(attackTargetUnit) then
         
@@ -71,7 +72,6 @@ function OnDestructorAttackCallback takes nothing returns nothing
 
     
     if not ( GetRandomInt(1, 100) <= chance) then
-        // call DMesg("You're lucky, addditional damage dealed.")
         
         call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_HERO, DAMAGE_TYPE_UNKNOWN )
         
@@ -80,7 +80,10 @@ function OnDestructorAttackCallback takes nothing returns nothing
         if periodicDamageTimer == null then
             // Looks like passive damage dealing isn't started
             set periodicDamageTimer = CreateTimer()
-            call DMesg("Starting periodic damage dealing")
+        
+        #if DEBUG
+            call DMesg("You're lucky. Starting periodic damage dealing")
+        #endif
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), (damage*DamageTimerPeriod)/DamageTime)
             call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamageDealer"), attacker)
@@ -89,7 +92,9 @@ function OnDestructorAttackCallback takes nothing returns nothing
             call TimerStart(periodicDamageTimer, DamageTimerPeriod, true, function OnDestructionTimer)
 
         else
+        #if DEBUG
             call DMesg("Periodic Damage dealing allready started")
+        #endif
             // Passive damage dealing allready works. Rewrite needed damage.
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), damage/DamageTimerPeriod)
