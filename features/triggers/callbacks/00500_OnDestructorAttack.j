@@ -9,7 +9,6 @@ function OnDestructorAttackCallback takes nothing returns nothing
     local integer attackerStrength = GetHeroStr(attacker, false)
     local integer chance = 50
     local real destructionStrength = (40 + 20 * (destructionLevel-1))/100
-
     if IsUnitDead(attackTargetUnit) then 
         return
     endif
@@ -25,11 +24,11 @@ function OnDestructorAttackCallback takes nothing returns nothing
     #endif
 
     
-    if not ( GetRandomInt(1, 100) >= chance) then
+    if not ( GetRandomInt(1, 100) <= chance) then
         call UnitDamageTargetBJ(attacker, attackTargetUnit, destructionStrength * attackerStrength, ATTACK_TYPE_HERO, DAMAGE_TYPE_UNKNOWN )
         
         // TODO : Deal damage for 6 seconds
-        
+
     endif
 
 
