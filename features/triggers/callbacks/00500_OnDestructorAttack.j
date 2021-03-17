@@ -73,13 +73,13 @@ function OnDestructorAttackCallback takes nothing returns nothing
     
     if not ( GetRandomInt(1, 100) <= chance) then
         
-        call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_HERO, DAMAGE_TYPE_UNKNOWN )
         
         call AddTimedEffectUnit("Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",attackTargetUnit,"chest", DamageTime)
         // TODO : Deal damage for 6 seconds
         if periodicDamageTimer == null then
             // Looks like passive damage dealing isn't started
             set periodicDamageTimer = CreateTimer()
+            call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_HERO, DAMAGE_TYPE_UNKNOWN )
         
         #if DEBUG
             call DMesg("You're lucky. Starting periodic damage dealing")
