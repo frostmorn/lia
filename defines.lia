@@ -2,12 +2,12 @@
 
 #if DEBUG
 // #define D_400 1
-#define D_5130 1
+// #define D_5130 1
 // #define D_5090 1
-#define D_10850 1
-#define D_11130 1
-#define D_11150 1
-#define D_11170 1
+// #define D_10850 1
+// #define D_11130 1
+// #define D_11150 1
+// #define D_11170 1
 // #define D_10940 1 
 // #define D_13450 1
 // #define D_13720 1
@@ -17,7 +17,7 @@
 // #define D_11780 1    // Stats -b mode
 // #define D_11420 1
 #define DEBUG_NO_WAVE_DESCRIPTIONS    
-#define DEBUG_NOCLEAR_MESSAGES
+// #define DEBUG_NOCLEAR_MESSAGES
 #endif
 #define IDDS_ENABLED 1
 #define FEATURE_TESTMODE_SETWAVE 1
