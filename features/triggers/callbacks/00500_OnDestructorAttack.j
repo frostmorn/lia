@@ -80,20 +80,20 @@ function OnDestructorAttackCallback takes nothing returns nothing
         if periodicDamageTimer == null then
             // Looks like passive damage dealing isn't started
             set periodicDamageTimer = CreateTimer()
-            // call DMesg("Starting periodic damage dealing")
+            call DMesg("Starting periodic damage dealing")
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
-            call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), damage*DamageTimerPeriod)
+            call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), (damage*DamageTimerPeriod)/DamageTime)
             call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamageDealer"), attacker)
             call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamageTarget"), attackTargetUnit)
             call SaveTimerHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Destruction:PeriodicDamageTimer"), periodicDamageTimer)
             call TimerStart(periodicDamageTimer, DamageTimerPeriod, true, function OnDestructionTimer)
 
         else
-            // call DMesg("Periodic Damage dealing allready started")
+            call DMesg("Periodic Damage dealing allready started")
             // Passive damage dealing allready works. Rewrite needed damage.
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), damage/DamageTimerPeriod)
-            
+
             // find way to destroy effect
             call AddTimedEffectUnit("Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",attackTargetUnit,"chest", DamageTime)
        
