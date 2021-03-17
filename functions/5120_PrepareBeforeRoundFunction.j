@@ -72,9 +72,9 @@ call Go()
 call Yb()
 set Wv=true
 call TimerStart(Gd,6.25,false,function Ub)
-if(Hv==false) and (av>1) and (ModuloInteger(CurrentWave,3)==0) and (CurrentWave!=0) then
+if(NextWaveDuelBool==false) and (av>1) and (ModuloInteger(CurrentWave,3)==0) and (CurrentWave!=0) then
 call ModifyGateBJ(0,ho)
-set Hv=true
+set NextWaveDuelBool=true
 set Pe=true
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
 call MultiboardSetItemValueBJ(StatsBoard,4,A+2,"|cffffcc00Дуэль")
@@ -93,7 +93,7 @@ return
 else
 //call DMesg("IsReadyTrig enabled")
 call ModifyGateBJ(1,ho)
-set Hv=false
+set NextWaveDuelBool=false
 endif
 if CurrentWave > 0 then
 if av==1 then

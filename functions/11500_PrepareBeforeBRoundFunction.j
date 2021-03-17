@@ -45,12 +45,12 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     call IB()
     call Go()
     call Yb()
-    if av>1 and Hv==false and ModuloInteger(CurrentWave ,3)==0 and CurrentWave!=0 then
-        set Hv=true
+    if av>1 and NextWaveDuelBool==false and ModuloInteger(CurrentWave ,3)==0 and CurrentWave!=0 then
+        set NextWaveDuelBool=true
         call TriggerExecute(SO)
     else
         call EnableTrigger(IsReadyTrig)
-        set Hv=false
+        set NextWaveDuelBool=false
         if CurrentWave>0 then
             call SendStatsToBot("WАVЕ",CurrentWave)
             if av==1 then

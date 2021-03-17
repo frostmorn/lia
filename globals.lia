@@ -28,7 +28,7 @@ boolean f__result_boolean
 boolean Fx=false
 boolean GI
 boolean He=false
-boolean Hv=false
+boolean NextWaveDuelBool=false
 boolean IDDS___IgnPrior=false
 boolean Ie=false
 boolean io=false

@@ -5,7 +5,9 @@ local timer t=GetExpiredTimer()
 set Wv=false
 call DestroyTimer(t)
 set t=null
-call EnableTrigger(IsReadyTrig)
+if not(NextWaveDuelBool) then
+    call EnableTrigger(IsReadyTrig)
+endif
 endfunction
 
 #endif

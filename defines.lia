@@ -45,4 +45,4 @@
 // variant 2
 #define CHECK_ROUND_END_VARIANT_2 0
 
-#define DISABLE_SOUL_REAPER_1 0
+#define DISABLE_SOUL_REAPER_1 1
