@@ -234,4 +234,8 @@ endfunction
 function IsPirateAttack takes nothing returns boolean
     return GetUnitTypeId(GetAttacker()) == 'E000'
 endfunction
+
+function IsDestructorAttack takes nothing returns boolean
+    return GetUnitTypeId(GetAttacker()) == 'E000'
+endfunction
 #endif
