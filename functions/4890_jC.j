@@ -53,7 +53,10 @@ call AddUnitToStock(u,'N018',0,1)
 call AddUnitToStock(u,'U002',0,1)
 call AddUnitToStock(u,'H00A',0,1)
 call AddUnitToStock(u,'U00A',0,1)
+#if DISABLE_SOUL_REAPER_1
+#else
 call AddUnitToStock(u,'Hblm',0,1)
+#endif
 set HeroStocksArray[6]=CreateUnitAtLoc(p,'n007',GetRectCenter(gg_rct_zr),Ec)
 set u=HeroStocksArray[6]
 call AddUnitToStock(u,'H001',0,1)

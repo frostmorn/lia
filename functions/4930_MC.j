@@ -50,7 +50,11 @@ set Xx[46]="ReplaceableTextures\\CommandButtons\\BTNThrall.blp"
 set Xx[47]="ReplaceableTextures\\CommandButtons\\BTNFelGuard.blp"
 set Xx[48]="ReplaceableTextures\\CommandButtons\\BTNNecromancer.blp"
 set kv=63
+#if DISABLE_SOUL_REAPER_1
+set HeroesCount=46
+#else
 set HeroesCount=47
+#endif
 set HeroIdsArray[1]='E002'
 set HeroIdsArray[2]='E004'
 set HeroIdsArray[3]='E000'
@@ -97,7 +101,10 @@ set HeroIdsArray[43]='H00Z'
 set HeroIdsArray[44]='U00B'
 set HeroIdsArray[45]='O00G'
 set HeroIdsArray[46]='Hpal'
+#if DISABLE_SOUL_REAPER_1
+#else
 set HeroIdsArray[47]='Hblm'
+#endif
 endfunction
 
 #endif
