@@ -26,7 +26,8 @@ function OnDestructorAttackCallback takes nothing returns nothing
     
     if not ( GetRandomInt(1, 100) <= chance) then
         call UnitDamageTargetBJ(attacker, attackTargetUnit, destructionStrength * attackerStrength, ATTACK_TYPE_HERO, DAMAGE_TYPE_UNKNOWN )
-        
+
+        call AddTimedEffectUnit("Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",attackTargetUnit,"chest", 6.0)
         // TODO : Deal damage for 6 seconds
 
     endif
