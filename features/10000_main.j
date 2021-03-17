@@ -30,7 +30,9 @@ call SetMapMusic( "Music", true, 0 )
 call CreateRegions()
 call InitBlizzard()
 call jasshelper__initstructs29827921()
-call BurningArmor___Init()
+// Don't work, so we will clean that later
+
+// call BurningArmor___Init()
 call CatchTheShadow___Init()
 call FlexibleSpeed___Init()
 call MagicLumpRegeneration___Init()

@@ -1,6 +1,7 @@
 #include "callbacks/00100_HomeRegeneration.j"
 #include "callbacks/00400_OnPirateAttack.j"
 #include "callbacks/00500_OnDestructorAttack.j"
+#include "callbacks/00600_OnDestructorAttacked.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/00200_SetCameraAttackAngle.j"
 #endif
@@ -164,6 +165,7 @@ function CreateTriggers takes nothing returns nothing
     set VI=CreateTrigger()
     set OnPirateAttack = CreateTrigger()
     set OnDestructorAttack = CreateTrigger()
+    set OnDestructorAttacked = CreateTrigger()
     // custom Triggers
     set HomeRegenerationEnterTrig = CreateTrigger()
     call DisableTrigger(Wa)
@@ -216,6 +218,7 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(nI)
     call TriggerAddAction(OnPirateAttack, function OnPirateAttackCallback)
     call TriggerAddAction(OnDestructorAttack, function OnDestructorAttackCallback)
+    call TriggerAddAction(OnDestructorAttacked, function OnDestructorAttackedCallback)
     call TriggerAddAction(HomeRegenerationEnterTrig, function HomeRegenerationEnter)
     call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
     call TriggerAddAction(Pa,function xD)
@@ -505,9 +508,12 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(oI,EVENT_PLAYER_UNIT_DROP_ITEM)
     call TriggerRegisterAnyUnitEventBJ(OnPirateAttack, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttack, EVENT_PLAYER_UNIT_ATTACKED)
-    
+    call TriggerRegisterAnyUnitEventBJ(OnDestructorAttacked, EVENT_PLAYER_UNIT_ATTACKED)
+
     call TriggerAddCondition(OnPirateAttack, Condition(function IsPirateAttack))
     call TriggerAddCondition(OnDestructorAttack, Condition(function IsDestructorAttack))
+    call TriggerAddCondition(OnDestructorAttacked, Condition(function IsDestructorAttacked))
+
     call TriggerAddCondition(Ta,Condition(function IsUnitAttackedByAlly))
     call TriggerAddCondition(ua,Condition(function IsNotGameOver))
     call TriggerAddCondition(Wa,Condition(function qD))

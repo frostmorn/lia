@@ -238,4 +238,8 @@ endfunction
 function IsDestructorAttack takes nothing returns boolean
     return GetUnitTypeId(GetAttacker()) == 'Hpal'
 endfunction
+
+function IsDestructorAttacked takes nothing returns boolean
+    return GetUnitTypeId(GetAttackedUnitBJ()) == 'Hpal'
+endfunction
 #endif
