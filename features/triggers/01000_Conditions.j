@@ -236,6 +236,6 @@ function IsPirateAttack takes nothing returns boolean
 endfunction
 
 function IsDestructorAttack takes nothing returns boolean
-    return GetUnitTypeId(GetAttacker()) == 'E000'
+    return GetUnitTypeId(GetAttacker()) == 'Hpal'
 endfunction
 #endif
