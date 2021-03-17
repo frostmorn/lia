@@ -53,7 +53,7 @@ call ChainsOfLight___Init()
 call ItsReady___Init()
 call HeroLimit___Init()
 // Duplicate found in 1312_SpiritOfVengeance___Init
-call RegisterSpellEffectResponse('A0K5',(7))
+// call RegisterSpellEffectResponse('A048',(7))
 call WillOfTheLight___Init()
 call PoisionousWeapon___Init()
 call RegisterSpellEffectResponse('A0EZ',(8))
