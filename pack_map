@@ -1,5 +1,5 @@
 o lia_rects.w3x
 e (listfile) (listfile)
-o lia_deploy.w3x
+o .temp/lia_deploy.w3x
 x war3map.j war3map.j
 c (listfile)
