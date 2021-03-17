@@ -51,7 +51,7 @@
 #include "functions/380_CausticFinale___CausticFinaleNewAction.j"
 #include "functions/390_CausticFinaleNew.j"
 #include "functions/400_DinamiteShot___DinamiteShotLoop.j"
-#include "functions/410_DinamiteShotActions.j"
+
 #include "functions/420_FlexibleSpeed___SpeedUpdate.j"
 
 // Not used anywhere
@@ -383,8 +383,6 @@
 #include "functions/3350_SetupDmgEv.j"
 #include "functions/3360_InitTrig_Damage_Engine.j"
 #include "functions/3370_PDDSTrueTarget.j"
-#include "functions/3380_DamageMod__OnActions.j"
-#include "functions/3390_DamageMod__Init.j"
 #include "functions/3400_SetUnitCustomData.j"
 #include "functions/3410_GetUnitCustomData.j"
 #include "functions/3420_TrueCastEx.j"

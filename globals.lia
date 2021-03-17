@@ -93,7 +93,6 @@ constant integer DAMAGE_TYPE_SPELLCRIT=9
 constant integer DAMAGE_TYPE_SPELLDOT=5
 constant integer DemonicRage___abilityId='A0IZ'
 constant integer DemonicRage___dummyBuffId='B049'
-constant integer DinamiteShot___SPELL_ID='A0IW'
 constant integer Logarithm__ITERATIONS=20
 constant integer SetUnitMaxState___MAX_STATE_LIFE_ABILITY='Zx01'
 constant integer SetUnitMaxState___MAX_STATE_MANA_ABILITY='Zx00'
