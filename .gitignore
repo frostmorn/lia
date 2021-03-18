@@ -1,7 +1,6 @@
 generated_war3map.j
 *.w3x
 (listfile)
-stormer
 .vscode/*
 test_map.sh
 war3map_rects.j
