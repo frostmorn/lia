@@ -1,5 +1,4 @@
 generated_war3map.j
-*.w3x
 (listfile)
 .vscode/*
 test_map.sh
