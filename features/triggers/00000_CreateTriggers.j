@@ -309,7 +309,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(qO,function aP)
     call TriggerAddAction(QO,function XP)
     call TriggerAddAction(sO,function IP)
-    call TriggerAddAction(SO,function bP)
+    call TriggerAddAction(SO,function PrepareBeforeCommandDuel)
     call TriggerAddAction(tO,function fP)
     call TriggerAddAction(TO,function HP)
     call TriggerAddAction(uO,function kP)

@@ -1,0 +1,2 @@
+sh .scripts/compile_map
+sh .scripts/test_omap

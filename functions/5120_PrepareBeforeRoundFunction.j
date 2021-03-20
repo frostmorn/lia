@@ -147,7 +147,7 @@ set CURRENT_PLAYERS=0
 call TimerDialogSetTitle(Oe,"Осталось")
 call TimerDialogDisplay(Oe,true)
 set Fo=CreateTimer()
-call TimerStart(Fo,w-3,false,function hN)
+call TimerStart(Fo,w-3,false,function GlobalSilenceFunction)
 set t=null
 set tt=null
 set Gd=null

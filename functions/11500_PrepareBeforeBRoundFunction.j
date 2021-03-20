@@ -90,7 +90,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
         call DestroyTimer(Fo)
         set Fo=null
         set Fo=CreateTimer()
-        call TimerStart(Fo,before_wave_timer-3,false,function hN)
+        call TimerStart(Fo,before_wave_timer-3,false,function GlobalSilenceFunction)
     endif
     set oP=null
     set t=null
