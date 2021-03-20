@@ -53,13 +53,9 @@ call ButchersRage___Init()
 call ChainsOfLight___Init()
 call ItsReady___Init()
 call HeroLimit___Init()
-// Duplicate found in 1312_SpiritOfVengeance___Init
-// call RegisterSpellEffectResponse('A048',(7))
+
 call WillOfTheLight___Init()
 
-// This will not work without WHATAFUCK TRIGGER WHICH MAKES
-// ROUND STUCK
-// call PoisionousWeapon___Init()
 call RegisterSpellEffectResponse('A0EZ',(8))
 call ArenaBoundary___Init()
 call Charge___Init()
