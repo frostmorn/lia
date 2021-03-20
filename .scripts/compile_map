@@ -5,15 +5,16 @@ rm build -rf
 echo "Copying files..."
 mkdir .temp
 mkdir build
-cpp war3map.lia .temp/war3map.j -std=c99 -P -fno-extended-identifiers -w &&
-cp lia_deploy.w3x  .temp/lia_deploy.w3x
+cpp war3map.lia war3map.j -std=c99 -P -fno-extended-identifiers -w &&
+cp war3map.j .temp
+cp lia_deploy.w3x  .temp
 cd .temp
 echo "Starting map pack"
-stormer ../.script/pack_map
+stormer ../.scripts/pack_map
 echo "Optimizing map"
 sleep 1
 clear
 WINEDEBUG=-all wine ~/Software/w3x2lni/w2l.exe slk lia_deploy.w3x
+cp * ../build
 cd ..
-cp .temp/* build
 rm .temp -rf
