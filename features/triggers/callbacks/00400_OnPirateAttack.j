@@ -9,7 +9,7 @@ function DealDamageForGroup takes nothing returns nothing
     local real DamageTime = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
 
     if IsUnitAlive(attackTargetUnit) and DamageTime >= 0.0 then
-        call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_MAGIC, DAMAGE_TYPE_UNKNOWN )
+        call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_POISON )
     else
         call GroupRemoveUnit(PoisonDamageGroup, attackTargetUnit)
         call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
