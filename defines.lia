@@ -1,6 +1,6 @@
 #define DEBUG 1
 #define DEBUG_TYPE_BOT 1
-#if DEBUG 1
+#if DEBUG
 #define D_400 1
 #define D_5130 1
 #define D_5090 1
