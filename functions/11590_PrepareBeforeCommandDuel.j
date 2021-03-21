@@ -18,10 +18,10 @@ function PrepareBeforeCommandDuel takes nothing returns nothing
     call SaveTimerDialogHandle(Ax,1,dN,d)
     call TimerDialogSetTitle(d,"Осталось")
     call TimerDialogDisplay(d,true)
-    call DestroyTimer(Fo)
-    set Fo=null
-    set Fo=CreateTimer()
-    call TimerStart(Fo,27,false,function GlobalSilenceFunction)
+    call DestroyTimer(BeforeRoundSilenceTimer)
+    set BeforeRoundSilenceTimer=null
+    set BeforeRoundSilenceTimer=CreateTimer()
+    call TimerStart(BeforeRoundSilenceTimer,27,false,function GlobalSilenceFunction)
     set t=null
     set d=null
 endfunction

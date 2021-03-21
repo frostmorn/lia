@@ -11,7 +11,7 @@ set setWaveAllowed=false
 #endif
 
 #if BEFORE_ROUND_SILENCE_VARIANT_2
-call DestroyTimer(Fo)
+call DestroyTimer(BeforeRoundSilenceTimer)
 #endif
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(Ho)

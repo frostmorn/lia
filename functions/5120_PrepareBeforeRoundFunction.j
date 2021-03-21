@@ -32,7 +32,7 @@ call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
     call DisableTrigger(XO)
     call DisableTrigger(oO)
 #endif
-call DestroyTimer(Fo)
+call DestroyTimer(BeforeRoundSilenceTimer)
 
 loop
 set IsReady[index]=false
@@ -146,8 +146,8 @@ set Oe=CreateTimerDialog(RoundStartTimer)
 set CURRENT_PLAYERS=0
 call TimerDialogSetTitle(Oe,"Осталось")
 call TimerDialogDisplay(Oe,true)
-set Fo=CreateTimer()
-call TimerStart(Fo,w-3,false,function GlobalSilenceFunction)
+set BeforeRoundSilenceTimer=CreateTimer()
+call TimerStart(BeforeRoundSilenceTimer,w-3,false,function GlobalSilenceFunction)
 set t=null
 set tt=null
 set Gd=null

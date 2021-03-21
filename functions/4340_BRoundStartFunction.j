@@ -6,7 +6,7 @@ local integer In=1
     set setWaveAllowed=false
 #endif
 #if BEFORE_ROUND_SILENCE_VARIANT_2
-call DestroyTimer(Fo)
+call DestroyTimer(BeforeRoundSilenceTimer)
 #endif
 // TODO : Disable trigger on command duel battle
 // Creeps Calculation trigger

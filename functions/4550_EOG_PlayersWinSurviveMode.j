@@ -1,6 +1,6 @@
 #ifndef H_4550
 #define H_4550
-function kc takes nothing returns nothing
+function EOG_PlayersWinSurviveMode takes nothing returns nothing
 local group g=CreateGroup()
 local unit f
 local integer In=1
@@ -19,6 +19,14 @@ set r[3]=gg_rct_dr
 set r2[1]=gg_rct_Xr
 set r2[2]=gg_rct_Rr
 set r2[3]=gg_rct_Ir
+
+call DisableTrigger(dO)
+set iv=false
+call DisableTrigger(nO)
+call DisableTrigger(AO)
+call DisableTrigger(XO)
+call DisableTrigger(oO)
+
 loop
 exitwhen In>8 or Kc>2
 set pp=ae[gx[In]]

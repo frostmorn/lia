@@ -17,14 +17,16 @@ function ItsReady___OnActions takes nothing returns nothing
 
         #if BEFORE_ROUND_SILENCE_VARIANT_2
         #else
-        call DestroyTimer(Fo)
+        call DestroyTimer(BeforeRoundSilenceTimer)
         #endif
         call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,("|cff808070"+(GetPlayerName(p)+(" хочет немедленно начать раунд! ("+(I2S(CURRENT_PLAYERS)+("\\"+(I2S(ItsReady___MAX_PLAYERS)+")|R")))))))
         if CURRENT_PLAYERS>=ItsReady___MAX_PLAYERS then
             if Ex then
+                call DestroyTimer(BeforeRoundSilenceTimer)
                 call RoundStartFunction()
             endif
             if no or Wx then
+                call DestroyTimer(BeforeRoundSilenceTimer)
                 call BRoundStartFunction()
             endif
         endif

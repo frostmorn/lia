@@ -87,10 +87,10 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
         set CURRENT_PLAYERS=0
         call TimerDialogDisplay(Oe,true)
         call TimerDialogSetTitle(Oe,"Осталось")
-        call DestroyTimer(Fo)
-        set Fo=null
-        set Fo=CreateTimer()
-        call TimerStart(Fo,before_wave_timer-3,false,function GlobalSilenceFunction)
+        call DestroyTimer(BeforeRoundSilenceTimer)
+        set BeforeRoundSilenceTimer=null
+        set BeforeRoundSilenceTimer=CreateTimer()
+        call TimerStart(BeforeRoundSilenceTimer,before_wave_timer-3,false,function GlobalSilenceFunction)
     endif
     set oP=null
     set t=null

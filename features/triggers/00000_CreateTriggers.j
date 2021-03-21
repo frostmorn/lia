@@ -290,7 +290,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(SpawnCreepsTrigger,function SpawnCreepsFunction)
     call TriggerAddAction(cO,function PM)
     call TriggerAddAction(CO,function sM)
-    call TriggerAddAction(dO,function TM)
+    call TriggerAddAction(dO,function EOG_PlayersWinSurviveMode)
     call TriggerAddAction(DO,function YM)
     call TriggerAddAction(fO,function vp)
     call TriggerAddAction(FO,function rp)
