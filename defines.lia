@@ -1,25 +1,25 @@
-#define DEBUG 0
-
-#if DEBUG
-#define D_400 0
-#define D_5130 0
-#define D_5090 0
-#define D_10850 0
-#define D_11130 0
-#define D_11150 0
-#define D_11170 0
-#define D_10940 0 
-#define D_13450 0
-#define D_13720 0
-#define D_8760 0
-#define D_13670 0
-#define D_13240 0
-#define D_11780 0    // Stats -b mode
+#define DEBUG 1
+#define DEBUG_TYPE_BOT 1
+#if DEBUG 1
+#define D_400 1
+#define D_5130 1
+#define D_5090 1
+#define D_10850 1
+#define D_11130 1
+#define D_11150 1
+#define D_11170 1
+#define D_10940 1 
+#define D_13450 1
+#define D_13720 1
+#define D_8760 1
+#define D_13670 1
+#define D_13240 1
+#define D_11780 1    // Stats -b mode
 // #define D_11420 1
-#define DI_CREEPS_KILLED 0
+#define DI_CREEPS_KILLED 1
 #define DT_500 0
 #define DT_600 1
-#define DEBUG_NO_WAVE_DESCRIPTIONS    
+// #define DEBUG_NO_WAVE_DESCRIPTIONS    
 #define DI_PIRATE_PASSIVE 1
 // #define DEBUG_NOCLEAR_MESSAGES
 #endif
@@ -51,14 +51,14 @@
 
 #define DISABLE_SOUL_REAPER_1 1
 
-#if DEBUG
-    #define TIME_BEFORE_FIRST_ROUND 20
-    #define TIME_BEROFE_LAST_ROUND 1
-    #define TIME_BEFORE_ROUND 10
-    #define TIME_BEFORE_DUEL
-#else 
+// #if DEBUG
+//     #define TIME_BEFORE_FIRST_ROUND 20
+//     #define TIME_BEROFE_LAST_ROUND 1
+//     #define TIME_BEFORE_ROUND 10
+//     #define TIME_BEFORE_DUEL
+// #else 
     #define TIME_BEFORE_FIRST_ROUND 120
     #define TIME_BEROFE_LAST_ROUND 120
     #define TIME_BEFORE_ROUND 60
     #define TIME_BEFORE_DUEL
-#endif
+// #endif

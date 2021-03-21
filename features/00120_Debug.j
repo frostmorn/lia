@@ -41,7 +41,11 @@ endfunction
 
 function DMesg takes string message returns nothing
     //  Our debug log function
+    #if DEBUG_TYPE_BOT
+        call SendDebugToBot(message, 0)
+    #else
     call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS, 2,"|Cffff0000DEBUG:|R" + message)
+    #endif
 endfunction
 
 function Loc2S takes location loc returns string
