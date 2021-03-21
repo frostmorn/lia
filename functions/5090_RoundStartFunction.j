@@ -10,11 +10,9 @@ set setWaveAllowed=false
     call DMesg("Starting RoundStartFunction")
 #endif
 
-#if BEFORE_ROUND_SILENCE_VARIANT_2
-call DestroyTimer(BeforeRoundSilenceTimer)
-#endif
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(Ho)
+call DestroyTimer(BeforeRoundSilenceTimer)
 set Ho=null
 set Ho=CreateTimer()
 call TimerStart(Ho,'x',false,function Xd)
