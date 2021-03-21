@@ -1,4 +1,4 @@
-#define DEBUG 0
+#define DEBUG 1
 
 #if DEBUG
 #define D_400 1
@@ -20,6 +20,7 @@
 #define DT_500 0
 #define DT_600 1
 #define DEBUG_NO_WAVE_DESCRIPTIONS    
+#define DI_PIRATE_PASSIVE 1
 // #define DEBUG_NOCLEAR_MESSAGES
 #endif
 #define IDDS_ENABLED 1
