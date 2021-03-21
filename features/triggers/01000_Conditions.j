@@ -232,7 +232,7 @@ function US takes nothing returns boolean
     return(CurrentWave<=7)
 endfunction
 function IsPirateAttack takes nothing returns boolean
-    return GetUnitTypeId(GetAttacker()) == 'E000'
+    return GetUnitTypeId(GetAttacker()) == 'E000' or  GetUnitTypeId(GetAttacker()) == 'E001'
 endfunction
 
 function IsDestructorAttack takes nothing returns boolean
