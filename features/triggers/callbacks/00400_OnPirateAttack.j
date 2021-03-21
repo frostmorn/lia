@@ -5,24 +5,40 @@ function DealDamageForGroup takes nothing returns nothing
     local unit attackTargetUnit = GetEnumUnit()
     local real damage = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
     local unit attacker = LoadUnitHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Attacker"))
-
+    local group PoisonDamageGroup = LoadGroupHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
     local real DamageTime = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
 
     if IsUnitAlive(attackTargetUnit) and DamageTime >= 0.0 then
         call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_MAGIC, DAMAGE_TYPE_UNKNOWN )
-        else
-        // call GroupRemoveUnit()
-
+    else
+        call GroupRemoveUnit(PoisonDamageGroup, attackTargetUnit)
+        call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
+        call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
+        call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Attacker"))
+        call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
     endif
     call SaveReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"), DamageTime-1.0)
 endfunction
 function OnPiratePoisionTimer takes nothing returns nothing
+    
     local timer periodicDamageTimer = GetExpiredTimer()
     local unit attacker = LoadUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:Attacker"))
-    local group poisonGroup = LoadGroupHandle(HashData, GetHandleId(periodicDamageTimer), GetHandleId(attacker))
-    call WTF_Unit(attacker)   
-    call DMesg("poisoned group "+I2S(GetHandleId(poisonGroup)))
-    call ForGroup(poisonGroup, function DealDamageForGroup)
+    local group poisonGroup = LoadGroupHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:DamageGroup"))
+
+    if CountUnitsInGroup(poisonGroup) > 0 then
+        call ForGroup(poisonGroup, function DealDamageForGroup)
+        #if DI_PIRATE_PASSIVE
+        call WTF_Unit(attacker)   
+        call DMesg("poisoned group "+I2S(GetHandleId(poisonGroup)))
+    #endif
+    else
+        call DestroyTimer(periodicDamageTimer)
+        call RemoveSavedHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:Attacker"))
+        call RemoveSavedHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:DamageGroup"))
+        call DestroyGroup(poisonGroup)
+    endif
+
+    
 endfunction
 
 
@@ -39,13 +55,13 @@ function OnPirateAttackCallback takes nothing returns nothing
     local real DamageTimerPeriod = 1.0
     local real DamageTime = 4.0
     local group PoisonDamageGroup = LoadGroupHandle(HashData, GetHandleId(periodicDamageTimer), GetHandleId(attacker))
-    
-    // call WTF_Unit(attacker)
-    // call DMesg("attacked")
-    // call WTF_Unit(attackTargetUnit)
-
-    if IsUnitDead(attackTargetUnit) then 
+    if attackTargetUnit == null or attacker == null then 
         return
+            // call WTF_Unit(attacker)
+    #if DI_PIRATE_PASSIVE
+    call DMesg("Attacker or target doesn't exist")
+    #endif
+    // call WTF_Unit(attackTargetUnit)
     endif
     if PoisonLevel == 0 then
         return
@@ -61,12 +77,13 @@ function OnPirateAttackCallback takes nothing returns nothing
     if PoisonLevel == 3 then
         set damage = 40.0
     endif
-    // call DMesg("Attacker has poison ability level "+I2S(PoisonLevel)+" Damage set to "+R2S(damage))
+#if DI_PIRATE_PASSIVE
+    call DMesg("Attacker has poison ability level "+I2S(PoisonLevel)+" Damage set to "+R2S(damage))
+#endif
     if PoisonDamageGroup == null then
         set PoisonDamageGroup = CreateGroup()
 
     endif
-
 
     set tempGroup = GetUnitsInRangeOfLocAll(PoisonRange, GetUnitLoc(attackTargetUnit))
     loop
@@ -81,15 +98,18 @@ function OnPirateAttackCallback takes nothing returns nothing
         call SaveReal(HashData, GetHandleId(tempUnit), StringHash("Poison:DamageTime"), DamageTime)
         call SaveReal(HashData, GetHandleId(tempUnit), StringHash("Poison:DamagePart"), damage)
         call SaveUnitHandle(HashData, GetHandleId(tempUnit), StringHash("Poison:Attacker"), attacker)
+        call SaveGroupHandle(HashData, GetHandleId(tempUnit), StringHash("Poison:DamageGroup"), PoisonDamageGroup)
         exitwhen tempUnit == null
     endloop
-    call SaveGroupHandle(HashData, GetHandleId(periodicDamageTimer),GetHandleId(attacker), PoisonDamageGroup)
-    call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:Attacker"), attacker)
-    call DestroyGroup(tempGroup)
+
     if periodicDamageTimer == null then
         set periodicDamageTimer = CreateTimer()
         call TimerStart(periodicDamageTimer, DamageTimerPeriod, true, function OnPiratePoisionTimer)
         call SaveTimerHandle(HashData, GetHandleId(attacker), StringHash("Poison:PeriodicDamageTimer"), periodicDamageTimer)
     endif
+
+    call SaveGroupHandle(HashData, GetHandleId(periodicDamageTimer),StringHash("Poison:DamageGroup"), PoisonDamageGroup)
+    call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:Attacker"), attacker)
+    call DestroyGroup(tempGroup)
     endfunction
 #endif

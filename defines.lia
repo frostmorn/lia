@@ -1,20 +1,20 @@
-#define DEBUG 1
+#define DEBUG 0
 
 #if DEBUG
-#define D_400 1
-#define D_5130 1
-#define D_5090 1
-#define D_10850 1
-#define D_11130 1
-#define D_11150 1
-#define D_11170 1
-#define D_10940 1 
-#define D_13450 1
-#define D_13720 1
-#define D_8760 1
-#define D_13670 1
-#define D_13240 1
-#define D_11780 1    // Stats -b mode
+#define D_400 0
+#define D_5130 0
+#define D_5090 0
+#define D_10850 0
+#define D_11130 0
+#define D_11150 0
+#define D_11170 0
+#define D_10940 0 
+#define D_13450 0
+#define D_13720 0
+#define D_8760 0
+#define D_13670 0
+#define D_13240 0
+#define D_11780 0    // Stats -b mode
 // #define D_11420 1
 #define DI_CREEPS_KILLED 0
 #define DT_500 0
