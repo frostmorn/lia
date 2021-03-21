@@ -8,15 +8,27 @@ function DealDamageForGroup takes nothing returns nothing
     local group PoisonDamageGroup = LoadGroupHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
     local real DamageTime = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
 
+    local effect PoisonEffect = LoadEffectHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"))
     if IsUnitAlive(attackTargetUnit) and DamageTime >= 0.0 then
         call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_POISON )
+        if PoisonEffect == null then
+            set PoisonEffect = AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl", attackTargetUnit, "origin")
+            call SaveEffectHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"), PoisonEffect)
+            // TODO:
+            // call SetUnitMoveSpeed(GetUnitState())
+        endif
     else
         call GroupRemoveUnit(PoisonDamageGroup, attackTargetUnit)
         call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
         call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
         call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Attacker"))
         call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
+        if attackTargetUnit != null then
+            call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"))
+            call DestroyEffect(PoisonEffect)
+        endif
     endif
+    
     call SaveReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"), DamageTime-1.0)
 endfunction
 function OnPiratePoisionTimer takes nothing returns nothing
@@ -99,6 +111,7 @@ function OnPirateAttackCallback takes nothing returns nothing
         call SaveReal(HashData, GetHandleId(tempUnit), StringHash("Poison:DamagePart"), damage)
         call SaveUnitHandle(HashData, GetHandleId(tempUnit), StringHash("Poison:Attacker"), attacker)
         call SaveGroupHandle(HashData, GetHandleId(tempUnit), StringHash("Poison:DamageGroup"), PoisonDamageGroup)
+        
         exitwhen tempUnit == null
     endloop
 
