@@ -510,6 +510,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttack, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttacked, EVENT_PLAYER_UNIT_ATTACKED)
 
+
     call TriggerAddCondition(OnPirateAttack, Condition(function IsPirateAttack))
     call TriggerAddCondition(OnDestructorAttack, Condition(function IsDestructorAttack))
     call TriggerAddCondition(OnDestructorAttacked, Condition(function IsDestructorAttacked))

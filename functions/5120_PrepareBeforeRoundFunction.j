@@ -132,12 +132,12 @@ endif
 call SaveInteger(Ax,1,Jd,CurrentWave)
 call TimerStart(tt,w,false,function Dd)
 if CurrentWave==1 then
-set w=90
+set w=TIME_BEFORE_FIRST_ROUND
 else
 if CurrentWave==20 then
-set w='x'
+set w=TIME_BEROFE_LAST_ROUND
 else
-set w=60
+set w=TIME_BEFORE_ROUND
 endif
 endif
 set RoundStartTimer=CreateTimer()
