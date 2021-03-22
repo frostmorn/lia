@@ -171,36 +171,36 @@ call TimerStart(bj_stockUpdateTimer,bj_STOCK_RESTOCK_INITIAL_DELAY,false,functio
 call rN()
 call BN()
 call CreateTriggers() 
-set i=0
+
 set i=0
 loop
 exitwhen(i>8)
-set D[i]=0
-set U[i]=0
-set CreepsKilledByPlayer[i]=0
-set vv[i]=0
-set ev[i]=0
-set Gv[i]=0
-set Jv[i]=0
-set pv[i]=CreateTimer()
-set Qv[i]=0
-set uv[i]=false
-set Yv[i]=0
-set zv[i]=false
-set Zv[i]=""
-set ee[i]=0
-set Re[i]=1
-set Be[i]=false
-set IsReady[i]=false
-set ge[i]=false
-set pe[i]=false
-set gx[i]=0
-set vo[i]=0
-set eo[i]=false
-set HeroInGameAndAliveARRAY[i]=false
-set Ao[i]=0
-set bo[i]=0
-set i=i+1
+    set D[i]=0
+    set U[i]=0
+    set CreepsKilledByPlayer[i]=0
+    set vv[i]=0
+    set ev[i]=0
+    set Gv[i]=0
+    set Jv[i]=0
+    set pv[i]=CreateTimer()
+    set Qv[i]=0
+    set uv[i]=false
+    set Yv[i]=0
+    set zv[i]=false
+    set Zv[i]=""
+    set ee[i]=0
+    set Re[i]=1
+    set Be[i]=false
+    set IsReady[i]=false
+    set ge[i]=false
+    set pe[i]=false
+    set gx[i]=0
+    set vo[i]=0
+    set eo[i]=false
+    set HeroInGameAndAliveARRAY[i]=false
+    set Ao[i]=0
+    set bo[i]=0
+    set i=i+1
 endloop
 set RoundStartTimer=CreateTimer()
 set i=0
