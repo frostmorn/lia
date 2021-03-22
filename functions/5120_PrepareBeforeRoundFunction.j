@@ -32,7 +32,7 @@ set setWaveAllowed = true
             call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = "+I2S(W[PlayerIndex+1]))
         endif
         set PlayerIndex = PlayerIndex +1
-        exitwhen PlayerIndex == 16
+        exitwhen PlayerIndex == 15
     endloop
 #endif
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
