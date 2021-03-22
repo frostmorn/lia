@@ -37,7 +37,7 @@ endif
 set Wp=Wp+1
 endloop
 call MultiboardSetItemValueBJ(StatsBoard,3,(GB+2),Zv[wp])
-call MultiboardSetItemValueBJ(StatsBoard,4,(GB+2),I2S(W[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,4,(GB+2),I2S(CreepsKilledByPlayer[wp]))
 call MultiboardSetItemValueBJ(StatsBoard,5,(GB+2),I2S(vv[wp]))
 call MultiboardSetItemValueBJ(StatsBoard,6,(GB+2),I2S(Qv[wp]))
 call MultiboardSetItemValueBJ(StatsBoard,7,(GB+2),I2S(Re[wp]))

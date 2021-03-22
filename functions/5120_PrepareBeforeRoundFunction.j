@@ -29,7 +29,7 @@ set setWaveAllowed = true
     loop
         if GetPlayerController(Player(PlayerIndex)) == MAP_CONTROL_USER and GetPlayerSlotState(Player(PlayerIndex)) == PLAYER_SLOT_STATE_PLAYING then
             // U kidding me
-            call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = "+I2S(W[PlayerIndex+1]))
+            call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = "+I2S(CreepsKilledByPlayer[PlayerIndex+1]))
         endif
         set PlayerIndex = PlayerIndex +1
         exitwhen PlayerIndex == 15

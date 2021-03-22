@@ -13,7 +13,7 @@ set up[0]=false
 loop
 exitwhen wp>Up
 set lv=100.*(I2R(Jv[wp])/ I2R(kv))
-set U[wp]=W[wp]*2+Re[wp]*30+vv[wp]*20+R2I(lv)*7-ev[wp]*50-30
+set U[wp]=CreepsKilledByPlayer[wp]*2+Re[wp]*30+vv[wp]*20+R2I(lv)*7-ev[wp]*50-30
 set up[wp]=false
 set wp=wp+1
 endloop
@@ -37,7 +37,7 @@ endif
 set Wp=Wp+1
 endloop
 call MultiboardSetItemValueBJ(StatsBoard,3,(GB+1),Zv[wp])
-call MultiboardSetItemValueBJ(StatsBoard,4,(GB+1),I2S(W[wp]))
+call MultiboardSetItemValueBJ(StatsBoard,4,(GB+1),I2S(CreepsKilledByPlayer[wp]))
 call MultiboardSetItemValueBJ(StatsBoard,5,(GB+1),I2S(vv[wp]))
 call MultiboardSetItemValueBJ(StatsBoard,6,(GB+1),I2S(Re[wp]))
 call MultiboardSetItemValueBJ(StatsBoard,7,(GB+1),(R2SW(lv,0,1)+"%"))

@@ -267,7 +267,7 @@ integer array udg_UDexPrev
 integer array udg_UnitIndexLock
 integer array vo
 integer array vv
-integer array W
+integer array CreepsKilledByPlayer
 integer array WillOfTheLight___stackCount
 integer array Yv
 integer av=0

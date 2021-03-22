@@ -6,7 +6,7 @@ local unit IF=GetKillingUnit()
 local player p=GetOwningPlayer(IF)
 local integer Bc=ee[GetPlayerId(p)+1]
 if GetOwningPlayer(u)==Player(11)and(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))==0 and IF!=null and GetUnitAbilityLevel(u,'A0K4')==0 then
-set W[Bc]=W[Bc]+1
+set CreepsKilledByPlayer[Bc]=CreepsKilledByPlayer[Bc]+1
 if no or Wx then
 call LB()
 endif

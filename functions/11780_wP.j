@@ -13,7 +13,7 @@ set Sv=0
 loop
 exitwhen In>WP
 set sv=sv+U[In]
-set YP=YP+W[In]
+set YP=YP+CreepsKilledByPlayer[In]
 set zP=zP+vv[In]    // Boss count
 set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
@@ -38,7 +38,7 @@ set yP=A
 loop
 exitwhen In>yP
 set Sv=Sv+U[In]
-set YP=YP+W[In]
+set YP=YP+CreepsKilledByPlayer[In]
 set zP=zP+vv[In]
 set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
