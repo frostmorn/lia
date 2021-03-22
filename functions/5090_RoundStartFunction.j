@@ -6,10 +6,6 @@ function RoundStartFunction takes nothing returns nothing
 #if FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed=false
 #endif
-#if D_5090
-    call DMesg("Starting RoundStartFunction")
-#endif
-
 call DisableTrigger(IsReadyTrig)
 call DestroyTimer(Ho)
 call DestroyTimer(BeforeRoundSilenceTimer)
@@ -37,13 +33,14 @@ endif
 if ModuloInteger(CurrentWave,5)==0 then
     // Starting Boss Fight
 call TriggerExecute(BossFightTrigger)
+
 #if D_5090
-call DMesg("Executing BossFightTrigger")
+call DMesg("Starting  [ BOSS ] Round № "+I2S(CurrentWave))
 #endif
 else
 call TriggerExecute(WaveFightTrigger)
 #if D_5090
-call DMesg("Executing WaveFightTrigger")
+call DMesg("Starting [ WAVE ] Round № "+I2S(CurrentWave))
 #endif
 endif
 endfunction
