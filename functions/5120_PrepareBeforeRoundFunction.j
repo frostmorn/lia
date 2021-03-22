@@ -27,7 +27,7 @@ set setWaveAllowed = true
 #endif
 #if DI_CREEPS_KILLED
     loop
-        if GetPlayerController(Player(PlayerIndex))==MAP_CONTROL_USER and GetPlayerSlotState(Player(PlayerIndex))==PLAYER_SLOT_STATE_PLAYING) then
+        if GetPlayerController(Player(PlayerIndex)) == MAP_CONTROL_USER and GetPlayerSlotState(Player(PlayerIndex)) == PLAYER_SLOT_STATE_PLAYING then
             // U kidding me
             call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = "+I2S(W[PlayerIndex+1]))
         endif
