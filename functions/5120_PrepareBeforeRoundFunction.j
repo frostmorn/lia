@@ -21,15 +21,15 @@ local integer PlayerIndex = 0
 #if FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed = true
 #endif
-#if D_5120
-#define D_5120
-call DMesg("Prepare before for Round № "+I2S(CurrentWave+1))
-#endif
 
+#if D_5130
+    call DMesg("Prepare before for Round № "+I2S(CurrentWave+1))
+#endif
 #if DI_CREEPS_KILLED
     loop
-        if GetPlayerController(Player(PlayerIndex))==MAP_CONTROL_USER then
-            call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = "+I2S(W[PlayerIndex]))
+        if GetPlayerController(Player(PlayerIndex))==MAP_CONTROL_USER and GetPlayerSlotState(Player(PlayerIndex))==PLAYER_SLOT_STATE_PLAYING) then
+            // U kidding me
+            call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = "+I2S(W[PlayerIndex+1]))
         endif
         set PlayerIndex = PlayerIndex +1
         exitwhen PlayerIndex == 16
