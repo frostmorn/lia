@@ -745,6 +745,7 @@ trigger Hn=null
 trigger hO=null
 trigger HO=null
 trigger HomeRegenerationEnterTrig=null
+trigger OnWarriorOfTheLightLearnedSkillWillOfTheLight = null
 trigger hR=null
 trigger HR=null
 trigger hV=null
