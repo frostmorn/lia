@@ -2,6 +2,7 @@
 #define H_5120
 #include "../features/00120_Debug.j"
 #include "../features/triggers/01000_Conditions.j"
+#include "../features/triggers/callbacks/00800_OnMonsterKilled.j"
 function PrepareBeforeRoundFunction takes nothing returns nothing
 local integer In=1
 local integer wN=A
@@ -36,6 +37,7 @@ set setWaveAllowed = true
         exitwhen PlayerIndex == 15
     endloop
 #endif
+call RemoveKilledMonsters()
 call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
 call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 #if DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND
