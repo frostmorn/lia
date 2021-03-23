@@ -54,7 +54,6 @@ call ChainsOfLight___Init()
 call ItsReady___Init()
 call HeroLimit___Init()
 
-call WillOfTheLight___Init()
 
 call RegisterSpellEffectResponse('A0EZ',(8))
 call ArenaBoundary___Init()

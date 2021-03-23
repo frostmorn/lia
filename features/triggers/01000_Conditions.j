@@ -242,4 +242,7 @@ endfunction
 function IsDestructorAttacked takes nothing returns boolean
     return GetUnitTypeId(GetAttackedUnitBJ()) == 'Hpal'
 endfunction
+function IsLearnedSkillWillOfTheLight takes nothing returns boolean
+    return GetLearnedSkill() == 'A0G1'
+endfunction
 #endif
