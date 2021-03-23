@@ -27,10 +27,12 @@ Such way have some kind of "inconveniences" but if u strong slavic man, u don't 
 
 So before you will do that u must generate war3map.j from war3map.lia.
 For that purposes we use C-language preprocessor, to add macros functionality
-which could be usefull for creation map debug system
+which could be usefull for creation map debug system.
 
-Just hit command below and u will get it
+All needed scripts for map testing and buildage provided in .scripts folder.
+Some scripts need some requirements, some of them needed in changing file paths
+for your specific system configuration and so all.
 
-```
-    cpp war3map.lia war3map.j -std=c99 -P -fno-extended-identifiers 
-```
+Cause this project maintained only by me, this isn't anoying.
+But u could feel free to fix those scripts, add some kind of env variables
+and so all.
