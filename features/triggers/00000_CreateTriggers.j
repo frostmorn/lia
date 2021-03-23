@@ -2,6 +2,8 @@
 #include "callbacks/00400_OnPirateAttack.j"
 #include "callbacks/00500_OnDestructorAttack.j"
 #include "callbacks/00600_OnDestructorAttacked.j"
+
+#include "callbacks/00800_OnMonsterKilled.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/00200_SetCameraAttackAngle.j"
 #endif
@@ -166,6 +168,8 @@ function CreateTriggers takes nothing returns nothing
     set OnPirateAttack = CreateTrigger()
     set OnDestructorAttack = CreateTrigger()
     set OnDestructorAttacked = CreateTrigger()
+
+    set OnMonsterKilled = CreateTrigger()
     // custom Triggers
     set HomeRegenerationEnterTrig = CreateTrigger()
     call DisableTrigger(Wa)
@@ -216,6 +220,8 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(wR)
     call DisableTrigger(yR)
     call DisableTrigger(nI)
+    call TriggerAddAction(OnMonsterKilled, function OnMonsterKilledCallback)
+
     call TriggerAddAction(OnPirateAttack, function OnPirateAttackCallback)
     call TriggerAddAction(OnDestructorAttack, function OnDestructorAttackCallback)
     call TriggerAddAction(OnDestructorAttacked, function OnDestructorAttackedCallback)
@@ -294,6 +300,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(DO,function YM)
     call TriggerAddAction(fO,function vp)
     call TriggerAddAction(FO,function rp)
+    // WHATAFUCK
     call TriggerAddAction(gO,function np)
     call TriggerAddAction(GO,function Xp)
     call TriggerAddAction(hO,function Cp)
@@ -509,12 +516,12 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(OnPirateAttack, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttack, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttacked, EVENT_PLAYER_UNIT_ATTACKED)
-
+    call TriggerRegisterAnyUnitEventBJ(OnMonsterKilled, EVENT_PLAYER_UNIT_DEATH)
 
     call TriggerAddCondition(OnPirateAttack, Condition(function IsPirateAttack))
     call TriggerAddCondition(OnDestructorAttack, Condition(function IsDestructorAttack))
     call TriggerAddCondition(OnDestructorAttacked, Condition(function IsDestructorAttacked))
-
+    call TriggerAddCondition(OnMonsterKilled, Condition(function IsDyingUnitMonster))
     call TriggerAddCondition(Ta,Condition(function IsUnitAttackedByAlly))
     call TriggerAddCondition(ua,Condition(function IsNotGameOver))
     call TriggerAddCondition(Wa,Condition(function qD))
