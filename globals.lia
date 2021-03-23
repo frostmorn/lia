@@ -268,7 +268,6 @@ integer array udg_UnitIndexLock
 integer array vo
 integer array vv
 integer array CreepsKilledByPlayer
-integer array WillOfTheLight___stackCount
 integer array Yv
 integer av=0
 integer ButchersRage___abilId='A0IN'
@@ -409,7 +408,6 @@ real array s__SpellEvent___spellEvent_TargetY
 real array udg_LastDmgPrevAmount
 real array udg_LastDmgValue
 real array VA
-real array WillOfTheLight___stackDamage
 real fI=0
 real FI=0
 real IDDS___Damage=0.
@@ -598,7 +596,6 @@ timer RoundStartTimer=null
 timer TI
 timer udg_DmgEvTimer=null
 timer ux=null
-timer WillOfTheLight___stackTimer=CreateTimer()
 trigger aE=null
 trigger AE=null
 trigger an=null
@@ -730,7 +727,6 @@ trigger gg_trg_Table=null
 trigger gg_trg_TimedEffect=null
 trigger gg_trg_Unit_Indexer=null
 trigger gg_trg_Void=null
-trigger gg_trg_WillOfTheLight=null
 trigger gn=null
 trigger Gn=null
 trigger gO=null
@@ -749,6 +745,7 @@ trigger Hn=null
 trigger hO=null
 trigger HO=null
 trigger HomeRegenerationEnterTrig=null
+trigger OnWarriorOfTheLightLearnedSkillWillOfTheLight = null
 trigger hR=null
 trigger HR=null
 trigger hV=null
@@ -1028,7 +1025,6 @@ unit array s__SpellEvent___spellEvent_TargetUnit
 unit array udg_LastDmgSource
 unit array udg_LastDmgTarget
 unit array udg_UDexUnits
-unit array WillOfTheLight___stackHero
 unit Av=null
 unit ax=null
 unit bv=null
