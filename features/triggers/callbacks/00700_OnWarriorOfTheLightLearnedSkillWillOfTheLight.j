@@ -9,6 +9,9 @@ function OnWillOfTheLightTimer takes nothing returns nothing
     local group tempUnitsGroup = null
     local unit tempUnit = null
     local real willOfTheLightRange = 500.0
+    if allReadyRecievedDamage == 0.0 then
+        return
+    endif
     call WTF_Unit(willOfTheLightUnit)
     call DMesg("WillOfTheLight ability recieved damage " + R2S(allReadyRecievedDamage))
     
