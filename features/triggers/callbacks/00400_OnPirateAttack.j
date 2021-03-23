@@ -8,8 +8,15 @@ function DealDamageForGroup takes nothing returns nothing
     local unit attacker = LoadUnitHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Attacker"))
     local group PoisonDamageGroup = LoadGroupHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
     local real DamageTime = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
-
     local effect PoisonEffect = LoadEffectHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"))
+    local boolean isSlowed = LoadBoolean(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:SlowEffect"))
+
+    if not(isSlowed) then
+        call SaveBoolean(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:SlowEffect"), true)
+        call SetUnitMoveSpeed(attackTargetUnit, GetUnitMoveSpeed(attackTargetUnit) - GetUnitDefaultMoveSpeed(attackTargetUnit)*0.2)
+    endif
+
+    // call WTF_Unit(attackTargetUnit)
     if IsUnitAlive(attackTargetUnit) and DamageTime >= 0.0 then
         call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_POISON )
         if PoisonEffect == null then
@@ -17,13 +24,18 @@ function DealDamageForGroup takes nothing returns nothing
             call SaveEffectHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"), PoisonEffect)
         endif
     else
-        call SetUnitMoveSpeed(attackTargetUnit, GetUnitMoveSpeed(attackTargetUnit) + GetUnitDefaultMoveSpeed(attackTargetUnit)*0.2)
-        call GroupRemoveUnit(PoisonDamageGroup, attackTargetUnit)
+      
         call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
         call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
         call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Attacker"))
         call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"))
+        call GroupRemoveUnit(PoisonDamageGroup, attackTargetUnit)
+      
         if attackTargetUnit != null then
+            if isSlowed then
+                call SetUnitMoveSpeed(attackTargetUnit, GetUnitMoveSpeed(attackTargetUnit) + GetUnitDefaultMoveSpeed(attackTargetUnit)*0.2)
+                call RemoveSavedBoolean(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:SlowEffect"))
+            endif
             call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"))
             call DestroyEffect(PoisonEffect)
         endif
@@ -72,11 +84,11 @@ function OnPirateAttackCallback takes nothing returns nothing
     local group PoisonDamageGroup = LoadGroupHandle(HashData, GetHandleId(periodicDamageTimer), GetHandleId(attacker))
     if attackTargetUnit == null or attacker == null then 
         return
-            // call WTF_Unit(attacker)
+    // call WTF_Unit(attacker)
     #if DI_PIRATE_PASSIVE
     call DMesg("Attacker or target doesn't exist")
     #endif
-    // call WTF_Unit(attackTargetUnit)
+    call WTF_Unit(attackTargetUnit)
     endif
     if PoisonLevel == 0 then
         return
@@ -107,7 +119,6 @@ function OnPirateAttackCallback takes nothing returns nothing
         if IsUnitEnemy(tempUnit, GetOwningPlayer(attacker)) then
             if not IsUnitInGroup(tempUnit, PoisonDamageGroup) then
                 call GroupAddUnit(PoisonDamageGroup, tempUnit)
-                call SetUnitMoveSpeed(tempUnit, GetUnitMoveSpeed(tempUnit) - GetUnitDefaultMoveSpeed(tempUnit)*0.2)
             endif
         endif
         call SaveReal(HashData, GetHandleId(tempUnit), StringHash("Poison:DamageTime"), DamageTime)
