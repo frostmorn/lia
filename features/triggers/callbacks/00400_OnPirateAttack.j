@@ -1,6 +1,7 @@
 #ifndef T_00400
 #define T_00400
 #include "../../00120_Debug.j"
+
 function DealDamageForGroup takes nothing returns nothing
     local unit attackTargetUnit = GetEnumUnit()
     local real damage = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
@@ -14,10 +15,9 @@ function DealDamageForGroup takes nothing returns nothing
         if PoisonEffect == null then
             set PoisonEffect = AddSpecialEffectTarget("Abilities\\Spells\\NightElf\\shadowstrike\\shadowstrike.mdl", attackTargetUnit, "origin")
             call SaveEffectHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Effect"), PoisonEffect)
-            // TODO:
-            // call SetUnitMoveSpeed(GetUnitState())
         endif
     else
+        call SetUnitMoveSpeed(attackTargetUnit, GetUnitMoveSpeed(attackTargetUnit) + GetUnitDefaultMoveSpeed(attackTargetUnit)*0.2)
         call GroupRemoveUnit(PoisonDamageGroup, attackTargetUnit)
         call RemoveSavedReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
         call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageGroup"))
@@ -31,6 +31,9 @@ function DealDamageForGroup takes nothing returns nothing
     
     call SaveReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamageTime"), DamageTime-1.0)
 endfunction
+
+
+
 function OnPiratePoisionTimer takes nothing returns nothing
     
     local timer periodicDamageTimer = GetExpiredTimer()
@@ -104,7 +107,7 @@ function OnPirateAttackCallback takes nothing returns nothing
         if IsUnitEnemy(tempUnit, GetOwningPlayer(attacker)) then
             if not IsUnitInGroup(tempUnit, PoisonDamageGroup) then
                 call GroupAddUnit(PoisonDamageGroup, tempUnit)
-                
+                call SetUnitMoveSpeed(tempUnit, GetUnitMoveSpeed(tempUnit) - GetUnitDefaultMoveSpeed(tempUnit)*0.2)
             endif
         endif
         call SaveReal(HashData, GetHandleId(tempUnit), StringHash("Poison:DamageTime"), DamageTime)
