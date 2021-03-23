@@ -18,11 +18,12 @@ function OnWillOfTheLightTimer takes nothing returns nothing
     loop
         set tempUnit = FirstOfGroup(tempUnitsGroup)
         call GroupRemoveUnit(tempUnitsGroup, tempUnit)
-        if tempUnit != willOfTheLightUnit then
+        if tempUnit != willOfTheLightUnit and IsUnitAlive(tempUnit) then
             if IsUnitEnemy(tempUnit, GetOwningPlayer(willOfTheLightUnit)) then
-
+                call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Feedback\\ArcaneTowerAttack.mdl",tempUnit, "origin"))
                 call UnitDamageTargetBJ(willOfTheLightUnit, tempUnit, (allReadyRecievedDamage/10.0)*willOfTheLightLevel, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
             else
+                call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",tempUnit, "origin"))
                 call UnitDamageTargetBJ(willOfTheLightUnit, tempUnit, -(allReadyRecievedDamage/10.0)*willOfTheLightLevel, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
             endif
         endif
