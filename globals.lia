@@ -764,6 +764,7 @@ trigger Io=null
 trigger IO=null
 trigger iR=null
 trigger IR=null
+trigger OnMonsterKilled = null
 trigger IsReadyTrig=CreateTrigger()
 // trigger IsReadyTrigDefault=null
 trigger iV=null
