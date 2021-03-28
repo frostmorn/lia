@@ -708,7 +708,6 @@ trigger gg_trg_MagicLump=null
 trigger gg_trg_MagicLumpRegeneration=null
 trigger gg_trg_MagicRum=null
 trigger gg_trg_MissOnAttack=null
-trigger gg_trg_MithrilArmor=null
 trigger gg_trg_NeutralsCurse=null
 trigger gg_trg_OnDamage=null
 trigger gg_trg_PoisionousWeapon=null
