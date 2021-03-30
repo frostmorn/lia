@@ -2,8 +2,9 @@
 #include "callbacks/00400_OnPirateAttack.j"
 #include "callbacks/00500_OnDestructorAttack.j"
 #include "callbacks/00600_OnDestructorAttacked.j"
-#include "callbacks/00800_OnMonsterKilled.j"
 #include "callbacks/00700_OnWarriorOfTheLightLearnedSkillWillOfTheLight.j"
+#include "callbacks/00800_OnMonsterKilled.j"
+#include "callbacks/00900_OnMithrilCast.j"
 
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/00200_SetCameraAttackAngle.j"
@@ -170,7 +171,7 @@ function CreateTriggers takes nothing returns nothing
     set OnPirateAttack = CreateTrigger()
     set OnDestructorAttack = CreateTrigger()
     set OnDestructorAttacked = CreateTrigger()
-
+    set OnMithrilCast = CreateTrigger()
     set OnMonsterKilled = CreateTrigger()
 
     set OnWarriorOfTheLightLearnedSkillWillOfTheLight = CreateTrigger()
@@ -225,10 +226,11 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(yR)
     call DisableTrigger(nI)
     call TriggerAddAction(OnMonsterKilled, function OnMonsterKilledCallback)
-
-    call TriggerAddAction(OnPirateAttack, function OnPirateAttackCallback)
     call TriggerAddAction(OnDestructorAttack, function OnDestructorAttackCallback)
     call TriggerAddAction(OnDestructorAttacked, function OnDestructorAttackedCallback)
+    call TriggerAddAction(OnPirateAttack, function OnPirateAttackCallback)
+    call TriggerAddAction(OnMithrilCast, function OnMithrilCastCallback)
+
     call TriggerAddAction(OnWarriorOfTheLightLearnedSkillWillOfTheLight, function OnWarriorOfTheLightLearnedSkillWillOfTheLightCallback)
     call TriggerAddAction(HomeRegenerationEnterTrig, function HomeRegenerationEnter)
     call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
@@ -518,12 +520,14 @@ function CreateTriggers takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(hR,EVENT_PLAYER_UNIT_DEATH)
     call TriggerRegisterAnyUnitEventBJ(xI,EVENT_PLAYER_UNIT_PICKUP_ITEM)
     call TriggerRegisterAnyUnitEventBJ(oI,EVENT_PLAYER_UNIT_DROP_ITEM)
+    call TriggerRegisterAnyUnitEventBJ(OnMithrilCast, EVENT_PLAYER_UNIT_SPELL_CAST)
     call TriggerRegisterAnyUnitEventBJ(OnPirateAttack, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttack, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnDestructorAttacked, EVENT_PLAYER_UNIT_ATTACKED)
     call TriggerRegisterAnyUnitEventBJ(OnMonsterKilled, EVENT_PLAYER_UNIT_DEATH)
     call TriggerRegisterAnyUnitEventBJ(OnWarriorOfTheLightLearnedSkillWillOfTheLight, EVENT_PLAYER_HERO_SKILL)
 
+    call TriggerAddCondition(OnMithrilCast, Condition(function IsMithrilCast))
     call TriggerAddCondition(OnPirateAttack, Condition(function IsPirateAttack))
     call TriggerAddCondition(OnDestructorAttack, Condition(function IsDestructorAttack))
     call TriggerAddCondition(OnDestructorAttacked, Condition(function IsDestructorAttacked))

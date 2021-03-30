@@ -42,7 +42,6 @@ call ArmorUtils__Init()
 #if IDDS_ENABLED
 call IDDS___Init()
 #endif
-call MissOnAttack___Init()
 call SpellEvent___Init()
 call SpellEventSpecial___Init()
 call DarkRitual___Init()
@@ -55,7 +54,6 @@ call ItsReady___Init()
 call HeroLimit___Init()
 
 
-call RegisterSpellEffectResponse('A0EZ',(8))
 call ArenaBoundary___Init()
 call Charge___Init()
 call RegisterSpellEffectResponse(AimedShot___SPELL_ID,(11))

@@ -315,9 +315,6 @@
     #include "functions/2700_IDDS___Init.j"                         // Used in 13510  but it actually does nothing usefull
 #endif
 #include "functions/2710_RemoveBuff.j"
-#include "functions/2720_OnAttackMissActions.j"
-#include "functions/2730_OnAttackMissConditions.j"
-#include "functions/2740_MissOnAttack___Init.j"
 #include "functions/2750_s__SpellEvent___spellEvent__get_TargetLoc.j"
 #include "functions/2760_s__SpellEvent___spellEvent_create.j"
 #include "functions/2770_s__SpellEvent___spellEvent_SpellEvent___init.j"
@@ -1004,7 +1001,6 @@
 #include "functions/9910_RL.j"
 #include "functions/9930_bL.j"
 #include "functions/9940_BL.j"
-#include "functions/9950_CL.j"
 #include "functions/9960_dL.j"
 #include "functions/9970_DL.j"
 #include "functions/9980_fL.j"
@@ -1291,9 +1287,6 @@
 #include "functions/13120_SpiritOfVengeance___Init.j"
 #include "functions/13130_HolyForces___OnActions.j"
 #include "functions/13140_HolyForces___Init.j"
-#include "functions/13240_MithrilArmor___onLoop.j"
-#include "functions/13250_MithrilArmor___OnActions.j"
-#include "functions/13260_MithrilArmor___Init.j"
 #include "functions/13270_ArenaBoundary___ArenaBoundaryEnter.j"
 #include "functions/13280_ArenaBoundary___ArenaBoundaryLeave.j"
 #include "functions/13290_ArenaBoundary___Init.j"

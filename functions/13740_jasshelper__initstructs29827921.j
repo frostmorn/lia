@@ -14,7 +14,6 @@
 #include "13640_sa___prototype3_ButchersRage___onCast.j"
 #include "13650_sa___prototype3_ChainsOfLight___onCast.j"
 #include "13660_sa___prototype3_SpiritOfVengeance___OnAction.j"
-#include "13670_sa___prototype3_MithrilArmor___OnActions.j"
 #include "13680_sa___prototype3_Charge___onCast.j"
 #include "13690_sa___prototype3_Charge___onPrecast.j"
 #include "13700_sa___prototype3_AimedShot___AimedShotActions.j"
@@ -61,9 +60,6 @@ call TriggerAddCondition(st___prototype3[6],Condition(function sa___prototype3_C
 set st___prototype3[7]=CreateTrigger()
 call TriggerAddAction(st___prototype3[7],function sa___prototype3_SpiritOfVengeance___OnAction)
 call TriggerAddCondition(st___prototype3[7],Condition(function sa___prototype3_SpiritOfVengeance___OnAction))
-set st___prototype3[8]=CreateTrigger()
-call TriggerAddAction(st___prototype3[8],function sa___prototype3_MithrilArmor___OnActions)
-call TriggerAddCondition(st___prototype3[8],Condition(function sa___prototype3_MithrilArmor___OnActions))
 set st___prototype3[9]=CreateTrigger()
 call TriggerAddAction(st___prototype3[9],function sa___prototype3_Charge___onCast)
 call TriggerAddCondition(st___prototype3[9],Condition(function sa___prototype3_Charge___onCast))
