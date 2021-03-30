@@ -838,6 +838,7 @@ trigger OO=null
 trigger OnPirateAttack=null
 trigger OnDestructorAttack=null
 trigger OnDestructorAttacked=null
+trigger OnMithrilCast=null
 trigger oR=null
 trigger OR=null
 trigger oV=null
