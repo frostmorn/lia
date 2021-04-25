@@ -2,12 +2,16 @@
 #define T_00900
 #include "../../00120_Debug.j"
 function OnMithrilCastCallback takes nothing returns nothing
+
     local real MithrilRange = 500.0
     local real MithrilDuration = 5.0
+
     local unit MithrilCaster = GetSpellAbilityUnit()
-    local trigger MithrilAffectedUnitOrder = null
-    local group MithrilAffectedUnitsGroup = CreateGroup()
     local unit tempUnit = null
+
+    local trigger MithrilAffectedUnitOrder = null
+
+    local group MithrilAffectedUnitsGroup = CreateGroup()
     local group tempGroup = GetUnitsInRangeOfLocAll(MithrilRange, GetUnitLoc(MithrilCaster))
 
     loop

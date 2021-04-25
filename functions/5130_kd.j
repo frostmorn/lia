@@ -10,7 +10,7 @@ function kd takes nothing returns nothing
     set Vv=$96
     call TriggerExecute(sa)
     call PrepareBeforeRoundFunction()
-    #if D_5130
+    #if DI_PREPARE_BEFORE_ROUND_CALLS
     call DMesg("Call PrepareBeforeRoundFunction from 5130")
     #endif
     call TriggerExecute(jO)

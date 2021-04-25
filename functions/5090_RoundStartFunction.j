@@ -34,12 +34,12 @@ if ModuloInteger(CurrentWave,5)==0 then
     // Starting Boss Fight
 call TriggerExecute(BossFightTrigger)
 
-#if D_5090
+#if DI_ROUNDSTART
 call DMesg("Starting  [ BOSS ] Round № "+I2S(CurrentWave))
 #endif
 else
 call TriggerExecute(WaveFightTrigger)
-#if D_5090
+#if DI_ROUNDSTART
 call DMesg("Starting [ WAVE ] Round № "+I2S(CurrentWave))
 #endif
 endif

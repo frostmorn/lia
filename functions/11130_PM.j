@@ -39,8 +39,8 @@ function PM takes nothing returns nothing
         set ye=false
         call eC()
         call PrepareBeforeRoundFunction()
-        #if D_11130
-        #define D_11130
+        #if DI_PREPARE_BEFORE_ROUND_CALLS
+        
         call DMesg("Call PrepareBeforeRoundFunction from 11130")
         #endif
         set Wv=true

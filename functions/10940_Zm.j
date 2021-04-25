@@ -5,7 +5,7 @@ function Zm takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)
 local integer In=1
-#if D_10940
+#if DI_BEFOREROUND_TRIGGERS
     call DMesg("Entering 10940_Zm")
 #endif
 call SaveBoolean(Ax,1,StringHash("pr2"),false)
@@ -17,14 +17,14 @@ call EnableTrigger(AO)
 call EnableTrigger(dO)
 call EnableTrigger(XO)
 call EnableTrigger(oO)
-#if D_10940
+#if DI_BEFOREROUND_TRIGGERS
     call DMesg("10940 enables triggers AO dO XO oO")
 #endif
 else
 call PauseUnit(Me,false)
 call EnableTrigger(AO)
 call EnableTrigger(XO)
-#if D_10940
+#if DI_BEFOREROUND_TRIGGERS
 call DMesg("10940 enables triggers AO XO")
 #endif
 
