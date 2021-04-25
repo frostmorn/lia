@@ -19,7 +19,7 @@ set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
 set In=In+1
 endloop
-#if D_11780
+#if DI_INGAME_B_STATS
 call DMesg("|Cffcc490cTeam 1|R  stats data: ")
 call DMesg("sv (Rating) = "+I2S(sv)+"; vq (DeathCount) = "+ I2S(vq)+"; ZP(KillsCount) = "+I2S(ZP)+"; zP (BossCount) = "+I2S(zP)+"; YP = "+I2S(YP))
 #endif
@@ -44,7 +44,7 @@ set ZP=ZP+Qv[In]
 set vq=vq+ev[In]
 set In=In+1
 endloop
-#if D_11780
+#if DI_INGAME_B_STATS
 call DMesg("|Cff3976e6Team 2|R stats data: ")
 call DMesg("sv (Rating) = "+I2S(sv)+"; vq (DeathCount) = "+ I2S(vq)+"; ZP(KillsCount) = "+I2S(ZP)+"; zP (BossCount) = "+I2S(zP)+"; YP = "+I2S(YP))
 #endif

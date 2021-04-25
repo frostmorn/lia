@@ -9,7 +9,7 @@ function EssenceOfShadow___OnAction takes nothing returns nothing
     local integer h
     local integer abilId
     local boolean b=LoadBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
-    #if D_13450
+    #if DI_ESSENCE_OF_SHADOW
     call DMesg("Essence of shadow onAction call 13450")
     #endif
     if t!=null then

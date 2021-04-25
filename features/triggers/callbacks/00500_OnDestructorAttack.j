@@ -15,7 +15,7 @@ function OnDestructionTimer takes nothing returns nothing
     local real damagePart =  LoadReal(HashData, timerHandle, StringHash("Destruction:DamagePart"))
     local unit attacker = LoadUnitHandle(HashData, timerHandle, StringHash("Destruction:DamageDealer"))
     local unit attackTargetUnit = LoadUnitHandle(HashData, timerHandle, StringHash("Destruction:DamageTarget"))
-    #if DT_500    
+    #if DI_00500_DESTRUCTOR_THIRD_PASSIVE    
     call WTF_Unit(attacker)
     call DMesg("and attacks")
     call WTF_Unit(attackTargetUnit)
@@ -61,7 +61,7 @@ function OnDestructorAttackCallback takes nothing returns nothing
         return
     endif
 
-    // #if DT_500    
+    // #if DI_00500_DESTRUCTOR_THIRD_PASSIVE    
     //     call WTF_Unit(attacker)
     //     call DMesg("and attacks")
     //     call WTF_Unit(attackTargetUnit)
@@ -81,7 +81,7 @@ function OnDestructorAttackCallback takes nothing returns nothing
             set periodicDamageTimer = CreateTimer()
             call UnitDamageTargetBJ(attacker, attackTargetUnit, damage, ATTACK_TYPE_HERO, DAMAGE_TYPE_UNKNOWN )
         
-        #if DT_500
+        #if DI_00500_DESTRUCTOR_THIRD_PASSIVE
             call DMesg("You're lucky. Starting periodic damage dealing")
         #endif
             call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
@@ -92,7 +92,7 @@ function OnDestructorAttackCallback takes nothing returns nothing
             call TimerStart(periodicDamageTimer, DamageTimerPeriod, true, function OnDestructionTimer)
 
         else
-        #if DT_500
+        #if DI_00500_DESTRUCTOR_THIRD_PASSIVE
             call DMesg("Periodic Damage dealing allready started")
         #endif
             // Passive damage dealing allready works. Rewrite needed damage.

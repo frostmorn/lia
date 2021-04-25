@@ -23,7 +23,7 @@ local integer PlayerIndex = 0
 set setWaveAllowed = true
 #endif
 
-#if D_5130
+#if DI_PREPARE_BEFORE_ROUND_CALLS
     call DMesg("Prepare before for Round № "+I2S(CurrentWave+1))
 #endif
 #if DI_CREEPS_KILLED

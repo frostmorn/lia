@@ -19,7 +19,7 @@ function OnDestructorAttackedCallback takes nothing returns nothing
     local integer isAllreadySilenced = LoadInteger(HashData, GetHandleId(attacker), StringHash("BurningArmor:Silenced"))
     local timer burningTimer
     local unit dummy
-    #if DT_600 
+    #if DI_00600_DESTRUCTOR_SECOND_PASSIVE 
     // call DMesg("Oh no, destructor unit attacked. We have problem, captain!")
     #endif
     if IsUnitDead(attacker) then 
@@ -46,7 +46,7 @@ function OnDestructorAttackedCallback takes nothing returns nothing
             call SaveInteger(HashData, GetHandleId(attacker), StringHash("BurningArmor:Silenced"), 1)
             call SaveUnitHandle(HashData, GetHandleId(burningTimer),StringHash("BurningArmor:Attacker"), attacker)
     
-            #if DT_600 
+            #if DI_00600_DESTRUCTOR_SECOND_PASSIVE 
 
             call WTF_Unit(attacker)
             call DMesg("silenced")
