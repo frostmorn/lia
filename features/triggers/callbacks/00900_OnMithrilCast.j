@@ -19,8 +19,7 @@ function OnMithrilTimer takes nothing returns nothing
                 call IssueTargetOrder(tempUnit, "attack", MithrilCaster)
             endif
             call GroupRemoveUnit(tempGroup, tempUnit)
-            exitwhen tempUnit == null
-            
+            exitwhen tempUnit == null            
         endloop
     else
         call FlushChildHashtable(HashData, GetHandleId(MithrilTimer))
@@ -35,7 +34,7 @@ endfunction
 
 function OnMithrilCastCallback takes nothing returns nothing
 
-    local real MithrilRange = 10500.0
+    local real MithrilRange = 500.0
     local real MithrilDuration = 5.0
 
     local unit MithrilCaster = GetSpellAbilityUnit()
