@@ -20,8 +20,9 @@ endfunction
 
 function IsUnitInRect takes unit u, rect rct returns boolean
     if IsUnitAlive(u) then
-    return IsCordsInRect(rct, GetUnitX(u), GetUnitY(u) )
+        return IsCordsInRect(rct, GetUnitX(u), GetUnitY(u) )
     endif
+    return false
 endfunction
 
 function GetUnitZ takes unit u returns real
