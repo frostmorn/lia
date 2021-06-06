@@ -48,12 +48,24 @@ function DMesg takes string message returns nothing
     #endif
 endfunction
 
+function DebugablePlayer takes integer player_index returns player
+if map_startup_finished then
+    call DMesg("Call to Player(x) where x is "+I2S(player_index))
+endif
+return Player(player_index)
+endfunction
+#define Player(x) DebugablePlayer(x)
+
 function Loc2S takes location loc returns string
     return "x: "+R2S( GetLocationX(loc) )+", y: " + R2S(GetLocationY (loc) )
 endfunction
 function WTF_Unit takes unit u returns nothing
     call DMesg("[ UnitType: " + I2HS(GetUnitTypeId(u)) + " ], [ Name: " + GetUnitName(u) + " ], [ Location: " + Loc2S(GetUnitLoc(u))+" ] [ Speed: "+ R2S(GetUnitMoveSpeed(u))+", "+R2S(GetUnitDefaultMoveSpeed(u))+" ]")   
 endfunction
+
+
+
+
 #endif
 
 #endif

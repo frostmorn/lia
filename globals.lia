@@ -2,6 +2,7 @@
 #define GLOBALS_H
 #include "defines.lia"
 globals
+boolean map_startup_finished = false
 boolean array Be
 boolean array DemonicRage___recolor
 boolean array eo

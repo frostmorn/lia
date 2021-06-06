@@ -289,5 +289,6 @@ call PreloadModels()
 #endif
 
 call DetectGameStarted()
+set map_startup_finished = true
 endfunction
 #endif
