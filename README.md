@@ -36,3 +36,7 @@ for your specific system configuration and so all.
 Cause this project maintained only by me, this isn't anoying.
 But u could feel free to fix those scripts, add some kind of env variables
 and so all.
+
+
+## Reoptimization:
+If u use w3x2lni u should have config slk.optimize_jass=false set
