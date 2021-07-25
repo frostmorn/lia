@@ -9,14 +9,14 @@ function kC takes nothing returns nothing
     call SetDestructableInvulnerable(ho,true)
     call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,true,Player(11))
     call SetPlayerMaxHeroesAllowed(8,Player(15))
-    set BoxLocations[0]=GetRectCenter(gg_rct_RedPlayerBox)
-    set BoxLocations[1]=GetRectCenter(gg_rct_BluePlayerBox)
-    set BoxLocations[2]=GetRectCenter(gg_rct_TealPlayerBox)
-    set BoxLocations[3]=GetRectCenter(gg_rct_PurplePlayerBox)
-    set BoxLocations[4]=GetRectCenter(gg_rct_YellowPlayerBox)
-    set BoxLocations[5]=GetRectCenter(gg_rct_OrangePlayerBox)
-    set BoxLocations[6]=GetRectCenter(gg_rct_GreenPlayerBox)
-    set BoxLocations[7]=GetRectCenter(gg_rct_PinkPlayerBox)
+    set BoxLocations[1]=GetRectCenter(gg_rct_RedPlayerBox)
+    set BoxLocations[2]=GetRectCenter(gg_rct_BluePlayerBox)
+    set BoxLocations[3]=GetRectCenter(gg_rct_TealPlayerBox)
+    set BoxLocations[4]=GetRectCenter(gg_rct_PurplePlayerBox)
+    set BoxLocations[5]=GetRectCenter(gg_rct_YellowPlayerBox)
+    set BoxLocations[6]=GetRectCenter(gg_rct_OrangePlayerBox)
+    set BoxLocations[7]=GetRectCenter(gg_rct_GreenPlayerBox)
+    set BoxLocations[8]=GetRectCenter(gg_rct_PinkPlayerBox)
     loop
     exitwhen i>=8
     if GetPlayerSlotState(Player(i))==PLAYER_SLOT_STATE_PLAYING and GetPlayerController(Player(i))==MAP_CONTROL_USER then
