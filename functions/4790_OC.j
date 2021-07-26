@@ -40,17 +40,17 @@ set In=In+1
 endloop
 if Ex then
 set In=0
-set jI=CreateUnit(p,'h011',GetWidgetX(px[1]),GetWidgetY(px[1]),0)
+set jI=CreateUnit(p,'h011',GetWidgetX(NeutralBuildings[1]),GetWidgetY(NeutralBuildings[1]),0)
 call UnitApplyTimedLife(jI,'BTLF',1)
 call DisableTrigger(vI)
 call DisableTrigger(ZR)
-call PauseUnit(px[1],false)
+call PauseUnit(NeutralBuildings[1],false)
 loop
 exitwhen In==6
 call UnitAddItem(jI,UnitItemInSlot(IC,In))
-call UnitDropItemTarget(jI,UnitItemInSlot(jI,0),px[1])
+call UnitDropItemTarget(jI,UnitItemInSlot(jI,0),NeutralBuildings[1])
 call UnitAddItem(jI,UnitItemInSlot(NC,In))
-call UnitDropItemTarget(jI,UnitItemInSlot(jI,0),px[1])
+call UnitDropItemTarget(jI,UnitItemInSlot(jI,0),NeutralBuildings[1])
 set In=In+1
 endloop
 call EnumItemsInRect(bj_mapInitialPlayableArea,null,function XC)
@@ -61,7 +61,7 @@ set AC=GetPlayerState(p,PLAYER_STATE_RESOURCE_LUMBER)
 set In=1
 set wN=A
 if GI==false then
-call PauseUnit(px[1],true)
+call PauseUnit(NeutralBuildings[1],true)
 endif
 loop
 exitwhen In>wN

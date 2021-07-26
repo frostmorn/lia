@@ -4,7 +4,7 @@ function yb takes nothing returns nothing
 local integer In=1
 loop
 exitwhen In>9
-call PauseUnit(px[In],true)
+call PauseUnit(NeutralBuildings[In],true)
 set In=In+1
 endloop
 set GI=false
