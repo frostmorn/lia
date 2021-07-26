@@ -1020,7 +1020,7 @@ unit array HeroStocksArray
 unit array jx
 unit array No
 unit array PlayersHeroArray
-unit array NeutralBuildings
+unit array NeutralShops
 unit array SoV_Owner
 unit array s__SpellEvent___spellEvent_CastingUnit
 unit array s__SpellEvent___spellEvent_TargetUnit

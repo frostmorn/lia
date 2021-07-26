@@ -15,7 +15,7 @@ local integer yc
 local real x
 local real y
 local integer Bc
-call yb()
+call DisableShops()
 call UnitRemoveBuffs(u1,true,true)
 call UnitRemoveBuffs(u2,true,true)
 call EnumItemsInRect(gg_rct_MinimalArenaAreaRect,null,function pc)

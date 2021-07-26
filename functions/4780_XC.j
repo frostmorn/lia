@@ -3,7 +3,7 @@
 function XC takes nothing returns nothing
 if LoadInteger(Ax,1,StringHash("leave"))==GetItemUserData(GetEnumItem())then
 call UnitAddItem(jI,GetEnumItem())
-call UnitDropItemTarget(jI,UnitItemInSlot(jI,0),NeutralBuildings[1])
+call UnitDropItemTarget(jI,UnitItemInSlot(jI,0),NeutralShops[1])
 endif
 endfunction
 

@@ -16,7 +16,7 @@ call DestroyTimer(RoundStartTimer)
 call DestroyTimer(LoadTimerHandle(Ax,1,StringHash("timers")))
 call DestroyTimer(LoadTimerHandle(Ax,2,StringHash("timers")))
 call DestroyTimerDialog(Oe)
-call yb()
+call DisableShops()
 call ModifyGateBJ(0,ho)
 set RoundStartTimer=null
 set Oe=null

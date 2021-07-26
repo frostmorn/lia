@@ -9,7 +9,7 @@ local timer t2=CreateTimer()
 local timer t3=CreateTimer()
 local timer t4=CreateTimer()
 local location L
-call yb()
+call DisableShops()
 call SetForceAllianceStateBJ(Tv,tv,0)
 call SetForceAllianceStateBJ(tv,Tv,0)
 set jv=true

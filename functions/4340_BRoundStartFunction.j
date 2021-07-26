@@ -13,7 +13,7 @@ call DestroyTimer(BeforeRoundSilenceTimer)
 call EnableTrigger(kO)
 
 call DisableTrigger(IsReadyTrig)
-call yb()
+call DisableShops()
 call DestroyTimer(RoundStartTimer)
 call DestroyTimerDialog(Oe)
 set RoundStartTimer=null

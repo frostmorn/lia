@@ -83,7 +83,7 @@ call EnableTrigger(Wa)
 call aB()
 call IB()
 call Go()
-call Yb()
+call EnableShops()
 set Wv=true
 call TimerStart(Gd,6.25,false,function Ub)
 if(NextWaveDuelBool==false) and (av>1) and (ModuloInteger(CurrentWave,3)==0) and (CurrentWave!=0) then

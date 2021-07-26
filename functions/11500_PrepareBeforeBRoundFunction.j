@@ -44,7 +44,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     endloop
     call IB()
     call Go()
-    call Yb()
+    call EnableShops()
     if av>1 and NextWaveDuelBool==false and ModuloInteger(CurrentWave ,3)==0 and CurrentWave!=0 then
         set NextWaveDuelBool=true
         call TriggerExecute(SO)
