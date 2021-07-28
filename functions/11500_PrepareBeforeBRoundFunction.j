@@ -14,6 +14,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     local timer Gd=CreateTimer()
     local integer index=0
     local timer t1=GetExpiredTimer()
+    call EnableShops()
     call DisableTrigger(gR)
     call DestroyTimer(t1)
     set t=null
@@ -44,7 +45,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     endloop
     call IB()
     call Go()
-    call EnableShops()
+    
     if av>1 and NextWaveDuelBool==false and ModuloInteger(CurrentWave ,3)==0 and CurrentWave!=0 then
         set NextWaveDuelBool=true
         call TriggerExecute(SO)

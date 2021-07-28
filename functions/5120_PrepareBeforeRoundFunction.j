@@ -19,6 +19,7 @@ local integer jd=GetHandleId(Hd)
 local integer Jd=GetHandleId(tt)
 local timerdialog fN
 local integer PlayerIndex = 0
+call EnableShops()
 #if FEATURE_TESTMODE_SETWAVE
 set setWaveAllowed = true
 #endif
@@ -83,7 +84,7 @@ call EnableTrigger(Wa)
 call aB()
 call IB()
 call Go()
-call EnableShops()
+
 set Wv=true
 call TimerStart(Gd,6.25,false,function Ub)
 if(NextWaveDuelBool==false) and (av>1) and (ModuloInteger(CurrentWave,3)==0) and (CurrentWave!=0) then
