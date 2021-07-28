@@ -733,8 +733,6 @@
 #include "functions/7110_lh.j"
 #include "functions/7130_Mh.j"
 #include "functions/7140_ph.j"
-#include "functions/7160_Sh.j"
-#include "functions/7170_th.j"
 #include "functions/7190_wh.j"
 #include "functions/7200_yh.j"
 #include "functions/7210_zh.j"

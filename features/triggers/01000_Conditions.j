@@ -44,11 +44,6 @@ function mh takes nothing returns boolean
     // A0BB: Get the Shadow (Master of Shadow)
     return GetSpellAbilityId()=='A0BB'
 endfunction
-
-function sh takes nothing returns boolean
-    // E00E: Unit Shadow (Mater of Shadow summon)
-    return GetUnitTypeId(GetAttacker())=='E00E' and IsUnitInGroup(GetTriggerUnit(),Ue)
-endfunction
     
 function gh takes nothing returns boolean
     return GetDyingUnit()==ue

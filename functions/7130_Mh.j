@@ -10,7 +10,6 @@ local integer JN=GetUnitAbilityLevel(u,'A0BB')
 local unit f
 local group g
 if In>vB then
-call DisableTrigger(bV)
 call DisableTrigger(BV)
 call GroupClear(Ue)
 call DestroyTimer(t)

@@ -39,7 +39,6 @@ function CreateTriggers takes nothing returns nothing
     set IV=CreateTrigger()
     set AV=CreateTrigger()
     set NV=CreateTrigger()
-    set bV=CreateTrigger()
     set BV=CreateTrigger()
     set cV=CreateTrigger()
     set CV=CreateTrigger()
@@ -185,7 +184,7 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(OV)
     call DisableTrigger(RV)
     call DisableTrigger(AV)
-    call DisableTrigger(bV)
+    
     call DisableTrigger(BV)
     call DisableTrigger(CV)
     call DisableTrigger(DV)
@@ -257,7 +256,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(IV,function Hh)
     call TriggerAddAction(AV,function lh)
     call TriggerAddAction(NV,function ph)
-    call TriggerAddAction(bV,function th)
+    
     call TriggerAddAction(BV,function wh)
     call TriggerAddAction(cV,function yh)
     call TriggerAddAction(CV,function xH)
@@ -405,7 +404,7 @@ function CreateTriggers takes nothing returns nothing
         call TriggerRegisterPlayerUnitEvent(IV,Player(ED),EVENT_PLAYER_HERO_SKILL,null)
         call TriggerRegisterPlayerUnitEvent(AV,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
         call TriggerRegisterPlayerUnitEvent(NV,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
-        call TriggerRegisterPlayerUnitEvent(bV,Player(ED),EVENT_PLAYER_UNIT_ATTACKED,null)
+        
         call TriggerRegisterPlayerUnitEvent(BV,Player(ED),EVENT_PLAYER_UNIT_DEATH,null)
         call TriggerRegisterPlayerUnitEvent(cV,Player(ED),EVENT_PLAYER_HERO_SKILL,null)
         call TriggerRegisterPlayerUnitEvent(CV,Player(ED),EVENT_PLAYER_UNIT_ATTACKED,null)
@@ -542,7 +541,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddCondition(RV,Condition(function gh))
     call TriggerAddCondition(AV,Condition(function Jh))
     call TriggerAddCondition(NV,Condition(function mh))
-    call TriggerAddCondition(bV,Condition(function sh))
+
     call TriggerAddCondition(BV,Condition(function Uh))
     call TriggerAddCondition(CV,Condition(function eH))
     call TriggerAddCondition(kX,Condition(function Jl))
