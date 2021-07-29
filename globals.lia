@@ -19,6 +19,8 @@ boolean array udg_LastDmgWasSpell
 boolean array udg_UnitDamageRegistered
 boolean array uv
 boolean array zv
+// Indices from zero
+unit array LastSelectedUnit
 boolean Co=false
 boolean DamageTypeAttack=true
 boolean Do=false
@@ -597,6 +599,7 @@ timer RoundStartTimer=null
 timer TI
 timer udg_DmgEvTimer=null
 timer ux=null
+trigger LastSelectedUnitTrigger
 trigger aE=null
 trigger AE=null
 trigger an=null
@@ -746,7 +749,7 @@ trigger HO=null
 trigger HomeRegenerationEnterTrig=null
 trigger OnWarriorOfTheLightLearnedSkillWillOfTheLight = null
 trigger hR=null
-trigger HR=null
+trigger MeasureMoveSpeedChatTrigger=null
 trigger hV=null
 trigger HV=null
 trigger hx=null

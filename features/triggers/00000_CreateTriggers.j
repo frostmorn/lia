@@ -138,7 +138,7 @@ function CreateTriggers takes nothing returns nothing
     set fR=CreateTrigger()
     set GR=CreateTrigger()
     set hR=CreateTrigger()
-    set HR=CreateTrigger()
+    set MeasureMoveSpeedChatTrigger=CreateTrigger()
     set jR=CreateTrigger()
     set JR=CreateTrigger()
     set kR=CreateTrigger()
@@ -166,7 +166,7 @@ function CreateTriggers takes nothing returns nothing
     set iI=CreateTrigger()
     set nI=CreateTrigger()
     set VI=CreateTrigger()
-
+    set LastSelectedUnitTrigger = CreateTrigger()
     set OnPirateAttack = CreateTrigger()
     set OnDestructorAttack = CreateTrigger()
     set OnDestructorAttacked = CreateTrigger()
@@ -360,7 +360,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(fR,function jQ)
     call TriggerAddAction(GR,function PQ)
     call TriggerAddAction(hR,function sQ)
-    call TriggerAddAction(HR,function tQ)
+    call TriggerAddAction(MeasureMoveSpeedChatTrigger,function MeasureMoveSpeedChatTriggerCallback)
     call TriggerAddAction(jR,function uQ)
     call TriggerAddAction(JR,function EnableTestModeFunction)
     call TriggerAddAction(kR,function yQ)
@@ -388,12 +388,14 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(iI,function yS)
     call TriggerAddAction(nI,function et)
     call TriggerAddAction(VI,function ot)
+    call TriggerAddAction(LastSelectedUnitTrigger, function LastSelectedUnitTriggerCallback)
     call TriggerRegisterPlayerUnitEvent(bj_stockItemPurchased,Player(15),EVENT_PLAYER_UNIT_SELL_ITEM,null)
     
     set ED=0
     set wN=16
     loop
     exitwhen ED==wN
+        call TriggerRegisterPlayerUnitEvent(LastSelectedUnitTrigger, Player(ED), EVENT_PLAYER_UNIT_SELECTED, null)
         call TriggerRegisterPlayerUnitEvent(Pa,Player(ED),EVENT_PLAYER_UNIT_DEATH,null)
         call TriggerRegisterPlayerUnitEvent(Ta,Player(ED),EVENT_PLAYER_UNIT_ATTACKED,null)
         call TriggerRegisterPlayerUnitEvent(en,Player(ED),EVENT_PLAYER_UNIT_SELL,null)
@@ -458,8 +460,8 @@ function CreateTriggers takes nothing returns nothing
         call TriggerRegisterPlayerChatEvent(SetCamera_Trigger,Player(ED),"-zoom",false)
         call TriggerRegisterPlayerChatEvent(BR,Player(ED),"-помощь",true)
         call TriggerRegisterPlayerChatEvent(BR,Player(ED),"-help",true)
-        call TriggerRegisterPlayerChatEvent(HR,Player(ED),"-сп",true)
-        call TriggerRegisterPlayerChatEvent(HR,Player(ED),"-sp",true)
+        call TriggerRegisterPlayerChatEvent(MeasureMoveSpeedChatTrigger,Player(ED),"-сп",true)
+        call TriggerRegisterPlayerChatEvent(MeasureMoveSpeedChatTrigger,Player(ED),"-sp",true)
         call TriggerRegisterPlayerChatEvent(jR,Player(ED),"-о",true)
         call TriggerRegisterPlayerChatEvent(jR,Player(ED),"-o",true)
         call TriggerRegisterPlayerChatEvent(JR,Player(ED),"-т",true)

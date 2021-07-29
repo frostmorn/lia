@@ -34,5 +34,25 @@ function IsUnitDeadFilter takes nothing returns boolean
     return IsUnitDead(GetFilterUnit())
 endfunction
 
+// function IsUnitInvulnerable takes unit u returns boolean
+
+// endfunction
+
+// function IsUnitImmuneMagic takes unit u returns boolean
+// // Has ability 'A077'
+//     return IsUnitInvulnerable(u) or GetUnitAbilityLevel('A077')
+// endfunction
+
+// function IsUnitImmunePoison takes unit u returns boolean
+//     return IsUnitInvulnerable(u) or 
+// endfunction
+function LastSelectedUnitTriggerCallback takes nothing returns nothing
+
+    local player TrigPlayer = GetTriggerPlayer()
+    local unit TrigUnit = GetTriggerUnit()
+    set LastSelectedUnit[GetPlayerId(TrigPlayer)] = TrigUnit
+endfunction
+
+
 
 #endif
