@@ -44,7 +44,7 @@ set jI=CreateUnit(p,'h011',GetWidgetX(NeutralShops[1]),GetWidgetY(NeutralShops[1
 call UnitApplyTimedLife(jI,'BTLF',1)
 call DisableTrigger(vI)
 call DisableTrigger(ZR)
-call PauseUnit(NeutralShops[1],false)
+//call PauseUnit(NeutralShops[1],false)
 loop
 exitwhen In==6
 call UnitAddItem(jI,UnitItemInSlot(IC,In))
@@ -60,9 +60,9 @@ set BB=GetPlayerState(p,PLAYER_STATE_RESOURCE_GOLD)
 set AC=GetPlayerState(p,PLAYER_STATE_RESOURCE_LUMBER)
 set In=1
 set wN=A
-if GI==false then
-call PauseUnit(NeutralShops[1],true)
-endif
+// if GI==false then
+// call PauseUnit(NeutralShops[1],true)
+// endif
 loop
 exitwhen In>wN
 if GetPlayerSlotState(ae[In])==PLAYER_SLOT_STATE_PLAYING then
