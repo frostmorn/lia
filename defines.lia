@@ -1,5 +1,5 @@
-#define DEBUG 1
-#define DEBUG_TYPE_BOT 1
+#define DEBUG 0
+#define DEBUG_TYPE_BOT 0
 #if DEBUG
 #define DI_ROUNDSTART 1
 #define DI_BEFOREROUND_TRIGGERS 1 
