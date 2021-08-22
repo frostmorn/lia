@@ -1,13 +1,13 @@
-#include "callbacks/00100_HomeRegeneration.j"
-#include "callbacks/00400_OnPirateAttack.j"
-#include "callbacks/00500_OnDestructorAttack.j"
-#include "callbacks/00600_OnDestructorAttacked.j"
-#include "callbacks/00700_OnWarriorOfTheLightLearnedSkillWillOfTheLight.j"
-#include "callbacks/00800_OnMonsterKilled.j"
-#include "callbacks/00900_OnMithrilCast.j"
+#include "callbacks/passive/00100_HomeRegeneration.j"
+#include "callbacks/heroes/pirate/00400_OnPirateAttack.j"
+#include "callbacks/heroes/destructor/00500_OnDestructorAttack.j"
+#include "callbacks/heroes/destructor/00600_OnDestructorAttacked.j"
+#include "callbacks/heroes/warrior_of_the_light/00700_OnWarriorOfTheLightLearnedSkillWillOfTheLight.j"
+#include "callbacks/passive/00800_OnMonsterKilled.j"
+#include "callbacks/artifacts/00900_OnMithrilCast.j"
 
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
-    #include "callbacks/00200_SetCameraAttackAngle.j"
+    #include "callbacks/chat/00200_SetCameraAttackAngle.j"
 #endif
 #include "01000_Conditions.j"
 function CreateTriggers takes nothing returns nothing
