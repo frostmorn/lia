@@ -3,7 +3,9 @@
 function HeroInit1211117622 takes nothing returns nothing
 // Mort Hero Init initialization func
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+#if DEBUG
 call DMesg("Trying to initialize Mort HERO")
+#endif
 set Nv=u
 call UnitAddAbility(u,'A0A8')
 set hE=CreateTrigger()

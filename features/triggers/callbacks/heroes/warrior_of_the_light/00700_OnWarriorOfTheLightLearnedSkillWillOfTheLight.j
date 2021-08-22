@@ -12,9 +12,10 @@ function OnWillOfTheLightTimer takes nothing returns nothing
     if allReadyRecievedDamage == 0.0 then
         return
     endif
+    #if DEBUG
     call WTF_Unit(willOfTheLightUnit)
     call DMesg("WillOfTheLight ability recieved damage " + R2S(allReadyRecievedDamage))
-    
+    #endif
     call SaveReal(HashData, GetHandleId(willOfTheLightUnit), StringHash("WillOfTheLight:RecievedDamage"), 0.0)
 
     set tempUnitsGroup = GetUnitsInRangeOfLocAll(willOfTheLightRange, GetUnitLoc(willOfTheLightUnit)) 
@@ -62,10 +63,10 @@ function OnWarriorOfTheLightLearnedSkillWillOfTheLightCallback takes nothing ret
     local integer level = GetLearnedSkillLevel()
     local unit learner = GetLearningUnit()
     local trigger WillOfTheLightOnDamageTrigger = LoadTriggerHandle(HashData, GetHandleId(learner), StringHash("WillOfTheLight:Trigger"))
-
+    #if DEBUG
     call WTF_Unit(learner)
     call DMesg("learned skill WillOfTheLight, to level "+I2S(level))
-
+    #endif
     if WillOfTheLightOnDamageTrigger == null then
         set WillOfTheLightOnDamageTrigger = CreateTrigger()
         call SaveTriggerHandle(HashData, GetHandleId(learner), StringHash("WillOfTheLight:Trigger"), WillOfTheLightOnDamageTrigger)

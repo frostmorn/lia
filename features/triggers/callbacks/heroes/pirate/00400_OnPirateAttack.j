@@ -87,8 +87,8 @@ function OnPirateAttackCallback takes nothing returns nothing
     // call WTF_Unit(attacker)
     #if DI_PIRATE_PASSIVE
     call DMesg("Attacker or target doesn't exist")
-    #endif
     call WTF_Unit(attackTargetUnit)
+    #endif
     endif
     if PoisonLevel == 0 then
         return

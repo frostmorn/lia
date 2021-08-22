@@ -24,8 +24,9 @@ function OnMithrilCastCallback takes nothing returns nothing
         exitwhen tempUnit == null
     endloop
 
-
+    #if DEBUG
     call DMesg("Mithril armor casted by")
     call WTF_Unit(MithrilCaster)
+    #endif
 endfunction
 #endif
