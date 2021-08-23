@@ -2,7 +2,7 @@
 #define T_00400
 #include "../../../../00120_Debug.j"
 
-function DealDamageForGroup takes nothing returns nothing
+function DealDamageToPoisonedGroup takes nothing returns nothing
     local unit attackTargetUnit = GetEnumUnit()
     local real damage = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
     local unit attacker = LoadUnitHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:Attacker"))
@@ -53,7 +53,7 @@ function OnPiratePoisionTimer takes nothing returns nothing
     local group poisonGroup = LoadGroupHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Poison:DamageGroup"))
 
     if CountUnitsInGroup(poisonGroup) > 0 then
-        call ForGroup(poisonGroup, function DealDamageForGroup)
+        call ForGroup(poisonGroup, function DealDamageToPoisonedGroup)
         #if DI_PIRATE_PASSIVE
         call WTF_Unit(attacker)   
         call DMesg("poisoned group "+I2S(GetHandleId(poisonGroup)))
