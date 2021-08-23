@@ -16,7 +16,7 @@ set arrayTreeTypes[3]='YTst'
 set arrayTreeTypes[4]='ITtw' // Заснеженные деревья
 set arrayTreeTypes[5]='DTsh' // Грибы
 set arrayTreeTypes[6]='ATtr' // Зеленые деревья
-set treeTypeIndex=6
+set treeTypeIndex=4
 set ho=CreateDestructable('ATg1',-512.,-1408.,270.,.9,0)
 call CreateTreesFunction()
 #if FEATURE_PRELOAD_MODELS
