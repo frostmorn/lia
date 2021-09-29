@@ -1,7 +1,6 @@
 #ifndef H_3140
 #define H_3140
 function CreateRegions takes nothing returns nothing
-local weathereffect we
 
 set gg_rct_aa = Rect( -2912.0, -1088.0, -2464.0, -672.0 )
 set gg_rct_Aa = Rect( -1280.0, 224.0, -896.0, 672.0 )
