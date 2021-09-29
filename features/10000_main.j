@@ -30,6 +30,11 @@ call SetMapMusic( "Music", true, 0 )
 call CreateRegions()
 call InitBlizzard()
 call jasshelper__initstructs29827921()
+
+// Let it snow
+set Lv=AddWeatherEffect(gg_rct_BigArena,'SNhs')
+call EnableWeatherEffect(Lv,true)
+
 // Don't work, so we will clean that later
 
 // call BurningArmor___Init()
