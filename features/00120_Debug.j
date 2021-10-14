@@ -60,7 +60,7 @@ function Loc2S takes location loc returns string
     return "x: "+R2S( GetLocationX(loc) )+", y: " + R2S(GetLocationY (loc) )
 endfunction
 function WTF_Unit takes unit u returns nothing
-    call DMesg("[ UnitType: " + I2HS(GetUnitTypeId(u)) + " ], [ Name: " + GetUnitName(u) + " ], [ Location: " + Loc2S(GetUnitLoc(u))+" ] [ Speed: "+ R2S(GetUnitMoveSpeed(u))+", "+R2S(GetUnitDefaultMoveSpeed(u))+" ]")   
+    call DMesg("==>> [ UnitID: " + UnitId2String(GetUnitTypeId(u)) + " ], [ Name: " + GetUnitName(u) + " ], [ Loc: " + Loc2S(GetUnitLoc(u))+" ] [ Speed: "+ R2S(GetUnitMoveSpeed(u))+", "+R2S(GetUnitDefaultMoveSpeed(u))+" ]")   
 endfunction
 
 
