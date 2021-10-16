@@ -1,6 +1,6 @@
 #ifndef H_12880
 #define H_12880
-#include "../features/triggers/Conditions.j"
+#include "../features/functions/Conditions.j"
 function ot takes nothing returns nothing
 local unit dy=GetDyingUnit()
 local integer Bc=(LoadInteger(HashData,GetHandleId((dy)),StringHash("SuperData:Int")))

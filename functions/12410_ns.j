@@ -1,6 +1,6 @@
 #ifndef H_12410
 #define H_12410
-#include "../features/triggers/Conditions.j"
+#include "../features/functions/Conditions.j"
 function ns takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer In=1

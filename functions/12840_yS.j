@@ -1,6 +1,6 @@
 #ifndef H_12840
 #define H_12840
-#include "../features/triggers/Conditions.j"
+#include "../features/functions/Conditions.j"
 function yS takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]

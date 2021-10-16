@@ -1,5 +1,7 @@
 #ifndef H_13510
 #define H_13510
+#include "../features/functions/CreateSwapNoTrigger.j"
+#include "../features/functions/map_init/CreateRegions.j"
 #include "../functions/13740_jasshelper__initstructs29827921.j"
 #if FEATURE_TESTMODE_SETWAVE
 #include "triggers/callbacks/chat/test_mode/TesterSetWave.j"
@@ -7,7 +9,7 @@
     #if FEATURE_PRELOAD_MODELS
         #include "PreloadModels.j"
     #endif
-#include "triggers/CreateTriggers.j"
+#include "functions/map_init/CreateTriggers.j"
 #include "../functions/5240_AD.j"
 function main takes nothing returns nothing
 local weathereffect we
@@ -270,7 +272,7 @@ call jq()
 call TriggerRegisterTimerEventSingle(aR,1.)
 call mQ()
 call TriggerRegisterTimerEventSingle(uR,.1)
-call RegisterSwapNoFunction()
+call CreateSwapNoCommandTrigger()
 call ConditionalTriggerExecute(qa)
 call InitTrig_SettingsTrueCast()
 call RunInitializationTriggers()

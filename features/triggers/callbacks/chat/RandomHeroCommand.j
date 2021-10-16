@@ -1,6 +1,6 @@
 #ifndef H_5490
 #define H_5490
-#include "../../Conditions.j"
+#include "../../../functions/Conditions.j"
 // -c command
 function RandomHeroCommandTriggerCallback takes nothing returns nothing
     local player p=GetTriggerPlayer()

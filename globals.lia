@@ -915,7 +915,7 @@ trigger st__TableBr_remove
 trigger st__TableBr__setindex
 trigger sV=null
 trigger SV=null
-trigger SwapNoTrigger=null
+trigger SwapNoCommandTrigger=null
 trigger sX=null
 trigger SX=null
 trigger Ta=null

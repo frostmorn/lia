@@ -1,5 +1,6 @@
 #ifndef H_5220
 #define H_5220
+#include "../features/functions/ReplaceHeroesForBMode.j"
 function OD takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local timer t2=CreateTimer()

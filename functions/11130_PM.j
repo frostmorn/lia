@@ -2,7 +2,7 @@
 #define H_11130
 #include "../features/Debug.j"
 #include "../features/functions/PrepareBeforeRound.j"
-#include "../features/triggers/Conditions.j"
+#include "../features/functions/Conditions.j"
 function PM takes nothing returns nothing
     #if CHECK_ROUND_END_VARIANT_2
     local group g = CreateGroup()
