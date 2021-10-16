@@ -21,7 +21,7 @@ function Oj takes nothing returns nothing
 	set e = AddSpecialEffectTarget("Abilities\\Spells\\Undead\\ReplenishMana\\ReplenishManaCasterOverhead.mdl",uA,"overhead")
 	call SaveEffectHandle(Ax,1,Dg,e)
 	call TimerStart(te,5,false,function Ej)
-	set g = jA(450,T,Condition(function jB))
+	set g = GetUnitsInRangeOfLocMatching(450,T,Condition(function jB))
 	set g2 = Yc(g)
 	loop
 		set f = FirstOfGroup(g2)

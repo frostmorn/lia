@@ -22,7 +22,7 @@ function gL takes nothing returns nothing
 	call TriggerAddCondition(pb,Condition(function dL))
 	call TriggerAddAction(pb,function DL)
 	set l = GetUnitLoc(u)
-	set g = jA(500,l,Condition(function fL))
+	set g = GetUnitsInRangeOfLocMatching(500,l,Condition(function fL))
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null

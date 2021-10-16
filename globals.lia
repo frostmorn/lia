@@ -68,8 +68,7 @@ globals
 	boolean GameOver = false
 	boolean ye = false
 	boolean ze = false
-	boolexpr NA = null
-	camerasetup Ma = null
+		camerasetup Ma = null
 	camerasetup pa = null
 	constant attacktype ArmorUtils__ATTACK_TYPE_USED = ATTACK_TYPE_CHAOS
 
@@ -418,8 +417,6 @@ globals
 	real lv = 0
 	real MagicLump___X
 	real MagicLump___Y
-	real OA = 0.0
-	real RA = 0.0
 	real SI
 	real tx = 0
 	real udg_AfterDamageEvent = 0

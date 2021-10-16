@@ -55,7 +55,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 	call SendStatsToBot("EOG",1)
 	call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
 	call PolledWait(2)
-	set g = HA(bj_mapInitialPlayableArea)
+	set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null
@@ -78,7 +78,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 		call CreateFogModifierRectBJ(true,ae[In],FOG_OF_WAR_VISIBLE,gg_rct_Nr)
 		set In = In + 1
 	endloop
-	set g = HA(bj_mapInitialPlayableArea)
+	set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null

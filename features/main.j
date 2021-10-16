@@ -99,79 +99,13 @@ function main takes nothing returns nothing
 	set AI = CreateDestructable('LTex',- 1632.,352.,107.,1.176,0)
 	set II = CreateDestructable('LTex',288.,- 544.,49.,1.145,0)
 	call ConfigureNeutralVictim()
-	set NA = Filter(function YA)
-	set filterIssueHauntOrderAtLocBJ = Filter(function IssueHauntOrderAtLocBJFilter)
-	set filterEnumDestructablesInCircleBJ = Filter(function gA)
-	set filterGetUnitsInRectOfPlayer = Filter(function GetUnitsInRectOfPlayerFilter)
-	set filterGetUnitsOfTypeIdAll = Filter(function GetUnitsOfTypeIdAllFilter)
-	set filterGetUnitsOfPlayerAndTypeId = Filter(function GetUnitsOfPlayerAndTypeIdFilter)
-	set filterMeleeTrainedUnitIsHeroBJ = Filter(function MeleeTrainedUnitIsHeroBJFilter)
-	set filterLivingPlayerUnitsOfTypeId = Filter(function LivingPlayerUnitsOfTypeIdFilter)
-	set ZA = 0
-	loop
-		exitwhen ZA==16
-		set bj_FORCE_PLAYER[ZA]= CreateForce()
-		call ForceAddPlayer(bj_FORCE_PLAYER[ZA],Player(ZA))
-		set ZA = ZA + 1
-	endloop
-	set bj_FORCE_ALL_PLAYERS = CreateForce()
-	call ForceEnumPlayers(bj_FORCE_ALL_PLAYERS,null)
-	set bj_cineModePriorSpeed = GetGameSpeed()
-	set bj_cineModePriorFogSetting = IsFogEnabled()
-	set bj_cineModePriorMaskSetting = IsFogMaskEnabled()
-	set ZA = 0
-	loop
-		exitwhen ZA >= bj_MAX_QUEUED_TRIGGERS
-		set bj_queuedExecTriggers[ZA]= null
-		set bj_queuedExecUseConds[ZA]= false
-		set ZA = ZA + 1
-	endloop
-	set bj_isSinglePlayer = false
-	set vN = 0
-	set ZA = 0
-	loop
-		exitwhen ZA >= $C
-		if(GetPlayerController(Player(ZA))==MAP_CONTROL_USER and GetPlayerSlotState(Player(ZA))==PLAYER_SLOT_STATE_PLAYING)then
-			set vN = vN + 1
-		endif
-		set ZA = ZA + 1
-	endloop
-	set bj_isSinglePlayer =(vN==1)
-	set bj_rescueSound = CreateSoundFromLabel("Rescue",false,false,false,$2710,$2710)
-	set bj_questDiscoveredSound = CreateSoundFromLabel("QuestNew",false,false,false,$2710,$2710)
-	set bj_questUpdatedSound = CreateSoundFromLabel("QuestUpdate",false,false,false,$2710,$2710)
-	set bj_questCompletedSound = CreateSoundFromLabel("QuestCompleted",false,false,false,$2710,$2710)
-	set bj_questFailedSound = CreateSoundFromLabel("QuestFailed",false,false,false,$2710,$2710)
-	set bj_questHintSound = CreateSoundFromLabel("Hint",false,false,false,$2710,$2710)
-	set bj_questSecretSound = CreateSoundFromLabel("SecretFound",false,false,false,$2710,$2710)
-	set bj_questItemAcquiredSound = CreateSoundFromLabel("ItemReward",false,false,false,$2710,$2710)
-	set bj_questWarningSound = CreateSoundFromLabel("Warning",false,false,false,$2710,$2710)
-	set bj_victoryDialogSound = CreateSoundFromLabel("QuestCompleted",false,false,false,$2710,$2710)
-	set bj_defeatDialogSound = CreateSoundFromLabel("QuestFailed",false,false,false,$2710,$2710)
-	call DelayedSuspendDecayCreate()
-	set v = VersionGet()
-	if(v==VERSION_REIGN_OF_CHAOS)then
-		set bj_MELEE_MAX_TWINKED_HEROES = bj_MELEE_MAX_TWINKED_HEROES_V0
-	else
-		set bj_MELEE_MAX_TWINKED_HEROES = bj_MELEE_MAX_TWINKED_HEROES_V1
-	endif
+	call InitBlizzardGlobals()
 	call InitQueuedTriggers()
 	call InitRescuableBehaviorBJ()
 	call InitDNCSounds()
 	call InitMapRects()
 	call InitSummonableCaps()
-	set SA = 0
-	loop
-		set bj_stockAllowedPermanent[SA]= false
-		set bj_stockAllowedCharged[SA]= false
-		set bj_stockAllowedArtifact[SA]= false
-		set SA = SA + 1
-		exitwhen SA > $A
-	endloop
-	call SetAllItemTypeSlots(11)
-	call SetAllUnitTypeSlots(11)
-	set bj_stockUpdateTimer = CreateTimer()
-	call TimerStart(bj_stockUpdateTimer,bj_STOCK_RESTOCK_INITIAL_DELAY,false,function WA)
+	call InitNeutralBuildings()
 	call rN()
 	call BN()
 	call CreateTriggers() 

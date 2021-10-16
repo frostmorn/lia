@@ -8,7 +8,7 @@ function aL takes nothing returns nothing
     local group g = CreateGroup()
     local player p = GetOwningPlayer(u)
     local unit f
-    set g = KA(500,T)
+    set g = GetUnitsInRangeOfLocAll(500,T)
     call RemoveLocation(T)
     loop
         set f = FirstOfGroup(g)

@@ -7,7 +7,7 @@ function aK takes nothing returns nothing
 	local integer JN = GetUnitAbilityLevel(Z,'A02R')
 	local real r = I2R(3 * JN)
 	local boolean b = false
-	set g = HA(bj_mapInitialPlayableArea)
+	set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null

@@ -3,7 +3,7 @@
 function OB takes nothing returns nothing
 	local group g = CreateGroup()
 	local unit f
-	set g = HA(bj_mapInitialPlayableArea)
+	set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null

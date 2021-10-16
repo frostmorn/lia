@@ -49,12 +49,12 @@ function HP takes nothing returns nothing
             call AdjustPlayerStateBJ(15,GetOwningPlayer(PlayersHeroArray[t]),PLAYER_STATE_RESOURCE_LUMBER)
             set t = t + 1
         endloop
-        set g = HA(bj_mapInitialPlayableArea)
+        set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
         call ForGroup(g,function GP)
         call GroupClear(g)
         call PanCameraToTimed(GetLocationX(GetRectCenter(gg_rct_HeroReSpawn)),GetLocationY(GetRectCenter(gg_rct_HeroReSpawn)),0)
         call TriggerExecute(PrepareBeforeBRoundTrigger)
-        set g = HA(gg_rct_MinimalArenaAreaRect)
+        set g = GetUnitsInRectAll(gg_rct_MinimalArenaAreaRect)
         loop
             set f = FirstOfGroup(g)
             exitwhen f==null

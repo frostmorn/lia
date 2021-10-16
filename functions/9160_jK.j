@@ -38,7 +38,7 @@ function jK takes nothing returns nothing
     call TriggerAddAction(pb,function GK)
     call TriggerSleepAction(.0)
     set l = GetUnitLoc(u)
-    set g = jA(650,l,Condition(function hK))
+    set g = GetUnitsInRangeOfLocMatching(650,l,Condition(function hK))
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null

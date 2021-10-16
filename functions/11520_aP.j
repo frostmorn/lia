@@ -27,7 +27,7 @@ function aP takes nothing returns nothing
         call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl",GetUnitLoc(PlayersHeroArray[In])))
         set In = In + 1
     endloop
-    set g = HA(gg_rct_PlayersHome)
+    set g = GetUnitsInRectAll(gg_rct_PlayersHome)
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null

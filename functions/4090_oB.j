@@ -4,7 +4,7 @@ function oB takes nothing returns nothing
 	local unit f
 	local group g = CreateGroup()
 	local player p
-	set g = HA(bj_mapInitialPlayableArea)
+	set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
 	loop
 		set f = FirstOfGroup(g)
 		set p = GetOwningPlayer(f)

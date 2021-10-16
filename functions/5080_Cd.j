@@ -31,7 +31,7 @@ function Cd takes nothing returns nothing
         call PanCameraToTimedLocForPlayer(GetOwningPlayer(PlayersHeroArray[ic]),GetRectCenter(gg_rct_MinimalArenaAreaRect),0)
         set ic = ic + 1
     endloop
-    set g = HA(bj_mapInitialPlayableArea)
+    set g = GetUnitsInRectAll(bj_mapInitialPlayableArea)
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null

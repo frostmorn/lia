@@ -86,8 +86,8 @@ function YesCommandTriggerCallback takes nothing returns nothing
 			set ED = Gv[bs]
 			set Gv[bs]= Gv[Xq]
 			set Gv[Xq]= ED
-			set u1 = GroupPickRandomUnit(PA(sw,'n002'))
-			set u2 = GroupPickRandomUnit(PA(de[Os],'n002'))
+			set u1 = GroupPickRandomUnit(GetUnitsOfPlayerAndTypeId(sw,'n002'))
+			set u2 = GroupPickRandomUnit(GetUnitsOfPlayerAndTypeId(de[Os],'n002'))
 			set ED =(LoadInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int")))
 			call SaveInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int"),((LoadInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int")))))
 			call SaveInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int"),(ED))
