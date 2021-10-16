@@ -15,12 +15,15 @@ function PM takes nothing returns nothing
     set bj_wantDestroyGroup = true
     #if CHECK_ROUND_END_VARIANT_2
     call GroupEnumUnitsOfPlayer(g, Player(11),  Filter(function IsAliveAndNotADummy))
+    #if DEBUG
     call WTF_Unit(FirstOfGroup(g))
+    #endif
     set creepsCount = CountUnitsInGroup(g)
     call DestroyGroup(g)
     set g = null
+    #if DEBUG
     call DMesg("The're " + I2S(creepsCount) + " monster units ")
-
+    #endif
     if creepsCount == 0 then
         #else
         if (CountUnitsInGroup(GetUnitsInRectMatching(gg_rct_BigArena,b))==0) and (CountUnitsInGroup(GetUnitsInRectMatching(gg_rct_PortalTopNoTp,b))==0) and (CountUnitsInGroup(GetUnitsInRectMatching(gg_rct_PortalBottomNoTp,b))==0) and IsNotGameOver() then
