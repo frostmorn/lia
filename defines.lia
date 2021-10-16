@@ -1,4 +1,4 @@
-#define DEBUG 1
+#define DEBUG 0
 #define DEBUG_TYPE_BOT 0
 #if DEBUG
 #define DEBUG_HERO_INITS 1
