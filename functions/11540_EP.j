@@ -27,7 +27,7 @@ call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
 call PanCameraToTimedLocForPlayer(GetOwningPlayer(PlayersHeroArray[In]),GetUnitLoc(PlayersHeroArray[In]),0)
 set In=In+1
 endloop
-call TriggerExecute(PrepareBeforeRoundTrigger)
+call TriggerExecute(PrepareBeforeBRoundTrigger)
 set Wv=true
 call TimerStart(tt,6.25,false,function VP)
 call DestroyTimer(t)

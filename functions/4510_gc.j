@@ -16,7 +16,7 @@ call RemoveLocation(T)
 set In=In+1
 endloop
 call TriggerExecute(Sa)
-call TriggerExecute(PrepareBeforeRoundTrigger)
+call TriggerExecute(PrepareBeforeBRoundTrigger)
 call DestroyTimer(t)
 set t=null
 set T=null

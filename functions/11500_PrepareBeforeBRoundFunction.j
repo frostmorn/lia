@@ -1,7 +1,7 @@
 #ifndef H_11500
 #define H_11500
 #include "12850_zS.j"
-function PrepareBeforeBRoundFunction takes nothing returns nothing
+function PrepareBeforeBRoundTriggerCallback takes nothing returns nothing
     local integer wN=A
     local integer bB=av
     local integer NB=15
@@ -48,7 +48,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
     
     if av>1 and NextWaveDuelBool==false and ModuloInteger(CurrentWave ,3)==0 and CurrentWave!=0 then
         set NextWaveDuelBool=true
-        call TriggerExecute(SO)
+        call TriggerExecute(PrepareBeforeCommandDuelTrigger)
     else
         call EnableTrigger(IsReadyTrig)
         set NextWaveDuelBool=false

@@ -53,7 +53,7 @@ function HP takes nothing returns nothing
     call ForGroup(g,function GP)
     call GroupClear(g)
     call PanCameraToTimed(GetLocationX(GetRectCenter(gg_rct_HeroReSpawn)),GetLocationY(GetRectCenter(gg_rct_HeroReSpawn)),0)
-    call TriggerExecute(PrepareBeforeRoundTrigger)
+    call TriggerExecute(PrepareBeforeBRoundTrigger)
     set g=HA(gg_rct_MinimalArenaAreaRect)
     loop
     set f=FirstOfGroup(g)

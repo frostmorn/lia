@@ -6,7 +6,7 @@ if He then
 call Ac()
 else
 if Wx==false then
-call EnableTrigger(RandomHeroMsgTrigger)
+call EnableTrigger(RandomHeroCommandTrigger)
 call EnableTrigger(RepickCommandTrigger)
 endif
 endif

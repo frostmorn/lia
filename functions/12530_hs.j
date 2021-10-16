@@ -1,6 +1,6 @@
 #ifndef H_12530
 #define H_12530
-function hs takes nothing returns nothing
+function Swap2CommandTriggerCallback takes nothing returns nothing
 local integer N=0
 local integer In=1
 local player p=GetTriggerPlayer()

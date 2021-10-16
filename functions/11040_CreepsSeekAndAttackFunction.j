@@ -1,6 +1,6 @@
 #ifndef H_11040
 #define H_11040
-function CreepsSeekAndAttackFunction takes nothing returns nothing
+function CreepsSeekAndAttackPeriodicTriggerCallback takes nothing returns nothing
 local integer L=1
 local unit array g
 local integer i=0

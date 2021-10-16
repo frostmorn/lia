@@ -1,6 +1,6 @@
 #ifndef H_12500
 #define H_12500
-function fs takes nothing returns nothing
+function StopSwitchCommandTriggerCallback takes nothing returns nothing
 local integer In=0
 loop
 exitwhen In>7

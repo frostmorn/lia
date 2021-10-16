@@ -1,6 +1,6 @@
 #ifndef H_12110
 #define H_12110
-function RQ takes nothing returns nothing
+function HelpCommandTriggerCallback takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer ec=ee[GetPlayerId(p)+1]
 if GetUnitTypeId(PlayersHeroArray[ec])=='E00L' then

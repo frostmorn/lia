@@ -1,6 +1,6 @@
 #ifndef H_12430
 #define H_12430
-function Xs takes nothing returns nothing
+function SwitchCommandTriggerCallback takes nothing returns nothing
 local integer In=1
 local integer wN=A
 local integer Os=0

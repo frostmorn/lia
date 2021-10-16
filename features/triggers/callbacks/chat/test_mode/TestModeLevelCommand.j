@@ -1,6 +1,4 @@
-#ifndef H_12370
-#define H_12370
-function ZQ takes nothing returns nothing
+function TestModeLevelCommandTriggerCallback takes nothing returns nothing
 local integer In=1
 local integer JN
 local group g=CreateGroup()
@@ -23,5 +21,3 @@ call DestroyGroup(g)
 set f=null
 set g=null
 endfunction
-
-#endif

@@ -1,6 +1,6 @@
 #ifndef H_12460
 #define H_12460
-function Ns takes nothing returns nothing
+function YesCommandTriggerCallback takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local player sw=Ce
 local unit u1

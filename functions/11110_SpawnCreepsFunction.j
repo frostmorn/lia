@@ -1,13 +1,13 @@
 #ifndef H_11110
 #define H_11110
 #include "../features/00120_Debug.j"
-function SpawnCreepsFunction takes nothing returns nothing
+function SpawnCreepsTriggerCallback takes nothing returns nothing
 local integer nC=0
 local integer DM=av
 local unit u
 local integer In=1
 #if D_11110
-    call DMesg("Entering SpawnCreepsFunction ")
+    call DMesg("Entering SpawnCreepsTriggerCallback ")
 #endif
 set xA=CreateUnit(Player(11),'h011',0,0,0)
 if DM==1 then

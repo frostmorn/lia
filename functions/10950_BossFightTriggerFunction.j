@@ -10,7 +10,7 @@
 
 #endif
 #include "10940_Zm.j"
-function BossFightTriggerFunction takes nothing returns nothing
+function BossFightTriggerCallback takes nothing returns nothing
 #if WO_TIMER_START
 local integer timeBeforeStart = 5
 #else

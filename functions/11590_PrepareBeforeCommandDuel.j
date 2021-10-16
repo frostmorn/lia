@@ -1,6 +1,6 @@
 #ifndef H_11590
 #define H_11590
-function PrepareBeforeCommandDuel takes nothing returns nothing
+function PrepareBeforeCommandDuelCallback takes nothing returns nothing
     local timer t=CreateTimer()
     local integer dN=GetHandleId(t)
     local timerdialog d

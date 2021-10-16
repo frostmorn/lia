@@ -17,7 +17,7 @@ endloop
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Ничья. Никто не получит награды.")
 set g=HA(bj_mapInitialPlayableArea)
 call ForGroup(g,function lP)
-call ConditionalTriggerExecute(PrepareBeforeRoundTrigger)
+call ConditionalTriggerExecute(PrepareBeforeBRoundTrigger)
 set g=GA(gg_rct_MinimalArenaAreaRect,Condition(function LP))
 call ForGroup(g,function mP)
 call DestroyGroup(g)

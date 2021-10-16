@@ -21,7 +21,7 @@ set In=In+1
 endloop
 call MultiboardInit()
 call TriggerExecute(Sa)
-call TriggerExecute(PrepareBeforeRoundTrigger)
+call TriggerExecute(PrepareBeforeBRoundTrigger)
 call EnableTrigger(QR)
 call EnableTrigger(SwitchCommandTrigger)
 endfunction

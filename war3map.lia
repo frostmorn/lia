@@ -1186,7 +1186,6 @@
 #include "functions/12010_Yq.j"
 #include "functions/12030_vQ.j"
 #include "functions/12050_oQ.j"
-#include "functions/12060_SetCamera_Trigger_Function.j"
 #include "functions/12070_nQ.j"
 // Used nowhere...
 #include "functions/12090_CloudofFogPeriodic.j"
@@ -1207,10 +1206,8 @@
 #include "functions/12290_PQ.j"
 #include "functions/12310_sQ.j"
 #include "functions/12320_tQ.j"
-#include "functions/12330_uQ.j"
 #include "functions/12350_yQ.j"
 #include "functions/12360_zQ.j"
-#include "functions/12370_ZQ.j"
 #include "functions/12380_es.j"
 #include "functions/12390_os.j"
 #include "functions/12400_is.j"

@@ -1,6 +1,6 @@
 #ifndef H_12540
 #define H_12540
-function js takes nothing returns nothing
+function SwapCommandTriggerCallback takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local player p2
 local integer In=1
