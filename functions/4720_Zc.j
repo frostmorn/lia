@@ -10,7 +10,7 @@ function Zc takes unit cB,integer vC returns nothing
 	call UnitAddAbility(f,'A0CN')
 	call SetUnitAbilityLevel(f,'A0CN',JN)
 	call IssueTargetOrderById(f,$D006B,u)
-	call PolledWait(1)
+	// call PolledWait(1)
 	call KillUnit(f)
 	call RemoveUnit(f)
 	set ab = null

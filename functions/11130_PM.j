@@ -14,7 +14,7 @@ function PM takes nothing returns nothing
     
     set bj_wantDestroyGroup = true
     #if CHECK_ROUND_END_VARIANT_2
-    call GroupEnumUnitsOfPlayer(g, Player(11),  Filter(function YoTrueBicycle))
+    call GroupEnumUnitsOfPlayer(g, Player(11),  Filter(function IsAliveAndNotADummy))
     call WTF_Unit(FirstOfGroup(g))
     set creepsCount = CountUnitsInGroup(g)
     call DestroyGroup(g)

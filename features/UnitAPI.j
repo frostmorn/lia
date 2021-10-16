@@ -33,7 +33,9 @@ endfunction
 function IsUnitDeadFilter takes nothing returns boolean
 	return IsUnitDead(GetFilterUnit())
 endfunction
-
+function IsAliveAndNotADummy takes nothing returns boolean
+	return IsUnitAlive(GetFilterUnit()) and GetUnitTypeId(GetFilterUnit()) !='h011'
+endfunction
 function IsUnitOnBigArena takes unit u returns boolean
 
 	#if D_110
@@ -60,7 +62,6 @@ function LastSelectedUnitTriggerCallback takes nothing returns nothing
 	local unit TrigUnit = GetTriggerUnit()
 	set LastSelectedUnit[GetPlayerId(TrigPlayer)] = TrigUnit
 endfunction
-
 
 
 #endif
