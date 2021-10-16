@@ -21,9 +21,9 @@ call ModifyGateBJ(0,ho)
 set RoundStartTimer=null
 set Oe=null
 if CurrentWave==1 then
-call DisableTrigger(UR)
-call DisableTrigger(wR)
-call DisableTrigger(yR)
+call DisableTrigger(Swap2CommandTrigger)
+call DisableTrigger(SwapCommandTrigger)
+call DisableTrigger(RepickCommandTrigger)
 endif
 set rv=0
 if Tb()then

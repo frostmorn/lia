@@ -7,7 +7,7 @@ call Ac()
 else
 if Wx==false then
 call EnableTrigger(RandomHeroMsgTrigger)
-call EnableTrigger(yR)
+call EnableTrigger(RepickCommandTrigger)
 endif
 endif
 call DestroyTimer(t)

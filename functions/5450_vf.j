@@ -76,8 +76,8 @@ endif
 call MultiboardSetItemValueBJ(StatsBoard,4,A+6,"|cffffcc00Турнир Кланов|R")
 call DisableTrigger(vn)
 call DisableTrigger(Za)
-call EnableTrigger(UR)
-call EnableTrigger(wR)
+call EnableTrigger(Swap2CommandTrigger)
+call EnableTrigger(SwapCommandTrigger)
 else
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|Cffff0000Мод \"-тк\" (-tk) недоступен.|R")
 endif
@@ -250,8 +250,8 @@ call RemoveDestructable(RI)
 endif
 call DisableTrigger(vn)
 call DisableTrigger(Za)
-call EnableTrigger(UR)
-call EnableTrigger(wR)
+call EnableTrigger(Swap2CommandTrigger)
+call EnableTrigger(SwapCommandTrigger)
 if gMapMode=="" then
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,HI[GetPlayerId(mI)]+GetPlayerName(mI)+" |Rвыбрал режим игры |cffffcc00"+xf+"|R")
 else

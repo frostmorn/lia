@@ -10,7 +10,7 @@ if GetPlayerSlotState(ae[Rc])==PLAYER_SLOT_STATE_PLAYING then
 call Xc(ae[Rc])
 endif
 else
-call EnableTrigger(yR)
+call EnableTrigger(RepickCommandTrigger)
 call DestroyTimer(t)
 endif
 set Rc=Rc+1

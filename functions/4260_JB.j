@@ -9,11 +9,11 @@ set In=In+1
 endloop
 set De=0
 set Ge=0
-call DisableTrigger(SR)
-call DisableTrigger(tR)
-call DisableTrigger(TR)
+call DisableTrigger(YesCommandTrigger)
+call DisableTrigger(NoCommandTrigger)
+call DisableTrigger(StopSwitchCommandTrigger)
 set Fe=false
-call EnableTrigger(sR)
+call EnableTrigger(SwitchCommandTrigger)
 endfunction
 
 #endif

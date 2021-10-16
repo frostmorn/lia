@@ -6,8 +6,8 @@ call DisableTrigger(vn)
 call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Автоматически выбран режим игры |cffffcc00Выживание|R")
 call kd()
 call MultiboardSetItemValueBJ(StatsBoard,4,A+4,"|cffffcc00В|R")
-call EnableTrigger(UR)
-call EnableTrigger(wR)
+call EnableTrigger(Swap2CommandTrigger)
+call EnableTrigger(SwapCommandTrigger)
 set sb=null
 endfunction
 

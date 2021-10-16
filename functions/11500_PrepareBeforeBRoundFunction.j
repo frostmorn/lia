@@ -60,7 +60,7 @@ function PrepareBeforeBRoundFunction takes nothing returns nothing
         endif
         set CurrentWave=CurrentWave+1
         if CurrentWave==2 then
-            call DisableTrigger(yR)
+            call DisableTrigger(RepickCommandTrigger)
         endif
         set BB=AB(CurrentWave,NB,bB)
         set In=1

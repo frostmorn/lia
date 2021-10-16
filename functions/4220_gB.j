@@ -23,7 +23,7 @@ call MultiboardInit()
 call TriggerExecute(Sa)
 call TriggerExecute(PrepareBeforeRoundTrigger)
 call EnableTrigger(QR)
-call EnableTrigger(sR)
+call EnableTrigger(SwitchCommandTrigger)
 endfunction
 
 #endif

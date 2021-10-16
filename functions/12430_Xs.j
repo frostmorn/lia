@@ -35,7 +35,7 @@ endloop
 if Os==0 or GetPlayerSlotState(de[Os])==PLAYER_SLOT_STATE_EMPTY then
 return
 endif
-call DisableTrigger(sR)
+call DisableTrigger(SwitchCommandTrigger)
 set De=Os
 set Fe=true
 set Ce=p
@@ -48,9 +48,9 @@ call DisplayTextToPlayer(Player(In),0,0,"|cff706638Для согласия ва�
 endif
 set In=In+1
 endloop
-call EnableTrigger(SR)
-call EnableTrigger(TR)
-call EnableTrigger(tR)
+call EnableTrigger(YesCommandTrigger)
+call EnableTrigger(StopSwitchCommandTrigger)
+call EnableTrigger(NoCommandTrigger)
 call DestroyTimer(he)
 set he=CreateTimer()
 call TimerStart(he,45,false,function Es)
