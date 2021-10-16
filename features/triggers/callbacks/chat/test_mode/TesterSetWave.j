@@ -2,10 +2,10 @@
 #define T_00300
 
 #if FEATURE_TESTMODE_SETWAVE
-#include "../../../../functions/4340_BRoundStartFunction.j"
-#include "../../../../functions/5090_RoundStartFunction.j"
+#include "../../../../../functions/4340_BRoundStartFunction.j"
+#include "../../../../../functions/5090_RoundStartFunction.j"
 
-
+// -wave -волна command
 function TesterSetWaveCallback takes nothing returns nothing
     local string tempString = ""
     local string PlayerChatString= GetEventPlayerChatString()

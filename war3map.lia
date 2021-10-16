@@ -4,7 +4,7 @@
 #include "functions/30_EN.j"
 #include "functions/50_SendStatsToBot.j"
 #include "features/01000_UnitAPI.j"
-#include "functions/110_IsUnitOnBigArena.j"
+
 
 // Not used anywhere
 #include "functions/120_sc__Table__GTable_onDestroy.j"
@@ -1208,7 +1208,6 @@
 #include "functions/12310_sQ.j"
 #include "functions/12320_tQ.j"
 #include "functions/12330_uQ.j"
-#include "functions/12340_EnableTestModeFunction.j"
 #include "functions/12350_yQ.j"
 #include "functions/12360_zQ.j"
 #include "functions/12370_ZQ.j"

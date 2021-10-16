@@ -1,6 +1,6 @@
 #ifndef T_00200
 #define T_00200
-
+// -z -з command
 function SetCameraAttackAngleCallback takes nothing returns nothing
     local string tempString = ""
     local string PlayerChatString= GetEventPlayerChatString()

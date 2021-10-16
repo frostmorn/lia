@@ -2,7 +2,7 @@
 #define H_13510
 #include "../functions/13740_jasshelper__initstructs29827921.j"
 #if FEATURE_TESTMODE_SETWAVE
-#include "triggers/callbacks/chat/00300_TesterSetWave.j"
+#include "triggers/callbacks/chat/test_mode/TesterSetWave.j"
 #endif
     #if FEATURE_PRELOAD_MODELS
         #include "00110_PreloadModels.j"

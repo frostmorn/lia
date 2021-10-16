@@ -5,7 +5,7 @@
 #include "callbacks/heroes/warrior_of_the_light/00700_OnWarriorOfTheLightLearnedSkillWillOfTheLight.j"
 #include "callbacks/passive/00800_OnMonsterKilled.j"
 #include "callbacks/artifacts/00900_OnMithrilCast.j"
-
+#include "callbacks/chat/test_mode/EnableTestMode.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/chat/00200_SetCameraAttackAngle.j"
 #endif
@@ -140,7 +140,7 @@ function CreateTriggers takes nothing returns nothing
     set hR=CreateTrigger()
     set MeasureMoveSpeedChatTrigger=CreateTrigger()
     set jR=CreateTrigger()
-    set JR=CreateTrigger()
+    set EnableTestModeTrigger=CreateTrigger()
     set kR=CreateTrigger()
     set KR=CreateTrigger()
     set lR=CreateTrigger()
@@ -209,7 +209,7 @@ function CreateTriggers takes nothing returns nothing
     call DisableTrigger(TO)
     call DisableTrigger(ZO)
     call DisableTrigger(eR)
-    call DisableTrigger(JR)
+    call DisableTrigger(EnableTestModeTrigger)
     call DisableTrigger(kR)
     call DisableTrigger(KR)
     call DisableTrigger(lR)
@@ -362,7 +362,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(hR,function sQ)
     call TriggerAddAction(MeasureMoveSpeedChatTrigger,function MeasureMoveSpeedChatTriggerCallback)
     call TriggerAddAction(jR,function uQ)
-    call TriggerAddAction(JR,function EnableTestModeFunction)
+    call TriggerAddAction(EnableTestModeTrigger,function EnableTestMode)
     call TriggerAddAction(kR,function yQ)
     call TriggerAddAction(KR,function ZQ)
     call TriggerAddAction(lR,function es)
@@ -464,8 +464,8 @@ function CreateTriggers takes nothing returns nothing
         call TriggerRegisterPlayerChatEvent(MeasureMoveSpeedChatTrigger,Player(ED),"-sp",true)
         call TriggerRegisterPlayerChatEvent(jR,Player(ED),"-о",true)
         call TriggerRegisterPlayerChatEvent(jR,Player(ED),"-o",true)
-        call TriggerRegisterPlayerChatEvent(JR,Player(ED),"-т",true)
-        call TriggerRegisterPlayerChatEvent(JR,Player(ED),"-t",true)
+        call TriggerRegisterPlayerChatEvent(EnableTestModeTrigger,Player(ED),"-т",true)
+        call TriggerRegisterPlayerChatEvent(EnableTestModeTrigger,Player(ED),"-t",true)
         call TriggerRegisterPlayerChatEvent(kR,Player(ED),"-р",true)
         call TriggerRegisterPlayerChatEvent(kR,Player(ED),"-r",true)
         call TriggerRegisterPlayerChatEvent(KR,Player(ED),"-у ",false)

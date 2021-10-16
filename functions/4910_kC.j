@@ -40,7 +40,7 @@ function kC takes nothing returns nothing
     set A=PlayersCount
     set av=PlayersCount
     if PlayersCount==1 then
-        call EnableTrigger(JR)
+        call EnableTrigger(EnableTestModeTrigger)
         call DisableTrigger(zO)
         call DisableTrigger(rI)
     endif
