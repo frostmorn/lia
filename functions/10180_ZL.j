@@ -6,7 +6,7 @@ function ZL takes nothing returns nothing
     local unit f1
     local unit f2
     local location T
-    set g1 = GA(bj_mapInitialPlayableArea,Condition(function zL))
+    set g1 = GetUnitsInRectMatching(bj_mapInitialPlayableArea,Condition(function zL))
     loop
         set f1 = FirstOfGroup(g1)
         exitwhen f1==null

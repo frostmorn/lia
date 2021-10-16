@@ -11,7 +11,7 @@ function Rl takes nothing returns nothing
     local location T
     local unit c
     call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Повелитель времени применил заклинание \"остановить время\"")
-    set g = GA(bj_mapInitialPlayableArea,Condition(function jB))
+    set g = GetUnitsInRectMatching(bj_mapInitialPlayableArea,Condition(function jB))
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null

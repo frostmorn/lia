@@ -3,7 +3,7 @@
 function Lc takes nothing returns nothing
     local group g = CreateGroup()
     local unit f
-    set g = GA(gg_rct_PlayersHome,null)
+    set g = GetUnitsInRectMatching(gg_rct_PlayersHome,null)
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null

@@ -3,7 +3,7 @@
 function lc takes nothing returns nothing
     local group g = CreateGroup()
     local unit f
-    set g = GA(gg_rct_MinimalArenaAreaRect,null)
+    set g = GetUnitsInRectMatching(gg_rct_MinimalArenaAreaRect,null)
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null

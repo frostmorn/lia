@@ -18,7 +18,7 @@ function pP takes nothing returns nothing
 	set g = HA(bj_mapInitialPlayableArea)
 	call ForGroup(g,function lP)
 	call ConditionalTriggerExecute(PrepareBeforeBRoundTrigger)
-	set g = GA(gg_rct_MinimalArenaAreaRect,Condition(function LP))
+	set g = GetUnitsInRectMatching(gg_rct_MinimalArenaAreaRect,Condition(function LP))
 	call ForGroup(g,function mP)
 	call DestroyGroup(g)
 	set jv = false

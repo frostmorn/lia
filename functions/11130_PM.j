@@ -23,7 +23,7 @@ function PM takes nothing returns nothing
 
     if creepsCount == 0 then
         #else
-        if (CountUnitsInGroup(GA(gg_rct_BigArena,b))==0) and (CountUnitsInGroup(GA(gg_rct_PortalTopNoTp,b))==0) and (CountUnitsInGroup(GA(gg_rct_PortalBottomNoTp,b))==0) and IsNotGameOver() then
+        if (CountUnitsInGroup(GetUnitsInRectMatching(gg_rct_BigArena,b))==0) and (CountUnitsInGroup(GetUnitsInRectMatching(gg_rct_PortalTopNoTp,b))==0) and (CountUnitsInGroup(GetUnitsInRectMatching(gg_rct_PortalBottomNoTp,b))==0) and IsNotGameOver() then
             call DestroyBoolExpr(b)
             #endif
         

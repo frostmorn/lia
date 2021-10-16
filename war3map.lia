@@ -369,7 +369,6 @@
 #include "functions/3440_BA.j"
 #include "functions/3450_dA.j"
 #include "functions/3460_gA.j"
-#include "functions/3470_GA.j"
 #include "functions/3480_HA.j"
 #include "functions/3490_jA.j"
 #include "functions/3500_KA.j"
