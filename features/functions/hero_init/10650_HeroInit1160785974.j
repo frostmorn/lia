@@ -3,7 +3,7 @@
 function HeroInit1160785974 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 #if DEBUG_HERO_INITS
-    call DMesg("Custom E006 Шаман(Авар) Таверна Воров(Низ) Initialized")
+    call DMesg("Custom E006 Шаман(Авар) Таверна Воров(Низ) Initializing")
 #endif
 set EE=CreateTrigger()
 call TriggerRegisterUnitEvent(EE,u,EVENT_UNIT_HERO_SKILL)

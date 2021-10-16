@@ -5,7 +5,7 @@ local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 local integer ED=0
 local integer wN=16
 #if DEBUG_HERO_INITS
-    call DMesg("Custom E000 Пират(Эссермин) Таверна Воров(Верх) Initialized")
+    call DMesg("Custom E000 Пират(Эссермин) Таверна Воров(Верх) Initializing")
 #endif
 set dn=CreateTrigger()
 call TriggerRegisterUnitEvent(dn,u,EVENT_UNIT_SPELL_EFFECT)

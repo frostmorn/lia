@@ -5,7 +5,7 @@ local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 local integer ED=0
 local integer wN
 #if DEBUG_HERO_INITS
-    call DMesg("Custom H003 Нага Сирена(Глина) Таверна Воров(Верх) Initialized")
+    call DMesg("Custom H003 Нага Сирена(Глина) Таверна Воров(Верх) Initializing")
 #endif
 set ie=u
 set wN=16

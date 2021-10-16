@@ -3,7 +3,7 @@
 function HeroInit1211117645 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 #if DEBUG_HERO_INITS
-    call DMesg("Custom H00M Горный король(Гимли) Таверна Воинов(Низ) Initialized")
+    call DMesg("Custom H00M Горный король(Гимли) Таверна Воинов(Низ) Initializing")
 #endif
 call UnitAddAbility(u,'A0AK')
 call UnitAddAbility(u,'A0EO')

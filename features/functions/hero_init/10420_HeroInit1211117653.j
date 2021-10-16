@@ -3,7 +3,7 @@
 function HeroInit1211117653 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 #if DEBUG_HERO_INITS
-    call DMesg("Custom H00U Иллюзионист(Антаро) Таверна Воров(Низ) Initialized")
+    call DMesg("Custom H00U Иллюзионист(Антаро) Таверна Воров(Низ) Initializing")
 #endif
 call AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl",u,"hand,left")
 set ShamanAgilityMeassureMsgTrigger=CreateTrigger()

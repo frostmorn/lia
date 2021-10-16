@@ -3,7 +3,7 @@
 function HeroInit1160785987 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 #if DEBUG_HERO_INITS
-    call DMesg("Custom E00C Морлок(Крет) Таверна Воинов(Низ) Initialized")
+    call DMesg("Custom E00C Морлок(Крет) Таверна Воинов(Низ) Initializing")
 #endif
 set xx=u
 set MV=CreateTrigger()
