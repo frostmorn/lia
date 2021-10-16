@@ -17,7 +17,7 @@ function mB takes nothing returns nothing
 		set PB = 'u008'
 	endif
 	if pB!=0 then
-		set g = pA(p1)
+		set g = GetUnitsOfPlayerAll(p1)
 		loop
 			set f = FirstOfGroup(g)
 			exitwhen f==null
@@ -25,7 +25,7 @@ function mB takes nothing returns nothing
 			call RemoveUnit(f)
 			call GroupRemoveUnit(g,f)
 		endloop
-		set g = pA(p2)
+		set g = GetUnitsOfPlayerAll(p2)
 		loop
 			set f = FirstOfGroup(g)
 			exitwhen f==null

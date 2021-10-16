@@ -10,7 +10,7 @@ function TestModeLevelCommandTriggerCallback takes nothing returns nothing
 		endif
 		set In = In + 1
 	endloop
-	set g = mA(Player(0),Condition(function zQ))
+	set g = GetUnitsOfPlayerMatching(Player(0),Condition(function zQ))
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null

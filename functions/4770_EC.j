@@ -11,7 +11,7 @@ function EC takes nothing returns nothing
     loop
         exitwhen In > A
         set g = CreateGroup()
-        set g = pA(ae[In])
+        set g = GetUnitsOfPlayerAll(ae[In])
         call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])
         call ForGroup(g,function VC)
         call DestroyGroup(g)

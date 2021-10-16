@@ -27,7 +27,7 @@ function GD takes nothing returns nothing
     set Xe[7]= gg_rct_lr
     set Xe[8]= gg_rct_Lr
     set Xe[9]= gg_rct_mr
-    set g = pA(Player(12))
+    set g = GetUnitsOfPlayerAll(Player(12))
     call ForGroup(g,function gD)
     call DestroyGroup(g)
     set creep_ids[1]= 'n008'
