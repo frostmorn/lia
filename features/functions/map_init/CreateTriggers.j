@@ -18,6 +18,8 @@
 #include "../../triggers/callbacks/chat/swap/Swap2Command.j"
 #include "../../triggers/callbacks/chat/swap/SwapCommand.j"
 #include "../../triggers/callbacks/chat/RepickCommand.j"
+#include "../../triggers/callbacks/passive/MapModeTryAutoSelect.j"
+#include "../../triggers/callbacks/chat/misc/MapModeSelectCommand.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "../../triggers/callbacks/chat/misc/SetCameraAttackAngleCommand.j"
 #endif
@@ -39,9 +41,9 @@ function CreateTriggers takes nothing returns nothing
     set Wa=CreateTrigger()
     set ya=CreateTrigger()
     set Ya=CreateTrigger()
-    set za=CreateTrigger()
+    set MapModeTryAutoSelectTrigger=CreateTrigger()
     set Za=CreateTrigger()
-    set vn=CreateTrigger()
+    set MapModeSelectCommandTrigger=CreateTrigger()
     set en=CreateTrigger()
     set xn=CreateTrigger()
     set RandomHeroCommandTrigger=CreateTrigger()
@@ -256,9 +258,9 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(Wa,function QD)
     call TriggerAddAction(ya,function SD)
     call TriggerAddAction(Ya,function TD)
-    call TriggerAddAction(za,function yD)
+    call TriggerAddAction(MapModeTryAutoSelectTrigger,function MapModeTryAutoSelect)
     call TriggerAddAction(Za,function zD)
-    call TriggerAddAction(vn,function vf)
+    call TriggerAddAction(MapModeSelectCommandTrigger,function MapModeSelectCommandTriggerCallback)
     call TriggerAddAction(en,function Ff)
     call TriggerAddAction(xn,function hf)
     call TriggerAddAction(RandomHeroCommandTrigger,function RandomHeroCommandTriggerCallback)

@@ -1,6 +1,7 @@
-#define DEBUG 0
+#define DEBUG 1
 #define DEBUG_TYPE_BOT 0
 #if DEBUG
+#define DEBUG_HERO_INITS 1
 #define DI_ROUNDSTART 1
 #define DI_BEFOREROUND_TRIGGERS 1 
 #define DI_ESSENCE_OF_SHADOW 1
