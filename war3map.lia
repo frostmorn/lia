@@ -5,7 +5,6 @@
 #include "functions/50_SendStatsToBot.j"
 #include "features/UnitAPI.j"
 
-
 // Not used anywhere
 #include "functions/120_sc__Table__GTable_onDestroy.j"
 
@@ -69,7 +68,6 @@
 #include "functions/540_AddStat.j"
 #include "functions/550_StatMod___Init.j"
 
-
 // Not used anywhere
 #include "functions/580_SetUnitZ.j"
 
@@ -77,36 +75,35 @@
 
 #include "functions/610_KillTimer.j"
 
-
 // Not used anywhere
-#include "functions/620_CloudofFogStatus.j"    
-#include "functions/630_CloudofFogStatusSet.j" 
+#include "functions/620_CloudofFogStatus.j"
+#include "functions/630_CloudofFogStatusSet.j"
 #include "functions/640_IsUnitAtArena.j"
 
 #include "functions/650_SetUnitArenaStatus.j"
 
-#include "functions/660_GetDistance.j"                          // Used in 12090, 13300, 13320
+#include "functions/660_GetDistance.j" // Used in 12090, 13300, 13320
 
 // Not used anywhere
 #include "functions/670_s__Table__GTable_reset.j"
 #include "functions/680_s__Table__GTable_onDestroy.j"
 #include "functions/690_s__Table__getindex.j"
 #include "functions/700_s__Table__setindex.j"
-#include "functions/710_s__Table_flush.j"                    // Used in 730 but 730 not used anywhere
+#include "functions/710_s__Table_flush.j" // Used in 730 but 730 not used anywhere
 #include "functions/720_s__Table_exists.j"
-#include "functions/730_s__Table_flush2D.j"             
+#include "functions/730_s__Table_flush2D.j"
 
 #include "functions/740_s__Table__staticgetindex.j"
 #include "functions/750_s__StringTable__getindex.j"
 #include "functions/760_s__StringTable__setindex.j"
-#include "functions/770_s__StringTable_flush.j"              // Used in 790 but 790 not used anywhere
+#include "functions/770_s__StringTable_flush.j" // Used in 790 but 790 not used anywhere
 #include "functions/780_s__StringTable_exists.j"
 #include "functions/790_s__StringTable_flush2D.j"
 
 #include "functions/800_s__StringTable__staticgetindex.j"
 #include "functions/810_s__HandleTable__getindex.j"
 #include "functions/820_s__HandleTable__setindex.j"
-#include "functions/830_s__HandleTable_flush.j"              // Used in 850 but 850 not used anywhere
+#include "functions/830_s__HandleTable_flush.j" // Used in 850 but 850 not used anywhere
 #include "functions/840_s__HandleTable_exists.j"
 #include "functions/850_s__HandleTable_flush2D.j"
 
@@ -252,7 +249,7 @@
 #include "functions/2250_s__TableBr_has.j"
 #include "functions/2260_s__TableBr_remove.j"
 #include "functions/2270_s__TableBr_flush.j"
-#include "functions/2280_s__TableBr_create.j"                   // Oh fuck, really? It's used by 12920, 12990  and 3020... We can't delete that shit
+#include "functions/2280_s__TableBr_create.j" // Oh fuck, really? It's used by 12920, 12990  and 3020... We can't delete that shit
 
 // Not used again -_-
 #include "functions/2290_s__TableBr_destroy.j"
@@ -260,39 +257,39 @@
 
 #include "functions/2310_s__TableBrArray__get_size.j"
 #include "functions/2320_s__TableBrArray__getindex.j"
-#include "functions/2330_s__TableBrArray_destroy.j"          // Used in 2350 but 2350 not, u know...
+#include "functions/2330_s__TableBrArray_destroy.j" // Used in 2350 but 2350 not, u know...
 #include "functions/2340_s__TableBrArray_clean.j"
 #include "functions/2350_s__TableBrArray_flush.j"
-#include "functions/2360_GetAngle.j"                            // Used in 13300
-#include "functions/2370_TimedEffectAction.j"                   // Used in 2370, 2380 and 2390
-#include "functions/2380_AddTimedEffect.j"                      // Used in 2390 and 13300 
+#include "functions/2360_GetAngle.j"		  // Used in 13300
+#include "functions/2370_TimedEffectAction.j" // Used in 2370, 2380 and 2390
+#include "functions/2380_AddTimedEffect.j"	// Used in 2390 and 13300
 
 // Not used again -_-
 #include "functions/2390_AddTimedEffectUnit.j"
-#include "functions/2400_EasyMath.j"                         // Used in 2420 but 2420 not used
-#include "functions/2410_GetUnitArmorD.j"                    // Used in 2420 and 2430 but them not used
+#include "functions/2400_EasyMath.j"	  // Used in 2420 but 2420 not used
+#include "functions/2410_GetUnitArmorD.j" // Used in 2420 and 2430 but them not used
 #include "functions/2420_GetUnitArmorInt.j"
 #include "functions/2430_GetUnitArmorReal.j"
 #include "functions/2440_GetReducedDamage.j"
 #include "functions/2450_GetFullDamage.j"
-#include "functions/2460_ArmorUtils__Init.j"                    // Used in 13510
+#include "functions/2460_ArmorUtils__Init.j" // Used in 13510
 
 // Not used again -_- How many shit this map contains?
 
-#if IDDS_ENABLED          
-#include "functions/2490_IDDS___TriggerSort.j"                  // Used in 2540, 2560 and 2570
+#if IDDS_ENABLED
+#include "functions/2490_IDDS___TriggerSort.j" // Used in 2540, 2560 and 2570
 #endif
 #include "functions/2500_IgnoreHigherPriority.j"
-#include "functions/2510_SetDamage.j"                        // Used in 2520 but 2520 not used
+#include "functions/2510_SetDamage.j" // Used in 2520 but 2520 not used
 #include "functions/2520_SetDamageType.j"
 #include "functions/2530_GetTriggerPriority.j"
 #if IDDS_ENABLED
-    #include "functions/2540_SetTriggerPriority.j"
+#include "functions/2540_SetTriggerPriority.j"
 #endif
 #include "functions/2550_UnitDamageTargetEx.j"
 #if IDDS_ENABLED
-    #include "functions/2560_TriggerRegisterDamageEvent.j"
-    #include "functions/2570_TriggerUnregisterDamageEvent.j"
+#include "functions/2560_TriggerRegisterDamageEvent.j"
+#include "functions/2570_TriggerUnregisterDamageEvent.j"
 #endif
 #include "functions/2580_RegisterDamageType.j"
 #include "functions/2590_GetTriggerDamageType.j"
@@ -304,13 +301,13 @@
 //  Such optimization doesn't guarantee that everythings gonna be okay,
 //  But if shit happen, u know what to do
 #if IDDS_ENABLED
-    #include "functions/2640_IDDS___RunConditions.j"                // Used in 2700
-    #include "functions/2650_IDDS___AddConditions.j"                // Used in 2700
-    #include "functions/2660_IDDS___PreloadConditions.j"            // Used in 2690
-    #include "functions/2670_IDDS___Run.j"                          // Used in 2700
-    #include "functions/2680_IDDS___Load.j"                         // Used in 2700
-    #include "functions/2690_IDDS___PreloadUnits.j"                 // Used in 2700
-    #include "functions/2700_IDDS___Init.j"                         // Used in 13510  but it actually does nothing usefull
+#include "functions/2640_IDDS___RunConditions.j"	 // Used in 2700
+#include "functions/2650_IDDS___AddConditions.j"	 // Used in 2700
+#include "functions/2660_IDDS___PreloadConditions.j" // Used in 2690
+#include "functions/2670_IDDS___Run.j"			   // Used in 2700
+#include "functions/2680_IDDS___Load.j"			  // Used in 2700
+#include "functions/2690_IDDS___PreloadUnits.j"	  // Used in 2700
+#include "functions/2700_IDDS___Init.j"			  // Used in 13510  but it actually does nothing usefull
 #endif
 #include "functions/2710_RemoveBuff.j"
 #include "functions/2750_s__SpellEvent___spellEvent__get_TargetLoc.j"
@@ -1073,7 +1070,6 @@
 #include "functions/10870_tm.j"
 #include "functions/10880_um.j"
 #include "functions/10890_WaveFightTriggerFunction.j"
-
 
 #include "functions/10960_xM.j"
 #include "functions/10970_rM.j"

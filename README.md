@@ -11,16 +11,16 @@ Any changes to map done in WE will broke all existing triggers
 
 So main way to make changes:
 
-    1. Change WE objects, make whatever u want with landscape
+	1. Change WE objects, make whatever u want with landscape
 
-    2. Save map
+	2. Save map
 
-    3. Open map with MPQEditor and replace war3map.j script with coresponding one or find another way...
+	3. Open map with MPQEditor and replace war3map.j script with coresponding one or find another way...
 
-    4.  Also if u want to add ENGLISH translation, which done NOT FULLY yet, 
-        u must replace war3map.wts file with coresponding one, or make it
-        work with setting Language for file to English. Neutral language will
-        be used if wc3 can't find .wts file for a specific wc3 locale
+	4.  Also if u want to add ENGLISH translation, which done NOT FULLY yet, 
+		u must replace war3map.wts file with coresponding one, or make it
+		work with setting Language for file to English. Neutral language will
+		be used if wc3 can't find .wts file for a specific wc3 locale
 
 
 Such way have some kind of "inconveniences" but if u strong slavic man, u don't give a fck..

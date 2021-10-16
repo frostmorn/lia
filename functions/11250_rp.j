@@ -1,13 +1,13 @@
 #ifndef H_11250
 #define H_11250
 function rp takes nothing returns nothing
-local group g=CreateGroup()
-if qv==false then
-call DisableTrigger(GetTriggeringTrigger())
-endif
-call GroupEnumUnitsInRect(g,bj_mapInitialPlayableArea,Condition(function op))
-call DestroyGroup(g)
-set g=null
+    local group g = CreateGroup()
+    if qv==false then
+        call DisableTrigger(GetTriggeringTrigger())
+    endif
+    call GroupEnumUnitsInRect(g,bj_mapInitialPlayableArea,Condition(function op))
+    call DestroyGroup(g)
+    set g = null
 endfunction
 
 #endif
