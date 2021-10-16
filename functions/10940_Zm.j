@@ -1,6 +1,6 @@
 #ifndef H_10940
 #define H_10940
-#include "../features/00120_Debug.j"
+#include "../features/Debug.j"
 function Zm takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)

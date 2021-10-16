@@ -1,8 +1,8 @@
 #ifndef H_5120
 #define H_5120
-#include "../features/00120_Debug.j"
-#include "../features/triggers/01000_Conditions.j"
-#include "../features/triggers/callbacks/passive/00800_OnMonsterKilled.j"
+#include "../features/Debug.j"
+#include "../features/triggers/Conditions.j"
+#include "../features/triggers/callbacks/passive/OnMonsterKilled.j"
 function PrepareBeforeRoundFunction takes nothing returns nothing
 local integer In=1
 local integer wN=A

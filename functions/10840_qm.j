@@ -1,5 +1,6 @@
 #ifndef H_10840
 #define H_10840
+#include "10830_pm.j"
 function qm takes nothing returns nothing
 local integer i=0
 set eA=CreateTrigger()

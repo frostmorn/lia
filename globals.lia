@@ -620,7 +620,7 @@ trigger bE=null
 trigger BE=null
 trigger bn=null
 trigger Bn=null
-trigger BossFightTrigger=null
+
 trigger bR=null
 trigger HelpCommandTrigger=null
 trigger BV=null

@@ -1,6 +1,6 @@
 #ifndef H_8760
 #define H_8760
-#include "../features/00120_Debug.j"
+#include "../features/Debug.j"
 function kk takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer dN=GetHandleId(t)

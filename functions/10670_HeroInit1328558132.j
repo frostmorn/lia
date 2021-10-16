@@ -1,6 +1,6 @@
 #ifndef H_10670
 #define H_10670
-#include "../features/triggers/01000_Conditions.j"
+#include "../features/triggers/Conditions.j"
 function HeroInit1328558132 takes nothing returns nothing
 local unit u=LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 set dE=CreateTrigger()

@@ -3,7 +3,7 @@
 #include "functions/10_IsPlayerOnline.j"
 #include "functions/30_EN.j"
 #include "functions/50_SendStatsToBot.j"
-#include "features/01000_UnitAPI.j"
+#include "features/UnitAPI.j"
 
 
 // Not used anywhere
@@ -1082,13 +1082,7 @@
 #include "functions/10880_um.j"
 #include "functions/10890_WaveFightTriggerFunction.j"
 
-// Allready included in 10950
-// #include "functions/10900_Wm.j"
-// #include "functions/10910_ym.j"
-// #include "functions/10920_Ym.j"
-// #include "functions/10930_zm.j"
-// #include "functions/10940_Zm.j"
-#include "functions/10950_BossFightTriggerFunction.j"
+
 #include "functions/10960_xM.j"
 #include "functions/10970_rM.j"
 #include "functions/10980_iM.j"
@@ -1308,5 +1302,5 @@
 
 // Main function, here our script starts
 
-#include "features/10000_main.j"
-#include "functions/13520_config.j"
+#include "features/main.j"
+#include "features/config.j"

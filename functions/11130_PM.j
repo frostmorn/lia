@@ -1,8 +1,8 @@
 #ifndef H_11130
 #define H_11130
-#include "../features/00120_Debug.j"
+#include "../features/Debug.j"
 #include "5120_PrepareBeforeRoundFunction.j"
-#include "../features/triggers/01000_Conditions.j"
+#include "../features/triggers/Conditions.j"
 function PM takes nothing returns nothing
     #if CHECK_ROUND_END_VARIANT_2
     local group g = CreateGroup()

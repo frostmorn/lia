@@ -1,6 +1,7 @@
 #ifndef H_5090
 #define H_5090
-#include "../features/00120_Debug.j"
+#include "../features/Debug.j"
+#include "../features/functions/PrepareBeforeBossFight.j"
 
 function RoundStartFunction takes nothing returns nothing
 #if FEATURE_TESTMODE_SETWAVE
@@ -32,7 +33,8 @@ return
 endif
 if ModuloInteger(CurrentWave,5)==0 then
     // Starting Boss Fight
-call TriggerExecute(BossFightTrigger)
+
+call PrepareBeforeBossFight()
 
 #if DI_ROUNDSTART
 call DMesg("Starting  [ BOSS ] Round № "+I2S(CurrentWave))

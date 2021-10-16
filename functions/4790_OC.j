@@ -1,6 +1,6 @@
 #ifndef H_4790
 #define H_4790
-#include "../features/triggers/01000_Conditions.j"
+#include "../features/triggers/Conditions.j"
 function OC takes player p returns nothing
 local string RC=GetPlayerName(p)
 local integer ec=ee[GetPlayerId(p)+1]

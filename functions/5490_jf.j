@@ -1,6 +1,6 @@
 #ifndef H_5490
 #define H_5490
-#include "../features/triggers/01000_Conditions.j"
+#include "../features/triggers/Conditions.j"
 function RandomHeroCommandTriggerCallback takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer id=(1+GetPlayerId(p))

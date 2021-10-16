@@ -1,6 +1,6 @@
 #ifndef H_10850
 #define H_10850
-#include "../features/00120_Debug.j"
+#include "../features/Debug.j"
 #include "5120_PrepareBeforeRoundFunction.j"
 
 function Qm takes nothing returns nothing

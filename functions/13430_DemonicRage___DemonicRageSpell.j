@@ -1,6 +1,6 @@
 #ifndef H_13430
 #define H_13430
-#include "../features/00120_Debug.j"
+#include "../features/Debug.j"
 function DemonicRage___DemonicRageSpell takes nothing returns nothing
 set DemonicRage___abilId[1]='A0J0'
 set DemonicRage___abilId[2]='A0J1'
