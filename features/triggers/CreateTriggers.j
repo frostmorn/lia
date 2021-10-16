@@ -10,6 +10,14 @@
 #include "callbacks/chat/misc/SetCameraCommand.j"
 #include "callbacks/chat/test_mode/TestModeLevelCommand.j"
 #include "callbacks/chat/RandomHeroCommand.j"
+#include "callbacks/chat/NoCommand.j"
+#include "callbacks/chat/YesCommand.j"
+#include "callbacks/chat/HelpCommand.j"
+#include "callbacks/chat/SwitchCommand.j"
+#include "callbacks/chat/StopSwitch.j"
+#include "callbacks/chat/Swap2Command.j"
+#include "callbacks/chat/SwapCommand.j"
+#include "callbacks/chat/RepickCommand.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/chat/misc/SetCameraAttackAngleCommand.j"
 #endif
@@ -354,7 +362,7 @@ function CreateTriggers takes nothing returns nothing
     call TriggerAddAction(bR,function XQ)
     #endif
     #if FEATURE_SET_CAMERA_ATTACK_ANGLE
-    call TriggerAddAction(SetCameraAttackAngleCommandTrigger,function SetCameraAttackAngleCallback)
+    call TriggerAddAction(SetCameraAttackAngleCommandTrigger,function SetCameraAttackAngleCommandTriggerCallback)
     #endif
     call TriggerAddAction(HelpCommandTrigger,function HelpCommandTriggerCallback)
     call TriggerAddAction(cR,function bQ)
