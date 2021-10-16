@@ -34,6 +34,14 @@ function IsUnitDeadFilter takes nothing returns boolean
     return IsUnitDead(GetFilterUnit())
 endfunction
 
+function IsUnitOnBigArena takes unit u returns boolean
+
+#if D_110
+    call DMesg("Checking if "+GetUnitName(u)+" is on BigArena")
+#endif
+return IsUnitInRegion(BigArena, u)
+endfunction
+
 // function IsUnitInvulnerable takes unit u returns boolean
 
 // endfunction
