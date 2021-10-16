@@ -54,7 +54,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 	endloop
 	call SendStatsToBot("EOG",1)
 	call CinematicFadeBJ(1,2.,"ReplaceableTextures\\CameraMasks\\White_mask.blp",0,0,0,0)
-	call BA(2)
+	call PolledWait(2)
 	set g = HA(bj_mapInitialPlayableArea)
 	loop
 		set f = FirstOfGroup(g)

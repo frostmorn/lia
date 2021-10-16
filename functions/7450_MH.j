@@ -13,7 +13,7 @@ function MH takes nothing returns nothing
 	elseif(Qb==3)then
 		set r2 = 20.
 	endif
-	set sb = dA(qb,r2,r)
+	set sb = PolarProjectionBJ(qb,r2,r)
 	call SetUnitPositionLoc(ke,sb)
 	call RemoveLocation(sb)
 	call RemoveLocation(qb)

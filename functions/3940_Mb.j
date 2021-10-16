@@ -19,7 +19,7 @@ function Mb takes nothing returns nothing
     endif
     set r = AngleBetweenPoints(qb,L2)
     call SetUnitFacingTimed(uA,r,.01)
-    set sb = dA(qb,Qb,r)
+    set sb = PolarProjectionBJ(qb,Qb,r)
     call SetUnitPositionLoc(uA,sb)
     call RemoveLocation(sb)
     call RemoveLocation(qb)
