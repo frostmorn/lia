@@ -1,5 +1,7 @@
 #ifndef H_13060
 #define H_13060
+#include "../features/functions/BRoundStart.j"
+#include "../features/functions/RoundStart.j"
 function ItsReady___OnActions takes nothing returns nothing
     local player p=GetTriggerPlayer()
     local integer index=0

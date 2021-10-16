@@ -1,5 +1,7 @@
 #ifndef H_11470
 #define H_11470
+#include "../features/functions/BRoundStart.j"
+#include "../features/functions/RoundStart.j"
 function zp takes nothing returns nothing
 local player p=GetTriggerPlayer()
 if not IsReady[GetPlayerId(p)]then

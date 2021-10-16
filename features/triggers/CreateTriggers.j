@@ -9,6 +9,7 @@
 #include "callbacks/chat/misc/CLSCommand.j"
 #include "callbacks/chat/misc/SetCameraCommand.j"
 #include "callbacks/chat/test_mode/TestModeLevelCommand.j"
+#include "callbacks/chat/RandomHeroCommand.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
     #include "callbacks/chat/misc/SetCameraAttackAngleCommand.j"
 #endif

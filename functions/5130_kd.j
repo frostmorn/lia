@@ -2,7 +2,7 @@
 #define H_5130
 
 #include "../features/Debug.j"
-#include "5120_PrepareBeforeRoundFunction.j"
+#include "../features/functions/PrepareBeforeRound.j"
 
 function kd takes nothing returns nothing
     local integer re=av
