@@ -9,6 +9,7 @@ function SwapNoCommandTriggerCallback takes nothing returns nothing
 		call SaveBoolean(Ax,ec,StringHash("p" + I2S(ec)+ "or" + I2S(In)),false)
 		set In = In + 1
 	endloop
+	call DisplayTextToPlayer(p,0,0,"|Cff00ff00Обмен героями отменен!|R")
 	set p = null
 endfunction
 
