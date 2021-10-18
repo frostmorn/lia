@@ -7,7 +7,8 @@ function SetCameraCommandTriggerCallback takes nothing returns nothing
 		set Distance = Distance * 16.5
 		call SetCameraFieldForPlayer(p,CAMERA_FIELD_TARGET_DISTANCE,Distance,1.)
 	else
-		call DisplayTextToPlayer(p,0,0,"|Cffff0000Enter a zoom % between 100 and 200. (Default is 100)|R")
+		call DisplayTextToPlayer(p,0,0,"|Cffff0000Недопустимое значение высоты камеры.|R")
+		call DisplayTextToPlayer(p,0,0,"|Cffff0000Допустимые значения: 100[ Стандарт ]-200|R")
 	endif
 	set p = null
 endfunction
