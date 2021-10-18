@@ -2,7 +2,7 @@
 #define H_4060
 function Zb takes nothing returns nothing
     local integer In = 1
-    local integer vB = A
+    local integer vB = PlayersOnlineCount
     loop
         exitwhen In > vB
         call SetPlayerMaxHeroesAllowed(0,ae[In])

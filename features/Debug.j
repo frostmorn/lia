@@ -34,8 +34,8 @@ endfunction
 function SendDebugToBot takes string sVariable, integer iValue returns nothing
 	//  Sends debug messages to ghostpp bot
 	//  Bot must have an ability to read that data
-	call StoreInteger(O, "DEBUG:", sVariable,  iValue)
-	call SyncStoredInteger(O, "DEBUG:", sVariable)
+	call StoreInteger(LiAGameCache, "DEBUG:", sVariable,  iValue)
+	call SyncStoredInteger(LiAGameCache, "DEBUG:", sVariable)
 endfunction
 	
 

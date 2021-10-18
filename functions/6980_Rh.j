@@ -14,7 +14,7 @@ function Rh takes nothing returns nothing
         call TriggerSleepAction(.01)
         set p = GetOwningPlayer(VF)
         set JN = GetUnitAbilityLevel(VF,'A0CG')
-        set DC = $A * ix * JN
+        set DC = 10 * ix * JN
         set Ih =(2 * JN + 4)* ix
         set g = CreateGroup()
         set T = GetUnitLoc(ed)

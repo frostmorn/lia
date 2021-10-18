@@ -4,7 +4,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 	local group g = CreateGroup()
 	local unit f
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local unit array m
 	local player array p
 	local integer array l

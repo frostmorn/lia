@@ -10,8 +10,8 @@ function aG takes nothing returns nothing
 	local unit uA = LoadUnitHandle(Ax,3,dN)
 	local integer JN = GetUnitAbilityLevel(uA,'A0DB')
 	local player p = GetOwningPlayer(uA)
-	local real nG = $A + $A * JN
-	local real VG = $A * JN
+	local real nG = 10 + 10 * JN
+	local real VG = 10 * JN
 	local real DC
 	local unit f
 	set g = LoadGroupHandle(Ax,4,dN)

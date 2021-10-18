@@ -58,7 +58,7 @@ function OC takes player p returns nothing
             set BB = GetPlayerState(p,PLAYER_STATE_RESOURCE_GOLD)
             set AC = GetPlayerState(p,PLAYER_STATE_RESOURCE_LUMBER)
             set In = 1
-            set wN = A
+            set wN = PlayersOnlineCount
 
             loop
                 exitwhen In > wN

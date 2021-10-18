@@ -32,9 +32,9 @@ function Bg takes nothing returns nothing
 			set cg = GetUnitState(f,UNIT_STATE_MAX_LIFE)
 			set Cg = GetWidgetLife(f)
 			if(IsUnitType(f,UNIT_TYPE_HERO)or((LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=0 and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=1))then
-				set DC = $A * JN +(cg - Cg)*(2 * JN)/ 'd'
+				set DC = 10 * JN +(cg - Cg)*(2 * JN)/ 'd'
 			else
-				set DC = $A * JN +(cg - Cg)*(5 * JN)/ 'd'
+				set DC = 10 * JN +(cg - Cg)*(5 * JN)/ 'd'
 			endif
 			if IsUnitAlive(f) then
 				set DamageTypeAttack = false

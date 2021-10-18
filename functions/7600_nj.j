@@ -7,10 +7,10 @@ function nj takes nothing returns nothing
     local real UG
     if Ve then
         set JN = GetUnitAbilityLevel(u,'A09Y')
-        set UG = 40 + $A * I2R(JN)
+        set UG = 40 + 10 * I2R(JN)
     else
         set JN = GetUnitAbilityLevel(u,'A08I')
-        set UG = 20 + $A * I2R(JN)
+        set UG = 20 + 10 * I2R(JN)
     endif
     set kI = true
     set DamageTypeAttack = false

@@ -2,7 +2,7 @@
 #define H_11740
 function pP takes nothing returns nothing
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local group g = CreateGroup()
 	local timer t = CreateTimer()
 	call DisableTrigger(TO)

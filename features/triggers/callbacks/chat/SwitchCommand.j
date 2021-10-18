@@ -2,7 +2,7 @@
 #define SWITCH_COMMAND_J
 function SwitchCommandTriggerCallback takes nothing returns nothing
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local integer Os = 0
 	local player p = GetTriggerPlayer()
 	local integer n = 0

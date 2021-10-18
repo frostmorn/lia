@@ -3,7 +3,7 @@
 function Ik takes nothing returns nothing
     local unit u = GetSpellAbilityUnit()
     local integer JN = GetUnitAbilityLevel(u,'A03Q')
-    local integer cB = $A * JN
+    local integer cB = 10 * JN
     local real xp
     local timer t = CreateTimer()
     local integer dN = GetHandleId(t)

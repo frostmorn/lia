@@ -5,7 +5,7 @@ function Ff takes nothing returns nothing
     local unit gf = GetSellingUnit()
     local player p = GetOwningPlayer(TB)
     local integer In = 1
-    local integer wN = A
+    local integer wN = PlayersOnlineCount
     local integer ss = ZB(TB)
     call RemoveUnitFromStock(gf,GetUnitTypeId(TB))
     if gf==HeroStocksArray[6]then

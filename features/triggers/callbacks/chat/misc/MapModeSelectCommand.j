@@ -30,7 +30,7 @@ function MapModeSelectCommandTriggerCallback takes nothing returns nothing
 	local boolean Cf = false
 	local boolean d
 	local boolean d2
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local location sb
 	if gMapMode=="" then
 		set s = GetEventPlayerChatString()
@@ -73,7 +73,7 @@ function MapModeSelectCommandTriggerCallback takes nothing returns nothing
 			else
 				call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00Турнир Кланов|R")
 			endif
-			call MultiboardSetItemValueBJ(StatsBoard,4,A + 6,"|cffffcc00Турнир Кланов|R")
+			call MultiboardSetItemValueBJ(StatsBoard,4,wN + 6,"|cffffcc00Турнир Кланов|R")
 			call DisableTrigger(MapModeSelectCommandTrigger)
 			call DisableTrigger(Za)
 			call EnableTrigger(Swap2CommandTrigger)
@@ -258,9 +258,9 @@ function MapModeSelectCommandTriggerCallback takes nothing returns nothing
 		call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|C11ffcc00Xocт-Бoт |Rвыбрал режим игры |cffffcc00" + xf + "|R")
 	endif
 	if Xf==1 then
-		call MultiboardSetItemValueBJ(StatsBoard,4,A + 4,"|cffffcc00" + of + "|R")
+		call MultiboardSetItemValueBJ(StatsBoard,4,wN + 4,"|cffffcc00" + of + "|R")
 	else
-		call MultiboardSetItemValueBJ(StatsBoard,4,A + 6,"|cffffcc00" + of + "|R")
+		call MultiboardSetItemValueBJ(StatsBoard,4,wN + 6,"|cffffcc00" + of + "|R")
 	endif
 	set Vf = null
 	set s = null

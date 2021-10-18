@@ -5,7 +5,7 @@ function Wc takes unit u1,unit u2 returns nothing
 	local player p2 = GetOwningPlayer(u2)
 	local group g = CreateGroup()
 	local integer Kc = Gx
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local timer t
 	local integer dN
 	local location T1

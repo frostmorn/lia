@@ -26,7 +26,7 @@ function fP takes nothing returns nothing
 		set In = In + 1
 	endloop
 	set In = mv + 1
-	set vB = A
+	set vB = PlayersOnlineCount
 	loop
 		exitwhen In > vB
 		if HeroInGameAndAliveARRAY[In]or IsUnitAlive(PlayersHeroArray[In]) then
@@ -39,7 +39,7 @@ function fP takes nothing returns nothing
 		set In = In + 1
 	endloop
 	set In = 1
-	set vB = A
+	set vB = PlayersOnlineCount
 	loop
 		exitwhen In > vB
 		set L = GetRectCenter(gg_rct_MinimalArenaAreaRect)

@@ -3,7 +3,7 @@
 function Tp takes nothing returns nothing
 	local integer R = 0
 	local boolean array up
-	local integer Up = A
+	local integer Up = PlayersOnlineCount
 	local integer wp = 1
 	local integer GB
 	local integer Wp

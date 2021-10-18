@@ -34,7 +34,7 @@ function wP takes nothing returns nothing
     set ZP = 0
     set vq = 0
     set In = WP + 1
-    set yP = A
+    set yP = PlayersOnlineCount
     loop
         exitwhen In > yP
         set Sv = Sv + U[In]

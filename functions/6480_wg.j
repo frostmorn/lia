@@ -12,7 +12,7 @@ function wg takes nothing returns nothing
         set nd = 5 + 5 * JN
     else
         set Wg = 25 * JN
-        set nd = $A + 5 * JN
+        set nd = 10 + 5 * JN
     endif
     set Kx = u
     call SetHeroStr(u,GetHeroStr(u,false)+ Wg,true)

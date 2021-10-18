@@ -25,7 +25,7 @@ function PrepareBeforeBossFight takes nothing returns nothing
 	#endif
 
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local real x
 	local real y
 	set iv = true

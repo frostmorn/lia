@@ -4,7 +4,7 @@ function Gc takes nothing returns nothing
 	local timer fc
 	local integer Fc
 	local timer t = GetExpiredTimer()
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local integer k
 	local real r
 	local integer In

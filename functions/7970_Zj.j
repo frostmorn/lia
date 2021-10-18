@@ -25,7 +25,7 @@ function Zj takes nothing returns nothing
         call KillUnit(Lj)
         call RemoveUnit(Lj)
         call SetWidgetLife(uA,GetWidgetLife(uA)+ 50. * I2R(WF))
-        set vJ = $A * WF
+        set vJ = 10 * WF
         set t = CreateTimer()
         set dN = GetHandleId(t)
         call SaveInteger(Ax,1,dN,1)

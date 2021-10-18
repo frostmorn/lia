@@ -6,7 +6,7 @@
 #include "../functions/RoundStart.j"
 function PrepareBeforeRoundFunction takes nothing returns nothing
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local integer index = 0
 	local real w
 	local integer BB
@@ -93,7 +93,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 		set NextWaveDuelBool = true
 		set Pe = true
 		call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
-		call MultiboardSetItemValueBJ(StatsBoard,4,A + 2,"|cffffcc00Дуэль")
+		call MultiboardSetItemValueBJ(StatsBoard,4,PlayersOnlineCount + 2,"|cffffcc00Дуэль")
 		call TimerStart(Hd,30,false,function Cd)
 		set fN = CreateTimerDialog(Hd)
 		call SaveTimerDialogHandle(Ax,1,jd,fN)

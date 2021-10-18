@@ -8,7 +8,7 @@ function vc takes unit cB,player p returns nothing
     call SetUnitOwner(TB,p,true)
     call DisplayTextToPlayer(GetLocalPlayer(),0,0,"Игроку " + HI[GetPlayerId(p)]+ GetPlayerName(p)+ "|R случайно выпал(а) |c00808080" + GetUnitName(TB)+ "|R")
     loop
-        exitwhen In > A
+        exitwhen In > PlayersOnlineCount
         if GetOwningPlayer(TB)==ae[In]then
             call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
             set PlayersHeroArray[In]= TB

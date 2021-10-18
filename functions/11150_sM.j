@@ -4,7 +4,7 @@
 function sM takes nothing returns nothing
 	local timer t = CreateTimer()
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	call DisableTrigger(CO)
 	call DisableTrigger(eA)
 	set iv = false

@@ -12,7 +12,7 @@ function kG takes nothing returns nothing
     else
         set t = LoadTimerHandle(Ax,GetHandleId(u),1)
     endif
-    call TimerStart(t,$A + cC * 5,false,function JG)
+    call TimerStart(t,10 + cC * 5,false,function JG)
     if cC==1 then
         call UnitAddAbility(u,'A05P')
     elseif cC==2 then

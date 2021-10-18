@@ -7,7 +7,7 @@ function Np takes nothing returns nothing
 	local integer i1 = LoadInteger(Ax,2,dN)
 	local integer i2 = LoadInteger(Ax,3,dN)
 	local integer In = 1
-	local integer wN = A
+	local integer wN = PlayersOnlineCount
 	local location L = GetRectCenter(gg_rct_MinimalArenaAreaRect)
 	local string bC
 	loop

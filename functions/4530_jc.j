@@ -5,7 +5,7 @@ function jc takes nothing returns nothing
     local timer tt = CreateTimer()
     local string s
     local integer In = 0
-    local integer wN = A
+    local integer wN = PlayersOnlineCount
     if wN==4 then
         set s = "1-2-1"
     else

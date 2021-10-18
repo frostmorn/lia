@@ -9,7 +9,7 @@ function wG takes nothing returns nothing
 	local effect e = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Drain\\DrainTarget.mdl",uA,"origin")
 	set uI = CreateUnit(GetOwningPlayer(uA),'h00R',GetWidgetX(uA),GetWidgetY(uA),.0)
 	call SaveInteger(Ax,1,dN,1)
-	call SaveInteger(Ax,2,dN,$A + 2 * JN)
+	call SaveInteger(Ax,2,dN,10 + 2 * JN)
 	call SaveUnitHandle(Ax,3,dN,uA)
 	call SaveEffectHandle(Ax,4,dN,e)
 	call SaveReal(Ax,5,dN,ix)

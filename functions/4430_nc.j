@@ -27,7 +27,7 @@ function nc takes player p returns nothing
 	call ExecuteFunc("HeroInit" + I2S(GetUnitTypeId(u)))
 	set In = 1
 	loop
-		exitwhen In > A
+		exitwhen In > PlayersOnlineCount
 		if GetOwningPlayer(u)==ae[In]then
 			call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(In))
 			set x = GetUnitX(PlayersHeroArray[In])

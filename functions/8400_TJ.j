@@ -5,7 +5,7 @@ function TJ takes nothing returns nothing
     local integer dN = GetHandleId(t)
     local unit uA = GetSpellAbilityUnit()
     local integer In = 1
-    local integer vB = $A
+    local integer vB = 10
     call SaveInteger(Ax,1,dN,In)
     call SaveInteger(Ax,2,dN,vB)
     call SaveUnitHandle(Ax,3,dN,uA)

@@ -197,7 +197,7 @@ globals
 	force Hx = null
 	force tv = null
 	force Tv = null
-	gamecache O
+	gamecache LiAGameCache
 
 	group array BugFixGroup
 	group array CatchTheShadowGroup
@@ -222,7 +222,7 @@ globals
 	hashtable HashData = InitHashtable()
 	hashtable TableBr__ht = InitHashtable()
 	hashtable Table__ht = InitHashtable()
-	integer A = 0
+	integer PlayersOnlineCount = 0	// Possible players count(online?)
 	integer Ae = 0
 	integer array Ao
 	integer array arrayTreeTypes
