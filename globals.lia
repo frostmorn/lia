@@ -842,7 +842,7 @@ globals
 	trigger oR = null
 	trigger OR = null
 	trigger oV = null
-	trigger ShadowReturnsToMasterTrigger = null
+	trigger ShadowReturnsToMasterSpellTrigger = null
 	trigger oX = null
 	trigger OX = null
 	trigger Pa = null
@@ -1062,7 +1062,14 @@ globals
 	unit udg_DamageEventSource = null
 	unit udg_DamageEventTarget = null
 	unit udg_EnhancedDamageTarget = null
-	unit ue = null
+	// Oh shit...
+	// All hero functions will broke if we try to add 
+	// few instances of that unit to the map, which makes us
+	// to gtfo with dreams to make mirror -b matches
+	// before this shit will be fixed.
+	// Also, I expect vars here, should be same kind of 
+	// trick, so we've a lot of work to do...
+	unit MasterOfShadowGlobalUnit = null
 	unit uI
 	unit vA
 	unit vx = null
