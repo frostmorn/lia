@@ -1,6 +1,6 @@
 #ifndef MAP_MODE_TRY_AUTO_SELECT_J
 #define MAP_MODE_TRY_AUTO_SELECT_J
-#include "../../../functions/map_init/HCL.j"
+#include "../../../functions/map_init/SelectMapModeFromHCLString.j"
 function MapModeTryAutoSelect takes nothing returns nothing
 	local integer i = 0
 	set gMapMode = ""

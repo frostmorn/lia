@@ -3,6 +3,7 @@
 #include "../features/functions/CreateSwapNoTrigger.j"
 #include "../features/functions/map_init/CreateRegions.j"
 #include "../functions/13740_jasshelper__initstructs29827921.j"
+#include "../features/functions/map_init/SetHCLStringFromHandicaps.j"
 #if FEATURE_TESTMODE_SETWAVE
 #include "triggers/callbacks/chat/test_mode/TesterSetWave.j"
 #endif
@@ -106,7 +107,7 @@ function main takes nothing returns nothing
 	call InitMapRects()
 	call InitSummonableCaps()
 	call InitNeutralBuildings()
-	call rN()
+	call SetHCLStringFromHandicaps()
 	call BN()
 	call CreateTriggers() 
 

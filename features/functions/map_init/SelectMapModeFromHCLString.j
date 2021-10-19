@@ -2,11 +2,11 @@
 #define HCL_J
 function SelectMapModeFromHCLString takes nothing returns nothing
 	local string lcharhcl = ""
-	local integer lhcllength = StringLength(V)
+	local integer lhcllength = StringLength(HCLString)
 	local integer i = 0
 	loop
 		exitwhen i >= lhcllength
-		set lcharhcl = SubString(V,i,i + 1)
+		set lcharhcl = SubString(HCLString,i,i + 1)
 		if lcharhcl=="v" then
 			set gMapMode = gMapMode + "-в"
 		elseif lcharhcl=="e" then

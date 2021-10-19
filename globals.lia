@@ -580,7 +580,7 @@ globals
 	string array Zv
 	string Charge___runFx = "Environment\\LargeBuildingFire\\LargeBuildingFire2.mdl"
 	string gMapMode = ""
-	string V = ""
+	string HCLString = ""
 	texttag zx = null
 	timer ao = null
 	timer array pv

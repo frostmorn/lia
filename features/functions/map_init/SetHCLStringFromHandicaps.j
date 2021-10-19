@@ -1,6 +1,6 @@
 #ifndef H_3620
 #define H_3620
-function rN takes nothing returns nothing
+function SetHCLStringFromHandicaps takes nothing returns nothing
 	local integer i
 	local integer j
 	local integer h
@@ -35,7 +35,7 @@ function rN takes nothing returns nothing
 			set v = h / 6
 			set h = h - v * 6
 			call SetPlayerHandicap(Player(i),1)
-			set V = V + SubString(iN,v,v + 1)
+			set HCLString = HCLString + SubString(iN,v,v + 1)
 		endif
 		set i = i + 1
 	endloop
