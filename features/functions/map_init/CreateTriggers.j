@@ -3,6 +3,7 @@
 #include "../../triggers/callbacks/heroes/destructor/OnDestructorAttack.j"
 #include "../../triggers/callbacks/heroes/destructor/OnDestructorAttacked.j"
 #include "../../triggers/callbacks/heroes/warrior_of_the_light/OnWarriorOfTheLightLearnedSkillWillOfTheLight.j"
+#include "../../triggers/callbacks/heroes/master_of_shadow/OnShadowReturnsToMaster.j"
 #include "../../triggers/callbacks/passive/OnMonsterKilled.j"
 #include "../../triggers/callbacks/artifacts/OnMithrilCast.j"
 #include "../../triggers/callbacks/chat/test_mode/EnableTestMode.j"
@@ -48,7 +49,7 @@ function CreateTriggers takes nothing returns nothing
 	set xn = CreateTrigger()
 	set RandomHeroCommandTrigger = CreateTrigger()
 	set XV = CreateTrigger()
-	set OV = CreateTrigger()
+	set ShadowReturnsToMasterTrigger = CreateTrigger()
 	set RV = CreateTrigger()
 	set IV = CreateTrigger()
 	set AV = CreateTrigger()
@@ -195,7 +196,7 @@ function CreateTriggers takes nothing returns nothing
 	call DisableTrigger(Ya)
 	call DisableTrigger(RandomHeroCommandTrigger)
 	call DisableTrigger(XV)
-	call DisableTrigger(OV)
+	call DisableTrigger(ShadowReturnsToMasterTrigger)
 	call DisableTrigger(RV)
 	call DisableTrigger(AV)
 	
@@ -265,7 +266,7 @@ function CreateTriggers takes nothing returns nothing
 	call TriggerAddAction(xn,function hf)
 	call TriggerAddAction(RandomHeroCommandTrigger,function RandomHeroCommandTriggerCallback)
 	call TriggerAddAction(XV,function Ch)
-	call TriggerAddAction(OV,function fh)
+	call TriggerAddAction(ShadowReturnsToMasterTrigger,function OnShadowReturnsToMasterCallback)
 	call TriggerAddAction(RV,function Gh)
 	call TriggerAddAction(IV,function Hh)
 	call TriggerAddAction(AV,function lh)
@@ -415,7 +416,7 @@ function CreateTriggers takes nothing returns nothing
 		call TriggerRegisterPlayerUnitEvent(en,Player(ED),EVENT_PLAYER_UNIT_SELL,null)
 		call TriggerRegisterPlayerUnitEvent(xn,Player(ED),EVENT_PLAYER_HERO_REVIVE_FINISH,null)
 		call TriggerRegisterPlayerUnitEvent(XV,Player(ED),EVENT_PLAYER_UNIT_DEATH,null)
-		call TriggerRegisterPlayerUnitEvent(OV,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
+		call TriggerRegisterPlayerUnitEvent(ShadowReturnsToMasterTrigger,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
 		call TriggerRegisterPlayerUnitEvent(RV,Player(ED),EVENT_PLAYER_UNIT_DEATH,null)
 		call TriggerRegisterPlayerUnitEvent(IV,Player(ED),EVENT_PLAYER_HERO_SKILL,null)
 		call TriggerRegisterPlayerUnitEvent(AV,Player(ED),EVENT_PLAYER_UNIT_SPELL_EFFECT,null)
@@ -553,7 +554,7 @@ function CreateTriggers takes nothing returns nothing
 	call TriggerAddCondition(Wa,Condition(function qD))
 	call TriggerAddCondition(en,Condition(function Df))
 	call TriggerAddCondition(XV,Condition(function Bh))
-	call TriggerAddCondition(OV,Condition(function Dh))
+	call TriggerAddCondition(ShadowReturnsToMasterTrigger,Condition(function IsShadowReturnsToMaster))
 	call TriggerAddCondition(RV,Condition(function gh))
 	call TriggerAddCondition(AV,Condition(function Jh))
 	call TriggerAddCondition(NV,Condition(function mh))

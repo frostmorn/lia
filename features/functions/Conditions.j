@@ -30,7 +30,7 @@ function Bh takes nothing returns boolean
 	return GetUnitTypeId(GetDyingUnit())=='E00E' and IsUnitIllusion(GetDyingUnit())==false
 endfunction
 	
-function Dh takes nothing returns boolean
+function IsShadowReturnsToMaster takes nothing returns boolean
 	// A0AR: Return to Master (Master of Shadow)
 	return GetSpellAbilityId()=='A0AR'
 endfunction

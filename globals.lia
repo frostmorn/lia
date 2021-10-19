@@ -842,7 +842,7 @@ globals
 	trigger oR = null
 	trigger OR = null
 	trigger oV = null
-	trigger OV = null
+	trigger ShadowReturnsToMasterTrigger = null
 	trigger oX = null
 	trigger OX = null
 	trigger Pa = null
