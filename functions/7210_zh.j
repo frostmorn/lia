@@ -9,7 +9,7 @@ function zh takes nothing returns nothing
     local location T
     local integer vH
     local integer rc
-    if VF==ue and GetUnitAbilityLevel(ed,'B027')> 0 and Xo < 3 + JN then
+    if VF==MasterOfShadowGlobalUnit and GetUnitAbilityLevel(ed,'B027')> 0 and Xo < 3 + JN then
         call TriggerSleepAction(.01)
         set p = GetOwningPlayer(VF)
         set vH = GetHeroLevel(VF)

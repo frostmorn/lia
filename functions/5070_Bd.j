@@ -3,7 +3,7 @@
 function Bd takes unit u returns nothing
 	local timer t = CreateTimer()
 	local integer dN = GetHandleId(t)
-	local unit cd = ue
+	local unit cd = MasterOfShadowGlobalUnit
 	local integer JN = GetUnitAbilityLevel(cd,'A0GP')
 	local effect e = AddSpecialEffectTarget("Abilities\\Spells\\Other\\HealingSpray\\HealBottleMissile.mdl",u,"head")
 	call UnitAddAbility(u,'A0BF')

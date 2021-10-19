@@ -1,5 +1,6 @@
 #ifndef H_4110
 #define H_4110
+#include "../features/triggers/callbacks/heroes/master_of_shadow/OnShadowReturnsToMaster.j"
 function aB takes nothing returns nothing
     local unit f
     local group g = CreateGroup()
@@ -7,7 +8,7 @@ function aB takes nothing returns nothing
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null
-        call rB(f)
+        call OnReturnToMaster(f)
         call GroupRemoveUnit(g,f)
     endloop
     call DestroyGroup(g)

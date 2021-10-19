@@ -45,8 +45,8 @@ function mh takes nothing returns boolean
 	return GetSpellAbilityId()=='A0BB'
 endfunction
 	
-function gh takes nothing returns boolean
-	return GetDyingUnit()==ue
+function IsMasterOfShadowGlobalUnitDying takes nothing returns boolean
+	return GetDyingUnit()==MasterOfShadowGlobalUnit
 endfunction
 
 function IsUnitAttackedByEnemy takes nothing returns boolean
@@ -58,8 +58,8 @@ function Uh takes nothing returns boolean
 	return IsUnitInGroup(GetDyingUnit(),Ue)
 endfunction
 	
-function eH takes nothing returns boolean
-	return GetAttacker()==ue and IsUnitAttackedByEnemy()
+function IsMasterOfShadowGlobalUnitAttack takes nothing returns boolean
+	return GetAttacker()==MasterOfShadowGlobalUnit and IsUnitAttackedByEnemy()
 endfunction
 	
 function Jl takes nothing returns boolean

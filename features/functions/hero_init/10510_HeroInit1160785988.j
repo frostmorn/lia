@@ -5,7 +5,7 @@ function HeroInit1160785988 takes nothing returns nothing
 	#if DEBUG_HERO_INITS
 	call DMesg("Custom E00D Мастер Теней(Даэлин) Таверна Воров(Низ) Initializing")
 	#endif
-	set ue = u
+	set MasterOfShadowGlobalUnit = u
 	set u = null
 endfunction
 
