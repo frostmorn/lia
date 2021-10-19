@@ -29,7 +29,6 @@ function CreateTriggers takes nothing returns nothing
 	local integer ED
 	local integer wN
 	local trigger trg11
-	set bj_stockItemPurchased = CreateTrigger()
 	set Pa = CreateTrigger()
 	set qa = CreateTrigger()
 	set Qa = CreateTrigger()
@@ -247,7 +246,6 @@ function CreateTriggers takes nothing returns nothing
 
 	call TriggerAddAction(OnWarriorOfTheLightLearnedSkillWillOfTheLight, function OnWarriorOfTheLightLearnedSkillWillOfTheLightCallback)
 	call TriggerAddAction(HomeRegenerationEnterTrig, function HomeRegenerationEnter)
-	call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
 	call TriggerAddAction(Pa,function xD)
 	call TriggerAddAction(Qa,function dD)
 	call TriggerAddAction(sa,function fD)
@@ -404,7 +402,6 @@ function CreateTriggers takes nothing returns nothing
 	call TriggerAddAction(nI,function et)
 	call TriggerAddAction(VI,function ot)
 	call TriggerAddAction(LastSelectedUnitTrigger, function LastSelectedUnitTriggerCallback)
-	call TriggerRegisterPlayerUnitEvent(bj_stockItemPurchased,Player(15),EVENT_PLAYER_UNIT_SELL_ITEM,null)
 	
 	set ED = 0
 	set wN = 16
