@@ -3,7 +3,7 @@
 #include "11750_MultiboardInit.j"
 function hB takes nothing returns nothing
     local integer In = 1
-    local integer vB = PlayersOnlineCount
+    local integer vB = OnlinePlayersCount
     set Vv = $8C
     set go = $8C
     loop

@@ -1,9 +1,9 @@
 #ifndef H_11750
 #define H_11750
 function MultiboardInit takes nothing returns nothing
-	set mv = R2I((I2R(PlayersOnlineCount)/ 2.))
-	set Mv =(PlayersOnlineCount - mv)
-	call CreateMultiboardBJ(10,(PlayersOnlineCount + 6),"Статистика")
+	set mv = R2I((I2R(OnlinePlayersCount)/ 2.))
+	set Mv =(OnlinePlayersCount - mv)
+	call CreateMultiboardBJ(10,(OnlinePlayersCount + 6),"Статистика")
 	set StatsBoard = bj_lastCreatedMultiboard
 	call MultiboardSetItemValueBJ(StatsBoard,0,0,I2S(0))
 	call MultiboardSetItemValueBJ(StatsBoard,8,0,("0.0%"))
@@ -32,7 +32,7 @@ function MultiboardInit takes nothing returns nothing
 		set bj_forLoopAIndex = bj_forLoopAIndex + 1
 	endloop
 	set bj_forLoopAIndex =(mv + 1)
-	set bj_forLoopAIndexEnd = PlayersOnlineCount
+	set bj_forLoopAIndexEnd = OnlinePlayersCount
 	loop
 		exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
 		call ForceAddPlayer(Tv,ae[bj_forLoopAIndex])
@@ -50,7 +50,7 @@ function MultiboardInit takes nothing returns nothing
 		set bj_forLoopAIndex = bj_forLoopAIndex + 1
 	endloop
 	set bj_forLoopAIndex = 1
-	set bj_forLoopAIndexEnd = PlayersOnlineCount
+	set bj_forLoopAIndexEnd = OnlinePlayersCount
 	loop
 		exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
 		call SetPlayerFlagBJ(PLAYER_STATE_GIVES_BOUNTY,true,ae[bj_forLoopAIndex])
@@ -82,13 +82,13 @@ function MultiboardInit takes nothing returns nothing
 		call MultiboardSetItemValueBJ(StatsBoard,1,(bj_forLoopAIndex +(3 + mv)),I2S(bj_forLoopAIndex))
 		set bj_forLoopAIndex = bj_forLoopAIndex + 1
 	endloop
-	call MultiboardSetItemValueBJ(StatsBoard,0,(PlayersOnlineCount + 6),"")
-	call MultiboardSetItemValueBJ(StatsBoard,0,(PlayersOnlineCount + 5),"")
-	call MultiboardSetItemValueBJ(StatsBoard,0,(PlayersOnlineCount + 4),"")
-	call MultiboardSetItemValueBJ(StatsBoard,3,(PlayersOnlineCount + 4),"|cffffcc00Payнд:")
-	call MultiboardSetItemValueBJ(StatsBoard,4,(PlayersOnlineCount + 4),I2S(1))
-	call MultiboardSetItemValueBJ(StatsBoard,3,(PlayersOnlineCount + 5),"|cffffcc00Вpeмя игpы:")
-	call MultiboardSetItemValueBJ(StatsBoard,3,(PlayersOnlineCount + 6),"|Cffff0000Мoд: |R")
+	call MultiboardSetItemValueBJ(StatsBoard,0,(OnlinePlayersCount + 6),"")
+	call MultiboardSetItemValueBJ(StatsBoard,0,(OnlinePlayersCount + 5),"")
+	call MultiboardSetItemValueBJ(StatsBoard,0,(OnlinePlayersCount + 4),"")
+	call MultiboardSetItemValueBJ(StatsBoard,3,(OnlinePlayersCount + 4),"|cffffcc00Payнд:")
+	call MultiboardSetItemValueBJ(StatsBoard,4,(OnlinePlayersCount + 4),I2S(1))
+	call MultiboardSetItemValueBJ(StatsBoard,3,(OnlinePlayersCount + 5),"|cffffcc00Вpeмя игpы:")
+	call MultiboardSetItemValueBJ(StatsBoard,3,(OnlinePlayersCount + 6),"|Cffff0000Мoд: |R")
 	call MultiboardSetItemStyleBJ(StatsBoard,0,0,true,false)
 	call MultiboardSetItemValueBJ(StatsBoard,7,2,"")
 	call MultiboardSetItemValueBJ(StatsBoard,8,2,"")

@@ -6,7 +6,7 @@
 #include "../functions/RoundStart.j"
 function PrepareBeforeRoundFunction takes nothing returns nothing
 	local integer In = 1
-	local integer wN = PlayersOnlineCount
+	local integer wN = OnlinePlayersCount
 	local integer index = 0
 	local real w
 	local integer BB
@@ -31,7 +31,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 	#if DI_CREEPS_KILLED
 	loop
 		if GetPlayerController(Player(PlayerIndex)) == MAP_CONTROL_USER and GetPlayerSlotState(Player(PlayerIndex)) == PLAYER_SLOT_STATE_PLAYING then
-			// U kidding me
+			// ScoreArr kidding me
 			call DMesg(GetPlayerName(Player(PlayerIndex))+ " creeps killed = " + I2S(CreepsKilledByPlayer[PlayerIndex + 1]))
 			call DMesg("ee[] array values " + I2S(ee[PlayerIndex + 1]))
 		endif
@@ -93,7 +93,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 		set NextWaveDuelBool = true
 		set Pe = true
 		call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"|cffffcc00Следующий раунд - Дуэль|R")
-		call MultiboardSetItemValueBJ(StatsBoard,4,PlayersOnlineCount + 2,"|cffffcc00Дуэль")
+		call MultiboardSetItemValueBJ(StatsBoard,4,OnlinePlayersCount + 2,"|cffffcc00Дуэль")
 		call TimerStart(Hd,30,false,function Cd)
 		set fN = CreateTimerDialog(Hd)
 		call SaveTimerDialogHandle(Ax,1,jd,fN)

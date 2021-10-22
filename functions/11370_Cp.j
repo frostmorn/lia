@@ -6,7 +6,7 @@ function Cp takes nothing returns nothing
     local integer i
     local integer In = 1
     local integer GB
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     local integer i1 = 0
     local integer i2 = 0
     local boolean dp = false

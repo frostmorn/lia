@@ -115,7 +115,7 @@ function main takes nothing returns nothing
 	loop
 		exitwhen(i > 8)
 		set D[i]= 0
-		set U[i]= 0
+		set ScoreArr[i]= 0
 		set CreepsKilledByPlayer[i]= 0
 		set vv[i]= 0
 		set ev[i]= 0

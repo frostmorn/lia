@@ -37,7 +37,7 @@ function kC takes nothing returns nothing
         endif
         set i = i + 1
     endloop
-    set PlayersOnlineCount = PlayersCount
+    set OnlinePlayersCount = PlayersCount
     set av = PlayersCount
     if PlayersCount==1 then
         call EnableTrigger(EnableTestModeTrigger)

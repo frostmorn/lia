@@ -4,7 +4,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 	local group g = CreateGroup()
 	local unit f
 	local integer In = 1
-	local integer wN = PlayersOnlineCount
+	local integer wN = OnlinePlayersCount
 	local unit array m
 	local player array p
 	local integer array l
@@ -48,7 +48,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 		exitwhen In > 7
 		if GetPlayerSlotState(Player(In))!=PLAYER_SLOT_STATE_LEFT then
 			call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00ВЫ ПОБЕДИЛИ!!!")
-			call SendStatsToBot(I2S(In),U[ee[In + 1]])
+			call SendStatsToBot(I2S(In),ScoreArr[ee[In + 1]])
 		endif
 		set In = In + 1
 	endloop
@@ -94,7 +94,7 @@ function EOG_PlayersWinSurviveMode takes nothing returns nothing
 		call UnitRemoveBuffsBJ(2,m[In])
 		if l[In]!=0 then
 			call ShowTextTagForceBJ(true,CreateTextTagLocBJ(Zv[ec[In]],GetRectCenter(r[In]),170.,11.5,100.,50.,50.,0),bj_FORCE_ALL_PLAYERS)
-			call ShowTextTagForceBJ(true,CreateTextTagLocBJ(("Рейтинг " + I2S(U[l[In]])),GetRectCenter(r[In]),140.,11.,80.,'d',40.,0),bj_FORCE_ALL_PLAYERS)
+			call ShowTextTagForceBJ(true,CreateTextTagLocBJ(("Рейтинг " + I2S(ScoreArr[l[In]])),GetRectCenter(r[In]),140.,11.,80.,'d',40.,0),bj_FORCE_ALL_PLAYERS)
 		endif
 		set In = In + 1
 	endloop

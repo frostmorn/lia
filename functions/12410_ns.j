@@ -4,7 +4,7 @@
 function ns takes nothing returns nothing
     local player p = GetTriggerPlayer()
     local integer In = 1
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     local integer n = 0
     if fe then
         call DisplayTextToPlayer(p,0,0,"|Cffff0000Функция временно не доступна.")

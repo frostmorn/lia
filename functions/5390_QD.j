@@ -2,7 +2,7 @@
 #define H_5390
 function QD takes nothing returns nothing
     local integer In = 1
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     loop
         exitwhen In > wN
         call SetPlayerState(ae[In],PLAYER_STATE_RESOURCE_GOLD,GetPlayerState(ae[In],PLAYER_STATE_RESOURCE_GOLD)+ 1)

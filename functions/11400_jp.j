@@ -1,7 +1,7 @@
 #ifndef H_11400
 #define H_11400
 function jp takes nothing returns nothing
-    call CreateMultiboardBJ(9,(PlayersOnlineCount + 4),"Cтaтиcтикa")
+    call CreateMultiboardBJ(9,(OnlinePlayersCount + 4),"Cтaтиcтикa")
     set StatsBoard = bj_lastCreatedMultiboard
     call MultiboardSetItemValueBJ(StatsBoard,0,0,I2S(0))
     call MultiboardSetItemValueBJ(StatsBoard,7,0,("0.0%"))
@@ -12,7 +12,7 @@ function jp takes nothing returns nothing
     call MultiboardSetItemWidthBJ(StatsBoard,2,0,1.5)
     call MultiboardSetItemWidthBJ(StatsBoard,3,0,10.)
     set bj_forLoopAIndex = 1
-    set bj_forLoopAIndexEnd = PlayersOnlineCount
+    set bj_forLoopAIndexEnd = OnlinePlayersCount
     loop
         exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
         call MultiboardSetItemValueBJ(StatsBoard,3,(bj_forLoopAIndex + 1),GetPlayerName(Player(- 1 +(D[bj_forLoopAIndex]))))
@@ -35,24 +35,24 @@ function jp takes nothing returns nothing
     call MultiboardSetItemWidthBJ(StatsBoard,7,0,7.5)
     call MultiboardSetItemWidthBJ(StatsBoard,9,0,7.5)
     set bj_forLoopAIndex = 1
-    set bj_forLoopAIndexEnd =(PlayersOnlineCount + 2)
+    set bj_forLoopAIndexEnd =(OnlinePlayersCount + 2)
     loop
         exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
         call MultiboardSetItemValueBJ(StatsBoard,1,(bj_forLoopAIndex + 1),I2S(bj_forLoopAIndex))
         set bj_forLoopAIndex = bj_forLoopAIndex + 1
     endloop
-    call MultiboardSetItemValueBJ(StatsBoard,0,(PlayersOnlineCount + 3),"")
-    call MultiboardSetItemValueBJ(StatsBoard,0,(PlayersOnlineCount + 2),"")
-    call MultiboardSetItemValueBJ(StatsBoard,0,(PlayersOnlineCount + 4),"")
-    call MultiboardSetItemValueBJ(StatsBoard,3,(PlayersOnlineCount + 2),"|cffffcc00Вoлнa:")
-    call MultiboardSetItemValueBJ(StatsBoard,4,(PlayersOnlineCount + 2),("|cffffcc00" +("1" +(" [ " +(wave_small_descriptions[1]+ " ]")))))
-    call MultiboardSetItemValueBJ(StatsBoard,3,(PlayersOnlineCount + 3),"|cffffcc00Вpeмя игpы:")
-    call MultiboardSetItemValueBJ(StatsBoard,3,(PlayersOnlineCount + 4),"|Cffff0000Мoд: |R")
-    call MultiboardSetItemWidthBJ(StatsBoard,4,(PlayersOnlineCount + 2),25.)
-    call MultiboardSetItemWidthBJ(StatsBoard,4,(PlayersOnlineCount + 4),25.)
+    call MultiboardSetItemValueBJ(StatsBoard,0,(OnlinePlayersCount + 3),"")
+    call MultiboardSetItemValueBJ(StatsBoard,0,(OnlinePlayersCount + 2),"")
+    call MultiboardSetItemValueBJ(StatsBoard,0,(OnlinePlayersCount + 4),"")
+    call MultiboardSetItemValueBJ(StatsBoard,3,(OnlinePlayersCount + 2),"|cffffcc00Вoлнa:")
+    call MultiboardSetItemValueBJ(StatsBoard,4,(OnlinePlayersCount + 2),("|cffffcc00" +("1" +(" [ " +(wave_small_descriptions[1]+ " ]")))))
+    call MultiboardSetItemValueBJ(StatsBoard,3,(OnlinePlayersCount + 3),"|cffffcc00Вpeмя игpы:")
+    call MultiboardSetItemValueBJ(StatsBoard,3,(OnlinePlayersCount + 4),"|Cffff0000Мoд: |R")
+    call MultiboardSetItemWidthBJ(StatsBoard,4,(OnlinePlayersCount + 2),25.)
+    call MultiboardSetItemWidthBJ(StatsBoard,4,(OnlinePlayersCount + 4),25.)
     call MultiboardSetItemStyleBJ(StatsBoard,0,0,true,false)
     set bj_forLoopAIndex = 1
-    set bj_forLoopAIndexEnd = PlayersOnlineCount
+    set bj_forLoopAIndexEnd = OnlinePlayersCount
     loop
         exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
         call MultiboardSetItemStyleBJ(StatsBoard,2,(bj_forLoopAIndex + 1),false,true)

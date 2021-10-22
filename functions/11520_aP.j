@@ -2,7 +2,7 @@
 #define H_11520
 function aP takes nothing returns nothing
     local integer In = 1
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     local unit f
     local timer t = CreateTimer()
     local timer Gd = CreateTimer()

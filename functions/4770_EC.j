@@ -9,7 +9,7 @@ function EC takes nothing returns nothing
     call DMesg("Entering EC")
     #endif
     loop
-        exitwhen In > PlayersOnlineCount
+        exitwhen In > OnlinePlayersCount
         set g = CreateGroup()
         set g = GetUnitsOfPlayerAll(ae[In])
         call SelectUnitForPlayerSingle(PlayersHeroArray[In],ae[In])

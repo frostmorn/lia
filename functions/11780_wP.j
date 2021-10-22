@@ -12,7 +12,7 @@ function wP takes nothing returns nothing
     set Sv = 0
     loop
         exitwhen In > WP
-        set sv = sv + U[In]
+        set sv = sv + ScoreArr[In]
         set YP = YP + CreepsKilledByPlayer[In]
         set zP = zP + vv[In]    // Boss count
         set ZP = ZP + Qv[In]
@@ -34,10 +34,10 @@ function wP takes nothing returns nothing
     set ZP = 0
     set vq = 0
     set In = WP + 1
-    set yP = PlayersOnlineCount
+    set yP = OnlinePlayersCount
     loop
         exitwhen In > yP
-        set Sv = Sv + U[In]
+        set Sv = Sv + ScoreArr[In]
         set YP = YP + CreepsKilledByPlayer[In]
         set zP = zP + vv[In]
         set ZP = ZP + Qv[In]

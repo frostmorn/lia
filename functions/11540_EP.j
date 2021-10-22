@@ -6,7 +6,7 @@ function EP takes nothing returns nothing
     local timer tt = CreateTimer()
     local timerdialog d = LoadTimerDialogHandle(Ax,1,dN)
     local integer In = 1
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     set qv = false
     call DisableTrigger(ZO)
     call DisableTrigger(eR)

@@ -24,7 +24,7 @@ function HP takes nothing returns nothing
         set ux = null
         call DisableTrigger(TO)
         set t = 1
-        set wN = PlayersOnlineCount
+        set wN = OnlinePlayersCount
         call DisableTrigger(cR)
         loop
             exitwhen t > wN

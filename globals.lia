@@ -222,7 +222,7 @@ globals
 	hashtable HashData = InitHashtable()
 	hashtable TableBr__ht = InitHashtable()
 	hashtable Table__ht = InitHashtable()
-	integer PlayersOnlineCount = 0	// Possible players count(online?)
+	integer OnlinePlayersCount = 0	// Possible players count(online?)
 	integer Ae = 0
 	integer array Ao
 	integer array arrayTreeTypes
@@ -262,7 +262,7 @@ globals
 	integer array StatMod___ABILITY_ATTACKSPEED
 	integer array StatMod___ABILITY_DAMAGE
 	integer array StatMod___SIZE
-	integer array U
+	integer array ScoreArr	// Index => PlayerID (from zero) , value = score points for player
 	integer array udg_LastDmgPrevType
 	integer array udg_UDexNext
 	integer array udg_UDexPrev

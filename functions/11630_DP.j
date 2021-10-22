@@ -3,7 +3,7 @@
 function DP takes nothing returns nothing
 	local timer t = GetExpiredTimer()
 	local integer In = 1
-	local integer vB = PlayersOnlineCount
+	local integer vB = OnlinePlayersCount
 	local group g = CreateGroup()
 	local integer n = 0
 	local integer n2 = 0

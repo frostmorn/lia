@@ -27,7 +27,7 @@ function xB takes nothing returns nothing
         exitwhen In > 7
         if GetPlayerSlotState(Player(In))!=PLAYER_SLOT_STATE_LEFT then
             call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00ВЫ ПРОИГРАЛИ!!! ВСЕ ГЛАДИАТОРЫ УБИТЫ!!!")
-            call SendStatsToBot(I2S(In),U[ee[In + 1]])
+            call SendStatsToBot(I2S(In),ScoreArr[ee[In + 1]])
         endif
         set In = In + 1
     endloop

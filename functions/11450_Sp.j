@@ -8,15 +8,15 @@ function Sp takes nothing returns nothing
 	endif
 	if xv < 10 then
 		if no or Wx then
-			call MultiboardSetItemValueBJ(StatsBoard,4,(PlayersOnlineCount + 5),(I2S(ov)+(":" +("0" + I2S(xv)))))
+			call MultiboardSetItemValueBJ(StatsBoard,4,(OnlinePlayersCount + 5),(I2S(ov)+(":" +("0" + I2S(xv)))))
 		else
-			call MultiboardSetItemValueBJ(StatsBoard,4,(PlayersOnlineCount + 3),(I2S(ov)+(":" +("0" + I2S(xv)))))
+			call MultiboardSetItemValueBJ(StatsBoard,4,(OnlinePlayersCount + 3),(I2S(ov)+(":" +("0" + I2S(xv)))))
 		endif
 	else
 		if no or Wx then
-			call MultiboardSetItemValueBJ(StatsBoard,4,(PlayersOnlineCount + 5),(I2S(ov)+(":" + I2S(xv))))
+			call MultiboardSetItemValueBJ(StatsBoard,4,(OnlinePlayersCount + 5),(I2S(ov)+(":" + I2S(xv))))
 		else
-			call MultiboardSetItemValueBJ(StatsBoard,4,(PlayersOnlineCount + 3),(I2S(ov)+(":" + I2S(xv))))
+			call MultiboardSetItemValueBJ(StatsBoard,4,(OnlinePlayersCount + 3),(I2S(ov)+(":" + I2S(xv))))
 		endif
 	endif
 endfunction

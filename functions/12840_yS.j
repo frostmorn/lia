@@ -7,7 +7,7 @@ function yS takes nothing returns nothing
 	local integer In = 1
 	local integer RN = GetPlayerId(p)
 	set I[RN]= true
-	call SendStatsToBot(I2S(RN),U[ee[RN + 1]])
+	call SendStatsToBot(I2S(RN),ScoreArr[ee[RN + 1]])
 	if av==2 then
 		call bN()
 	endif

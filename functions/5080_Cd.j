@@ -6,7 +6,7 @@ function Cd takes nothing returns nothing
     local timerdialog d = LoadTimerDialogHandle(Ax,1,dN)
     local integer i1 = kB()
     local integer i2 = kB()
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     local group g = CreateGroup()
     local integer ic
     local unit f

@@ -2,7 +2,7 @@
 #define H_4280
 function kB takes nothing returns integer
 	local integer In = 1
-	local integer wN = PlayersOnlineCount
+	local integer wN = OnlinePlayersCount
 	local player p
 	loop
 		exitwhen In > wN

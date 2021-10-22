@@ -2,7 +2,7 @@
 #define H_11500
 #include "12850_zS.j"
 function PrepareBeforeBRoundTriggerCallback takes nothing returns nothing
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     local integer bB = av
     local integer NB = 15
     local timerdialog oP

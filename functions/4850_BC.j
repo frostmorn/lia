@@ -14,7 +14,7 @@ function BC takes integer cC returns real
 	if(Qb==1)then
 		set rs = 500
 	elseif(Qb==2)then
-		set rs = $3E8
+		set rs = 1000
 	elseif(Qb==3)then
 		set rs = $7D0
 	endif

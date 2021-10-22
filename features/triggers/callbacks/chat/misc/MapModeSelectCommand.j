@@ -30,7 +30,7 @@ function MapModeSelectCommandTriggerCallback takes nothing returns nothing
 	local boolean Cf = false
 	local boolean d
 	local boolean d2
-	local integer wN = PlayersOnlineCount
+	local integer wN = OnlinePlayersCount
 	local location sb
 	if gMapMode=="" then
 		set s = GetEventPlayerChatString()

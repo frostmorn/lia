@@ -3,7 +3,7 @@
 function Ac takes nothing returns nothing
     local timer t = CreateTimer()
     local integer dN = GetHandleId(t)
-    local integer wN = PlayersOnlineCount
+    local integer wN = OnlinePlayersCount
     call SaveInteger(Ax,1,dN,1)
     call SaveInteger(Ax,2,dN,wN)
     call TimerStart(t,1.25,true,function Oc)

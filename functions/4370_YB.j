@@ -4,7 +4,7 @@ function YB takes nothing returns nothing
     local integer N = 0
     local integer In = 1
     loop
-        exitwhen In > PlayersOnlineCount
+        exitwhen In > OnlinePlayersCount
         if GetPlayerController(ae[In])==MAP_CONTROL_USER then
             set N = N + 1
             set Ix[N]= ae[In]

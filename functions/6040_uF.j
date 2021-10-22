@@ -10,7 +10,7 @@ function uF takes nothing returns nothing
 	local player p = GetOwningPlayer(u)
 	local timer t
 	local integer dN
-	call GroupEnumUnitsInRangeOfLoc(g,L,$3E8,null)
+	call GroupEnumUnitsInRangeOfLoc(g,L,1000,null)
 	call RemoveLocation(L)
 	loop
 		set f = FirstOfGroup(g)

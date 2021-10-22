@@ -3,7 +3,7 @@
 #include "11750_MultiboardInit.j"
 function gB takes nothing returns nothing
 	local integer In = 1
-	local integer vB = PlayersOnlineCount
+	local integer vB = OnlinePlayersCount
 	local integer GB = 0
 	loop
 		exitwhen GB > 7
