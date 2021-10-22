@@ -1,5 +1,6 @@
 #ifndef H_11430
 #define H_11430
+#include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function Mp takes nothing returns nothing
 	local unit u = GetDyingUnit()
 	local unit IF = GetKillingUnit()
@@ -13,7 +14,7 @@ function Mp takes nothing returns nothing
 			call LB()
 		endif
 		if Ex then
-			call TriggerExecute(mO)
+			call SetPlayerScore_StatsUpdate()
 		endif
 	endif
 	set u = null

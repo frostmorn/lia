@@ -1,5 +1,6 @@
 #ifndef H_4430
 #define H_4430
+#include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function nc takes player p returns nothing
 	local integer rc =- 1
 	local integer Vc
@@ -62,7 +63,7 @@ function nc takes player p returns nothing
 		call LB()
 	endif
 	if Ex then
-		call TriggerExecute(mO)
+		call SetPlayerScore_StatsUpdate()
 	endif
 	set it[1]= null
 	set it[2]= null

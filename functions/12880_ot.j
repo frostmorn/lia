@@ -1,6 +1,7 @@
 #ifndef H_12880
 #define H_12880
 #include "../features/functions/Conditions.j"
+#include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function ot takes nothing returns nothing
 	local unit dy = GetDyingUnit()
 	local integer Bc =(LoadInteger(HashData,GetHandleId((dy)),StringHash("SuperData:Int")))
@@ -16,7 +17,7 @@ function ot takes nothing returns nothing
 				call xB()
 			endif
 			call lb()
-			call TriggerExecute(mO)
+			call SetPlayerScore_StatsUpdate()
 		endif
 		if no or Wx then
 			set HeroInGameAndAliveARRAY[Bc]= false

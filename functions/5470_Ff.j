@@ -1,5 +1,6 @@
 #ifndef H_5470
 #define H_5470
+#include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function Ff takes nothing returns nothing
     local unit TB = GetSoldUnit()
     local unit gf = GetSellingUnit()
@@ -43,7 +44,7 @@ function Ff takes nothing returns nothing
             call LB()
         endif
         if Ex then
-            call TriggerExecute(mO)
+            call SetPlayerScore_StatsUpdate()
         endif
     endif
     set TB = null

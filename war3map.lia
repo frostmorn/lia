@@ -1090,11 +1090,10 @@
 #include "functions/11390_hp.j"
 #include "functions/11400_jp.j"
 #include "functions/11410_kp.j"
-#include "functions/11420_lp.j"
 #include "functions/11430_Mp.j"
 #include "functions/11440_qp.j"
 #include "functions/11450_Sp.j"
-#include "functions/11460_Tp.j"
+
 
 // Default Fast Start trigger function.
 // Non-needed

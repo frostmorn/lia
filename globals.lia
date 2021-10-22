@@ -809,7 +809,7 @@ globals
 	trigger ME = null
 	trigger mn = null
 	trigger Mn = null
-	trigger mO = null
+
 	trigger mR = null
 	trigger MR = null
 	trigger mV = null

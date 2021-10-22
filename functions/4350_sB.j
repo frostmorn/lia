@@ -1,5 +1,6 @@
 #ifndef H_4350
 #define H_4350
+#include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function sB takes player p1,player p2 returns nothing
     local integer SB = ee[(1 + GetPlayerId(p1))]
     local integer tB = ee[(1 + GetPlayerId(p2))]
@@ -34,7 +35,7 @@ function sB takes player p1,player p2 returns nothing
     call SelectUnitForPlayerSingle(u1,p2)
     call SelectUnitForPlayerSingle(u2,p1)
     if Ex then
-        call TriggerExecute(mO)
+        call SetPlayerScore_StatsUpdate()
     endif
     if no or Wx then
         call LB()

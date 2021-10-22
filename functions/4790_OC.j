@@ -1,6 +1,7 @@
 #ifndef H_4790
 #define H_4790
 #include "../features/functions/Conditions.j"
+#include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function OC takes player p returns nothing
     local string RC = GetPlayerName(p)
     local integer ec = ee[GetPlayerId(p)+ 1]
@@ -93,7 +94,7 @@ function OC takes player p returns nothing
         call LB()
     endif
     if Ex then
-        call TriggerExecute(mO)
+        call SetPlayerScore_StatsUpdate()
     endif
     set g = null
     set RC = null
