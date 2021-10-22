@@ -74,14 +74,14 @@ function AD takes nothing returns nothing
     call ItemPoolAddItemType(LI,'I07I',1)
     call ItemPoolAddItemType(LI,'lmbr',.5)
     call ItemPoolAddItemType(LI,'rspl',1)
-    set HI[0]= "|c00ff0303"
-    set HI[1]= "|c000042ff"
-    set HI[2]= "|c001ce6b9"
-    set HI[3]= "|c00540081"
-    set HI[4]= "|c00fffc01"
-    set HI[5]= "|c00ff8000"
-    set HI[6]= "|c0020c000"
-    set HI[7]= "|c00e55bb0"
+    set PlayerColorArr[0]= "|c00ff0303"
+    set PlayerColorArr[1]= "|c000042ff"
+    set PlayerColorArr[2]= "|c001ce6b9"
+    set PlayerColorArr[3]= "|c00540081"
+    set PlayerColorArr[4]= "|c00fffc01"
+    set PlayerColorArr[5]= "|c00ff8000"
+    set PlayerColorArr[6]= "|c0020c000"
+    set PlayerColorArr[7]= "|c00e55bb0"
     set JI = CreateGroup()
     set t = null
     set ND = null

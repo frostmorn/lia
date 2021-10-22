@@ -27,7 +27,7 @@ function Oj takes nothing returns nothing
 		set f = FirstOfGroup(g2)
 		exitwhen f==null
 		set DamageTypeAttack = false
-		call UnitDamageTarget(uA,f,$96 * JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
+		call UnitDamageTarget(uA,f,150 * JN,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
 		set DamageTypeAttack = true
 		call GroupRemoveUnit(g2,f)
 	endloop

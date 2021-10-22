@@ -574,7 +574,7 @@ globals
 	region BigArena = null
 	// sound gg_snd_audio_2020_01_11_07_16_27_1=null
 	string array aA
-	string array HI
+	string array PlayerColorArr
 	string array wave_small_descriptions
 	string array Xx
 	string array Zv
@@ -672,7 +672,7 @@ globals
 	trigger FV = null
 	trigger fX = null
 	trigger FX = null
-	trigger GeneralAttackedTrigger = null
+	trigger GeneralAttacksTrigger = null
 	trigger gE = null
 	trigger GE = null
 	trigger gg_trg_AimedShot = null
@@ -773,7 +773,6 @@ globals
 	trigger jE = null
 	trigger JE = null
 	trigger Jn = null
-	trigger jO = null
 	trigger JO = null
 	trigger CLSCommandTrigger = null
 	trigger EnableTestModeTrigger = null
@@ -886,7 +885,6 @@ globals
 	trigger RV = null
 	trigger rX = null
 	trigger RX = null
-	trigger sa = null
 	trigger Sa = null
 	trigger sE = null
 	trigger SE = null

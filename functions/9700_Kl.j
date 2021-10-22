@@ -23,7 +23,7 @@ function Kl takes nothing returns nothing
                 call TimerStart(ml,1,false,function kl)
                 call SaveEffectHandle(Ax,GetHandleId(ml),0,fx)
                 set DamageTypeAttack = false
-                call UnitDamageTarget(u,f,$96 * .5,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
+                call UnitDamageTarget(u,f,150 * .5,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
                 set DamageTypeAttack = true
             endif
             call GroupRemoveUnit(JI,f)

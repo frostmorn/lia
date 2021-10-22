@@ -32,20 +32,20 @@ function ud takes player Ud returns nothing
         endif
         set i = i + 1
     endloop
-    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,15.,HI[GetPlayerId(Ud)]+ GetPlayerName(Ud)+ "|r сделал последний удар.")
+    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,15.,PlayerColorArr[GetPlayerId(Ud)]+ GetPlayerName(Ud)+ "|r сделал последний удар.")
     if nA[GetPlayerId(GetLocalPlayer())]> .0 then
         call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,16.,"Вы нанесли " + I2S(R2I(nA[GetPlayerId(GetLocalPlayer())]))+ " ед. урона (" + I2S(R2I(Yd[GetPlayerId(GetLocalPlayer())]))+ "%).")
     else
         call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,16.,"Вы не нанесли урона босу.")
     endif
-    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,18.,"Больше всех урона: " + HI[wd]+ GetPlayerName(Player(wd))+ "|r - " + I2S(R2I(nA[wd]))+ " ед. (" + I2S(R2I(Yd[wd]))+ "%).")
-    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,20.,"Меньше всех урона: " + HI[Wd]+ GetPlayerName(Player(Wd))+ "|r - " + I2S(R2I(nA[Wd]))+ " ед. (" + I2S(R2I(Yd[Wd]))+ "%).")
+    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,18.,"Больше всех урона: " + PlayerColorArr[wd]+ GetPlayerName(Player(wd))+ "|r - " + I2S(R2I(nA[wd]))+ " ед. (" + I2S(R2I(Yd[wd]))+ "%).")
+    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,20.,"Меньше всех урона: " + PlayerColorArr[Wd]+ GetPlayerName(Player(Wd))+ "|r - " + I2S(R2I(nA[Wd]))+ " ед. (" + I2S(R2I(Yd[Wd]))+ "%).")
     if VA[GetPlayerId(GetLocalPlayer())]> .0 then
         call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,22.,"Вы получили " + I2S(R2I(VA[GetPlayerId(GetLocalPlayer())]))+ " ед. урона.")
     else
         call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,22.,"Вы не получили урона.")
     endif
-    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,23.,"Лучший танк: " + HI[yd]+ GetPlayerName(Player(yd))+ "|r - " + I2S(R2I(VA[yd]))+ " ед. урона.")
+    call DisplayTimedTextToPlayer(GetLocalPlayer(),.0,.0,23.,"Лучший танк: " + PlayerColorArr[yd]+ GetPlayerName(Player(yd))+ "|r - " + I2S(R2I(VA[yd]))+ " ед. урона.")
     set nA[0]= 0
     set nA[1]= 0
     set nA[2]= 0

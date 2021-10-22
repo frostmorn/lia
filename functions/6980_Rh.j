@@ -18,7 +18,7 @@ function Rh takes nothing returns nothing
         set Ih =(2 * JN + 4)* ix
         set g = CreateGroup()
         set T = GetUnitLoc(ed)
-        call GroupEnumUnitsInRangeOfLoc(g,T,$96,null)
+        call GroupEnumUnitsInRangeOfLoc(g,T,150,null)
         call RemoveLocation(T)
         call SetWidgetLife(VF,GetWidgetLife(VF)+ Ih)
         call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\VampiricAura\\VampiricAuraTarget.mdl",VF,"origin"))

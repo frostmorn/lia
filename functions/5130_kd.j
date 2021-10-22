@@ -3,17 +3,18 @@
 
 #include "../features/Debug.j"
 #include "../features/functions/PrepareBeforeRound.j"
-
+#include "../features/functions/map_init/InitCreepsData.j"
+#include "../features/functions/misc/MultiboardInit.j"
 function kd takes nothing returns nothing
 	local integer re = av
 	set Ex = true
-	set Vv = $96
-	call TriggerExecute(sa)
+	set Vv = 150
+	call InitCreepsData()
 	call PrepareBeforeRoundFunction()
 	#if DI_PREPARE_BEFORE_ROUND_CALLS
 	call DMesg("Call PrepareBeforeRoundFunction from 5130")
 	#endif
-	call TriggerExecute(jO)
+	call MultiboardInit()
 endfunction
 
 #endif

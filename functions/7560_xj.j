@@ -24,7 +24,7 @@ function xj takes nothing returns nothing
         if JN==1 then
             if sp then
                 set oj = $FA
-                set DC = $96
+                set DC = 150
             else
                 set oj = 'd'
                 set DC = 60
@@ -35,7 +35,7 @@ function xj takes nothing returns nothing
                 set DC = 300
             else
                 set oj = 300
-                set DC = $96
+                set DC = 150
             endif
         endif
     endif

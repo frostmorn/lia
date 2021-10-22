@@ -19,7 +19,7 @@ function MapModeTryAutoSelect takes nothing returns nothing
 			endloop
 		endif
 		if GetLocalPlayer()!=mI then
-			call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,"Игрок " + HI[GetPlayerId(mI)]+ GetPlayerName(mI)+ "|R определит мод.")
+			call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,"Игрок " + PlayerColorArr[GetPlayerId(mI)]+ GetPlayerName(mI)+ "|R определит мод.")
 		endif
 		call DisplayTextToPlayer(mI,0,0,"|Cffdd0303У вас есть 10 секунд чтобы выбрать режим игры.|R")
 		call TriggerRegisterPlayerChatEvent(MapModeSelectCommandTrigger,mI,"-",false)

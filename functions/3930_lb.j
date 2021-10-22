@@ -48,7 +48,7 @@ function lb takes nothing returns nothing
             set mb = 'x'
         endif
         if Lb==4 then
-            set mb = $8C
+            set mb = 140
         endif
         if Lb==5 then
             set mb = $91

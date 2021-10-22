@@ -21,7 +21,7 @@ function tJ takes nothing returns nothing
 	if In > vB or IsUnitDead(uA) then
 		call DestroyTimer(t)
 	else
-		set r = $96
+		set r = 150
 		set JN = GetUnitAbilityLevel(uA,'A0D0')
 		set DC = GetUnitState(uA,UNIT_STATE_MANA)*(.05 + .05 * JN)
 		set p = GetOwningPlayer(uA)

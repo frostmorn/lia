@@ -14,7 +14,7 @@ function zK takes nothing returns nothing
         set JN = GetUnitAbilityLevel(uA,Id)
         set p = GetOwningPlayer(uA)
         set g = CreateGroup()
-        call GroupEnumUnitsInRangeOfLoc(g,T,$8C + 25. * JN,null)
+        call GroupEnumUnitsInRangeOfLoc(g,T,140 + 25. * JN,null)
         call RemoveLocation(T)
         loop
             set f = FirstOfGroup(g)

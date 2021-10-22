@@ -7,7 +7,7 @@ function vc takes unit cB,player p returns nothing
     local integer ss = ZB(TB)
     local integer ec = ee[GetPlayerId(p)+ 1]
     call SetUnitOwner(TB,p,true)
-    call DisplayTextToPlayer(GetLocalPlayer(),0,0,"Игроку " + HI[GetPlayerId(p)]+ GetPlayerName(p)+ "|R случайно выпал(а) |c00808080" + GetUnitName(TB)+ "|R")
+    call DisplayTextToPlayer(GetLocalPlayer(),0,0,"Игроку " + PlayerColorArr[GetPlayerId(p)]+ GetPlayerName(p)+ "|R случайно выпал(а) |c00808080" + GetUnitName(TB)+ "|R")
     loop
         exitwhen In > OnlinePlayersCount
         if GetOwningPlayer(TB)==ae[In]then

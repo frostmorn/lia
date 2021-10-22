@@ -47,7 +47,7 @@ function Yk takes nothing returns nothing
             call TimerStart(t,.03,true,function Wk)
         else
             if IsUnitAlly(u,GetOwningPlayer(C))and IsUnitAlive(u) then
-                call SetWidgetLife(u,GetWidgetLife(u)+ $96 * JN)
+                call SetWidgetLife(u,GetWidgetLife(u)+ 150 * JN)
                 set e = AddSpecialEffectTarget("Abilities\\Spells\\Human\\Heal\\HealTarget.mdl",u,"origin")
                 set te = CreateTimer()
                 set Dg = GetHandleId(te)
