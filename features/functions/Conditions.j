@@ -246,4 +246,8 @@ function IsMithrilCast takes nothing returns boolean
 	return GetSpellAbilityId() == 'A0EZ'
 endfunction
 
+function IsGeneralAttackedByEnemy takes nothing returns boolean
+	return GetAttacker()==GeneralUnit and IsUnitEnemy(GetTriggerUnit(),GetOwningPlayer(GetAttacker()))
+endfunction
+
 #endif

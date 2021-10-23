@@ -672,7 +672,7 @@ globals
 	trigger FV = null
 	trigger fX = null
 	trigger FX = null
-	trigger GeneralAttacksTrigger = null
+	trigger GeneralAttackTrigger = null
 	trigger gE = null
 	trigger GE = null
 	trigger gg_trg_AimedShot = null

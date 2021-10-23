@@ -754,8 +754,6 @@
 #include "functions/7710_cj.j"
 #include "functions/7720_Cj.j"
 #include "functions/7730_Dj.j"
-#include "functions/7750_Fj.j"
-#include "functions/7760_gj.j"
 #include "functions/7770_Gj.j"
 #include "functions/7780_hj.j"
 #include "functions/7790_Hj.j"

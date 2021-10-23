@@ -5,6 +5,7 @@
 #define DI_ROUNDSTART 1
 #define DI_BEFOREROUND_TRIGGERS 1 
 #define DI_ESSENCE_OF_SHADOW 1
+#define DI_GENERAL_PASSIVE_SPELL 1
 #define D_8760 1
 #define DI_INGAME_B_STATS 1	// Stats -b mode
 #define DI_CREEPS_KILLED 1
