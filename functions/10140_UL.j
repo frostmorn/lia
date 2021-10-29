@@ -1,5 +1,6 @@
 #ifndef H_10140
 #define H_10140
+#include "../features/functions/Conditions.j"
 function UL takes nothing returns nothing
 	local group g = CreateGroup()
 	local real r

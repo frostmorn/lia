@@ -1,5 +1,6 @@
 #ifndef H_10050
 #define H_10050
+#include "../features/functions/Conditions.j"
 function kL takes nothing returns nothing
 	local group g = CreateGroup()
 	local unit f

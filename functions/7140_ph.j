@@ -1,5 +1,6 @@
 #ifndef H_7140
 #define H_7140
+#include "../features/functions/Conditions.j"
 function ph takes nothing returns nothing
     local unit Ph = GetSpellAbilityUnit()
     local location qh = GetSpellTargetLoc()

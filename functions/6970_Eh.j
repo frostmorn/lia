@@ -1,5 +1,6 @@
 #ifndef H_6970
 #define H_6970
+#include "../features/functions/Conditions.j"
 function Eh takes nothing returns nothing
 	local unit u = GetSpellAbilityUnit()
 	local group g = CreateGroup()
