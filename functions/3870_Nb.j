@@ -1,5 +1,6 @@
 #ifndef H_3870
 #define H_3870
+#include "../features/functions/Conditions.j"
 function Nb takes nothing returns nothing
 	local timer t
 	local integer pN = GetHandleId(jo)

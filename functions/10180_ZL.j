@@ -1,5 +1,6 @@
 #ifndef H_10180
 #define H_10180
+#include "../features/functions/Conditions.j"
 function ZL takes nothing returns nothing
     local group g1 = CreateGroup()
     local group g2 = CreateGroup()

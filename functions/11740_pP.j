@@ -1,5 +1,6 @@
 #ifndef H_11740
 #define H_11740
+#include "../features/functions/Conditions.j"
 function pP takes nothing returns nothing
 	local integer In = 1
 	local integer wN = OnlinePlayersCount

@@ -1,5 +1,6 @@
 #ifndef H_6270
 #define H_6270
+#include "../features/functions/Conditions.j"
 function dg takes nothing returns nothing
 	local unit uA = GetSpellAbilityUnit()
 	local location T = GetSpellTargetLoc()

@@ -1,5 +1,6 @@
 #ifndef H_8810
 #define H_8810
+#include "../features/functions/Conditions.j"
 function Pk takes nothing returns nothing
 	local group g = CreateGroup()
 	call GroupEnumUnitsInRect(g,bj_mapInitialPlayableArea,Condition(function Lk))

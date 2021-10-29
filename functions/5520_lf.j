@@ -1,5 +1,6 @@
 #ifndef H_5520
 #define H_5520
+#include "../features/functions/Conditions.j"
 function lf takes nothing returns nothing
 	local timer t = GetExpiredTimer()
 	local integer dN = GetHandleId(t)

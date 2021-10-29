@@ -250,4 +250,228 @@ function IsGeneralAttackedByEnemy takes nothing returns boolean
 	return GetAttacker()==GeneralUnit and IsUnitEnemy(GetTriggerUnit(),GetOwningPlayer(GetAttacker()))
 endfunction
 
+function IsUnitMonsterAndNotDeadFilter takes nothing returns boolean
+    return GetOwningPlayer(GetFilterUnit())==Player(11)and not IsUnitDead(GetFilterUnit())
+endfunction
+
+function ZM takes nothing returns boolean
+	// WHAT A FUCK
+	// Conditions must not include such logic
+	if IsUnitType(GetFilterUnit(),UNIT_TYPE_HERO)then
+		set DamageTypeAttack = false
+		call UnitDamageTarget(xA,GetFilterUnit(),50,false,false,null,DAMAGE_TYPE_UNIVERSAL,null)
+		set DamageTypeAttack = true
+	endif
+	return false
+endfunction
+
+function op takes nothing returns boolean
+	// INSANE. Should be rewtiren to ForGroup
+    if IsUnitType(GetFilterUnit(),UNIT_TYPE_HERO)then
+        call SetUnitState(GetFilterUnit(),UNIT_STATE_MANA,GetUnitState(GetFilterUnit(),UNIT_STATE_MANA)- 30.)
+    endif
+    return false
+endfunction
+function QJ takes nothing returns boolean
+    local unit f = GetFilterUnit()
+    if IsUnitEnemy(f,UI)and IsUnitAlive(f) then
+        set DamageTypeAttack = false
+        call UnitDamageTarget(vA,f,WI,false,false,null,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
+        set DamageTypeAttack = true
+        call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",f,"origin"))
+        call IssueTargetOrderById(wI,$D00DD,f)
+    endif
+    set f = null
+    return false
+endfunction
+
+function yK takes nothing returns boolean
+    if IsUnitAlly(GetFilterUnit(),GetOwningPlayer(YI))then
+        call IssueTargetOrderById(YI,$D0085,GetFilterUnit())
+    endif
+    return false
+endfunction
+
+function Ap takes nothing returns boolean
+	return GetUnitTypeId(GetEnumUnit())=='h00R'
+endfunction
+
+function Dl takes nothing returns boolean
+    return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellTargetUnit()))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())< 100.
+endfunction
+
+function Jg takes nothing returns boolean
+    return IsUnitAlive(GetFilterUnit()) and IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))
+endfunction
+
+function zL takes nothing returns boolean
+    return UnitHasItemOfTypeBJ(GetFilterUnit(),'I045')
+endfunction
+
+function hK takes nothing returns boolean
+    if GetUnitAbilityLevel(GetFilterUnit(),'B03N')> 0 then
+        if GetUnitAbilityLevel(GetFilterUnit(),'B02O')==0 and GetUnitAbilityLevel(GetFilterUnit(),'BPSE')==0 then
+            if IsUnitPaused(GetFilterUnit())==false then
+                return true
+            endif
+        endif
+    endif
+    return false
+endfunction
+
+function LP takes nothing returns boolean
+	return(IsUnitType(GetFilterUnit(),UNIT_TYPE_HERO)==false)!=null
+endfunction
+
+function zQ takes nothing returns boolean
+    return(IsUnitType(GetFilterUnit(),UNIT_TYPE_HERO))!=null
+endfunction
+
+function cJ takes nothing returns boolean
+    return(IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))==false)
+endfunction
+
+function fQ takes nothing returns boolean
+    return GetOwningPlayer(GetFilterUnit())==Player(11)
+endfunction
+
+function Kf takes nothing returns boolean
+    return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(Ko))
+endfunction
+
+function tf takes nothing returns boolean
+    if IsUnitEnemy(GetFilterUnit(),PI)then
+        call IssueTargetOrderById(pI,$D0206,GetFilterUnit())
+    endif
+    return false
+endfunction
+
+function eG takes nothing returns boolean
+    return IsUnitAlive(GetFilterUnit()) and GetUnitAbilityLevel(GetFilterUnit(),'B02M')> 0
+endfunction
+
+function CQ takes nothing returns boolean
+    if(IsUnitIllusion(GetFilterUnit()))and(GetUnitTypeId(GetFilterUnit())=='N02E')then
+        call AddUnitAnimationProperties(GetFilterUnit(),"Stand Alternate",false)
+    endif
+    return false
+endfunction
+
+function mJ takes nothing returns boolean
+    local unit u = GetFilterUnit()
+    local integer golem_fire_rage_level = GetUnitAbilityLevel(Fv,'A02Z')
+    local real golem_fire_rage_damage = 0
+    if golem_fire_rage_level == 1 then
+        set golem_fire_rage_damage = 40
+    elseif golem_fire_rage_level == 2 then
+        set golem_fire_rage_damage = 80
+    elseif golem_fire_rage_level == 3 then
+        set golem_fire_rage_damage = 160
+    endif
+    if IsUnitEnemy(u,GetOwningPlayer(GetTriggerUnit()))and IsUnitAlive(u) then
+        set DamageTypeAttack = false
+        call UnitDamageTarget(Fv,u,golem_fire_rage_damage,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_NORMAL,WEAPON_TYPE_WHOKNOWS)
+        set DamageTypeAttack = true
+        call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl",u,"origin"))
+    endif
+    set u = null
+    return false
+endfunction
+
+function jB takes nothing returns boolean
+	return IsUnitAlive(GetFilterUnit()) and IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))
+endfunction
+
+
+function Pc takes nothing returns boolean
+	return(IsUnitType(GetFilterUnit(),UNIT_TYPE_HERO)==false and FN(GetFilterUnit()))!=null
+endfunction
+
+function pf takes nothing returns boolean
+	return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(Ko))==false
+endfunction
+
+function Lk takes nothing returns boolean
+	return IsUnitAlly(GetFilterUnit(),GetOwningPlayer(GetSpellAbilityUnit()))and IsUnitAlive(GetSpellAbilityUnit())
+endfunction
+
+function xK takes nothing returns boolean
+	local unit uA = GetSpellAbilityUnit()
+	local unit uE = GetFilterUnit()
+	if IsUnitEnemy(uE,GetOwningPlayer(uA))and IsUnitAlive(uE) then
+		set DamageTypeAttack = false
+		call UnitDamageTarget(uA,uE,yI,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
+		set DamageTypeAttack = true
+		call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\ResourceItems\\ResourceEffectTarget.mdl",uE,"origin"))
+	endif
+	set uA = null
+	set uE = null
+	return false
+endfunction
+
+function ib takes nothing returns boolean
+	local unit fu = GetFilterUnit()
+	local boolean nb = false
+	local player Vb = GetOwningPlayer(fu)
+	local player uN = GetOwningPlayer(jo)
+	if(fu!=jo and not IsPlayerAlly(Vb,uN)and GetUnitState(fu,UNIT_STATE_LIFE)> .5)then
+		set nb = true
+	endif
+	set uN = null
+	set Vb = null
+	set fu = null
+	return nb
+endfunction
+
+function yG takes nothing returns boolean
+	return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(ox))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())< 30.
+endfunction
+
+function QL takes nothing returns boolean
+	local unit f = GetFilterUnit()
+	if IsUnitType(f,UNIT_TYPE_STRUCTURE)or IsUnitAlly(f,zI)or IsUnitDead(f) or IsUnitInvisible(f,zI)or FN(f)==false then
+		set f = null
+		set f = null
+		return false
+	elseif GetUnitLifePercent(f)<= 35. and((LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=0 or IsUnitType(f,UNIT_TYPE_HERO))then
+		set f = null
+		set f = null
+		return false
+	endif
+	set f = null
+	return true
+endfunction
+
+// function fL takes nothing returns boolean
+// 	if GetUnitAbilityLevel(GetFilterUnit(),'B037')> 0 then
+// 		if GetUnitAbilityLevel(GetFilterUnit(),'B02O')==0 and GetUnitAbilityLevel(GetFilterUnit(),'BPSE')==0 then
+// 			if IsUnitPaused(GetFilterUnit())==false and GetIssuedOrderId()!=$D0005 then
+// 				return true
+// 			endif
+// 		endif
+// 	endif
+// 	return false
+// endfunction
+// function GN takes nothing returns boolean
+// 	local unit f = GetFilterUnit()
+// 	if IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false and FN(f)then
+// 		call IssueTargetOrderById(DI,852583,f)
+// 	endif
+// 	set f = null
+// 	return false
+// endfunction
+function Ob takes nothing returns boolean
+	local unit fu = GetFilterUnit()
+	local boolean nb = false
+	local player Vb = GetOwningPlayer(fu)
+	local player uN = GetOwningPlayer(jo)
+	if(fu!=jo and not IsPlayerAlly(Vb,uN)and GetUnitState(fu,UNIT_STATE_LIFE)> .5)then
+		set nb = true
+	endif
+	set uN = null
+	set Vb = null
+	set fu = null
+	return nb
+endfunction
+
 #endif

@@ -8,7 +8,7 @@ function PM takes nothing returns nothing
     local group g = CreateGroup()
     local integer creepsCount = 0
     #else
-    local boolexpr b = Condition(function pM)
+    local boolexpr b = Condition(function IsUnitMonsterAndNotDeadFilter)
     #endif
     local timer t = CreateTimer()
     

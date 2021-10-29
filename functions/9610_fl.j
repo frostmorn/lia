@@ -1,5 +1,6 @@
 #ifndef H_9610
 #define H_9610
+#include "../features/functions/Conditions.j"
 function fl takes nothing returns nothing
     local integer Id = GetSpellAbilityId()
     local location l

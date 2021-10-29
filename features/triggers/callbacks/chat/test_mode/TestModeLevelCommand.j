@@ -1,3 +1,6 @@
+#ifndef TESTMODE_LEVELCOMMAND_H
+#define TESTMODE_LEVELCOMMAND_H
+#include "../../../../functions/Conditions.j"
 function TestModeLevelCommandTriggerCallback takes nothing returns nothing
 	local integer In = 1
 	local integer JN
@@ -21,3 +24,4 @@ function TestModeLevelCommandTriggerCallback takes nothing returns nothing
 	set f = null
 	set g = null
 endfunction
+#endif

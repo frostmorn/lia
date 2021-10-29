@@ -1,5 +1,6 @@
 #ifndef H_6850
 #define H_6850
+#include "../features/functions/Conditions.j"
 function YG takes nothing returns nothing
     local group g = CreateGroup()
     local unit uA = ox

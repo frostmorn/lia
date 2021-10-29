@@ -1,5 +1,6 @@
 #ifndef H_12170
 #define H_12170
+#include "../features/functions/Conditions.j"
 function dQ takes nothing returns nothing
     local group g
     if(GetUnitTypeId(GetSpellTargetUnit())=='N02E')then

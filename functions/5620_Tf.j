@@ -1,5 +1,6 @@
 #ifndef H_5620
 #define H_5620
+#include "../features/functions/Conditions.j"
 function Tf takes nothing returns nothing
     set PI = GetOwningPlayer(GetSpellAbilityUnit())
     set pI = CreateUnit(PI,'h011',.0,.0,.0)

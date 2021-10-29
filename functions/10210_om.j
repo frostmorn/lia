@@ -1,5 +1,6 @@
 #ifndef H_10210
 #define H_10210
+#include "../features/functions/Conditions.j"
 function om takes nothing returns nothing
     local group g = CreateGroup()
     local timer t = CreateTimer()

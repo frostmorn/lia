@@ -1,5 +1,6 @@
 #ifndef H_6560
 #define H_6560
+#include "../features/functions/Conditions.j"
 function rG takes nothing returns nothing
 	if GetSpellAbilityId()=='A09D' then
 		set SI = 15 * GetUnitAbilityLevel(GetSpellAbilityUnit(),'A09D')+ 15

@@ -1,5 +1,6 @@
 #ifndef H_8370
 #define H_8370
+#include "../features/functions/Conditions.j"
 function sJ takes nothing returns nothing
     local unit uA = GetSpellAbilityUnit()
     local integer vC = GetUnitAbilityLevel(uA,'A04K')

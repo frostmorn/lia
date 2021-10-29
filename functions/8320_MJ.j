@@ -1,5 +1,6 @@
 #ifndef H_8320
 #define H_8320
+#include "../features/functions/Conditions.j"
 function MJ takes nothing returns nothing
     set wv = wv + 1
     if wv >= 16 then

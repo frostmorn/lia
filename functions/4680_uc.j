@@ -1,5 +1,6 @@
 #ifndef H_4680
 #define H_4680
+#include "../features/functions/Conditions.j"
 function uc takes nothing returns nothing
 	local timer t = GetExpiredTimer()
 	local integer dN = GetHandleId(t)

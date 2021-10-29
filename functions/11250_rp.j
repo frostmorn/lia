@@ -1,5 +1,6 @@
 #ifndef H_11250
 #define H_11250
+#include "../features/functions/Conditions.j"
 function rp takes nothing returns nothing
     local group g = CreateGroup()
     if qv==false then

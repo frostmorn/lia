@@ -1,5 +1,6 @@
 #ifndef H_12190
 #define H_12190
+#include "../features/functions/Conditions.j"
 function FQ takes nothing returns nothing
     local group g = CreateGroup()
     local destructable d = GetDyingDestructable()

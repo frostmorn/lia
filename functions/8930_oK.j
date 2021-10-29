@@ -1,5 +1,6 @@
 #ifndef H_8930
 #define H_8930
+#include "../features/functions/Conditions.j"
 function oK takes nothing returns nothing
     local unit uA = GetSpellAbilityUnit()
     local location T = GetUnitLoc(uA)
