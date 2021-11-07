@@ -1,6 +1,6 @@
 #ifndef H_13510
 #define H_13510
-#include "../features/functions/CreateSwapNoTrigger.j"
+#include "../features/triggers/callbacks/chat/swap/SwapNoCommand.j"
 #include "../features/functions/map_init/CreateRegions.j"
 #include "../functions/13740_jasshelper__initstructs29827921.j"
 #include "../features/functions/map_init/SetHCLStringFromHandicaps.j"

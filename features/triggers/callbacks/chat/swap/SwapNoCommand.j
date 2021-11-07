@@ -13,4 +13,16 @@ function SwapNoCommandTriggerCallback takes nothing returns nothing
 	set p = null
 endfunction
 
+function CreateSwapNoCommandTrigger takes nothing returns nothing
+	local integer i = 0
+	set SwapNoCommandTrigger = CreateTrigger()
+	loop
+		exitwhen i > 7
+		call TriggerRegisterPlayerChatEvent(SwapNoCommandTrigger,Player(i),"-обн",true)
+		call TriggerRegisterPlayerChatEvent(SwapNoCommandTrigger,Player(i),"-swapno",true)
+		set i = i + 1
+	endloop
+	call TriggerAddAction(SwapNoCommandTrigger,function SwapNoCommandTriggerCallback)
+endfunction
+
 #endif

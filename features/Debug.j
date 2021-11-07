@@ -48,26 +48,28 @@ function DMesg takes string message returns nothing
 	#endif
 endfunction
 
+#ifdef DI_CHECK_NEGATIVE_PLAYERID_CALLS
 function DebugablePlayer takes integer player_index returns player
 	if map_startup_finished then
-		call DMesg("Call to Player(x) where x is " + I2S(player_index))
+		call DMesg("|CFFFF00000ERROR:|R Call to Player(x) where x is " + I2S(player_index))
 	endif
 	return Player(player_index)
 endfunction
+// redirect Player() calls to DebugablePlayer()
 #define Player(x) DebugablePlayer(x)
-
+#endif
 function Loc2S takes location loc returns string
 	return "x: " + R2S( GetLocationX(loc) )+ ", y: " + R2S(GetLocationY (loc) )
 endfunction
 function WTF_Unit takes unit u returns nothing
 	if u !=null then
 		call DMesg("============================ UNIT ============================")
-		call DMesg("# UnitID: " + UnitId2String(GetUnitTypeId(u)) + " ]")
-		call DMesg("# Name: " + GetUnitName(u) + " ], ")
-		call DMesg("# Loc: " + Loc2S(GetUnitLoc(u))+ " ]")
-		call DMesg("# Speed: " + R2S(GetUnitMoveSpeed(u))+ ", " + R2S(GetUnitDefaultMoveSpeed(u))+ " ]")   
-		call DMesg("# AquireRange = " + R2S(GetUnitAcquireRange(u))+", " + R2S(GetUnitDefaultAcquireRange(u)) +" ]")
-		call DMesg("# UnitLevel = " + I2S(GetUnitLevel(u))+" ]")
+		call DMesg("# UnitID: [ we:" + UnitId2String(GetUnitTypeId(u)) + ", hex:" + I2HS(GetUnitTypeId(u)) +", dec:" +  I2S(GetUnitTypeId(u))+ " ]")
+		call DMesg("# Name: [ " + GetUnitName(u) + " ] ")
+		call DMesg("# Loc: [ " + Loc2S(GetUnitLoc(u))+ " ]")
+		call DMesg("# Speed: [ " + R2S(GetUnitMoveSpeed(u))+ ", " + R2S(GetUnitDefaultMoveSpeed(u))+ " ]")   
+		call DMesg("# AquireRange = [ " + R2S(GetUnitAcquireRange(u))+", " + R2S(GetUnitDefaultAcquireRange(u)) +" ]")
+		call DMesg("# UnitLevel = [ " + I2S(GetUnitLevel(u))+" ]")
 		call DMesg("========================== END_UNIT ==========================")
 	else
 		call DMesg("!] WTF_UNIT called with |CFFFF0000null|R unit")
