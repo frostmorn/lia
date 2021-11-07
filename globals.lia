@@ -840,7 +840,7 @@ globals
 	trigger OnMithrilCast = null
 	trigger oR = null
 	trigger OR = null
-	trigger oV = null
+	trigger VampireHungryAbilityTrigger = null
 	trigger ShadowReturnsToMasterSpellTrigger = null
 	trigger oX = null
 	trigger OX = null
@@ -1050,7 +1050,7 @@ globals
 	unit ne = null
 	unit Nv = null
 	unit Ov = null
-	unit ox = null
+	unit VampireGlobalUnit = null
 	unit pI
 	unit qe = null
 	unit Rv = null
