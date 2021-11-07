@@ -10,7 +10,7 @@ function Rh takes nothing returns nothing
     local unit f
     local real DC
     local real Ih
-    if VF==ox and GetUnitAbilityLevel(ed,'B025')> 0 then
+    if VF==VampireGlobalUnit and GetUnitAbilityLevel(ed,'B025')> 0 then
         call TriggerSleepAction(.01)
         set p = GetOwningPlayer(VF)
         set JN = GetUnitAbilityLevel(VF,'A0CG')

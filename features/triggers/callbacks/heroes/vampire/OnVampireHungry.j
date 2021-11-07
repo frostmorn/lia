@@ -1,15 +1,15 @@
 #ifndef H_6850
 #define H_6850
-#include "../features/functions/Conditions.j"
-function YG takes nothing returns nothing
+#include "../../../../functions/Conditions.j"
+function OnVampireHungryAbilityCallback takes nothing returns nothing
     local group g = CreateGroup()
-    local unit uA = ox
+    local unit uA = VampireGlobalUnit
     local unit f
     local location T = GetUnitLoc(uA)
     local integer n = 0
     local integer iD = 'A0BR'
     local integer vC = GetUnitAbilityLevel(uA,iD)
-    call GroupEnumUnitsInRangeOfLoc(g,T,500,Condition(function yG))
+    call GroupEnumUnitsInRangeOfLoc(g,T,500,Condition(function IsVampireHungryCondition))
     call RemoveLocation(T)
     loop
         set f = FirstOfGroup(g)

@@ -1,5 +1,6 @@
 #ifndef H_10500
 #define H_10500
+#include "../../triggers/callbacks/heroes/vampire/OnVampireHungry.j"
 function HeroInit1311781447 takes nothing returns nothing
 	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 	local integer ED = 0
@@ -7,7 +8,7 @@ function HeroInit1311781447 takes nothing returns nothing
 	#if DEBUG_HERO_INITS
 	call DMesg("Custom N02G Вампир(Горм) Таверна Воров(Низ) Initializing")
 	#endif
-	set ox = u
+	set VampireGlobalUnit = u
 	call UnitAddAbility(u,'A0CF')
 	set wN = 16
 	set eV = CreateTrigger()
@@ -17,10 +18,10 @@ function HeroInit1311781447 takes nothing returns nothing
 	set xV = CreateTrigger()
 	call TriggerRegisterUnitEvent(xV,u,EVENT_UNIT_HERO_SKILL)
 	call TriggerAddAction(xV,function WG)
-	set oV = CreateTrigger()
-	call DisableTrigger(oV)
-	call TriggerRegisterTimerEventPeriodic(oV,1.)
-	call TriggerAddAction(oV,function YG)
+	set VampireHungryAbilityTrigger = CreateTrigger()
+	call DisableTrigger(VampireHungryAbilityTrigger)
+	call TriggerRegisterTimerEventPeriodic(VampireHungryAbilityTrigger,1.)
+	call TriggerAddAction(VampireHungryAbilityTrigger,function OnVampireHungryAbilityCallback)
 	set rV = CreateTrigger()
 	call TriggerRegisterUnitEvent(rV,u,EVENT_UNIT_SPELL_EFFECT)
 	call DisableTrigger(rV)

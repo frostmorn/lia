@@ -433,13 +433,13 @@ function ib takes nothing returns boolean
 	return nb
 endfunction
 
-function yG takes nothing returns boolean
-	#if DIyG_CONDITION
-		call DMesg("yG condition ENTER:")
+function IsVampireHungryCondition takes nothing returns boolean
+	#if DI_VAMPIRE_HUNGRY
+		call DMesg("OnVampireHungryCallback condition ENTER:")
 		call DMesg("GetFilterUnit()==>")
 		call WTF_Unit(GetFilterUnit())		
 	#endif
-	return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(ox))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())< 30.
+	return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(VampireGlobalUnit))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())< 30.
 endfunction
 
 function QL takes nothing returns boolean
