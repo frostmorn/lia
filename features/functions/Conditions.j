@@ -398,6 +398,11 @@ endfunction
 function xK takes nothing returns boolean
 	local unit uA = GetSpellAbilityUnit()
 	local unit uE = GetFilterUnit()
+#if DIxL_CONDITION
+	call DMesg("xK condition ENTER:")
+	call DMesg("uE = ")
+	call WTF_Unit(uE)		
+#endif	
 	if IsUnitEnemy(uE,GetOwningPlayer(uA))and IsUnitAlive(uE) then
 		set DamageTypeAttack = false
 		call UnitDamageTarget(uA,uE,yI,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
@@ -414,6 +419,11 @@ function ib takes nothing returns boolean
 	local boolean nb = false
 	local player Vb = GetOwningPlayer(fu)
 	local player uN = GetOwningPlayer(jo)
+	#if DIib_CONDITION
+		call DMesg("ib condition ENTER:")
+		call DMesg("fu = ")
+		call WTF_Unit(fu)		
+	#endif
 	if(fu!=jo and not IsPlayerAlly(Vb,uN)and GetUnitState(fu,UNIT_STATE_LIFE)> .5)then
 		set nb = true
 	endif
@@ -424,11 +434,21 @@ function ib takes nothing returns boolean
 endfunction
 
 function yG takes nothing returns boolean
+	#if DIyG_CONDITION
+		call DMesg("yG condition ENTER:")
+		call DMesg("GetFilterUnit()==>")
+		call WTF_Unit(GetFilterUnit())		
+	#endif
 	return IsUnitEnemy(GetFilterUnit(),GetOwningPlayer(ox))and IsUnitAlive(GetFilterUnit()) and GetUnitLifePercent(GetFilterUnit())< 30.
 endfunction
 
 function QL takes nothing returns boolean
 	local unit f = GetFilterUnit()
+	#if DIQL_CONDITION
+		call DMesg("QL condition ENTER:")
+		call DMesg("f = ")
+		call WTF_Unit(f)		
+	#endif
 	if IsUnitType(f,UNIT_TYPE_STRUCTURE)or IsUnitAlly(f,zI)or IsUnitDead(f) or IsUnitInvisible(f,zI)or FN(f)==false then
 		set f = null
 		set f = null
@@ -465,6 +485,11 @@ function Ob takes nothing returns boolean
 	local boolean nb = false
 	local player Vb = GetOwningPlayer(fu)
 	local player uN = GetOwningPlayer(jo)
+	#if DIOb_CONDITION 
+		call DMesg("Ob condition ENTER:")
+		call DMesg("fu = ")
+		call WTF_Unit(fu)		
+	#endif
 	if(fu!=jo and not IsPlayerAlly(Vb,uN)and GetUnitState(fu,UNIT_STATE_LIFE)> .5)then
 		set nb = true
 	endif
