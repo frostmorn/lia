@@ -304,7 +304,7 @@ globals
 	integer IDDS___RegiTable = 0
 	integer IDDS___TrigTable = 0
 	integer ItsReady___MAX_PLAYERS = 0
-	integer ix = 0
+	integer VampireCurrentHungryPoints = 0
 	integer ko = 0
 	integer kv = 0
 	integer Kv = 0
@@ -314,7 +314,7 @@ globals
 	integer Mv = 0
 	integer Ne = 0
 	integer nv = 0
-	integer nx = 0
+	integer VampireMaxHungryPoints = 0
 	integer oA = 0
 	integer oo = 0
 	integer ov = 0
@@ -881,7 +881,7 @@ globals
 	trigger RO = null
 	trigger rR = null
 	trigger RR = null
-	trigger rV = null
+	trigger OnVampireSpellEventTrigger = null
 	trigger RV = null
 	trigger rX = null
 	trigger RX = null

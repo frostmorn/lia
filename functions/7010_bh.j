@@ -3,7 +3,7 @@
 function bh takes nothing returns nothing
 	local unit u = VampireGlobalUnit
 	local integer vC = GetUnitAbilityLevel(u,'A0CG')
-	local real r = ix *(2 + vC)* .25
+	local real r = VampireCurrentHungryPoints *(2 + vC)* .25
 	if IsUnitAlive(u) then
 		call SetWidgetLife(u,GetWidgetLife(u)+ r)
 	endif

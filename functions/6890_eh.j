@@ -14,7 +14,7 @@ function eh takes nothing returns nothing
 			call DisplayTextToPlayer(GetOwningPlayer(u),0,0,"|cffffcc00Вводите -п чтобы узнать количество запасенных пунктов жажды.|R")
 		endif
 		set vC = GetUnitAbilityLevel(u,'A002')
-		set nx = 5 * vC + 5
+		set VampireMaxHungryPoints = 5 * vC + 5
 		if(vC==3)then
 			call DestroyTrigger(iV)
 		endif

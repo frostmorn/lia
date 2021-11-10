@@ -7,7 +7,7 @@ function Eh takes nothing returns nothing
 	local unit f
 	local location T = GetUnitLoc(u)
 	local integer vC = GetUnitAbilityLevel(u,'A0CG')
-	local real uG = ix * 16 * vC
+	local real uG = VampireCurrentHungryPoints * 16 * vC
 	local timer t = CreateTimer()
 	local integer dN = GetHandleId(t)
 	local timer t2 = CreateTimer()
@@ -21,7 +21,7 @@ function Eh takes nothing returns nothing
 	call EnableTrigger(EV)
 	call GroupEnumUnitsInRangeOfLoc(g,T,300,Condition(function jB))
 	call RemoveLocation(T)
-	set ix = 0
+	set VampireCurrentHungryPoints = 0
 	call SaveUnitHandle(Ax,1,dN,u)
 	call TimerStart(t,.1,false,function Vh)
 	call SaveUnitHandle(Ax,1,qG,u)

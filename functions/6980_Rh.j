@@ -14,8 +14,8 @@ function Rh takes nothing returns nothing
         call TriggerSleepAction(.01)
         set p = GetOwningPlayer(VF)
         set JN = GetUnitAbilityLevel(VF,'A0CG')
-        set DC = 10 * ix * JN
-        set Ih =(2 * JN + 4)* ix
+        set DC = 10 * VampireCurrentHungryPoints * JN
+        set Ih =(2 * JN + 4)* VampireCurrentHungryPoints
         set g = CreateGroup()
         set T = GetUnitLoc(ed)
         call GroupEnumUnitsInRangeOfLoc(g,T,150,null)

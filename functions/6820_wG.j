@@ -12,9 +12,9 @@ function wG takes nothing returns nothing
 	call SaveInteger(Ax,2,dN,10 + 2 * JN)
 	call SaveUnitHandle(Ax,3,dN,uA)
 	call SaveEffectHandle(Ax,4,dN,e)
-	call SaveReal(Ax,5,dN,ix)
+	call SaveReal(Ax,5,dN,VampireCurrentHungryPoints)
 	call TimerStart(t,.5,true,function TG)
-	set ix = 0
+	set VampireCurrentHungryPoints = 0
 	set uA = null
 	set t = null
 	set e = null
