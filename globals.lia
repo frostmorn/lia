@@ -979,7 +979,7 @@ globals
 	trigger XO = null
 	trigger xR = null
 	trigger XR = null
-	trigger xV = null
+	trigger OnVampireAbilityLearnedTrigger = null
 	trigger XV = null
 	trigger xX = null
 	trigger XX = null

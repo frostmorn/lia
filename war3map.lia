@@ -664,7 +664,6 @@
 #include "functions/6800_tG.j"
 #include "functions/6810_TG.j"
 #include "functions/6820_wG.j"
-#include "functions/6830_WG.j"
 #include "functions/6880_vh.j"
 #include "functions/6890_eh.j"
 #include "functions/6900_xh.j"

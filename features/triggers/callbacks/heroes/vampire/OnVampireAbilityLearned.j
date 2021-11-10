@@ -1,10 +1,10 @@
 #ifndef H_6830
 #define H_6830
-function WG takes nothing returns nothing
+function OnVampireAbilityLearnedCallback takes nothing returns nothing
 	if GetLearnedSkill()=='A0BR' then
 		call EnableTrigger(VampireHungryAbilityTrigger)
 		call EnableTrigger(OnVampireSpellEventTrigger)
-		call DestroyTrigger(xV)
+		call DestroyTrigger(OnVampireAbilityLearnedTrigger)
 	endif
 endfunction
 

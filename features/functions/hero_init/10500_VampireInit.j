@@ -2,6 +2,8 @@
 #define H_10500
 #include "../../triggers/callbacks/heroes/vampire/OnVampireHungry.j"
 #include "../../triggers/callbacks/heroes/vampire/OnVampireSpellEvent.j"
+#include "../../triggers/callbacks/heroes/vampire/OnVampireAbilityLearned.j"
+
 #include "../../functions/Conditions.j"
 function HeroInit1311781447 takes nothing returns nothing
 	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
@@ -17,9 +19,9 @@ function HeroInit1311781447 takes nothing returns nothing
 	call TriggerRegisterUnitEvent(eV,u,EVENT_UNIT_SPELL_EFFECT)
 	call TriggerAddCondition(eV,Condition(function tG))
 	call TriggerAddAction(eV,function wG)
-	set xV = CreateTrigger()
-	call TriggerRegisterUnitEvent(xV,u,EVENT_UNIT_HERO_SKILL)
-	call TriggerAddAction(xV,function WG)
+	set OnVampireAbilityLearnedTrigger = CreateTrigger()
+	call TriggerRegisterUnitEvent(OnVampireAbilityLearnedTrigger,u,EVENT_UNIT_HERO_SKILL)
+	call TriggerAddAction(OnVampireAbilityLearnedTrigger,function OnVampireAbilityLearnedCallback)
 	set VampireHungryAbilityTrigger = CreateTrigger()
 	call DisableTrigger(VampireHungryAbilityTrigger)
 	call TriggerRegisterTimerEventPeriodic(VampireHungryAbilityTrigger,1.)
