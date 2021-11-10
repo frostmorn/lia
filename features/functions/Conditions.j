@@ -499,4 +499,8 @@ function Ob takes nothing returns boolean
 	return nb
 endfunction
 
+function OnVampireSpellEventCondition takes nothing returns boolean
+    return GetSpellAbilityId()=='A0AO' or GetSpellAbilityId()=='A0CG'
+endfunction
+
 #endif
