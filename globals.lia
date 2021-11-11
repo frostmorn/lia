@@ -960,7 +960,7 @@ globals
 	trigger Wa = null
 	trigger WaveFightTrigger = null
 	trigger wE = null
-	trigger WE = null
+	trigger IntelligenceSplashTrigger = null
 	trigger wn = null
 	trigger Wn = null
 	trigger wO = null

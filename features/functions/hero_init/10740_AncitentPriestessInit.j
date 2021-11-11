@@ -1,5 +1,6 @@
 #ifndef H_10740
 #define H_10740
+#include "../../triggers/callbacks/heroes/ancient_priestess/OnIntelligenceSplash.j"
 function HeroInit1160785970 takes nothing returns nothing
 	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 	#if DEBUG_HERO_INITS
@@ -10,11 +11,11 @@ function HeroInit1160785970 takes nothing returns nothing
 	call TriggerRegisterUnitEvent(wE,u,EVENT_UNIT_HERO_SKILL)
 	call TriggerAddCondition(wE,Condition(function Zk))
 	call TriggerAddAction(wE,function vK)
-	set WE = CreateTrigger()
-	call TriggerRegisterUnitEvent(WE,u,EVENT_UNIT_SPELL_EFFECT)
-	call DisableTrigger(WE)
-	call TriggerAddCondition(WE,Condition(function eK))
-	call TriggerAddAction(WE,function oK)
+	set IntelligenceSplashTrigger = CreateTrigger()
+	call TriggerRegisterUnitEvent(IntelligenceSplashTrigger,u,EVENT_UNIT_SPELL_EFFECT)
+	call DisableTrigger(IntelligenceSplashTrigger)
+	call TriggerAddCondition(IntelligenceSplashTrigger,Condition(function IsIntelligenceSplash))
+	call TriggerAddAction(IntelligenceSplashTrigger,function OnIntelligenceSplashCallback)
 	set yE = CreateTrigger()
 	call TriggerRegisterUnitEvent(yE,u,EVENT_UNIT_SPELL_EFFECT)
 	call TriggerAddCondition(yE,Condition(function rK))

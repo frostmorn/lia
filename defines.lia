@@ -43,7 +43,7 @@
 
 // By default, fog from spirit of vengeance casted 
 // by dummy. This macro disable dummy creation, but note
-// that ability must be changed in WE directly for all
+// that ability must be changed in IntelligenceSplashTrigger directly for all
 // of 3 Spirit of Vengeance summons from A049 to A0GA
 #define DISABLE_DUMMY_FOG 0
 #define DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND 1

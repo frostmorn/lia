@@ -503,4 +503,9 @@ function OnVampireSpellEventCondition takes nothing returns boolean
     return GetSpellAbilityId()=='A0AO' or GetSpellAbilityId()=='A0CG'
 endfunction
 
+function IsIntelligenceSplash takes nothing returns boolean
+    return GetSpellAbilityId()=='A02S'
+endfunction
+
+
 #endif
