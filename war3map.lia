@@ -742,7 +742,7 @@
 #include "features/triggers/callbacks/heroes/general/7770_Gj.j"
 #include "functions/7780_hj.j"
 #include "functions/7790_Hj.j"
-#include "functions/7800_Jj.j"
+#include "features/triggers/callbacks/heroes/serpent_queen/7800_Jj.j"
 #include "functions/7810_kj.j"
 #include "functions/7820_Kj.j"
 #include "functions/7830_mj.j"
