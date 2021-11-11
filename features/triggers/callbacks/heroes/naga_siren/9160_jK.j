@@ -1,6 +1,6 @@
 #ifndef H_9160
 #define H_9160
-#include "../features/functions/Conditions.j"
+#include "../../../../functions/Conditions.j"
 function jK takes nothing returns nothing
     local timer t = CreateTimer()
     local integer dN = GetHandleId(t)
