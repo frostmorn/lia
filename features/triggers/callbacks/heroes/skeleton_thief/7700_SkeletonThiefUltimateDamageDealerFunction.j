@@ -1,6 +1,6 @@
 #ifndef H_7700
 #define H_7700
-function SkeletonWarriorUltimateDamageDealerFunction takes nothing returns nothing
+function SkeletonThiefUltimateDamageDealerFunction takes nothing returns nothing
     local integer WF
     local unit qH
     local unit QH

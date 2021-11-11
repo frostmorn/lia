@@ -15,7 +15,7 @@ function HeroInit1429221429 takes nothing returns nothing
 	set WV = CreateTrigger()
 	call DisableTrigger(WV)
 	call TriggerRegisterAnyUnitEventBJ(WV,EVENT_PLAYER_UNIT_ATTACKED)
-	call TriggerAddAction(WV,function SkeletonWarriorUltimateDamageDealerFunction)
+	call TriggerAddAction(WV,function SkeletonThiefUltimateDamageDealerFunction)
 	set yV = CreateTrigger()
 	call TriggerRegisterUnitEvent(yV,u,EVENT_UNIT_HERO_SKILL)
 	call TriggerAddAction(yV,function cj)
