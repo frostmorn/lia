@@ -1,6 +1,6 @@
 #ifndef H_8170
 #define H_8170
-#include "../features/functions/Conditions.j"
+#include "../../../../functions/Conditions.j"
 function dJ takes nothing returns nothing
     local unit KG = GetSpellAbilityUnit()
     local group g
