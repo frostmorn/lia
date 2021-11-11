@@ -1,6 +1,6 @@
 #ifndef H_7640
 #define H_7640
-#include "../features/functions/Conditions.j"
+#include "../../../../functions/Conditions.j"
 function Oj takes nothing returns nothing
 	local unit uA = GetSpellAbilityUnit()
 	local location T = GetUnitLoc(uA)
