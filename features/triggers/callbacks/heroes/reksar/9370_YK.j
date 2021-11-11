@@ -1,6 +1,6 @@
 #ifndef H_9370
 #define H_9370
-#include "../features/functions/Conditions.j"
+#include "../../../../functions/Conditions.j"
 function YK takes nothing returns nothing
 	local unit uA = GetSpellAbilityUnit()
 	local location T = GetUnitLoc(uA)
