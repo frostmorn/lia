@@ -594,7 +594,7 @@
 #include "features/triggers/callbacks/heroes/naga_guardsman/6080_zF.j"
 #include "functions/6090_ZF.j"
 #include "features/triggers/callbacks/heroes/naga_guardsman/6100_vg.j"
-#include "functions/6110_ShamanAgilityMeassureFunction.j"
+#include "features/triggers/callbacks/heroes/illusionist/6110_IllusionistAgilityMeassureFunction.j"
 #include "functions/6120_xg.j"
 #include "features/triggers/callbacks/heroes/illusionist/6130_rg.j"
 #include "features/triggers/callbacks/heroes/illusionist/6140_ig.j"

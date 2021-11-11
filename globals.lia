@@ -892,7 +892,7 @@ globals
 	trigger SetCameraAttackAngleCommandTrigger = null
 	#endif
 	trigger SetCameraCommandTrigger = null
-	trigger ShamanAgilityMeassureMsgTrigger = null
+	trigger IllusionistAgilityMeassureChatTrigger = null
 	trigger sI
 	trigger sn = null
 	trigger Sn = null

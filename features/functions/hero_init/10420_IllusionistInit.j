@@ -6,8 +6,8 @@ function HeroInit1211117653 takes nothing returns nothing
 	call DMesg("Custom H00U Иллюзионист(Антаро) Таверна Воров(Низ) Initializing")
 	#endif
 	call AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AbsorbMana\\AbsorbManaBirthMissile.mdl",u,"hand,left")
-	set ShamanAgilityMeassureMsgTrigger = CreateTrigger()
-	call TriggerAddAction(ShamanAgilityMeassureMsgTrigger,function ShamanAgilityMeassureFunction)
+	set IllusionistAgilityMeassureChatTrigger = CreateTrigger()
+	call TriggerAddAction(IllusionistAgilityMeassureChatTrigger,function IllusionistAgilityMeassureCallback)
 	set Jn = CreateTrigger()
 	call TriggerRegisterUnitEvent(Jn,u,EVENT_UNIT_HERO_SKILL)
 	call TriggerAddCondition(Jn,Condition(function xg))
