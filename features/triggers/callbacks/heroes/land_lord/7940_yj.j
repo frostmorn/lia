@@ -1,6 +1,6 @@
 #ifndef H_7940
 #define H_7940
-#include "../features/functions/Conditions.j"
+#include "../../../../functions/Conditions.j"
 function yj takes nothing returns nothing
 	local unit u = GetSpellAbilityUnit()
 	if GetSpellAbilityId()=='A04L' or GetSpellAbilityId()=='A08O' then
