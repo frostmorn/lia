@@ -416,7 +416,6 @@
 #include "functions/4160_OB.j"
 #include "functions/4170_RB.j"
 #include "functions/4180_IB.j"
-#include "functions/4190_AB.j"
 #include "functions/4200_fB.j"
 #include "functions/4210_FB.j"
 #include "functions/4220_gB.j"
@@ -1056,7 +1055,7 @@
 
 #include "functions/11480_vP.j"
 #include "functions/11490_eP.j"
-#include "functions/11500_PrepareBeforeBRoundFunction.j"
+#include "features/functions/PrepareBeforeBRoundFunction.j"
 #include "functions/11510_iP.j"
 #include "functions/11520_aP.j"
 #include "functions/11530_VP.j"

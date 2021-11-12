@@ -4,6 +4,7 @@
 #include "Conditions.j"
 #include "../triggers/callbacks/passive/OnMonsterKilled.j"
 #include "../functions/RoundStart.j"
+#include "misc/GetAfterRoundBounty.j"
 function PrepareBeforeRoundFunction takes nothing returns nothing
 	local integer In = 1
 	local integer wN = OnlinePlayersCount
@@ -120,7 +121,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 	if CurrentWave==2 then
 		call DisableTrigger(RepickCommandTrigger)
 	endif
-	set BB = AB(CurrentWave,NB,bB)
+	set BB = GetAfterRoundBounty(CurrentWave,NB,bB)
 	set In = 1
 	loop
 		exitwhen In > wN
