@@ -5,6 +5,7 @@
 //  Place where all debug shit purposes functions located.
 //  Actually we don't have needness in them in release versions
 //
+#include "UnitAPI.j"
 function I2HS takes integer i returns string
 	// Gets integer and returns hex-string
 	local string abc = "0123456789ABCDEF" 
@@ -70,6 +71,16 @@ function WTF_Unit takes unit u returns nothing
 		call DMesg("# Speed: [ " + R2S(GetUnitMoveSpeed(u))+ ", " + R2S(GetUnitDefaultMoveSpeed(u))+ " ]")   
 		call DMesg("# AquireRange = [ " + R2S(GetUnitAcquireRange(u))+", " + R2S(GetUnitDefaultAcquireRange(u)) +" ]")
 		call DMesg("# UnitLevel = [ " + I2S(GetUnitLevel(u))+" ]")
+		if IsUnitImmune(u) then
+			call DMesg("# Immune = [ |CFF00FF00YES|R ]")
+		else 
+			call DMesg("# Immune = [ |CFFFF0000NO|R ]")
+		endif
+		if IsUnitInvulnerable(u) then
+			call DMesg("# Invulnerable = [ |CFF00FF00YES|R ]")
+		else 
+			call DMesg("# Invulnerable = [ |CFFFF0000NO|R ]")
+		endif
 		call DMesg("========================== END_UNIT ==========================")
 	else
 		call DMesg("!] WTF_UNIT called with |CFFFF0000null|R unit")

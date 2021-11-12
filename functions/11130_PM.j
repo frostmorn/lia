@@ -14,7 +14,7 @@ function PM takes nothing returns nothing
     
     set bj_wantDestroyGroup = true
     #if CHECK_ROUND_END_VARIANT_2
-    call GroupEnumUnitsOfPlayer(g, Player(11),  Filter(function IsAliveAndNotADummy))
+    call GroupEnumUnitsOfPlayer(g, Player(11),  Filter(function IsAliveAndNotADummyFilter))
     #if DI_ROUND_END_DETECTOR
 
     call WTF_Unit(FirstOfGroup(g))

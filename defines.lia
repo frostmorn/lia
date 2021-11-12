@@ -17,7 +17,7 @@
     #define DI_ROUND_END_DETECTOR 0
     #define DI_HOLY_FORCES_ONACTIONS 0
     #define DI_PIRATE_PASSIVE 0
-    #define DI_REKSAR_ROAR 0
+    #define DI_REKSAR_ROAR 1
     // CHECKS
     // error on Player() call with negative arg
     #define DI_CHECK_NEGATIVE_PLAYERID_CALLS 1
@@ -70,3 +70,5 @@
 #define TIME_BEFORE_ROUND 60
 #define TIME_BEFORE_DUEL
 // #endif
+// NOT IMPLEMENTED
+#define FEATURE_MAGIC_RESISTANCE 0

@@ -21,6 +21,7 @@
 #include "../../triggers/callbacks/chat/RepickCommand.j"
 #include "../../triggers/callbacks/passive/MapModeTryAutoSelect.j"
 #include "../../triggers/callbacks/chat/misc/MapModeSelectCommand.j"
+#include "../../triggers/callbacks/chat/misc/WTF_Unit.j"
 #if FEATURE_SET_CAMERA_ATTACK_ANGLE
 #include "../../triggers/callbacks/chat/misc/SetCameraAttackAngleCommand.j"
 #endif
@@ -150,6 +151,7 @@ function CreateTriggers takes nothing returns nothing
 	set GR = CreateTrigger()
 	set hR = CreateTrigger()
 	set MeasureMoveSpeedChatTrigger = CreateTrigger()
+	set WTF_UnitTrigger = CreateTrigger()
 	set CLSCommandTrigger = CreateTrigger()
 	set EnableTestModeTrigger = CreateTrigger()
 	set kR = CreateTrigger()
@@ -368,6 +370,7 @@ function CreateTriggers takes nothing returns nothing
 	call TriggerAddAction(GR,function PQ)
 	call TriggerAddAction(hR,function sQ)
 	call TriggerAddAction(MeasureMoveSpeedChatTrigger,function MeasureMoveSpeedChatTriggerCallback)
+	call TriggerAddAction(WTF_UnitTrigger, function WTF_UnitTriggerCallback)
 	call TriggerAddAction(CLSCommandTrigger,function CLSCommandTriggerCallback)
 	call TriggerAddAction(EnableTestModeTrigger,function EnableTestMode)
 	call TriggerAddAction(kR,function yQ)
@@ -467,6 +470,7 @@ function CreateTriggers takes nothing returns nothing
 		call TriggerRegisterPlayerChatEvent(HelpCommandTrigger,Player(ED),"-помощь",true)
 		call TriggerRegisterPlayerChatEvent(HelpCommandTrigger,Player(ED),"-help",true)
 		call TriggerRegisterPlayerChatEvent(MeasureMoveSpeedChatTrigger,Player(ED),"-сп",true)
+		call TriggerRegisterPlayerChatEvent(WTF_UnitTrigger, Player(ED), "-wtf", true)
 		call TriggerRegisterPlayerChatEvent(MeasureMoveSpeedChatTrigger,Player(ED),"-sp",true)
 		call TriggerRegisterPlayerChatEvent(CLSCommandTrigger,Player(ED),"-о",true)
 		call TriggerRegisterPlayerChatEvent(CLSCommandTrigger,Player(ED),"-o",true)

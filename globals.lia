@@ -747,6 +747,7 @@ globals
 	trigger OnWarriorOfTheLightLearnedSkillWillOfTheLight = null
 	trigger hR = null
 	trigger MeasureMoveSpeedChatTrigger = null
+	trigger WTF_UnitTrigger = null
 	trigger hV = null
 	trigger HV = null
 	trigger hx = null

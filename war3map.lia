@@ -71,7 +71,6 @@
 // Not used anywhere
 #include "functions/580_SetUnitZ.j"
 
-#include "functions/600_IsUnitDummy.j"
 
 #include "functions/610_KillTimer.j"
 
@@ -359,7 +358,6 @@
 // #include "functions/3220_IndexUnit.j"
 // #include "functions/3230_InitializeUnitIndexer.j"
 #include "functions/3240_InitTrig_Unit_Indexer.j"
-#include "functions/3270_GetUnitMagicResistanse.j"
 
 #include "functions/3370_PDDSTrueTarget.j"
 #include "functions/3400_SetUnitCustomData.j"
@@ -888,7 +886,6 @@
 #include "features/triggers/callbacks/heroes/reksar/9320_uK.j"
 #include "features/triggers/callbacks/heroes/reksar/9330_UK.j"
 #include "functions/9340_wK.j"
-#include "functions/9350_WK.j"
 #include "features/triggers/callbacks/heroes/reksar/9370_OnReksarRoar.j"
 #include "features/triggers/callbacks/heroes/time_lord/9380_zK.j"
 #include "functions/9390_ZK.j"
@@ -1121,7 +1118,7 @@
 #include "functions/12280_pQ.j"
 #include "functions/12290_PQ.j"
 #include "functions/12310_sQ.j"
-#include "functions/12320_tQ.j"
+#include "features/triggers/callbacks/chat/misc/MeasureMoveSpeedChat.j"
 #include "functions/12350_yQ.j"
 #include "functions/12380_es.j"
 #include "functions/12390_os.j"
