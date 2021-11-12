@@ -33,9 +33,14 @@ endfunction
 function IsUnitDeadFilter takes nothing returns boolean
 	return IsUnitDead(GetFilterUnit())
 endfunction
-function IsAliveAndNotADummy takes nothing returns boolean
-	return IsUnitAlive(GetFilterUnit()) and GetUnitTypeId(GetFilterUnit()) !='h011'
+function IsUnitDummy takes unit u returns boolean
+	local integer typeID = GetUnitTypeId(u)
+	return typeID =='h00N' or typeID=='h00P' or  typeID =='h00Q' or typeID == 'h010' or typeID == 'h00O' or typeID == 'h00V' or typeID == 'h011' or GetUnitAbilityLevel(u, 'Aloc')> 0
 endfunction
+function IsAliveAndNotADummy takes nothing returns boolean
+    return IsUnitAlive(GetFilterUnit()) and not(IsUnitDummy(GetFilterUnit()))
+endfunction
+
 function IsUnitOnBigArena takes unit u returns boolean
 
 	#if D_110
