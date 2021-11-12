@@ -19,7 +19,7 @@ function OnReksarRoarCallback takes nothing returns nothing
 
 	loop
 		set tempUnit = FirstOfGroup(tempGroup)
-		if IsUnitAlly(tempUnit, GetOwningPlayer(ReksarHeroUnit)) then
+		if IsUnitAlly(tempUnit, GetOwningPlayer(ReksarHeroUnit)) and not(IsUnitDummy(tempUnit)) then
 			call IssueTargetOrderById(tempDummy, $D0085, tempUnit)
 		endif
 		call GroupRemoveUnit(tempGroup, tempUnit)
