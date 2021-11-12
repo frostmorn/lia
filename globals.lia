@@ -769,7 +769,7 @@ globals
 	trigger iV = null
 	trigger IV = null
 	trigger iX = null
-	trigger IX = null
+	trigger ReksarRoarTrigger = null
 	trigger jE = null
 	trigger JE = null
 	trigger Jn = null
@@ -1074,7 +1074,6 @@ globals
 	unit wI
 	unit xA
 	unit xx = null
-	unit YI
 	weathereffect Lv = null
 
 endglobals

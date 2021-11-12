@@ -19,10 +19,10 @@ function HeroInit1311780949 takes nothing returns nothing
 	call TriggerRegisterAnyUnitEventBJ(RX,EVENT_PLAYER_UNIT_DEATH)
 	call TriggerAddAction(RX,function UK)
 	call TriggerAddCondition(RX,Condition(function wK))
-	set IX = CreateTrigger()
-	call TriggerRegisterUnitEvent(IX,u,EVENT_UNIT_SPELL_EFFECT)
-	call TriggerAddCondition(IX,Condition(function WK))
-	call TriggerAddAction(IX,function YK)
+	set ReksarRoarTrigger = CreateTrigger()
+	call TriggerRegisterUnitEvent(ReksarRoarTrigger,u,EVENT_UNIT_SPELL_EFFECT)
+	call TriggerAddCondition(ReksarRoarTrigger,Condition(function IsReksarRoarCondition))
+	call TriggerAddAction(ReksarRoarTrigger,function OnReksarRoarCallback)
 	set u = null
 endfunction
 

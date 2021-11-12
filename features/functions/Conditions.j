@@ -285,13 +285,6 @@ function QJ takes nothing returns boolean
     return false
 endfunction
 
-function yK takes nothing returns boolean
-    if IsUnitAlly(GetFilterUnit(),GetOwningPlayer(YI))then
-        call IssueTargetOrderById(YI,$D0085,GetFilterUnit())
-    endif
-    return false
-endfunction
-
 function Ap takes nothing returns boolean
 	return GetUnitTypeId(GetEnumUnit())=='h00R'
 endfunction
@@ -506,6 +499,9 @@ endfunction
 function IsIntelligenceSplash takes nothing returns boolean
     return GetSpellAbilityId()=='A02S'
 endfunction
-
+// Reksar
+function IsReksarRoarCondition takes nothing returns boolean
+    return GetSpellAbilityId()=='A0FA'
+endfunction
 
 #endif

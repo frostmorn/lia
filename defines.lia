@@ -17,17 +17,17 @@
     #define DI_ROUND_END_DETECTOR 0
     #define DI_HOLY_FORCES_ONACTIONS 0
     #define DI_PIRATE_PASSIVE 0
-
+    #define DI_REKSAR_ROAR 0
     // CHECKS
     // error on Player() call with negative arg
     #define DI_CHECK_NEGATIVE_PLAYERID_CALLS 1
 
     // CONDITIONS:
-    #define DIxL_CONDITION 1
-    #define DIib_CONDITION 1
+    #define DIxL_CONDITION 0
+    #define DIib_CONDITION 0
     #define DI_VAMPIRE_HUNGRY 0
-    #define DIQL_CONDITION 1
-    #define DIOb_CONDITION 1
+    #define DIQL_CONDITION 0
+    #define DIOb_CONDITION 0
 
 
 // #define DEBUG_NO_WAVE_DESCRIPTIONS	

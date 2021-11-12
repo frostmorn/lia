@@ -889,7 +889,7 @@
 #include "features/triggers/callbacks/heroes/reksar/9330_UK.j"
 #include "functions/9340_wK.j"
 #include "functions/9350_WK.j"
-#include "features/triggers/callbacks/heroes/reksar/9370_YK.j"
+#include "features/triggers/callbacks/heroes/reksar/9370_OnReksarRoar.j"
 #include "features/triggers/callbacks/heroes/time_lord/9380_zK.j"
 #include "functions/9390_ZK.j"
 #include "features/triggers/callbacks/heroes/time_lord//9400_vl.j"
