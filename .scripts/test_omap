@@ -1,7 +1,0 @@
-#!/usr/bin/bash
-WINEPREFIX=~/.wine_2 wineserver -k
-echo "Starting map debug..." && 
-# Non Optimized
-# WINEPREFIX=~/.wine strangle -v 0 wine /home/orphey/Games/wc3/War3.exe -opengl -window -loadfile "`winepath --windows \"build\lia_deploy.w3x"`"
-# Optimized
-WINEPREFIX=~/.wine_2 strangle -v 0 wine /home/orphey/Games/wc3/war3.exe -opengl -window -loadfile "`winepath --windows \"build\lia_deploy_slk.w3x"`"

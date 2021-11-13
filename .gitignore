@@ -1,6 +1,7 @@
 generated_war3map.j
 (listfile)
 .vscode/*
+.scripts
 test_map.sh
 war3map_rects.j
 errors.txt

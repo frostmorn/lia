@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-WINEDEBUG=-all wine ~/Software/w3x2lni/w2l.exe log

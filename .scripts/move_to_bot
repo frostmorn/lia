@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-echo "Copying file to bot..." && 
-cp build/lia_deploy_slk.w3x ../en0t/enot_wc3/maps/lia.w3x
