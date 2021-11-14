@@ -55,7 +55,6 @@ function wP takes nothing returns nothing
     call MultiboardSetItemValueBJ(StatsBoard,6,In,I2S(ZP))
     call MultiboardSetItemValueBJ(StatsBoard,5,In,I2S(zP))
     call MultiboardSetItemValueBJ(StatsBoard,4,In,I2S(YP))
-
 endfunction
 
 #endif

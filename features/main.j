@@ -33,14 +33,12 @@ function main takes nothing returns nothing
 	call CreateRegions()
 	call InitBlizzard()
 	call jasshelper__initstructs29827921()
-
 	// Let it snow
 	set Lv = AddWeatherEffect(gg_rct_BigArena,'SNhs')
 	call EnableWeatherEffect(Lv,true)
-
 	// Don't work, so we will clean that later
 
-	// call BurningArmor___Init()
+	
 	call CatchTheShadow___Init()
 	call FlexibleSpeed___Init()
 	call MagicLumpRegeneration___Init()
@@ -60,7 +58,6 @@ function main takes nothing returns nothing
 	call ChainsOfLight___Init()
 	call ItsReady___Init()
 	call HeroLimit___Init()
-
 
 	call ArenaBoundary___Init()
 	call Charge___Init()
@@ -110,7 +107,6 @@ function main takes nothing returns nothing
 	call SetHCLStringFromHandicaps()
 	call BN()
 	call CreateTriggers() 
-
 	set i = 0
 	loop
 		exitwhen(i > 8)
@@ -201,7 +197,6 @@ function main takes nothing returns nothing
 	call TriggerRegisterTimerEvent(oO,1,true)
 	call TriggerRegisterTimerEvent(rO,2,true) 
 	call TriggerRegisterTimerEvent(CreepsSeekAndAttackPeriodicTrigger,1.0,true)
-
 	call dq()
 	call jq()
 	call TriggerRegisterTimerEventSingle(aR,1.)

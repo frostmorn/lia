@@ -7,7 +7,6 @@ function FlushAllDestructionShit takes unit attackTargetUnit returns nothing
 	call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit),StringHash("Destruction:PeriodicDamageTimer"))
 	call FlushChildHashtable(HashData, GetHandleId(t))	
 	call DestroyTimer(t)
-
 endfunction
 function OnDestructionTimer takes nothing returns nothing
 	local integer timerHandle = GetHandleId(GetExpiredTimer())
@@ -41,7 +40,6 @@ function OnDestructionTimer takes nothing returns nothing
 		call FlushAllDestructionShit(attackTargetUnit)
 	endif
 endfunction
-
 function OnDestructorAttackCallback takes nothing returns nothing
 	local unit attacker = GetAttacker()
 	local unit attackTargetUnit = GetAttackedUnitBJ()
@@ -104,7 +102,6 @@ function OnDestructorAttackCallback takes nothing returns nothing
 	   
 		endif
 	endif
-
 
 
 endfunction

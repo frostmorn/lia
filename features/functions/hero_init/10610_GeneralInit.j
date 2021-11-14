@@ -2,7 +2,6 @@
 #define H_10610
 #include "../../triggers/callbacks/heroes/general/RegisterGeneralAttacks.j"
 #include "../../functions/Conditions.j"
-
 function HeroInit1211117638 takes nothing returns nothing
 	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
 	#if DEBUG_HERO_INITS

@@ -12,7 +12,6 @@ function HomeRegenerationPeriodic takes nothing returns nothing
 		call DestroyTimer(t)
 	endif
 endfunction
-
 function HomeRegenerationEnter takes nothing returns nothing
 	local unit u = GetEnteringUnit()
 	local timer t = CreateTimer()

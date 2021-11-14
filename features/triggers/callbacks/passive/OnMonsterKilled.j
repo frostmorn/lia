@@ -2,7 +2,6 @@
 #define T_00800
 #include "../../../Debug.j"
 #include "../../../functions/SetPlayerScore_StatsUpdate.j"
-
 function RemoveKilledMonsters takes nothing returns nothing
 	local group deadMonsters = LoadGroupHandle(HashData, StringHash("DeadMonsters"), StringHash("Group"))
 	local unit deadMonster = null
@@ -13,7 +12,6 @@ function RemoveKilledMonsters takes nothing returns nothing
 		exitwhen deadMonster == null
 	endloop
 endfunction
-
 function OnMonsterKilledCallback takes nothing returns nothing
 	local unit deadMonster = GetDyingUnit()
 	local group deadMonsters = LoadGroupHandle(HashData, StringHash("DeadMonsters"), StringHash("Group"))

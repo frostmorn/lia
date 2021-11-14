@@ -12,7 +12,6 @@ function SwapNoCommandTriggerCallback takes nothing returns nothing
 	call DisplayTextToPlayer(p,0,0,"|Cff00ff00Обмен героями отменен!|R")
 	set p = null
 endfunction
-
 function CreateSwapNoCommandTrigger takes nothing returns nothing
 	local integer i = 0
 	set SwapNoCommandTrigger = CreateTrigger()

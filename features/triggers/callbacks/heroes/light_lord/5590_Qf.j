@@ -1,7 +1,6 @@
 #ifndef H_5590
 #define H_5590
 #include "../../../../functions/Conditions.j"
-
 function Qf takes nothing returns nothing
 	local unit uA = GetAttacker()
 	local unit c = Ko

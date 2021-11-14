@@ -2,7 +2,6 @@
 #define ROUND_START_J
 #include "../Debug.j"
 #include "PrepareBeforeBossFight.j"
-
 function RoundStartFunction takes nothing returns nothing
 	#if FEATURE_TESTMODE_SETWAVE
 	set setWaveAllowed = false

@@ -11,7 +11,6 @@ function OnReturnToMaster takes unit shadow_unit returns nothing
 	endif
 	set master_unit = null
 endfunction
-
 function OnShadowReturnsToMasterSpellCallback takes nothing returns nothing
 	call OnReturnToMaster(GetSpellAbilityUnit())
 endfunction

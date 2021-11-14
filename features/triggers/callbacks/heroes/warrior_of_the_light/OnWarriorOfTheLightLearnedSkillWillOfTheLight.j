@@ -1,6 +1,5 @@
 #ifndef T_00700
 #define T_00700
-
 function OnWillOfTheLightTimer takes nothing returns nothing
 	local timer willOfTheLightTimer = GetExpiredTimer()
 	local unit willOfTheLightUnit = LoadUnitHandle(HashData, GetHandleId(willOfTheLightTimer), StringHash("WillOfTheLight:AbilityOwner"))
@@ -33,9 +32,7 @@ function OnWillOfTheLightTimer takes nothing returns nothing
 		endif
 		exitwhen tempUnit == null
 	endloop
-
 endfunction
-
 function OnWillOfTheLightUnitDamaged takes nothing returns nothing
 	local unit willOfTheLightUnit = GetTriggerUnit()
 	local real damage = GetEventDamage()
@@ -58,7 +55,6 @@ function OnWillOfTheLightUnitDamaged takes nothing returns nothing
 		call TimerStart(willOfTheLightTimer, 0.5, true, function OnWillOfTheLightTimer)
 	endif
 endfunction
-
 function OnWarriorOfTheLightLearnedSkillWillOfTheLightCallback takes nothing returns nothing
 	local integer level = GetLearnedSkillLevel()
 	local unit learner = GetLearningUnit()
@@ -74,7 +70,6 @@ function OnWarriorOfTheLightLearnedSkillWillOfTheLightCallback takes nothing ret
 		call TriggerAddAction(WillOfTheLightOnDamageTrigger, function OnWillOfTheLightUnitDamaged )
 	endif
 	call SaveInteger(HashData, GetHandleId(learner), StringHash("WillOfTheLight:Level"), level)
-
 endfunction
 
 #endif

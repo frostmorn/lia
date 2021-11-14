@@ -1,7 +1,6 @@
 #ifndef H_13600
 #define H_13600
 #include "../features/CombatTextAPI.j"
-
 function sa___prototype3_DarkRitual___DarkRitualCallback takes nothing returns boolean
     local unit caster = s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
     local unit target = s__SpellEvent___spellEvent_TargetUnit[SpellEvent]

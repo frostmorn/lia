@@ -44,7 +44,6 @@ globals
 	boolean Lo = false
 	boolean Mx = false
 	boolean no = false
-	boolean notAffect = false
 	boolean Pe = false
 	boolean qv = false
 	boolean Qx = false
@@ -52,7 +51,6 @@ globals
 	#if FEATURE_TESTMODE_SETWAVE
 	boolean setWaveAllowed = false
 	#endif
-	boolean SpellEventSpecial___IgnPrior = false
 	boolean sx = false
 	boolean udg_DamageEventOverride = false
 	boolean udg_DmgEvRunning = false
@@ -70,88 +68,22 @@ globals
 	boolean ze = false
 		camerasetup Ma = null
 	camerasetup pa = null
-	constant attacktype ArmorUtils__ATTACK_TYPE_USED = ATTACK_TYPE_CHAOS
 
 	constant hashtable AimedShot___HASH_TABLE = InitHashtable()
 	constant hashtable DemonicRage___hash = InitHashtable()
 	constant hashtable DinamiteShot___HASH_TABLE = InitHashtable()
-
 	constant integer AimedShot___SPELL_ID = 'A0IV'
-	constant integer ArmorUtils__LIFE_BONUS_SPELL_ID = 'A0K3'
 	constant integer BONUS_TYPE_ARMOR = 2
 	constant integer BONUS_TYPE_ATTACKSPEED = 3
 	constant integer BONUS_TYPE_DAMAGE = 1
 	constant integer DAMAGE_TYPE_ATTACK = 0
-	constant integer DAMAGE_TYPE_ATTACKCRIT = 11
-	constant integer DAMAGE_TYPE_ATTACKED = 8
 	constant integer DAMAGE_TYPE_IGNORED = 1
-	constant integer DAMAGE_TYPE_PHYSICAL = 4
-	constant integer DAMAGE_TYPE_PHYSICALCRIT = 7
-	constant integer DAMAGE_TYPE_PHYSICALDOT = 6
-	constant integer DAMAGE_TYPE_SPECIFIED = 10
-	constant integer DAMAGE_TYPE_SPELL = 2
-	constant integer DAMAGE_TYPE_SPELLCHAOS = 3
-	constant integer DAMAGE_TYPE_SPELLCRIT = 9
-	constant integer DAMAGE_TYPE_SPELLDOT = 5
 	constant integer DemonicRage___abilityId = 'A0IZ'
 	constant integer DemonicRage___dummyBuffId = 'B049'
-	constant integer Logarithm__ITERATIONS = 20
 	constant integer SetUnitMaxState___MAX_STATE_LIFE_ABILITY = 'Zx01'
 	constant integer SetUnitMaxState___MAX_STATE_MANA_ABILITY = 'Zx00'
 	constant integer SetUnitMaxState___MAX_STATE_MAX_POWER = 8
-	constant integer si__HandleTable = 4
-	constant integer si__SpellEvent___spellEvent = 51
-	constant integer si__StringTable = 3
-	constant integer si__Table = 2
-	constant integer si__TableBr = 49
-	constant integer si__TableBr__abilitys = 16
-	constant integer si__TableBr__agents = 7
-	constant integer si__TableBrArray = 50
-	constant integer si__TableBr__booleans = 9
-	constant integer si__TableBr__boolexprs = 26
-	constant integer si__TableBr__buttons = 40
-	constant integer si__TableBr__defeatconditions = 33
-	constant integer si__TableBr__destructables = 13
-	constant integer si__TableBr__dex = 5
-	constant integer si__TableBr__dialogs = 39
-	constant integer si__TableBr__effects = 28
-	constant integer si__TableBr__events = 21
-	constant integer si__TableBr__fogmodifiers = 47
-	constant integer si__TableBr__fogstates = 46
-	constant integer si__TableBr__forces = 22
-	constant integer si__TableBr__groups = 23
-	constant integer si__TableBr__handles = 6
-	constant integer si__TableBr__hashtables = 48
-	constant integer si__TableBr__images = 43
-	constant integer si__TableBr__itempools = 30
-	constant integer si__TableBr__items = 14
-	constant integer si__TableBr__leaderboards = 35
-	constant integer si__TableBr__lightnings = 42
-	constant integer si__TableBr__locations = 24
-	constant integer si__TableBr__multiboarditems = 37
-	constant integer si__TableBr__multiboards = 36
-	constant integer si__TableBr__players = 11
-	constant integer si__TableBr__questitems = 32
-	constant integer si__TableBr__quests = 31
-	constant integer si__TableBr__reals = 8
-	constant integer si__TableBr__rects = 25
-	constant integer si__TableBr__regions = 45
-	constant integer si__TableBr__sounds = 27
-	constant integer si__TableBr__strings = 10
-	constant integer si__TableBr__texttags = 41
-	constant integer si__TableBr__timerdialogs = 34
-	constant integer si__TableBr__timers = 17
-	constant integer si__TableBr__trackables = 38
-	constant integer si__TableBr__triggeractions = 20
-	constant integer si__TableBr__triggerconditions = 19
-	constant integer si__TableBr__triggers = 18
-	constant integer si__TableBr__ubersplats = 44
-	constant integer si__TableBr__unitpools = 29
-	constant integer si__TableBr__units = 15
-	constant integer si__TableBr__widgets = 12
-	constant integer si__Table__GTable = 1
 	constant integer StatMod___MAX_POWER = 11
-	constant integer Table__MAX_INSTANCES = 8100
 	constant integer TEXT_TYPE_DAMAGE = 1
 	constant integer TEXT_TYPE_DAMAGE_CRIT = 8
 	constant integer TEXT_TYPE_EXPIRIENCE = 6
@@ -160,12 +92,6 @@ globals
 	constant integer TEXT_TYPE_LUMBER = 3
 	constant integer TEXT_TYPE_MANABURN = 4
 	constant integer TEXT_TYPE_MISS = 5
-	constant real ARMOR_INVULNERABLE = 917451.519
-	constant real ArmorUtils__ARMOR_REDUCTION_MULTIPLIER = 0.06
-	constant real ArmorUtils__DAMAGE_LIFE = 30.
-	constant real ArmorUtils__DAMAGE_TEST = 16.
-	constant real ArmorUtils__NATLOG_094 =- 0.061875
-	constant string AimedShot___FX2_PATH = "Abilities\\Spells\\NightElf\\Blink\\BlinkTarget.mdl"
 	constant string AimedShot___FX_PATH = "war3mapImported\\FireworksDragonHead.mdx"
 	constant string CombatTextIn___TEXT_COLOR_EXPIRIENCE = "|c008E009A"
 	constant string CombatTextIn___TEXT_COLOR_GOLD = "|c00FFFF00"
@@ -187,19 +113,13 @@ globals
 	destructable OI = null
 	destructable RI = null
 	destructable XI = null
-	effect array Mo
 	effect iA
 	effect mx = null
 
-
-	fogmodifier array Px
-	force AA = null
 	force Hx = null
 	force tv = null
 	force Tv = null
 	gamecache LiAGameCache
-
-	group array BugFixGroup
 	group array CatchTheShadowGroup
 	group array Ee
 	group co = null
@@ -208,7 +128,6 @@ globals
 	group IA = null
 	group JI
 	group Jx = null
-	group o
 	group qx = null
 	group tI
 	group udg_DamageEventAOEGroup = null
@@ -223,7 +142,6 @@ globals
 	hashtable TableBr__ht = InitHashtable()
 	hashtable Table__ht = InitHashtable()
 	integer OnlinePlayersCount = 0	// Possible players count(online?)
-	integer Ae = 0
 	integer array Ao
 	integer array arrayTreeTypes
 	integer array bo
@@ -238,7 +156,6 @@ globals
 	integer array HeroIdsArray
 	integer array IDDS___IDStack
 	integer array IDDS___NewDamageType
-	integer array IDDS___Priority
 	integer array Jv
 	integer array oe
 	integer array Qv
@@ -254,8 +171,6 @@ globals
 	integer array SpellEvent___EffectCallList
 	integer array SpellEvent___EndCastCallList
 	integer array SpellEvent___FinishCallList
-	integer array SpellEventSpecial___IDStack
-	integer array SpellEventSpecial___Priority
 	integer array s__SpellEvent___spellEvent_AbilityId
 	integer array s__SpellEvent___spellEvent_interrupt
 	integer array StatMod___ABILITY_ARMOR
@@ -298,7 +213,6 @@ globals
 	integer IDDS___Count = 0
 	integer IDDS___DamageId = 0
 	integer IDDS___DamageType = 0
-	integer IDDS___DamageTypeCount = 12
 	integer IDDS___IDC = 0
 	integer IDDS___IDN = 0
 	integer IDDS___RegiTable = 0
@@ -312,7 +226,6 @@ globals
 	integer MI = 0
 	integer mv = 0
 	integer Mv = 0
-	integer Ne = 0
 	integer nv = 0
 	integer VampireMaxHungryPoints = 0
 	integer oA = 0
@@ -343,9 +256,6 @@ globals
 	integer SpellEvent___EndCastTable
 	integer SpellEvent___FinishCallCount = 0
 	integer SpellEvent___FinishTable
-	integer SpellEventSpecial___Count = 0
-	integer SpellEventSpecial___IDC = 0
-	integer SpellEventSpecial___IDN = 0
 	integer SpellEventSpecial___RegTable = 0
 	integer SpellEventSpecial___TrigTable = 0
 	integer s__SpellEvent___spellEvent_SpellEvent___casterTable
@@ -353,11 +263,9 @@ globals
 	integer StatMod___MAX_USAGE = 24
 	integer sv = 0
 	integer Sv = 0
-	integer TableBr__less = 0
 	integer TableBr__more = 2
 	integer treeTypeIndex
 	integer Tx = 0
-	integer udg_DamageBlockingAbility = 0
 	integer udg_DamageEventAOE = 0
 	integer udg_DamageEventLevel = 0
 	integer udg_DamageEventsWasted = 0
@@ -367,10 +275,8 @@ globals
 	integer udg_DamageTypeExplosive = 0
 	integer udg_DamageTypeHeal = 0
 	integer udg_DamageTypeReduced = 0
-	integer udg_DmgEvBracers = 0
 	integer udg_DmgEvRecursionN = 0
 	integer udg_NextDamageType = 0
-	integer udg_SpellDamageAbility = 0
 	integer udg_UDex = 0
 	integer udg_UDexGen = 0
 	integer udg_UDexRecycle = 0
@@ -587,7 +493,6 @@ globals
 	timerdialog array Pv
 	timerdialog Oe = null
 	timerdialog Ux = null
-	timer EA = null
 	timer BeforeRoundSilenceTimer = null
 	timer he = null
 	timer Ho = null
@@ -605,7 +510,6 @@ globals
 	trigger AO = null
 	trigger aR = null
 	trigger array IDDS___Trg
-	trigger array SpellEventSpecial___Trg
 	trigger array st___prototype3
 	trigger array st___prototype32
 	trigger array st__Table__GTable_onDestroy
@@ -675,57 +579,9 @@ globals
 	trigger GeneralAttackTrigger = null
 	trigger gE = null
 	trigger GE = null
-	trigger gg_trg_AimedShot = null
-	trigger gg_trg_ArenaEntering = null
-	trigger gg_trg_ArmorUtils = null
-	trigger gg_trg_BorningOfDeath = null
-	trigger gg_trg_BurningArmor = null
-	trigger gg_trg_ButchersRage = null
 	trigger gg_trg_CatchTheShadow = null
-	trigger gg_trg_CausticFinale = null
-	trigger gg_trg_ChainsOfLight = null
-	trigger gg_trg_Charge = null
-	trigger gg_trg_CloudOfFog = null
-	trigger gg_trg_CombatStatus = null
-	trigger gg_trg_CombatTextIn = null
-	trigger gg_trg_Damage_Engine_Config = null
-	trigger gg_trg_Damage_Engine = null
-	trigger gg_trg_DamageEvent = null
-	trigger gg_trg_DamageMod = null
-	trigger gg_trg_Damage_Tag = null
-	trigger gg_trg_DarkRitual = null
-	trigger gg_trg_DemonicRage = null
-	trigger gg_trg_DinamiteShot = null
-	trigger gg_trg_EssenceOfShadow = null
-	trigger gg_trg_FlexibleSpeed = null
-	trigger gg_trg_HellFire = null
-	trigger gg_trg_HeroLimit = null
-	trigger gg_trg_HolyForces = null
-	trigger gg_trg_IntuitiveDamageSystem = null
-	trigger gg_trg_ItsReady = null
-	trigger gg_trg_Logarithm = null
-	trigger gg_trg_MagicLump = null
-	trigger gg_trg_MagicLumpRegeneration = null
-	trigger gg_trg_MagicRum = null
-	trigger gg_trg_MissOnAttack = null
-	trigger gg_trg_NeutralsCurse = null
-	trigger gg_trg_OnDamage = null
-	trigger gg_trg_PoisionousWeapon = null
-	trigger gg_trg_Rage = null
-	trigger gg_trg_Roflan = null
 	trigger gg_trg_Script = null
-	trigger gg_trg_SettingsTrueCast = null
-	trigger gg_trg_SetUnitMaxState = null
-	trigger gg_trg_SpellEvent = null
-	trigger gg_trg_SpellEventSpecial = null
-	trigger gg_trg_SpiritOfVengeance = null
-	trigger gg_trg_StatMod = null
-	trigger gg_trg_SteelRain = null
-	trigger gg_trg_TableBr = null
-	trigger gg_trg_Table = null
-	trigger gg_trg_TimedEffect = null
 	trigger gg_trg_Unit_Indexer = null
-	trigger gg_trg_Void = null
 	trigger gn = null
 	trigger Gn = null
 	trigger gO = null
@@ -795,7 +651,6 @@ globals
 	trigger KX = null
 	trigger lE = null
 	trigger LE = null
-	trigger l__library_init
 	trigger ln = null
 	trigger Ln = null
 	trigger lO = null
@@ -811,7 +666,6 @@ globals
 	trigger Mn = null
 
 	trigger mR = null
-	trigger MR = null
 	trigger mV = null
 	trigger MV = null
 	trigger mX = null
@@ -851,8 +705,6 @@ globals
 	trigger pn = null
 	trigger Pn = null
 	trigger PrepareBeforeBRoundTrigger = null
-	trigger pR = null
-	trigger PR = null
 	trigger pV = null
 	trigger PV = null
 	trigger pX = null
@@ -866,7 +718,6 @@ globals
 	trigger Qn = null
 	trigger qO = null
 	trigger QO = null
-	trigger qR = null
 	trigger QR = null
 	trigger qV = null
 	trigger QV = null
@@ -964,7 +815,6 @@ globals
 	trigger IntelligenceSplashTrigger = null
 	trigger wn = null
 	trigger Wn = null
-	trigger wO = null
 	trigger WO = null
 	trigger SwapCommandTrigger = null
 	trigger wV = null
@@ -1022,13 +872,10 @@ globals
 	unit array SoV_Owner
 	unit array s__SpellEvent___spellEvent_CastingUnit
 	unit array s__SpellEvent___spellEvent_TargetUnit
-	unit array udg_LastDmgSource
-	unit array udg_LastDmgTarget
 	unit array udg_UDexUnits
 	unit Av = null
 	unit ax = null
 	unit bv = null
-	unit DI
 	unit Ev = null
 	unit Fv = null
 	unit GeneralUnit = null
@@ -1056,11 +903,7 @@ globals
 	unit qe = null
 	unit Rv = null
 	unit Se = null
-	unit SpellEventSpecial___SystemSpellCaster = null
 	unit Te = null
-	unit udg_DamageEventSource = null
-	unit udg_DamageEventTarget = null
-	unit udg_EnhancedDamageTarget = null
 	// Oh shit...
 	// All hero functions will broke if we try to add 
 	// few instances of that unit to the map, which makes us

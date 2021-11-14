@@ -654,5 +654,4 @@ function CreateTriggers takes nothing returns nothing
 	// Regeneration in SweetHomeRegion
 
 	call TriggerRegisterEnterRegionSimple(HomeRegenerationEnterTrig, SweetHome)
-
 endfunction

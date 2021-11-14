@@ -144,6 +144,5 @@ function CreateRegions takes nothing returns nothing
 	call RegionAddRect(BigArena, gg_rct_BigArena)
 	call RegionAddRect(BigArena, gg_rct_PortalTopNoTp)
 	call RegionAddRect(BigArena, gg_rct_PortalBottomNoTp)
-
 endfunction
 #endif

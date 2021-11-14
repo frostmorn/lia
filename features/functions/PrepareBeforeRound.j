@@ -169,7 +169,6 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 	set tt = null
 	set Gd = null
 	set Hd = null
-
 endfunction
 
 #endif

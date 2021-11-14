@@ -1,7 +1,6 @@
 #ifndef H_11370
 #define H_11370
 #include "../features/Debug.j"
-
 function Cp takes nothing returns nothing
     local integer i
     local integer In = 1

@@ -1,7 +1,6 @@
 #ifndef F_01500
 #define F_01500
 #include "UnitAPI.j"
-
 function CombatTextCreate takes unit combatUnit,string combatString,integer combatRed,integer combatGreen,integer combatBlue,integer textType returns nothing
 	local texttag text
 	local integer start = 0

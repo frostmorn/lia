@@ -1,5 +1,5 @@
 // enable map debug mode
-#define DEBUG 1
+#define DEBUG 0
 // DEBUG WITH GHOSTPP BOT
 #define DEBUG_TYPE_BOT 0
 // adjust different debug mode options

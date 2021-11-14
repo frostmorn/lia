@@ -5,31 +5,25 @@
 
 // IsUnitInRect dependency
 #include "RectAPI.j"
-
 function IsUnitAlive takes unit u returns boolean
 	return u!=null and (GetWidgetLife(u) > 0.0)
 endfunction
-
 function IsUnitDead takes unit u returns boolean
 	return not (IsUnitAlive(u))
 endfunction
-
 function IsUnitInRect takes unit u, rect rct returns boolean
 	if IsUnitAlive(u) then
 		return IsCordsInRect(rct, GetUnitX(u), GetUnitY(u) )
 	endif
 	return false
 endfunction
-
 function GetUnitZ takes unit u returns real
 	return GetLocationZ(GetUnitLoc(u))+ GetUnitFlyHeight(u)
 endfunction
-
 function IsUnitDummy takes unit u returns boolean
 	local integer typeID = GetUnitTypeId(u)
 	return typeID =='h00N' or typeID=='h00P' or  typeID =='h00Q' or typeID == 'h010' or typeID == 'h00O' or typeID == 'h00V' or typeID == 'h011' or GetUnitAbilityLevel(u, 'Aloc')> 0
 endfunction
-
 function IsUnitOnBigArena takes unit u returns boolean
 
 	#if D_110
@@ -38,12 +32,10 @@ function IsUnitOnBigArena takes unit u returns boolean
 	return IsUnitInRegion(BigArena, u)
 endfunction
 
-
 function IsUnitInvulnerable takes unit u returns boolean
 	// B029 (SKELETON THIEF: TEST)
 	return GetUnitAbilityLevel(u, 'A0EC') > 0 or GetUnitAbilityLevel(u, 'A01J') > 0 
 endfunction
-
 function IsUnitImmune takes unit u returns boolean
 	 return IsUnitInvulnerable(u) or GetUnitAbilityLevel(u, 'A077') > 0 or GetUnitAbilityLevel(u,'Bams')> 0 or GetUnitAbilityLevel(u,'Bam2')> 0
 endfunction
@@ -95,16 +87,13 @@ endfunction
 function IsUnitAliveFilter takes nothing returns boolean
 	return IsUnitAlive(GetFilterUnit())
 endfunction
-
 function IsUnitDeadFilter takes nothing returns boolean
 	return IsUnitDead(GetFilterUnit())
 endfunction
 
-
 function IsAliveAndNotADummyFilter takes nothing returns boolean
     return IsUnitAlive(GetFilterUnit()) and not(IsUnitDummy(GetFilterUnit()))
 endfunction
-
 
 
 

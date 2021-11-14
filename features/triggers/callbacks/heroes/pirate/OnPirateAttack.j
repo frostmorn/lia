@@ -1,7 +1,6 @@
 #ifndef T_00400
 #define T_00400
 #include "../../../../Debug.j"
-
 function DealDamageToPoisonedGroup takes nothing returns nothing
 	local unit attackTargetUnit = GetEnumUnit()
 	local real damage = LoadReal(HashData, GetHandleId(attackTargetUnit), StringHash("Poison:DamagePart"))
@@ -45,7 +44,6 @@ function DealDamageToPoisonedGroup takes nothing returns nothing
 endfunction
 
 
-
 function OnPiratePoisionTimer takes nothing returns nothing
 	
 	local timer periodicDamageTimer = GetExpiredTimer()
@@ -67,7 +65,6 @@ function OnPiratePoisionTimer takes nothing returns nothing
 
 	
 endfunction
-
 
 function OnPirateAttackCallback takes nothing returns nothing
 	local unit attacker = GetAttacker()

@@ -3,7 +3,6 @@
 // Here is a place where all trigger conditions should be.
 // Each condition function shouldn't be very hard,
 // cause wc3 calculates them one by one in main thread.
-
 // Duplicates should be deleted
 
 #include "../../functions/3680_FN.j"
@@ -465,14 +464,7 @@ endfunction
 // 	endif
 // 	return false
 // endfunction
-// function GN takes nothing returns boolean
-// 	local unit f = GetFilterUnit()
-// 	if IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false and FN(f)then
-// 		call IssueTargetOrderById(DI,852583,f)
-// 	endif
-// 	set f = null
-// 	return false
-// endfunction
+
 function Ob takes nothing returns boolean
 	local unit fu = GetFilterUnit()
 	local boolean nb = false

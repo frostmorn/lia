@@ -8,9 +8,7 @@ function FlushBurningTimerData takes nothing returns nothing
 	call RemoveSavedInteger(HashData, GetHandleId(attacker), StringHash("BurningArmor:Silenced"))
 	call FlushChildHashtable(HashData, GetHandleId(t))
 	call DestroyTimer(t)
-
 endfunction
-
 function OnDestructorAttackedCallback takes nothing returns nothing
 	local unit attacker = GetAttacker()
 	local unit attackTargetUnit = GetAttackedUnitBJ()
@@ -57,7 +55,6 @@ function OnDestructorAttackedCallback takes nothing returns nothing
 
 
 	endif
-
 
 endfunction
 #endif

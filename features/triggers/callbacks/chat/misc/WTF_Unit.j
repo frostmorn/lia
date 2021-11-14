@@ -1,6 +1,7 @@
 #ifndef WTF_UNIT_TRIGGER
 #define WTF_UNIT_TRIGGER
-
+#include "../../../../functions/misc/I2HS.j"
+#include "../../../../functions/misc/Loc2S.j"
 function WTF_UnitTriggerCallback takes nothing returns nothing
 	local player trig_Player = GetTriggerPlayer()
 	local unit last = LastSelectedUnit[GetPlayerId(trig_Player)]

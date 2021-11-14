@@ -212,7 +212,6 @@ function PreloadModels takes nothing returns nothing
 	call PreloadGenEnd( "Save\_dummies.pld" )
 
 	#endif
-
 endfunction
 #endif
 
