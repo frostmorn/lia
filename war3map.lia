@@ -201,7 +201,6 @@
 #include "functions/4780_XC.j"
 #include "functions/4790_OC.j"
 #include "functions/4850_BC.j"
-#include "functions/4860_dC.j"
 #include "functions/4890_jC.j"
 #include "functions/4900_JC.j"
 #include "functions/4910_kC.j"
