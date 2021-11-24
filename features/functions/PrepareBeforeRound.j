@@ -114,7 +114,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 	endif
 	if CurrentWave > 0 then
 		if av==1 then
-			call bN()
+			call SendScoreToBot()
 		endif
 	endif
 	set CurrentWave = CurrentWave + 1

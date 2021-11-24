@@ -1,6 +1,6 @@
 #ifndef H_3630
 #define H_3630
-function bN takes nothing returns nothing
+function SendScoreToBot takes nothing returns nothing
     local integer i = 0
     loop
         exitwhen i > 7

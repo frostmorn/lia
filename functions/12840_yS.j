@@ -9,7 +9,7 @@ function yS takes nothing returns nothing
 	set I[RN]= true
 	call SendStatsToBot(I2S(RN),ScoreArr[ee[RN + 1]])
 	if av==2 then
-		call bN()
+		call SendScoreToBot()
 	endif
 	loop
 		exitwhen In > 8

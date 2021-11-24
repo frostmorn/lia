@@ -56,7 +56,7 @@ function PrepareBeforeBRoundTriggerCallback takes nothing returns nothing
         if CurrentWave > 0 then
             call SendStatsToBot("WАVЕ",CurrentWave)
             if av==1 then
-                call bN()
+                call SendScoreToBot()
             endif
         endif
         set CurrentWave = CurrentWave + 1
