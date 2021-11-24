@@ -1,5 +1,19 @@
 #ifndef H_6700
 #define H_6700
+
+function JG takes nothing returns nothing
+	local timer t = GetExpiredTimer()
+	local unit u = LoadUnitHandle(Ax,GetHandleId(t),1)
+	call UnitRemoveAbility(u,'A0BU')
+	call UnitRemoveAbility(u,'A05P')
+	call UnitRemoveAbility(u,'A041')
+	call RemoveSavedHandle(Ax,GetHandleId(u),1)
+	call FlushChildHashtable(Ax,GetHandleId(t))
+	call DestroyTimer(t)
+	set u = null
+	set t = null
+endfunction
+
 function kG takes nothing returns nothing
     local unit KG = GetSpellAbilityUnit()
     local unit u = GetSpellTargetUnit()

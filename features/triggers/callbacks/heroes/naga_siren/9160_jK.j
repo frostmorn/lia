@@ -1,6 +1,32 @@
 #ifndef H_9160
 #define H_9160
 #include "../../../../functions/Conditions.j"
+
+function HK takes nothing returns nothing
+	local timer t = GetExpiredTimer()
+	local integer dN = GetHandleId(t)
+	local trigger pb = LoadTriggerHandle(Ax,1,dN)
+	call TriggerClearActions(pb)
+	call DestroyTrigger(pb)
+	call FlushChildHashtable(Ax,dN)
+	call DestroyTimer(t)
+	set pb = null
+	set t = null
+endfunction
+
+function GK takes nothing returns nothing
+	local trigger pb = GetTriggeringTrigger()
+	local integer Id = GetHandleId(pb)
+	local unit u = LoadUnitHandle(Ax,StringHash("Naga"),Id)
+	if IsUnitAlive(u) and GetIssuedOrderId()!=$D0005 then
+		call DisableTrigger(pb)
+		call IssueTargetOrderById(GetTriggerUnit(),$D000F,u)
+		call EnableTrigger(pb)
+	endif
+	set pb = null
+	set u = null
+endfunction
+
 function jK takes nothing returns nothing
     local timer t = CreateTimer()
     local integer dN = GetHandleId(t)

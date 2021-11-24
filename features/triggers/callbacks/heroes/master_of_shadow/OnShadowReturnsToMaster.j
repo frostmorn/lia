@@ -1,5 +1,6 @@
 #ifndef H_7050
 #define H_7050
+
 function OnReturnToMaster takes unit shadow_unit returns nothing
 	local unit master_unit = MasterOfShadowGlobalUnit
 	call SaveInteger(HashData,GetHandleId((shadow_unit)),StringHash("SuperData:Int"),(11))
@@ -11,6 +12,7 @@ function OnReturnToMaster takes unit shadow_unit returns nothing
 	endif
 	set master_unit = null
 endfunction
+
 function OnShadowReturnsToMasterSpellCallback takes nothing returns nothing
 	call OnReturnToMaster(GetSpellAbilityUnit())
 endfunction

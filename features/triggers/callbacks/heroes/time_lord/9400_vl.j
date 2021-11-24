@@ -1,5 +1,7 @@
 #ifndef H_9400
 #define H_9400
+#include "4330_qB.j"
+
 function vl takes nothing returns nothing
 	local timer t
 	if GetLearnedSkill()=='A009' or GetLearnedSkill()=='A02U' then
