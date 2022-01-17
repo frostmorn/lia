@@ -6,9 +6,9 @@ function iC takes integer id returns nothing
     local unit f = CreateUnitAtLoc(Player(11),id,L,bj_RADTODEG * Atan2(GetLocationY(aC)- GetLocationY(L),GetLocationX(aC)- GetLocationX(L)))
     call RemoveLocation(L)
     call RemoveLocation(aC)
-    call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
+    call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(1))
     if id!='n01X' then
-        call SaveStr(HashData,GetHandleId(f),StringHash("MainCore:BossData"),"mini-boss")
+        call SaveStr(HashData,GetHandleId(f),SH_MAIN_CORE_BOSS_DATA,"mini-boss")
     endif
     call GroupAddUnit(co,f)
     call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\AnimateDead\\AnimateDeadTarget.mdl",f,"origin"))

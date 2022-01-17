@@ -131,7 +131,7 @@ function IsDyingUnitMonster takes nothing returns boolean
 endfunction
 
 function QM takes nothing returns boolean
-	return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==2 and IsDyingUnitMonster()and GetDyingUnit()!=Le and IsNotGameOver()
+	return(LoadInteger(HashData,GetHandleId((GetDyingUnit())),SH_SUPER_DATA_INT))==2 and IsDyingUnitMonster()and GetDyingUnit()!=Le and IsNotGameOver()
 endfunction
 	
 function tM takes nothing returns boolean
@@ -143,7 +143,7 @@ function Ep takes nothing returns boolean
 endfunction
 	
 function Rp takes nothing returns boolean
-	return(GetUnitTypeId(GetDyingUnit())!='E00E' and GetUnitTypeId(GetDyingUnit())!='E00J' and IsUnitIllusion(GetDyingUnit())==false and IsUnitType(GetDyingUnit(),UNIT_TYPE_HERO)and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))!=$B and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))!=12)!=null
+	return(GetUnitTypeId(GetDyingUnit())!='E00E' and GetUnitTypeId(GetDyingUnit())!='E00J' and IsUnitIllusion(GetDyingUnit())==false and IsUnitType(GetDyingUnit(),UNIT_TYPE_HERO)and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),SH_SUPER_DATA_INT))!=$B and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),SH_SUPER_DATA_INT))!=12)!=null
 endfunction
 	
 function Gp takes nothing returns boolean
@@ -155,7 +155,7 @@ function RP takes nothing returns boolean
 endfunction
 	
 function gP takes nothing returns boolean
-	return(IsUnitType(GetDyingUnit(),UNIT_TYPE_HERO)and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))!=$B and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))!=12)!=null
+	return(IsUnitType(GetDyingUnit(),UNIT_TYPE_HERO)and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),SH_SUPER_DATA_INT))!=$B and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),SH_SUPER_DATA_INT))!=12)!=null
 endfunction
 	
 function rq takes nothing returns boolean
@@ -204,7 +204,7 @@ function MQ takes nothing returns boolean
 endfunction
 	
 function QQ takes nothing returns boolean
-	return IsDyingUnitMonster()and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),StringHash("SuperData:Int")))==1
+	return IsDyingUnitMonster()and(LoadInteger(HashData,GetHandleId((GetDyingUnit())),SH_SUPER_DATA_INT))==1
 endfunction
 function Ds takes nothing returns boolean
 	return GetTriggerPlayer()==Ce
@@ -445,7 +445,7 @@ function QL takes nothing returns boolean
 		set f = null
 		set f = null
 		return false
-	elseif GetUnitLifePercent(f)<= 35. and((LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=0 or IsUnitType(f,UNIT_TYPE_HERO))then
+	elseif GetUnitLifePercent(f)<= 35. and((LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))!=0 or IsUnitType(f,UNIT_TYPE_HERO))then
 		set f = null
 		set f = null
 		return false

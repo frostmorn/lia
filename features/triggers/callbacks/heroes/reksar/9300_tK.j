@@ -32,7 +32,7 @@ function SK takes nothing returns nothing
     local unit uA = GetSpellAbilityUnit()
     local player p = GetOwningPlayer(uA)
     local integer JN = GetUnitAbilityLevel(uA,'A03C')
-    if GetUnitLevel(u)>= 6 or IsUnitType(u,UNIT_TYPE_HERO)or(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))!=0 or IsUnitDead(u) or IsUnitAlly(u,p)or IsUnitType(u,UNIT_TYPE_STRUCTURE)or IsUnitIllusion(u)then
+    if GetUnitLevel(u)>= 6 or IsUnitType(u,UNIT_TYPE_HERO)or(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))!=0 or IsUnitDead(u) or IsUnitAlly(u,p)or IsUnitType(u,UNIT_TYPE_STRUCTURE)or IsUnitIllusion(u)then
     else
         call sK(u,uA)
     endif

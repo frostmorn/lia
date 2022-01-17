@@ -8,7 +8,7 @@ function DP takes nothing returns nothing
 	local integer n = 0
 	local integer n2 = 0
 	local unit f
-	call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),false)
+	call SaveBoolean(Ax,1,SH_GG_RCT_PR,false)
 	loop
 		exitwhen In > vB
 		call PauseUnit(PlayersHeroArray[In],false)
@@ -18,7 +18,7 @@ function DP takes nothing returns nothing
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null
-		if(IsPlayerInForce(GetOwningPlayer(f),tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or IsUnitAlive(f)))then
+		if(IsPlayerInForce(GetOwningPlayer(f),tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))]or IsUnitAlive(f)))then
 			set n = n + 1
 		endif
 		call GroupRemoveUnit(g,f)
@@ -27,7 +27,7 @@ function DP takes nothing returns nothing
 	loop
 		set f = FirstOfGroup(g)
 		exitwhen f==null
-		if(IsPlayerInForce(GetOwningPlayer(f),Tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))]or IsUnitAlive(f)))then
+		if(IsPlayerInForce(GetOwningPlayer(f),Tv)and IsUnitType(f,UNIT_TYPE_HERO)and(HeroInGameAndAliveARRAY[(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))]or IsUnitAlive(f)))then
 			set n2 = n2 + 1
 		endif
 		call GroupRemoveUnit(g,f)

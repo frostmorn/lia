@@ -40,7 +40,7 @@ function bq takes nothing returns nothing
 	endif
 	set t = CreateTimer()
 	set dN = GetHandleId(t)
-	set Bc =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+	set Bc =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
 	set id = GetUnitTypeId(u)
 	if Bc==0 then
 		set zf = 18

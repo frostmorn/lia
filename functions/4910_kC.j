@@ -26,7 +26,7 @@ function kC takes nothing returns nothing
             set ee[i + 1]= PlayersCount
             set Zv[PlayersCount]= GetPlayerName(Player(i))
             set Eo[PlayersCount]= CreateUnitAtLoc(Player(i),'n002',BoxLocations[PlayersCount],bj_UNIT_FACING)
-            call SaveInteger(HashData,GetHandleId((Eo[PlayersCount])),StringHash("SuperData:Int"),(PlayersCount))
+            call SaveInteger(HashData,GetHandleId((Eo[PlayersCount])),SH_SUPER_DATA_INT,(PlayersCount))
             call CameraSetupApplyForPlayer(true,pa,Player(i),0)
             call CreateFogModifierRectBJ(true,Player(i),FOG_OF_WAR_VISIBLE,gg_rct_ShopsAreaFogModifierRect)
             call CreateFogModifierRectBJ(true,Player(i),FOG_OF_WAR_VISIBLE,gg_rct_MinimalArenaAndShopsFogModifierRect)

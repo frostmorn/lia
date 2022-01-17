@@ -1,7 +1,7 @@
 #ifndef H_10350
 #define H_10350
 function Jm takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	set lo = u
 	set qI = 0
 	set hI = CreateTrigger()

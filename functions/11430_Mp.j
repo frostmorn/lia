@@ -6,8 +6,8 @@ function Mp takes nothing returns nothing
 	local unit IF = GetKillingUnit()
 	local player p = GetOwningPlayer(IF)
 	local integer Bc = ee[GetPlayerId(p)+ 1]
-	local string str = LoadStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"))
-	if GetOwningPlayer(u)==Player(11)and(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))==1 and IF!=null and GetUnitAbilityLevel(u,'A0K4')==0 then
+	local string str = LoadStr(HashData,GetHandleId(u),SH_MAIN_CORE_BOSS_DATA)
+	if GetOwningPlayer(u)==Player(11)and(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))==1 and IF!=null and GetUnitAbilityLevel(u,'A0K4')==0 then
 		call DisplayTimedTextToPlayer(GetLocalPlayer(),0,0,7.,PlayerColorArr[GetPlayerId(p)]+ GetPlayerName(p)+ "|r убил босса!!!")
 		set vv[Bc]= vv[Bc]+ 1
 		if no or Wx then

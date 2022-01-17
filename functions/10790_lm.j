@@ -1,7 +1,7 @@
 #ifndef H_10790
 #define H_10790
 function lm takes nothing returns nothing
-    local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+    local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
     set qe = u
     set fX = CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ(fX,EVENT_PLAYER_UNIT_SPELL_EFFECT)

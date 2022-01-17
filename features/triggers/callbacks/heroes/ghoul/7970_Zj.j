@@ -28,7 +28,7 @@ function Zj takes nothing returns nothing
     local timer t
     local integer dN
     local unit Lj
-    if GetUnitLevel(GetSpellTargetUnit())< 6 and GetSpellAbilityId()=='A06Q' and IsUnitType(GetSpellTargetUnit(),UNIT_TYPE_HERO)==false and(LoadInteger(HashData,GetHandleId((GetSpellTargetUnit())),StringHash("SuperData:Int")))==0 then
+    if GetUnitLevel(GetSpellTargetUnit())< 6 and GetSpellAbilityId()=='A06Q' and IsUnitType(GetSpellTargetUnit(),UNIT_TYPE_HERO)==false and(LoadInteger(HashData,GetHandleId((GetSpellTargetUnit())),SH_SUPER_DATA_INT))==0 then
         set uT = GetSpellTargetUnit()
         set uA = GetSpellAbilityUnit()
         set WF = GetUnitAbilityLevel(uA,'A06Q')

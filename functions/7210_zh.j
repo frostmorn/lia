@@ -18,7 +18,7 @@ function zh takes nothing returns nothing
             set T = GetUnitLoc(VF)
             set Zh = CreateUnitAtLoc(p,'E00E',T,GetUnitFacing(VF))
             set Xo = Xo + 1
-            call SaveInteger(HashData,GetHandleId((Zh)),StringHash("SuperData:Int"),(11))
+            call SaveInteger(HashData,GetHandleId((Zh)),SH_SUPER_DATA_INT,(11))
             call GroupAddUnit(Ze,Zh)
             call UnitApplyTimedLife(Zh,'BTLF',6. + 2. * JN)
             call SetHeroLevel(Zh,vH,false)

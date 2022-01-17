@@ -6,7 +6,7 @@
 
 #include "../../functions/Conditions.j"
 function HeroInit1311781447 takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	local integer ED = 0
 	local integer wN
 	#if DEBUG_HERO_INITS

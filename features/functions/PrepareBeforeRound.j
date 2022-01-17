@@ -41,7 +41,7 @@ function PrepareBeforeRoundFunction takes nothing returns nothing
 	endloop
 	#endif
 	call RemoveKilledMonsters()
-	call SaveTimerHandle(Ax,1,StringHash("timers"),tt)
+	call SaveTimerHandle(Ax,1,SH_TIMERS,tt)
 	call DisableTrigger(CreepsSeekAndAttackPeriodicTrigger)
 	#if DISABLE_BOSSNWAVE_TRIGGERS_BEFORE_ROUND
 	call DisableTrigger(AO)

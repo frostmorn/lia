@@ -7,7 +7,7 @@ function nq takes nothing returns nothing
     local player pd = GetOwningPlayer(Vq)
     local integer Eq = ee[GetPlayerId(pk)+ 1]
     local integer Xq = ee[GetPlayerId(pd)+ 1]
-    local integer aq =(LoadInteger(HashData,GetHandleId((Vq)),StringHash("SuperData:Int")))
+    local integer aq =(LoadInteger(HashData,GetHandleId((Vq)),SH_SUPER_DATA_INT))
     local integer ID
     if Ud!=null then
         set Qv[Eq]= Qv[Eq]+ 1

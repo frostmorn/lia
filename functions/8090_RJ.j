@@ -3,8 +3,8 @@
 function RJ takes nothing returns nothing
     local timer t = GetExpiredTimer()
     local integer h = GetHandleId(t)
-    local unit u = LoadUnitHandle(HashData,h,StringHash("DarkPact:Target"))
-    local effect e = LoadEffectHandle(HashData,h,StringHash("DarkPact:Effect"))
+    local unit u = LoadUnitHandle(HashData,h,SH_DARK_PACT_TARGET)
+    local effect e = LoadEffectHandle(HashData,h,SH_DARK_PACT_EFFECT)
     call UnitRemoveAbility(u,'Avul')
     call DestroyEffect(e)
     call KillTimer(t)

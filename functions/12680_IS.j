@@ -16,7 +16,7 @@ function IS takes nothing returns nothing
     local integer BS = NS
     local integer array Fb
     local integer cS
-    if(((LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))!=GetItemUserData(it)and GetItemUserData(it)!=0)or GetItemType(it)!=ITEM_TYPE_CAMPAIGN)then
+    if(((LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))!=GetItemUserData(it)and GetItemUserData(it)!=0)or GetItemType(it)!=ITEM_TYPE_CAMPAIGN)then
         set ti = null
         set it = null
         set u = null
@@ -24,7 +24,7 @@ function IS takes nothing returns nothing
     endif
     set bS = KC(NS,false)
     if FN(u)==false then
-        set cS = Ao[(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))]+ 1
+        set cS = Ao[(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))]+ 1
     else
         set cS = 6
     endif

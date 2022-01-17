@@ -6,7 +6,7 @@ function MS takes nothing returns nothing
 	local real x = GetItemX(it)
 	local real y = GetItemY(it)
 	local integer id = GetItemTypeId(it)
-	local integer Bc =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+	local integer Bc =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
 	local timer t = CreateTimer()
 	local integer dN = GetHandleId(t)
 	local integer random

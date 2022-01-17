@@ -3,9 +3,9 @@
 #include "../../../../Debug.j"
 function FlushBurningTimerData takes nothing returns nothing
 	local timer t = GetExpiredTimer()
-	local unit attacker = LoadUnitHandle(HashData, GetHandleId(t),StringHash("BurningArmor:Attacker"))
+	local unit attacker = LoadUnitHandle(HashData, GetHandleId(t),SH_BURNING_ARMOR_ATTACKER)
 	
-	call RemoveSavedInteger(HashData, GetHandleId(attacker), StringHash("BurningArmor:Silenced"))
+	call RemoveSavedInteger(HashData, GetHandleId(attacker), SH_BURNING_ARMOR_SILENCED)
 	call FlushChildHashtable(HashData, GetHandleId(t))
 	call DestroyTimer(t)
 endfunction
@@ -14,7 +14,7 @@ function OnDestructorAttackedCallback takes nothing returns nothing
 	local unit attackTargetUnit = GetAttackedUnitBJ()
 	local integer burningArmorAbilityLevel = GetUnitAbilityLevel(attackTargetUnit, 'A0JA')
 	local integer burningArmorChance = 5 + burningArmorAbilityLevel * 2
-	local integer isAllreadySilenced = LoadInteger(HashData, GetHandleId(attacker), StringHash("BurningArmor:Silenced"))
+	local integer isAllreadySilenced = LoadInteger(HashData, GetHandleId(attacker), SH_BURNING_ARMOR_SILENCED)
 	local timer burningTimer
 	local unit dummy
 	#if DI_00600_DESTRUCTOR_SECOND_PASSIVE 
@@ -41,8 +41,8 @@ function OnDestructorAttackedCallback takes nothing returns nothing
 			call SetUnitAbilityLevel(dummy,'A0J9',burningArmorAbilityLevel)
 			call IssueTargetOrder(dummy,"drunkenhaze",attacker)
 
-			call SaveInteger(HashData, GetHandleId(attacker), StringHash("BurningArmor:Silenced"), 1)
-			call SaveUnitHandle(HashData, GetHandleId(burningTimer),StringHash("BurningArmor:Attacker"), attacker)
+			call SaveInteger(HashData, GetHandleId(attacker), SH_BURNING_ARMOR_SILENCED, 1)
+			call SaveUnitHandle(HashData, GetHandleId(burningTimer),SH_BURNING_ARMOR_ATTACKER, attacker)
 	
 			#if DI_00600_DESTRUCTOR_SECOND_PASSIVE 
 

@@ -3,7 +3,7 @@
 #include "../../triggers/callbacks/heroes/general/RegisterGeneralAttacks.j"
 #include "../../functions/Conditions.j"
 function HeroInit1211117638 takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	#if DEBUG_HERO_INITS
 	call DMesg("Custom H00F Генерал(Агамонд) Таверна Воинов(Верх) Initializing")
 	#endif

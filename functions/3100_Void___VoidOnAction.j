@@ -3,14 +3,14 @@
 function Void___VoidOnAction takes nothing returns nothing
     local timer t = GetExpiredTimer()
     local integer h = GetHandleId(t)
-    local unit caster = LoadUnitHandle(HashData,h,StringHash("Void:Caster"))
-    local unit dummy = LoadUnitHandle(HashData,h,StringHash("Void:Dummy"))
-    local effect fx = LoadEffectHandle(HashData,h,StringHash("Void:FX"))
-    local real x = LoadReal(HashData,h,StringHash("Void:X"))
-    local real y = LoadReal(HashData,h,StringHash("Void:Y"))
-    local real timing = LoadReal(HashData,h,StringHash("Void:Timing"))
-    local integer level = LoadInteger(HashData,h,StringHash("Void:Level"))
-    local boolean b = LoadBoolean(HashData,h,StringHash("Void:Upgrade"))
+    local unit caster = LoadUnitHandle(HashData,h,SH_VOID_CASTER)
+    local unit dummy = LoadUnitHandle(HashData,h,SH_VOID_DUMMY)
+    local effect fx = LoadEffectHandle(HashData,h,SH_VOID_FX)
+    local real x = LoadReal(HashData,h,SH_VOID_X)
+    local real y = LoadReal(HashData,h,SH_VOID_Y)
+    local real timing = LoadReal(HashData,h,SH_VOID_TIMING)
+    local integer level = LoadInteger(HashData,h,SH_VOID_LVL)
+    local boolean b = LoadBoolean(HashData,h,SH_VOID_UPGRADE)
     local unit first
     local group enemy = CreateGroup()
     local real damage
@@ -30,7 +30,7 @@ function Void___VoidOnAction takes nothing returns nothing
             set damage = 400.00
         endif
     endif
-    call SaveReal(HashData,h,StringHash("Void:Timing"),timing + 0.20)
+    call SaveReal(HashData,h,SH_VOID_TIMING,timing + 0.20)
     if timing==0.80 then
         call GroupEnumUnitsInRange(enemy,x,y,250.00,null)
         loop

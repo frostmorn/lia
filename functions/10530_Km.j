@@ -1,7 +1,7 @@
 #ifndef H_10530
 #define H_10530
 function Km takes nothing returns nothing
-    local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+    local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
     local integer ED = 0
     local integer wN
     set Se = u

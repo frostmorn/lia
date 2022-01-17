@@ -8,11 +8,11 @@ function sa___prototype3_Charge___onCast takes nothing returns boolean
     call PauseUnit(caster,true)
     call SetUnitAnimation(caster,"walk")
     call SetUnitTimeScale(caster,2.5)
-    call SaveUnitHandle(HashData,h,StringHash("Caster"),caster)
-    call SaveUnitHandle(HashData,h,StringHash("Target"),target)
-    call SaveReal(HashData,h,StringHash("Effect"),75.00)
-    call SaveReal(HashData,h,StringHash("TargetX"),GetUnitX(target))
-    call SaveReal(HashData,h,StringHash("TargetY"),GetUnitY(target))
+    call SaveUnitHandle(HashData,h,SH_CASTER,caster)
+    call SaveUnitHandle(HashData,h,SH_TARGET,target)
+    call SaveReal(HashData,h,SH_EFFECT,75.00)
+    call SaveReal(HashData,h,SH_TARGET_X,GetUnitX(target))
+    call SaveReal(HashData,h,SH_TARGET_Y,GetUnitY(target))
     call TimerStart(t,0.01,true,function Charge___Update)
     set caster = null
     set target = null

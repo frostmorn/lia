@@ -7,7 +7,7 @@ function TrueCastActions takes nothing returns nothing
 	if IsUnitAlive(u) and GetUnitAbilityLevel(u,'A0K4')==0 then
 		set t = CreateTimer()
 		set h = GetHandleId(t)
-		call SaveUnitHandle(HashData,h,StringHash("TrueCast-Caster"),u)
+		call SaveUnitHandle(HashData,h,SH_TRUE_CAST_CASTER,u)
 		call TimerStart(t,0.00,false,function TrueCastMain)
 	endif
 	set t = null

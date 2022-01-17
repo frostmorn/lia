@@ -18,11 +18,11 @@ function sa___prototype3_ChainsOfLight___onCast takes nothing returns boolean
         set first = FirstOfGroup(bj_lastCreatedGroup)
         exitwhen first==null
         if IsUnitAlive(first) and IsUnitEnemy(first,GetOwningPlayer(caster)) then
-            set t = LoadTimerHandle(HashData,GetHandleId(first),StringHash("ChainsOfLightOldTimer"))
+            set t = LoadTimerHandle(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_TIMER)
             if t!=null then
-                call RemoveSavedHandle(HashData,GetHandleId(first),StringHash("ChainsOfLightOldTimer"))
-                call RemoveSavedInteger(HashData,GetHandleId(first),StringHash("ChainsOfLightOldLevel"))
-                call RemoveSavedHandle(HashData,GetHandleId(first),StringHash("ChainsOfLightOldCaster"))
+                call RemoveSavedHandle(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_TIMER)
+                call RemoveSavedInteger(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_LVL)
+                call RemoveSavedHandle(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_CASTER)
                 call FlushChildHashtable(HashData,GetHandleId(t))
                 call KillTimer(t)
                 call UnitRemoveAbility(first,abilId[1])
@@ -34,11 +34,11 @@ function sa___prototype3_ChainsOfLight___onCast takes nothing returns boolean
             set h = GetHandleId(t)
             call UnitAddAbility(first,abilId[lvl])
             call UnitMakeAbilityPermanent(first,true,abilId[lvl])
-            call SaveUnitHandle(HashData,h,StringHash("ChainsOfLightTarget"),first)
-            call SaveReal(HashData,h,StringHash("ChainsOfLightTimer"),9.00)
-            call SaveTimerHandle(HashData,GetHandleId(first),StringHash("ChainsOfLightOldTimer"),t)
-            call SaveInteger(HashData,GetHandleId(first),StringHash("ChainsOfLightOldLevel"),lvl)
-            call SaveUnitHandle(HashData,GetHandleId(first),StringHash("ChainsOfLightOldCaster"),caster)
+            call SaveUnitHandle(HashData,h,SH_CHAINS_OF_LIGHT_TARGET,first)
+            call SaveReal(HashData,h,SH_CHAINS_OF_LIGHT_TIMER,9.00)
+            call SaveTimerHandle(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_TIMER,t)
+            call SaveInteger(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_LVL,lvl)
+            call SaveUnitHandle(HashData,GetHandleId(first),SH_CHAINS_OF_LIGHT_OLD_CASTER,caster)
             call TimerStart(t,0.05,true,function ChainsOfLight___OnPeriodic)
         endif
         call GroupRemoveUnit(bj_lastCreatedGroup,first)

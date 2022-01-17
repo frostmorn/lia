@@ -2,7 +2,7 @@
 #define H_10740
 #include "../../triggers/callbacks/heroes/ancient_priestess/OnIntelligenceSplash.j"
 function HeroInit1160785970 takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	#if DEBUG_HERO_INITS
 	call DMesg("Custom E002 Древняя Жрица(Эйлиан) Таверна Магов(Низ) Initializing")
 	#endif

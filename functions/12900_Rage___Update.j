@@ -3,10 +3,10 @@
 function Rage___Update takes nothing returns nothing
 	local timer t = GetExpiredTimer()
 	local integer i1 =(GetHandleId((t)))
-	local unit caster = LoadUnitHandle(HashData,i1,StringHash("Caster"))
-	local real duration = LoadReal(HashData,i1,StringHash("Lasts"))
+	local unit caster = LoadUnitHandle(HashData,i1,SH_CASTER)
+	local real duration = LoadReal(HashData,i1,SH_LASTS)
 	local integer i2 =(GetHandleId((caster)))
-	call SaveReal(HashData,i1,StringHash("Lasts"),duration - 0.25)
+	call SaveReal(HashData,i1,SH_LASTS,duration - 0.25)
 	if duration <= 0.00 or IsUnitDead(caster)or GetUnitAbilityLevel(caster,Rage___abilId)==0 then
 		call UnitRemoveAbility(caster,Rage___abilId)
 		call UnitRemoveAbility(caster,Rage___buffId)

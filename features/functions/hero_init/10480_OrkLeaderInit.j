@@ -1,7 +1,7 @@
 #ifndef H_10480
 #define H_10480
 function HeroInit1328558129 takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	#if DEBUG_HERO_INITS
 	call DMesg("Custom O001 Вождь Орков(Дайс) Таверна Воров(Верх) Initializing")
 	#endif

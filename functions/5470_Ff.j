@@ -18,7 +18,7 @@ function Ff takes nothing returns nothing
     if gf==HeroStocksArray[2]then
         call SetUnitPositionLoc(TB,GetRectCenter(gg_rct_Tr))
     endif
-    call SaveUnitHandle(Ax,StringHash("HeroInit"),0,TB)
+    call SaveUnitHandle(Ax,SH_HERO_INIT,0,TB)
     call ExecuteFunc("HeroInit" + I2S(GetUnitTypeId(TB)))
     if p!=Player(15)then
         set Yv[GetPlayerId(p)+ 1]= ss
@@ -26,7 +26,7 @@ function Ff takes nothing returns nothing
         loop
             exitwhen In > wN
             if p==ae[In]then
-                call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
+                call SaveInteger(HashData,GetHandleId((TB)),SH_SUPER_DATA_INT,(In))
                 set PlayersHeroArray[In]= TB
                 set HeroInGameAndAliveARRAY[In]= true
                 set Gv[In]= ss

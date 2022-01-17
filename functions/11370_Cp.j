@@ -37,8 +37,8 @@ function Cp takes nothing returns nothing
     endloop
     set u[1]= jx[1]
     set u[2]= jx[2]
-    set Bc[1]=(LoadInteger(HashData,GetHandleId((u[1])),StringHash("SuperData:Int")))
-    set Bc[2]=(LoadInteger(HashData,GetHandleId((u[2])),StringHash("SuperData:Int")))
+    set Bc[1]=(LoadInteger(HashData,GetHandleId((u[1])),SH_SUPER_DATA_INT))
+    set Bc[2]=(LoadInteger(HashData,GetHandleId((u[2])),SH_SUPER_DATA_INT))
     if d==null then
         if bb then
             set Dp = u[1]

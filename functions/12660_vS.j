@@ -27,7 +27,7 @@ function vS takes boolean zs,unit u,integer ID,integer eS,integer xS,integer oS,
 	endif
 	call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl",u,"origin"))
 	set it = UnitAddItemById(u,OS)
-	call SetItemUserData(it,(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"))))
+	call SetItemUserData(it,(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT)))
 	set it = null
 endfunction
 

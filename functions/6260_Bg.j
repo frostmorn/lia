@@ -31,7 +31,7 @@ function Bg takes nothing returns nothing
 			set e = AddSpecialEffectTarget("Abilities\\Weapons\\CryptFiendMissile\\CryptFiendMissileTarget.mdl",f,"head")
 			set cg = GetUnitState(f,UNIT_STATE_MAX_LIFE)
 			set Cg = GetWidgetLife(f)
-			if(IsUnitType(f,UNIT_TYPE_HERO)or((LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=0 and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=1))then
+			if(IsUnitType(f,UNIT_TYPE_HERO)or((LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))!=0 and(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))!=1))then
 				set DC = 10 * JN +(cg - Cg)*(2 * JN)/ 'd'
 			else
 				set DC = 10 * JN +(cg - Cg)*(5 * JN)/ 'd'

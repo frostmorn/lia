@@ -16,8 +16,8 @@ function IJ takes unit u1 returns nothing
 		if first!=null and IsUnitAlive(first) and IsUnitAlly(first,p)and IsUnitType(first,UNIT_TYPE_HERO)and not IsUnitIllusion(first)then
 			set t = CreateTimer()
 			set h = GetHandleId(t)
-			call SaveUnitHandle(HashData,h,StringHash("DarkPact:Target"),first)
-			call SaveEffectHandle(HashData,h,StringHash("DarkPact:Effect"),AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DarkSummoning\\DarkSummonMissile.mdl",first,"chest"))
+			call SaveUnitHandle(HashData,h,SH_DARK_PACT_TARGET,first)
+			call SaveEffectHandle(HashData,h,SH_DARK_PACT_EFFECT,AddSpecialEffectTarget("Abilities\\Spells\\Undead\\DarkSummoning\\DarkSummonMissile.mdl",first,"chest"))
 			call UnitAddAbility(first,'Avul')
 			call TimerStart(t,GetUnitAbilityLevel(u1,'A02P')* 3,false,function RJ)
 		endif

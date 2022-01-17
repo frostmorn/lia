@@ -48,7 +48,7 @@ function cG takes nothing returns nothing
 	local effect e
 	local effect array e2
 	
-	if In > vB or LoadBoolean(Ax,1,StringHash("gg_rct_pr"))then
+	if In > vB or LoadBoolean(Ax,1,SH_GG_RCT_PR)then
 		set e2[1]= LoadEffectHandle(Ax,6,dN)
 		set e2[2]= LoadEffectHandle(Ax,7,dN)
 		set e2[3]= LoadEffectHandle(Ax,8,dN)

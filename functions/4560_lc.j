@@ -7,7 +7,7 @@ function lc takes nothing returns nothing
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null
-        if(FN(f)==false)or(IsUnitType(f,UNIT_TYPE_HERO)and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=$B and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))!=12)then
+        if(FN(f)==false)or(IsUnitType(f,UNIT_TYPE_HERO)and(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))!=$B and(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))!=12)then
             if IsUnitPaused(f)==false then
                 call PauseUnit(f,true)
             endif

@@ -16,8 +16,8 @@ function sB takes player p1,player p2 returns nothing
     local item UB
     local item wB
     local item WB
-    call SaveInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int"),(tB))
-    call SaveInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int"),(SB))
+    call SaveInteger(HashData,GetHandleId((u1)),SH_SUPER_DATA_INT,(tB))
+    call SaveInteger(HashData,GetHandleId((u2)),SH_SUPER_DATA_INT,(SB))
     call SetUnitOwner(u1,p2,true)
     call SetUnitOwner(u2,p1,true)
     set x = GetWidgetX(u2)

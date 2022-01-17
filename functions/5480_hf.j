@@ -3,7 +3,7 @@
 function hf takes nothing returns nothing
     local unit u = GetRevivingUnit()
     local player p = GetOwningPlayer(u)
-    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
     set HeroInGameAndAliveARRAY[Bc]= true
     call GroupRemoveUnit(fo,u)
     call SelectUnitForPlayerSingle(u,p)

@@ -11,7 +11,7 @@ function sa___prototype3_Charge___onPrecast takes nothing returns boolean
 	set x[2]= GetUnitX(target)
 	set y[2]= GetUnitY(target)
 	set dist = GetDistance(x[1],y[1],x[2],y[2])
-	if not(LoadBoolean(HashData,GetHandleId((caster)),StringHash("ArenaStatus:Ready")))then
+	if not(LoadBoolean(HashData,GetHandleId((caster)),SH_ARENA_STATUS_READY))then
 		if IsUnitType(target,UNIT_TYPE_HERO)==false and IsUnitEnemy(target,GetOwningPlayer(caster))==false then
 			call IssueImmediateOrderById(caster,$D0004)
 			call DisplayTextToPlayer(GetOwningPlayer(caster),0,0,"Целью гипер-сапогов не может быть данный юнит.")

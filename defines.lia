@@ -1,3 +1,4 @@
+#include "hash_ids.lia"
 // enable map debug mode
 #define DEBUG 1
 // DEBUG WITH GHOSTPP BOT

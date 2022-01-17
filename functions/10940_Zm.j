@@ -8,7 +8,7 @@ function Zm takes nothing returns nothing
 	#if DI_BEFOREROUND_TRIGGERS
 	call DMesg("Entering 10940_Zm")
 	#endif
-	call SaveBoolean(Ax,1,StringHash("pr2"),false)
+	call SaveBoolean(Ax,1,SH_PR2,false)
 	if CurrentWave==20 then
 		call PauseUnit(Le,false)
 		call TriggerRegisterUnitLifeEvent(OO,Le,LESS_THAN_OR_EQUAL,7000.)

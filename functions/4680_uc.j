@@ -12,7 +12,7 @@ function uc takes nothing returns nothing
 	local item UB
 	local integer Uc
 	local integer wc
-	call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),false)
+	call SaveBoolean(Ax,1,SH_GG_RCT_PR,false)
 	call GroupEnumUnitsInRect(g,gg_rct_MinimalArenaAreaRect,Condition(function Pc))
 	call ForGroup(g,function qc)
 	call DestroyGroup(g)
@@ -24,8 +24,8 @@ function uc takes nothing returns nothing
 	call UnitRemoveBuffs(u2,true,true)
 	call DN(u1)
 	call DN(u2)
-	set Uc =(LoadInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int")))
-	set wc =(LoadInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int")))
+	set Uc =(LoadInteger(HashData,GetHandleId((u1)),SH_SUPER_DATA_INT))
+	set wc =(LoadInteger(HashData,GetHandleId((u2)),SH_SUPER_DATA_INT))
 	call PauseUnit(No[Uc],false)
 	call PauseUnit(No[wc],false)
 	if((HeroInGameAndAliveARRAY[Uc]==false and IsUnitDead(u1))or(HeroInGameAndAliveARRAY[wc]==false and IsUnitAlive(u2)))then

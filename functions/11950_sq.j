@@ -2,7 +2,7 @@
 #define H_11950
 function sq takes nothing returns nothing
     local unit u = GetResearchingUnit()
-    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
     local real y = GetUnitY(u)
     local real x = GetUnitX(u)
     local player p = GetOwningPlayer(u)
@@ -22,7 +22,7 @@ function sq takes nothing returns nothing
         set Fb[5]= 'A0HC'
         if JN==1 then
             set gN = CreateUnit(p,'n02X',x,y,0)
-            call SaveInteger(HashData,GetHandleId((gN)),StringHash("SuperData:Int"),(Bc))
+            call SaveInteger(HashData,GetHandleId((gN)),SH_SUPER_DATA_INT,(Bc))
             set No[Bc]= gN
             call UnitAddAbility(gN,Fb[1])
         else

@@ -4,7 +4,7 @@
 #include "../features/functions/SetPlayerScore_StatsUpdate.j"
 function ot takes nothing returns nothing
 	local unit dy = GetDyingUnit()
-	local integer Bc =(LoadInteger(HashData,GetHandleId((dy)),StringHash("SuperData:Int")))
+	local integer Bc =(LoadInteger(HashData,GetHandleId((dy)),SH_SUPER_DATA_INT))
 	local player p = GetOwningPlayer(dy)
 	if IsNotGameOver() and IsUnitType(dy,UNIT_TYPE_HERO)and Bc!=$B and Bc!=$C and p!=Player(11)then
 		if Ex then

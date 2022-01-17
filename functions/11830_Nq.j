@@ -16,7 +16,7 @@ function Nq takes nothing returns nothing
             call vD(f)
         endif
         call RemoveLocation(l)
-        call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(c))
+        call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(c))
         call GroupAddUnit(Ee[k],f)
     endif
     call DestroyTimer(t)

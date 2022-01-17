@@ -21,7 +21,7 @@ function wg takes nothing returns nothing
     call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\DispelMagic\\DispelMagicTarget.mdl",GetWidgetX(u),GetWidgetY(u)))
     call SetHeroLevel(u,GetHeroLevel(kx),false)
     call SuspendHeroXP(u,true)
-    call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(12))
+    call SaveInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT,(12))
     call SetUnitAbilityLevel(u,'A0DQ',JN)
     call UnitApplyTimedLife(u,'BTLF',nd)
     call TriggerRegisterUnitEvent(sI,u,EVENT_UNIT_DEATH)

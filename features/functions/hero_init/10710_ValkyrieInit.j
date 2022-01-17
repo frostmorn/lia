@@ -1,7 +1,7 @@
 #ifndef H_10710
 #define H_10710
 function HeroInit1160785971 takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	local integer ED = 0
 	local integer wN
 	#if DEBUG_HERO_INITS

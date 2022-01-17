@@ -63,7 +63,7 @@ function fP takes nothing returns nothing
 		call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00Победители получат 200 золотых монет и 15 дерева.|r")
 		set In = In + 1
 	endloop
-	call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),true)
+	call SaveBoolean(Ax,1,SH_GG_RCT_PR,true)
 	set In = 0
 	loop
 		exitwhen In > 7

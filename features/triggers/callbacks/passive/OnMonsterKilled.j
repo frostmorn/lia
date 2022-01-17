@@ -3,7 +3,7 @@
 #include "../../../Debug.j"
 #include "../../../functions/SetPlayerScore_StatsUpdate.j"
 function RemoveKilledMonsters takes nothing returns nothing
-	local group deadMonsters = LoadGroupHandle(HashData, StringHash("DeadMonsters"), StringHash("Group"))
+	local group deadMonsters = LoadGroupHandle(HashData, SH_DEAD_MONSTERS,SH_GROUP)
 	local unit deadMonster = null
 	loop
 		set deadMonster = FirstOfGroup(deadMonsters)
@@ -14,10 +14,10 @@ function RemoveKilledMonsters takes nothing returns nothing
 endfunction
 function OnMonsterKilledCallback takes nothing returns nothing
 	local unit deadMonster = GetDyingUnit()
-	local group deadMonsters = LoadGroupHandle(HashData, StringHash("DeadMonsters"), StringHash("Group"))
+	local group deadMonsters = LoadGroupHandle(HashData, SH_DEAD_MONSTERS,SH_GROUP)
 	if deadMonsters == null then
 		set deadMonsters = CreateGroup()
-		call SaveGroupHandle(HashData, StringHash("DeadMonsters"), StringHash("Group"),deadMonsters) 
+		call SaveGroupHandle(HashData, SH_DEAD_MONSTERS,SH_GROUP,deadMonsters) 
 	endif
 	if not IsUnitInGroup(deadMonster, deadMonsters) then
 		call GroupAddUnit(deadMonsters, deadMonster)
@@ -30,7 +30,7 @@ function OnMonsterDeathCallback takes nothing returns nothing
     local unit killer = GetKillingUnit()
     local player p = GetOwningPlayer(killer)
     local integer Bc = ee[GetPlayerId(p)+ 1]
-    if GetOwningPlayer(u)==Player(11)and(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))==0 and killer!=null and GetUnitAbilityLevel(u,'A0K4')==0 then
+    if GetOwningPlayer(u)==Player(11)and(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))==0 and killer!=null and GetUnitAbilityLevel(u,'A0K4')==0 then
         set CreepsKilledByPlayer[Bc]= CreepsKilledByPlayer[Bc]+ 1
         if no or Wx then
             call LB()

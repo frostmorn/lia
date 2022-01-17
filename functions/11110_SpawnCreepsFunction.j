@@ -36,8 +36,8 @@ function SpawnCreepsTriggerCallback takes nothing returns nothing
     endif
     set Tx = nC
     set u = CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_BottomSpawnRect), 270)
-    call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
-    call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
+    call SaveStr(HashData,GetHandleId(u),SH_MAIN_CORE_BOSS_DATA,"mini-boss")
+    call SaveInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT,(1))
     if CurrentWave==9 then
         call vD(u)
     endif
@@ -49,8 +49,8 @@ function SpawnCreepsTriggerCallback takes nothing returns nothing
         set In = In + 1
     endloop
     set u = CreateUnitAtLoc(Player(11), boss_ids[CurrentWave],GetRandomLocInRect(gg_rct_TopSpawnRect), 0)
-    call SaveStr(HashData,GetHandleId(u),StringHash("MainCore:BossData"),"mini-boss")
-    call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(1))
+    call SaveStr(HashData,GetHandleId(u),SH_MAIN_CORE_BOSS_DATA,"mini-boss")
+    call SaveInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT,(1))
     if CurrentWave==9 then
         call vD(u)
     endif

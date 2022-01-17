@@ -54,12 +54,12 @@ function Wc takes unit u1,unit u2 returns nothing
 		endif
 		set yc = yc + 1
 	endloop
-	set Bc =(LoadInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int")))
+	set Bc =(LoadInteger(HashData,GetHandleId((u1)),SH_SUPER_DATA_INT))
 	set x = GetUnitX(u1)+ $B4
 	set y = GetUnitY(u1)
 	call SetUnitPosition(No[Bc],x,y)
 	call SetUnitFacing(No[Bc],90)
-	set Bc =(LoadInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int")))
+	set Bc =(LoadInteger(HashData,GetHandleId((u2)),SH_SUPER_DATA_INT))
 	set x = GetUnitX(u2)- $B4
 	set y = GetUnitY(u2)
 	call SetUnitPosition(No[Bc],x,y)
@@ -111,7 +111,7 @@ function Wc takes unit u1,unit u2 returns nothing
 		call DisplayTextToPlayer(Player(In),0,0,"|cffffcc00Победитель получит " + I2S(200)+ " золотых монет и " + I2S(8)+ " дерева.")
 		set In = In + 1
 	endloop
-	call SaveBoolean(Ax,1,StringHash("gg_rct_pr"),true)
+	call SaveBoolean(Ax,1,SH_GG_RCT_PR,true)
 	set t = CreateTimer()
 	call TimerStart(t,2,false,function sc)
 	set t = null

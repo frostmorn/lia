@@ -42,7 +42,7 @@ function AimedShot___AimedShotLoop takes nothing returns nothing
 					call GroupAddUnit(zdamaged,first)
 					call GroupRemoveUnit(g,first)
 					set zdamage = 90.00 * zlevel
-					if LoadInteger(AimedShot___HASH_TABLE,GetHandleId(first),StringHash("DemolishTarget"))==5 then
+					if LoadInteger(AimedShot___HASH_TABLE,GetHandleId(first),SH_DEMOLISH_TARGET)==5 then
 						set zdamage = zdamage +(zdamage * 0.5)
 					endif
 					set DamageTypeAttack = false

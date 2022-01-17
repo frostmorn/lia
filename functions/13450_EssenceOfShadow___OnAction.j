@@ -4,11 +4,11 @@
 function EssenceOfShadow___OnAction takes nothing returns nothing
 	local unit caster = s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 	local unit target = s__SpellEvent___spellEvent_TargetUnit[SpellEvent]
-	local integer lvl = LoadInteger(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Level"))
-	local timer t = LoadTimerHandle(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Timer"))
+	local integer lvl = LoadInteger(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_LVL)
+	local timer t = LoadTimerHandle(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_TIMER)
 	local integer h
 	local integer abilId
-	local boolean b = LoadBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
+	local boolean b = LoadBoolean(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_NOMANA)
 	#if DI_ESSENCE_OF_SHADOW
 	call DMesg("Essence of shadow onAction call 13450")
 	#endif
@@ -22,9 +22,9 @@ function EssenceOfShadow___OnAction takes nothing returns nothing
 		call PauseTimer(t)
 		call DestroyTimer(t)
 		call FlushChildHashtable(HashData,h)
-		call RemoveSavedHandle(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Timer"))
-		call RemoveSavedInteger(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Level"))
-		call RemoveSavedBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
+		call RemoveSavedHandle(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_TIMER)
+		call RemoveSavedInteger(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_LVL)
+		call RemoveSavedBoolean(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_NOMANA)
 		call UnitRemoveAbility(target,'B04E')
 		call UnitRemoveAbility(target,'A0JL')
 		call UnitRemoveAbility(target,'A0JM')
@@ -50,13 +50,13 @@ function EssenceOfShadow___OnAction takes nothing returns nothing
 		call AddUnitMaxState(target,UNIT_STATE_MAX_MANA,100.00 * lvl)
 		set b = true
 	endif
-	call SaveUnitHandle(HashData,h,StringHash("EssenceOfShadow:Target"),target)
-	call SaveInteger(HashData,h,StringHash("EssenceOfShadow:Level"),lvl)
-	call SaveReal(HashData,h,StringHash("EssenceOfShadow:Duration"),15.00)
-	call SaveBoolean(HashData,h,StringHash("EssenceOfShadow:NoMana"),b)
-	call SaveTimerHandle(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Timer"),t)
-	call SaveInteger(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Level"),lvl)
-	call SaveBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"),b)
+	call SaveUnitHandle(HashData,h,SH_ESSENCE_OF_SHADOW_TARGET,target)
+	call SaveInteger(HashData,h,SH_ESSENCE_OF_SHADOW_LVL,lvl)
+	call SaveReal(HashData,h,SH_ESSENCE_OF_SHADOW_DURATION,15.00)
+	call SaveBoolean(HashData,h,SH_ESSENCE_OF_SHADOW_NOMANA,b)
+	call SaveTimerHandle(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_TIMER,t)
+	call SaveInteger(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_LVL,lvl)
+	call SaveBoolean(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_NOMANA,b)
 	call TimerStart(t,0.05,true,function EssenceOfShadow___OnLoop)
 	set t = null
 	set caster = null

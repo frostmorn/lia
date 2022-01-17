@@ -17,7 +17,7 @@ endfunction
 function GK takes nothing returns nothing
 	local trigger pb = GetTriggeringTrigger()
 	local integer Id = GetHandleId(pb)
-	local unit u = LoadUnitHandle(Ax,StringHash("Naga"),Id)
+	local unit u = LoadUnitHandle(Ax,SH_NAGA,Id)
 	if IsUnitAlive(u) and GetIssuedOrderId()!=$D0005 then
 		call DisableTrigger(pb)
 		call IssueTargetOrderById(GetTriggerUnit(),$D000F,u)
@@ -53,7 +53,7 @@ function jK takes nothing returns nothing
     call SaveUnitHandle(Ax,1,Jd,c)
     call TimerStart(tt,2,false,function CN)
     call RemoveLocation(l)
-    call SaveUnitHandle(Ax,StringHash("Naga"),Id,u)
+    call SaveUnitHandle(Ax,SH_NAGA,Id,u)
     loop
         exitwhen ED==wN
         call TriggerRegisterPlayerUnitEvent(pb,Player(ED),EVENT_PLAYER_UNIT_ISSUED_TARGET_ORDER,null)

@@ -3,8 +3,8 @@
 function ChainsOfLight___OnAttack takes nothing returns nothing
 	local unit target = GetAttacker()
 	local integer h = GetHandleId(target)
-	local unit attacker = LoadUnitHandle(HashData,h,StringHash("ChainsOfLightOldCaster"))
-	local integer lvl = LoadInteger(HashData,h,StringHash("ChainsOfLightOldLevel"))
+	local unit attacker = LoadUnitHandle(HashData,h,SH_CHAINS_OF_LIGHT_OLD_CASTER)
+	local integer lvl = LoadInteger(HashData,h,SH_CHAINS_OF_LIGHT_OLD_LVL)
 	local real damage
 	if lvl==1 then
 		set damage = 30.00

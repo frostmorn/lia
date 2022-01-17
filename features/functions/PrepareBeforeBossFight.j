@@ -53,12 +53,12 @@ function PrepareBeforeBossFight takes nothing returns nothing
 		set Le = CreateUnitAtLoc(Player(11),hv,GetRectCenter(gg_rct_MinimalArenaTopUnitRect),270)
 		call SetHeroLevel(Le,$FA,false)
 		call SetUnitManaPercentBJ(Le,'d')
-		call SaveInteger(HashData,GetHandleId((Le)),StringHash("SuperData:Int"),(2))
+		call SaveInteger(HashData,GetHandleId((Le)),SH_SUPER_DATA_INT,(2))
 		call PauseUnit(Le,true)
 	else
 		call EnableTrigger(CO)
 		set Me = CreateUnitAtLoc(Player(11),creep_ids[CurrentWave],GetRectCenter(gg_rct_MinimalArenaTopUnitRect),270)
-		call SaveInteger(HashData,GetHandleId((Me)),StringHash("SuperData:Int"),(2))
+		call SaveInteger(HashData,GetHandleId((Me)),SH_SUPER_DATA_INT,(2))
 		call PauseUnit(Me,true)
 		call TriggerRegisterUnitEvent(iO,Me,EVENT_UNIT_DAMAGED)
 		if CurrentWave!=20 then
@@ -67,7 +67,7 @@ function PrepareBeforeBossFight takes nothing returns nothing
 		call EnableTrigger(eA)
 	endif
 	call XB()
-	call SaveBoolean(Ax,1,StringHash("pr2"),true)
+	call SaveBoolean(Ax,1,SH_PR2,true)
 	#if WO_TIMER_START
 	loop
 		call DisplayTextToPlayer(GetLocalPlayer(),.0,.0,I2S(timeBeforeStart)+ "...")

@@ -4,7 +4,7 @@ function AddTimedEffect takes string EFFECT_STRING,real EFFECT_X,real EFFECT_Y,r
     local effect e = AddSpecialEffect(EFFECT_STRING,EFFECT_X,EFFECT_Y)
     local timer t = CreateTimer()
     local integer h = GetHandleId(t)
-    call SaveEffectHandle(HashData,h,StringHash("Effect"),e)
+    call SaveEffectHandle(HashData,h,SH_EFFECT,e)
     call TimerStart(t,EFFECT_DURATION,false,function TimedEffectAction)
     set e = null
     set t = null

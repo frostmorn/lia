@@ -2,7 +2,7 @@
 #define H_10690
 function HeroInit1211117622 takes nothing returns nothing
 	// Mort Hero Init initialization func
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	#if DEBUG_HERO_INITS
 	call DMesg("Custom H006 Темный Рыцарь(Морт) Таверна Воров(Низ) Initializing")
 	#endif

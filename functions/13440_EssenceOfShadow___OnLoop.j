@@ -3,11 +3,11 @@
 function EssenceOfShadow___OnLoop takes nothing returns nothing
     local timer t = GetExpiredTimer()
     local integer h = GetHandleId(t)
-    local unit target = LoadUnitHandle(HashData,h,StringHash("EssenceOfShadow:Target"))
-    local integer lvl = LoadInteger(HashData,h,StringHash("EssenceOfShadow:Level"))
-    local real duration = LoadReal(HashData,h,StringHash("EssenceOfShadow:Duration"))
-    local boolean b = LoadBoolean(HashData,h,StringHash("EssenceOfShadow:NoMana"))
-    call SaveReal(HashData,h,StringHash("EssenceOfShadow:Duration"),duration - 0.05)
+    local unit target = LoadUnitHandle(HashData,h,SH_ESSENCE_OF_SHADOW_TARGET)
+    local integer lvl = LoadInteger(HashData,h,SH_ESSENCE_OF_SHADOW_LVL)
+    local real duration = LoadReal(HashData,h,SH_ESSENCE_OF_SHADOW_DURATION)
+    local boolean b = LoadBoolean(HashData,h,SH_ESSENCE_OF_SHADOW_NOMANA)
+    call SaveReal(HashData,h,SH_ESSENCE_OF_SHADOW_DURATION,duration - 0.05)
     if duration <= 0.00 or IsUnitDead(target)or GetUnitAbilityLevel(target,'B04E')==0 then
         call UnitRemoveAbility(target,'B04E')
         call UnitRemoveAbility(target,'A0JL')
@@ -21,9 +21,9 @@ function EssenceOfShadow___OnLoop takes nothing returns nothing
         call PauseTimer(t)
         call DestroyTimer(t)
         call FlushChildHashtable(HashData,h)
-        call RemoveSavedHandle(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Timer"))
-        call RemoveSavedInteger(HashData,GetHandleId(target),StringHash("EssenceOfShadow:Level"))
-        call RemoveSavedBoolean(HashData,GetHandleId(target),StringHash("EssenceOfShadow:NoMana"))
+        call RemoveSavedHandle(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_TIMER)
+        call RemoveSavedInteger(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_LVL)
+        call RemoveSavedBoolean(HashData,GetHandleId(target),SH_ESSENCE_OF_SHADOW_NOMANA)
     endif
     set t = null
     set target = null

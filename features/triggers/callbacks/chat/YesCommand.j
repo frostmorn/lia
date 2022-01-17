@@ -88,14 +88,14 @@ function YesCommandTriggerCallback takes nothing returns nothing
 			set Gv[Xq]= ED
 			set u1 = GroupPickRandomUnit(GetUnitsOfPlayerAndTypeId(sw,'n002'))
 			set u2 = GroupPickRandomUnit(GetUnitsOfPlayerAndTypeId(de[Os],'n002'))
-			set ED =(LoadInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int")))
-			call SaveInteger(HashData,GetHandleId((u1)),StringHash("SuperData:Int"),((LoadInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int")))))
-			call SaveInteger(HashData,GetHandleId((u2)),StringHash("SuperData:Int"),(ED))
+			set ED =(LoadInteger(HashData,GetHandleId((u1)),SH_SUPER_DATA_INT))
+			call SaveInteger(HashData,GetHandleId((u1)),SH_SUPER_DATA_INT,((LoadInteger(HashData,GetHandleId((u2)),SH_SUPER_DATA_INT))))
+			call SaveInteger(HashData,GetHandleId((u2)),SH_SUPER_DATA_INT,(ED))
 			set s = Zv[bs]
 			set Zv[bs]= Zv[Xq]
 			set Zv[Xq]= s
-			call SaveInteger(HashData,GetHandleId((PlayersHeroArray[bs])),StringHash("SuperData:Int"),(Xq))
-			call SaveInteger(HashData,GetHandleId((PlayersHeroArray[Xq])),StringHash("SuperData:Int"),(bs))
+			call SaveInteger(HashData,GetHandleId((PlayersHeroArray[bs])),SH_SUPER_DATA_INT,(Xq))
+			call SaveInteger(HashData,GetHandleId((PlayersHeroArray[Xq])),SH_SUPER_DATA_INT,(bs))
 			set oo = bs
 			set ro = Xq
 			call EnumItemsInRect(bj_mapInitialPlayableArea,null,function As)

@@ -7,7 +7,7 @@ function GS takes nothing returns nothing
     local integer ID = LoadInteger(Ax,2,dN)
     local integer AS = LoadInteger(Ax,3,dN)
     local unit u = LoadUnitHandle(Ax,4,dN)
-    local integer hS =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+    local integer hS =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
     local real x = GetItemX(it)
     local real y = GetItemY(it)
     local group g = CreateGroup()
@@ -25,7 +25,7 @@ function GS takes nothing returns nothing
     loop
         set f = FirstOfGroup(g)
         exitwhen f==null
-        if(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))==hS then
+        if(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))==hS then
             set c = f
         endif
         call GroupRemoveUnit(g,f)

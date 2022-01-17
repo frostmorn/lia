@@ -11,7 +11,7 @@ function vc takes unit cB,player p returns nothing
     loop
         exitwhen In > OnlinePlayersCount
         if GetOwningPlayer(TB)==ae[In]then
-            call SaveInteger(HashData,GetHandleId((TB)),StringHash("SuperData:Int"),(In))
+            call SaveInteger(HashData,GetHandleId((TB)),SH_SUPER_DATA_INT,(In))
             set PlayersHeroArray[In]= TB
             set HeroInGameAndAliveARRAY[In]= true
             set Gv[In]= ss

@@ -35,17 +35,17 @@ function mB takes nothing returns nothing
 		endloop
 		call DestroyGroup(g)
 		set f = CreateUnitAtLoc(p1,pB,GetRectCenter(gg_rct_Pr),bj_UNIT_FACING)
-		call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
+		call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(9))
 		set f = CreateUnitAtLoc(p1,pB,GetRectCenter(gg_rct_qr),bj_UNIT_FACING)
-		call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
+		call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(9))
 		call UnitAddAbility(f,'A09Z')
 		call UnitAddAbility(f,'ANre')
 		set f = CreateUnitAtLoc(p2,PB,GetRectCenter(gg_rct_Mr),bj_UNIT_FACING)
-		call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
+		call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(9))
 		call UnitAddAbility(f,'A09Z')
 		call UnitAddAbility(f,'ANre')
 		set f = CreateUnitAtLoc(p2,PB,GetRectCenter(gg_rct_pr),bj_UNIT_FACING)
-		call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(9))
+		call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(9))
 	endif
 	set g = null
 	set f = null

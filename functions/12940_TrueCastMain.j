@@ -3,7 +3,7 @@
 function TrueCastMain takes nothing returns nothing
 	local timer t = GetExpiredTimer()
 	local integer h = GetHandleId(t)
-	local unit caster = LoadUnitHandle(HashData,h,StringHash("TrueCast-Caster"))
+	local unit caster = LoadUnitHandle(HashData,h,SH_TRUE_CAST_CASTER)
 	if(ItemUseBool[GetPlayerId(GetOwningPlayer((caster)))])then
 		if IsUnitAlive(caster) and GetUnitAbilityLevel(caster,'A0K4')==0 and GetUnitTypeId(caster)!=0  then
 			call TrueCastSet(caster,false)

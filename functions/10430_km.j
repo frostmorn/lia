@@ -1,7 +1,7 @@
 #ifndef H_10430
 #define H_10430
 function km takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	call UnitAddAbility(u,'A09M')
 	call UnitAddAbility(u,'A0EJ')
 	call DisplayTimedTextToPlayer(GetOwningPlayer(u),0,0,15,"|Cffff0000Для охотницы орбы предметов Сферы огня, Сферы льда, Меча льда, Жезла огня не работают или вообще нарушают нормальную работу атаки.

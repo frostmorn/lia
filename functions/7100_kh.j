@@ -9,7 +9,7 @@ function kh takes nothing returns nothing
     local integer JN = GetUnitAbilityLevel(uA,'A0BA')
     local location T = GetUnitLoc(uA)
     local unit c = CreateUnitAtLoc(p,'E00E',T,GetUnitFacing(uA))
-    call SaveInteger(HashData,GetHandleId((c)),StringHash("SuperData:Int"),(11))
+    call SaveInteger(HashData,GetHandleId((c)),SH_SUPER_DATA_INT,(11))
     call RemoveLocation(T)
     call UnitApplyTimedLife(c,'BTLF',120.)
     if Kh!=1 then

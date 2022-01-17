@@ -19,7 +19,7 @@ function zK takes nothing returns nothing
         loop
             set f = FirstOfGroup(g)
             exitwhen f==null
-            if IsUnitEnemy(f,p)and IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_HERO)==false and IsUnitIllusion(f)==false and(LoadInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int")))==0 and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false then
+            if IsUnitEnemy(f,p)and IsUnitAlive(f) and IsUnitType(f,UNIT_TYPE_HERO)==false and IsUnitIllusion(f)==false and(LoadInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT))==0 and IsUnitType(f,UNIT_TYPE_STRUCTURE)==false then
                 set DamageTypeAttack = false
                 call UnitDamageTarget(uA,f,$C350,true,false,ATTACK_TYPE_NORMAL,DAMAGE_TYPE_MAGIC,WEAPON_TYPE_WHOKNOWS)
                 set DamageTypeAttack = true

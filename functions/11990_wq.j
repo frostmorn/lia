@@ -2,7 +2,7 @@
 #define H_11990
 function wq takes nothing returns nothing
     local unit u = GetSpellAbilityUnit()
-    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
     local unit ac = PlayersHeroArray[Bc]
     local real x = GetUnitX(ac)
     local real y = GetUnitY(ac)

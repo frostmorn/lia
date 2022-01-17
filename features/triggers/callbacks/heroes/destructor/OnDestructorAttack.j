@@ -3,17 +3,17 @@
 #include "../../../../Debug.j"
 function FlushAllDestructionShit takes unit attackTargetUnit returns nothing
 	
-	local timer t = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit),StringHash("Destruction:PeriodicDamageTimer"))
-	call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit),StringHash("Destruction:PeriodicDamageTimer"))
+	local timer t = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit),SH_DESTRUCTION_PERIODIC_DAMAGE_TIMER)
+	call RemoveSavedHandle(HashData, GetHandleId(attackTargetUnit),SH_DESTRUCTION_PERIODIC_DAMAGE_TIMER)
 	call FlushChildHashtable(HashData, GetHandleId(t))	
 	call DestroyTimer(t)
 endfunction
 function OnDestructionTimer takes nothing returns nothing
 	local integer timerHandle = GetHandleId(GetExpiredTimer())
-	local real damage = LoadReal(HashData, timerHandle, StringHash("Destruction:Damage"))
-	local real damagePart = LoadReal(HashData, timerHandle, StringHash("Destruction:DamagePart"))
-	local unit attacker = LoadUnitHandle(HashData, timerHandle, StringHash("Destruction:DamageDealer"))
-	local unit attackTargetUnit = LoadUnitHandle(HashData, timerHandle, StringHash("Destruction:DamageTarget"))
+	local real damage = LoadReal(HashData, timerHandle, SH_DESTRUCTION_DAMAGE)
+	local real damagePart = LoadReal(HashData, timerHandle, SH_DESTRUCTION_DAMAGE_PART)
+	local unit attacker = LoadUnitHandle(HashData, timerHandle, SH_DESTRUCTION_DAMAGE_DEALER)
+	local unit attackTargetUnit = LoadUnitHandle(HashData, timerHandle, SH_DESTRUCTION_DAMAGE_TARGET)
 	#if DI_00500_DESTRUCTOR_THIRD_PASSIVE	
 	call WTF_Unit(attacker)
 	call DMesg("and attacks")
@@ -30,7 +30,7 @@ function OnDestructionTimer takes nothing returns nothing
 			endif
 
 			call UnitDamageTargetBJ(attacker, attackTargetUnit, damagePart, ATTACK_TYPE_MAGIC, DAMAGE_TYPE_UNKNOWN )				
-			call SaveReal(HashData, timerHandle, StringHash("Destruction:Damage"), damage - damagePart)
+			call SaveReal(HashData, timerHandle, SH_DESTRUCTION_DAMAGE, damage - damagePart)
 
 
 		else
@@ -49,7 +49,7 @@ function OnDestructorAttackCallback takes nothing returns nothing
 	local integer chance = 50
 	local real destructionStrength = (40.0 + 20.0 * (destructionLevel - 1))/ 100.0
 	local real damage = destructionStrength * attackerStrength
-	local timer periodicDamageTimer = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Destruction:PeriodicDamageTimer"))
+	local timer periodicDamageTimer = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit), SH_DESTRUCTION_PERIODIC_DAMAGE_TIMER)
 	local real DamageTimerPeriod = 0.05
 	local real DamageTime = 6.0
 	if IsUnitDead(attackTargetUnit) then 
@@ -82,11 +82,11 @@ function OnDestructorAttackCallback takes nothing returns nothing
 			#if DI_00500_DESTRUCTOR_THIRD_PASSIVE
 			call DMesg("You're lucky. Starting periodic damage dealing")
 			#endif
-			call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
-			call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), (damage * DamageTimerPeriod)/ DamageTime)
-			call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamageDealer"), attacker)
-			call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamageTarget"), attackTargetUnit)
-			call SaveTimerHandle(HashData, GetHandleId(attackTargetUnit), StringHash("Destruction:PeriodicDamageTimer"), periodicDamageTimer)
+			call SaveReal(HashData, GetHandleId(periodicDamageTimer), SH_DESTRUCTION_DAMAGE, damage)
+			call SaveReal(HashData, GetHandleId(periodicDamageTimer), SH_DESTRUCTION_DAMAGE_PART, (damage * DamageTimerPeriod)/ DamageTime)
+			call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), SH_DESTRUCTION_DAMAGE_DEALER, attacker)
+			call SaveUnitHandle(HashData, GetHandleId(periodicDamageTimer), SH_DESTRUCTION_DAMAGE_TARGET, attackTargetUnit)
+			call SaveTimerHandle(HashData, GetHandleId(attackTargetUnit), SH_DESTRUCTION_PERIODIC_DAMAGE_TIMER, periodicDamageTimer)
 			call TimerStart(periodicDamageTimer, DamageTimerPeriod, true, function OnDestructionTimer)
 
 		else
@@ -94,8 +94,8 @@ function OnDestructorAttackCallback takes nothing returns nothing
 			call DMesg("Periodic Damage dealing allready started")
 			#endif
 			// Passive damage dealing allready works. Rewrite needed damage.
-			call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:Damage"), damage)
-			call SaveReal(HashData, GetHandleId(periodicDamageTimer), StringHash("Destruction:DamagePart"), damage / DamageTimerPeriod)
+			call SaveReal(HashData, GetHandleId(periodicDamageTimer), SH_DESTRUCTION_DAMAGE, damage)
+			call SaveReal(HashData, GetHandleId(periodicDamageTimer), SH_DESTRUCTION_DAMAGE_PART, damage / DamageTimerPeriod)
 
 			// find way to destroy effect
 			call AddTimedEffectUnit("Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl",attackTargetUnit,"chest", DamageTime)

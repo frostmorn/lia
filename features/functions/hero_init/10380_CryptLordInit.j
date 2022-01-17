@@ -1,7 +1,7 @@
 #ifndef H_10380
 #define H_10380
 function HeroInit1429221442 takes nothing returns nothing
-	local unit u = LoadUnitHandle(Ax,StringHash("HeroInit"),0)
+	local unit u = LoadUnitHandle(Ax,SH_HERO_INIT,0)
 	set jo = u
 	call Cb()
 	set CryptLordStrengthMeassureMsgTrigger = CreateTrigger()

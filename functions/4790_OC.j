@@ -19,7 +19,7 @@ function OC takes player p returns nothing
     local boolean b = LoadBoolean(Ax,1,ID)
     if IsNotGameOver() then
         call UnitRemoveAbility(IC,'A01U')
-        call SaveInteger(Ax,1,StringHash("leave"),ec)
+        call SaveInteger(Ax,1,SH_LEAVE,ec)
         set NC = Eo[ec]
         set av = av - 1
         set re = av

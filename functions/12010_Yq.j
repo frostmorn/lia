@@ -3,7 +3,7 @@
 function Yq takes nothing returns nothing
     local unit u = GetSpellAbilityUnit()
     local player p = GetOwningPlayer(u)
-    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int")))
+    local integer Bc =(LoadInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT))
     local integer JN = Ao[Bc]
     local integer array id
     local integer Kc = bo[Bc]
@@ -38,7 +38,7 @@ function Yq takes nothing returns nothing
     call RemoveUnit(u)
     set No[Bc]= CreateUnit(p,id[Kc],x,y,Ec)
     set u = No[Bc]
-    call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(Bc))
+    call SaveInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT,(Bc))
     call UnitAddAbility(u,Fb[JN])
     if(GetLocalPlayer()==p)then
         call SelectUnit(u,true)

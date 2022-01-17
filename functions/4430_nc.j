@@ -24,13 +24,13 @@ function nc takes player p returns nothing
 		call RemoveUnitFromStock(HeroStocksArray[In],GetUnitTypeId(u))
 		set In = In + 1
 	endloop
-	call SaveUnitHandle(Ax,StringHash("HeroInit"),0,u)
+	call SaveUnitHandle(Ax,SH_HERO_INIT,0,u)
 	call ExecuteFunc("HeroInit" + I2S(GetUnitTypeId(u)))
 	set In = 1
 	loop
 		exitwhen In > OnlinePlayersCount
 		if GetOwningPlayer(u)==ae[In]then
-			call SaveInteger(HashData,GetHandleId((u)),StringHash("SuperData:Int"),(In))
+			call SaveInteger(HashData,GetHandleId((u)),SH_SUPER_DATA_INT,(In))
 			set x = GetUnitX(PlayersHeroArray[In])
 			set y = GetUnitY(PlayersHeroArray[In])
 			set Ec = GetUnitFacing(PlayersHeroArray[In])

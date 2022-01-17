@@ -11,7 +11,7 @@ function Iq takes nothing returns nothing
 		call vD(f)
 	endif
 	call RemoveLocation(l)
-	call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
+	call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(1))
 	call GroupAddUnit(Ee[3],f)
 	set l = GetRandomLocInRect(gg_rct_lr)
 	set f = CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
@@ -19,7 +19,7 @@ function Iq takes nothing returns nothing
 		call vD(f)
 	endif
 	call RemoveLocation(l)
-	call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
+	call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(1))
 	call GroupAddUnit(Ee[7],f)
 	set l = GetRandomLocInRect(gg_rct_Lr)
 	set f = CreateUnitAtLoc(Player(11),boss_ids[MB],l,GetRandomReal(0,360))
@@ -27,7 +27,7 @@ function Iq takes nothing returns nothing
 		call vD(f)
 	endif
 	call RemoveLocation(l)
-	call SaveInteger(HashData,GetHandleId((f)),StringHash("SuperData:Int"),(1))
+	call SaveInteger(HashData,GetHandleId((f)),SH_SUPER_DATA_INT,(1))
 	call GroupAddUnit(Ee[8],f)
 	loop
 		exitwhen In > 4
