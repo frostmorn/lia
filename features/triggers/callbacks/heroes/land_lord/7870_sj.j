@@ -7,7 +7,7 @@ function Pj takes nothing returns nothing
     local unit kF = GetSpellTargetUnit()
     local timer t
     local timer Qj = CreateTimer()
-    local effect e = AddSpecialEffectTarget("GroundBonds.mdx",kF,"origin")
+    local effect e = AddSpecialEffectTarget("GroundBonds.mdl",kF,"origin")
     call TimerStart(Qj,.75,false,function pj)
     call SaveEffectHandle(Ax,GetHandleId(Qj),0,e)
     if HaveSavedHandle(Ax,GetHandleId(kF),1)then

@@ -5,7 +5,7 @@ function sa___prototype3_Void___VoidCallback takes nothing returns boolean
     local real x = s__SpellEvent___spellEvent_TargetX[SpellEvent]
     local real y = s__SpellEvent___spellEvent_TargetY[SpellEvent]
     local unit dummy = CreateUnit(GetOwningPlayer(caster),'h013',x,y,0.00)
-    local effect fx = AddSpecialEffectTarget("war3mapImported\\MagicCircle_Demon.mdx",dummy,"origin")
+    local effect fx = AddSpecialEffectTarget("war3mapImported\\MagicCircle_Demon.mdl",dummy,"origin")
     local timer t = CreateTimer()
     local integer h = GetHandleId(t)
     local boolean b = false

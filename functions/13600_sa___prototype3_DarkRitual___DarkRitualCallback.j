@@ -39,7 +39,7 @@ function sa___prototype3_DarkRitual___DarkRitualCallback takes nothing returns b
         call UnitDamageTarget(caster,target,5.00,false,false,ATTACK_TYPE_CHAOS,DAMAGE_TYPE_UNIVERSAL,null)
         set DamageTypeAttack = true
     endif
-    call DestroyEffect(AddSpecialEffect("war3mapImported\\desecrate.mdx",GetUnitX(target),GetUnitY(target)))
+    call DestroyEffect(AddSpecialEffect("war3mapImported\\desecrate.mdl",GetUnitX(target),GetUnitY(target)))
     call GroupEnumUnitsInRange(bj_lastCreatedGroup,x,y,400.00,null)
     loop
         set first = FirstOfGroup(bj_lastCreatedGroup)

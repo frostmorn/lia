@@ -92,7 +92,7 @@ globals
 	constant integer TEXT_TYPE_LUMBER = 3
 	constant integer TEXT_TYPE_MANABURN = 4
 	constant integer TEXT_TYPE_MISS = 5
-	constant string AimedShot___FX_PATH = "war3mapImported\\FireworksDragonHead.mdx"
+	constant string AimedShot___FX_PATH = "war3mapImported\\FireworksDragonHead.mdl"
 	constant string CombatTextIn___TEXT_COLOR_EXPIRIENCE = "|c008E009A"
 	constant string CombatTextIn___TEXT_COLOR_GOLD = "|c00FFFF00"
 	constant string CombatTextIn___TEXT_COLOR_HEAL = "|c0000FF00"
