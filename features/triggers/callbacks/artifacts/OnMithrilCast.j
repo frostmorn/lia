@@ -2,7 +2,7 @@
 #define T_00900
 
 function CouldBeMithrillAffected takes unit u returns boolean
-	return (not IsUnitInvulnerable(u)) and IsUnitAlive(u)
+	return (not (IsUnitInvulnerable(u) or IsUnitDummy(u)) and IsUnitAlive(u))
 endfunction
 
 function OnMithrilTimer takes nothing returns nothing
@@ -21,7 +21,7 @@ function OnMithrilTimer takes nothing returns nothing
 		return
 	endif
 	#if DEBUG
-	call DMesg("Mithril time = "+R2S(r_duration))
+	// call DMesg("Mithril time = "+R2S(r_duration))
 	#endif
 	set r_duration = r_duration - r_time_step
 	
@@ -68,6 +68,7 @@ function OnMithrilCastCallback takes nothing returns nothing
 		call GroupRemoveUnit(g_temp_group, u_temp)
 		if CouldBeMithrillAffected(u_temp) and IsUnitEnemy(u_temp, GetOwningPlayer(u_caster)) then
 			call GroupAddUnit(g_mithril_affected, u_temp)
+			call WTF_Unit(u_temp)
 		endif
 	endloop
 
