@@ -1,6 +1,6 @@
 #ifndef T_00600
 #define T_00600
-#include "../../../../Debug.j"
+
 function FlushBurningTimerData takes nothing returns nothing
 	local timer t = GetExpiredTimer()
 	local unit attacker = LoadUnitHandle(HashData, GetHandleId(t),SH_BURNING_ARMOR_ATTACKER)

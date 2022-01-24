@@ -22,7 +22,7 @@ function DMesg takes string message returns nothing
 	#if DEBUG_TYPE_BOT
 	call SendDebugToBot(message, 0)
 	#else
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS, 2,"|Cffff0000DEBUG:|R" + message)
+	call BJDebugMsg("|Cffff0000DEBUG:|R" + message)
 	#endif
 endfunction
 
@@ -46,6 +46,7 @@ function WTF_Unit takes unit u returns nothing
 		call DMesg("# Speed: [ " + R2S(GetUnitMoveSpeed(u))+ ", " + R2S(GetUnitDefaultMoveSpeed(u))+ " ]")   
 		call DMesg("# AquireRange = [ " + R2S(GetUnitAcquireRange(u))+", " + R2S(GetUnitDefaultAcquireRange(u)) +" ]")
 		call DMesg("# UnitLevel = [ " + I2S(GetUnitLevel(u))+" ]")
+		call DMesg("# Facing = " + R2S(GetUnitFacing(u)) )
 		if IsUnitImmune(u) then
 			call DMesg("# Immune = [ |CFF00FF00YES|R ]")
 		else 
@@ -62,6 +63,12 @@ function WTF_Unit takes unit u returns nothing
 	endif
 endfunction
 
+function WTF_Ability takes integer i_abi returns nothing
+	call DMesg("========================== ABILITY ===========================")
+	call DMesg("Name : " + GetAbilityName(i_abi))
+	call DMesg("# AbilityID: [ we:" + AbilityId2String(i_abi) + ", hex:" + I2HS(i_abi) +", dec:" +  I2S(i_abi)+ " ]")
+	call DMesg("======================== END_ABILITY =========================")
+endfunction
 
 
 #endif

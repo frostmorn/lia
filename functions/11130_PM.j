@@ -1,6 +1,6 @@
 #ifndef H_11130
 #define H_11130
-#include "../features/Debug.j"
+
 #include "../features/functions/PrepareBeforeRound.j"
 #include "../features/functions/Conditions.j"
 function PM takes nothing returns nothing

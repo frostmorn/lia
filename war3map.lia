@@ -2,6 +2,9 @@
 #include "functions/10_IsPlayerOnline.j"
 #include "functions/30_EN.j"
 #include "functions/50_SendStatsToBot.j"
+#if DEBUG 
+    #include "features/Debug.j"
+#endif
 #include "features/UnitAPI.j"
 // Not used anywhere
 

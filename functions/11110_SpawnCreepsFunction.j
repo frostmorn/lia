@@ -1,6 +1,6 @@
 #ifndef H_11110
 #define H_11110
-#include "../features/Debug.j"
+
 function SpawnCreepsTriggerCallback takes nothing returns nothing
     local integer nC = 0
     local integer DM = av

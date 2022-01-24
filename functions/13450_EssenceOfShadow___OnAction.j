@@ -1,6 +1,6 @@
 #ifndef H_13450
 #define H_13450
-#include "../features/Debug.j"
+
 function EssenceOfShadow___OnAction takes nothing returns nothing
 	local unit caster = s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
 	local unit target = s__SpellEvent___spellEvent_TargetUnit[SpellEvent]

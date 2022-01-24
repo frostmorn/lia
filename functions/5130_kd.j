@@ -1,7 +1,7 @@
 #ifndef H_5130
 #define H_5130
 
-#include "../features/Debug.j"
+
 #include "../features/functions/PrepareBeforeRound.j"
 #include "../features/functions/map_init/InitCreepsData.j"
 #include "../features/functions/misc/MultiboardInit.j"

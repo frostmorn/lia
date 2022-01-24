@@ -1,6 +1,6 @@
 #ifndef H_4760
 #define H_4760
-#include "../features/Debug.j"
+
 function VC takes nothing returns nothing
     local unit u = GetEnumUnit()
     local player p = GetOwningPlayer(u)

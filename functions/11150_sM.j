@@ -1,6 +1,6 @@
 #ifndef H_11150
 #define H_11150
-#include "../features/Debug.j"
+
 function sM takes nothing returns nothing
 	local timer t = CreateTimer()
 	local integer In = 1

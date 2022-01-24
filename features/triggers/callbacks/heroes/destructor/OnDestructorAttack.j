@@ -1,6 +1,6 @@
 #ifndef T_00500
 #define T_00500
-#include "../../../../Debug.j"
+
 function FlushAllDestructionShit takes unit attackTargetUnit returns nothing
 	
 	local timer t = LoadTimerHandle(HashData, GetHandleId(attackTargetUnit),SH_DESTRUCTION_PERIODIC_DAMAGE_TIMER)

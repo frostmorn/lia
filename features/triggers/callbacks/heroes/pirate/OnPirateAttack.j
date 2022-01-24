@@ -1,6 +1,6 @@
 #ifndef T_00400
 #define T_00400
-#include "../../../../Debug.j"
+
 function DealDamageToPoisonedGroup takes nothing returns nothing
 	local unit attackTargetUnit = GetEnumUnit()
 	local real damage = LoadReal(HashData, GetHandleId(attackTargetUnit), SH_POISON_DAMAGE_PART)

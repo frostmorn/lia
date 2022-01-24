@@ -1,6 +1,6 @@
 #ifndef PREPARE_BEFORE_ROUND_J
 #define PREPARE_BEFORE_ROUND_J
-#include "../Debug.j"
+
 #include "Conditions.j"
 #include "../triggers/callbacks/passive/OnMonsterKilled.j"
 #include "../functions/RoundStart.j"

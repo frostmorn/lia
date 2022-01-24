@@ -1,6 +1,6 @@
 #ifndef H_13720
 #define H_13720
-#include "../features/Debug.j"
+
 function sa___prototype3_EssenceOfShadow___OnAction takes nothing returns boolean
     local unit caster = s__SpellEvent___spellEvent_CastingUnit[SpellEvent]
     local unit target = s__SpellEvent___spellEvent_TargetUnit[SpellEvent]

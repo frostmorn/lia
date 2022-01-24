@@ -1,6 +1,6 @@
 #ifndef T_00800
 #define T_00800
-#include "../../../Debug.j"
+
 #include "../../../functions/SetPlayerScore_StatsUpdate.j"
 function RemoveKilledMonsters takes nothing returns nothing
 	local group deadMonsters = LoadGroupHandle(HashData, SH_DEAD_MONSTERS,SH_GROUP)

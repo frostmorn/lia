@@ -13,3 +13,4 @@ syntax_check.sh
 functions/check.py
 worldedit.sh
 .env
+.windows-serial
