@@ -20,7 +20,9 @@ function OnMithrilTimer takes nothing returns nothing
 		call DestroyTimer(t_expired)
 		return
 	endif
-
+	#if DEBUG
+	call DMesg("Mithril time = "+R2S(r_duration))
+	#endif
 	set r_duration = r_duration - r_time_step
 	
 	set g_temp = CreateGroup()
@@ -35,6 +37,7 @@ function OnMithrilTimer takes nothing returns nothing
 		endif
 	endloop
 	call SaveGroupHandle(HashData, GetHandleId(t_expired), SH_MITHRIL_GROUP, g_temp)
+	call SaveReal(HashData, GetHandleId(t_expired), SH_MITHRIL_DURATION, r_duration)
 	call DestroyGroup(g_mithril_affected)
 
 endfunction
